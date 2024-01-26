@@ -13,24 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "LeftRelease",
-                    "type": "Button",
-                    "id": "e3e6a08f-9d2f-4062-9cb3-6e3b61638f1e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MouseMove",
-                    "type": "Value",
-                    "id": "2b465ebb-9354-455d-89e4-6b7f8abb5b4d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -38,32 +20,10 @@
                     "name": "",
                     "id": "e1fb581b-3c49-47c6-8434-dd5773566d9f",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "LeftClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f233924f-781c-4e56-abe5-a4c0873912ca",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftRelease",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "523ae52f-b25f-432b-a863-d618a5019e5e",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
