@@ -23,7 +23,6 @@ public class Draggable : MonoBehaviour
     bool pressed = false;
     bool isInLimit = false;
     bool releasedInLimit = false;
-    bool blockedState = false;
     Vector2 initialPosition;
     // Start is called before the first frame update
     void Start()
@@ -44,10 +43,11 @@ public class Draggable : MonoBehaviour
             transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
             return;
         }
-        
 
+       
+        bool IsInCorrectState = !(GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION);
 
-        Vector2 targetPosition = pressed && !blockedState ? mousePosition - clickedPosition : initialPosition;
+        Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
         
         float direction = (targetPosition.x - transform.position.x) > 0 ? 1 : -1;
 
@@ -123,13 +123,13 @@ public class Draggable : MonoBehaviour
         {
             if(Mathf.Sign(transform.position.x - initialPosition.x) == 1)
             {
-                
+                GameManager.Instance.ProvideTurnManager().SwipeRight();
                 //Llamar carta hacia la derecha, se bloquea
             }
             else
             {
                 releasedInLimit = true;
-                
+                GameManager.Instance.ProvideTurnManager().SwipeLeft();
                 //Llamar carta hacia la izquierda
             }
         }
@@ -146,12 +146,5 @@ public class Draggable : MonoBehaviour
         isInLimit = NewIsInLimit;
     }
 
-    public void UnBlockState()
-    {
-        blockedState = false;
-    }
-    public void BlockState()
-    {
-        blockedState = true;
-    }
+    
 }
