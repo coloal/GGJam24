@@ -9,7 +9,7 @@ public class StatsManager : MonoBehaviour
     [Header("Stat max values")]
     [SerializeField]
     [Tooltip("Max value that Stat can reach")]
-    int StatsMaxValue;
+    int StatsMaxValue = 50;
 
     [Header("Stats initial values")]
     [SerializeField]
@@ -23,55 +23,79 @@ public class StatsManager : MonoBehaviour
     int InfluenceStat;
 
     [Header("UI for Stat bars")]
+    [SerializeField]
     Slider ViolenceStatBar;
+    [SerializeField]
     Slider MoneyStatBar;
+    [SerializeField]
     Slider InfluenceStatBar;
 
-    // These next functions are meant to be renamed to the specific stats that they change
-    public void ModifyStats(int ViolenceStat, int MoneyStat, int InfluenceStat)
+    void Start()
     {
-        //Stat += Amount;
-        //if (Stat >= StatMax) {
-            // Report that Stat has reached to the max value
-        //}
+        InitStats();
     }
 
-    void ModifyViolenceStat(int Amount) {
+    void ModifyViolenceStat(int Amount) 
+    {
         ViolenceStat += Amount;
         if (ViolenceStat >= StatsMaxValue)
         {
-            // Report that Stat has reached to the max value
-            ViolenceStatBar.value = StatsMaxValue;
+            ViolenceStat = StatsMaxValue;
         } 
-        else 
+        else if (ViolenceStat < 0)
         {
-            ViolenceStatBar.value = ViolenceStat;
+            ViolenceStat = 0;
         }
+        ViolenceStatBar.value = ViolenceStat;
     }
 
-    void ModifyMoneyStat(int Amount) {
+    void ModifyMoneyStat(int Amount) 
+    {
         MoneyStat += Amount;
         if (MoneyStat >= StatsMaxValue)
         {
-            // Report that Stat has reached to the max value
-            MoneyStatBar.value = StatsMaxValue;
+            MoneyStat = StatsMaxValue;
         } 
-        else 
+        else if (MoneyStat < 0)
         {
-            MoneyStatBar.value = MoneyStat;
+            MoneyStat = 0;
         }
+        MoneyStatBar.value = MoneyStat;
     }
 
-    void ModifyInfluenceStat(int Amount) {
+    void ModifyInfluenceStat(int Amount) 
+    {
         InfluenceStat += Amount;
         if (InfluenceStat >= StatsMaxValue)
         {
-            // Report that Stat has reached to the max value
-            InfluenceStatBar.value = StatsMaxValue;
+            InfluenceStat = StatsMaxValue;
         } 
-        else 
+        else if (InfluenceStat < 0)
         {
-            InfluenceStatBar.value = MoneyStat;
+            InfluenceStat = 0;
         }
+        InfluenceStatBar.value = InfluenceStat;
+    }
+
+    void InitStats() {
+        ViolenceStatBar.value = ViolenceStat;
+        MoneyStatBar.value = MoneyStat;
+        InfluenceStatBar.value = InfluenceStat;
+    }
+
+    public void ModifyStats(int ViolencePoints, int MoneyPoints, int InfluencePoints)
+    {
+        ModifyViolenceStat(ViolencePoints);
+        ModifyMoneyStat(MoneyPoints);
+        ModifyInfluenceStat(InfluencePoints);
+    }
+
+    
+
+    public bool HasAStatBeenDepletedOrCompleted()
+    {
+        return (ViolenceStat <= 0 || ViolenceStat >= StatsMaxValue)
+            || (MoneyStat <= 0 || MoneyStat >= StatsMaxValue)
+            || (InfluenceStat <= 0 || InfluenceStat >= StatsMaxValue);
     }
 }
