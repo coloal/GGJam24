@@ -8,15 +8,15 @@ public class GameManager : MonoBehaviour
     StatsManager StatsManager;
 
     [SerializeField]
-    TurnsManager TurnsManager;
+    CardsManager CardsManager;
 
     public StatsManager ProvideStatsManager()
     {
         return StatsManager;
     }
 
-    public TurnsManager ProvideTurnsManager()
+    public CardsManager ProvideCardsManager()
     {
-        return TurnsManager;
+        return CardsManager;
     }
 }

@@ -70,7 +70,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.64, y: -1.09}
-  m_SizeDelta: {x: 4, y: 2}
+  m_SizeDelta: {x: 45.76, y: 0.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8934316447715514411
 MeshRenderer:
@@ -134,7 +134,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Ni\xF1o adolescente que quiere que le ayudes introduci\xE9ndose en la
+    mafia. No tiene padres, ni nadie que se haga cargo de \xE9l, es un poco macarra,
+    le parece que trabajar es demasiado duro para \xE9l y prefiere molar trabajando
+    para la mafia. Es la primera carta que te aparece, rechazarle la ayuda es un
+    game over, es el primer sicario que obtiene"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -221,7 +225,7 @@ GameObject:
   - component: {fileID: -359985912787657153}
   - component: {fileID: 4256447019006546249}
   m_Layer: 0
-  m_Name: CartaJovenDesvalido
+  m_Name: CardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,12 +260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e430d198a393aa94ebaff2968da365b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DataCard: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
   BoxNameOfCard: {fileID: 1195595174732718434}
   RightTextBox: {fileID: 246627731498354141}
   LeftTextBox: {fileID: 4944321901388019671}
   DescriptionTextBox: {fileID: 8313147519765839295}
-  CardSprite: {fileID: 0}
+  CardSprite: {fileID: 3928808890945007225}
 --- !u!114 &7754520879933252307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +474,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4788554037366049577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
@@ -484,7 +487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Ayudar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -655,7 +658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Joven desvalido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -664,7 +667,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -800,7 +803,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -897,7 +900,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6926923348424409482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
@@ -910,7 +913,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Matar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -24,9 +24,9 @@ public class CardTemplate : ScriptableObject
     public List<GameObject> RightCards;
 
     //Incrementos/Decrementos
-    public int incrementBar1; //Nombre provisional pdt
-    public int incrementBar2; //Nombre provisional pdt
-    public int incrementBar3; //Nombre provisional pdt
+    public int ViolenceStat; //Nombre provisional pdt
+    public int MoneyStat; //Nombre provisional pdt
+    public int InfluenceStat; //Nombre provisional pdt
 
     //Choices text
     public string LeftText;

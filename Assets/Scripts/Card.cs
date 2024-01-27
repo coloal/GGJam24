@@ -6,8 +6,8 @@ using UnityEngine;
 public class Card : MonoBehaviour
 {
 
-    [SerializeField]
-    private CardTemplate DataCard;
+    /*[SerializeField]
+    private CardTemplate DataCard;*/
 
     [SerializeField]
     private TextMeshPro BoxNameOfCard;
@@ -42,9 +42,9 @@ public class Card : MonoBehaviour
     private List<GameObject> RightCards;
 
     //Incrementos/Decrementos
-    private int incrementBar1; //Nombre provisional pdt
-    private int incrementBar2; //Nombre provisional pdt
-    private int incrementBar3; //Nombre provisional pdt
+    private int InfluenceStat; //Nombre provisional pdt
+    private int MoneyStat; //Nombre provisional pdt
+    private int ViolenceStat; //Nombre provisional pdt
 
     //Options text
     private string LeftText;
@@ -54,36 +54,7 @@ public class Card : MonoBehaviour
     void Start()
     {
 
-        //Set informaci�n del DataCard
-        NameOfCard = DataCard.NameOfCard;
-        Name = DataCard.Name;
-        Gen = DataCard.Gen;
-        Background = DataCard.Background;
-
-        indexChats = DataCard.indexChats;
-        Chats = DataCard.Chats;
-
-        LeftChoices = DataCard.LeftChoices;
-        RightChoices = DataCard.RightChoices;
-
-        LeftCards = DataCard.LeftCards;
-        RightCards = DataCard.RightCards;
-
-        incrementBar1 = DataCard.incrementBar1; 
-        incrementBar2 = DataCard.incrementBar2;
-        incrementBar3 = DataCard.incrementBar3;
-
-        //Mostrar texto en pantalla
-        BoxNameOfCard.text = NameOfCard;
-
-        RightTextBox.text = DataCard.RightText;
-        LeftTextBox.text = DataCard.LeftText;
-        RightTextBox.enabled = false;
-        LeftTextBox.enabled = false;
-        DescriptionTextBox.text = DataCard.Background;
-        CardSprite.sprite = DataCard.CardSprite;
-        DescriptionTextBox.ComputeMarginSize();
-        DescriptionTextBox.autoSizeTextContainer = true;
+        
 
     }
 
@@ -105,4 +76,42 @@ public class Card : MonoBehaviour
         if (IsLeft) LeftTextBox.enabled = false;
         else RightTextBox.enabled = false;
     }
+
+    public void SetDataCard(CardTemplate DataCard) 
+    {
+        //Set informaci�n del DataCard
+        NameOfCard = DataCard.NameOfCard;
+        Name = DataCard.Name;
+        Gen = DataCard.Gen;
+        Background = DataCard.Background;
+
+        indexChats = DataCard.indexChats;
+        Chats = DataCard.Chats;
+
+        LeftChoices = DataCard.LeftChoices;
+        RightChoices = DataCard.RightChoices;
+
+        LeftCards = DataCard.LeftCards;
+        RightCards = DataCard.RightCards;
+
+        InfluenceStat = DataCard.InfluenceStat;
+        MoneyStat = DataCard.MoneyStat;
+        ViolenceStat = DataCard.ViolenceStat;
+
+        //Mostrar texto en pantalla
+        BoxNameOfCard.text = NameOfCard;
+
+        RightTextBox.text = DataCard.RightText;
+        LeftTextBox.text = DataCard.LeftText;
+
+        RightTextBox.enabled = false;
+        LeftTextBox.enabled = false;
+        
+        DescriptionTextBox.text = DataCard.Background;
+
+        CardSprite.sprite = DataCard.CardSprite;
+        DescriptionTextBox.ComputeMarginSize();
+        DescriptionTextBox.autoSizeTextContainer = true;
+    }
+
 }
