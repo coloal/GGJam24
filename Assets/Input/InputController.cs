@@ -17,7 +17,7 @@ public class InputController : MonoBehaviour
         Ray ray = gameCamera.ScreenPointToRay(MousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
         
-        hit.collider.GetComponent<IClickable>()?.OnClick();
+        hit.collider?.GetComponent<IClickable>()?.OnClick();
 
         /*if (Physics2D.Raycast(ray.origin, ray.direction)) 
         {
