@@ -38,7 +38,7 @@ public class Card : MonoBehaviour
     void Start()
     {
 
-        //Set información del DataCard
+        //Set informaciï¿½n del DataCard
         NameOfCard = DataCard.NameOfCard;
         Name = DataCard.Name;
         Gen = DataCard.Gen;
@@ -59,8 +59,7 @@ public class Card : MonoBehaviour
 
         //Mostrar texto en pantalla
         BoxNameOfCard.text = NameOfCard;
-
-}
+    }
 
     // Update is called once per frame
     void Update()
