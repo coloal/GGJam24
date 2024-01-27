@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using static ScenesNames;
 
-public class HitMan : MonoBehaviour
+public class HitMan : MonoBehaviour, IClickable 
 {
 
     //Type of HitMan
@@ -32,12 +32,22 @@ public class HitMan : MonoBehaviour
     private SpriteRenderer SpriteRenderer;
 
     [SerializeField]
+    private SpriteRenderer SpriteRendererNonSelected;
+
+    [SerializeField]
     private HitManTemplate Data;
 
+    private InputActions input;
+    
+    [SerializeField]
+    private Camera gameCamera;
 
     // Start is called before the first frame update
     void Start()
     {
+        input = new InputActions();
+        input.Default.Enable();
+
         SetDataHitMan();
     }
 
@@ -68,9 +78,18 @@ public class HitMan : MonoBehaviour
         SpriteRenderer.sprite = HitManSprite;
     }
 
-    public void OnLeftClick() 
+    public void OnClick() 
     {
+
+
         //Se ha seleccionado este sicario
         Debug.Log("Seleccionaste a:" + NameOfHitman);
+    }
+
+    public void OnMouseOver() {
+
+
+        //Se ha seleccionado este sicario
+        Debug.Log("encima a:" + NameOfHitman);
     }
 }
