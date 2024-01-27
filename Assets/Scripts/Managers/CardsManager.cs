@@ -20,12 +20,6 @@ public class CardsManager : MonoBehaviour
     //public static TurnsManager Instance; // A static reference to the GameManager instance
 
     public GameObject LastCard;
-    
-    void Start()
-    {
-        SpawnNextCard();
-    }
-
 
     public GameObject SpawnNextCard()
     {
@@ -37,7 +31,8 @@ public class CardsManager : MonoBehaviour
         return newCard;
     }
 
-
-   
-
+    public bool IsDeckEmpty()
+    {
+        return indexNextCard == DataCardsList.Count;
+    }
 }
