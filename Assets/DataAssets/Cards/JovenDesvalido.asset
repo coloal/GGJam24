@@ -14,14 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfCard: Joven desvalido
   Background: "Ni\xF1o adolescente que quiere que le ayudes introduci\xE9ndose en
-    la mafia. No tiene padres, ni nadie que se haga cargo de \xE9l, es un poco macarra,
-    le parece que trabajar es demasiado duro para \xE9l y prefiere molar trabajando
-    para la mafia. Es la primera carta que te aparece, rechazarle la ayuda es un
-    game over, es el primer sicario que obtiene"
+    la mafia. No tiene padres, ni nadie que se haga cargo de \xE9l, es un poco macarra."
   ViolenceStat: 1
   MoneyStat: -2
   InfluenceStat: 3
   LeftText: Matar
   RightText: Ayudar
-  CardSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  CardSprite: {fileID: 21300000, guid: 60fbee0d4477d7f45914674cb99dfebd, type: 3}
   ListHitmanTypes: 0000000001000000

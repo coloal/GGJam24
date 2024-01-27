@@ -15,11 +15,13 @@ public class CardsManager : MonoBehaviour
     private bool isSequential;
 
     [SerializeField]
+    Transform CardSpawnerOrigin;
+
     private int indexNextCard = 0;
 
     public GameObject SpawnNextCard()
     {
-        GameObject newCard = Instantiate(CardPrefab, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);
         newCard.GetComponent<Card>().SetDataCard(DataCardsList[indexNextCard]);
         
         indexNextCard++;
