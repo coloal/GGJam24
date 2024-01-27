@@ -90,6 +90,8 @@ public class StatsManager : MonoBehaviour
         ModifyInfluenceStat(InfluencePoints);
     }
 
+    
+
     public bool HasAStatBeenDepletedOrCompleted()
     {
         return (ViolenceStat <= 0 || ViolenceStat >= StatsMaxValue)
