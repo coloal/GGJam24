@@ -18,6 +18,7 @@ public class Draggable : MonoBehaviour
     [SerializeField] float MaxFinalRotation = 30;
     [SerializeField] float FinalRotationVelocity = 10;
     [SerializeField] float EscapeAcceleration = 100;
+     bool IsActive = true;
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
@@ -129,6 +130,8 @@ public class Draggable : MonoBehaviour
 
     void OnLeftRelease()
     {
+        if (!IsActive) return;
+        IsActive = false;
         pressed = false;
 
         if (isInLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))

@@ -106,6 +106,8 @@ public class TurnManager : MonoBehaviour
     {
         PhoneObject.SetActive(false);
         OverlayImage.SetActive(false);
+        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
+        DestroyCard();
         CheckForEndGame();
     }
 
@@ -160,15 +162,15 @@ public class TurnManager : MonoBehaviour
     public void OnHitmenSelected(HitManTypes selectedHitman) {
         CalculateStats();
         CalculateHitmanStats(selectedHitman);
-        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
-        DestroyCard();
         PhoneObject.SetActive(true);
     }
 
 
     private void DestroyCard()
     {
+
         GameObject CardToDestroy = CurrentCard.gameObject;
+        CardToDestroy.GetComponent<BoxCollider2D>().enabled = false;
         Utils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 
