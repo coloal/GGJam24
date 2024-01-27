@@ -80,10 +80,7 @@ public class HitMan : MonoBehaviour, IClickable
 
     public void OnClick() 
     {
-
-
-        //Se ha seleccionado este sicario
-        Debug.Log("Seleccionaste a:" + NameOfHitman);
+        GameManager.Instance.ProvideTurnManager().OnHitmenSelected(HitManType);
     }
 
     public void OnMouseOver() 
