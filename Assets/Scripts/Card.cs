@@ -9,7 +9,20 @@ public class Card : MonoBehaviour
     [SerializeField]
     private CardTemplate DataCard;
 
-    [SerializeField] private TextMeshPro BoxNameOfCard;
+    [SerializeField]
+    private TextMeshPro BoxNameOfCard;
+
+    [SerializeField]
+    private TextMeshPro RightTextBox;
+
+    [SerializeField]
+    private TextMeshPro LeftTextBox;
+
+    [SerializeField]
+    private TextMeshPro DescriptionTextBox;
+
+    [SerializeField]
+    private SpriteRenderer CardSprite;
 
     //Information of the card
     private string NameOfCard;
@@ -33,6 +46,9 @@ public class Card : MonoBehaviour
     private int incrementBar2; //Nombre provisional pdt
     private int incrementBar3; //Nombre provisional pdt
 
+    //Options text
+    private string LeftText;
+    private string RightText;
 
     // Start is called before the first frame update
     void Start()
@@ -59,11 +75,34 @@ public class Card : MonoBehaviour
 
         //Mostrar texto en pantalla
         BoxNameOfCard.text = NameOfCard;
+
+        RightTextBox.text = DataCard.RightText;
+        LeftTextBox.text = DataCard.LeftText;
+        RightTextBox.enabled = false;
+        LeftTextBox.enabled = false;
+        DescriptionTextBox.text = DataCard.Background;
+        CardSprite.sprite = DataCard.CardSprite;
+        DescriptionTextBox.ComputeMarginSize();
+        DescriptionTextBox.autoSizeTextContainer = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ShowText(bool IsLeft)
+    {
+
+        if(IsLeft) LeftTextBox.enabled = true;
+        else RightTextBox.enabled = true;
+    }
+
+    public void HideText(bool IsLeft)
+    {
+        if (IsLeft) LeftTextBox.enabled = false;
+        else RightTextBox.enabled = false;
     }
 }

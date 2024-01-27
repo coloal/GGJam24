@@ -28,5 +28,10 @@ public class CardTemplate : ScriptableObject
     public int incrementBar2; //Nombre provisional pdt
     public int incrementBar3; //Nombre provisional pdt
 
-    
+    //Choices text
+    public string LeftText;
+    public string RightText;
+
+    //Card sprite
+    public Sprite CardSprite;
 }

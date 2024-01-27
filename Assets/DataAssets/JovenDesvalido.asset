@@ -15,6 +15,7 @@ MonoBehaviour:
   NameOfCard: Joven desvalido
   Name: Billy Boy
   Gen: Hombre
+  Age: 0
   Background: "Ni\xF1o adolescente que quiere que le ayudes introduci\xE9ndose en
     la mafia. No tiene padres, ni nadie que se haga cargo de \xE9l, es un poco macarra,
     le parece que trabajar es demasiado duro para \xE9l y prefiere molar trabajando
@@ -42,3 +43,6 @@ MonoBehaviour:
   incrementBar1: 0
   incrementBar2: 0
   incrementBar3: 0
+  LeftText: Matar
+  RightText: Ayudar
+  CardSprite: {fileID: 0}

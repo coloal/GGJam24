@@ -11,16 +11,19 @@ public class Draggable : MonoBehaviour
     [SerializeField] private float maxVelocity = 3;
 
     [SerializeField] float brakeDistance = 10;
-    [SerializeField] float EscapeDistance = 3;
+    [SerializeField] float EscapeDistance = 5;
     [SerializeField] float RotateDistance = 5;
-    [SerializeField] float MaxArcRotation = 30;
+    [SerializeField] float MaxArcRotation = 15;
     [SerializeField] float MaxFinalRotation = 30;
     [SerializeField] float FinalRotationVelocity = 10;
+    [SerializeField] float EscapeAcceleration = 100;
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool pressed = false;
     bool isInLimit = false;
+    bool releasedInLimit = false;
+    
     Vector2 initialPosition;
     // Start is called before the first frame update
     void Start()
@@ -31,16 +34,25 @@ public class Draggable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+        if (releasedInLimit)
+        {
+            float position = (transform.position.x - initialPosition.x) > 0 ? 1 : -1;
+            position *= EscapeAcceleration;
+            velocity += (position * Time.deltaTime);
+            transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
+            return;
+        }
+        
+        Vector2 targetPosition = pressed ? mousePosition - clickedPosition : initialPosition;
+        float direction = (targetPosition.x - transform.position.x) > 0 ? 1 : -1;
 
 
-        Vector2 position = pressed ? mousePosition - clickedPosition : initialPosition;
-
-
-
-        float distance = Mathf.Abs(transform.position.x - position.x);
+        float distance = Mathf.Abs(transform.position.x - targetPosition.x);
 
         float actualMaxVelocity = distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, distance / brakeDistance);
-        float direction = (position.x - transform.position.x) > 0 ? 1 : -1;
+       
 
 
 
@@ -62,7 +74,7 @@ public class Draggable : MonoBehaviour
                 transform.eulerAngles += new Vector3(0, 0, -FinalRotationVelocity) * Time.deltaTime;
             }
             velocity = Mathf.Min(0, velocity);
-            isInLimit = true;
+            
         }
         else if (transform.position.x <= Camera.main.ScreenToWorldPoint(Vector2.zero).x + EscapeDistance)
         {
@@ -78,11 +90,10 @@ public class Draggable : MonoBehaviour
             }
 
             velocity = Mathf.Max(0, velocity);
-            isInLimit = true;
         }
         else
         {
-            isInLimit = false;
+            
             float totalDistance = (Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x - EscapeDistance - initialPosition.x);
             float alreadyTraveled = transform.position.x - initialPosition.x;
             if (alreadyTraveled > 0) transform.eulerAngles = new Vector3(0, 0, -Mathf.Lerp(0, MaxArcRotation, alreadyTraveled / totalDistance));
@@ -91,7 +102,7 @@ public class Draggable : MonoBehaviour
 
 
         transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
-
+        if(transform.position.y > initialPosition.y) transform.position = new Vector2(transform.position.x,initialPosition.y);  
 
     }
 
@@ -104,6 +115,7 @@ public class Draggable : MonoBehaviour
     void OnLeftRelease()
     {
         pressed = false;
+        if (isInLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x) || Mathf.Abs(velocity) < 0.5)) releasedInLimit = true;
     }
 
     void OnMouseMove(InputValue value)
@@ -112,4 +124,8 @@ public class Draggable : MonoBehaviour
         //Debug.Log(value.Get<Vector2>());
     }
 
+    public void SetInLimit(bool NewIsInLimit)
+    {
+        isInLimit = NewIsInLimit;
+    }
 }
