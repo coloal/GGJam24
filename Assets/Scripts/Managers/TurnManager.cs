@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnManager : MonoBehaviour
 {
+    [SerializeField]
+    Image OverlayImage;
+
     GameStates CurrentGameState;
 
     CardsManager CardsManager;
@@ -16,6 +20,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         SetUpManagers();
+        OverlayImage.enabled = false;
     }
 
     void SetUpManagers()
@@ -113,6 +118,7 @@ public class TurnManager : MonoBehaviour
     {
         Debug.Log("I swiped right");
         SetGameState(GameStates.PICK_A_HITMAN);
+        OverlayImage.enabled = true;
         // HitmenManager
     }
 
@@ -131,6 +137,7 @@ public class TurnManager : MonoBehaviour
         CalculateHitmanStats(selectedHitman);
         CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
         DestroyCard();
+        OverlayImage.enabled = false;
     }
 
     private void DestroyCard()
