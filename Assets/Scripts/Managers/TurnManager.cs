@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
@@ -8,9 +9,18 @@ using UnityEngine.UI;
 public class TurnManager : MonoBehaviour
 {
     [SerializeField]
-    Image OverlayImage;
+    GameObject OverlayImage;
+
+    [SerializeField]
+    GameObject PhoneObject;
+    [SerializeField]
+    TextMeshPro NameFeedbackBox;
+    [SerializeField]
+    TextMeshPro TextFeedbackBox;
 
     GameStates CurrentGameState;
+
+
 
     CardsManager CardsManager;
     StatsManager StatsManager;
@@ -20,7 +30,8 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         SetUpManagers();
-        OverlayImage.enabled = false;
+        OverlayImage.SetActive(false);
+        PhoneObject.SetActive(false);
     }
 
     void SetUpManagers()
@@ -78,9 +89,23 @@ public class TurnManager : MonoBehaviour
                 info.MoneyStat,
                 info.InfluenceStat
             );
-
+            GivePhoneFeedback(info.FeedbackName,info.FeedbackText);
         }
+        
+        
+    }
 
+    public void GivePhoneFeedback(string name, string text)
+    {
+        PhoneObject.SetActive( true );
+        NameFeedbackBox.text = name;
+        TextFeedbackBox.text = text;
+    }
+
+    public void AcceptPhoneBuble()
+    {
+        PhoneObject.SetActive(false);
+        OverlayImage.SetActive(false);
         CheckForEndGame();
     }
 
@@ -118,7 +143,7 @@ public class TurnManager : MonoBehaviour
     {
         Debug.Log("I swiped right");
         SetGameState(GameStates.PICK_A_HITMAN);
-        OverlayImage.enabled = true;
+        OverlayImage.SetActive(true);
         // HitmenManager
     }
 
@@ -137,8 +162,9 @@ public class TurnManager : MonoBehaviour
         CalculateHitmanStats(selectedHitman);
         CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
         DestroyCard();
-        OverlayImage.enabled = false;
+        PhoneObject.SetActive(true);
     }
+
 
     private void DestroyCard()
     {
