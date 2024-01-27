@@ -68,7 +68,7 @@ public class TurnManager : MonoBehaviour
     {
         if (CurrentCard != null)
         {
-            Destroy(CurrentCard.gameObject);
+            DestroyCard();
         }
         CalculateStats();
     }
@@ -92,5 +92,13 @@ public class TurnManager : MonoBehaviour
 
     public void OnHitmenSelected() {
         CalculateStats();
+        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
+        DestroyCard();
     }
+
+    private void DestroyCard()
+    {
+        Utils.createTemporizer(() => Destroy(CurrentCard.gameObject), 1, this);
+    }
+
 }

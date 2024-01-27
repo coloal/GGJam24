@@ -22,7 +22,8 @@ public class Draggable : MonoBehaviour
     Vector2 clickedPosition = Vector2.zero;
     bool pressed = false;
     bool isInLimit = false;
-    bool releasedInLimit = false;
+    bool releasedInLimitLeft = false;
+    bool releasedInLimitRight = false;
     Vector2 initialPosition;
     // Start is called before the first frame update
     void Start()
@@ -34,19 +35,26 @@ public class Draggable : MonoBehaviour
     void Update()
     {
         
-
-        if (releasedInLimit)
+       
+        if (releasedInLimitLeft)
         {
-            float position = (transform.position.x - initialPosition.x) > 0 ? 1 : -1;
+            float position =  -1;
             position *= EscapeAcceleration;
             velocity += (position * Time.deltaTime);
             transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
             return;
         }
 
-       
-        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        if (releasedInLimitRight)
+        {
+            float position = 1;
+            position *= EscapeAcceleration;
+            velocity += (position * Time.deltaTime);
+            transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
+            return;
+        }
 
+        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
         Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
         
         float direction = (targetPosition.x - transform.position.x) > 0 ? 1 : -1;
@@ -123,14 +131,13 @@ public class Draggable : MonoBehaviour
         {
             if(Mathf.Sign(transform.position.x - initialPosition.x) == 1)
             {
-                GameManager.Instance.ProvideTurnManager().SwipeRight();
-                //Llamar carta hacia la derecha, se bloquea
+                GameManager.Instance.ProvideTurnManager().SwipeRight();   
             }
             else
             {
-                releasedInLimit = true;
+                releasedInLimitLeft = true;
                 GameManager.Instance.ProvideTurnManager().SwipeLeft();
-                //Llamar carta hacia la izquierda
+                
             }
         }
     }
@@ -147,4 +154,9 @@ public class Draggable : MonoBehaviour
     }
 
     
+    public void FinalSwipeRight()
+    {
+        releasedInLimitRight = true;
+    }
+
 }
