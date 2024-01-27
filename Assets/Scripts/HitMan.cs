@@ -84,7 +84,22 @@ public class HitMan : MonoBehaviour, IClickable
     }
 
     public void OnMouseOver() 
+        {
+        activateSpriteOnOver(true);
+
+        /*
+        if (GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.PICK_A_HITMAN) 
+        {
+        }*/
+
+        //Se ha seleccionado este sicario
+        Debug.Log("encima a:" + NameOfHitman);
+    }
+
+    public void activateSpriteOnOver(bool bo) 
     {
-                
+        //SpriteRendererNonSelected.enabled = bo;
+
+        SpriteRenderer.GetComponent<SpriteRenderer>().enabled = bo;
     }
 }
