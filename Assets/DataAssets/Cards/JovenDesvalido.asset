@@ -13,36 +13,15 @@ MonoBehaviour:
   m_Name: JovenDesvalido
   m_EditorClassIdentifier: 
   NameOfCard: Joven desvalido
-  Name: Billy Boy
-  Gen: Hombre
-  Age: 0
   Background: "Ni\xF1o adolescente que quiere que le ayudes introduci\xE9ndose en
     la mafia. No tiene padres, ni nadie que se haga cargo de \xE9l, es un poco macarra,
     le parece que trabajar es demasiado duro para \xE9l y prefiere molar trabajando
     para la mafia. Es la primera carta que te aparece, rechazarle la ayuda es un
     game over, es el primer sicario que obtiene"
-  indexChats: 0
-  Chats:
-  - "Se\xF1or@, no me queda nada, estoy harto de comer de lo que me da la calle.
-    Le puedo servir para acojonar a sus **** morosos"
-  - "Se\xF1or@, no me queda nada, estoy harto de comer de lo que me da la calle.
-    He aprendido a jugar con la bolita y unos vasos, podr\xEDa ser tus ojos y tus
-    o\xEDdos"
-  - "Se\xF1or@, no me queda nada, estoy harto de comer de lo que me da la calle.
-    Estoy desperado, por favor, s\xE9 que soy un puto in\xFAtil, ayud\xE9me!!!!!"
-  LeftChoices:
-  - a
-  - a
-  - a
-  RightChoices:
-  - b
-  - b
-  - b
-  LeftCards: []
-  RightCards: []
-  ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  ViolenceStat: 1
+  MoneyStat: -2
+  InfluenceStat: 3
   LeftText: Matar
   RightText: Ayudar
   CardSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  ListHitmanTypes: 0000000001000000
