@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New CardData", menuName = "CardData")]
+
+
+[System.Serializable]
+public class HitmanInfo
+{
+    public int ViolenceStat = 0;
+    public int MoneyStat = 0;
+    public int InfluenceStat = 0;
+}
+
 public class CardTemplate : ScriptableObject
 {
     //Information of the card
@@ -22,4 +32,7 @@ public class CardTemplate : ScriptableObject
     public Sprite CardSprite;
 
     public List<HitManTypes> ListHitmanTypes;
+    public HitmanInfo Contable;
+    public HitmanInfo Maton;
+    public HitmanInfo Comisario;
 }

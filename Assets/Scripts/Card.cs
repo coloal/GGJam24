@@ -33,6 +33,9 @@ public class Card : MonoBehaviour
     public int ViolenceStat;
 
     public List<HitManTypes> ListHitmanTypes;
+    public HitmanInfo Contable;
+    public HitmanInfo Maton;
+    public HitmanInfo Comisario;
 
     public void ShowText(bool IsLeft)
     {
@@ -83,6 +86,10 @@ public class Card : MonoBehaviour
         CardSprite.sprite = DataCard.CardSprite;
 
         ListHitmanTypes = DataCard.ListHitmanTypes;
-    }
+
+        Contable = DataCard.Contable;
+        Maton = DataCard.Maton;
+        Comisario = DataCard.Comisario;
+}
 
 }

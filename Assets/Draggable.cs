@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -119,8 +120,11 @@ public class Draggable : MonoBehaviour
 
     void OnLeftClick()
     {
-        pressed = true;
-        clickedPosition = mousePosition;
+        if (this.GetComponent<BoxCollider2D>().bounds.Contains(mousePosition))
+        {
+            pressed = true;
+            clickedPosition = mousePosition;
+        }
     }
 
     void OnLeftRelease()
