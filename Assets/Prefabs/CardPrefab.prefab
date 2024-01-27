@@ -265,6 +265,9 @@ MonoBehaviour:
   LeftTextBox: {fileID: 4944321901388019671}
   DescriptionTextBox: {fileID: 8313147519765839295}
   CardSprite: {fileID: 3928808890945007225}
+  InfluenceStat: 0
+  MoneyStat: 0
+  ViolenceStat: 0
 --- !u!114 &7754520879933252307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +362,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!50 &4256447019006546249
 Rigidbody2D:

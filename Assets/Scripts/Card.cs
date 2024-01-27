@@ -42,9 +42,9 @@ public class Card : MonoBehaviour
     private List<GameObject> RightCards;
 
     //Incrementos/Decrementos
-    private int InfluenceStat; //Nombre provisional pdt
-    private int MoneyStat; //Nombre provisional pdt
-    private int ViolenceStat; //Nombre provisional pdt
+    public int InfluenceStat; //Nombre provisional pdt
+    public int MoneyStat; //Nombre provisional pdt
+    public int ViolenceStat; //Nombre provisional pdt
 
     //Options text
     private string LeftText;
