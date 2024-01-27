@@ -8,6 +8,8 @@ using UnityEngine;
 [System.Serializable]
 public class HitmanInfo
 {
+    public string Name;
+    public string FeedbackText;
     public int ViolenceStat = 0;
     public int MoneyStat = 0;
     public int InfluenceStat = 0;
