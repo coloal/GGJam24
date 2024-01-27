@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    GameStates CurrentGameState;
+
     CardsManager CardsManager;
     StatsManager StatsManager;
 
@@ -23,12 +26,16 @@ public class TurnManager : MonoBehaviour
 
     void GetNewCard()
     {
+        SetGameState(GameStates.SHOW_CARD);
         GameObject SpawnedCard = CardsManager.SpawnNextCard();
         CurrentCard = SpawnedCard.GetComponent<Card>();
+        SetGameState(GameStates.MAKE_DECISION);
     }
 
     void CalculateStats() 
     {
+        SetGameState(GameStates.STATS_CALCULATION);
+
         if (StatsManager != null && CurrentCard != null)
         {
             StatsManager.ModifyStats(
@@ -69,5 +76,21 @@ public class TurnManager : MonoBehaviour
     public void SwipeRight()
     {
         Debug.Log("I swiped right");
+        SetGameState(GameStates.PICK_A_HITMAN);
+        // HitmenManager
+    }
+
+    void SetGameState(GameStates State)
+    {
+        CurrentGameState = State;
+    }
+
+    public GameStates GetCurrentGameState()
+    {
+        return CurrentGameState;
+    }
+
+    public void OnHitmenSelected() {
+        CalculateStats();
     }
 }
