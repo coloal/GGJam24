@@ -135,7 +135,8 @@ public class TurnManager : MonoBehaviour
 
     private void DestroyCard()
     {
-        Utils.createTemporizer(() => Destroy(CurrentCard.gameObject), 1, this);
+        GameObject CardToDestroy = CurrentCard.gameObject;
+        Utils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 
 }

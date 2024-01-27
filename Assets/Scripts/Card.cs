@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-
-    /*[SerializeField]
-    private CardTemplate DataCard;*/
-
     [SerializeField]
     private TextMeshPro BoxNameOfCard;
 
     [SerializeField]
-    private TextMeshPro RightTextBox;
+    private GameObject RightTextBoxContainer;
+    [SerializeField]
+    private TextMeshProUGUI RightText;
 
     [SerializeField]
-    private TextMeshPro LeftTextBox;
+    private GameObject LeftTextBoxContainer;
+    [SerializeField]
+    private TextMeshProUGUI LeftText;
 
     [SerializeField]
-    private TextMeshPro DescriptionTextBox;
+    private TextMeshPro DescriptionText;
 
     [SerializeField]
     private SpriteRenderer CardSprite;
@@ -40,14 +40,26 @@ public class Card : MonoBehaviour
     public void ShowText(bool IsLeft)
     {
 
-        if(IsLeft) LeftTextBox.enabled = true;
-        else RightTextBox.enabled = true;
+        if (IsLeft)
+        {
+            LeftTextBoxContainer.SetActive(true);
+        }
+        else 
+        {
+            RightTextBoxContainer.SetActive(true);
+        } 
     }
 
     public void HideText(bool IsLeft)
     {
-        if (IsLeft) LeftTextBox.enabled = false;
-        else RightTextBox.enabled = false;
+        if (IsLeft)
+        {
+            LeftTextBoxContainer.SetActive(false);
+        }
+        else
+        {
+            RightTextBoxContainer.SetActive(false);
+        }
     }
 
     public void SetDataCard(CardTemplate DataCard) 
@@ -62,17 +74,16 @@ public class Card : MonoBehaviour
         //Mostrar texto en pantalla
         BoxNameOfCard.text = NameOfCard;
 
-        RightTextBox.text = DataCard.RightText;
-        LeftTextBox.text = DataCard.LeftText;
+        RightText.text = DataCard.RightText;
+        LeftText.text = DataCard.LeftText;
 
-        RightTextBox.enabled = false;
-        LeftTextBox.enabled = false;
+        RightTextBoxContainer.SetActive(false);
+        LeftTextBoxContainer.SetActive(false);
         
-        DescriptionTextBox.text = DataCard.Background;
+        DescriptionText.text = DataCard.Background;
+        DescriptionText.GetComponent<MeshRenderer>().sortingLayerID = CardSprite.sortingLayerID;
 
         CardSprite.sprite = DataCard.CardSprite;
-        DescriptionTextBox.ComputeMarginSize();
-        DescriptionTextBox.autoSizeTextContainer = true;
 
         ListHitmanTypes = DataCard.ListHitmanTypes;
 

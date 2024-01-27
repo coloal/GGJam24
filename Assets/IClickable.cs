@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IClickable
 {
-    public void Onclick();
+    public void OnClick();
+    public void OnMouseOver();
 }

@@ -68,6 +68,54 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Controller",
+            "id": "5316661b-874c-4755-9dbd-eeb3fe2e9838",
+            "actions": [
+                {
+                    "name": "MouseOverRay",
+                    "type": "Value",
+                    "id": "829d2720-2ed2-4d2b-b112-4c043f58822a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftClickRay",
+                    "type": "Button",
+                    "id": "64735738-01a6-428e-901a-5ca1860db073",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1bce9e91-e718-4b3b-8079-9f80927546f4",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseOverRay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a99d4bbc-c610-4e1e-aec6-12d1db516584",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftClickRay",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
