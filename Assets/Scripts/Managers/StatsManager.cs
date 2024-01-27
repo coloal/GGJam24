@@ -9,7 +9,7 @@ public class StatsManager : MonoBehaviour
     [Header("Stat max values")]
     [SerializeField]
     [Tooltip("Max value that Stat can reach")]
-    int StatsMaxValue;
+    int StatsMaxValue = 50;
 
     [Header("Stats initial values")]
     [SerializeField]
