@@ -45,6 +45,42 @@ public class TurnManager : MonoBehaviour
             );
         }
 
+        CheckForEndGame();
+    }
+
+    void CalculateHitmanStats(HitManTypes SelectedHitman)
+    {
+        SetGameState(GameStates.STATS_CALCULATION);
+
+        if (StatsManager != null && CurrentCard != null)
+        {
+            HitmanInfo info = null;
+            switch (SelectedHitman)
+            {
+                case HitManTypes.Maton:
+                    info = CurrentCard.Maton;
+                    break;
+                case HitManTypes.Contable:
+                    info = CurrentCard.Contable;
+                    break;
+                case HitManTypes.Comisario:
+                    info = CurrentCard.Comisario;
+                    break;
+                default: break;
+            }
+            StatsManager.ModifyStats(
+                info.ViolenceStat,
+                info.MoneyStat,
+                info.InfluenceStat
+            );
+
+        }
+
+        CheckForEndGame();
+    }
+
+    public void CheckForEndGame()
+    {
         if (StatsManager.HasAStatBeenDepletedOrCompleted())
         {
             GameManager.Instance.FinishGame();
@@ -90,8 +126,9 @@ public class TurnManager : MonoBehaviour
         return CurrentGameState;
     }
 
-    public void OnHitmenSelected() {
+    public void OnHitmenSelected(HitManTypes selectedHitman) {
         CalculateStats();
+        CalculateHitmanStats(selectedHitman);
         CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
         DestroyCard();
     }
