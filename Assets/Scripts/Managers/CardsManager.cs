@@ -17,10 +17,6 @@ public class CardsManager : MonoBehaviour
     [SerializeField]
     private int indexNextCard = 0;
 
-    //public static TurnsManager Instance; // A static reference to the GameManager instance
-
-    public GameObject LastCard;
-
     public GameObject SpawnNextCard()
     {
         CardPrefab.GetComponent<Card>().SetDataCard(DataCardsList[indexNextCard]);

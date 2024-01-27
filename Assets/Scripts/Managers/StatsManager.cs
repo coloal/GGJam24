@@ -23,9 +23,17 @@ public class StatsManager : MonoBehaviour
     int InfluenceStat;
 
     [Header("UI for Stat bars")]
+    [SerializeField]
     Slider ViolenceStatBar;
+    [SerializeField]
     Slider MoneyStatBar;
+    [SerializeField]
     Slider InfluenceStatBar;
+
+    void Start()
+    {
+        InitStats();
+    }
 
     void ModifyViolenceStat(int Amount) 
     {
@@ -66,6 +74,12 @@ public class StatsManager : MonoBehaviour
         {
             InfluenceStat = 0;
         }
+        InfluenceStatBar.value = InfluenceStat;
+    }
+
+    void InitStats() {
+        ViolenceStatBar.value = ViolenceStat;
+        MoneyStatBar.value = MoneyStat;
         InfluenceStatBar.value = InfluenceStat;
     }
 
