@@ -34,4 +34,6 @@ public class CardTemplate : ScriptableObject
 
     //Card sprite
     public Sprite CardSprite;
+
+    public List<HitManTypes> ListHitmanTypes;
 }

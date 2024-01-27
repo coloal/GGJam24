@@ -50,6 +50,8 @@ public class Card : MonoBehaviour
     private string LeftText;
     private string RightText;
 
+    public List<HitManTypes> ListHitmanTypes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,6 +114,8 @@ public class Card : MonoBehaviour
         CardSprite.sprite = DataCard.CardSprite;
         DescriptionTextBox.ComputeMarginSize();
         DescriptionTextBox.autoSizeTextContainer = true;
+
+        ListHitmanTypes = DataCard.ListHitmanTypes;
     }
 
 }

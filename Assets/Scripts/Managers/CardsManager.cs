@@ -19,8 +19,8 @@ public class CardsManager : MonoBehaviour
 
     public GameObject SpawnNextCard()
     {
-        CardPrefab.GetComponent<Card>().SetDataCard(DataCardsList[indexNextCard]);
         GameObject newCard = Instantiate(CardPrefab, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        newCard.GetComponent<Card>().SetDataCard(DataCardsList[indexNextCard]);
         
         indexNextCard++;
 
