@@ -53,4 +53,9 @@ public class GameManager : MonoBehaviour
     {
         return CardsManager;
     }
+
+    public TurnManager ProvideTurnManager()
+    {
+        return TurnManager;
+    }
 }
