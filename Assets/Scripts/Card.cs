@@ -37,9 +37,11 @@ public class Card : MonoBehaviour
     public HitmanInfo Maton;
     public HitmanInfo Comisario;
 
+    bool CardIsActive = true;
+
     public void ShowText(bool IsLeft)
     {
-
+        if (!CardIsActive) return;
         if (IsLeft)
         {
             LeftTextBoxContainer.SetActive(true);
@@ -90,6 +92,18 @@ public class Card : MonoBehaviour
         Contable = DataCard.Contable;
         Maton = DataCard.Maton;
         Comisario = DataCard.Comisario;
+        
 }
 
+
+    public void GoToBackGroundAndDeactivate()
+    {
+        BoxNameOfCard.sortingOrder = -2;
+        CardSprite.sortingOrder = -3;
+        DescriptionText.sortingOrder = -2;
+        LeftTextBoxContainer.SetActive(false);
+        RightTextBoxContainer.SetActive(false);
+        CardIsActive = false;
+        
+    }
 }

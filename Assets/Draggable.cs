@@ -130,14 +130,15 @@ public class Draggable : MonoBehaviour
 
     void OnLeftRelease()
     {
-        if (!IsActive) return;
-        IsActive = false;
+        
         pressed = false;
 
         if (isInLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))
         {
             if(Mathf.Sign(transform.position.x - initialPosition.x) == 1)
             {
+                if (!IsActive) return;
+                IsActive = false;
                 GameManager.Instance.ProvideTurnManager().SwipeRight();   
             }
             else

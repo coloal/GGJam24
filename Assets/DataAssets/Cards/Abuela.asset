@@ -24,8 +24,8 @@ MonoBehaviour:
   ListHitmanTypes: 0000000001000000
   Contable:
     Name: 
-    FeedbackName: 
-    FeedbackText: 
+    FeedbackName: Feedback Name
+    FeedbackText: Fedback text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     ViolenceStat: 0
     MoneyStat: 0
     InfluenceStat: 0

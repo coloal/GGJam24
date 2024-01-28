@@ -159,7 +159,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &2968210544145072445
 MonoBehaviour:
@@ -412,7 +412,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8313147519765839295
 MonoBehaviour:
@@ -779,18 +779,21 @@ MonoBehaviour:
   ListHitmanTypes: 
   Contable:
     Name: 
+    FeedbackName: 
     FeedbackText: 
     ViolenceStat: 0
     MoneyStat: 0
     InfluenceStat: 0
   Maton:
     Name: 
+    FeedbackName: 
     FeedbackText: 
     ViolenceStat: 0
     MoneyStat: 0
     InfluenceStat: 0
   Comisario:
     Name: 
+    FeedbackName: 
     FeedbackText: 
     ViolenceStat: 0
     MoneyStat: 0
@@ -1070,7 +1073,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1195595174732718434
 MonoBehaviour:
@@ -1299,7 +1302,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 60fbee0d4477d7f45914674cb99dfebd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1372,7 +1375,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &5517551158498032820
 MonoBehaviour:

@@ -61,7 +61,7 @@ public class TurnManager : MonoBehaviour
             );
         }
 
-        CheckForEndGame();
+        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
     }
 
     void CalculateHitmanStats(HitManTypes SelectedHitman)
@@ -108,7 +108,7 @@ public class TurnManager : MonoBehaviour
         OverlayImage.SetActive(false);
         CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
         DestroyCard();
-        CheckForEndGame();
+        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
     }
 
     public void CheckForEndGame()
@@ -146,6 +146,7 @@ public class TurnManager : MonoBehaviour
         Debug.Log("I swiped right");
         SetGameState(GameStates.PICK_A_HITMAN);
         OverlayImage.SetActive(true);
+        CurrentCard.GoToBackGroundAndDeactivate();
         // HitmenManager
     }
 
@@ -160,7 +161,6 @@ public class TurnManager : MonoBehaviour
     }
 
     public void OnHitmenSelected(HitManTypes selectedHitman) {
-        CalculateStats();
         CalculateHitmanStats(selectedHitman);
         PhoneObject.SetActive(true);
     }
