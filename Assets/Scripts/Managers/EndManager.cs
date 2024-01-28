@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EndManager : MonoBehaviour
@@ -10,6 +11,15 @@ public class EndManager : MonoBehaviour
 
     [SerializeField]
     List<string> FinalTexts;
+
+    [SerializeField]
+    GameObject FinalGameObject;
+
+    [SerializeField]
+    TextMeshPro TextBox;
+
+    [SerializeField]
+    GameObject ButtonChangeScene;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +72,12 @@ public class EndManager : MonoBehaviour
 
     private void ActivateFinish() 
     {
-        Debug.Log("Final " + IndexFinal);
+        //Debug.Log("Final " + IndexFinal);
+
+        TextBox.text = FinalTexts[IndexFinal];
+
+        ButtonChangeScene.SetActive(true);
+        FinalGameObject.SetActive(true);
+
     }
 }
