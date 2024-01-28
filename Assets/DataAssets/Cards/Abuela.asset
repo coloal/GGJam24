@@ -15,31 +15,34 @@ MonoBehaviour:
   NameOfCard: Marietta
   Background: "Chiquitin, tengo un nuevo vecino erasmus que no para de darme la lata,
     el puto guiri es un toca ovarios de manual, \xBFpodr\xEDas ayudarme a amansarle?"
-  ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  ViolenceStat: -10
+  MoneyStat: 5
+  InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: Erasmus go home!
   CardSprite: {fileID: 21300000, guid: 9fb09ab02ef37fe4c8d9475f8ac69fe6, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 01000000
   Contable:
-    Name: 
-    FeedbackName: Feedback Name
-    FeedbackText: Fedback text aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    ViolenceStat: 0
+    Name: Contable
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "Bro, por qu\xE9 no me dijiste que mi madre te hab\xEDa pedido
+      ayuda???"
+    ViolenceStat: -5
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: -10
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: Bro, fui a ayudar a mi madre. Dice que nos pasemos a comer a su
+      silenciosa casa el domingo ;)
+    ViolenceStat: 15
+    MoneyStat: 15
+    InfluenceStat: 10
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
+    Name: Comisario
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "Bro, por qu\xE9 no me dijiste que mi madre te hab\xEDa pedido
+      ayuda???"
+    ViolenceStat: -5
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: -10

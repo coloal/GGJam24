@@ -15,31 +15,35 @@ MonoBehaviour:
   NameOfCard: JuanDeDios
   Background: "Hey, entre tu y yo, vaya mierda de nombre le hab\xE9is puesto al juego,
     \xBFno? \xBFQuieres que te proponga un par de nombres alternativos?"
-  ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  ViolenceStat: -10
+  MoneyStat: -10
+  InfluenceStat: -10
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: "\xBFCon qui\xE9n preferir\xEDa hablar el bueno de JuanDe?"
   CardSprite: {fileID: 21300000, guid: 040df0774c5ec5045bf59b57f320b320, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 000000000100000002000000
   Contable:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Contable
+    FeedbackName: Contable
+    FeedbackText: 'Donnie, el branding lo llevamos en legal, intenta no distraernos
+      con creativos, gracias '
+    ViolenceStat: -5
+    MoneyStat: -5
+    InfluenceStat: -5
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "Hey bro, s\xE9 que soy el personaje ultraviolento pero replanteate
+      un poco esta \xFAltima decisi\xF3n."
+    ViolenceStat: -5
+    MoneyStat: -5
+    InfluenceStat: -5
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Comisario corrupto
+    FeedbackName: Comisario corrupto
+    FeedbackText: "Buenas Don, estuve hablando con ese tal JuanDe que me enviaste,
+      estuvimos hablando un buen rato de psicolog\xEDa perruna. Gracias, me hizo
+      sentir escucado :)"
+    ViolenceStat: 5
+    MoneyStat: 5
+    InfluenceStat: 5

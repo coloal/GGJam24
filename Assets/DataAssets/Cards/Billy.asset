@@ -21,25 +21,27 @@ MonoBehaviour:
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar
   CardSprite: {fileID: 21300000, guid: 7ee20b6cdd462d74fbd42ce6dbf59fc0, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 01000000
   Contable:
     Name: Contable
     FeedbackName: Contable
-    FeedbackText: 
+    FeedbackText: "Se\xF1or, no entend\xEDmos que quer\xEDas que hicieramos con ese
+      zoquete"
     ViolenceStat: -20
     MoneyStat: -10
     InfluenceStat: -20
   Maton:
-    Name: Maton
+    Name: "Mat\xF3n"
     FeedbackName: "Mat\xF3n"
     FeedbackText: "jajaja, ese chavalito que me enviaste es todo un s\xE1dico, \xA1Gracias!"
     ViolenceStat: 15
     MoneyStat: 0
     InfluenceStat: 5
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Comisario corrupto
+    FeedbackName: Comisario corrupto
+    FeedbackText: "Se\xF1or, no entend\xEDmos que quer\xEDas que hicieramos con ese
+      zoquete"
+    ViolenceStat: -20
+    MoneyStat: -10
+    InfluenceStat: -20

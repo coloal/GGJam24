@@ -15,31 +15,34 @@ MonoBehaviour:
   NameOfCard: Willy
   Background: "Se\xF1or, soy un buen trilero, puedo aportarle influencia y algo de
     dinero"
-  ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  ViolenceStat: -10
+  MoneyStat: 5
+  InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: Ayudar al pillo de Willy
   CardSprite: {fileID: 21300000, guid: 840b911a2cb5b534ba631f5b832a3577, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 0200000000000000
   Contable:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Contable
+    FeedbackName: Contable
+    FeedbackText: "Se\xF1or, ese infante aprende muy r\xE1pido. El comisario est\xE1
+      muy contento con \xE9l."
+    ViolenceStat: 5
+    MoneyStat: 15
+    InfluenceStat: 5
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "Ese chico no val\xEDa ni pa est\xE1 escondio. Con las hostias
+      que pegabamos nosotros de chico"
     ViolenceStat: 0
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: -10
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Comisario corrupto
+    FeedbackName: Comisario corrupto
+    FeedbackText: "Se\xF1or, ese infante aprende muy r\xE1pido. El contable est\xE1
+      muy contento con \xE9l."
+    ViolenceStat: 5
+    MoneyStat: 15
+    InfluenceStat: 5

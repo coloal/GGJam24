@@ -14,31 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfCard: Antonio
   Background: "... Don, ven\xEDa a ofrecerle una cena en mi restaurante :)"
-  ViolenceStat: 0
+  ViolenceStat: -10
   MoneyStat: 0
-  InfluenceStat: 0
+  InfluenceStat: 5
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: "Asignar\xE9 a unos de mis sicarios para que organice"
   CardSprite: {fileID: 21300000, guid: 60fbee0d4477d7f45914674cb99dfebd, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 000000000100000000000000
   Contable:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: Contable
+    FeedbackName: Bro
+    FeedbackText: "Fuah, vaya fest\xEDn nos pegamos, bro. Como se pusieron el cabr\xF3n
+      del contable y el perro del comisario"
     ViolenceStat: 0
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: 10
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "Fuah, vaya fest\xEDn nos pegamos, bro. Como se pusieron el cabr\xF3n
+      del contable y el perro del comisario"
     ViolenceStat: 0
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: 10
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: Comisario corrupto
+    FeedbackName: Bro
+    FeedbackText: "Fuah, vaya fest\xEDn nos pegamos, bro. Como se pusieron el cabr\xF3n
+      del contable y el perro del comisario"
     ViolenceStat: 0
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: 10
