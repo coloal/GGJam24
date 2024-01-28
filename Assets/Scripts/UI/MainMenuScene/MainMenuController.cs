@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField]
+    Animator CardsFallingAnimation;
+
     void Start()
     {
         AudioManager.Instance.Play(SoundNames.MenuBGM);
@@ -10,9 +13,10 @@ public class MainMenuController : MonoBehaviour
 
     public void GoToMainGame() {
         AudioManager.Instance.Play(SoundNames.StartGame);
+        CardsFallingAnimation.Play(AnimationNames.CardsFallingAnimation);
         Utils.createTemporizer(() => {
             SceneManager.LoadScene(ScenesNames.MainGameScene);
-        }, 1.0f, this);
+        }, 1.3f, this);
     }
      public void GoToCredits() {
         SceneManager.LoadScene(ScenesNames.CreditsScene);
@@ -20,8 +24,4 @@ public class MainMenuController : MonoBehaviour
     public void GoToMainMenu() {
         SceneManager.LoadScene(ScenesNames.MainMenuScene);
     }
-    public void ExitGame() {
-        Application.Quit();
-    }
-     
 }
