@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Maton
   m_EditorClassIdentifier: 
   HitManType: 1
-  NameOfHitman: Maton
+  NameOfHitman: "Mat\xF3n"
   Description: Tu mejor amigo ultra violento
   ViolenceStat: 0
   MoneyStat: 0

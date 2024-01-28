@@ -621,7 +621,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 8ebbf30ee71339942adb6722600b5c24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8db248c958234b8db07a42a55d7d907, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -642,7 +642,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.59309745, y: 0.59309745, z: 0.59309745}
+  m_LocalScale: {x: 1.6679914, y: 1.6679914, z: 1.6679914}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2092,10 +2092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2493,7 +2493,7 @@ Transform:
   m_GameObject: {fileID: 1488329686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.52, z: 0}
+  m_LocalPosition: {x: -0.66, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3470,7 +3470,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4020635892007117130, guid: e4c605c7fd11f7a4395e3bd59e15db3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.17
+      value: -2.15
       objectReference: {fileID: 0}
     - target: {fileID: 4020635892007117130, guid: e4c605c7fd11f7a4395e3bd59e15db3e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3519,7 +3519,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4193961303594924380, guid: e4c605c7fd11f7a4395e3bd59e15db3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2735135012491086193, guid: e4c605c7fd11f7a4395e3bd59e15db3e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e4c605c7fd11f7a4395e3bd59e15db3e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
