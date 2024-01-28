@@ -143,11 +143,9 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeRight()
     {
-        Debug.Log("I swiped right");
         SetGameState(GameStates.PICK_A_HITMAN);
         OverlayImage.SetActive(true);
         CurrentCard.GoToBackGroundAndDeactivate();
-        // HitmenManager
     }
 
     void SetGameState(GameStates State)
@@ -161,8 +159,11 @@ public class TurnManager : MonoBehaviour
     }
 
     public void OnHitmenSelected(HitManTypes selectedHitman) {
-        CalculateHitmanStats(selectedHitman);
-        PhoneObject.SetActive(true);
+        AudioManager.Instance.Play(SoundNames.PickPhone);
+        Utils.createTemporizer(() => {
+            CalculateHitmanStats(selectedHitman);
+            PhoneObject.SetActive(true);
+        }, 2.3f, this);
     }
 
 
