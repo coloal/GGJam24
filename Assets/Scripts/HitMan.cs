@@ -75,7 +75,7 @@ public class HitMan : MonoBehaviour, IClickable
 
         BoxName.text = NameOfHitman;
         BoxDescription.text = Description;
-        SpriteRenderer.sprite = HitManSprite;
+        //SpriteRenderer.sprite = HitManSprite;
     }
 
     public void OnClick() 

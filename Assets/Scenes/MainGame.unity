@@ -1269,6 +1269,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Murderer
       objectReference: {fileID: 0}
+    - target: {fileID: 683920164818873085, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c445dac1a3994fd4b8b30fa2ed7649f8, type: 3}
+    - target: {fileID: 1418023578901622444, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6a5f25a3f97b7b43994242f065501e1, type: 3}
     - target: {fileID: 3756579096499311434, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
       propertyPath: Data
       value: 
@@ -1830,6 +1838,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Policeman
       objectReference: {fileID: 0}
+    - target: {fileID: 683920164818873085, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 683ec339930d6bf4a822c0fe4db3ebf4, type: 3}
+    - target: {fileID: 1418023578901622444, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5907cfae4ccd0f643923baf4655caf53, type: 3}
+    - target: {fileID: 3756579096499311434, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
+      propertyPath: Data
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e2f568f4f955034a863957954b1fa61, type: 2}
     - target: {fileID: 8224401977052755413, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.21
@@ -2092,7 +2112,7 @@ PrefabInstance:
     - target: {fileID: 3756579096499311434, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
       propertyPath: Data
       value: 
-      objectReference: {fileID: 11400000, guid: 2e2f568f4f955034a863957954b1fa61, type: 2}
+      objectReference: {fileID: 11400000, guid: 6584e0cb1143d6841a4648bfb7e7266a, type: 2}
     - target: {fileID: 3756579096499311434, guid: 99668569d8aded74b9dd799da2aecb0e, type: 3}
       propertyPath: HitManType
       value: 2
