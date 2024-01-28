@@ -9,18 +9,18 @@ public class StatsManager : MonoBehaviour
     [Header("Stat max values")]
     [SerializeField]
     [Tooltip("Max value that Stat can reach")]
-    int StatsMaxValue = 50;
+    int StatsMaxValue = 100;
 
     [Header("Stats initial values")]
     [SerializeField]
-    [Range(0, 10)]
-    int ViolenceStat;
+    [Range(0, 100)]
+    int ViolenceStat = 50;
     [SerializeField]
-    [Range(0, 10)]
-    int MoneyStat;
+    [Range(0, 100)]
+    int MoneyStat = 50;
     [SerializeField]
-    [Range(0, 10)]
-    int InfluenceStat;
+    [Range(0, 100)]
+    int InfluenceStat = 50;
 
     [Header("UI for Stat bars")]
     [SerializeField]
@@ -97,5 +97,16 @@ public class StatsManager : MonoBehaviour
         return (ViolenceStat <= 0 || ViolenceStat >= StatsMaxValue)
             || (MoneyStat <= 0 || MoneyStat >= StatsMaxValue)
             || (InfluenceStat <= 0 || InfluenceStat >= StatsMaxValue);
+    }
+
+    public Stats GetStats() 
+    {
+        Stats stats = new Stats();
+        stats.ViolenceStat = ViolenceStat;
+        stats.MoneyStat = MoneyStat;
+        stats.InfluenceStat = InfluenceStat;
+
+        stats.StatsMaxValue = StatsMaxValue;
+        return stats;
     }
 }
