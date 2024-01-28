@@ -245,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &259584301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - Name: MenuBGM
-    AudioClip: {fileID: 8300000, guid: 2e7ff0982c9edb045b1ddc787148b59e, type: 3}
+    AudioClip: {fileID: 8300000, guid: 12ca76c66c70a4c7d9ccce116f5a37bc, type: 3}
     Volume: 0.55
     Pitch: 1
     Loop: 1
@@ -941,7 +941,7 @@ MonoBehaviour:
     IsPlaying: 0
     IsBGM: 1
   - Name: GameBGM
-    AudioClip: {fileID: 8300000, guid: 23bebf126b8bf5345913ec2ff1c8c8c8, type: 3}
+    AudioClip: {fileID: 8300000, guid: a6a0c61011f2b403ab5edcfc956e442d, type: 3}
     Volume: 0.55
     Pitch: 1
     Loop: 1
@@ -2197,7 +2197,7 @@ Transform:
   m_GameObject: {fileID: 1132188808}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11, y: -5.5, z: 0}
+  m_LocalPosition: {x: 11, y: -3.44, z: 0}
   m_LocalScale: {x: 16, y: 16, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2564,7 +2564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1511568447
 Transform:
   m_ObjectHideFlags: 0
@@ -2574,8 +2574,8 @@ Transform:
   m_GameObject: {fileID: 1511568446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06744254, y: -4.05, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalPosition: {x: -0.0674, y: -4.05, z: 0}
+  m_LocalScale: {x: 4.5776, y: 4.3136, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 259584302}
