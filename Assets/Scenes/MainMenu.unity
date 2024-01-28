@@ -1231,7 +1231,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8877cf02275472aa391b873ecd3d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds: []
+  Sounds:
+  - Name: MenuBGM
+    AudioClip: {fileID: 8300000, guid: 2e7ff0982c9edb045b1ddc787148b59e, type: 3}
+    Volume: 0.55
+    Pitch: 1
+    Loop: 1
+    AudioSource: {fileID: 0}
+    IsPlaying: 0
+    IsBGM: 1
+  - Name: GameBGM
+    AudioClip: {fileID: 8300000, guid: 23bebf126b8bf5345913ec2ff1c8c8c8, type: 3}
+    Volume: 0.55
+    Pitch: 1
+    Loop: 1
+    AudioSource: {fileID: 0}
+    IsPlaying: 0
+    IsBGM: 1
+  - Name: PositiveFinal
+    AudioClip: {fileID: 8300000, guid: 01f4fb951739e8244a33fb32259f266e, type: 3}
+    Volume: 0.55
+    Pitch: 1
+    Loop: 0
+    AudioSource: {fileID: 0}
+    IsPlaying: 0
+    IsBGM: 1
+  - Name: NegativeFinal
+    AudioClip: {fileID: 8300000, guid: 2ce1798f04c03da48b32b09ed3e41fb2, type: 3}
+    Volume: 0.55
+    Pitch: 1
+    Loop: 0
+    AudioSource: {fileID: 0}
+    IsPlaying: 0
+    IsBGM: 1
+  - Name: PickPhone
+    AudioClip: {fileID: 8300000, guid: c65ecddb8425f8a468f52c0911d92ffb, type: 3}
+    Volume: 0.55
+    Pitch: 1
+    Loop: 0
+    AudioSource: {fileID: 0}
+    IsPlaying: 0
+    IsBGM: 0
+  - Name: StartGame
+    AudioClip: {fileID: 8300000, guid: 26df4e483d3157940bc1e5b9d55cb576, type: 3}
+    Volume: 0.55
+    Pitch: 1
+    Loop: 0
+    AudioSource: {fileID: 0}
+    IsPlaying: 0
+    IsBGM: 0
 --- !u!1 &1529755973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1529755974
 RectTransform:
   m_ObjectHideFlags: 0
