@@ -1,14 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 
 public class EndManager : MonoBehaviour
 {
-    [SerializeField]
-    List<string> FinalTexts;
-
     [SerializeField]
     GameObject FinalGameObject;
 
