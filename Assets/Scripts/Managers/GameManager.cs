@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Start() 
     {
+        AudioManager.Instance.Play(SoundNames.GameBGM);
         StartGame();
     }
 
