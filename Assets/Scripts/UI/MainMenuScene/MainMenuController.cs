@@ -20,4 +20,8 @@ public class MainMenuController : MonoBehaviour
     public void GoToMainMenu() {
         SceneManager.LoadScene(ScenesNames.MainMenuScene);
     }
+    public void ExitGame() {
+        Application.Quit();
+    }
+     
 }
