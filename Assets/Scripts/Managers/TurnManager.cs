@@ -117,11 +117,11 @@ public class TurnManager : MonoBehaviour
     {
         if (StatsManager.HasAStatBeenDepletedOrCompleted())
         {
-            GameManager.Instance.FinishGame();
+            GameManager.Instance.ProvideEndManager().FinishGame();
         }
         else if (CardsManager.IsDeckEmpty())
         {
-            GameManager.Instance.FinishGame();
+            GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
         }
         else
         {

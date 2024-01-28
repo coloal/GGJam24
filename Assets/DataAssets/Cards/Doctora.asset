@@ -15,31 +15,34 @@ MonoBehaviour:
   NameOfCard: Ana
   Background: "... Don, me llamaron por un caso de hast\xEDo gastrointestinal, \xBFA
     qui\xE9n tengo que ir a ver?"
-  ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  ViolenceStat: -10
+  MoneyStat: 5
+  InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: "\xBFQui\xE9n necesitar\xE1 a la doctora?"
   CardSprite: {fileID: 21300000, guid: 5b7e14f8b99fe1b45bff320b146c4060, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 0000000002000000
   Contable:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: Contable
+    FeedbackName: Contable
+    FeedbackText: "Muchas gracias, Don. Despu\xE9s de la comida del otro d\xEDa me
+      puse muy indispuesto, ahora estoy mucho mejor."
     ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    MoneyStat: -5
+    InfluenceStat: 10
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "bro, la doctora esta se automedica o qu\xE9? ha venido a casa
+      diciendo que ten\xEDa que curarme una cagalera o no s\xE9 qu\xE9 JAJAJA"
+    ViolenceStat: -5
+    MoneyStat: -10
+    InfluenceStat: -10
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: Comisario corrupto
+    FeedbackName: Comisario corrupto
+    FeedbackText: "Muchas gracias, Don, aunque no s\xE9 si recuerdas que soy un perro,
+      lo m\xEDo son las veterinarias."
     ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    MoneyStat: -5
+    InfluenceStat: 5
