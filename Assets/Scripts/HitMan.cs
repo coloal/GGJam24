@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static ScenesNames;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class HitMan : MonoBehaviour, IClickable 
 {
@@ -41,6 +42,9 @@ public class HitMan : MonoBehaviour, IClickable
     
     [SerializeField]
     private Camera gameCamera;
+
+    [SerializeField]
+    private List<HitMan> OtherHitmans;
 
     // Start is called before the first frame update
     void Start()
@@ -95,5 +99,13 @@ public class HitMan : MonoBehaviour, IClickable
         //SpriteRendererNonSelected.enabled = bo;
 
         SpriteRenderer.GetComponent<SpriteRenderer>().enabled = bo;
+        if(bo)
+        {
+            for (int i = 0; i < OtherHitmans.Count; i++)
+            {
+                OtherHitmans[i].activateSpriteOnOver(false);
+            }
+        }
+        
     }
 }
