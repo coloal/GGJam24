@@ -16,7 +16,7 @@ MonoBehaviour:
   Background: "Se\xF1or, soy un buen trilero, puedo aportarle influencia y algo de
     dinero"
   ViolenceStat: -10
-  MoneyStat: 5
+  MoneyStat: -5
   InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar al pillo de Willy
@@ -28,7 +28,7 @@ MonoBehaviour:
     FeedbackText: "Se\xF1or, ese infante aprende muy r\xE1pido. El comisario est\xE1
       muy contento con \xE9l."
     ViolenceStat: 5
-    MoneyStat: 15
+    MoneyStat: 10
     InfluenceStat: 5
   Maton:
     Name: "Mat\xF3n"
@@ -36,7 +36,7 @@ MonoBehaviour:
     FeedbackText: "Ese chico no val\xEDa ni pa est\xE1 escondio. Con las hostias
       que pegabamos nosotros de chico"
     ViolenceStat: 0
-    MoneyStat: 0
+    MoneyStat: -10
     InfluenceStat: -10
   Comisario:
     Name: Comisario corrupto
@@ -44,5 +44,5 @@ MonoBehaviour:
     FeedbackText: "Se\xF1or, ese infante aprende muy r\xE1pido. El contable est\xE1
       muy contento con \xE9l."
     ViolenceStat: 5
-    MoneyStat: 15
+    MoneyStat: 10
     InfluenceStat: 5

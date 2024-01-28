@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitManType: 0
   NameOfHitman: Contable
-  Description: Buen manejo del capital.
+  Description: Buen manejo del capital
   ViolenceStat: 0
   MoneyStat: 0
   InfluenceStat: 0

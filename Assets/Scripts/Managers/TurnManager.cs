@@ -99,9 +99,9 @@ public class TurnManager : MonoBehaviour
     {
         PhoneObject.SetActive( true );
         NameFeedbackBox.text = name;
-        //TextFeedbackBox.text = text;
+        TextFeedbackBox.text = text;
 
-        TextFeedbackBox.GetComponent<PhoneTextWriter>().WriteTextCharByChar(text);
+        //TextFeedbackBox.GetComponent<PhoneTextWriter>().WriteTextCharByChar(text);
     }
 
     public void AcceptPhoneBuble()

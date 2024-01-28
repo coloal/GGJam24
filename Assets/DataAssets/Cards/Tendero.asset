@@ -16,7 +16,7 @@ MonoBehaviour:
   Background: "... Don, soy el tendero de la tienda de electrodom\xE9sticos de Fournier
     town. A\xFAn no consegu\xED su dinero del alquiler..."
   ViolenceStat: -10
-  MoneyStat: 5
+  MoneyStat: -5
   InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
   RightText: "Me cobrare lo m\xEDo"
@@ -27,9 +27,9 @@ MonoBehaviour:
     FeedbackName: Contable
     FeedbackText: "Don, soy contable, sabes que lo paso mal si me haces presenciar
       la violencia para la que trabajo, este es un trabajo para tu bro el Mat\xF3n."
-    ViolenceStat: 5
-    MoneyStat: 15
-    InfluenceStat: 5
+    ViolenceStat: 0
+    MoneyStat: -15
+    InfluenceStat: 0
   Maton:
     Name: "Mat\xF3n"
     FeedbackName: "Mat\xF3n"
@@ -37,7 +37,7 @@ MonoBehaviour:
       mi creatividad son los que m\xE1s disfruto. C\xF3mo se nota que nos conocemos
       de toda la vida!"
     ViolenceStat: 5
-    MoneyStat: 0
+    MoneyStat: 5
     InfluenceStat: 0
   Comisario:
     Name: Comisario corrupto

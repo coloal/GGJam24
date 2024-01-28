@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitManType: 2
   NameOfHitman: Comisario corrupto
-  Description: Buen manejo del capital.
+  Description: "Pol\xEDtico, favores por votos"
   ViolenceStat: 0
   MoneyStat: 0
   InfluenceStat: 0

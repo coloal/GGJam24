@@ -22,7 +22,7 @@ public class PhoneTextWriter : MonoBehaviour
         }
     }
 
-    void WriteTextCharByChar(string text)
+    public void WriteTextCharByChar(string text)
     {
         textToWrite = text;
         startToWrite = true;

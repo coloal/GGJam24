@@ -16,7 +16,7 @@ MonoBehaviour:
   Background: "Se\xF1or, no me queda nada, estoy harto de comer de lo que me da la
     calle. Le puedo servir para acojonar a esos **** morosos"
   ViolenceStat: -10
-  MoneyStat: 5
+  MoneyStat: -5
   InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar
@@ -35,7 +35,7 @@ MonoBehaviour:
     FeedbackName: "Mat\xF3n"
     FeedbackText: "jajaja, ese chavalito que me enviaste es todo un s\xE1dico, \xA1Gracias!"
     ViolenceStat: 15
-    MoneyStat: 0
+    MoneyStat: -5
     InfluenceStat: 5
   Comisario:
     Name: Comisario corrupto

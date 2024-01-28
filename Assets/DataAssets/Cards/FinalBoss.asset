@@ -15,9 +15,9 @@ MonoBehaviour:
   NameOfCard: Ronnie
   Background: "Vengo a informarte de que pronto estar\xE1s nadando con los peces,
     hasta nunca."
-  ViolenceStat: -100
-  MoneyStat: -100
-  InfluenceStat: -100
+  ViolenceStat: 0
+  MoneyStat: -50
+  InfluenceStat: -50
   LeftText: "No me hagas re\xEDr"
   RightText: Afrontar combate final
   CardSprite: {fileID: 21300000, guid: 0c3ec3cf9bac9944fb83e5b91d92c189, type: 3}
@@ -34,9 +34,9 @@ MonoBehaviour:
     FeedbackName: "Mat\xF3n"
     FeedbackText: "Hermano... Somos la \xFAnica banda que queda en la ciudad, lo
       conseguimos."
-    ViolenceStat: -50
-    MoneyStat: 50
-    InfluenceStat: 50
+    ViolenceStat: 50
+    MoneyStat: 0
+    InfluenceStat: 0
   Comisario:
     Name: Comisario corrupto
     FeedbackName: Comisario corrupto

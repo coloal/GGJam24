@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Maton
   m_EditorClassIdentifier: 
   HitManType: 1
-  NameOfHitman: Contable
-  Description: Buen manejo del capital.
+  NameOfHitman: Maton
+  Description: Tu mejor amigo ultra violento
   ViolenceStat: 0
   MoneyStat: 0
   InfluenceStat: 0
