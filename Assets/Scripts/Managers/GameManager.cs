@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     CardsManager CardsManager;
 
+    [SerializeField]
+    EndManager EndManager;
+
     void Awake()
     {
         if (Instance == null)
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
     public void FinishGame() 
     {
         Debug.Log("The game has finished! Congratulations ...or maybe not?");
+
     }
 
     public StatsManager ProvideStatsManager()
@@ -57,5 +61,8 @@ public class GameManager : MonoBehaviour
     public TurnManager ProvideTurnManager()
     {
         return TurnManager;
+    }
+    public EndManager ProvideEndManager() {
+        return EndManager;
     }
 }
