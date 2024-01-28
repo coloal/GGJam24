@@ -19,7 +19,7 @@ MonoBehaviour:
   MoneyStat: 0
   InfluenceStat: 0
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: Enviar con..
   CardSprite: {fileID: 21300000, guid: a7cfb541e48edc543b882e47ad186ecf, type: 3}
   ListHitmanTypes: 000000000100000002000000
   Contable:
