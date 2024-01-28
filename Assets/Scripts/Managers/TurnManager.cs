@@ -89,7 +89,12 @@ public class TurnManager : MonoBehaviour
                 info.MoneyStat,
                 info.InfluenceStat
             );
-            GivePhoneFeedback(info.FeedbackName,info.FeedbackText);
+
+            Utils.createTemporizer(() => {
+                PhoneObject.SetActive(true);
+                GivePhoneFeedback(info.FeedbackName,info.FeedbackText);
+            }, 2.3f, this);
+            
         }
         
         
@@ -162,10 +167,8 @@ public class TurnManager : MonoBehaviour
 
     public void OnHitmenSelected(HitManTypes selectedHitman) {
         AudioManager.Instance.Play(SoundNames.PickPhone);
-        Utils.createTemporizer(() => {
-            CalculateHitmanStats(selectedHitman);
-            PhoneObject.SetActive(true);
-        }, 2.3f, this);
+        CalculateHitmanStats(selectedHitman);
+        
     }
 
 
