@@ -288,7 +288,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8ebbf30ee71339942adb6722600b5c24, type: 3}
-  m_Color: {r: 0.06415099, g: 0, b: 0, a: 0.87058824}
+  m_Color: {r: 0.06415099, g: 0, b: 0, a: 0.9607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1982,22 +1982,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad87ca0e24b6c6e40ac3903baa63679d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FinalTexts:
-  - "\xA1Lo conseguiste! Ser\xE1s recordado (al menos un par de d\xE9cadas) como
-    Don, el ricach\xF3n."
-  - "\xA1Lo conseguiste! Ser\xE1s recordado (al menos un par de d\xE9cadas) como
-    Don, del Club de la lucha."
-  - "\xA1Lo conseguiste! Ser\xE1s recordado (al menos un par de d\xE9cadas) como
-    Don, el influencer (ya me joder\xEDa)."
-  - "Acabaste endeudado hasta las cejas. \xBFY ahora qui\xE9n se r\xEDe?"
-  - "No supiste defenderte y hasta los ni\xF1os te roban la merienda. \xBFY ahora
-    qui\xE9n se r\xEDe?"
-  - "Hasta tus propios hombres te han abandonado. \xBFY ahora qui\xE9n se r\xEDe?"
-  - "Sobreviviste, pero sin pena ni gloria. Pero tu no eres de los que se rinden
-    tan f\xE1cilmente, \xBFverdad?"
   FinalGameObject: {fileID: 259584300}
   TextBox: {fileID: 335554970}
   ButtonChangeScene: {fileID: 1132188808}
+  MaxMoneyEnding: "\xA1Lo conseguiste! Ser\xE1s recordado (al menos un par de d\xE9cadas)
+    como Don, el ricach\xF3n."
+  MaxViolenceEnding: "\xA1Lo conseguiste! Ser\xE1s recordado (al menos un par de
+    d\xE9cadas) como Don, del Club de la lucha."
+  MaxInfluenceEnding: "\xA1Lo conseguiste! Ser\xE1s recordado (al menos un par de
+    d\xE9cadas) como Don, el influencer (ya me joder\xEDa)."
+  NoMoneyEnding: "Acabaste endeudado hasta las cejas. \xBFY ahora qui\xE9n se r\xEDe?"
+  NoViolenceEnding: "No supiste defenderte y hasta los ni\xF1os te roban la merienda.
+    \xBFY ahora qui\xE9n se r\xEDe?"
+  NoInfluenceEnding: "Hasta tus propios hombres te han abandonado. \xBFY ahora qui\xE9n
+    se r\xEDe?"
+  EmptyDeckEnding: "Sobreviviste, pero sin pena ni gloria. Pero tu no eres de los
+    que se rinden tan f\xE1cilmente, \xBFverdad?"
 --- !u!4 &1043067326
 Transform:
   m_ObjectHideFlags: 0
@@ -2462,9 +2462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatsMaxValue: 100
-  ViolenceStat: 5
-  MoneyStat: 6
-  InfluenceStat: 5
+  ViolenceStat: 50
+  MoneyStat: 50
+  InfluenceStat: 50
   ViolenceStatBar: {fileID: 1849939802}
   MoneyStatBar: {fileID: 651339198}
   InfluenceStatBar: {fileID: 632488352}

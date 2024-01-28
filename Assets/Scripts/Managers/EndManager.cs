@@ -1,17 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class EndManager : MonoBehaviour
 {
-    int IndexFinal;
-
-
-
-    [SerializeField]
-    List<string> FinalTexts;
-
     [SerializeField]
     GameObject FinalGameObject;
 
@@ -21,44 +13,55 @@ public class EndManager : MonoBehaviour
     [SerializeField]
     GameObject ButtonChangeScene;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    string MaxMoneyEnding;
+    [SerializeField]
+    string MaxViolenceEnding;
+    [SerializeField]
+    string MaxInfluenceEnding;
+    [SerializeField]
+    string NoMoneyEnding;
+    [SerializeField]
+    string NoViolenceEnding;
+    [SerializeField]
+    string NoInfluenceEnding;
+    [SerializeField]
+    string EmptyDeckEnding;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    string EndGameText;
 
     public void FinishGame()
     {
         Stats stats= GameManager.Instance.ProvideStatsManager().GetStats();
         if(stats.MoneyStat >= stats.StatsMaxValue) 
         {
-            IndexFinal = 0;
+            EndGameText = MaxMoneyEnding;
+            PlayGoodEndingMusic();
         }
         else if (stats.ViolenceStat >= stats.StatsMaxValue)
         {
-            IndexFinal = 1;
+            EndGameText = MaxViolenceEnding;
+            PlayGoodEndingMusic();
         }
         else if (stats.InfluenceStat >= stats.StatsMaxValue)
         {
-            IndexFinal = 2;
+            EndGameText = MaxInfluenceEnding;
+            PlayGoodEndingMusic();
         }
         else if (stats.MoneyStat <= 0)
         {
-            IndexFinal = 3;
+            EndGameText = NoMoneyEnding;
+            PlayBadEndingMusic();
         }
         else if (stats.ViolenceStat <= 0)
         {
-            IndexFinal = 4;
+            EndGameText = NoViolenceEnding;
+            PlayBadEndingMusic();
         }
         else if (stats.InfluenceStat <= 0)
         {
-            IndexFinal = 5;
+            EndGameText = NoInfluenceEnding;
+            PlayBadEndingMusic();
         }
 
         ActivateFinish();
@@ -66,18 +69,25 @@ public class EndManager : MonoBehaviour
 
     public void FinishGameDeckEmpty() 
     {
-        IndexFinal = 6;
+        EndGameText = EmptyDeckEnding;
+        PlayBadEndingMusic();
         ActivateFinish();
     }
 
     private void ActivateFinish() 
     {
-        //Debug.Log("Final " + IndexFinal);
-
-        TextBox.text = FinalTexts[IndexFinal];
-
+        TextBox.text = EndGameText;
         ButtonChangeScene.SetActive(true);
         FinalGameObject.SetActive(true);
+    }
 
+    void PlayGoodEndingMusic()
+    {
+        AudioManager.Instance.Play(SoundNames.PositiveFinal);
+    }
+
+    void PlayBadEndingMusic()
+    {
+        AudioManager.Instance.Play(SoundNames.NegativeFinal);
     }
 }
