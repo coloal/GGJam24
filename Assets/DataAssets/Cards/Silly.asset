@@ -15,31 +15,33 @@ MonoBehaviour:
   NameOfCard: Silly
   Background: "Se\xF1or, soy el \xFAltimo de mis hermanos que anda en la calle, \xBFMe
     ense\xF1ar\xEDa a leer y escribir?"
-  ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  ViolenceStat: -10
+  MoneyStat: 5
+  InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: Ayudar al pobre Silly
   CardSprite: {fileID: 21300000, guid: af87421041887ee46933d362ae3ef668, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 00000000
   Contable:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
+    Name: Contable
+    FeedbackName: Contable
+    FeedbackText: "Qu\xE9 r\xE1pido aprende ese infante, Se\xF1or."
     ViolenceStat: 0
     MoneyStat: 0
-    InfluenceStat: 0
+    InfluenceStat: 10
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: " Vaya marica est\xE1 hecho el nene ese que nos mandaste, el comisario
+      no puede ni verle."
+    ViolenceStat: -10
+    MoneyStat: -10
+    InfluenceStat: -20
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Comisario corrupto
+    FeedbackName: Comisario corrupto
+    FeedbackText: "Don, ese chico era insoportable, por favor, intenta no evidenciar
+      nuestra relaci\xF3n con este tipo de decisiones."
+    ViolenceStat: -10
+    MoneyStat: -10
+    InfluenceStat: -20

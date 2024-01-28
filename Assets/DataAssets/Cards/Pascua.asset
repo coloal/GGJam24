@@ -15,30 +15,32 @@ MonoBehaviour:
   NameOfCard: Pascual
   Background: "Traigo buena mierda de muy... Muy lejos. \xBFTe interesa?"
   ViolenceStat: 0
-  MoneyStat: 0
-  InfluenceStat: 0
+  MoneyStat: 15
+  InfluenceStat: 15
   LeftText: "No me hagas re\xEDr"
-  RightText: Ayudar
+  RightText: Aceptar y gestionar con...
   CardSprite: {fileID: 21300000, guid: 79b2cd070254aaa4abbf86d88656cb4e, type: 3}
-  ListHitmanTypes: 0000000001000000
+  ListHitmanTypes: 020000000000000001000000
   Contable:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Contable
+    FeedbackName: Contable
+    FeedbackText: "Don, en serio, \xBFUn contable porreta?"
+    ViolenceStat: -5
+    MoneyStat: -10
+    InfluenceStat: -5
   Maton:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: "Mat\xF3n"
+    FeedbackName: "Mat\xF3n"
+    FeedbackText: "Guau broooh, esa mierda que nos ha vendido estaba caducada...
+      No fumes marihuana. O al menos no \xE9sta :("
+    ViolenceStat: -5
+    MoneyStat: -10
+    InfluenceStat: -5
   Comisario:
-    Name: 
-    FeedbackName: 
-    FeedbackText: 
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 0
+    Name: Comisario corrupto
+    FeedbackName: Comisario corrupto
+    FeedbackText: "Siendo un perro polic\xEDa... Tengo a mi disposici\xF3n toda la
+      droga que necesite, no me molestes con dealers de barrio, Don"
+    ViolenceStat: -5
+    MoneyStat: -10
+    InfluenceStat: -5
