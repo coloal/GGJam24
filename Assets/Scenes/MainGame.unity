@@ -3167,12 +3167,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardPrefab: {fileID: 2960121501592178493, guid: 0ac5ec62a8279fc46bd169a75078a7e7, type: 3}
   DataCardsList:
-  - {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
-  - {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
-  - {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
+  - {fileID: 11400000, guid: c57ab139751265f47a2d7f031a4addcc, type: 2}
+  - {fileID: 11400000, guid: 867f4a29f377dff4dbf2cc37f3f8f5bd, type: 2}
   - {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
-  - {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
-  - {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
+  - {fileID: 11400000, guid: d2e4a203bda2f79429043b5304d7f9a8, type: 2}
+  - {fileID: 11400000, guid: 94e93bb33d4f8b247bc211c26ce805fe, type: 2}
+  - {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
+  - {fileID: 11400000, guid: 7781bbae1f3601c4db6f88e851a9ae57, type: 2}
+  - {fileID: 11400000, guid: 9fba73b7dc336a84f9f9201ad2753324, type: 2}
+  - {fileID: 11400000, guid: 603a1a80b5ee5bc4abcc5534520bf345, type: 2}
+  - {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+  - {fileID: 11400000, guid: aa9b18aea3124194e963466e40b8da8e, type: 2}
+  - {fileID: 11400000, guid: 1215b9ae72d62aa4e9204a120bb24d9f, type: 2}
+  - {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
   isSequential: 1
   CardSpawnerOrigin: {fileID: 1045422846}
 --- !u!4 &1958423317
