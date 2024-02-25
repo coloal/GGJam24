@@ -1,10 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
+
+
+public enum DraggableStates
+{
+    PRE_TUTORIAL,
+    TUTORIAL_MOVE_RIGHT,
+    TUTORIAL_STOP_RIGHT,
+    TUTORIAL_MOVE_LEFT,
+    TUTORIAL_STOP_LEFT,
+    TUTORIAL_RETURN,
+    SWIPE_RIGHT,
+    SWIPE_LEFT,
+    PLAY_STATE
+}
 
 public class Draggable : MonoBehaviour
 {
@@ -26,6 +41,9 @@ public class Draggable : MonoBehaviour
     bool isInLimit = false;
     bool releasedInLimitLeft = false;
     bool releasedInLimitRight = false;
+    int TutorialFase = 0;
+    DraggableStates CurrentState = DraggableStates.TUTORIAL_MOVE_RIGHT;
+
     Vector2 initialPosition;
     // Start is called before the first frame update
     void Start()
@@ -37,76 +55,82 @@ public class Draggable : MonoBehaviour
     void Update()
     {
         
-       
-        if (releasedInLimitLeft)
-        {
-            float position =  -1;
-            position *= EscapeAcceleration;
-            velocity += (position * Time.deltaTime);
-            transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
-            return;
-        }
-
-        if (releasedInLimitRight)
-        {
-            float position = 1;
-            position *= EscapeAcceleration;
-            velocity += (position * Time.deltaTime);
-            transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
-            return;
-        }
-
-        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
-        Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
         
-        float direction = (targetPosition.x - transform.position.x) > 0 ? 1 : -1;
 
+        if (CurrentState == DraggableStates.SWIPE_LEFT)
+        {
+            SwipeLeftMovement();
+            return;
+        }
+        else if (CurrentState == DraggableStates.SWIPE_RIGHT)
+        {
+            SwipeRightMovement();
+            return;
+        }
+
+
+        Vector2 targetPosition = CalculateTargetPosition();
 
         float distance = Mathf.Abs(transform.position.x - targetPosition.x);
 
-        float actualMaxVelocity = distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, distance / brakeDistance);
-       
+        float velocity = CalculateActualVelocity(targetPosition, distance);
 
-
-
-        direction *= acceleration;
-        velocity += (direction * Time.deltaTime);
-        velocity = Mathf.Abs(velocity) > actualMaxVelocity ? Mathf.Sign(velocity) * actualMaxVelocity : velocity;
-
-
+        if(CurrentState == DraggableStates.TUTORIAL_MOVE_LEFT || CurrentState == DraggableStates.TUTORIAL_MOVE_RIGHT || CurrentState == DraggableStates.TUTORIAL_RETURN)
+        {
+            velocity /= 10;
+        }
 
         if (transform.position.x >= Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x - EscapeDistance)
         {
-            float targetRotation = -Mathf.Lerp(MaxArcRotation, MaxFinalRotation, distance / RotateDistance);
-            if (-FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z <= targetRotation + 360)
+            if (CurrentState == DraggableStates.TUTORIAL_MOVE_RIGHT)
             {
-                transform.eulerAngles = new Vector3(0, 0, targetRotation);
+                CurrentState = DraggableStates.TUTORIAL_MOVE_LEFT;
             }
             else
             {
-                transform.eulerAngles += new Vector3(0, 0, -FinalRotationVelocity) * Time.deltaTime;
+                if(targetPosition.x > transform.position.x)
+                {
+                    float targetRotation = -Mathf.Lerp(MaxArcRotation, MaxFinalRotation, distance / RotateDistance);
+                    if (-FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z <= targetRotation + 360)
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, targetRotation);
+                    }
+                    else
+                    {
+                        transform.eulerAngles += new Vector3(0, 0, -FinalRotationVelocity) * Time.deltaTime;
+                    }
+                }
+                
+                velocity = Mathf.Min(0, velocity);
             }
-            velocity = Mathf.Min(0, velocity);
-            
         }
         else if (transform.position.x <= Camera.main.ScreenToWorldPoint(Vector2.zero).x + EscapeDistance)
         {
-            float targetRotation = Mathf.Lerp(MaxArcRotation, MaxFinalRotation, distance / RotateDistance);
 
-            if (FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z >= targetRotation)
+            if (CurrentState == DraggableStates.TUTORIAL_MOVE_LEFT)
             {
-                transform.eulerAngles = new Vector3(0, 0, targetRotation);
+                CurrentState = DraggableStates.PLAY_STATE;
             }
             else
             {
-                transform.eulerAngles += new Vector3(0, 0, FinalRotationVelocity) * Time.deltaTime;
+                if (targetPosition.x < transform.position.x)
+                {
+                    float targetRotation = Mathf.Lerp(MaxArcRotation, MaxFinalRotation, distance / RotateDistance);
+                    if (FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z >= targetRotation)
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, targetRotation);
+                    }
+                    else
+                    {
+                        transform.eulerAngles += new Vector3(0, 0, FinalRotationVelocity) * Time.deltaTime;
+                    }
+                    velocity = Mathf.Max(0, velocity);
+                }
+                
             }
-
-            velocity = Mathf.Max(0, velocity);
         }
         else
         {
-            
             float totalDistance = (Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x - EscapeDistance - initialPosition.x);
             float alreadyTraveled = transform.position.x - initialPosition.x;
             if (alreadyTraveled > 0) transform.eulerAngles = new Vector3(0, 0, -Mathf.Lerp(0, MaxArcRotation, alreadyTraveled / totalDistance));
@@ -119,8 +143,53 @@ public class Draggable : MonoBehaviour
 
     }
 
+    Vector2 CalculateTargetPosition()
+    {
+        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
+        if(CurrentState == DraggableStates.TUTORIAL_MOVE_RIGHT)
+        {
+            targetPosition = new Vector2(Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x - (EscapeDistance - 0.1f), 0);
+        }
+        else if(CurrentState == DraggableStates.TUTORIAL_MOVE_LEFT)
+        {
+            targetPosition = new Vector2(Camera.main.ScreenToWorldPoint(Vector2.zero).x + (EscapeDistance - 0.1f), 0);
+        }
+
+        return targetPosition;
+    }
+
+    float CalculateActualVelocity(Vector2 targetPosition, float distance)
+    {
+        float direction = Mathf.Sign(targetPosition.x - transform.position.x);
+       
+        float actualMaxVelocity = distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, distance / brakeDistance);
+        direction *= acceleration;
+        velocity += (direction * Time.deltaTime);
+        velocity = Mathf.Abs(velocity) > actualMaxVelocity ? Mathf.Sign(velocity) * actualMaxVelocity : velocity;
+        return velocity;
+    }
+
+    void SwipeLeftMovement()
+    {
+        float position = -1;
+        position *= EscapeAcceleration;
+        velocity += (position * Time.deltaTime);
+        transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
+    }
+
+    void SwipeRightMovement()
+    {
+        float position = 1;
+        position *= EscapeAcceleration;
+        velocity += (position * Time.deltaTime);
+        transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
+    }
+
     void OnLeftClick()
     {
+        if (CurrentState != DraggableStates.PLAY_STATE) return;
+
         if (this.GetComponent<BoxCollider2D>().bounds.Contains(mousePosition))
         {
             pressed = true;
@@ -130,9 +199,9 @@ public class Draggable : MonoBehaviour
 
     void OnLeftRelease()
     {
-        
-        pressed = false;
+        if(CurrentState != DraggableStates.PLAY_STATE) return;
 
+        pressed = false;
         if (isInLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))
         {
             if(Mathf.Sign(transform.position.x - initialPosition.x) == 1)
@@ -143,7 +212,7 @@ public class Draggable : MonoBehaviour
             }
             else
             {
-                releasedInLimitLeft = true;
+                CurrentState = DraggableStates.SWIPE_LEFT;
                 GameManager.Instance.ProvideTurnManager().SwipeLeft();
                 
             }
@@ -164,7 +233,7 @@ public class Draggable : MonoBehaviour
     
     public void FinalSwipeRight()
     {
-        releasedInLimitRight = true;
+        CurrentState = DraggableStates.SWIPE_RIGHT;
     }
 
 }
