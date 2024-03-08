@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -22,11 +23,12 @@ namespace CodeGraph.Editor
 
         public List<CodeGraphEditorNode> graphNodes;
         public Dictionary<string, CodeGraphEditorNode> nodeDictionary;
+        public Dictionary<Edge, CodeGraphConnection> connectionDictionary;
 
         public CodeGraphEditorWindow Window => window;
         public CodeGraphView(SerializedObject serializedObject, CodeGraphEditorWindow window)
         {
-
+            connectionDictionary = new Dictionary<Edge, CodeGraphConnection>();
             graphNodes = new List<CodeGraphEditorNode>();
             nodeDictionary = new Dictionary<string, CodeGraphEditorNode>();
             searchProvider = ScriptableObject.CreateInstance<CodeGraphWindowSearchProvider>();
@@ -48,9 +50,11 @@ namespace CodeGraph.Editor
             this.AddManipulator(new ClickSelector());
 
             DrawNodes();
+            DrawConnections();
             graphViewChanged += OnGpraphViewChangedEvent;
         }
 
+        
 
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
         {
@@ -97,9 +101,47 @@ namespace CodeGraph.Editor
                         RemoveNode(nodes[i]);
                     }
                 }
-                
+
+                foreach(Edge edge in graphViewChange.elementsToRemove.OfType<Edge>())
+                {
+                    RemoveConnection(edge);
+                }
             }
+
+            if(graphViewChange.edgesToCreate != null)
+            {
+                Undo.RecordObject(serializedObject.targetObject, "Added Connections");
+                foreach(Edge edge in graphViewChange.edgesToCreate)
+                {
+                    CreateEdge(edge);
+                }
+            }
+
             return graphViewChange;
+        }
+
+        private void CreateEdge(Edge edge)
+        {
+            CodeGraphEditorNode inputNode = (CodeGraphEditorNode)edge.input.node;
+            int inputIndex = inputNode.Ports.IndexOf(edge.input);
+
+            CodeGraphEditorNode outputNode = (CodeGraphEditorNode)edge.output.node;
+            int outputIndex = outputNode.Ports.IndexOf(edge.output);
+
+            CodeGraphConnection connection = new CodeGraphConnection(inputNode.GraphNode.id, inputIndex, outputNode.GraphNode.id, outputIndex);
+            codeGraph.Connections.Add(connection);
+
+        }
+
+        private void RemoveConnection(Edge edge)
+        {
+
+            if(connectionDictionary.TryGetValue(edge, out CodeGraphConnection connection))
+            {
+                codeGraph.Connections.Remove(connection);
+                connectionDictionary.Remove(edge);
+            }
+            
         }
 
         private void RemoveNode(CodeGraphEditorNode codeGraphEditorNode)
@@ -117,6 +159,35 @@ namespace CodeGraph.Editor
             {
                 AddNodeToGraph(node);
             }
+        }
+
+        private void DrawConnections()
+        {
+            if(codeGraph.Connections == null) return;
+            foreach (CodeGraphConnection connection in codeGraph.Connections)
+            {
+                DrawConnection(connection);
+            }
+            
+        }
+
+        private void DrawConnection(CodeGraphConnection connection)
+        {
+            CodeGraphEditorNode inputNode = GetNode(connection.inputPort.nodeId);
+            CodeGraphEditorNode outputNode = GetNode(connection.outputPort.nodeId);
+            if (inputNode == null || outputNode == null) return;
+
+            Port inPort = inputNode.Ports[connection.inputPort.portIndex];
+            Port outPort = outputNode.Ports[connection.outputPort.portIndex];
+            Edge edge = inPort.ConnectTo(outPort);
+            AddElement(edge);
+            connectionDictionary.Add(edge, connection);
+        }
+
+        private CodeGraphEditorNode GetNode(string nodeId)
+        {
+            nodeDictionary.TryGetValue(nodeId, out CodeGraphEditorNode node);
+            return node;
         }
 
         private void ShowSearchWindow(NodeCreationContext context)
@@ -138,11 +209,18 @@ namespace CodeGraph.Editor
         private void AddNodeToGraph(CodeGraphNode node)
         {
             node.typeName = node.GetType().AssemblyQualifiedName;
-            CodeGraphEditorNode editorNode = new CodeGraphEditorNode(node);
+            CodeGraphEditorNode editorNode = new CodeGraphEditorNode(node, serializedObject);
             editorNode.SetPosition(node.Position);
             graphNodes.Add(editorNode);
             nodeDictionary.Add(node.id, editorNode);
             AddElement(editorNode);
+            Bind();
+        }
+
+        private void Bind()
+        {
+            serializedObject.Update();
+            this.Bind(serializedObject);
         }
     }
 

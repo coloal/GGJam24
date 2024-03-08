@@ -18,6 +18,7 @@ namespace CodeGraph
         public string id => guid;
         public Rect Position => position;
 
+        
         public CodeGraphNode()
         {
             newGuid();
@@ -31,6 +32,16 @@ namespace CodeGraph
         public void SetPosition(Rect position)
         {
             this.position = position;
+        }
+
+        public virtual string OnProcess(CodeGraphAsset graphAsset)
+        {
+            CodeGraphNode nextNode = graphAsset.GetNodeConnected(guid, 0);
+            if (nextNode != null)
+            {
+                return nextNode.id;
+            }
+            return string.Empty;
         }
     }
 }

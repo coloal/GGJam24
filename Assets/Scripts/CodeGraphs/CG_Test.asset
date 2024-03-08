@@ -13,45 +13,80 @@ MonoBehaviour:
   m_Name: CG_Test
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 8580623020319309828
   - rid: 8580623021360021504
-  - rid: 8580623021360021505
+  - rid: 8580623022367703041
+  - rid: 8580623022367703042
+  - rid: 8580623022367703043
+  connections:
+  - outputPort:
+      nodeId: 87e55d24-1482-4a6f-b6d7-895b639203f4
+      portIndex: 0
+    inputPort:
+      nodeId: 470dd260-c1a2-4fb6-b342-98c14ad73a1b
+      portIndex: 1
+  - outputPort:
+      nodeId: 470dd260-c1a2-4fb6-b342-98c14ad73a1b
+      portIndex: 0
+    inputPort:
+      nodeId: d2962143-e9a2-4b9f-8baa-94999ec0e991
+      portIndex: 1
+  - outputPort:
+      nodeId: d2962143-e9a2-4b9f-8baa-94999ec0e991
+      portIndex: 0
+    inputPort:
+      nodeId: d622914b-da8c-4291-9808-92456b161726
+      portIndex: 1
   references:
     version: 2
     RefIds:
-    - rid: 8580623020319309828
-      type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
-      data:
-        guid: e16e8d14-f459-43d9-a1f4-6001640a23ca
-        position:
-          serializedVersion: 2
-          x: 372
-          y: 123
-          width: 108
-          height: 101
-        typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
     - rid: 8580623021360021504
       type: {class: StartNode, ns: CodeGraph, asm: CodeGraph}
       data:
         guid: 87e55d24-1482-4a6f-b6d7-895b639203f4
         position:
           serializedVersion: 2
-          x: 130
-          y: 125
+          x: 112
+          y: 199
           width: 74
           height: 77
         typeName: CodeGraph.StartNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
-    - rid: 8580623021360021505
+    - rid: 8580623022367703041
       type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
       data:
-        guid: ecb1fd1c-b66c-4efb-bc35-bc2925197722
+        guid: 470dd260-c1a2-4fb6-b342-98c14ad73a1b
         position:
           serializedVersion: 2
-          x: 193
-          y: 251
+          x: 337
+          y: 202
           width: 108
-          height: 77
+          height: 78
         typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
+        log: pepe
+    - rid: 8580623022367703042
+      type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
+      data:
+        guid: d2962143-e9a2-4b9f-8baa-94999ec0e991
+        position:
+          serializedVersion: 2
+          x: 546
+          y: 201
+          width: 166
+          height: 97
+        typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        log: hola
+    - rid: 8580623022367703043
+      type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
+      data:
+        guid: d622914b-da8c-4291-9808-92456b161726
+        position:
+          serializedVersion: 2
+          x: 759
+          y: 204
+          width: 108
+          height: 78
+        typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        log: luis
