@@ -23,8 +23,7 @@ public class TurnManager : MonoBehaviour
 
 
     CardsManager CardsManager;
-    StatsManager StatsManager;
-
+    
     Card CurrentCard;
 
     void Start()
@@ -37,7 +36,6 @@ public class TurnManager : MonoBehaviour
     void SetUpManagers()
     {
         CardsManager = GameManager.Instance.ProvideCardsManager();
-        StatsManager = GameManager.Instance.ProvideStatsManager();
     }
 
     void GetNewCard()
@@ -48,24 +46,86 @@ public class TurnManager : MonoBehaviour
         SetGameState(GameStates.MAKE_DECISION);
     }
 
-    void CalculateStats() 
+
+    public void GivePhoneFeedback(string name, string text)
     {
-        SetGameState(GameStates.STATS_CALCULATION);
+        PhoneObject.SetActive( true );
+        NameFeedbackBox.text = name;
+        TextFeedbackBox.text = text;
 
-        if (StatsManager != null && CurrentCard != null)
-        {
-            StatsManager.ModifyStats(
-                CurrentCard.ViolenceStat,
-                CurrentCard.MoneyStat,
-                CurrentCard.InfluenceStat
-            );
-        }
+        //TextFeedbackBox.GetComponent<PhoneTextWriter>().WriteTextCharByChar(text);
+    }
 
+    public void AcceptPhoneBuble()
+    {
+        PhoneObject.SetActive(false);
+        OverlayImage.SetActive(false);
+        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
+        DestroyCard();
         Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+    }
+
+    public void CheckForEndGame()
+    {
+        if (CardsManager.IsDeckEmpty())
+        {
+            GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+        }
+        else
+        {
+            StartTurn();
+        }
+    }
+
+    public void StartTurn() 
+    {
+        GetNewCard();
+    }
+
+    public void SwipeLeft() 
+    {
+        if (CurrentCard != null)
+        {
+            DestroyCard();
+        }
+        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+    }
+
+    public void SwipeRight()
+    {
+        if (CurrentCard != null)
+        {
+            DestroyCard();
+        }
+        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        /*
+        SetGameState(GameStates.PICK_A_HITMAN);
+        OverlayImage.SetActive(true);
+        CurrentCard.GoToBackGroundAndDeactivate();
+        */
+    }
+
+    void SetGameState(GameStates State)
+    {
+        CurrentGameState = State;
+    }
+
+    public GameStates GetCurrentGameState()
+    {
+        return CurrentGameState;
+    }
+
+    public void OnHitmenSelected(HitManTypes selectedHitman) {
+        AudioManager.Instance.Play(SoundNames.PickPhone);
+
+        // --Deprecated--
+        //CalculateHitmanStats(selectedHitman);
     }
 
     void CalculateHitmanStats(HitManTypes SelectedHitman)
     {
+        // --Deprecated--
+        /*
         SetGameState(GameStates.STATS_CALCULATION);
 
         if (StatsManager != null && CurrentCard != null)
@@ -92,83 +152,12 @@ public class TurnManager : MonoBehaviour
 
             Utils.createTemporizer(() => {
                 PhoneObject.SetActive(true);
-                GivePhoneFeedback(info.FeedbackName,info.FeedbackText);
+                GivePhoneFeedback(info.FeedbackName, info.FeedbackText);
             }, 2.3f, this);
-            
+
         }
-        
-        
-    }
 
-    public void GivePhoneFeedback(string name, string text)
-    {
-        PhoneObject.SetActive( true );
-        NameFeedbackBox.text = name;
-        TextFeedbackBox.text = text;
-
-        //TextFeedbackBox.GetComponent<PhoneTextWriter>().WriteTextCharByChar(text);
-    }
-
-    public void AcceptPhoneBuble()
-    {
-        PhoneObject.SetActive(false);
-        OverlayImage.SetActive(false);
-        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
-        DestroyCard();
-        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
-    }
-
-    public void CheckForEndGame()
-    {
-        if (StatsManager.HasAStatBeenDepletedOrCompleted())
-        {
-            GameManager.Instance.ProvideEndManager().FinishGame();
-        }
-        else if (CardsManager.IsDeckEmpty())
-        {
-            GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
-        }
-        else
-        {
-            StartTurn();
-        }
-    }
-
-    public void StartTurn() 
-    {
-        GetNewCard();
-    }
-
-    public void SwipeLeft() 
-    {
-        if (CurrentCard != null)
-        {
-            DestroyCard();
-        }
-        CalculateStats();
-    }
-
-    public void SwipeRight()
-    {
-        SetGameState(GameStates.PICK_A_HITMAN);
-        OverlayImage.SetActive(true);
-        CurrentCard.GoToBackGroundAndDeactivate();
-    }
-
-    void SetGameState(GameStates State)
-    {
-        CurrentGameState = State;
-    }
-
-    public GameStates GetCurrentGameState()
-    {
-        return CurrentGameState;
-    }
-
-    public void OnHitmenSelected(HitManTypes selectedHitman) {
-        AudioManager.Instance.Play(SoundNames.PickPhone);
-        CalculateHitmanStats(selectedHitman);
-        
+        */
     }
 
 

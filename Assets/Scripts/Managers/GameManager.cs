@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
     TurnManager TurnManager;
 
     [SerializeField]
-    StatsManager StatsManager;
-
-    [SerializeField]
     CardsManager CardsManager;
 
     [SerializeField]
@@ -49,10 +46,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public StatsManager ProvideStatsManager()
-    {
-        return StatsManager;
-    }
 
     public CardsManager ProvideCardsManager()
     {

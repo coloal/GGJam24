@@ -53,6 +53,7 @@ public class EndManager : MonoBehaviour
 
     public void FinishGame()
     {
+        /*
         FinalSpriteBox.gameObject.SetActive(true);
         Stats stats= GameManager.Instance.ProvideStatsManager().GetStats();
         if(stats.MoneyStat >= stats.StatsMaxValue) 
@@ -92,7 +93,7 @@ public class EndManager : MonoBehaviour
             FinalSpriteBox.sprite = NoInfluenceEndingSprite;
         }
 
-        ActivateFinish();
+        ActivateFinish();*/
     }
 
     public void FinishGameDeckEmpty() 

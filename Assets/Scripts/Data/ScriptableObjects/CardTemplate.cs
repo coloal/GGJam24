@@ -22,10 +22,12 @@ public class CardTemplate : ScriptableObject
     public string NameOfCard;
     public string Background;
 
+    /*// --Deprecated--
     //Incrementos/Decrementos
     public int ViolenceStat; //Nombre provisional pdt
     public int MoneyStat; //Nombre provisional pdt
     public int InfluenceStat; //Nombre provisional pdt
+    */
 
     //Choices text
     public string LeftText;
@@ -34,8 +36,10 @@ public class CardTemplate : ScriptableObject
     //Card sprite
     public Sprite CardSprite;
 
+    /*// --Deprecated--
     public List<HitManTypes> ListHitmanTypes;
     public HitmanInfo Contable;
     public HitmanInfo Maton;
     public HitmanInfo Comisario;
+    */
 }

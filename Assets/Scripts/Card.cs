@@ -27,15 +27,6 @@ public class Card : MonoBehaviour
     //Information of the card
     private string NameOfCard;
 
-    //Incrementos/Decrementos
-    public int InfluenceStat;
-    public int MoneyStat;
-    public int ViolenceStat;
-
-    public List<HitManTypes> ListHitmanTypes;
-    public HitmanInfo Contable;
-    public HitmanInfo Maton;
-    public HitmanInfo Comisario;
 
     bool CardIsActive = true;
 
@@ -69,10 +60,6 @@ public class Card : MonoBehaviour
         //Set informaci�n del DataCard
         NameOfCard = DataCard.NameOfCard;
 
-        InfluenceStat = DataCard.InfluenceStat;
-        MoneyStat = DataCard.MoneyStat;
-        ViolenceStat = DataCard.ViolenceStat;
-
         //Mostrar texto en pantalla
         BoxNameOfCard.text = NameOfCard;
 
@@ -87,12 +74,6 @@ public class Card : MonoBehaviour
 
         CardSprite.sprite = DataCard.CardSprite;
 
-        ListHitmanTypes = DataCard.ListHitmanTypes;
-
-        Contable = DataCard.Contable;
-        Maton = DataCard.Maton;
-        Comisario = DataCard.Comisario;
-        
 }
 
 
