@@ -13,80 +13,137 @@ MonoBehaviour:
   m_Name: CG_Test
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 8580623021360021504
-  - rid: 8580623022367703041
-  - rid: 8580623022367703042
-  - rid: 8580623022367703043
+  - rid: 8580623047055638534
+  - rid: 8580623047055638535
+  - rid: 8580623047055638536
+  - rid: 8580623047055638537
+  - rid: 8580623047055638538
+  - rid: 8580623047055638539
   connections:
   - outputPort:
-      nodeId: 87e55d24-1482-4a6f-b6d7-895b639203f4
+      nodeId: 81d20f40-b313-4326-862b-73eeb3ce9731
       portIndex: 0
     inputPort:
-      nodeId: 470dd260-c1a2-4fb6-b342-98c14ad73a1b
-      portIndex: 1
+      nodeId: 66a55ec7-3300-4de7-856c-2ee103a6a0b0
+      portIndex: 2
   - outputPort:
-      nodeId: 470dd260-c1a2-4fb6-b342-98c14ad73a1b
+      nodeId: 66a55ec7-3300-4de7-856c-2ee103a6a0b0
       portIndex: 0
     inputPort:
-      nodeId: d2962143-e9a2-4b9f-8baa-94999ec0e991
-      portIndex: 1
+      nodeId: 0ba0b576-9f3d-4406-afa0-b261639edc17
+      portIndex: 2
   - outputPort:
-      nodeId: d2962143-e9a2-4b9f-8baa-94999ec0e991
+      nodeId: 0ba0b576-9f3d-4406-afa0-b261639edc17
       portIndex: 0
     inputPort:
-      nodeId: d622914b-da8c-4291-9808-92456b161726
-      portIndex: 1
+      nodeId: c68c6fd6-9048-46df-a3b6-18833e2e3d6a
+      portIndex: 2
+  - outputPort:
+      nodeId: c68c6fd6-9048-46df-a3b6-18833e2e3d6a
+      portIndex: 0
+    inputPort:
+      nodeId: 9ee76f9c-a4f4-4b45-8e1c-1c962ff42976
+      portIndex: 2
   references:
     version: 2
     RefIds:
-    - rid: 8580623021360021504
-      type: {class: StartNode, ns: CodeGraph, asm: CodeGraph}
+    - rid: 8580623047055638534
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 87e55d24-1482-4a6f-b6d7-895b639203f4
+        guid: 81d20f40-b313-4326-862b-73eeb3ce9731
         position:
           serializedVersion: 2
-          x: 112
-          y: 199
-          width: 74
-          height: 77
-        typeName: CodeGraph.StartNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
+          x: 36
+          y: 252
+          width: 307
+          height: 98
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
-    - rid: 8580623022367703041
-      type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
+        outputs:
+        - Out
+        card: {fileID: 11400000, guid: d2e4a203bda2f79429043b5304d7f9a8, type: 2}
+    - rid: 8580623047055638535
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 470dd260-c1a2-4fb6-b342-98c14ad73a1b
+        guid: 0ba0b576-9f3d-4406-afa0-b261639edc17
         position:
           serializedVersion: 2
-          x: 337
-          y: 202
-          width: 108
-          height: 78
-        typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
+          x: 817
+          y: 69
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
-        log: pepe
-    - rid: 8580623022367703042
-      type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
+        text: 0
+    - rid: 8580623047055638536
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: d2962143-e9a2-4b9f-8baa-94999ec0e991
+        guid: 66a55ec7-3300-4de7-856c-2ee103a6a0b0
         position:
           serializedVersion: 2
-          x: 546
-          y: 201
-          width: 166
-          height: 97
-        typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
+          x: 419
+          y: 212
+          width: 299
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
-        log: hola
-    - rid: 8580623022367703043
-      type: {class: DebugLogNode, ns: CodeGraph, asm: CodeGraph}
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
+        text: 0
+    - rid: 8580623047055638537
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: d622914b-da8c-4291-9808-92456b161726
+        guid: b4a199cd-c2ac-4457-ba95-f2188f80aa55
         position:
           serializedVersion: 2
-          x: 759
-          y: 204
-          width: 108
-          height: 78
-        typeName: CodeGraph.DebugLogNode, CodeGraph, Version=0.0.0.0, Culture=neutral,
+          x: 820
+          y: 357
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
-        log: luis
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 0}
+        text: 0
+    - rid: 8580623047055638538
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c68c6fd6-9048-46df-a3b6-18833e2e3d6a
+        position:
+          serializedVersion: 2
+          x: 1163
+          y: 7
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: c57ab139751265f47a2d7f031a4addcc, type: 2}
+        text: 0
+    - rid: 8580623047055638539
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9ee76f9c-a4f4-4b45-8e1c-1c962ff42976
+        position:
+          serializedVersion: 2
+          x: 1563
+          y: -89
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+        text: 0

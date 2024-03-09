@@ -2,15 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace CodeGraph
 {
-    [NodeInfo("Start", "Process/Start", false, true)]
+    [NodeInfo("Start", "Process/Start", false)]
     public class StartNode : CodeGraphNode
     {
-        public override string OnProcess(CodeGraphAsset graphAsset)
+
+        [ExposedProperty()]
+        public CardTemplate card;
+
+
+        public override bool GetNodeCard(out CardTemplate card)
         {
-            Debug.Log("Process");
-            return base.OnProcess(graphAsset);
+            card = this.card;
+            return true;
+        }
+
+        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        {
+            return base.OnNextNode(graphAsset, bSwipedLeft);
         }
     }
 }

@@ -3296,6 +3296,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
   isSequential: 1
   CardSpawnerOrigin: {fileID: 1045422846}
+  histories: []
+  currentHistory: {fileID: 1586285391}
 --- !u!4 &1958423317
 Transform:
   m_ObjectHideFlags: 0

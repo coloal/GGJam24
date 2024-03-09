@@ -12,6 +12,8 @@ namespace CodeGraph
 
         private CodeGraphAsset graphInstance;
 
+        private CodeGraphNode currentNode;
+
         private void OnEnable()
         {
             graphInstance = Instantiate(graphAsset);
@@ -21,19 +23,28 @@ namespace CodeGraph
         private void ExecuteAsset()
         {
             graphInstance.Init();
-            CodeGraphNode startNode = graphInstance.GetStartNode();
-            ProcessAndMoveToNextNode(startNode);
+            currentNode = graphInstance.GetStartNode();
         }
 
-        private void ProcessAndMoveToNextNode(CodeGraphNode currentNode)
+        public CardTemplate GetNextCard(bool bSwipedLeft)
         {
-            string nextNode = currentNode.OnProcess(graphInstance);
-            if(!string.IsNullOrEmpty(nextNode))
+            string nextNode = currentNode.OnNextNode(graphInstance, bSwipedLeft);
+            if (!string.IsNullOrEmpty(nextNode))
             {
-                CodeGraphNode node = graphInstance.GetNode(nextNode);
-                ProcessAndMoveToNextNode(node);
+                currentNode = graphInstance.GetNode(nextNode);
+                CardTemplate card;
+                if (currentNode.GetNodeCard(out card))
+                {
+                    return card;
+                }
+                else
+                {
+                    return GetNextCard(bSwipedLeft);
+                }   
             }
-
+            Debug.Log("Se me han acabado los nodos Señor.");
+            return null;
         }
+
     }
 }

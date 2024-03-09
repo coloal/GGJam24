@@ -48,6 +48,8 @@ namespace CodeGraph.Editor
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new ClickSelector());
+            this.AddManipulator(new ContentZoomer());
+            
 
             DrawNodes();
             DrawConnections();
@@ -102,9 +104,13 @@ namespace CodeGraph.Editor
                     }
                 }
 
-                foreach(Edge edge in graphViewChange.elementsToRemove.OfType<Edge>())
+                List<Edge> edges = graphViewChange.elementsToRemove.OfType<Edge>().ToList();
+                if (edges.Count > 0)
                 {
-                    RemoveConnection(edge);
+                    for (int i = 0; i < edges.Count; i++)
+                    {
+                        RemoveConnection(edges[i]);
+                    }
                 }
             }
 
@@ -130,7 +136,7 @@ namespace CodeGraph.Editor
 
             CodeGraphConnection connection = new CodeGraphConnection(inputNode.GraphNode.id, inputIndex, outputNode.GraphNode.id, outputIndex);
             codeGraph.Connections.Add(connection);
-
+            connectionDictionary.Add(edge, connection);
         }
 
         private void RemoveConnection(Edge edge)
@@ -159,6 +165,7 @@ namespace CodeGraph.Editor
             {
                 AddNodeToGraph(node);
             }
+            Bind();
         }
 
         private void DrawConnections()
@@ -204,17 +211,18 @@ namespace CodeGraph.Editor
             
             serializedObject.Update();
             AddNodeToGraph(node);
+            Bind();
         }
 
         private void AddNodeToGraph(CodeGraphNode node)
         {
-            node.typeName = node.GetType().AssemblyQualifiedName;
+            node.typeName = node.GetType().AssemblyQualifiedName; 
             CodeGraphEditorNode editorNode = new CodeGraphEditorNode(node, serializedObject);
             editorNode.SetPosition(node.Position);
             graphNodes.Add(editorNode);
             nodeDictionary.Add(node.id, editorNode);
             AddElement(editorNode);
-            Bind();
+            
         }
 
         private void Bind()

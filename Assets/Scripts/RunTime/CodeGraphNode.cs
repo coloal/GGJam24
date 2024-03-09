@@ -15,6 +15,8 @@ namespace CodeGraph
 
         public string typeName;
 
+        public List<string> outputs = new List<string>();
+
         public string id => guid;
         public Rect Position => position;
 
@@ -22,6 +24,7 @@ namespace CodeGraph
         public CodeGraphNode()
         {
             newGuid();
+            outputs.Add("Out");
         }
 
         private void newGuid()
@@ -33,8 +36,12 @@ namespace CodeGraph
         {
             this.position = position;
         }
-
-        public virtual string OnProcess(CodeGraphAsset graphAsset)
+        public virtual bool GetNodeCard(out CardTemplate card)
+        {
+            card = null;
+            return false;
+        }
+        public virtual string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(guid, 0);
             if (nextNode != null)

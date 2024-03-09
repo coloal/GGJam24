@@ -44,10 +44,11 @@ public class CodeGraphEditorNode : Node
 
         this.name = typeInfo.Name;
 
-        if(info.HasFlowOutput)
+        foreach(string output in node.outputs)
         {
-            CreateFlowOutputPort();
+            CreateFlowOutputPort(output);
         }
+
         if(info.HasFlowInput)
         {
             CreateFlowInputPort();
@@ -100,11 +101,11 @@ public class CodeGraphEditorNode : Node
         }
     }
 
-    private void CreateFlowOutputPort()
+    private void CreateFlowOutputPort(string name)
     {
         outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(PortTypes.FlowPort));
-        outputPort.portName = "Out";
-        outputPort.tooltip = "The flow output";
+        outputPort.portName = name;
+        outputPort.tooltip = "Flow output";
         ports.Add(outputPort);
         outputPorts.Add(outputPort);
         outputContainer.Add(outputPort);
@@ -113,7 +114,7 @@ public class CodeGraphEditorNode : Node
     private void CreateFlowInputPort()
     {
         Port inputPort;
-        inputPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Single, typeof(PortTypes.FlowPort));
+        inputPort = InstantiatePort(Orientation.Horizontal, Direction.Input, Port.Capacity.Multi, typeof(PortTypes.FlowPort));
         inputPort.portName = "In";
         inputPort.tooltip = "The flow input";
         inputPorts.Add(inputPort);
