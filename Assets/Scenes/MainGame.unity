@@ -2368,6 +2368,7 @@ MonoBehaviour:
   CardsManager: {fileID: 1958423316}
   EndManager: {fileID: 1043067325}
   BrainManager: {fileID: 0}
+  StoryManager: {fileID: 1327554469}
 --- !u!1001 &1281724104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2471,6 +2472,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9858e1bf27103b142a2161b2317656ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1327554468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327554470}
+  - component: {fileID: 1327554469}
+  m_Layer: 0
+  m_Name: StoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1327554469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327554468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d418b9969fc6594dbfd69434d7da41d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  histories: []
+  currentHistory: {fileID: 1586285391}
+--- !u!4 &1327554470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327554468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 483.89038, y: 267.5571, z: -1.7441648}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477049938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,8 +3388,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
   isSequential: 1
   CardSpawnerOrigin: {fileID: 1045422846}
-  histories: []
-  currentHistory: {fileID: 1586285391}
 --- !u!4 &1958423317
 Transform:
   m_ObjectHideFlags: 0
@@ -3694,6 +3739,7 @@ SceneRoots:
   - {fileID: 1958423317}
   - {fileID: 1043067326}
   - {fileID: 1945957145}
+  - {fileID: 1327554470}
   - {fileID: 1853371290}
   - {fileID: 696331230}
   - {fileID: 1558832725}

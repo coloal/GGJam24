@@ -21,7 +21,7 @@ public class TurnManager : MonoBehaviour
     GameStates CurrentGameState;
 
 
-
+    StoryManager StoryManager;
     CardsManager CardsManager;
     
     Card CurrentCard;
@@ -36,12 +36,13 @@ public class TurnManager : MonoBehaviour
     void SetUpManagers()
     {
         CardsManager = GameManager.Instance.ProvideCardsManager();
+        StoryManager = GameManager.Instance.ProvideStoryManager();
     }
 
-    void GetNewCard()
+    void GetNewCard(CardTemplate nextCard)
     {
         SetGameState(GameStates.SHOW_CARD);
-        GameObject SpawnedCard = CardsManager.SpawnNextCard();
+        GameObject SpawnedCard = CardsManager.SpawnNextCard(nextCard);
         CurrentCard = SpawnedCard.GetComponent<Card>();
         SetGameState(GameStates.MAKE_DECISION);
     }
@@ -67,19 +68,24 @@ public class TurnManager : MonoBehaviour
 
     public void CheckForEndGame()
     {
+        
         if (CardsManager.IsDeckEmpty())
         {
             GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
         }
-        else //if (stoymanager.getNextCard != null)
+        else
         {
-            StartTurn();
+            CardTemplate nextCard = StoryManager.GetNextCardInGraph();
+            if(nextCard != null)
+            {
+                StartTurn(nextCard);
+            }
         }
     }
 
-    public void StartTurn() 
+    public void StartTurn(CardTemplate nextCard) 
     {
-        GetNewCard();
+        GetNewCard(nextCard);
     }
 
     public void SwipeLeft() 
@@ -89,6 +95,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        StoryManager.SwipeLeft();
     }
 
     public void SwipeRight()
@@ -98,7 +105,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
-
+        StoryManager.SwipeRight();
         /*
         SetGameState(GameStates.PICK_A_HITMAN);
         OverlayImage.SetActive(true);

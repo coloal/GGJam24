@@ -18,24 +18,16 @@ public class CardsManager : MonoBehaviour
     [SerializeField]
     Transform CardSpawnerOrigin;
 
-    [SerializeField]
-    List<CodeGraphObject> histories;
-
-    [SerializeField]
-    CodeGraphObject currentHistory;
-
     private int indexNextCard = 0;
 
-    public GameObject SpawnNextCard()
+    public GameObject SpawnNextCard(CardTemplate nextCard)
     {
         GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);
 
-        CardTemplate nextCard = currentHistory.GetNextCard(true);
         if(nextCard != null)
         {
             newCard.GetComponent<Card>().SetDataCard(nextCard);
         }
-        
         
         //indexNextCard++;
         return newCard;

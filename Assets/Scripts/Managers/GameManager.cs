@@ -16,12 +16,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     EndManager EndManager;
 
-<<<<<<< HEAD
+
     [SerializeField]
     BrainManager BrainManager;
-=======
-    
->>>>>>> 6fda834b708492154ebda987702530cca0c7de60
+
+    [SerializeField]
+    StoryManager StoryManager;
+
 
     void Awake()
     {
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
 
     void StartGame() 
     {
-        TurnManager.StartTurn();
+        CardTemplate FirstCard = StoryManager.GetNextCardInGraph();
+        TurnManager.StartTurn(FirstCard);
     }
 
     // Maybe we need several FinishGame functions for every final that the game has
@@ -67,9 +69,15 @@ public class GameManager : MonoBehaviour
     public EndManager ProvideEndManager() {
         return EndManager;
     }
+
     public BrainManager ProvideBrainManager()
     {
         return BrainManager;
     }
     
+    public StoryManager ProvideStoryManager()
+    {
+        return StoryManager;
+    }
+
 }

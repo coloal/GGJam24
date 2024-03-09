@@ -19,6 +19,9 @@ MonoBehaviour:
   - rid: 8580623047055638537
   - rid: 8580623047055638538
   - rid: 8580623047055638539
+  - rid: 8580623047055638540
+  - rid: 8580623047055638541
+  - rid: 8580623047055638542
   connections:
   - outputPort:
       nodeId: 81d20f40-b313-4326-862b-73eeb3ce9731
@@ -44,6 +47,60 @@ MonoBehaviour:
     inputPort:
       nodeId: 9ee76f9c-a4f4-4b45-8e1c-1c962ff42976
       portIndex: 2
+  - outputPort:
+      nodeId: 66a55ec7-3300-4de7-856c-2ee103a6a0b0
+      portIndex: 1
+    inputPort:
+      nodeId: b4a199cd-c2ac-4457-ba95-f2188f80aa55
+      portIndex: 2
+  - outputPort:
+      nodeId: b4a199cd-c2ac-4457-ba95-f2188f80aa55
+      portIndex: 0
+    inputPort:
+      nodeId: a0cbd259-3ea1-4999-9f4e-62e8588b5cc7
+      portIndex: 2
+  - outputPort:
+      nodeId: b4a199cd-c2ac-4457-ba95-f2188f80aa55
+      portIndex: 1
+    inputPort:
+      nodeId: e84740b4-582b-4b6a-be92-9879aaf086a5
+      portIndex: 2
+  - outputPort:
+      nodeId: e84740b4-582b-4b6a-be92-9879aaf086a5
+      portIndex: 1
+    inputPort:
+      nodeId: a87aebf7-78de-4926-be43-c3ae96e56eb2
+      portIndex: 2
+  - outputPort:
+      nodeId: e84740b4-582b-4b6a-be92-9879aaf086a5
+      portIndex: 0
+    inputPort:
+      nodeId: a87aebf7-78de-4926-be43-c3ae96e56eb2
+      portIndex: 2
+  - outputPort:
+      nodeId: a0cbd259-3ea1-4999-9f4e-62e8588b5cc7
+      portIndex: 1
+    inputPort:
+      nodeId: a87aebf7-78de-4926-be43-c3ae96e56eb2
+      portIndex: 2
+  - outputPort:
+      nodeId: a0cbd259-3ea1-4999-9f4e-62e8588b5cc7
+      portIndex: 0
+    inputPort:
+      nodeId: a87aebf7-78de-4926-be43-c3ae96e56eb2
+      portIndex: 2
+  - outputPort:
+      nodeId: 9ee76f9c-a4f4-4b45-8e1c-1c962ff42976
+      portIndex: 1
+    inputPort:
+      nodeId: a87aebf7-78de-4926-be43-c3ae96e56eb2
+      portIndex: 2
+  - outputPort:
+      nodeId: 9ee76f9c-a4f4-4b45-8e1c-1c962ff42976
+      portIndex: 0
+    inputPort:
+      nodeId: a87aebf7-78de-4926-be43-c3ae96e56eb2
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -53,8 +110,8 @@ MonoBehaviour:
         guid: 81d20f40-b313-4326-862b-73eeb3ce9731
         position:
           serializedVersion: 2
-          x: 36
-          y: 252
+          x: 2
+          y: 167
           width: 307
           height: 98
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -85,8 +142,8 @@ MonoBehaviour:
         guid: 66a55ec7-3300-4de7-856c-2ee103a6a0b0
         position:
           serializedVersion: 2
-          x: 419
-          y: 212
+          x: 414
+          y: 170
           width: 299
           height: 142
         typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -102,8 +159,8 @@ MonoBehaviour:
         guid: b4a199cd-c2ac-4457-ba95-f2188f80aa55
         position:
           serializedVersion: 2
-          x: 820
-          y: 357
+          x: 856
+          y: 287
           width: 290
           height: 142
         typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -111,7 +168,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: 94e93bb33d4f8b247bc211c26ce805fe, type: 2}
         text: 0
     - rid: 8580623047055638538
       type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -119,9 +176,9 @@ MonoBehaviour:
         guid: c68c6fd6-9048-46df-a3b6-18833e2e3d6a
         position:
           serializedVersion: 2
-          x: 1163
-          y: 7
-          width: 290
+          x: 1197
+          y: -73
+          width: 293
           height: 142
         typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -136,9 +193,9 @@ MonoBehaviour:
         guid: 9ee76f9c-a4f4-4b45-8e1c-1c962ff42976
         position:
           serializedVersion: 2
-          x: 1563
-          y: -89
-          width: 290
+          x: 1604
+          y: -137
+          width: 312
           height: 142
         typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -146,4 +203,55 @@ MonoBehaviour:
         - Left
         - Right
         card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+        text: 0
+    - rid: 8580623047055638540
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a0cbd259-3ea1-4999-9f4e-62e8588b5cc7
+        position:
+          serializedVersion: 2
+          x: 1297
+          y: 181
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: d2e4a203bda2f79429043b5304d7f9a8, type: 2}
+        text: 0
+    - rid: 8580623047055638541
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e84740b4-582b-4b6a-be92-9879aaf086a5
+        position:
+          serializedVersion: 2
+          x: 1301
+          y: 373
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: aa9b18aea3124194e963466e40b8da8e, type: 2}
+        text: 0
+    - rid: 8580623047055638542
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a87aebf7-78de-4926-be43-c3ae96e56eb2
+        position:
+          serializedVersion: 2
+          x: 2058
+          y: 86
+          width: 290
+          height: 142
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: 7781bbae1f3601c4db6f88e851a9ae57, type: 2}
         text: 0
