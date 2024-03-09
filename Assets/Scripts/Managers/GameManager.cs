@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -15,8 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     EndManager EndManager;
 
+<<<<<<< HEAD
     [SerializeField]
     BrainManager BrainManager;
+=======
+    
+>>>>>>> 6fda834b708492154ebda987702530cca0c7de60
 
     void Awake()
     {

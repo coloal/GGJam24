@@ -71,7 +71,7 @@ public class TurnManager : MonoBehaviour
         {
             GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
         }
-        else
+        else //if (stoymanager.getNextCard != null)
         {
             StartTurn();
         }
@@ -98,6 +98,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+
         /*
         SetGameState(GameStates.PICK_A_HITMAN);
         OverlayImage.SetActive(true);

@@ -42,7 +42,7 @@ public class Draggable : MonoBehaviour
     bool releasedInLimitLeft = false;
     bool releasedInLimitRight = false;
     int TutorialFase = 0;
-    DraggableStates CurrentState = DraggableStates.TUTORIAL_MOVE_RIGHT;
+    DraggableStates CurrentState = DraggableStates.PLAY_STATE;
 
     Vector2 initialPosition;
     // Start is called before the first frame update
