@@ -9,27 +9,19 @@ namespace CodeGraph
     {
 
         [ExposedProperty()]
-        public CardTemplate card;
-        [ExposedProperty()]
-        public HitManTypes text;
+        public string debugLog;
         
-        public DebugLogNode()
-        {
-            outputs.Clear();
-            outputs.Add("Left");
-            outputs.Add("Right");
-        }
 
         public override bool GetNodeCard(out CardTemplate card)
         {
-            card = this.card;
-            return true;
+            card = null;
+            return false;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-            int port = bSwipedLeft ? 0:1;
-            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
+            Debug.Log(debugLog);
+            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
             if (nextNode != null)
             {
                 return nextNode.id;

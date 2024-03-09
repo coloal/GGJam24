@@ -24,7 +24,7 @@ namespace CodeGraph
         public CodeGraphNode()
         {
             newGuid();
-            outputs.Add("Out");
+            outputs.Add("Next");
         }
 
         private void newGuid()

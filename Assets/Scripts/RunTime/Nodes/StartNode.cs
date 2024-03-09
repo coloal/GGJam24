@@ -9,14 +9,11 @@ namespace CodeGraph
     public class StartNode : CodeGraphNode
     {
 
-        [ExposedProperty()]
-        public CardTemplate card;
-
 
         public override bool GetNodeCard(out CardTemplate card)
         {
-            card = this.card;
-            return true;
+            card = null;
+            return false;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
