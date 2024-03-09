@@ -24,6 +24,10 @@ public class Card : MonoBehaviour
     [SerializeField]
     private SpriteRenderer CardSprite;
 
+    [SerializeField]
+    private SpriteRenderer BackgroundSprite;
+
+
     //Information of the card
     private string NameOfCard;
 
@@ -55,7 +59,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    public void SetDataCard(CardTemplate DataCard) 
+    public virtual void SetDataCard(CardTemplate DataCard) 
     {
         //Set informaci�n del DataCard
         NameOfCard = DataCard.NameOfCard;
@@ -73,8 +77,11 @@ public class Card : MonoBehaviour
         DescriptionText.GetComponent<MeshRenderer>().sortingLayerID = CardSprite.sortingLayerID;
 
         CardSprite.sprite = DataCard.CardSprite;
-
-}
+        if (DataCard.BackgroundSprite != null)
+        {
+            BackgroundSprite.sprite = DataCard.BackgroundSprite;
+        }
+    }
 
 
     public void GoToBackGroundAndDeactivate()

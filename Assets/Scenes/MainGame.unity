@@ -2365,9 +2365,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnManager: {fileID: 1029993838}
-  StatsManager: {fileID: 1477049940}
   CardsManager: {fileID: 1958423316}
   EndManager: {fileID: 1043067325}
+  BrainManager: {fileID: 0}
 --- !u!1001 &1281724104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2515,13 +2515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75cb72da837e46b9ab8e851b22c1af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatsMaxValue: 100
-  ViolenceStat: 50
-  MoneyStat: 50
-  InfluenceStat: 50
-  ViolenceStatBar: {fileID: 1849939802}
-  MoneyStatBar: {fileID: 651339198}
-  InfluenceStatBar: {fileID: 632488352}
 --- !u!1 &1488329686
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +3206,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1945957143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945957145}
+  - component: {fileID: 1945957144}
+  m_Layer: 0
+  m_Name: BrainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1945957144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945957143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3a0d3303e3cd84e9317b7aba19c59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1945957145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945957143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5225835, y: 1.650035, z: 4.5374503}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1958423315
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,6 +3646,7 @@ SceneRoots:
   - {fileID: 1029993837}
   - {fileID: 1958423317}
   - {fileID: 1043067326}
+  - {fileID: 1945957145}
   - {fileID: 1853371290}
   - {fileID: 696331230}
   - {fileID: 1558832725}

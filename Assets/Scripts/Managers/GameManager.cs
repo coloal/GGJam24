@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     EndManager EndManager;
 
+    [SerializeField]
+    BrainManager BrainManager;
+
     void Awake()
     {
         if (Instance == null)
@@ -59,4 +62,9 @@ public class GameManager : MonoBehaviour
     public EndManager ProvideEndManager() {
         return EndManager;
     }
+    public BrainManager ProvideBrainManager()
+    {
+        return BrainManager;
+    }
+    
 }

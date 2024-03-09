@@ -16,6 +16,15 @@ public class HitmanInfo
     public int InfluenceStat = 0;
 }
 
+[System.Serializable]
+public class CombatInfo
+{
+    public int HealthPoints = 0;
+    public int Damage = 0;
+    public int Armor = 0;
+    public CombatTypes CombatType;
+}
+
 public class CardTemplate : ScriptableObject
 {
     //Information of the card
@@ -35,6 +44,11 @@ public class CardTemplate : ScriptableObject
 
     //Card sprite
     public Sprite CardSprite;
+    public Sprite BackgroundSprite;
+
+    public CombatInfo CombatInfo;
+
+
 
     /*// --Deprecated--
     public List<HitManTypes> ListHitmanTypes;
