@@ -6,13 +6,18 @@ using UnityEngine;
 public class StoryManager : MonoBehaviour
 {
 
-    [SerializeField]
-    List<CodeGraphObject> histories;
+    
+    
 
     [SerializeField]
-    CodeGraphObject currentHistory;
+    CodeGraphObject currentStory;
+    [SerializeField] 
+    private List<CodeGraphObject> allStories;
+
+    private Stack<CodeGraphObject> storyStack;
 
     private bool bLastSwipeWasLeft = false; 
+    private bool bFinishedGame = false;
 
     public void SwipeRight()
     {
@@ -24,8 +29,36 @@ public class StoryManager : MonoBehaviour
         bLastSwipeWasLeft = true;
     }
 
-    public CardTemplate GetNextCardInGraph()
+    public bool GetNextCardInGraph(out CardTemplate nextCard)
     {
-        return currentHistory.GetNextCard(bLastSwipeWasLeft);
+        nextCard = currentStory.GetNextCard(bLastSwipeWasLeft);
+        return bFinishedGame;
     }
+
+    public void ChangeStory(CodeGraphObject newHistory, bool storeActualStory)
+    {
+        if(storeActualStory)
+        {
+            storyStack.Push(currentStory);
+        }
+        currentStory = newHistory;
+    }
+
+    public CodeGraphObject ReturntoParentStory()
+    {
+        currentStory = storyStack.Pop();
+        return currentStory;
+    }
+
+    public void FinishGame()
+    {
+        bFinishedGame = true;
+    }
+
+    public CodeGraphObject SearchStory(CodeGraphObject Story)
+    {
+        return allStories.Find((other) => Story.GetType().Equals(other.GetType()));
+    }
+    
+
 }

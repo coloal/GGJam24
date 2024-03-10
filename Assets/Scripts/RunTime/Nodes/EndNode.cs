@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("Debug Log", "Debug Nodes/Debug Log Console")]
-    public class DebugLogNode : CodeGraphNode
+    [NodeInfo("End", "Flow Nodes/End")]
+    public class EndNode : CodeGraphNode
     {
-
-        [ExposedProperty()]
-        public string debugLog;
-        
-
+        public EndNode()
+        {
+            outputs.Clear();      
+            nodeColor = Color.red;
+        }
         public override bool GetNodeCard(out CardTemplate card)
         {
             card = null;
@@ -20,14 +20,9 @@ namespace CodeGraph
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-            Debug.Log(debugLog);
-            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
-            if (nextNode != null)
-            {
-                return nextNode.id;
-            }
+            GameManager.Instance.ProvideStoryManager().FinishGame();
             return string.Empty;
         }
-        
     }
+
 }

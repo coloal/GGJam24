@@ -75,8 +75,17 @@ public class TurnManager : MonoBehaviour
         }
         else
         {
-            CardTemplate nextCard = StoryManager.GetNextCardInGraph();
-            if(nextCard != null)
+            CardTemplate nextCard;
+            if (StoryManager.GetNextCardInGraph(out nextCard))
+            {
+                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+            }
+            else if(nextCard == null)
+            {
+                Debug.LogWarning("Por favor mete un nodo de final que no te cuesta na");
+                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+            }
+            else
             {
                 StartTurn(nextCard);
             }

@@ -12,10 +12,11 @@ namespace CodeGraph
         private string guid;
         [SerializeField]
         private Rect position;
+        
 
+        public Color nodeColor;
         public string typeName;
-
-        public List<string> outputs = new List<string>();
+        public List<string> outputs = new List<string>(); 
 
         public string id => guid;
         public Rect Position => position;
@@ -25,6 +26,7 @@ namespace CodeGraph
         {
             newGuid();
             outputs.Add("Next");
+            
         }
 
         private void newGuid()

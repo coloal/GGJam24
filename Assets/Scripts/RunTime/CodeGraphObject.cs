@@ -26,7 +26,7 @@ namespace CodeGraph
             currentNode = graphInstance.GetStartNode();
         }
 
-        public CardTemplate GetNextCard(bool bSwipedLeft)
+        public CardTemplate GetNextCard(bool bSwipedLeft = true)
         {
             string nextNode = currentNode.OnNextNode(graphInstance, bSwipedLeft);
             if (!string.IsNullOrEmpty(nextNode))
@@ -44,6 +44,11 @@ namespace CodeGraph
             }
             Debug.Log("Se me han acabado los nodos Señor.");
             return null;
+        }
+
+        public void RestartGraph()
+        {
+            currentNode = graphInstance.GetStartNode();
         }
 
     }

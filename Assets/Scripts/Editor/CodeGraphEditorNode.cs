@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CodeGraphEditorNode : Node
 {
@@ -31,7 +32,8 @@ public class CodeGraphEditorNode : Node
         NodeInfoAttribute info = typeInfo.GetCustomAttribute<NodeInfoAttribute>();
         this.serializedObject = codeGraphObject;
         title = info.Title;
-
+        style.backgroundColor = new StyleColor(node.nodeColor);
+        
         ports = new List<Port>();
         inputPorts = new List<Port>();
         outputPorts = new List<Port>();

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[NodeInfo("Fork Card", "Card Nodes/Fork Card Node")]
+[NodeInfo("Fork Card", "Card Nodes/Fork Card")]
 public class ForkCardNode : CodeGraphNode
 {
     [ExposedProperty()]

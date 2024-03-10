@@ -4,28 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Rendering.CameraUI;
 
-[NodeInfo("Straight Card", "Card Nodes/Straight Card Node")]
-public class StraightCardNode : CodeGraphNode
+namespace CodeGraph
 {
-    [ExposedProperty()]
-    public CardTemplate card;
+    [NodeInfo("Straight Card", "Card Nodes/Straight Card")]
+    public class StraightCardNode : CodeGraphNode
+    {
+        [ExposedProperty()]
+        public CardTemplate card;
 
     
 
-    public override bool GetNodeCard(out CardTemplate card)
-    {
-        card = this.card;
-        return true;
-    }
-
-    public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
-    {
-        CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
-        if (nextNode != null)
+        public override bool GetNodeCard(out CardTemplate card)
         {
-            return nextNode.id;
+            card = this.card;
+            return true;
         }
-        return string.Empty;
-    }
 
+        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        {
+            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
+            if (nextNode != null)
+            {
+                return nextNode.id;
+            }
+            return string.Empty;
+        }
+
+    }
 }
+
+
