@@ -1,20 +1,43 @@
 using CodeGraph;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject PrefabCodeGraph;
 
     [SerializeField]
-    CodeGraphObject currentStory;
-    [SerializeField] 
-    private List<CodeGraphObject> allStories;
+    private CodeGraphAsset FirstStory;
 
-    private Stack<CodeGraphObject> storyStack;
+    private CodeGraphObject currentStory = null;
+
+    private List<CodeGraphObject> storyStack;
+
+    private List<CodeGraphObject> existingStoryList;
 
     private bool bLastSwipeWasLeft = false; 
     private bool bFinishedGame = false;
+
+    public void Start()
+    {
+        existingStoryList = new List<CodeGraphObject>();
+        storyStack = new List<CodeGraphObject>();
+        if(currentStory == null)
+        {
+            InitStory();
+        }
+    }
+
+    public void InitStory()
+    {
+        GameObject go = Instantiate(PrefabCodeGraph);
+        go.GetComponent<CodeGraphObject>().ExecuteAsset(FirstStory);
+        currentStory = go.GetComponent<CodeGraphObject>();
+    }
 
     public void SwipeRight()
     {
@@ -28,23 +51,56 @@ public class StoryManager : MonoBehaviour
 
     public bool GetNextCardInGraph(out CardTemplate nextCard)
     {
+        if(currentStory == null)
+        {
+            InitStory();
+        }
         nextCard = currentStory.GetNextCard(bLastSwipeWasLeft);
         return bFinishedGame;
     }
 
-    public void ChangeStory(CodeGraphObject newHistory, bool storeActualStory)
+    public CodeGraphObject ChangeStory(CodeGraphAsset newHistory, bool storyHasEnded)
     {
-        if(storeActualStory)
+        //Esto es para subarboles
+        if (!storyHasEnded)
         {
-            storyStack.Push(currentStory);
+            existingStoryList.Add(currentStory);
+            storyStack.Add(currentStory);
         }
-        currentStory = newHistory;
+        else
+        {
+            FinishStory();
+        }
+
+        CodeGraphObject story = SearchStory(newHistory);
+        if (story != null)
+        {
+            currentStory = story;
+        }
+        else
+        {
+            GameObject gameObject = Instantiate(PrefabCodeGraph);
+            gameObject.GetComponent<CodeGraphObject>().ExecuteAsset(newHistory);
+            currentStory = gameObject.GetComponent<CodeGraphObject>();
+        }
+        return currentStory;
     }
 
     public CodeGraphObject ReturntoParentStory()
     {
-        currentStory = storyStack.Pop();
+        FinishStory();
+        currentStory = storyStack[storyStack.Count - 1];
+        storyStack.RemoveAt(storyStack.Count-1);
         return currentStory;
+    }
+
+    public void FinishStory()
+    {
+        
+        existingStoryList.Remove(currentStory);
+        storyStack.RemoveAll(other => currentStory.Equals(other));
+        Destroy(currentStory.gameObject);
+
     }
 
     public void FinishGame()
@@ -52,9 +108,13 @@ public class StoryManager : MonoBehaviour
         bFinishedGame = true;
     }
 
-    public CodeGraphObject SearchStory(CodeGraphObject Story)
+
+
+    public CodeGraphObject SearchStory(CodeGraphAsset story)
     {
-        return allStories.Find((other) => Story.GetType().Equals(other.GetType()));
+        return existingStoryList.Find((other) => {
+            return other.GetGraphAsset().Equals(story);
+        });
     }
     
 

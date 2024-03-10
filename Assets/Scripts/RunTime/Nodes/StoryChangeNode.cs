@@ -8,7 +8,7 @@ namespace CodeGraph
     public class StoryChangeNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public CodeGraphObject newStory;
+        public CodeGraphAsset newStory;
         [ExposedProperty()]
         public bool restartNewStory = false;
 
@@ -16,10 +16,12 @@ namespace CodeGraph
         {
             if(newStory != null)
             {
-                CodeGraphObject newStoryInstanced = GameManager.Instance.ProvideStoryManager().SearchStory(newStory);
-                if (restartNewStory) { newStoryInstanced.RestartGraph(); }
+                CodeGraphObject newStoryInstanced = GameManager.Instance.ProvideStoryManager().ChangeStory(newStory, false);
+                if (restartNewStory)
+                {
+                    newStoryInstanced.RestartGraph();
+                }
                 card = newStoryInstanced.GetNextCard();
-                GameManager.Instance.ProvideStoryManager().ChangeStory(newStoryInstanced, true);
                 return true;
             }
             card = null;

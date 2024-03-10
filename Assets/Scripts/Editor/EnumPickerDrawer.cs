@@ -26,11 +26,10 @@ public class EnumPickerDrawer : PropertyDrawer
         }
         else if (((int)EnumTag.John) == FirstOption)
         {
-           
             property.FindPropertyRelative("selectedSecondOption").intValue = EditorGUI.Popup(popup2Rect, option, System.Enum.GetNames(typeof(John)));
         }
         
-       
+        
         
 
         EditorGUI.EndProperty();

@@ -6,7 +6,6 @@ public enum Tag
     Null
 };
 
-
 public enum EnumTag
 {
     MasterSword,

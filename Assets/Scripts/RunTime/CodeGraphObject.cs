@@ -7,21 +7,23 @@ namespace CodeGraph
 {
     public class CodeGraphObject : MonoBehaviour
     {
-        [SerializeField]
+
+        [HideInInspector]
+        public CodeGraphAsset graphInstance;
         private CodeGraphAsset graphAsset;
 
-        private CodeGraphAsset graphInstance;
 
         private CodeGraphNode currentNode;
-
+     
         private void OnEnable()
-        {
-            graphInstance = Instantiate(graphAsset);
-            ExecuteAsset();
+        {         
+            //ExecuteAsset();
         }
 
-        private void ExecuteAsset()
+        public void ExecuteAsset(CodeGraphAsset graphAsset)
         {
+            this.graphAsset = graphAsset; 
+            graphInstance = Instantiate(graphAsset);
             graphInstance.Init();
             currentNode = graphInstance.GetStartNode();
         }
@@ -51,5 +53,9 @@ namespace CodeGraph
             currentNode = graphInstance.GetStartNode();
         }
 
+        public CodeGraphAsset GetGraphAsset()
+        {
+            return graphAsset;
+        }
     }
 }

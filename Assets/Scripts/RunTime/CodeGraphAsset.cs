@@ -14,6 +14,9 @@ namespace CodeGraph
         [SerializeField]
         private List<CodeGraphConnection> connections;
 
+        [SerializeField]
+        public int id;
+
         public Dictionary<string, CodeGraphNode> nodeDictionary;
         public List<CodeGraphNode> Nodes => nodes;
         public List <CodeGraphConnection> Connections => connections;
