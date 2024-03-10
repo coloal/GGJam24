@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-public enum Tag
+public enum BrainTag
 {
     Bendecido,
     Maldito,
-    Asustado,
-    Null
+    Asustado
 };
 
 public enum NumericTags

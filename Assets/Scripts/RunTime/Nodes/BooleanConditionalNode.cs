@@ -10,7 +10,7 @@ namespace CodeGraph
     public class BooleanConditionalNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public Tag IF;
+        public BrainTag IF;
 
         
 
