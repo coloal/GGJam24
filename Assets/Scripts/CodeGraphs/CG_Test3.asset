@@ -53,8 +53,8 @@ MonoBehaviour:
         guid: f24e1a3f-0048-4efc-830e-dcdbf449000a
         position:
           serializedVersion: 2
-          x: 135
-          y: 267
+          x: 115
+          y: 257
           width: 74
           height: 77
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
@@ -68,9 +68,9 @@ MonoBehaviour:
         guid: 860e6b7a-aef7-47a6-b3ed-2b7f32bc0d9f
         position:
           serializedVersion: 2
-          x: 276
-          y: 241
-          width: 290
+          x: 271
+          y: 251
+          width: 312
           height: 98
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -84,8 +84,8 @@ MonoBehaviour:
         guid: 55d78321-9b54-464c-b9f5-4146918a5be5
         position:
           serializedVersion: 2
-          x: 668
-          y: 253
+          x: 684
+          y: 248
           width: 332
           height: 116
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
@@ -101,9 +101,9 @@ MonoBehaviour:
         guid: 9da88f78-709e-49e8-8119-286c6a07a952
         position:
           serializedVersion: 2
-          x: 1096
-          y: 258
-          width: 290
+          x: 1121
+          y: 245
+          width: 284
           height: 98
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -117,8 +117,8 @@ MonoBehaviour:
         guid: 2e0116a0-c729-4655-8d4e-3b66823f7920
         position:
           serializedVersion: 2
-          x: 1444
-          y: 249
+          x: 1506
+          y: 244
           width: 173
           height: 77
         nodeColor: {r: 0, g: 0, b: 0, a: 0}

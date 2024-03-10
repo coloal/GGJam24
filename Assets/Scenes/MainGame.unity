@@ -2367,7 +2367,7 @@ MonoBehaviour:
   TurnManager: {fileID: 1029993838}
   CardsManager: {fileID: 1958423316}
   EndManager: {fileID: 1043067325}
-  BrainManager: {fileID: 0}
+  BrainManager: {fileID: 1945957144}
   StoryManager: {fileID: 1327554469}
 --- !u!1001 &1281724104
 PrefabInstance:

@@ -17,9 +17,8 @@ public class BrainManager : MonoBehaviour
 
         for (int i = 0; i < (int)Tag.Null; i++)
         {
-            TagsMap.Add((Tag)i, false);
+            TagsMap.Add((Tag)i, true);
         }
-
     }
 
 

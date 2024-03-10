@@ -53,7 +53,7 @@ MonoBehaviour:
         guid: aa1b5579-65fe-40a1-bf7f-52971c4f0883
         position:
           serializedVersion: 2
-          x: 150
+          x: 134
           y: 270
           width: 74
           height: 77
@@ -68,9 +68,9 @@ MonoBehaviour:
         guid: 85253c51-c2e4-499c-a819-61e9c411a7b6
         position:
           serializedVersion: 2
-          x: 312
-          y: 263
-          width: 290
+          x: 300
+          y: 271
+          width: 299
           height: 98
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

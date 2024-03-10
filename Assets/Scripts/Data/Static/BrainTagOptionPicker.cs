@@ -6,10 +6,8 @@ using UnityEditor;
 using UnityEngine;
 
 [Serializable]
-public class EnumPicker
+public class BrainTagOptionPicker
 {
-
-    public int selectedFirstOption;
-    public int selectedSecondOption;
-    
+    public int selectedTag;
+    public int selectedTagState;
 }

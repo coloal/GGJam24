@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 public enum Tag
 {
     Bendecido,
@@ -6,23 +9,23 @@ public enum Tag
     Null
 };
 
-public enum EnumTag
+public enum NumericTags
 {
-    MasterSword,
-    John
+    Keys,
+    Bombs,
+    Potion,
+    Maldad
 }
 
-public enum MasterSword
+
+public static class StateInfo
 {
-    Recogido,
-    Roto,
-    Oculto
+    public static List<Tuple<string, List<string>>> info = new List<Tuple<string, List<string>>>
+        {
+            //El primer estado es el valor por defecto
+            new Tuple<string, List<string>>("MasterSword", new List<string> { "Oculto", "Recogido", "Roto"}),
+            new Tuple<string, List<string>>("Jhon", new List<string> {"Vivo", "Herido", "Muerto", "Atrapado"}),
+            new Tuple<string, List<string>>("Zapato", new List<string> {"Suela", "Cordones", "Converse", "Nike", "Adidas"})
+        };
 }
 
-public enum John
-{
-    Vivo,
-    Herido,
-    Muerto,
-    Atrapado
-}

@@ -6,14 +6,14 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Enum Condition", "Condition Nodes/Enum Condition")]
-    public class EnumConditionalNode : CodeGraphNode
+    [NodeInfo("State Condition", "Condition Nodes/State Condition")]
+    public class BrainTagStateConditionalNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public EnumPicker Picker;
+        public BrainTagOptionPicker Picker;
         
 
-        public EnumConditionalNode()
+        public BrainTagStateConditionalNode()
         {
             outputs.Clear();
             outputs.Add("True");
@@ -28,7 +28,7 @@ namespace CodeGraph
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-
+            
             int port = 0;
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
             if (nextNode != null)
