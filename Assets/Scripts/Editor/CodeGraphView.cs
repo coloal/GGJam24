@@ -43,8 +43,8 @@ namespace CodeGraph.Editor
             background.name = "Grid";
             Add(background);
             background.SendToBack();
-
-            this.AddManipulator(new ContentDragger());
+            ContentDragger dragger = new ContentDragger();
+            this.AddManipulator(dragger);
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new ClickSelector());

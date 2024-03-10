@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -105,11 +106,13 @@ namespace CodeGraph.Editor
 
         public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
         {
-            var windowMousePosition = graph.ChangeCoordinatesTo(graph, context.screenMousePosition - graph.Window.position.position);
-            var graphMousePosition = graph.contentContainer.WorldToLocal(windowMousePosition);
-            SearchContentElement element = (SearchContentElement)SearchTreeEntry.userData;
+
+            var worldMousePosition = graph.Window.rootVisualElement.ChangeCoordinatesTo(graph.Window.rootVisualElement.parent, context.screenMousePosition - graph.Window.position.position);
+            var localMousePosition = graph.contentViewContainer.WorldToLocal(worldMousePosition);
+
+            SearchContentElement element = (SearchContentElement)SearchTreeEntry.userData; 
             CodeGraphNode node = (CodeGraphNode)element.target;
-            node.SetPosition(new Rect(graphMousePosition, new Vector2()));
+            node.SetPosition(new Rect(localMousePosition, new Vector2()));
             graph.Add(node);
             return true;
         }

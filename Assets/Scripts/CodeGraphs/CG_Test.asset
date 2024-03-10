@@ -12,9 +12,124 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
   m_Name: CG_Test
   m_EditorClassIdentifier: 
-  nodes: []
-  connections: []
+  nodes:
+  - rid: 8580623075712172038
+  - rid: 8580623075712172039
+  - rid: 8580623075712172040
+  - rid: 8580623075712172041
+  - rid: 8580623075712172042
+  connections:
+  - outputPort:
+      nodeId: 372322c7-0f5b-4fdf-9d61-8aaf3848ee7f
+      portIndex: 0
+    inputPort:
+      nodeId: 52b5f1fa-a212-4c31-a603-11ce0fbeb472
+      portIndex: 2
+  - outputPort:
+      nodeId: 52b5f1fa-a212-4c31-a603-11ce0fbeb472
+      portIndex: 0
+    inputPort:
+      nodeId: 6cd4f133-81f2-420f-981e-c9473b384f99
+      portIndex: 1
+  - outputPort:
+      nodeId: 52b5f1fa-a212-4c31-a603-11ce0fbeb472
+      portIndex: 1
+    inputPort:
+      nodeId: 331946fe-31e5-4001-8b02-3e2e9a0b4fa2
+      portIndex: 1
+  - outputPort:
+      nodeId: 6cd4f133-81f2-420f-981e-c9473b384f99
+      portIndex: 0
+    inputPort:
+      nodeId: 450ff4a5-4c3d-4f16-8f78-f54e837de0f5
+      portIndex: 0
+  - outputPort:
+      nodeId: 331946fe-31e5-4001-8b02-3e2e9a0b4fa2
+      portIndex: 0
+    inputPort:
+      nodeId: 450ff4a5-4c3d-4f16-8f78-f54e837de0f5
+      portIndex: 0
   id: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8580623075712172038
+      type: {class: BrainTagStateConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 52b5f1fa-a212-4c31-a603-11ce0fbeb472
+        position:
+          serializedVersion: 2
+          x: -2202
+          y: -332
+          width: 219
+          height: 140
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedTag: 2
+          selectedTagState: 0
+    - rid: 8580623075712172039
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 372322c7-0f5b-4fdf-9d61-8aaf3848ee7f
+        position:
+          serializedVersion: 2
+          x: -2403
+          y: -333
+          width: 74
+          height: 77
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+    - rid: 8580623075712172040
+      type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6cd4f133-81f2-420f-981e-c9473b384f99
+        position:
+          serializedVersion: 2
+          x: -1885
+          y: -456
+          width: 290
+          height: 98
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        card: {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
+    - rid: 8580623075712172041
+      type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 331946fe-31e5-4001-8b02-3e2e9a0b4fa2
+        position:
+          serializedVersion: 2
+          x: -1871
+          y: -202
+          width: 290
+          height: 98
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
+    - rid: 8580623075712172042
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 450ff4a5-4c3d-4f16-8f78-f54e837de0f5
+        position:
+          serializedVersion: 2
+          x: -1389
+          y: -340
+          width: 68
+          height: 77
+        nodeColor: {r: 1, g: 0, b: 0, a: 1}
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
