@@ -2501,6 +2501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d418b9969fc6594dbfd69434d7da41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  picker:
+    selectedFirstOption: 0
+    selectedSecondOption: 0
   currentStory: {fileID: 1690262815}
   allStories:
   - {fileID: 1690262815}

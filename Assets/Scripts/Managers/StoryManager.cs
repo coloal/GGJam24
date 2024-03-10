@@ -6,9 +6,6 @@ using UnityEngine;
 public class StoryManager : MonoBehaviour
 {
 
-    
-    
-
     [SerializeField]
     CodeGraphObject currentStory;
     [SerializeField] 

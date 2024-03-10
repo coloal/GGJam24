@@ -19,6 +19,7 @@ MonoBehaviour:
   - rid: 8580623052752289807
   - rid: 8580623052752289808
   - rid: 8580623052752289809
+  - rid: 8580623058226118656
   connections:
   - outputPort:
       nodeId: 50946cd4-2d63-404c-a762-7d9f920e6da1
@@ -147,3 +148,23 @@ MonoBehaviour:
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
+    - rid: 8580623058226118656
+      type: {class: EnumConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7e18c755-bdae-4806-9b53-9bbcdb73adda
+        position:
+          serializedVersion: 2
+          x: 1072
+          y: -73
+          width: 219
+          height: 122
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.EnumConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedFirstOption: 1
+          selectedSecondOption: 0
+        dummy: 0
