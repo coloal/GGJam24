@@ -8,25 +8,45 @@ public class BrainManager : MonoBehaviour
 {
     /***** DATA *****/
     private Dictionary<BrainTag, bool> BrainTagsMap;
+    private Dictionary<NumericTags, int> BrainNumericMap;
     private Dictionary<string, string> BrainStateMap;
 
     /***** INITIALIZE *****/
     void Start()
     {
-        BrainTagsMap = new Dictionary<BrainTag, bool>();
-        BrainStateMap = new Dictionary<string, string>();
-
-        foreach (BrainTag tag in Enum.GetValues(typeof(BrainTag)))
-        {
-            BrainTagsMap.Add(tag, false);
-        }
-
-        for (int i = 0; i < StateInfo.info.Count; i++)
-        {
-            BrainStateMap.Add(StateInfo.info[i].Item1, StateInfo.info[i].Item2[0]);
-        }
+        InitializeData();
     }
 
+    void InitializeData()
+    {
+        if (BrainTagsMap == null)
+        {
+            BrainTagsMap = new Dictionary<BrainTag, bool>();
+            foreach (BrainTag tag in Enum.GetValues(typeof(BrainTag)))
+            {
+                BrainTagsMap.Add(tag, false);
+            }
+        }
+
+        if (BrainNumericMap == null)
+        {
+            BrainNumericMap = new Dictionary<NumericTags, int>();
+            foreach (NumericTags tag in Enum.GetValues(typeof(NumericTags)))
+            {
+                BrainNumericMap.Add(tag,0);
+            }
+        }
+
+        if (BrainStateMap == null)
+        {
+            BrainStateMap = new Dictionary<string, string>();
+
+            for (int i = 0; i < StateInfo.info.Count; i++)
+            {
+                BrainStateMap.Add(StateInfo.info[i].Item1, StateInfo.info[i].Item2[0]);
+            }
+        }
+    }
 
     /***** QUERIES *****/
     public void SetTag(BrainTag tag, bool state)
@@ -42,6 +62,20 @@ public class BrainManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void SetNumericTag(NumericTags tag, int value)
+    {
+        BrainNumericMap[tag] = value;
+    }
+
+    public int GetNumericTag(NumericTags tag)
+    {
+        if (BrainNumericMap.ContainsKey(tag))
+        {
+            return BrainNumericMap[tag];
+        }
+        return 0;
     }
 
     public void SetState(int iTagState, int iState)
@@ -68,6 +102,10 @@ public class BrainManager : MonoBehaviour
 
     public bool IsState(int iTagState, int iState)
     {
+        if (BrainStateMap == null)
+        {
+            InitializeData();
+        }
         string TagState = StateInfo.info[iTagState].Item1;
         string ActualState = BrainStateMap[TagState];
 

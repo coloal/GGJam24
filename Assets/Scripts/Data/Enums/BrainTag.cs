@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+//Toma valores bool, por defecto es false
 public enum BrainTag
 {
     Bendecido,
@@ -8,6 +9,7 @@ public enum BrainTag
     Asustado
 };
 
+//Toma valores int, por defecto es 0
 public enum NumericTags
 {
     Keys,
@@ -19,6 +21,7 @@ public enum NumericTags
 
 public static class StateInfo
 {
+    //Para un Tag toma una lista de valores
     public static List<Tuple<string, List<string>>> info = new List<Tuple<string, List<string>>>
         {
             //El primer estado es el valor por defecto
@@ -28,3 +31,9 @@ public static class StateInfo
         };
 }
 
+public enum BrainTagType
+{
+    Bool,
+    Numeric, 
+    State
+}
