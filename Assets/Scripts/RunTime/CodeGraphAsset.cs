@@ -14,9 +14,6 @@ namespace CodeGraph
         [SerializeField]
         private List<CodeGraphConnection> connections;
 
-        [SerializeField]
-        public int id;
-
         public Dictionary<string, CodeGraphNode> nodeDictionary;
         public List<CodeGraphNode> Nodes => nodes;
         public List <CodeGraphConnection> Connections => connections;
@@ -45,7 +42,6 @@ namespace CodeGraph
             {
                 return startNodes[0];
             }
-            Debug.LogError("There is no Start Node");
             return null;
             
         }

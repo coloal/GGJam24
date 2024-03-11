@@ -10,7 +10,7 @@ namespace CodeGraph
     public class BooleanConditionalNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public BrainTag IF;
+        public BrainTag Condition;
 
         
 
@@ -30,7 +30,7 @@ namespace CodeGraph
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
 
-            int port = GameManager.Instance.ProvideBrainManager().GetTag(IF) ? 0 : 1;
+            int port = GameManager.Instance.ProvideBrainManager().GetTag(Condition) ? 0 : 1;
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
             if (nextNode != null)
             {

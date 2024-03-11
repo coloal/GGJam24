@@ -26,6 +26,11 @@ namespace CodeGraph
             graphInstance = Instantiate(graphAsset);
             graphInstance.Init();
             currentNode = graphInstance.GetStartNode();
+            if(currentNode == null)
+            {
+                Debug.LogError("There is no Start Node");
+                Destroy(gameObject);
+            }
         }
 
         public CardTemplate GetNextCard(bool bSwipedLeft = true)
@@ -51,6 +56,11 @@ namespace CodeGraph
         public void RestartGraph()
         {
             currentNode = graphInstance.GetStartNode();
+            if (currentNode == null)
+            {
+                Debug.LogError("There is no Start Node");
+                Destroy(gameObject);
+            }
         }
 
         public CodeGraphAsset GetGraphAsset()

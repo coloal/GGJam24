@@ -110,8 +110,15 @@ namespace CodeGraph.Editor
             var worldMousePosition = graph.Window.rootVisualElement.ChangeCoordinatesTo(graph.Window.rootVisualElement.parent, context.screenMousePosition - graph.Window.position.position);
             var localMousePosition = graph.contentViewContainer.WorldToLocal(worldMousePosition);
 
-            SearchContentElement element = (SearchContentElement)SearchTreeEntry.userData; 
+            SearchContentElement element = (SearchContentElement)SearchTreeEntry.userData;
+            
             CodeGraphNode node = (CodeGraphNode)element.target;
+            if(node is StartNode && graph.CodeGraph.GetStartNode() != null)
+            {
+                Debug.LogWarning("Ya existe un nodo Start!!!");
+                node = null;
+                return false;
+            }
             node.SetPosition(new Rect(localMousePosition, new Vector2()));
             graph.Add(node);
             return true;

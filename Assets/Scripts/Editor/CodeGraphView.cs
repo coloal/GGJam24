@@ -20,7 +20,7 @@ namespace CodeGraph.Editor
         private CodeGraphEditorWindow window;
         private CodeGraphWindowSearchProvider searchProvider;
 
-
+        public CodeGraphAsset CodeGraph=>codeGraph;
         public List<CodeGraphEditorNode> graphNodes;
         public Dictionary<string, CodeGraphEditorNode> nodeDictionary;
         public Dictionary<Edge, CodeGraphConnection> connectionDictionary;
@@ -31,29 +31,45 @@ namespace CodeGraph.Editor
             connectionDictionary = new Dictionary<Edge, CodeGraphConnection>();
             graphNodes = new List<CodeGraphEditorNode>();
             nodeDictionary = new Dictionary<string, CodeGraphEditorNode>();
+            
+
             searchProvider = ScriptableObject.CreateInstance<CodeGraphWindowSearchProvider>();
             searchProvider.graph = this;
             nodeCreationRequest = ShowSearchWindow;
-            StyleSheet style = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Editor/USS/CodeGraphEditor.uss");
-            styleSheets.Add(style);
             this.serializedObject = serializedObject;
             codeGraph = (CodeGraphAsset)serializedObject.targetObject;
             this.window = window;
-            GridBackground background = new GridBackground();
-            background.name = "Grid";
-            Add(background);
-            background.SendToBack();
-            ContentDragger dragger = new ContentDragger();
-            this.AddManipulator(dragger);
+            
+            
+            this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new ClickSelector());
             this.AddManipulator(new ContentZoomer());
-            
+            graphViewChanged += OnGpraphViewChangedEvent;
+            Undo.undoRedoPerformed += RefreshView;
 
+            StyleSheet style = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/Editor/USS/CodeGraphEditor.uss");
+            styleSheets.Add(style);
+            GridBackground background = new GridBackground();
+            background.name = "Grid";
+            Add(background);
+            background.SendToBack();
             DrawNodes();
             DrawConnections();
-            graphViewChanged += OnGpraphViewChangedEvent;
+            
+        }
+
+
+        private void RefreshView()
+        {
+            if (!Window.hasFocus)
+            {
+                Window.Close();
+                return;
+            }
+            Window.Close();
+            CodeGraphEditorWindow.Open(codeGraph);
         }
 
         
@@ -94,10 +110,11 @@ namespace CodeGraph.Editor
             }
             if(graphViewChange.elementsToRemove != null)
             {
+                Undo.RecordObject(serializedObject.targetObject, "Removed Nodes and/or Connections");
                 List<CodeGraphEditorNode> nodes = graphViewChange.elementsToRemove.OfType<CodeGraphEditorNode>().ToList();
                 if(nodes.Count > 0)
                 {
-                    Undo.RecordObject(serializedObject.targetObject, "Removed Node");
+                    
                     for(int i = nodes.Count - 1; i >= 0; i--)
                     {
                         RemoveNode(nodes[i]);
@@ -138,7 +155,7 @@ namespace CodeGraph.Editor
             codeGraph.Connections.Add(connection);
             connectionDictionary.Add(edge, connection);
         }
-
+      
         private void RemoveConnection(Edge edge)
         {
 
@@ -158,6 +175,8 @@ namespace CodeGraph.Editor
             graphNodes.Remove(codeGraphEditorNode);
             serializedObject.Update();
         }
+
+
 
         private void DrawNodes()
         {

@@ -19,18 +19,16 @@ public class StoryManager : MonoBehaviour
 
     private List<CodeGraphObject> existingStoryList;
 
-    private bool bLastSwipeWasLeft = false; 
+    private bool bLastSwipeWasLeft = false;
     private bool bFinishedGame = false;
 
-    public void Start()
+    private void Awake()
     {
         existingStoryList = new List<CodeGraphObject>();
         storyStack = new List<CodeGraphObject>();
-        if(currentStory == null)
-        {
-            InitStory();
-        }
+        InitStory();
     }
+
 
     public void InitStory()
     {
@@ -107,7 +105,6 @@ public class StoryManager : MonoBehaviour
     {
         bFinishedGame = true;
     }
-
 
 
     public CodeGraphObject SearchStory(CodeGraphAsset story)
