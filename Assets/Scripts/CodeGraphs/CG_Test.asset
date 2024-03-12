@@ -12,23 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
   m_Name: CG_Test
   m_EditorClassIdentifier: 
-  nodes:
-  - rid: 8580623092467630099
+  nodes: []
   connections: []
   references:
     version: 2
-    RefIds:
-    - rid: 8580623092467630099
-      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: f3df3026-f627-455a-afb1-3275b99ffa44
-        position:
-          serializedVersion: 2
-          x: 1325
-          y: 186
-          width: 68
-          height: 77
-        nodeColor: {r: 1, g: 0, b: 0, a: 1}
-        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs: []
+    RefIds: []

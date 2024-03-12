@@ -4,72 +4,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[NodeInfo("Numeric Condition", "Condition Nodes/Numeric Condition")]
-public class NumericConditionalNode : CodeGraphNode
+namespace CodeGraph
 {
-    [ExposedProperty()]
-    public NumericTags ComparedTag;
-
-    [ExposedProperty()]
-    public NumericConditions ConditionType;
-
-    [ExposedProperty()]
-    public int ComparedNumber;
-
-
-
-    public NumericConditionalNode()
+    [NodeInfo("Numeric Condition", "Condition Nodes/Numeric Condition")]
+    public class NumericConditionalNode : CodeGraphNode
     {
-        outputs.Clear();
-        outputs.Add("True");
-        outputs.Add("False");
-    }
+        [ExposedProperty()]
+        public NumericTags ComparedTag;
 
-    public override bool GetNodeCard(out CardTemplate card)
-    {
-        card = null;
-        return false;
-    }
+        [ExposedProperty()]
+        public NumericConditions ConditionType;
 
-    public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
-    {
-        int value = GameManager.Instance.ProvideBrainManager().GetNumericTag(ComparedTag);
-        int port = 1;
-        switch (ConditionType)
+        [ExposedProperty()]
+        public int ComparedNumber;
+
+
+
+        public NumericConditionalNode()
         {
-            case NumericConditions.GREATER:
-                if (value > ComparedNumber) { port = 0; }
-                break;
-            case NumericConditions.GREATER_EQUAL:
-                if (value >= ComparedNumber) { port = 0; }
-                break;
-            case NumericConditions.EQUAL:
-                if (value == ComparedNumber) { port = 0; }
-                break;
-            case NumericConditions.LESS:
-                if (value < ComparedNumber) { port = 0; }
-                break;
-            case NumericConditions.LESS_EQUAL:
-                if (value <= ComparedNumber) { port = 0; }
-                break;
-            default:
-                break;
+            outputs.Clear();
+            outputs.Add("True");
+            outputs.Add("False");
         }
-        CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
-        if (nextNode != null)
-        {
-            return nextNode.id;
-        }
-        return string.Empty;
-    }
-}
 
-[Serializable]
-public enum NumericConditions
-{
-    GREATER,
-    GREATER_EQUAL,
-    EQUAL,
-    LESS,
-    LESS_EQUAL
+        public override bool GetNodeCard(out CardTemplate card)
+        {
+            card = null;
+            return false;
+        }
+
+        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        {
+            int value = GameManager.Instance.ProvideBrainManager().GetNumericTag(ComparedTag);
+            int port = 1;
+            switch (ConditionType)
+            {
+                case NumericConditions.GREATER:
+                    if (value > ComparedNumber) { port = 0; }
+                    break;
+                case NumericConditions.GREATER_EQUAL:
+                    if (value >= ComparedNumber) { port = 0; }
+                    break;
+                case NumericConditions.EQUAL:
+                    if (value == ComparedNumber) { port = 0; }
+                    break;
+                case NumericConditions.LESS:
+                    if (value < ComparedNumber) { port = 0; }
+                    break;
+                case NumericConditions.LESS_EQUAL:
+                    if (value <= ComparedNumber) { port = 0; }
+                    break;
+                default:
+                    break;
+            }
+            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
+            if (nextNode != null)
+            {
+                return nextNode.id;
+            }
+            return string.Empty;
+        }
+    }
+
+    [Serializable]
+    public enum NumericConditions
+    {
+        GREATER,
+        GREATER_EQUAL,
+        EQUAL,
+        LESS,
+        LESS_EQUAL
+    }
 }

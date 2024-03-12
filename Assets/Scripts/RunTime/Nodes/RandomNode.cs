@@ -1,32 +1,37 @@
 using CodeGraph;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Fork Card", "Card Nodes/Fork Card")]
-    public class ForkCardNode : CodeGraphNode
+    [NodeInfo("Random Split", "Random Nodes/Random Split")]
+    public class RandomNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public CardTemplate card;
+        [Range(0, 100)]
+        [Tooltip("Probabilidad de la primera opción (0-100%)")]
+        public int FirstOptionProbability = 50;
 
-        public ForkCardNode()
+        public RandomNode()
         {
             outputs.Clear();
-            outputs.Add("Left");
-            outputs.Add("Right");
+            outputs.Add("First Option");
+            outputs.Add("Second Option");
         }
 
         public override bool GetNodeCard(out CardTemplate card)
         {
-            card = this.card;
-            return true;
+            card = null;
+            return false;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-            int port = bSwipedLeft ? 0 : 1;
+            int rand = Random.Range(0, 100);
+            int port = rand < FirstOptionProbability ? 0 : 1;
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
             if (nextNode != null)
             {
