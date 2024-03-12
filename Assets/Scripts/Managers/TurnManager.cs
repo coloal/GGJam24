@@ -99,6 +99,21 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeLeft() 
     {
+        foreach (Option action in CurrentCard.LeftActions)
+        {
+            switch (action.TagType)
+            {
+                case BrainTagType.Bool:
+                    action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
+                    break;
+                case BrainTagType.Numeric:
+                    action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
+                    break;
+                case BrainTagType.State:
+                    action.BrainStateTagAction.Invoke(action.TagState, action.NewState);
+                    break;
+            }
+        }
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -109,6 +124,21 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeRight()
     {
+        foreach (Option action in CurrentCard.RightActions)
+        {
+            switch (action.TagType)
+            {
+                case BrainTagType.Bool:
+                    action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
+                    break;
+                case BrainTagType.Numeric:
+                    action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
+                    break;
+                case BrainTagType.State:
+                    action.BrainStateTagAction.Invoke(action.TagState, action.NewState);
+                    break;
+            }
+        }
         if (CurrentCard != null)
         {
             DestroyCard();

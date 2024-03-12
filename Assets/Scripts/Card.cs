@@ -27,6 +27,10 @@ public class Card : MonoBehaviour
     [SerializeField]
     private SpriteRenderer BackgroundSprite;
 
+    [HideInInspector]
+    public List<Option> LeftActions;
+    [HideInInspector]
+    public List<Option> RightActions;
 
     //Information of the card
     private string NameOfCard;
@@ -81,6 +85,9 @@ public class Card : MonoBehaviour
         {
             BackgroundSprite.sprite = DataCard.BackgroundSprite;
         }
+
+        LeftActions = DataCard.LeftActions;
+        RightActions = DataCard.RightActions;
     }
 
 

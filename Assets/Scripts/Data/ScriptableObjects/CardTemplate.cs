@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New CardData", menuName = "CardData")]
@@ -15,6 +16,29 @@ public class HitmanInfo
     public int MoneyStat = 0;
     public int InfluenceStat = 0;
 }
+
+[System.Serializable]
+public class Option
+{
+    public BrainTagType TagType;
+    //Bool
+    public BrainTag BoolTag;
+    public bool NewValue;
+    public BrainBoolTagAction BrainBoolTagAction;
+
+    //Numeric 
+    public NumericTags NumericTag;
+    public int Increment;
+    public BrainNumericTagAction BrainNumericTagAction;
+
+    //State
+    public string TagState;
+    public string NewState;
+    public BrainStateTagAction BrainStateTagAction;
+
+}
+
+
 
 [System.Serializable]
 public class CombatInfo
@@ -48,6 +72,8 @@ public class CardTemplate : ScriptableObject
 
     public CombatInfo CombatInfo;
 
+    public List<Option> LeftActions;
+    public List<Option> RightActions;
 
 
     /*// --Deprecated--

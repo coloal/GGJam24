@@ -68,6 +68,10 @@ public class BrainManager : MonoBehaviour
     {
         BrainNumericMap[tag] = value;
     }
+    public void IncrementNumericTag(NumericTags tag, int value)
+    {
+        BrainNumericMap[tag] += value;
+    }
 
     public int GetNumericTag(NumericTags tag)
     {

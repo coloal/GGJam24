@@ -15,34 +15,42 @@ MonoBehaviour:
   NameOfCard: Willy
   Background: "Se\xF1or, soy un buen trilero, puedo aportarle influencia y algo de
     dinero"
-  ViolenceStat: -10
-  MoneyStat: -5
-  InfluenceStat: -5
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar al pillo de Willy
   CardSprite: {fileID: 21300000, guid: 840b911a2cb5b534ba631f5b832a3577, type: 3}
-  ListHitmanTypes: 0200000000000000
-  Contable:
-    Name: Contable
-    FeedbackName: Contable
-    FeedbackText: "Se\xF1or, ese infante aprende muy r\xE1pido. El comisario est\xE1
-      muy contento con \xE9l."
-    ViolenceStat: 5
-    MoneyStat: 10
-    InfluenceStat: 5
-  Maton:
-    Name: "Mat\xF3n"
-    FeedbackName: "Mat\xF3n"
-    FeedbackText: "Ese chico no val\xEDa ni pa est\xE1 escondio. Con las hostias
-      que pegabamos nosotros de chico"
-    ViolenceStat: 0
-    MoneyStat: -10
-    InfluenceStat: -10
-  Comisario:
-    Name: Comisario corrupto
-    FeedbackName: Comisario corrupto
-    FeedbackText: "Se\xF1or, ese infante aprende muy r\xE1pido. El contable est\xE1
-      muy contento con \xE9l."
-    ViolenceStat: 5
-    MoneyStat: 10
-    InfluenceStat: 5
+  BackgroundSprite: {fileID: 0}
+  CombatInfo:
+    HealthPoints: 0
+    Damage: 0
+    Armor: 0
+    CombatType: 0
+  LeftActions: []
+  RightActions:
+  - TagType: 2
+    BoolTag: 0
+    NewValue: 0
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    TagState: Jhon
+    NewState: Muerto
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8265767232235761294, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
+          m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
+          m_MethodName: SetBrainStateTag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
