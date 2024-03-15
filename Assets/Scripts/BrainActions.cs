@@ -35,15 +35,15 @@ public class BrainActions : MonoBehaviour
         //GameManager.Instance.ProvideBrainManager().SetTag(tag,value);
     }
 
-    public void example(string a)
+    public void example(string a, string b)
     {
     }
 
-    public void SetBrainBoolTag(BrainTag tag, bool value)
+    public static void SetBrainBoolTag(BrainTag tag, bool value)
     {
         GameManager.Instance.ProvideBrainManager().SetTag(tag, value);
     }
-    public void SetBrainNumericTag(NumericTags tag, int increment)
+    public static void SetBrainNumericTag(NumericTags tag, int increment)
     {
         GameManager.Instance.ProvideBrainManager().IncrementNumericTag(tag, increment);
     }
@@ -51,10 +51,14 @@ public class BrainActions : MonoBehaviour
     {
         GameManager.Instance.ProvideBrainManager().SetState(tag,newState);
     }
+    public void SetBrainStateIntTag(int tag, int newState)
+    {
+        GameManager.Instance.ProvideBrainManager().SetState(tag, newState);
+    }
 }
 
 [Serializable]
-public class BrainTagAction : UnityEvent<string> {}
+public class BrainTagAction : UnityEvent<string, string> {}
 
 [Serializable]
 public class BrainBoolTagAction : UnityEvent<BrainTag, bool> { }
@@ -64,6 +68,9 @@ public class BrainNumericTagAction : UnityEvent<NumericTags, int> { }
 
 [Serializable]
 public class BrainStateTagAction : UnityEvent<string, string> { }
+
+[Serializable]
+public class BrainStateIntTagAction : UnityEvent<int, int> { }
 
 
 [Serializable]

@@ -10,6 +10,9 @@ public class CardsManager : MonoBehaviour
     GameObject CardPrefab;
 
     [SerializeField]
+    GameObject CombatCardPrefab;
+
+    [SerializeField]
     List<CardTemplate> DataCardsList;
 
     [SerializeField]
@@ -29,6 +32,19 @@ public class CardsManager : MonoBehaviour
             newCard.GetComponent<Card>().SetDataCard(nextCard);
         }
         
+        //indexNextCard++;
+        return newCard;
+    }
+
+    public GameObject SpawnCombatCard(CardTemplate nextCard)
+    {
+        GameObject newCard = Instantiate(CombatCardPrefab, new Vector3 (-6,0,0), Quaternion.identity);
+
+        if (nextCard != null)
+        {
+            newCard.GetComponent<CombatCard>().SetDataCard(nextCard);
+        }
+
         //indexNextCard++;
         return newCard;
     }

@@ -17,14 +17,41 @@ MonoBehaviour:
     calle. Le puedo servir para acojonar a esos **** morosos"
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar
-  CardSprite: {fileID: 21300000, guid: 7ee20b6cdd462d74fbd42ce6dbf59fc0, type: 3}
-  BackgroundSprite: {fileID: 0}
+  CardSprite: {fileID: 0}
+  BackgroundSprite: {fileID: 21300000, guid: 7ee20b6cdd462d74fbd42ce6dbf59fc0, type: 3}
   CombatInfo:
-    HealthPoints: 0
-    Damage: 0
-    Armor: 0
+    HealthPoints: 4
+    Damage: 3
+    Armor: 6
+    Energy: 2
     CombatType: 0
-  LeftActions: []
+    InitialText: Heeeey
+    EffectiveText: 
+    NonEffectiveText: 
+    BackgroundCombatSprite: {fileID: 21300000, guid: 65e1bcae23b6c4d42a664a3775eb4c1c, type: 3}
+  LeftActions:
+  - TagType: 3
+    BoolTag: 0
+    NewValue: 0
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
   RightActions:
   - TagType: 0
     BoolTag: 0
@@ -49,8 +76,14 @@ MonoBehaviour:
     BrainNumericTagAction:
       m_PersistentCalls:
         m_Calls: []
-    TagState: 
-    NewState: 
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
     BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
       m_PersistentCalls:
         m_Calls: []

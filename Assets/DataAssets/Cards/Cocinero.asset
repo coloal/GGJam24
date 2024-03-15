@@ -14,34 +14,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfCard: Antonio
   Background: "... Don, ven\xEDa a ofrecerle una cena en mi restaurante :)"
-  ViolenceStat: -10
-  MoneyStat: 0
-  InfluenceStat: 5
   LeftText: "No me hagas re\xEDr"
   RightText: "Asignar\xE9 a unos de mis sicarios para que organice"
   CardSprite: {fileID: 21300000, guid: 60fbee0d4477d7f45914674cb99dfebd, type: 3}
-  ListHitmanTypes: 000000000100000000000000
-  Contable:
-    Name: Contable
-    FeedbackName: Bro
-    FeedbackText: "Fuah, vaya fest\xEDn nos pegamos, bro. Como se pusieron el cabr\xF3n
-      del contable y el perro del comisario"
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 10
-  Maton:
-    Name: "Mat\xF3n"
-    FeedbackName: "Mat\xF3n"
-    FeedbackText: "Fuah, vaya fest\xEDn nos pegamos, bro. Como se pusieron el cabr\xF3n
-      del contable y el perro del comisario"
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 10
-  Comisario:
-    Name: Comisario corrupto
-    FeedbackName: Bro
-    FeedbackText: "Fuah, vaya fest\xEDn nos pegamos, bro. Como se pusieron el cabr\xF3n
-      del contable y el perro del comisario"
-    ViolenceStat: 0
-    MoneyStat: 0
-    InfluenceStat: 10
+  BackgroundSprite: {fileID: 0}
+  CombatInfo:
+    HealthPoints: 0
+    Damage: 0
+    Armor: 0
+    CombatType: 0
+  LeftActions:
+  - TagType: 0
+    BoolTag: 0
+    NewValue: 0
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
+          m_MethodName: SetBrainBoolTag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
+          m_MethodName: SetBrainBoolTag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
+          m_MethodName: SetBrainBoolTag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
+          m_MethodName: SetBrainBoolTag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
+          m_MethodName: SetBrainNumericTag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 
+    NewState: 
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  RightActions: []

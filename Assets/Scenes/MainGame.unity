@@ -3293,7 +3293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b801ef9b0524ee1b32d207b4512c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPrefab: {fileID: 2960121501592178493, guid: 0ac5ec62a8279fc46bd169a75078a7e7, type: 3}
+  CardPrefab: {fileID: 2960121501592178493, guid: 56d9c3aa2abe87943934e9f3e29832dd, type: 3}
+  CombatCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
   DataCardsList:
   - {fileID: 11400000, guid: c57ab139751265f47a2d7f031a4addcc, type: 2}
   - {fileID: 11400000, guid: 867f4a29f377dff4dbf2cc37f3f8f5bd, type: 2}

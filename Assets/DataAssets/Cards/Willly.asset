@@ -17,13 +17,18 @@ MonoBehaviour:
     dinero"
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar al pillo de Willy
-  CardSprite: {fileID: 21300000, guid: 840b911a2cb5b534ba631f5b832a3577, type: 3}
-  BackgroundSprite: {fileID: 0}
+  CardSprite: {fileID: 0}
+  BackgroundSprite: {fileID: 21300000, guid: 840b911a2cb5b534ba631f5b832a3577, type: 3}
   CombatInfo:
     HealthPoints: 0
     Damage: 0
     Armor: 0
+    Energy: 0
     CombatType: 0
+    InitialText: 
+    EffectiveText: 
+    NonEffectiveText: 
+    BackgroundCombatSprite: {fileID: 0}
   LeftActions: []
   RightActions:
   - TagType: 2
@@ -37,14 +42,20 @@ MonoBehaviour:
     BrainNumericTagAction:
       m_PersistentCalls:
         m_Calls: []
-    TagState: Jhon
-    NewState: Muerto
+    StateTuple:
+      selectedTag: 1
+      selectedTagState: 2
+    TagState: 1
+    NewState: 2
     BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8265767232235761294, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
           m_TargetAssemblyTypeName: BrainActions, Assembly-CSharp
-          m_MethodName: SetBrainStateTag
+          m_MethodName: SetBrainStateIntTag
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

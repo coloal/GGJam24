@@ -9,7 +9,7 @@ public enum BrainTag
     Asustado
 };
 
-//Toma valores int, por defecto es 0
+//Toma valores int, por defecto es 0, no se puede decrementar por debajo de 0
 public enum NumericTags
 {
     Keys,
@@ -35,5 +35,6 @@ public enum BrainTagType
 {
     Bool,
     Numeric, 
-    State
+    State,
+    Combat
 }

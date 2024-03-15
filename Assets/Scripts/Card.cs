@@ -25,7 +25,7 @@ public class Card : MonoBehaviour
     private SpriteRenderer CardSprite;
 
     [SerializeField]
-    private SpriteRenderer BackgroundSprite;
+    protected SpriteRenderer BackgroundSprite;
 
     [HideInInspector]
     public List<Option> LeftActions;
@@ -43,11 +43,17 @@ public class Card : MonoBehaviour
         if (!CardIsActive) return;
         if (IsLeft)
         {
-            LeftTextBoxContainer.SetActive(true);
+            if (LeftTextBoxContainer != null)
+            {
+                LeftTextBoxContainer.SetActive(true);
+            }
         }
         else 
         {
-            RightTextBoxContainer.SetActive(true);
+            if (RightTextBoxContainer != null)
+            {
+                RightTextBoxContainer.SetActive(true);
+            }
         } 
     }
 
@@ -55,11 +61,17 @@ public class Card : MonoBehaviour
     {
         if (IsLeft)
         {
-            LeftTextBoxContainer.SetActive(false);
+            if (LeftTextBoxContainer != null)
+            {
+                LeftTextBoxContainer.SetActive(false);
+            }
         }
         else
         {
-            RightTextBoxContainer.SetActive(false);
+            if (RightTextBoxContainer != null)
+            {
+                RightTextBoxContainer.SetActive(false);
+            }
         }
     }
 
@@ -71,17 +83,26 @@ public class Card : MonoBehaviour
         //Mostrar texto en pantalla
         BoxNameOfCard.text = NameOfCard;
 
-        RightText.text = DataCard.RightText;
-        LeftText.text = DataCard.LeftText;
-
-        RightTextBoxContainer.SetActive(false);
-        LeftTextBoxContainer.SetActive(false);
+        if (RightText != null)
+        {
+            RightText.text = DataCard.RightText;
+            RightTextBoxContainer.SetActive(false);
+        }
         
-        DescriptionText.text = DataCard.Background;
-        DescriptionText.GetComponent<MeshRenderer>().sortingLayerID = CardSprite.sortingLayerID;
+        if (LeftText != null)
+        {
+            LeftText.text = DataCard.LeftText;
+            LeftTextBoxContainer.SetActive(false);
+        }
+        
+        if (DescriptionText != null)
+        {
+            DescriptionText.text = DataCard.Background;
+            DescriptionText.GetComponent<MeshRenderer>().sortingLayerID = CardSprite.sortingLayerID;
+        }
 
         CardSprite.sprite = DataCard.CardSprite;
-        if (DataCard.BackgroundSprite != null)
+        if (BackgroundSprite != null && DataCard.BackgroundSprite != null)
         {
             BackgroundSprite.sprite = DataCard.BackgroundSprite;
         }

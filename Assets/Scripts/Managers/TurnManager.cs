@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class TurnManager : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class TurnManager : MonoBehaviour
     CardsManager CardsManager;
     
     Card CurrentCard;
+    private CardTemplate CurrentCardData;
 
     void Start()
     {
@@ -44,6 +46,7 @@ public class TurnManager : MonoBehaviour
         SetGameState(GameStates.SHOW_CARD);
         GameObject SpawnedCard = CardsManager.SpawnNextCard(nextCard);
         CurrentCard = SpawnedCard.GetComponent<Card>();
+        CurrentCardData = nextCard;
         SetGameState(GameStates.MAKE_DECISION);
     }
 
@@ -97,23 +100,9 @@ public class TurnManager : MonoBehaviour
         GetNewCard(nextCard);
     }
 
-    public void SwipeLeft() 
+    public void SwipeLeft()
     {
-        foreach (Option action in CurrentCard.LeftActions)
-        {
-            switch (action.TagType)
-            {
-                case BrainTagType.Bool:
-                    action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
-                    break;
-                case BrainTagType.Numeric:
-                    action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
-                    break;
-                case BrainTagType.State:
-                    action.BrainStateTagAction.Invoke(action.TagState, action.NewState);
-                    break;
-            }
-        }
+        ExecuteActions(CurrentCard.LeftActions);
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -124,21 +113,7 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeRight()
     {
-        foreach (Option action in CurrentCard.RightActions)
-        {
-            switch (action.TagType)
-            {
-                case BrainTagType.Bool:
-                    action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
-                    break;
-                case BrainTagType.Numeric:
-                    action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
-                    break;
-                case BrainTagType.State:
-                    action.BrainStateTagAction.Invoke(action.TagState, action.NewState);
-                    break;
-            }
-        }
+        ExecuteActions(CurrentCard.RightActions);
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -210,10 +185,36 @@ public class TurnManager : MonoBehaviour
 
     private void DestroyCard()
     {
-
         GameObject CardToDestroy = CurrentCard.gameObject;
         CardToDestroy.GetComponent<BoxCollider2D>().enabled = false;
         Utils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 
+    private void ExecuteActions(List<Option> Actions)
+    {
+        foreach (Option action in Actions)
+        {
+            switch (action.TagType)
+            {
+                case BrainTagType.Bool:
+                    //action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
+                    GameManager.Instance.ProvideBrainManager().SetTag(action.BoolTag, action.NewValue );
+                    break;
+                case BrainTagType.Numeric:
+                    //action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
+                    GameManager.Instance.ProvideBrainManager().IncrementNumericTag(action.NumericTag, action.Increment);
+
+                    break;
+                case BrainTagType.State:
+                    //action.BrainStateIntTagAction.Invoke(action.StateTuple.selectedTag, action.StateTuple.selectedTagState);
+                    GameManager.Instance.ProvideBrainManager().SetState(action.TagState, action.NewState);
+                    break;
+                case BrainTagType.Combat:
+                    //Enter in combat
+                    Debug.Log("Combateeee");
+                    GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard(CurrentCardData);
+                    break;
+            }
+        }
+    }
 }
