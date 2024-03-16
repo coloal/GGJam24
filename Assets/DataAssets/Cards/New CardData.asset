@@ -117,4 +117,48 @@ MonoBehaviour:
     BrainStateIntTagAction:
       m_PersistentCalls:
         m_Calls: []
-  RightActions: []
+  RightActions:
+  - TagType: 0
+    BoolTag: 3
+    NewValue: 1
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  - TagType: 3
+    BoolTag: 3
+    NewValue: 1
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []

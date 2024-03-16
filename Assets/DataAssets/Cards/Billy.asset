@@ -23,7 +23,7 @@ MonoBehaviour:
     HealthPoints: 4
     Damage: 3
     Armor: 6
-    Energy: 2
+    Turns: 10
     CombatType: 0
     InitialText: Heeeey
     EffectiveText: 

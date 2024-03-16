@@ -24,6 +24,8 @@ MonoBehaviour:
   - rid: 2383942701173702667
   - rid: 2383942701173702668
   - rid: 2383942701173702669
+  - rid: 2383942797125746688
+  - rid: 2383942797125746689
   connections:
   - outputPort:
       nodeId: 4b54c69b-25a9-493a-8af2-070ce7104e0c
@@ -103,6 +105,12 @@ MonoBehaviour:
     inputPort:
       nodeId: f2bf270c-2048-42d3-aaae-f7becd7274fb
       portIndex: 1
+  - outputPort:
+      nodeId: 7e0e6127-bd8b-4214-8a3e-be338bbb3678
+      portIndex: 0
+    inputPort:
+      nodeId: 81d744ee-4827-4e88-b36d-15014fc002a9
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -286,3 +294,37 @@ MonoBehaviour:
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
+    - rid: 2383942797125746688
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7e0e6127-bd8b-4214-8a3e-be338bbb3678
+        position:
+          serializedVersion: 2
+          x: 670.4501
+          y: 526.7001
+          width: 0
+          height: 0
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 3
+    - rid: 2383942797125746689
+      type: {class: ForkCardNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 81d744ee-4827-4e88-b36d-15014fc002a9
+        position:
+          serializedVersion: 2
+          x: 902
+          y: 471
+          width: 304
+          height: 122
+        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}

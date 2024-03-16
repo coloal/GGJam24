@@ -6,7 +6,8 @@ public enum BrainTag
 {
     Bendecido,
     Maldito,
-    Asustado
+    Asustado,
+    Combate
 };
 
 //Toma valores int, por defecto es 0, no se puede decrementar por debajo de 0

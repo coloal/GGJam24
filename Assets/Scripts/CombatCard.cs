@@ -34,6 +34,7 @@ public class CombatCard : Card
     private int Damage = 0;
     private int Armor = 0;
     private int Energy = 0;
+    private int Turns = 0;
     private CombatTypes CombatType;
 
     private string InitialText;
@@ -50,7 +51,8 @@ public class CombatCard : Card
         HealthPoints = DataCard.CombatInfo.HealthPoints;
         Damage = DataCard.CombatInfo.Damage;
         Armor = DataCard.CombatInfo.Armor;
-        Energy = DataCard.CombatInfo.Energy;
+        Turns = DataCard.CombatInfo.Turns;
+        CalculateEnergy();
         CombatType = DataCard.CombatInfo.CombatType;
 
         InitialText = DataCard.CombatInfo.InitialText;
@@ -79,4 +81,9 @@ public class CombatCard : Card
         EnergyPoints[Energy].enabled = false;
     }
 
+    private void CalculateEnergy()
+    {
+        float NewEnergy = (float)Turns / 3f;
+        Energy = Mathf.RoundToInt(NewEnergy);
+    }
 }

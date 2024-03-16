@@ -72,7 +72,8 @@ public class CombatInfo
     public int HealthPoints = 0;
     public int Damage = 0;
     public int Armor = 0;
-    public int Energy = 0;
+    public int Turns = 0;
+    //public int Energy = 0;
     public CombatTypes CombatType;
 
     public string InitialText;
@@ -111,30 +112,37 @@ public class Option_Editor : PropertyDrawer
     {
         Option opt = (Option)property.boxedValue;
         EditorGUI.BeginProperty(position, label, property);
-        Rect Rect1 = new Rect(position.x, position.y, position.width, position.height/3f);
-        Rect Rect2 = new Rect(position.x, position.y + Rect1.height, position.width, position.height/3f);
-        Rect Rect3 = new Rect(position.x, Rect2.y + Rect2.height, position.width, position.height / 3f);
+        Rect Rect1 = new Rect(position.x, position.y, position.width, position.height/5f);
+        Rect Rect2 = new Rect(position.x, Rect1.y + Rect1.height, position.width, position.height/5f);
+        Rect Rect3 = new Rect(position.x, Rect2.y + Rect2.height, position.width, position.height / 5f);
+        Rect Rect4 = new Rect(position.x, Rect3.y + Rect3.height, position.width, position.height / 5f);
+        Rect Rect5 = new Rect(position.x, Rect4.y + Rect4.height, position.width, position.height / 5f);
 
-        BrainTagType a =(BrainTagType) EditorGUI.EnumPopup(Rect1, opt.TagType);
+
+        EditorGUI.LabelField(Rect1,"Type of Action");
+        BrainTagType a =(BrainTagType) EditorGUI.EnumPopup(Rect2, opt.TagType);
         property.FindPropertyRelative("TagType").intValue = (int)a;
 
         switch ((opt.TagType))
         {
             case BrainTagType.Bool:
-                BrainTag b = (BrainTag)EditorGUI.EnumPopup(Rect2, opt.BoolTag);
+                EditorGUI.LabelField(Rect3,"Parameters");
+                BrainTag b = (BrainTag)EditorGUI.EnumPopup(Rect4, opt.BoolTag);
                 property.FindPropertyRelative("BoolTag").intValue = (int)b;
-                property.FindPropertyRelative("NewValue").boolValue = EditorGUI.Toggle(Rect3, opt.NewValue);
+                property.FindPropertyRelative("NewValue").boolValue = EditorGUI.Toggle(Rect5, opt.NewValue);
                 break;
 
             case BrainTagType.Numeric:
-                NumericTags c = (NumericTags)EditorGUI.EnumPopup(Rect2, opt.NumericTag);
+                EditorGUI.LabelField(Rect3, "Parameters");
+                NumericTags c = (NumericTags)EditorGUI.EnumPopup(Rect4, opt.NumericTag);
                 property.FindPropertyRelative("NumericTag").intValue = (int)c;
-                property.FindPropertyRelative("Increment").intValue = EditorGUI.IntField(Rect3, opt.Increment);
+                property.FindPropertyRelative("Increment").intValue = EditorGUI.IntField(Rect5, opt.Increment);
                 break;
 
             case BrainTagType.State:
-                property.FindPropertyRelative("TagState").intValue = EditorGUI.Popup(Rect2, opt.TagState, StateInfo.info.Select(x => (x.Item1)).ToArray());
-                property.FindPropertyRelative("NewState").intValue = EditorGUI.Popup(Rect3, opt.NewState, StateInfo.info[opt.TagState].Item2.ToArray());
+                EditorGUI.LabelField(Rect3, "Parameters");
+                property.FindPropertyRelative("TagState").intValue = EditorGUI.Popup(Rect4, opt.TagState, StateInfo.info.Select(x => (x.Item1)).ToArray());
+                property.FindPropertyRelative("NewState").intValue = EditorGUI.Popup(Rect5, opt.NewState, StateInfo.info[opt.TagState].Item2.ToArray());
                 break;
         }
         EditorGUI.EndProperty();
@@ -145,7 +153,7 @@ public class Option_Editor : PropertyDrawer
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return base.GetPropertyHeight(property, label) * 3;
+        return base.GetPropertyHeight(property, label) * 6;
     }
     /*
     public override VisualElement CreatePropertyGUI(SerializedProperty property)
