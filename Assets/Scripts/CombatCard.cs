@@ -84,6 +84,13 @@ public class CombatCard : Card
     private void CalculateEnergy()
     {
         float NewEnergy = (float)Turns / 3f;
-        Energy = Mathf.RoundToInt(NewEnergy);
+        if (NewEnergy < 1f)
+        {
+            Energy = 1;
+        }
+        else
+        {
+            Energy = Mathf.RoundToInt(NewEnergy);
+        }
     }
 }
