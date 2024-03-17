@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
+    [Header("Party setup")]
+    [SerializeField]
+    private List<CombatCardTemplate> InitialPartyMembersCombatCardTemplates;
+    private CombatCard CombatCardPrefab;
+
     public static PartyManager Instance;
+    private List<GameObject> PartyMembers;
 
     void Awake()
     {
@@ -18,17 +24,33 @@ public class PartyManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+        Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Init()
     {
-        
+        PartyMembers = new List<GameObject>();
+        foreach (CombatCardTemplate InitialPartyMember in InitialPartyMembersCombatCardTemplates)
+        {
+            GameObject PartyMember = (GameObject) Resources.Load("Prefabs/CombatCard");
+            CombatCard PartyMemberCombatCardComponent = PartyMember.GetComponent<CombatCard>();
+            if (PartyMemberCombatCardComponent)
+            {
+                PartyMemberCombatCardComponent.SetDataCard(InitialPartyMember);
+            }
+
+            PartyMembers.Add(PartyMember);
+        }
+    }
+
+    void Start()
+    {
+
+    }
+
+    public List<GameObject> GetPartyMembers()
+    {
+        return PartyMembers;
     }
 }

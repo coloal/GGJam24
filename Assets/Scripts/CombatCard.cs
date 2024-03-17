@@ -87,4 +87,9 @@ public class CombatCard : MonoBehaviour
             Energy = Mathf.RoundToInt(NewEnergy);
         }
     }
+
+    public float GetCardWidth()
+    {
+        return BackgroundCombatSprite.bounds.size.x;
+    }
 }
