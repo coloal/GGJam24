@@ -6,12 +6,16 @@ using UnityEngine.Rendering;
 public class CombatManager : MonoBehaviour
 {
     [Header("Combat field configuration")]
+    [Header("Cards positions")]
     [SerializeField]
-    private Transform EnemySpawnerOrigin;
+    private Transform EnemyCardOrigin;
     [SerializeField]
-    private Transform PlayerCardsSpawnerOrigin;
+    private Transform PlayerCardsOrigin;
     [SerializeField]
     private float PlayerCardsHorizontalOffset = 3.0f;
+    [SerializeField]
+    private Transform AttackerCardOrigin;
+
 
     [Header("Debug")]
     [SerializeField]
@@ -21,6 +25,12 @@ public class CombatManager : MonoBehaviour
 
     private PartyManager PartyManager;
     private CombatStates CurrentState;
+    private List<GameObject> PartyMembersInScene;
+
+    void Awake()
+    {
+        PartyMembersInScene = new List<GameObject>();
+    }
 
     void Start()
     {
@@ -47,6 +57,9 @@ public class CombatManager : MonoBehaviour
             case CombatStates.INIT:
                 SpawnCombatCards();
                 break;
+            case CombatStates.CHOOSE_ATTACKER:
+                ChooseAttacker();
+                break;
             default:
                 break;
         }
@@ -66,7 +79,7 @@ public class CombatManager : MonoBehaviour
 
     void SpawnEnemyCard()
     {
-        GameObject EnemyCard = Instantiate(DebugEnemyCardPrefab, EnemySpawnerOrigin.position, Quaternion.identity);
+        GameObject EnemyCard = Instantiate(DebugEnemyCardPrefab, EnemyCardOrigin.position, Quaternion.identity);
         CombatCard EnemyCardCombatCardComponent = EnemyCard.GetComponent<CombatCard>();
         if (EnemyCardCombatCardComponent)
         {
@@ -87,11 +100,41 @@ public class CombatManager : MonoBehaviour
             }
 
             Vector2 SpawnPosition = new Vector2(
-                PlayerCardsSpawnerOrigin.position.x + i * (CardWidth + PlayerCardsHorizontalOffset),
-                PlayerCardsSpawnerOrigin.position.y
+                PlayerCardsOrigin.position.x + i * (CardWidth + PlayerCardsHorizontalOffset),
+                PlayerCardsOrigin.position.y
             );
 
-            Instantiate(PartyMembers[i], SpawnPosition, Quaternion.identity);
+            GameObject PartyMemberInScene = Instantiate(PartyMembers[i], SpawnPosition, Quaternion.identity);
+            PartyMembersInScene.Add(PartyMemberInScene);
+        }
+    }
+
+    void ChooseAttacker()
+    {
+        SetPartyMembersCardsActivation(true);
+        foreach (GameObject PartyMember in PartyMembersInScene)
+        {
+            InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
+                PartyMember.GetComponent<InteractiveCombatCardComponent>();
+            if (PartyMemberInteractiveCombatCardComponent)
+            {
+                PartyMemberInteractiveCombatCardComponent.SetOnClickAction(() => {
+                    PartyMember.transform.position = AttackerCardOrigin.position;
+                });
+            }
+        }
+    }
+
+    void SetPartyMembersCardsActivation(bool AreCardsActive)
+    {
+        foreach (GameObject PartyMember in PartyMembersInScene)
+        {
+            InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
+                PartyMember.GetComponent<InteractiveCombatCardComponent>();
+            if (PartyMemberInteractiveCombatCardComponent)
+            {
+                PartyMemberInteractiveCombatCardComponent.SetIsActive(AreCardsActive);
+            }
         }
     }
 }
