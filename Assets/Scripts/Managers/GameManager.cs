@@ -7,22 +7,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Managers")]
     [SerializeField]
     TurnManager TurnManager;
-
     [SerializeField]
     CardsManager CardsManager;
-
     [SerializeField]
     EndManager EndManager;
-
-
     [SerializeField]
     BrainManager BrainManager;
-
     [SerializeField]
     StoryManager StoryManager;
-
+    [SerializeField]
+    PartyManager PartyManager;
 
     void Awake()
     {
@@ -35,6 +32,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start() 
@@ -83,6 +82,11 @@ public class GameManager : MonoBehaviour
     public StoryManager ProvideStoryManager()
     {
         return StoryManager;
+    }
+
+    public PartyManager ProvidePartyManager()
+    {
+        return PartyManager;
     }
 
 }
