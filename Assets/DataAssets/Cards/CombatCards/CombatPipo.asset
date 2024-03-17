@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
-  m_Name: New CombatCardData
+  m_Name: CombatPipo
   m_EditorClassIdentifier: 
   NameOfCard: Pipo
   InitialText: 

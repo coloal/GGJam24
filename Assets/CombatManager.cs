@@ -22,14 +22,18 @@ public class CombatManager : MonoBehaviour
     private GameObject DebugEnemyCardPrefab;
     [SerializeField]
     private CombatCardTemplate DebugEnemyCombatCardTemplate;
+    [SerializeField]
+    private GameObject DebugActionButtons;
 
     private PartyManager PartyManager;
     private CombatStates CurrentState;
     private List<GameObject> PartyMembersInScene;
+    private GameObject CurrentAttacker;
 
     void Awake()
     {
         PartyMembersInScene = new List<GameObject>();
+        CurrentAttacker = null;
     }
 
     void Start()
@@ -60,6 +64,9 @@ public class CombatManager : MonoBehaviour
             case CombatStates.CHOOSE_ATTACKER:
                 ChooseAttacker();
                 break;
+            case CombatStates.CHOOSE_ACTION:
+                ChooseAttackerAction();
+                break;
             default:
                 break;
         }
@@ -89,13 +96,18 @@ public class CombatManager : MonoBehaviour
 
     void SpawnPlayerCards()
     {
-        List<GameObject> PartyMembers = PartyManager.GetPartyMembers();
+        List<PartyMember> PartyMembers = PartyManager.GetPartyMembers();
+        GameObject CombatCardPrefab = (GameObject) Resources.Load("Prefabs/CombatCard");
+
         for (int i = 0; i < PartyMembers.Count; i++)
         {
+            GameObject PartyMemberInScene = Instantiate(CombatCardPrefab);
+            
             float CardWidth = 0.0f;
-            CombatCard CombatCardComponent = PartyMembers[i].GetComponent<CombatCard>();
+            CombatCard CombatCardComponent = PartyMemberInScene.GetComponent<CombatCard>();
             if (CombatCardComponent)
             {
+                CombatCardComponent.SetDataCard(PartyMembers[i].CombatCardTemplate);
                 CardWidth = CombatCardComponent.GetCardWidth();
             }
 
@@ -104,25 +116,42 @@ public class CombatManager : MonoBehaviour
                 PlayerCardsOrigin.position.y
             );
 
-            GameObject PartyMemberInScene = Instantiate(PartyMembers[i], SpawnPosition, Quaternion.identity);
+            PartyMemberInScene.transform.position = SpawnPosition;
+
             PartyMembersInScene.Add(PartyMemberInScene);
         }
     }
 
     void ChooseAttacker()
     {
+        DebugActionButtons.SetActive(false);
+
         SetPartyMembersCardsActivation(true);
-        foreach (GameObject PartyMember in PartyMembersInScene)
+        foreach (GameObject PartyMemberInScene in PartyMembersInScene)
         {
             InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMember.GetComponent<InteractiveCombatCardComponent>();
+                PartyMemberInScene.GetComponent<InteractiveCombatCardComponent>();
             if (PartyMemberInteractiveCombatCardComponent)
             {
                 PartyMemberInteractiveCombatCardComponent.SetOnClickAction(() => {
-                    PartyMember.transform.position = AttackerCardOrigin.position;
+                    SetCurrentAttacker(PartyMemberInScene);
                 });
             }
         }
+    }
+
+    void SetCurrentAttacker(GameObject NewAttacker)
+    {
+        // If there's already an atacker card, swap it with the new card
+        if (CurrentAttacker)
+        {
+            CurrentAttacker.transform.position = NewAttacker.transform.position;
+        }
+
+        CurrentAttacker = NewAttacker;
+        CurrentAttacker.transform.position = AttackerCardOrigin.position;
+
+        SetCombatState(CombatStates.CHOOSE_ACTION);
     }
 
     void SetPartyMembersCardsActivation(bool AreCardsActive)
@@ -136,5 +165,30 @@ public class CombatManager : MonoBehaviour
                 PartyMemberInteractiveCombatCardComponent.SetIsActive(AreCardsActive);
             }
         }
+    }
+
+    void ChooseAttackerAction()
+    {
+        DebugActionButtons.SetActive(true);
+
+        SetPartyMembersCardsActivation(false);
+        if (CurrentAttacker)
+        {
+            //TODO: Make the attacker card a *Draggable* card to make decisions
+            //CurrentAttacker.AddComponent<Draggable>();
+        }
+    }
+
+    // DEBUG PURPOSES ONLY
+    public void PerformAttackAction()
+    {
+        Debug.Log("ATTACK!");
+        SetCombatState(CombatStates.ATTACKER_ATTACK);
+    }
+
+    // DEBUG PURPOSES ONLY
+    public void PerformChangeAttackerAction()
+    {
+        SetCombatState(CombatStates.CHOOSE_ATTACKER);
     }
 }

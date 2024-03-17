@@ -7,10 +7,9 @@ public class PartyManager : MonoBehaviour
     [Header("Party setup")]
     [SerializeField]
     private List<CombatCardTemplate> InitialPartyMembersCombatCardTemplates;
-    private CombatCard CombatCardPrefab;
 
     public static PartyManager Instance;
-    private List<GameObject> PartyMembers;
+    private List<PartyMember> PartyMembers;
 
     void Awake()
     {
@@ -30,17 +29,10 @@ public class PartyManager : MonoBehaviour
 
     void Init()
     {
-        PartyMembers = new List<GameObject>();
+        PartyMembers = new List<PartyMember>();
         foreach (CombatCardTemplate InitialPartyMember in InitialPartyMembersCombatCardTemplates)
         {
-            GameObject PartyMember = (GameObject) Resources.Load("Prefabs/CombatCard");
-            CombatCard PartyMemberCombatCardComponent = PartyMember.GetComponent<CombatCard>();
-            if (PartyMemberCombatCardComponent)
-            {
-                PartyMemberCombatCardComponent.SetDataCard(InitialPartyMember);
-            }
-
-            PartyMembers.Add(PartyMember);
+            PartyMembers.Add(new PartyMember(InitialPartyMember));
         }
     }
 
@@ -49,7 +41,7 @@ public class PartyManager : MonoBehaviour
 
     }
 
-    public List<GameObject> GetPartyMembers()
+    public List<PartyMember> GetPartyMembers()
     {
         return PartyMembers;
     }
