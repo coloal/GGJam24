@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class StoryCard : MonoBehaviour
 {
     [SerializeField]
     private TextMeshPro BoxNameOfCard;
@@ -75,7 +75,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    public virtual void SetDataCard(CardTemplate DataCard) 
+    public void SetDataCard(StoryCardTemplate DataCard) 
     {
         //Set informaci�n del DataCard
         NameOfCard = DataCard.NameOfCard;

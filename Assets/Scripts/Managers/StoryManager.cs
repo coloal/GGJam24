@@ -47,7 +47,7 @@ public class StoryManager : MonoBehaviour
         bLastSwipeWasLeft = true;
     }
 
-    public bool GetNextCardInGraph(out CardTemplate nextCard)
+    public bool GetNextCardInGraph(out StoryCardTemplate nextCard)
     {
         if(currentStory == null)
         {

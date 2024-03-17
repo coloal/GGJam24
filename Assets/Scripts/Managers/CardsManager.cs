@@ -12,37 +12,41 @@ public class CardsManager : MonoBehaviour
     [SerializeField]
     GameObject CombatCardPrefab;
 
+    /*deprecated ????*/
     [SerializeField]
-    List<CardTemplate> DataCardsList;
+    List<StoryCardTemplate> DataCardsList;
+
+    //For testing by Psyduck(adri :) )
+    [SerializeField] private CombatCardTemplate CartaTESTING;
 
     [SerializeField]
     private bool isSequential;
 
     [SerializeField]
-    Transform CardSpawnerOrigin;
+    private Transform CardSpawnerOrigin;
 
     private int indexNextCard = 0;
 
-    public GameObject SpawnNextCard(CardTemplate nextCard)
+    public GameObject SpawnNextCard(StoryCardTemplate nextCard)
     {
         GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);
 
         if(nextCard != null)
         {
-            newCard.GetComponent<Card>().SetDataCard(nextCard);
+            newCard.GetComponent<StoryCard>().SetDataCard(nextCard);
         }
         
         //indexNextCard++;
         return newCard;
     }
 
-    public GameObject SpawnCombatCard(CardTemplate nextCard)
+    public GameObject SpawnCombatCard()
     {
         GameObject newCard = Instantiate(CombatCardPrefab, new Vector3 (-6,0,0), Quaternion.identity);
 
-        if (nextCard != null)
+        if (CartaTESTING != null)
         {
-            newCard.GetComponent<CombatCard>().SetDataCard(nextCard);
+            newCard.GetComponent<CombatCard>().SetDataCard(CartaTESTING);
         }
 
         //indexNextCard++;

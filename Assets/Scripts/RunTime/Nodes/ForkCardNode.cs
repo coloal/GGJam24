@@ -9,7 +9,7 @@ namespace CodeGraph
     public class ForkCardNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public CardTemplate card;
+        public StoryCardTemplate card;
 
         public ForkCardNode()
         {
@@ -18,7 +18,7 @@ namespace CodeGraph
             outputs.Add("Right");
         }
 
-        public override bool GetNodeCard(out CardTemplate card)
+        public override bool GetNodeCard(out StoryCardTemplate card)
         {
             card = this.card;
             return true;

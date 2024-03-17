@@ -4,19 +4,13 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CombatCard : Card
+public class CombatCard : MonoBehaviour
 {
-    /*
-    [SerializeField] private TextMeshPro BoxNameOfCard;
-
-    [SerializeField] private GameObject RightTextBoxContainer;
-    [SerializeField] private TextMeshProUGUI RightText;
-
-    [SerializeField] private GameObject LeftTextBoxContainer;
-    [SerializeField] private TextMeshProUGUI LeftText;
-    */
     [SerializeField]
     private SpriteRenderer BackgroundCombatSprite;
+    [SerializeField]
+    private SpriteRenderer CombatSprite;
+
 
     [SerializeField]
     private List<SpriteRenderer> AttackPoints;
@@ -27,8 +21,9 @@ public class CombatCard : Card
     [SerializeField]
     private List<SpriteRenderer> EnergyPoints;
 
+    [SerializeField] private TextMeshPro NameOfCard;
     [SerializeField] private TextMeshPro HealthText;
-    [SerializeField] private TextMeshProUGUI DialogText;
+    //[SerializeField] private TextMeshProUGUI DialogText;
 
     private int HealthPoints;
     private int Damage = 0;
@@ -41,30 +36,28 @@ public class CombatCard : Card
     private string EffectiveText;
     private string NonEffectiveText;
 
-    override public void SetDataCard(CardTemplate DataCard)
+    public void SetDataCard(CombatCardTemplate DataCard)
     {
-        base.SetDataCard(DataCard);
+        BackgroundCombatSprite.sprite = DataCard.BackgroundSprite;
+        CombatSprite.sprite = DataCard.CardSprite;
 
-        //base.BackgroundSprite.enabled = false;
-        BackgroundCombatSprite.sprite = DataCard.CombatInfo.BackgroundCombatSprite;
-
-        HealthPoints = DataCard.CombatInfo.HealthPoints;
-        Damage = DataCard.CombatInfo.Damage;
-        Armor = DataCard.CombatInfo.Armor;
-        Turns = DataCard.CombatInfo.Turns;
+        NameOfCard.text = DataCard.NameOfCard;
+        HealthPoints = DataCard.HealthPoints;
+        Damage = DataCard.Damage;
+        Armor = DataCard.Armor;
+        Turns = DataCard.Turns;
         CalculateEnergy();
-        CombatType = DataCard.CombatInfo.CombatType;
+        CombatType = DataCard.CombatType;
 
-        InitialText = DataCard.CombatInfo.InitialText;
-        EffectiveText = DataCard.CombatInfo.EffectiveText;
-        NonEffectiveText = DataCard.CombatInfo.NonEffectiveText;
+        InitialText = DataCard.InitialText;
+        EffectiveText = DataCard.EffectiveText;
+        NonEffectiveText = DataCard.NonEffectiveText;
 
         //Encendemos los puntos de cada stat
         SetStat(Damage, AttackPoints);
         SetStat(Armor, DefensePoints);
         SetStat(Energy, EnergyPoints);
         HealthText.text = HealthPoints.ToString();
-        DialogText.text = InitialText;
     }
 
     private void SetStat(int value, List<SpriteRenderer> sprites)
@@ -84,6 +77,7 @@ public class CombatCard : Card
     private void CalculateEnergy()
     {
         float NewEnergy = (float)Turns / 3f;
+        NewEnergy += 0.3f;
         if (NewEnergy < 1f)
         {
             Energy = 1;

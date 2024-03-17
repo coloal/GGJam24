@@ -12,7 +12,7 @@ namespace CodeGraph
         [ExposedProperty()]
         public bool restartNewStory = false;
 
-        public override bool GetNodeCard(out CardTemplate card)
+        public override bool GetNodeCard(out StoryCardTemplate card)
         {
             if(newStory != null)
             {

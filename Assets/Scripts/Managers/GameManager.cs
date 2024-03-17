@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     void StartGame() 
     {
 
-        CardTemplate FirstCard;
+        StoryCardTemplate FirstCard;
         if (!StoryManager.GetNextCardInGraph(out FirstCard))
         {
             TurnManager.StartTurn(FirstCard);

@@ -22,7 +22,7 @@ namespace CodeGraph
             outputs.Add("Second Option");
         }
 
-        public override bool GetNodeCard(out CardTemplate card)
+        public override bool GetNodeCard(out StoryCardTemplate card)
         {
             card = null;
             return false;

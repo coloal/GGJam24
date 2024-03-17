@@ -38,7 +38,7 @@ namespace CodeGraph
         {
             this.position = position;
         }
-        public virtual bool GetNodeCard(out CardTemplate card)
+        public virtual bool GetNodeCard(out StoryCardTemplate card)
         {
             card = null;
             return false;

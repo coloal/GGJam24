@@ -33,13 +33,13 @@ namespace CodeGraph
             }
         }
 
-        public CardTemplate GetNextCard(bool bSwipedLeft = true)
+        public StoryCardTemplate GetNextCard(bool bSwipedLeft = true)
         {
             string nextNode = currentNode.OnNextNode(graphInstance, bSwipedLeft);
             if (!string.IsNullOrEmpty(nextNode))
             {
                 currentNode = graphInstance.GetNode(nextNode);
-                CardTemplate card;
+                StoryCardTemplate card;
                 if (currentNode.GetNodeCard(out card))
                 {
                     return card;
