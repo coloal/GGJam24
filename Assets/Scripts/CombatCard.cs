@@ -77,6 +77,7 @@ public class CombatCard : MonoBehaviour
     private void CalculateEnergy()
     {
         float NewEnergy = (float)Turns / 3f;
+        NewEnergy += 0.3f;
         if (NewEnergy < 1f)
         {
             Energy = 1;
