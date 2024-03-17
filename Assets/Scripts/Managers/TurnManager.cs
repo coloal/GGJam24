@@ -24,9 +24,8 @@ public class TurnManager : MonoBehaviour
 
     StoryManager StoryManager;
     CardsManager CardsManager;
-    
-    Card CurrentCard;
-    private CardTemplate CurrentCardData;
+
+    StoryCard CurrentCard;
 
     void Start()
     {
@@ -41,12 +40,11 @@ public class TurnManager : MonoBehaviour
         StoryManager = GameManager.Instance.ProvideStoryManager();
     }
 
-    void GetNewCard(CardTemplate nextCard)
+    void GetNewCard(StoryCardTemplate nextCard)
     {
         SetGameState(GameStates.SHOW_CARD);
         GameObject SpawnedCard = CardsManager.SpawnNextCard(nextCard);
-        CurrentCard = SpawnedCard.GetComponent<Card>();
-        CurrentCardData = nextCard;
+        CurrentCard = SpawnedCard.GetComponent<StoryCard>();
         SetGameState(GameStates.MAKE_DECISION);
     }
 
@@ -78,7 +76,7 @@ public class TurnManager : MonoBehaviour
         }
         else
         {
-            CardTemplate nextCard;
+            StoryCardTemplate nextCard;
             if (StoryManager.GetNextCardInGraph(out nextCard))
             {
                 GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
@@ -95,7 +93,7 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public void StartTurn(CardTemplate nextCard) 
+    public void StartTurn(StoryCardTemplate nextCard) 
     {
         GetNewCard(nextCard);
     }
@@ -212,7 +210,7 @@ public class TurnManager : MonoBehaviour
                 case BrainTagType.Combat:
                     //Enter in combat
                     Debug.Log("Combateeee");
-                    GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard(CurrentCardData);
+                    GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard();
                     break;
             }
         }

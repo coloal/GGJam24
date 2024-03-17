@@ -18,7 +18,7 @@ namespace CodeGraph
             outputs.Clear();
         }
         
-        public override bool GetNodeCard(out CardTemplate card)
+        public override bool GetNodeCard(out StoryCardTemplate card)
         {
             if (newStory != null)
             {

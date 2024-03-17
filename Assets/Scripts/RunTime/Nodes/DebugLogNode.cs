@@ -12,7 +12,7 @@ namespace CodeGraph
         public string debugLog;
         
 
-        public override bool GetNodeCard(out CardTemplate card)
+        public override bool GetNodeCard(out StoryCardTemplate card)
         {
             card = null;
             return false;

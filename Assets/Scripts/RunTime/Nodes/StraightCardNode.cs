@@ -10,11 +10,11 @@ namespace CodeGraph
     public class StraightCardNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public CardTemplate card;
+        public StoryCardTemplate card;
 
     
 
-        public override bool GetNodeCard(out CardTemplate card)
+        public override bool GetNodeCard(out StoryCardTemplate card)
         {
             card = this.card;
             return true;
