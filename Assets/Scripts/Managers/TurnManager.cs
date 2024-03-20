@@ -100,7 +100,7 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeLeft()
     {
-        ExecuteActions(CurrentCard.LeftActions);
+        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.LeftActions);
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -111,7 +111,7 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeRight()
     {
-        ExecuteActions(CurrentCard.RightActions);
+        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.RightActions);
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -188,7 +188,7 @@ public class TurnManager : MonoBehaviour
         Utils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 
-    private void ExecuteActions(List<Option> Actions)
+    /*private void ExecuteActions(List<Option> Actions)
     {
         foreach (Option action in Actions)
         {
@@ -214,5 +214,5 @@ public class TurnManager : MonoBehaviour
                     break;
             }
         }
-    }
+    }*/
 }

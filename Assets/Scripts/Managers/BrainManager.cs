@@ -48,6 +48,60 @@ public class BrainManager : MonoBehaviour
         }
     }
 
+    /***** ACTIONS *****/
+    public void ExecuteActions(List<Option> Actions)
+    {
+        foreach (Option action in Actions)
+        {
+            switch (action.TagType)
+            {
+                case BrainTagType.Bool:
+                    //action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
+                    GameManager.Instance.ProvideBrainManager().SetTag(action.BoolTag, action.NewValue);
+                    break;
+                case BrainTagType.Numeric:
+                    //action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
+                    GameManager.Instance.ProvideBrainManager().IncrementNumericTag(action.NumericTag, action.Increment);
+
+                    break;
+                case BrainTagType.State:
+                    //action.BrainStateIntTagAction.Invoke(action.StateTuple.selectedTag, action.StateTuple.selectedTagState);
+                    GameManager.Instance.ProvideBrainManager().SetState(action.TagState, action.NewState);
+                    break;
+                case BrainTagType.Combat:
+                    //Enter in combat
+                    Debug.Log("Combateeee");
+                    GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard();
+                    break;
+            }
+        }
+    }
+
+    public void ExecuteActions(Option action)
+    {
+        switch (action.TagType)
+        {
+            case BrainTagType.Bool:
+                //action.BrainBoolTagAction.Invoke(action.BoolTag, action.NewValue);
+                GameManager.Instance.ProvideBrainManager().SetTag(action.BoolTag, action.NewValue);
+                break;
+            case BrainTagType.Numeric:
+                //action.BrainNumericTagAction.Invoke(action.NumericTag, action.Increment);
+                GameManager.Instance.ProvideBrainManager().IncrementNumericTag(action.NumericTag, action.Increment);
+
+                break;
+            case BrainTagType.State:
+                //action.BrainStateIntTagAction.Invoke(action.StateTuple.selectedTag, action.StateTuple.selectedTagState);
+                GameManager.Instance.ProvideBrainManager().SetState(action.TagState, action.NewState);
+                break;
+            case BrainTagType.Combat:
+                //Enter in combat
+                Debug.Log("Combateeee");
+                GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard();
+                break;
+        }
+    }
+
     /***** QUERIES *****/
     public void SetTag(BrainTag tag, bool state)
     {
