@@ -33,7 +33,7 @@ public class Draggable : MonoBehaviour
     [SerializeField] float MaxFinalRotation = 30;
     [SerializeField] float FinalRotationVelocity = 10;
     [SerializeField] float EscapeAcceleration = 100;
-    [SerializeField] bool IsVertical = true;
+    [SerializeField] bool IsVertical = false;
      bool IsActive = true;
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
