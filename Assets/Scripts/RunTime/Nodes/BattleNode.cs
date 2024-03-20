@@ -2,32 +2,33 @@ using CodeGraph;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Fork Card", "Card Nodes/Fork Card")]
-    public class ForkCardNode : CodeGraphNode
+    [NodeInfo("Battle", "Battle Nodes/Battle")]
+    public class BattleNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public StoryCardTemplate card;
+        public CombatCardTemplate card;
 
-        public ForkCardNode()
+        public BattleNode()
         {
             outputs.Clear();
-            outputs.Add("Left");
-            outputs.Add("Right");
-            
+            outputs.Add("Win");
+            outputs.Add("Lose");
         }
 
 
         public override bool GetNodeCard(out StoryCardTemplate card)
         {
-            card = this.card;
-            return true;
+            card = null;
+            return false;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
+            //TODO iniciar batalla
             int port = bSwipedLeft ? 0 : 1;
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
             if (nextNode != null)
@@ -37,5 +38,7 @@ namespace CodeGraph
             return string.Empty;
         }
     }
-
 }
+
+
+    

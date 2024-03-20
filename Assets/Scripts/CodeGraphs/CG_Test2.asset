@@ -41,15 +41,15 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        card: {fileID: 11400000, guid: 867f4a29f377dff4dbf2cc37f3f8f5bd, type: 2}
+        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
     - rid: 8580623111438729226
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 2ef298a5-6a9b-43e8-ac9c-0db3af9d6fb0
         position:
           serializedVersion: 2
-          x: 552
-          y: 273
+          x: 590
+          y: 193
           width: 340
           height: 98
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
