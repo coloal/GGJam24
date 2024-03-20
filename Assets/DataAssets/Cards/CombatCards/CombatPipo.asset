@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CombatPipo
   m_EditorClassIdentifier: 
   NameOfCard: Pipo
-  InitialText: 
+  InitialText: Contigo pipo
   EffectiveText: 
   NonEffectiveText: 
   CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
