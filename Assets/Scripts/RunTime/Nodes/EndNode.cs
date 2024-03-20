@@ -10,7 +10,6 @@ namespace CodeGraph
         public EndNode()
         {
             outputs.Clear();      
-            nodeColor = Color.red;
         }
         public override bool GetNodeCard(out StoryCardTemplate card)
         {

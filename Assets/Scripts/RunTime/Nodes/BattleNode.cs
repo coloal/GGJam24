@@ -6,7 +6,7 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Battle", "Battle Nodes/Battle")]
+    [NodeInfo("Battle", "Battle Nodes/Battle", color: "#632B30")]
     public class BattleNode : CodeGraphNode
     {
         [ExposedProperty()]
@@ -17,7 +17,7 @@ namespace CodeGraph
             outputs.Clear();
             outputs.Add("Win");
             outputs.Add("Lose");
-            nodeColor = new Color(99.0f/255.0f, 43.0f/255.0f, 48.0f/255.0f); 
+            
         }
 
 

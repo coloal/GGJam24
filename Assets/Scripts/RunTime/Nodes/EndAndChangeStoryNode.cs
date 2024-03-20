@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("End and Change Story", "Story Nodes/End Story And Change")]
+    [NodeInfo("End and Change Story", "Story Nodes/End Story And Change", color: "#01295F")]
     public class EndAndChangeStoryNode : CodeGraphNode
     {
 
@@ -16,7 +16,7 @@ namespace CodeGraph
         public EndAndChangeStoryNode()
         {
             outputs.Clear();
-            nodeColor = new Color(01.0f / 255.0f, 41.0f / 255.0f, 95.0f / 255.0f);
+            
         }
         
         public override bool GetNodeCard(out StoryCardTemplate card)

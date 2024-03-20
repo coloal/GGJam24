@@ -6,16 +6,13 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Straight Card", "Card Nodes/Straight Card")]
+    [NodeInfo("Straight Card", "Card Nodes/Straight Card", color: "#80A4ED")]
     public class StraightCardNode : CodeGraphNode
     {
         [ExposedProperty()]
         public StoryCardTemplate card;
 
-        public StraightCardNode()
-        {
-            nodeColor = new Color(128.0f / 255.0f, 164.0f / 255.0f, 237.0f / 255.0f);
-        }
+       
 
         public override bool GetNodeCard(out StoryCardTemplate card)
         {

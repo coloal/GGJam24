@@ -39,7 +39,13 @@ namespace CodeGraph.Editor
             VisualElement element = contentContainer.Children().ToList()[0].Children().ToList()[0].Children().ToList()[0];
             element.style.fontSize = 15;
             element.style.color = Color.white;
-            element.parent.style.backgroundColor = graphNode.nodeColor;
+            
+            Color backgroundColor;
+            if (ColorUtility.TryParseHtmlString(info.Color, out backgroundColor))
+            {
+                element.parent.style.backgroundColor = backgroundColor;
+            }
+            
 
             ports = new List<Port>();
             inputPorts = new List<Port>();

@@ -6,7 +6,7 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Bool Condition", "Condition Nodes/Bool Condition")] 
+    [NodeInfo("Bool Condition", "Condition Nodes/Bool Condition", color: "#49DCB1")] 
     public class BooleanConditionalNode : CodeGraphNode
     {
         [ExposedProperty()]
@@ -19,7 +19,7 @@ namespace CodeGraph
             outputs.Clear();
             outputs.Add("True");
             outputs.Add("False");
-            nodeColor = new Color(73.0f / 255.0f, 220.0f / 255.0f, 177.0f / 255.0f); 
+            
         }
 
         public override bool GetNodeCard(out StoryCardTemplate card)

@@ -13,8 +13,6 @@ namespace CodeGraph
         [SerializeField]
         private Rect position;
         
-
-        public Color nodeColor;
         public string typeName;
         public List<string> outputs = new List<string>(); 
 

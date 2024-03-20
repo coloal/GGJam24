@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("Change Story", "Story Nodes/Change Story")]
+    [NodeInfo("Change Story", "Story Nodes/Change Story", color: "#01295F")]
     public class StoryChangeNode : CodeGraphNode
     {
         [ExposedProperty()]
@@ -12,10 +12,7 @@ namespace CodeGraph
         [ExposedProperty()]
         public bool restartNewStory = false;
 
-        public StoryChangeNode()
-        {
-            nodeColor = new Color(01.0f / 255.0f, 41.0f / 255.0f, 95.0f / 255.0f);
-        }
+        
 
         public override bool GetNodeCard(out StoryCardTemplate card)
         {
