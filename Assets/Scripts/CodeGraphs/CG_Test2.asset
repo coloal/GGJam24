@@ -19,6 +19,9 @@ MonoBehaviour:
   - rid: 8580623290694893635
   - rid: 8580623290694893636
   - rid: 8580623290694893637
+  - rid: 8580623290694893639
+  - rid: 8580623290694893641
+  - rid: 8580623290694893642
   connections: []
   references:
     version: 2
@@ -33,7 +36,6 @@ MonoBehaviour:
           y: 77
           width: 219
           height: 188
-        nodeColor: {r: 0.81960785, g: 0.47843137, b: 0.13333334, a: 1}
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -71,7 +73,6 @@ MonoBehaviour:
           y: 76
           width: 335
           height: 122
-        nodeColor: {r: 0.3882353, g: 0.16862746, b: 0.1882353, a: 1}
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -88,7 +89,6 @@ MonoBehaviour:
           y: 82
           width: 321
           height: 122
-        nodeColor: {r: 0.5019608, g: 0.6431373, b: 0.92941177, a: 1}
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -105,7 +105,6 @@ MonoBehaviour:
           y: 283
           width: 212
           height: 122
-        nodeColor: {r: 0.28627452, g: 0.8627451, b: 0.69411767, a: 1}
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -122,7 +121,6 @@ MonoBehaviour:
           y: 221
           width: 74
           height: 77
-        nodeColor: {r: 1, g: 0, b: 0, a: 1}
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
@@ -136,10 +134,54 @@ MonoBehaviour:
           y: 282
           width: 308
           height: 116
-        nodeColor: {r: 0.003921569, g: 0.16078432, b: 0.37254903, a: 1}
         typeName: CodeGraph.StoryChangeNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Next
         newStory: {fileID: 0}
         restartNewStory: 0
+    - rid: 8580623290694893639
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 27a3e800-7b76-440e-b6b8-b05044fce3fa
+        position:
+          serializedVersion: 2
+          x: 88
+          y: 446
+          width: 81
+          height: 77
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+    - rid: 8580623290694893641
+      type: {class: RandomNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9dfada16-8bb1-4d1e-9595-38b320e79c9f
+        position:
+          serializedVersion: 2
+          x: 256
+          y: 430
+          width: 213
+          height: 124
+        typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - First Option
+        - Second Option
+        FirstOptionProbability: 50
+    - rid: 8580623290694893642
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: da8ba9d4-de02-4c51-ad1f-2db579a72d45
+        position:
+          serializedVersion: 2
+          x: 534
+          y: 440
+          width: 145
+          height: 97
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        debugLog: 

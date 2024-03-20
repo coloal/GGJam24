@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
@@ -44,6 +45,14 @@ namespace CodeGraph.Editor
             if (ColorUtility.TryParseHtmlString(info.Color, out backgroundColor))
             {
                 element.parent.style.backgroundColor = backgroundColor;
+                float brightnessThreshold = 0.73f;
+                float brigthness = 0.299f * backgroundColor.r + 0.587f * backgroundColor.g + 0.114f * backgroundColor.b;
+
+                
+                if (brigthness > brightnessThreshold)
+                {
+                    element.style.color = new Color(0.05f, 0.05f, 0.05f);
+                }
             }
             
 

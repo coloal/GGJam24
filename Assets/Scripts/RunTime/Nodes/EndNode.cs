@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("End", "Flow Nodes/End")]
+    [NodeInfo("End", "Flow Nodes/End", color: "#550C18")]
     public class EndNode : CodeGraphNode
     {
         public EndNode()

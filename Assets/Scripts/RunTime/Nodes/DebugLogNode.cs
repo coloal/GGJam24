@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("Debug Log", "Debug Nodes/Debug Log Console")]
+    [NodeInfo("Debug Log", "Debug Nodes/Debug Log Console", color: "#C4F1BE")]
     public class DebugLogNode : CodeGraphNode
     {
 

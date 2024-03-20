@@ -7,7 +7,7 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Random Split", "Random Nodes/Random Split")]
+    [NodeInfo("Random Split", "Random Nodes/Random Split", color: "#E40066")]
     public class RandomNode : CodeGraphNode
     {
         [ExposedProperty()]

@@ -151,11 +151,10 @@ MonoBehaviour:
         guid: 4b54c69b-25a9-493a-8af2-070ce7104e0c
         position:
           serializedVersion: 2
-          x: -173
-          y: 226
-          width: 74
+          x: -263
+          y: 218
+          width: 81
           height: 77
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -166,11 +165,10 @@ MonoBehaviour:
         guid: 5334724c-62a3-427d-a934-7821ca0eed82
         position:
           serializedVersion: 2
-          x: 483
-          y: 207
+          x: 648
+          y: 18
           width: 212
           height: 122
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -183,11 +181,10 @@ MonoBehaviour:
         guid: de0768f0-e6af-468c-8a7c-49b052198ca6
         position:
           serializedVersion: 2
-          x: 820
-          y: 165
+          x: 962
+          y: 1
           width: 351
           height: 98
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -203,7 +200,6 @@ MonoBehaviour:
           y: 326
           width: 206
           height: 161
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.NumericConditionalNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -222,7 +218,6 @@ MonoBehaviour:
           y: 344
           width: 219
           height: 140
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -241,7 +236,6 @@ MonoBehaviour:
           y: 225
           width: 351
           height: 98
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -257,7 +251,6 @@ MonoBehaviour:
           y: 245
           width: 351
           height: 98
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -273,7 +266,6 @@ MonoBehaviour:
           y: 308
           width: 68
           height: 77
-        nodeColor: {r: 1, g: 0, b: 0, a: 1}
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
@@ -283,11 +275,10 @@ MonoBehaviour:
         guid: e38bd489-7eac-4628-8de2-a15878bfacfb
         position:
           serializedVersion: 2
-          x: 301
-          y: -57
+          x: 389
+          y: -154
           width: 219
           height: 188
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -325,7 +316,6 @@ MonoBehaviour:
           y: 97
           width: 219
           height: 188
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -363,7 +353,6 @@ MonoBehaviour:
           y: 173
           width: 219
           height: 188
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -401,7 +390,6 @@ MonoBehaviour:
           y: 195
           width: 315
           height: 122
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -418,7 +406,6 @@ MonoBehaviour:
           y: 304
           width: 315
           height: 122
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -431,11 +418,10 @@ MonoBehaviour:
         guid: b4449b89-149b-458a-bd79-736f1863cbe3
         position:
           serializedVersion: 2
-          x: 2000
-          y: 377
+          x: 1977
+          y: 375
           width: 321
           height: 122
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
