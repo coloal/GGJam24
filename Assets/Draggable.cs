@@ -33,15 +33,13 @@ public class Draggable : MonoBehaviour
     [SerializeField] float MaxFinalRotation = 30;
     [SerializeField] float FinalRotationVelocity = 10;
     [SerializeField] float EscapeAcceleration = 100;
+    [SerializeField] bool IsVertical = true;
      bool IsActive = true;
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool pressed = false;
     bool isInLimit = false;
-    bool releasedInLimitLeft = false;
-    bool releasedInLimitRight = false;
-    int TutorialFase = 0;
     DraggableStates CurrentState = DraggableStates.PLAY_STATE;
 
     Vector2 initialPosition;
@@ -54,9 +52,20 @@ public class Draggable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        if(IsVertical)
+        {
+            VerticalTick();
+        }
+        else
+        {
+            HorizontalTick();
+        }
 
+    }
+
+
+    void HorizontalTick()
+    {
         if (CurrentState == DraggableStates.SWIPE_LEFT)
         {
             SwipeLeftMovement();
@@ -75,7 +84,7 @@ public class Draggable : MonoBehaviour
 
         float velocity = CalculateActualVelocity(targetPosition, distance);
 
-        if(CurrentState == DraggableStates.TUTORIAL_MOVE_LEFT || CurrentState == DraggableStates.TUTORIAL_MOVE_RIGHT || CurrentState == DraggableStates.TUTORIAL_RETURN)
+        if (CurrentState == DraggableStates.TUTORIAL_MOVE_LEFT || CurrentState == DraggableStates.TUTORIAL_MOVE_RIGHT || CurrentState == DraggableStates.TUTORIAL_RETURN)
         {
             velocity /= 10;
         }
@@ -88,7 +97,7 @@ public class Draggable : MonoBehaviour
             }
             else
             {
-                if(targetPosition.x > transform.position.x)
+                if (targetPosition.x > transform.position.x)
                 {
                     float targetRotation = -Mathf.Lerp(MaxArcRotation, MaxFinalRotation, distance / RotateDistance);
                     if (-FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z <= targetRotation + 360)
@@ -100,8 +109,9 @@ public class Draggable : MonoBehaviour
                         transform.eulerAngles += new Vector3(0, 0, -FinalRotationVelocity) * Time.deltaTime;
                     }
                 }
-                
+
                 velocity = Mathf.Min(0, velocity);
+                this.velocity = Mathf.Min(0, this.velocity);
             }
         }
         else if (transform.position.x <= Camera.main.ScreenToWorldPoint(Vector2.zero).x + EscapeDistance)
@@ -125,8 +135,9 @@ public class Draggable : MonoBehaviour
                         transform.eulerAngles += new Vector3(0, 0, FinalRotationVelocity) * Time.deltaTime;
                     }
                     velocity = Mathf.Max(0, velocity);
+                    this.velocity = Mathf.Max(0, this.velocity);
                 }
-                
+
             }
         }
         else
@@ -139,7 +150,30 @@ public class Draggable : MonoBehaviour
 
 
         transform.Translate(new Vector2(velocity * Time.deltaTime, 0));
-        if(transform.position.y > initialPosition.y) transform.position = new Vector2(transform.position.x,initialPosition.y);  
+        if (transform.position.y > initialPosition.y) transform.position = new Vector2(transform.position.x, initialPosition.y);
+    }
+
+    private void VerticalTick()
+    {
+        Vector2 targetPosition = CalculateVerticalTargetPosition();
+
+        float distance = Mathf.Abs(transform.position.y - targetPosition.y);
+
+        float velocity = CalculateVerticalActualVelocity(targetPosition, distance);
+
+
+        if (transform.position.y >= Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y)
+        {
+            velocity = Mathf.Min(0, velocity);
+            this.velocity = Mathf.Min(0, this.velocity);
+        }
+        else if (transform.position.y <= initialPosition.y)
+        {
+            velocity = Mathf.Max(0, velocity);
+            this.velocity = Mathf.Max(0, this.velocity);
+        }
+
+        transform.Translate(new Vector2(0, velocity * Time.deltaTime));
 
     }
 
@@ -159,10 +193,29 @@ public class Draggable : MonoBehaviour
         return targetPosition;
     }
 
+    Vector2 CalculateVerticalTargetPosition()
+    {
+        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
+        return targetPosition;
+    }
+
+
     float CalculateActualVelocity(Vector2 targetPosition, float distance)
     {
         float direction = Mathf.Sign(targetPosition.x - transform.position.x);
        
+        float actualMaxVelocity = distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, distance / brakeDistance);
+        direction *= acceleration;
+        velocity += (direction * Time.deltaTime);
+        velocity = Mathf.Abs(velocity) > actualMaxVelocity ? Mathf.Sign(velocity) * actualMaxVelocity : velocity;
+        return velocity;
+    }
+
+    float CalculateVerticalActualVelocity(Vector2 targetPosition, float distance)
+    {
+        float direction = Mathf.Sign(targetPosition.y - transform.position.y);
+
         float actualMaxVelocity = distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, distance / brakeDistance);
         direction *= acceleration;
         velocity += (direction * Time.deltaTime);
@@ -236,5 +289,8 @@ public class Draggable : MonoBehaviour
     {
         CurrentState = DraggableStates.SWIPE_RIGHT;
     }
+
+
+   
 
 }
