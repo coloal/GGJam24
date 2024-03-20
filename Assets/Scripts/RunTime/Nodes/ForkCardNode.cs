@@ -16,6 +16,12 @@ namespace CodeGraph
             outputs.Clear();
             outputs.Add("Left");
             outputs.Add("Right");
+            
+        }
+
+        public void ChangeName()
+        {
+
         }
 
         public override bool GetNodeCard(out StoryCardTemplate card)

@@ -63,15 +63,23 @@ namespace CodeGraph.Editor
                 if (property.GetCustomAttribute<ExposedPropertyAttribute>() is ExposedPropertyAttribute exposedProperty)
                 {
                     PropertyField field = DrawProperty(property.Name);
-                    //field.RegisterValueChangeCallback(OnFieldChangeCallback);
+                    field.RegisterValueChangeCallback(OnFieldChangeCallback);
                 }
             }
             RefreshExpandedState();
+            
         }
 
         private void OnFieldChangeCallback(SerializedPropertyChangeEvent evt)
         {
-            throw new NotImplementedException();
+            if (graphNode is ForkCardNode forkNode)
+            {
+                if(forkNode.card != null)
+                {
+                    outputContainer.ElementAt(0).tooltip = forkNode.card.LeftText;
+                    outputContainer.ElementAt(1).tooltip = forkNode.card.RightText;
+                }
+            }
         }
 
         private PropertyField DrawProperty(string propertyName)

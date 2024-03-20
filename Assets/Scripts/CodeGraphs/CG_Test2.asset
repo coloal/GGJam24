@@ -13,41 +13,48 @@ MonoBehaviour:
   m_Name: CG_Test2
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 8580623094397272090
-  - rid: 8580623094397272092
-  connections: []
+  - rid: 8580623111438729225
+  - rid: 8580623111438729226
+  connections:
+  - outputPort:
+      nodeId: 08a58a2c-6cae-455c-8cdc-ff68ee5f1584
+      portIndex: 1
+    inputPort:
+      nodeId: 2ef298a5-6a9b-43e8-ac9c-0db3af9d6fb0
+      portIndex: 1
   references:
     version: 2
     RefIds:
-    - rid: 8580623094397272090
-      type: {class: ForkCardNode, ns: , asm: Assembly-CSharp}
+    - rid: 8580623111438729225
+      type: {class: ForkCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 1f7f1a2f-6323-44e3-aed3-a5a49c360b7e
+        guid: 08a58a2c-6cae-455c-8cdc-ff68ee5f1584
         position:
           serializedVersion: 2
-          x: 534
-          y: 305
-          width: 290
+          x: 125
+          y: 238
+          width: 333
           height: 122
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
-        typeName: ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        card: {fileID: 0}
-    - rid: 8580623094397272092
-      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+        card: {fileID: 11400000, guid: 867f4a29f377dff4dbf2cc37f3f8f5bd, type: 2}
+    - rid: 8580623111438729226
+      type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: a73fe39a-a72c-450c-99ce-b91504345fdf
+        guid: 2ef298a5-6a9b-43e8-ac9c-0db3af9d6fb0
         position:
           serializedVersion: 2
-          x: 241
-          y: 401
-          width: 74
-          height: 77
+          x: 552
+          y: 273
+          width: 340
+          height: 98
         nodeColor: {r: 0, g: 0, b: 0, a: 0}
-        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Next
+        card: {fileID: 11400000, guid: 9fba73b7dc336a84f9f9201ad2753324, type: 2}
