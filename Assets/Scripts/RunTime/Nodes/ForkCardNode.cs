@@ -16,7 +16,7 @@ namespace CodeGraph
             outputs.Clear();
             outputs.Add("Left");
             outputs.Add("Right");
-            
+            nodeColor = new Color(128.0f / 255.0f, 164.0f / 255.0f, 237.0f / 255.0f);
         }
 
 

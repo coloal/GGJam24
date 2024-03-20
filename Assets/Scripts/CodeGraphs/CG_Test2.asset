@@ -13,48 +13,133 @@ MonoBehaviour:
   m_Name: CG_Test2
   m_EditorClassIdentifier: 
   nodes:
-  - rid: 8580623111438729225
-  - rid: 8580623111438729226
-  connections:
-  - outputPort:
-      nodeId: 08a58a2c-6cae-455c-8cdc-ff68ee5f1584
-      portIndex: 1
-    inputPort:
-      nodeId: 2ef298a5-6a9b-43e8-ac9c-0db3af9d6fb0
-      portIndex: 1
+  - rid: 8580623290694893632
+  - rid: 8580623290694893633
+  - rid: 8580623290694893634
+  - rid: 8580623290694893635
+  - rid: 8580623290694893636
+  - rid: 8580623290694893637
+  connections: []
   references:
     version: 2
     RefIds:
-    - rid: 8580623111438729225
-      type: {class: ForkCardNode, ns: CodeGraph, asm: Assembly-CSharp}
+    - rid: 8580623290694893632
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 08a58a2c-6cae-455c-8cdc-ff68ee5f1584
+        guid: f42b141e-34a7-44fa-8eb0-4e1dca40ca73
         position:
           serializedVersion: 2
-          x: 125
-          y: 238
-          width: 333
+          x: 70
+          y: 77
+          width: 219
+          height: 188
+        nodeColor: {r: 0.81960785, g: 0.47843137, b: 0.13333334, a: 1}
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 0
+          NewValue: 0
+          BrainBoolTagAction:
+            m_PersistentCalls:
+              m_Calls: []
+          NumericTag: 0
+          Increment: 0
+          BrainNumericTagAction:
+            m_PersistentCalls:
+              m_Calls: []
+          StateTuple:
+            selectedTag: 0
+            selectedTagState: 0
+          TagState: 0
+          NewState: 0
+          BrainStateTagAction:
+            m_PersistentCalls:
+              m_Calls: []
+          BrainStateIntTagAction:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 8580623290694893633
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b055a92d-6550-4f8e-aa9b-37b88e67b9f1
+        position:
+          serializedVersion: 2
+          x: 307
+          y: 76
+          width: 335
           height: 122
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
+        nodeColor: {r: 0.3882353, g: 0.16862746, b: 0.1882353, a: 1}
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win
+        - Lose
+        card: {fileID: 0}
+    - rid: 8580623290694893634
+      type: {class: ForkCardNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4bcfa2f8-fb9e-44ac-900b-6e97cb4a743d
+        position:
+          serializedVersion: 2
+          x: 663
+          y: 82
+          width: 321
+          height: 122
+        nodeColor: {r: 0.5019608, g: 0.6431373, b: 0.92941177, a: 1}
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
-    - rid: 8580623111438729226
-      type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
+        card: {fileID: 0}
+    - rid: 8580623290694893635
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 2ef298a5-6a9b-43e8-ac9c-0db3af9d6fb0
+        guid: 58cfbc22-b706-4446-98ec-e3c03089ceaa
         position:
           serializedVersion: 2
-          x: 590
-          y: 193
-          width: 340
-          height: 98
-        nodeColor: {r: 0, g: 0, b: 0, a: 0}
-        typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          x: 74
+          y: 283
+          width: 212
+          height: 122
+        nodeColor: {r: 0.28627452, g: 0.8627451, b: 0.69411767, a: 1}
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 0
+    - rid: 8580623290694893636
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9be2f50f-4159-4747-bd32-233f42aff9ba
+        position:
+          serializedVersion: 2
+          x: 309
+          y: 221
+          width: 74
+          height: 77
+        nodeColor: {r: 1, g: 0, b: 0, a: 1}
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 8580623290694893637
+      type: {class: StoryChangeNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2df07d5b-6504-4dfb-a287-b25840f08860
+        position:
+          serializedVersion: 2
+          x: 417
+          y: 282
+          width: 308
+          height: 116
+        nodeColor: {r: 0.003921569, g: 0.16078432, b: 0.37254903, a: 1}
+        typeName: CodeGraph.StoryChangeNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Next
-        card: {fileID: 11400000, guid: 9fba73b7dc336a84f9f9201ad2753324, type: 2}
+        newStory: {fileID: 0}
+        restartNewStory: 0

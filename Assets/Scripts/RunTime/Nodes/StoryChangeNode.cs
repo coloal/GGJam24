@@ -12,6 +12,11 @@ namespace CodeGraph
         [ExposedProperty()]
         public bool restartNewStory = false;
 
+        public StoryChangeNode()
+        {
+            nodeColor = new Color(01.0f / 255.0f, 41.0f / 255.0f, 95.0f / 255.0f);
+        }
+
         public override bool GetNodeCard(out StoryCardTemplate card)
         {
             if(newStory != null)

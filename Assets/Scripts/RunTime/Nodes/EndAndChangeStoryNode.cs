@@ -16,6 +16,7 @@ namespace CodeGraph
         public EndAndChangeStoryNode()
         {
             outputs.Clear();
+            nodeColor = new Color(01.0f / 255.0f, 41.0f / 255.0f, 95.0f / 255.0f);
         }
         
         public override bool GetNodeCard(out StoryCardTemplate card)

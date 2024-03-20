@@ -17,6 +17,7 @@ namespace CodeGraph
             outputs.Clear();
             outputs.Add("Win");
             outputs.Add("Lose");
+            nodeColor = new Color(99.0f/255.0f, 43.0f/255.0f, 48.0f/255.0f); 
         }
 
 

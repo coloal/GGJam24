@@ -12,7 +12,10 @@ namespace CodeGraph
         [ExposedProperty()]
         public StoryCardTemplate card;
 
-    
+        public StraightCardNode()
+        {
+            nodeColor = new Color(128.0f / 255.0f, 164.0f / 255.0f, 237.0f / 255.0f);
+        }
 
         public override bool GetNodeCard(out StoryCardTemplate card)
         {

@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -34,7 +35,11 @@ namespace CodeGraph.Editor
             NodeInfoAttribute info = typeInfo.GetCustomAttribute<NodeInfoAttribute>();
             this.serializedObject = codeGraphObject;
             title = info.Title;
-            style.backgroundColor = new StyleColor(node.nodeColor);
+            
+            VisualElement element = contentContainer.Children().ToList()[0].Children().ToList()[0].Children().ToList()[0];
+            element.style.fontSize = 15;
+            element.style.color = Color.white;
+            element.parent.style.backgroundColor = graphNode.nodeColor;
 
             ports = new List<Port>();
             inputPorts = new List<Port>();

@@ -21,6 +21,7 @@ namespace CodeGraph
             outputs.Add("True");
             
             */
+            nodeColor = new Color(209.0f / 255.0f, 122.0f / 255.0f, 34.0f / 255.0f);
         }
 
         public override bool GetNodeCard(out StoryCardTemplate card)
