@@ -4,23 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Rendering.CameraUI;
 
-namespace CodeGraph
+public class RecruitActionNode : CodeGraphNode
 {
-    [NodeInfo("Bool Condition", "Condition Nodes/Bool Condition", color: "#06B184")] 
-    public class BooleanConditionalNode : CodeGraphNode
+    [NodeInfo("Recruit Action", "Action Nodes/Recruit Action", color: "#D17A22")]
+    public class RandomNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public BrainTag Condition;
-
-        
-
-        public BooleanConditionalNode()
-        {
-            outputs.Clear();
-            outputs.Add("True");
-            outputs.Add("False");
-            
-        }
+        [Tooltip("Carta a reclutar")]
+        public CombatCardTemplate RecruitedCard;
 
         public override bool GetNodeCard(out StoryCardTemplate card)
         {
@@ -30,9 +21,8 @@ namespace CodeGraph
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-
-            int port = GameManager.Instance.ProvideBrainManager().GetTag(Condition) ? 0 : 1;
-            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
+            GameManager.Instance.ProvidePartyManager().AddMemberToParty(RecruitedCard);
+            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
             if (nextNode != null)
             {
                 return nextNode.id;
@@ -40,6 +30,4 @@ namespace CodeGraph
             return string.Empty;
         }
     }
-
 }
-

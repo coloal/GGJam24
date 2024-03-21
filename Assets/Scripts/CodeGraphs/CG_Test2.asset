@@ -22,6 +22,7 @@ MonoBehaviour:
   - rid: 8580623290694893639
   - rid: 8580623290694893641
   - rid: 8580623290694893642
+  - rid: 8580623320879988736
   connections: []
   references:
     version: 2
@@ -101,8 +102,8 @@ MonoBehaviour:
         guid: 58cfbc22-b706-4446-98ec-e3c03089ceaa
         position:
           serializedVersion: 2
-          x: 74
-          y: 283
+          x: 128
+          y: 282
           width: 212
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -117,8 +118,8 @@ MonoBehaviour:
         guid: 9be2f50f-4159-4747-bd32-233f42aff9ba
         position:
           serializedVersion: 2
-          x: 309
-          y: 221
+          x: 786
+          y: 228
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -146,8 +147,8 @@ MonoBehaviour:
         guid: 27a3e800-7b76-440e-b6b8-b05044fce3fa
         position:
           serializedVersion: 2
-          x: 88
-          y: 446
+          x: 142
+          y: 433
           width: 81
           height: 77
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -176,8 +177,8 @@ MonoBehaviour:
         guid: da8ba9d4-de02-4c51-ad1f-2db579a72d45
         position:
           serializedVersion: 2
-          x: 534
-          y: 440
+          x: 744
+          y: 341
           width: 145
           height: 97
         typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -185,3 +186,18 @@ MonoBehaviour:
         outputs:
         - Next
         debugLog: 
+    - rid: 8580623320879988736
+      type: {class: RecruitActionNode/RandomNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: f6b98a0d-933d-4514-b9a4-f7d24b731526
+        position:
+          serializedVersion: 2
+          x: 521
+          y: 461
+          width: 335
+          height: 98
+        typeName: RecruitActionNode+RandomNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        RecruitedCard: {fileID: 0}

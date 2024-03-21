@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("Start", "Flow Nodes/Start", false, color: "#FFEAEE")]
+    [NodeInfo("Start", "Flow Nodes/Start", false, color: "#2A9134")]
     public class StartNode : CodeGraphNode
     {
 

@@ -36,6 +36,12 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+
+    public void AddMemberToParty(CombatCardTemplate card)
+    {
+        PartyMembers.Add(new PartyMember(card));
+    }
+
     void Start()
     {
 
