@@ -35,6 +35,9 @@ public class VerticalDraggable : MonoBehaviour
     DraggableStates CurrentState = DraggableStates.PLAY_STATE;
 
     Vector2 initialPosition;
+
+    public List<Action> SwipeActions => swipeActions;
+
     // Start is called before the first frame update
     void Start()
     {
