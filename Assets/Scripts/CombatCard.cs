@@ -46,7 +46,7 @@ public class CombatCard : MonoBehaviour
         Damage = DataCard.Damage;
         Armor = DataCard.Armor;
         Turns = DataCard.Turns;
-        CalculateEnergy();
+        Energy = CombatUtils.CalculateEnergy(Turns);
         CombatType = DataCard.CombatType;
 
         InitialText = DataCard.InitialText;
@@ -72,20 +72,6 @@ public class CombatCard : MonoBehaviour
     {
         Energy -= 1;
         EnergyPoints[Energy].enabled = false;
-    }
-
-    private void CalculateEnergy()
-    {
-        float NewEnergy = (float)Turns / 3f;
-        NewEnergy += 0.3f;
-        if (NewEnergy < 1f)
-        {
-            Energy = 1;
-        }
-        else
-        {
-            Energy = Mathf.RoundToInt(NewEnergy);
-        }
     }
 
     public float GetCardWidth()
