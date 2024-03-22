@@ -29,6 +29,7 @@ public class CombatManager : MonoBehaviour
     private CombatStates CurrentState;
     private List<GameObject> PartyMembersInScene;
     private GameObject CurrentAttacker;
+    private GameObject EnemyCard;
 
     void Awake()
     {
@@ -86,7 +87,7 @@ public class CombatManager : MonoBehaviour
 
     void SpawnEnemyCard()
     {
-        GameObject EnemyCard = Instantiate(DebugEnemyCardPrefab, EnemyCardOrigin.position, Quaternion.identity);
+        EnemyCard = Instantiate(DebugEnemyCardPrefab, EnemyCardOrigin.position, Quaternion.identity);
         CombatCard EnemyCardCombatCardComponent = EnemyCard.GetComponent<CombatCard>();
         if (EnemyCardCombatCardComponent)
         {
@@ -182,8 +183,23 @@ public class CombatManager : MonoBehaviour
     // DEBUG PURPOSES ONLY
     public void PerformAttackAction()
     {
-        Debug.Log("ATTACK!");
-        SetCombatState(CombatStates.ATTACKER_ATTACK);
+        SetCombatState(CombatStates.PLAYER_ATTACK);
+
+        AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+        CombatCard CurrentAttackerCombatCard = CurrentAttacker.GetComponent<CombatCard>();
+        CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
+
+        if (CurrentAttackerCombatCard && EnemyCombatCard)
+        {
+            CombatUtils.Attack(
+                AttackerCombatCard: CurrentAttackerCombatCard,
+                DefenderCombatCard: EnemyCombatCard,
+                out AttackFinalEffectiveness
+            );
+            CurrentAttackerCombatCard.ReduceAttackerEnergy();
+        }
+
+        SetCombatState(CombatStates.ENEMY_ATTACK);
     }
 
     // DEBUG PURPOSES ONLY

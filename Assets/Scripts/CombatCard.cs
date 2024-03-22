@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CombatCard : MonoBehaviour
+public class    CombatCard : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer BackgroundCombatSprite;
@@ -68,9 +68,9 @@ public class CombatCard : MonoBehaviour
         }
     }
 
-    public void DecrementEnergy()
+    public void ReduceEnergy()
     {
-        Energy -= 1;
+        Energy--;
         EnergyPoints[Energy].enabled = false;
     }
 
@@ -91,5 +91,26 @@ public class CombatCard : MonoBehaviour
     public float GetCardWidth()
     {
         return BackgroundCombatSprite.bounds.size.x;
+    }
+
+    public CombatTypes GetCombatType()
+    {
+        return CombatType;
+    }
+
+    public int GetDamage()
+    {
+        return Damage;
+    }
+
+    public int GetArmor()
+    {
+        return Armor;
+    }
+
+    public void ReduceHealthPoints(int PointsToReduce)
+    {
+        HealthPoints = (HealthPoints - PointsToReduce) < 0 ? 0 : HealthPoints - PointsToReduce;
+        HealthText.text = HealthPoints.ToString();
     }
 }
