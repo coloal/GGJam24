@@ -23,6 +23,7 @@ MonoBehaviour:
   - rid: 8580623290694893642
   - rid: 8580623337150218240
   - rid: 8580623337150218243
+  - rid: 8580623337150218302
   connections: []
   references:
     version: 2
@@ -201,3 +202,20 @@ MonoBehaviour:
         - True
         - False
         PartyMember: {fileID: 0}
+    - rid: 8580623337150218302
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8b6a015f-1526-45d8-ab57-4af3931142ef
+        position:
+          serializedVersion: 2
+          x: 686
+          y: 246
+          width: 321
+          height: 136
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
