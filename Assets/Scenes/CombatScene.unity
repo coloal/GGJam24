@@ -1100,7 +1100,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568843363}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
-        m_MethodName: PerformAttackAction
+        m_MethodName: PerformPlayerAttackAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

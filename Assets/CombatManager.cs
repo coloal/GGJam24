@@ -68,6 +68,12 @@ public class CombatManager : MonoBehaviour
             case CombatStates.CHOOSE_ACTION:
                 ChooseAttackerAction();
                 break;
+            // case CombatStates.PLAYER_ATTACK:
+            //     PerformPlayerAttackAction();
+            //     break;
+            case CombatStates.ENEMY_ATTACK:
+                PerformEnemyAttackAction();
+                break;
             default:
                 break;
         }
@@ -170,6 +176,7 @@ public class CombatManager : MonoBehaviour
 
     void ChooseAttackerAction()
     {
+        // DEBUG PURPOSES ONLY
         DebugActionButtons.SetActive(true);
 
         SetPartyMembersCardsActivation(false);
@@ -181,8 +188,9 @@ public class CombatManager : MonoBehaviour
     }
 
     // DEBUG PURPOSES ONLY
-    public void PerformAttackAction()
+    public void PerformPlayerAttackAction()
     {
+        // DEBUG PURPOSES ONLY
         SetCombatState(CombatStates.PLAYER_ATTACK);
 
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
@@ -202,9 +210,24 @@ public class CombatManager : MonoBehaviour
         SetCombatState(CombatStates.ENEMY_ATTACK);
     }
 
-    // DEBUG PURPOSES ONLY
-    public void PerformChangeAttackerAction()
+    void PerformEnemyAttackAction()
     {
-        SetCombatState(CombatStates.CHOOSE_ATTACKER);
+        DebugActionButtons.SetActive(false);
+
+        AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+        CombatCard CurrentAttackerCombatCard = CurrentAttacker.GetComponent<CombatCard>();
+        CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
+
+        if (CurrentAttackerCombatCard && EnemyCard)
+        {
+            CombatUtils.Attack(
+                AttackerCombatCard: EnemyCombatCard,
+                DefenderCombatCard: CurrentAttackerCombatCard,
+                out AttackFinalEffectiveness
+            );
+            //TODO: Reduce turns by 1
+        }
+
+        SetCombatState(CombatStates.CHECK_COMBAT_RESULTS);
     }
 }
