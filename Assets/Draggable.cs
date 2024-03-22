@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -33,14 +34,18 @@ public class Draggable : MonoBehaviour
     [SerializeField] float MaxFinalRotation = 30;
     [SerializeField] float FinalRotationVelocity = 10;
     [SerializeField] float EscapeAcceleration = 100;
-    [SerializeField] bool IsVertical = false;
-     bool IsActive = true;
+    bool IsActive = true;
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool pressed = false;
     bool isInLimit = false;
     DraggableStates CurrentState = DraggableStates.PLAY_STATE;
+    List<Action> leftSwipeActions;
+    List<Action> rigthtSwipeActions;
+    
+    public List<Action> RightSwipeActions => rigthtSwipeActions;
+    public List<Action> LeftSwipeActions => leftSwipeActions;
 
     Vector2 initialPosition;
     // Start is called before the first frame update
@@ -52,14 +57,9 @@ public class Draggable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsVertical)
-        {
-            VerticalTick();
-        }
-        else
-        {
-            HorizontalTick();
-        }
+        
+         HorizontalTick();
+        
 
     }
 
@@ -153,29 +153,7 @@ public class Draggable : MonoBehaviour
         if (transform.position.y > initialPosition.y) transform.position = new Vector2(transform.position.x, initialPosition.y);
     }
 
-    private void VerticalTick()
-    {
-        Vector2 targetPosition = CalculateVerticalTargetPosition();
-
-        float distance = Mathf.Abs(transform.position.y - targetPosition.y);
-
-        float velocity = CalculateVerticalActualVelocity(targetPosition, distance);
-
-
-        if (transform.position.y >= Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y)
-        {
-            velocity = Mathf.Min(0, velocity);
-            this.velocity = Mathf.Min(0, this.velocity);
-        }
-        else if (transform.position.y <= initialPosition.y)
-        {
-            velocity = Mathf.Max(0, velocity);
-            this.velocity = Mathf.Max(0, this.velocity);
-        }
-
-        transform.Translate(new Vector2(0, velocity * Time.deltaTime));
-
-    }
+   
 
     Vector2 CalculateTargetPosition()
     {
@@ -193,13 +171,7 @@ public class Draggable : MonoBehaviour
         return targetPosition;
     }
 
-    Vector2 CalculateVerticalTargetPosition()
-    {
-        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
-        Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
-        return targetPosition;
-    }
-
+   
 
     float CalculateActualVelocity(Vector2 targetPosition, float distance)
     {
@@ -212,16 +184,7 @@ public class Draggable : MonoBehaviour
         return velocity;
     }
 
-    float CalculateVerticalActualVelocity(Vector2 targetPosition, float distance)
-    {
-        float direction = Mathf.Sign(targetPosition.y - transform.position.y);
-
-        float actualMaxVelocity = distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, distance / brakeDistance);
-        direction *= acceleration;
-        velocity += (direction * Time.deltaTime);
-        velocity = Mathf.Abs(velocity) > actualMaxVelocity ? Mathf.Sign(velocity) * actualMaxVelocity : velocity;
-        return velocity;
-    }
+    
 
     void SwipeLeftMovement()
     {
@@ -262,11 +225,19 @@ public class Draggable : MonoBehaviour
                 if (!IsActive) return;
                 IsActive = false;
                 CurrentState = DraggableStates.SWIPE_RIGHT;
+                foreach (Action action in rigthtSwipeActions)
+                {
+                    action();
+                }
                 GameManager.Instance.ProvideTurnManager().SwipeRight();   
             }
             else
             {
                 CurrentState = DraggableStates.SWIPE_LEFT;
+                foreach (Action action in leftSwipeActions)
+                {
+                    action();
+                }
                 GameManager.Instance.ProvideTurnManager().SwipeLeft();
                 
             }
