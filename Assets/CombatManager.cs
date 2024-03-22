@@ -5,6 +5,18 @@ using UnityEngine.Rendering;
 
 public class CombatManager : MonoBehaviour
 {
+    private struct PartyMemberInSceneInfo
+    {
+        public GameObject PartyMember;
+        public Vector2 PositionInScene;
+
+        public PartyMemberInSceneInfo(GameObject PartyMember, Vector2 PositionInScene)
+        {
+            this.PartyMember = PartyMember;
+            this.PositionInScene = PositionInScene;
+        }
+    }
+
     [Header("Combat field configuration")]
     [Header("Cards positions")]
     [SerializeField]
@@ -27,14 +39,14 @@ public class CombatManager : MonoBehaviour
 
     private PartyManager PartyManager;
     private CombatStates CurrentState;
-    private List<GameObject> PartyMembersInScene;
-    private GameObject CurrentAttacker;
+    private List<PartyMemberInSceneInfo> PartyMembersInScene;
+    private PartyMemberInSceneInfo CurrentAttacker;
     private GameObject EnemyCard;
 
     void Awake()
     {
-        PartyMembersInScene = new List<GameObject>();
-        CurrentAttacker = null;
+        PartyMembersInScene = new List<PartyMemberInSceneInfo>();
+        CurrentAttacker.PartyMember = null;
     }
 
     void Start()
@@ -125,7 +137,7 @@ public class CombatManager : MonoBehaviour
 
             PartyMemberInScene.transform.position = SpawnPosition;
 
-            PartyMembersInScene.Add(PartyMemberInScene);
+            PartyMembersInScene.Add(new PartyMemberInSceneInfo(PartyMemberInScene, SpawnPosition));
         }
     }
 
@@ -134,10 +146,10 @@ public class CombatManager : MonoBehaviour
         DebugActionButtons.SetActive(false);
 
         SetPartyMembersCardsActivation(true);
-        foreach (GameObject PartyMemberInScene in PartyMembersInScene)
+        foreach (PartyMemberInSceneInfo PartyMemberInScene in PartyMembersInScene)
         {
             InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMemberInScene.GetComponent<InteractiveCombatCardComponent>();
+                PartyMemberInScene.PartyMember.GetComponent<InteractiveCombatCardComponent>();
             if (PartyMemberInteractiveCombatCardComponent)
             {
                 PartyMemberInteractiveCombatCardComponent.SetOnClickAction(() => {
@@ -147,26 +159,26 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    void SetCurrentAttacker(GameObject NewAttacker)
+    void SetCurrentAttacker(PartyMemberInSceneInfo NewAttacker)
     {
         // If there's already an atacker card, swap it with the new card
-        if (CurrentAttacker)
+        if (CurrentAttacker.PartyMember)
         {
-            CurrentAttacker.transform.position = NewAttacker.transform.position;
+            CurrentAttacker.PartyMember.transform.position = CurrentAttacker.PositionInScene;
         }
 
         CurrentAttacker = NewAttacker;
-        CurrentAttacker.transform.position = AttackerCardOrigin.position;
+        CurrentAttacker.PartyMember.transform.position = AttackerCardOrigin.position;
 
         SetCombatState(CombatStates.CHOOSE_ACTION);
     }
 
     void SetPartyMembersCardsActivation(bool AreCardsActive)
     {
-        foreach (GameObject PartyMember in PartyMembersInScene)
+        foreach (PartyMemberInSceneInfo PartyMemberInScene in PartyMembersInScene)
         {
             InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMember.GetComponent<InteractiveCombatCardComponent>();
+                PartyMemberInScene.PartyMember.GetComponent<InteractiveCombatCardComponent>();
             if (PartyMemberInteractiveCombatCardComponent)
             {
                 PartyMemberInteractiveCombatCardComponent.SetIsActive(AreCardsActive);
@@ -180,7 +192,7 @@ public class CombatManager : MonoBehaviour
         DebugActionButtons.SetActive(true);
 
         SetPartyMembersCardsActivation(false);
-        if (CurrentAttacker)
+        if (CurrentAttacker.PartyMember)
         {
             //TODO: Make the attacker card a *Draggable* card to make decisions
             //CurrentAttacker.AddComponent<Draggable>();
@@ -194,7 +206,7 @@ public class CombatManager : MonoBehaviour
         SetCombatState(CombatStates.PLAYER_ATTACK);
 
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
-        CombatCard CurrentAttackerCombatCard = CurrentAttacker.GetComponent<CombatCard>();
+        CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMember.GetComponent<CombatCard>();
         CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
 
         if (CurrentAttackerCombatCard && EnemyCombatCard)
@@ -215,7 +227,7 @@ public class CombatManager : MonoBehaviour
         DebugActionButtons.SetActive(false);
 
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
-        CombatCard CurrentAttackerCombatCard = CurrentAttacker.GetComponent<CombatCard>();
+        CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMember.GetComponent<CombatCard>();
         CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
 
         if (CurrentAttackerCombatCard && EnemyCard)
