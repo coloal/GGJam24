@@ -170,7 +170,7 @@ public class Draggable : MonoBehaviour
             targetPosition = new Vector2(Camera.main.ScreenToWorldPoint(Vector2.zero).x + (EscapeDistance - 0.1f), 0);
         }
 
-        return targetPosition;
+        return targetPosition + initialPosition;
     }
 
    
