@@ -14,7 +14,7 @@ public class MainMenuController : MonoBehaviour
     public void GoToMainGame() {
         AudioManager.Instance.Play(SoundNames.StartGame);
         CardsFallingAnimation.Play(AnimationNames.CardsFallingAnimation);
-        Utils.createTemporizer(() => {
+        GameUtils.createTemporizer(() => {
             SceneManager.LoadScene(ScenesNames.MainGameScene);
         }, 1.3f, this);
     }

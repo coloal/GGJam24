@@ -64,7 +64,7 @@ public class TurnManager : MonoBehaviour
         OverlayImage.SetActive(false);
         CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
         DestroyCard();
-        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
     }
 
     public void CheckForEndGame()
@@ -105,7 +105,7 @@ public class TurnManager : MonoBehaviour
         {
             DestroyCard();
         }
-        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
         StoryManager.SwipeLeft();
     }
 
@@ -116,7 +116,7 @@ public class TurnManager : MonoBehaviour
         {
             DestroyCard();
         }
-        Utils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
         StoryManager.SwipeRight();
         /*
         SetGameState(GameStates.PICK_A_HITMAN);
@@ -170,7 +170,7 @@ public class TurnManager : MonoBehaviour
                 info.InfluenceStat
             );
 
-            Utils.createTemporizer(() => {
+            GameUtils.createTemporizer(() => {
                 PhoneObject.SetActive(true);
                 GivePhoneFeedback(info.FeedbackName, info.FeedbackText);
             }, 2.3f, this);
@@ -185,7 +185,7 @@ public class TurnManager : MonoBehaviour
     {
         GameObject CardToDestroy = CurrentCard.gameObject;
         CardToDestroy.GetComponent<BoxCollider2D>().enabled = false;
-        Utils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
+        GameUtils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 
     /*private void ExecuteActions(List<Option> Actions)
