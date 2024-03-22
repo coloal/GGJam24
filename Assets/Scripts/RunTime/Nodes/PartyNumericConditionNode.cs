@@ -6,12 +6,10 @@ using UnityEngine;
 
 namespace CodeGraph
 {
-    [NodeInfo("Numeric Condition", "Condition Nodes/Numeric Condition", color: "#06B184")]
-    public class NumericConditionalNode : CodeGraphNode
+    [NodeInfo("Party Numeric Condition", "Condition Nodes/Party Conditions/Party Numeric Condition", color: "#06B184")]
+    public class PartyNumericConditionNode : CodeGraphNode
     {
-        [ExposedProperty()]
-        public NumericTags ComparedTag;
-
+        
         [ExposedProperty()]
         public NumericConditions ConditionType;
 
@@ -20,7 +18,7 @@ namespace CodeGraph
 
 
 
-        public NumericConditionalNode()
+        public PartyNumericConditionNode()
         {
             outputs.Clear();
             outputs.Add("True");
@@ -35,7 +33,7 @@ namespace CodeGraph
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-            int value = GameManager.Instance.ProvideBrainManager().GetNumericTag(ComparedTag);
+            int value = GameManager.Instance.ProvidePartyManager().GetPartyCount();
             int port = 1;
             switch (ConditionType)
             {
@@ -66,13 +64,5 @@ namespace CodeGraph
         }
     }
 
-    [Serializable]
-    public enum NumericConditions
-    {
-        GREATER,
-        GREATER_EQUAL,
-        EQUAL,
-        LESS,
-        LESS_EQUAL
-    }
+    
 }

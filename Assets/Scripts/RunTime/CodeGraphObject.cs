@@ -42,6 +42,10 @@ namespace CodeGraph
                 StoryCardTemplate card;
                 if (currentNode.GetNodeCard(out card))
                 {
+                    if(card == null)
+                    {
+                        Debug.LogError("Se ha encontrado un nodo de carta sin carta!!!");
+                    }
                     return card;
                 }
                 else

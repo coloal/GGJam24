@@ -6,7 +6,7 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Bool Action", "Action Nodes/Bool Action", color: "#D17A22")] 
+    [NodeInfo("Bool Action", "Action Nodes/Bool Action", color: "#F57600")] 
     public class BooleanActionNode : CodeGraphNode
     {
         [ExposedProperty()]

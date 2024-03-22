@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: e22f3f6c77218514daabe35e526cb5ce, type: 2}
+  FirstStory: {fileID: 11400000, guid: 636901b1de0264d4a993050a5f2a563a, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0

@@ -16,7 +16,9 @@ public enum NumericTags
     Keys,
     Bombs,
     Potion,
-    Maldad
+    Maldad, 
+    ConverBabyBoy,
+    ConverSmokieGirl
 }
 
 

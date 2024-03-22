@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Rendering.CameraUI;
 
-public class RecruitActionNode : CodeGraphNode
+namespace CodeGraph
 {
-    [NodeInfo("Recruit Action", "Action Nodes/Recruit Action", color: "#D17A22")]
-    public class RandomNode : CodeGraphNode
+    [NodeInfo("Recruit Action", "Action Nodes/Recruit Action", color: "#F57600")]
+    public class RecruitActionNode : CodeGraphNode
     {
         [ExposedProperty()]
         [Tooltip("Carta a reclutar")]

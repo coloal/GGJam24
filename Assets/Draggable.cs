@@ -52,6 +52,8 @@ public class Draggable : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
+        leftSwipeActions = new List<Action>();
+        rigthtSwipeActions = new List<Action>();
     }
 
     // Update is called once per frame

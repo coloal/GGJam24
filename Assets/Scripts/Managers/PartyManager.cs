@@ -42,6 +42,16 @@ public class PartyManager : MonoBehaviour
         PartyMembers.Add(new PartyMember(card));
     }
 
+    public int GetPartyCount()
+    {
+        return PartyMembers.Count;
+    }
+
+    public bool CheckPartyMember(CombatCardTemplate card)
+    {
+        return PartyMembers.Find(x=>x.CombatCardTemplate.Equals(card)) != null;
+    }
+
     void Start()
     {
 
