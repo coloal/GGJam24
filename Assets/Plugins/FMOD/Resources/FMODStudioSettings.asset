@@ -318,7 +318,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: ../../FMOD Studio/GlobalJamFMOD/Build/Desktop/Desktop
+  sourceBankPath: Assets/Plugins/FMOD/SoundBank/Desktop/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -340,8 +340,8 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
-  - Desktop/Master
+  - Master
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
