@@ -318,7 +318,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: Assets/Plugins/FMOD/SoundBank/Desktop/Desktop
+  sourceBankPath: ../../FMOD Studio/GlobalJamFMOD/Build/Desktop/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
