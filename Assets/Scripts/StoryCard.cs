@@ -28,9 +28,9 @@ public class StoryCard : MonoBehaviour
     protected SpriteRenderer BackgroundSprite;
 
     [HideInInspector]
-    public List<Option> LeftActions;
+    public List<BrainAction> LeftActions;
     [HideInInspector]
-    public List<Option> RightActions;
+    public List<BrainAction> RightActions;
 
     //Information of the card
     private string NameOfCard;
