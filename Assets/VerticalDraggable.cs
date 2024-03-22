@@ -87,7 +87,8 @@ public class VerticalDraggable : MonoBehaviour
         //bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
         bool IsInCorrectState = true;
         Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
-        return targetPosition;
+        Debug.Log(targetPosition);
+        return targetPosition + initialPosition;
     }
 
     float CalculateVerticalActualVelocity(Vector2 targetPosition, float distance)
