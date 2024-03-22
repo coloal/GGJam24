@@ -2,87 +2,78 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class BrainActions : MonoBehaviour
+
+
+[System.Serializable]
+public class BrainAction
 {
-    BrainTagAction action;
-    private BrainBoolTagAction BoolAction;
-    private BrainNumericTagAction NumericAction;
-    private BrainStateTagAction StateAction;
-    public string BrainTag;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        /*
-        BoolAction = new BrainBoolTagAction();
-        NumericAction = new BrainNumericTagAction();
-        StateAction = new BrainStateTagAction();
-        */
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SetBrainTagAction(string BrainTag, bool value)
-    {
-        //GameManager.Instance.ProvideBrainManager().SetTag(tag,value);
-    }
-
-    public void example(string a, string b)
-    {
-    }
-
-    public static void SetBrainBoolTag(BrainTag tag, bool value)
-    {
-        GameManager.Instance.ProvideBrainManager().SetTag(tag, value);
-    }
-    public static void SetBrainNumericTag(NumericTags tag, int increment)
-    {
-        GameManager.Instance.ProvideBrainManager().IncrementNumericTag(tag, increment);
-    }
-    public void SetBrainStateTag(string tag, string newState)
-    {
-        GameManager.Instance.ProvideBrainManager().SetState(tag,newState);
-    }
-    public void SetBrainStateIntTag(int tag, int newState)
-    {
-        GameManager.Instance.ProvideBrainManager().SetState(tag, newState);
-    }
+    public BrainTagType TagType;
+    //Bool
+    public BrainTag BoolTag;
+    public bool NewValue;
+    
+    //Numeric 
+    public NumericTags NumericTag;
+    public int Increment;
+    
+    //State
+    public int TagState;
+    public int NewState;
 }
 
-[Serializable]
-public class BrainTagAction : UnityEvent<string, string> {}
-
-[Serializable]
-public class BrainBoolTagAction : UnityEvent<BrainTag, bool> { }
-
-[Serializable]
-public class BrainNumericTagAction : UnityEvent<NumericTags, int> { }
-
-[Serializable]
-public class BrainStateTagAction : UnityEvent<string, string> { }
-
-[Serializable]
-public class BrainStateIntTagAction : UnityEvent<int, int> { }
-
-
-[Serializable]
-public class BrainTupleTagSO : ScriptableObject
+[CustomPropertyDrawer(typeof(BrainAction))]
+public class Option_Editor : PropertyDrawer
 {
-    public BrainTag BrainTag;
-    public bool value;
-}
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        BrainAction opt = (BrainAction)property.boxedValue;
+        EditorGUI.BeginProperty(position, label, property);
+        Rect Rect1 = new Rect(position.x, position.y, position.width, position.height / 5f);
+        Rect Rect2 = new Rect(position.x, Rect1.y + Rect1.height, position.width, position.height / 5f);
+        Rect Rect3 = new Rect(position.x, Rect2.y + Rect2.height, position.width, position.height / 5f);
+        Rect Rect4 = new Rect(position.x, Rect3.y + Rect3.height, position.width, position.height / 5f);
+        Rect Rect5 = new Rect(position.x, Rect4.y + Rect4.height, position.width, position.height / 5f);
 
-[Serializable]
-public class BrainTupleTag
-{
-    public BrainTag BrainTag;
-    public bool value;
+
+        EditorGUI.LabelField(Rect1, "Type of Action");
+        BrainTagType a = (BrainTagType)EditorGUI.EnumPopup(Rect2, opt.TagType);
+        property.FindPropertyRelative("TagType").intValue = (int)a;
+
+        switch ((opt.TagType))
+        {
+            case BrainTagType.Bool:
+                EditorGUI.LabelField(Rect3, "Parameters");
+                BrainTag b = (BrainTag)EditorGUI.EnumPopup(Rect4, opt.BoolTag);
+                property.FindPropertyRelative("BoolTag").intValue = (int)b;
+                property.FindPropertyRelative("NewValue").boolValue = EditorGUI.Toggle(Rect5, opt.NewValue);
+                break;
+
+            case BrainTagType.Numeric:
+                EditorGUI.LabelField(Rect3, "Parameters");
+                NumericTags c = (NumericTags)EditorGUI.EnumPopup(Rect4, opt.NumericTag);
+                property.FindPropertyRelative("NumericTag").intValue = (int)c;
+                property.FindPropertyRelative("Increment").intValue = EditorGUI.IntField(Rect5, opt.Increment);
+                break;
+
+            case BrainTagType.State:
+                EditorGUI.LabelField(Rect3, "Parameters");
+                property.FindPropertyRelative("TagState").intValue = EditorGUI.Popup(Rect4, opt.TagState, StateInfo.info.Select(x => (x.Item1)).ToArray());
+                property.FindPropertyRelative("NewState").intValue = EditorGUI.Popup(Rect5, opt.NewState, StateInfo.info[opt.TagState].Item2.ToArray());
+                break;
+        }
+        EditorGUI.EndProperty();
+
+
+
+    }
+
+    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    {
+        return base.GetPropertyHeight(property, label) * 6;
+    }
 }

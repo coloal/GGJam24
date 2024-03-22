@@ -10,7 +10,7 @@ namespace CodeGraph
     public class BooleanActionNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public Option Action;
+        public BrainAction Action;
 
         
 

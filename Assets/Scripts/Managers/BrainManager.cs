@@ -11,6 +11,7 @@ public class BrainManager : MonoBehaviour
     private Dictionary<NumericTags, int> BrainNumericMap;
     private Dictionary<string, string> BrainStateMap;
 
+
     /***** INITIALIZE *****/
     void Start()
     {
@@ -49,9 +50,9 @@ public class BrainManager : MonoBehaviour
     }
 
     /***** ACTIONS *****/
-    public void ExecuteActions(List<Option> Actions)
+    public void ExecuteActions(List<BrainAction> Actions)
     {
-        foreach (Option action in Actions)
+        foreach (BrainAction action in Actions)
         {
             switch (action.TagType)
             {
@@ -77,7 +78,7 @@ public class BrainManager : MonoBehaviour
         }
     }
 
-    public void ExecuteActions(Option action)
+    public void ExecuteActions(BrainAction action)
     {
         switch (action.TagType)
         {
