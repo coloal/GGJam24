@@ -5,22 +5,8 @@ using UnityEngine;
 
 public class InteractiveCombatCardComponent : MonoBehaviour, IClickable
 {
-    private bool IsActive;
-
-    private Action OnClickAction;
-
-    void Awake()
-    {
-        IsActive = false;
-        OnClickAction = null;
-    }
-
     public void OnClick()
     {
-        if (IsActive && OnClickAction != null)
-        {
-            OnClickAction();    
-        }
     }
 
     public void OnMouseOver()
@@ -28,13 +14,26 @@ public class InteractiveCombatCardComponent : MonoBehaviour, IClickable
         //TODO: Add visual feedback to let the player know that the mouse is over this card
     }
 
-    public void SetOnClickAction(Action OnClickAction)
+    public void SetOnSwipeUpAction(Action OnSwipeUpAction)
     {
-        this.OnClickAction = OnClickAction;
+        VerticalDraggable VerticalDraggableComponent = GetComponent<VerticalDraggable>();
+        if (VerticalDraggableComponent)
+        {
+            VerticalDraggableComponent.SwipeActions.Add(() => {
+                if (VerticalDraggableComponent.enabled)
+                {
+                    OnSwipeUpAction();
+                }
+            });
+        }
     }
 
     public void SetIsActive(bool IsActive)
     {
-        this.IsActive = IsActive;
+        VerticalDraggable VerticalDraggableComponent = GetComponent<VerticalDraggable>();
+        if (VerticalDraggableComponent)
+        {
+            VerticalDraggableComponent.enabled = IsActive;
+        }
     }
 }

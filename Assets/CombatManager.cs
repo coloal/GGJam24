@@ -134,7 +134,7 @@ public class CombatManager : MonoBehaviour
                 PartyMemberInScene.GetComponent<InteractiveCombatCardComponent>();
             if (PartyMemberInteractiveCombatCardComponent)
             {
-                PartyMemberInteractiveCombatCardComponent.SetOnClickAction(() => {
+                PartyMemberInteractiveCombatCardComponent.SetOnSwipeUpAction(() => {
                     SetCurrentAttacker(PartyMemberInScene);
                 });
             }

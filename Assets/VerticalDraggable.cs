@@ -38,11 +38,15 @@ public class VerticalDraggable : MonoBehaviour
 
     public List<Action> SwipeActions => swipeActions;
 
+    void Awake()
+    {
+        swipeActions = new List<Action>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         initialPosition = transform.position;
-        swipeActions = new List<Action>();
     }
 
     // Update is called once per frame
@@ -80,7 +84,8 @@ public class VerticalDraggable : MonoBehaviour
 
     Vector2 CalculateVerticalTargetPosition()
     {
-        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        //bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        bool IsInCorrectState = true;
         Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
         return targetPosition;
     }
