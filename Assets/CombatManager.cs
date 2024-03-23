@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -19,6 +20,13 @@ public class CombatManager : MonoBehaviour
             this.PartyMemberInScene = PartyMemberInScene;
             this.PartyMemberGameObject = PartyMemberGameObject;
             this.PositionInHand = PositionInHand;
+        }
+
+        public void Reset()
+        {
+            PartyMemberInScene = null;
+            PartyMemberGameObject = null;
+            PositionInHand = new Vector2();
         }
     }
 
@@ -51,7 +59,7 @@ public class CombatManager : MonoBehaviour
     void Awake()
     {
         PartyMembersInScene = new List<PartyMemberInSceneInfo>();
-        CurrentAttacker.PartyMemberInScene = null;
+        CurrentAttacker.Reset();
     }
 
     void Start()
@@ -90,6 +98,9 @@ public class CombatManager : MonoBehaviour
             //     break;
             case CombatStates.ENEMY_ATTACK:
                 PerformEnemyAttackAction();
+                break;
+            case CombatStates.CHECK_COMBAT_RESULTS:
+                CheckCombatResults();
                 break;
             default:
                 break;
@@ -246,5 +257,56 @@ public class CombatManager : MonoBehaviour
         }
 
         SetCombatState(CombatStates.CHECK_COMBAT_RESULTS);
+    }
+
+    void CheckCombatResults()
+    {
+        CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMemberGameObject.GetComponent<CombatCard>();
+        CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
+        if (CurrentAttackerCombatCard && EnemyCombatCard)
+        {
+            if (EnemyCombatCard.GetHealthPoints() <= 0)
+            {
+                SetCombatState(CombatStates.CAPTURE_ENEMY);
+            }
+            else if (CurrentAttackerCombatCard.GetHealthPoints() > 0 &&
+                CurrentAttackerCombatCard.GetCardEnergy() > 0)
+            {
+                SetCombatState(CombatStates.CHOOSE_ACTION);
+            }
+            else if (CurrentAttackerCombatCard.GetHealthPoints() == 0)
+            {
+                KillCurrentAttackerCard();
+
+                if (PartyMembersInScene.Count <= 0)
+                {
+                    SetCombatState(CombatStates.GAME_OVER);
+                }
+                else
+                {
+                    SetCombatState(CombatStates.CHOOSE_ATTACKER);
+                }
+            }
+            else if (CurrentAttackerCombatCard.GetCardEnergy() == 0)
+            {
+                // 1 represents the out-of-energy card, i.e. there are no cards left in the players' hand
+                if (PartyMembersInScene.Count <= 1)
+                {
+                    SetCombatState(CombatStates.GAME_OVER);
+                }
+                else
+                {
+                    SetCombatState(CombatStates.CHOOSE_ATTACKER);
+                }
+            }
+        }
+    }
+
+    void KillCurrentAttackerCard()
+    {
+        PartyMembersInScene.Remove(CurrentAttacker);
+        PartyManager.RemovePartyMember(CurrentAttacker.PartyMemberInScene.CombatCardTemplate);
+        Destroy(CurrentAttacker.PartyMemberGameObject);
+        CurrentAttacker.Reset();
     }
 }
