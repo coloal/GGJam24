@@ -99,4 +99,14 @@ public class    CombatCard : MonoBehaviour
         HealthPoints = (HealthPoints - PointsToReduce) < 0 ? 0 : HealthPoints - PointsToReduce;
         HealthText.text = HealthPoints.ToString();
     }
+
+    public int GetHealthPoints()
+    {
+        return HealthPoints;
+    }
+
+    public int GetCardEnergy()
+    {
+        return Energy;
+    }
 }

@@ -37,9 +37,9 @@ public class PartyManager : MonoBehaviour
     }
 
 
-    public void AddMemberToParty(CombatCardTemplate card)
+    public void AddMemberToParty(CombatCardTemplate CardToAdd)
     {
-        PartyMembers.Add(new PartyMember(card));
+        PartyMembers.Add(new PartyMember(CardToAdd));
     }
 
     public int GetPartyCount()
@@ -60,5 +60,10 @@ public class PartyManager : MonoBehaviour
     public List<PartyMember> GetPartyMembers()
     {
         return PartyMembers;
+    }
+
+    public void RemovePartyMember(CombatCardTemplate CardToRemove)
+    {
+        PartyMembers.RemoveAll(Card => { return Card.CombatCardTemplate.Equals(CardToRemove); });
     }
 }
