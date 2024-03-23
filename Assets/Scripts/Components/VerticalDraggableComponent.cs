@@ -8,10 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 
-
-
-
-public class VerticalDraggable : MonoBehaviour
+public class VerticalDraggableComponent : MonoBehaviour
 {
     [SerializeField] private float acceleration = 500;
     [SerializeField] private float maxVelocity = 500;

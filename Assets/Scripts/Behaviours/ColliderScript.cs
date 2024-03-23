@@ -22,13 +22,13 @@ public class ColliderScript : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         collision.gameObject.GetComponent<StoryCard>()?.ShowText(IsLeft);
-        collision.gameObject.GetComponent<Draggable>()?.SetInLimit(true);
+        collision.gameObject.GetComponent<DraggableComponent>()?.SetInLimit(true);
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         collision.gameObject.GetComponent<StoryCard>()?.HideText(IsLeft);
-        collision.gameObject.GetComponent<Draggable>()?.SetInLimit(false);
+        collision.gameObject.GetComponent<DraggableComponent>()?.SetInLimit(false);
     }
 
 }

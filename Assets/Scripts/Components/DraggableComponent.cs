@@ -22,7 +22,7 @@ public enum DraggableStates
     PLAY_STATE
 }
 
-public class Draggable : MonoBehaviour
+public class DraggableComponent : MonoBehaviour
 {
     [SerializeField] private float acceleration = 0.3f;
     [SerializeField] private float maxVelocity = 3;

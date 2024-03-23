@@ -16,7 +16,7 @@ public class InteractiveCombatCardComponent : MonoBehaviour, IClickable
 
     public void SetOnSwipeUpAction(Action OnSwipeUpAction)
     {
-        VerticalDraggable VerticalDraggableComponent = GetComponent<VerticalDraggable>();
+        VerticalDraggableComponent VerticalDraggableComponent = GetComponent<VerticalDraggableComponent>();
         if (VerticalDraggableComponent)
         {
             VerticalDraggableComponent.SwipeActions.Add(() => {
@@ -30,7 +30,7 @@ public class InteractiveCombatCardComponent : MonoBehaviour, IClickable
 
     public void SetIsActive(bool IsActive)
     {
-        VerticalDraggable VerticalDraggableComponent = GetComponent<VerticalDraggable>();
+        VerticalDraggableComponent VerticalDraggableComponent = GetComponent<VerticalDraggableComponent>();
         if (VerticalDraggableComponent)
         {
             VerticalDraggableComponent.enabled = IsActive;

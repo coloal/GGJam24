@@ -62,7 +62,7 @@ public class TurnManager : MonoBehaviour
     {
         PhoneObject.SetActive(false);
         OverlayImage.SetActive(false);
-        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
+        CurrentCard.GetComponent<DraggableComponent>()?.FinalSwipeRight();
         DestroyCard();
         GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
     }
