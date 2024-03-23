@@ -22,7 +22,7 @@ namespace CodeGraph
             outputs.Add("Second Option");
         }
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             int rand = Random.Range(0, 100);
             int port = rand < FirstOptionProbability ? 0 : 1;

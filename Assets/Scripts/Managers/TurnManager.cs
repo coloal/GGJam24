@@ -64,16 +64,10 @@ public class TurnManager : MonoBehaviour
         OverlayImage.SetActive(false);
         CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
         DestroyCard();
-        GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
     }
 
-    public void CheckForEndGame()
-    {
-        
-            
-        StartTurn();
-            
-    }
+    
 
     public void StartTurn() 
     {
@@ -103,7 +97,7 @@ public class TurnManager : MonoBehaviour
         {
             if (combatStep.CombatCard == null)
             {
-                Debug.LogError("Story Card Node with no Card");
+                Debug.LogError("Combat Node with no Card");
                 Debug.LogError("Something went wrong");
                 GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
             }
@@ -131,7 +125,7 @@ public class TurnManager : MonoBehaviour
         {
             DestroyCard();
         }
-        GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
         StoryManager.SwipeLeft();
     }
 
@@ -142,7 +136,7 @@ public class TurnManager : MonoBehaviour
         {
             DestroyCard();
         }
-        GameUtils.createTemporizer(() => CheckForEndGame(), 0.5f, this);
+        GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
         StoryManager.SwipeRight();
         /*
         SetGameState(GameStates.PICK_A_HITMAN);

@@ -26,7 +26,7 @@ namespace CodeGraph
         }
 
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             int value = GameManager.Instance.ProvidePartyManager().GetPartyCount();
             int port = 1;

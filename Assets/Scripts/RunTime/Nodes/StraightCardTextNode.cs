@@ -41,7 +41,7 @@ namespace CodeGraph
             return true;
         }
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
             if (nextNode != null)

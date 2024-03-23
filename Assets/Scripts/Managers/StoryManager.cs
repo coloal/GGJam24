@@ -19,7 +19,7 @@ public class StoryManager : MonoBehaviour
 
     private List<CodeGraphObject> existingStoryList;
 
-    private bool bLastSwipeWasLeft = false;
+    private TurnResult LastActionResult = TurnResult.NO_RESULT;
 
     private void Awake()
     {
@@ -38,17 +38,27 @@ public class StoryManager : MonoBehaviour
 
     public void SwipeRight()
     {
-        bLastSwipeWasLeft = false;
+        LastActionResult = TurnResult.SWIPED_RIGHT;
     }
 
     public void SwipeLeft()
     {
-        bLastSwipeWasLeft = true;
+        LastActionResult = TurnResult.SWIPED_LEFT;
     }
-    
+    public void LoseCombat()
+    {
+        LastActionResult = TurnResult.COMBAT_LOST;
+    }
+    public void WinCombat()
+    {
+        LastActionResult = TurnResult.COMBAT_WON;
+    }
+
+
+
     public StepInfo ContinueStoryExecution()
     {
-        return currentStory.ExecuteGraphStep(bLastSwipeWasLeft);
+        return currentStory.ExecuteGraphStep(LastActionResult);
     }
 
     public CodeGraphObject ChangeStory(CodeGraphAsset newHistory, bool storyHasEnded)
