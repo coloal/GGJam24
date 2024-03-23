@@ -39,7 +39,7 @@ namespace CodeGraph
                 copiedcard.Background = CardText;
                 copiedcard.LeftText = this.LeftText;
                 copiedcard.RightText = this.RightText;
-                stepInfo = new StoryStep(card);
+                stepInfo = new StoryStep(copiedcard);
             }
             else
             {

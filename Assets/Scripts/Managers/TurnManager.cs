@@ -13,8 +13,6 @@ public class TurnManager : MonoBehaviour
     GameObject OverlayImage;
 
     [SerializeField]
-    GameObject PhoneObject;
-    [SerializeField]
     TextMeshPro NameFeedbackBox;
     [SerializeField]
     TextMeshPro TextFeedbackBox;
@@ -31,7 +29,6 @@ public class TurnManager : MonoBehaviour
     {
         SetUpManagers();
         OverlayImage.SetActive(false);
-        PhoneObject.SetActive(false);
     }
 
     void SetUpManagers()
@@ -48,26 +45,6 @@ public class TurnManager : MonoBehaviour
         SetGameState(GameStates.MAKE_DECISION);
     }
 
-
-    public void GivePhoneFeedback(string name, string text)
-    {
-        PhoneObject.SetActive( true );
-        NameFeedbackBox.text = name;
-        TextFeedbackBox.text = text;
-
-        //TextFeedbackBox.GetComponent<PhoneTextWriter>().WriteTextCharByChar(text);
-    }
-
-    public void AcceptPhoneBuble()
-    {
-        PhoneObject.SetActive(false);
-        OverlayImage.SetActive(false);
-        CurrentCard.GetComponent<Draggable>()?.FinalSwipeRight();
-        DestroyCard();
-        GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
-    }
-
-    
 
     public void StartTurn() 
     {
@@ -138,11 +115,6 @@ public class TurnManager : MonoBehaviour
         }
         GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
         StoryManager.SwipeRight();
-        /*
-        SetGameState(GameStates.PICK_A_HITMAN);
-        OverlayImage.SetActive(true);
-        CurrentCard.GoToBackGroundAndDeactivate();
-        */
     }
 
     void SetGameState(GameStates State)
@@ -153,51 +125,6 @@ public class TurnManager : MonoBehaviour
     public GameStates GetCurrentGameState()
     {
         return CurrentGameState;
-    }
-
-    public void OnHitmenSelected(HitManTypes selectedHitman) {
-        AudioManager.Instance.Play(SoundNames.PickPhone);
-
-        // --Deprecated--
-        //CalculateHitmanStats(selectedHitman);
-    }
-
-    void CalculateHitmanStats(HitManTypes SelectedHitman)
-    {
-        // --Deprecated--
-        /*
-        SetGameState(GameStates.STATS_CALCULATION);
-
-        if (StatsManager != null && CurrentCard != null)
-        {
-            HitmanInfo info = null;
-            switch (SelectedHitman)
-            {
-                case HitManTypes.Maton:
-                    info = CurrentCard.Maton;
-                    break;
-                case HitManTypes.Contable:
-                    info = CurrentCard.Contable;
-                    break;
-                case HitManTypes.Comisario:
-                    info = CurrentCard.Comisario;
-                    break;
-                default: break;
-            }
-            StatsManager.ModifyStats(
-                info.ViolenceStat,
-                info.MoneyStat,
-                info.InfluenceStat
-            );
-
-            GameUtils.createTemporizer(() => {
-                PhoneObject.SetActive(true);
-                GivePhoneFeedback(info.FeedbackName, info.FeedbackText);
-            }, 2.3f, this);
-
-        }
-
-        */
     }
 
 
