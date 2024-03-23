@@ -13,11 +13,6 @@ namespace CodeGraph
         [Tooltip("Carta a reclutar")]
         public CombatCardTemplate RecruitedCard;
 
-        public override bool GetNodeCard(out StoryCardTemplate card)
-        {
-            card = null;
-            return false;
-        }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {

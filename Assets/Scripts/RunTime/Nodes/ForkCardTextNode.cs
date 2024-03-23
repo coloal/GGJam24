@@ -31,18 +31,19 @@ namespace CodeGraph
         }
 
 
-        public override bool GetNodeCard(out StoryCardTemplate card)
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
             if (this.card != null)
             {
-                card = Object.Instantiate(this.card);
-                card.Background = CardText;
-                card.LeftText = this.LeftText;
-                card.RightText = this.RightText;
+                StoryCardTemplate copiedcard = Object.Instantiate(card);
+                copiedcard.Background = CardText;
+                copiedcard.LeftText = this.LeftText;
+                copiedcard.RightText = this.RightText;
+                stepInfo = new StoryStep(card);
             }
             else
             {
-                card = null;
+                stepInfo = new StoryStep(null); 
             }
             return true;
             

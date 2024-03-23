@@ -36,9 +36,9 @@ namespace CodeGraph
         {
             this.position = position;
         }
-        public virtual bool GetNodeCard(out StoryCardTemplate card)
+        public virtual bool GetStepInfo(out StepInfo stepInfo)
         {
-            card = null;
+            stepInfo = null;
             return false;
         }
         public virtual string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)

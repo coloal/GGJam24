@@ -20,9 +20,9 @@ namespace CodeGraph
         }
 
 
-        public override bool GetNodeCard(out StoryCardTemplate card)
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            card = this.card;
+            stepInfo = new StoryStep(card);
             return true;
         }
 

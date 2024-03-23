@@ -19,7 +19,7 @@ namespace CodeGraph
             
         }
         
-        public override bool GetNodeCard(out StoryCardTemplate card)
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
             if (newStory != null)
             {
@@ -28,10 +28,11 @@ namespace CodeGraph
                 {
                     newStoryInstanced.RestartGraph(); 
                 }
-                card = newStoryInstanced.GetNextCard();
+                stepInfo = newStoryInstanced.ExecuteGraphStep();
                 return true;
             }
-            card = null;
+            Debug.LogError("ChangeStoryNode has no story");
+            stepInfo = null;
             return false;
         }
 

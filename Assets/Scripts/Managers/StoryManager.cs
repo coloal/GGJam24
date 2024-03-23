@@ -20,7 +20,6 @@ public class StoryManager : MonoBehaviour
     private List<CodeGraphObject> existingStoryList;
 
     private bool bLastSwipeWasLeft = false;
-    private bool bFinishedGame = false;
 
     private void Awake()
     {
@@ -46,15 +45,10 @@ public class StoryManager : MonoBehaviour
     {
         bLastSwipeWasLeft = true;
     }
-
-    public bool GetNextCardInGraph(out StoryCardTemplate nextCard)
+    
+    public StepInfo ContinueStoryExecution()
     {
-        if(currentStory == null)
-        {
-            InitStory();
-        }
-        nextCard = currentStory.GetNextCard(bLastSwipeWasLeft);
-        return bFinishedGame;
+        return currentStory.ExecuteGraphStep(bLastSwipeWasLeft);
     }
 
     public CodeGraphObject ChangeStory(CodeGraphAsset newHistory, bool storyHasEnded)
@@ -94,18 +88,10 @@ public class StoryManager : MonoBehaviour
 
     public void FinishStory()
     {
-        
         existingStoryList.Remove(currentStory);
         storyStack.RemoveAll(other => currentStory.Equals(other));
         Destroy(currentStory.gameObject);
-
     }
-
-    public void FinishGame()
-    {
-        bFinishedGame = true;
-    }
-
 
     public CodeGraphObject SearchStory(CodeGraphAsset story)
     {

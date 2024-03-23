@@ -11,15 +11,15 @@ namespace CodeGraph
         {
             outputs.Clear();      
         }
-        public override bool GetNodeCard(out StoryCardTemplate card)
+    
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            card = null;
-            return false;
+            stepInfo = new EndStep();
+            return true;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
-            GameManager.Instance.ProvideStoryManager().FinishGame();
             return string.Empty;
         }
     }

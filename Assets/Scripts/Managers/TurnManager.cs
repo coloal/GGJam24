@@ -70,32 +70,58 @@ public class TurnManager : MonoBehaviour
     public void CheckForEndGame()
     {
         
-        if (CardsManager.IsDeckEmpty())
+            
+        StartTurn();
+            
+    }
+
+    public void StartTurn() 
+    {
+
+        StepInfo nextStepInfo = StoryManager.ContinueStoryExecution();
+       
+        if(nextStepInfo == null )
+        {
+            Debug.LogError("Something went wrong");
+        }
+        //Nodo de carta de historia
+        else if (nextStepInfo is StoryStep storyStep)
+        {
+            if(storyStep.StoryCard == null)
+            {
+                Debug.LogError("Story Card Node with no Card");
+                Debug.LogError("Something went wrong");
+                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+            }
+            else
+            {
+                GetNewCard(storyStep.StoryCard);
+            }
+        }
+        //Nodo de carta de batalla
+        else if (nextStepInfo is CombatStep combatStep)
+        {
+            if (combatStep.CombatCard == null)
+            {
+                Debug.LogError("Story Card Node with no Card");
+                Debug.LogError("Something went wrong");
+                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+            }
+            else
+            {
+                //Iniciar batalla aqui
+                Debug.Log("Batallaaaaaaaa");
+            }
+        }
+        //Nodo de carta de final
+        else if (nextStepInfo is EndStep endStep)
         {
             GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
         }
         else
         {
-            StoryCardTemplate nextCard;
-            if (StoryManager.GetNextCardInGraph(out nextCard))
-            {
-                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
-            }
-            else if(nextCard == null)
-            {
-                Debug.LogWarning("Por favor mete un nodo de final que no te cuesta na");
-                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
-            }
-            else
-            {
-                StartTurn(nextCard);
-            }
+            Debug.LogError("Something went wrong");
         }
-    }
-
-    public void StartTurn(StoryCardTemplate nextCard) 
-    {
-        GetNewCard(nextCard);
     }
 
     public void SwipeLeft()

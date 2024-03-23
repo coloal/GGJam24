@@ -21,10 +21,10 @@ namespace CodeGraph
         }
 
 
-        public override bool GetNodeCard(out StoryCardTemplate card)
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            card = null;
-            return false;
+            stepInfo = new CombatStep(card);
+            return true;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)

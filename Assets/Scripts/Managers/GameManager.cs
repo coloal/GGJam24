@@ -44,13 +44,7 @@ public class GameManager : MonoBehaviour
 
     void StartGame() 
     {
-
-        StoryCardTemplate FirstCard;
-        if (!StoryManager.GetNextCardInGraph(out FirstCard))
-        {
-            TurnManager.StartTurn(FirstCard);
-        };
-        
+        TurnManager.StartTurn();   
     }
 
     // Maybe we need several FinishGame functions for every final that the game has

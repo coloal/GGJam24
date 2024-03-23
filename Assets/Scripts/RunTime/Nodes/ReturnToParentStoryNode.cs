@@ -12,9 +12,9 @@ namespace CodeGraph
             outputs.Clear();
         }
 
-        public override bool GetNodeCard(out StoryCardTemplate card)
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            card = GameManager.Instance.ProvideStoryManager().ReturntoParentStory().GetNextCard();
+            stepInfo = GameManager.Instance.ProvideStoryManager().ReturntoParentStory().ExecuteGraphStep();
             return true;
         }
 

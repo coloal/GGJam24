@@ -20,12 +20,7 @@ namespace CodeGraph
             outputs.Add("False");
         }
 
-        public override bool GetNodeCard(out StoryCardTemplate card)
-        {
-            card = null;
-            return false;
-        }
-
+   
         public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
         {
             int port = GameManager.Instance.ProvidePartyManager().CheckPartyMember(PartyMember) ? 0: 1;
