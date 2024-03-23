@@ -26,9 +26,23 @@ namespace CodeGraph
             return true;
         }
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
-            int port = bSwipedLeft ? 0 : 1;
+            int port;
+            switch (turnResult)
+            {
+                case TurnResult.SWIPED_LEFT:
+                    port = 0;
+                    break;
+                case TurnResult.SWIPED_RIGHT:
+                    port = 1;
+                    break;
+                default:
+                    Debug.LogError("Wrong result info was passed into Fork Card Node");
+                    port = 0; 
+                    break;
+
+            }
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
             if (nextNode != null)
             {

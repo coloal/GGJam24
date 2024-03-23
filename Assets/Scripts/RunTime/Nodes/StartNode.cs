@@ -9,9 +9,5 @@ namespace CodeGraph
     public class StartNode : CodeGraphNode
     {
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
-        {
-            return base.OnNextNode(graphAsset, bSwipedLeft);
-        }
     }
 }

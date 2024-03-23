@@ -14,7 +14,7 @@ namespace CodeGraph
         public CombatCardTemplate RecruitedCard;
 
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             GameManager.Instance.ProvidePartyManager().AddMemberToParty(RecruitedCard);
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);

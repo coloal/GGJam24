@@ -41,7 +41,7 @@ namespace CodeGraph
             stepInfo = null;
             return false;
         }
-        public virtual string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public virtual string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(guid, 0);
             if (nextNode != null)

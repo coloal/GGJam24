@@ -33,9 +33,9 @@ namespace CodeGraph
             }
         }
 
-        public StepInfo ExecuteGraphStep(bool bSwipedLeft = true)
+        public StepInfo ExecuteGraphStep(TurnResult turnResult = TurnResult.NO_RESULT)
         {
-            string nextNode = currentNode.OnNextNode(graphInstance, bSwipedLeft);
+            string nextNode = currentNode.OnNextNode(graphInstance, turnResult);
             if (!string.IsNullOrEmpty(nextNode))
             {
                 currentNode = graphInstance.GetNode(nextNode);
@@ -46,7 +46,7 @@ namespace CodeGraph
                 }
                 else
                 {
-                    return ExecuteGraphStep(bSwipedLeft);
+                    return ExecuteGraphStep();
                 }   
             }
             Debug.LogError("Se me han acabado los nodos Señor.");

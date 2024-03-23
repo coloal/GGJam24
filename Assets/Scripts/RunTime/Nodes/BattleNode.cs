@@ -27,10 +27,24 @@ namespace CodeGraph
             return true;
         }
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             //TODO iniciar batalla
-            int port = bSwipedLeft ? 0 : 1;
+            int port;
+            switch (turnResult)
+            {
+                case TurnResult.COMBAT_WON: 
+                    port = 0; 
+                    break;
+                case TurnResult.COMBAT_LOST: 
+                    port = 1; 
+                    break;
+                default:
+                    Debug.LogError("Wrong info was passed to combat node");
+                    port = 0; 
+                    break;
+            }
+            
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);
             if (nextNode != null)
             {

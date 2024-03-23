@@ -21,7 +21,7 @@ namespace CodeGraph
         }
 
    
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
             int port = GameManager.Instance.ProvideBrainManager().IsState(Picker.selectedTag, Picker.selectedTagState) ? 0 : 1;
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, port);

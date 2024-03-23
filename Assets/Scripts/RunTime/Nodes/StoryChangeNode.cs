@@ -31,15 +31,7 @@ namespace CodeGraph
             return false;
         }
 
-        public override string OnNextNode(CodeGraphAsset graphAsset, bool bSwipedLeft)
-        {
-            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
-            if (nextNode != null)
-            {
-                return nextNode.id;
-            }
-            return string.Empty;
-        }
+       
     }
 }
 
