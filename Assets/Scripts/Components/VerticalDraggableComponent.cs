@@ -17,21 +17,19 @@ public class VerticalDraggableComponent : MonoBehaviour
     [SerializeField] float EscapeAcceleration = 100;
     [SerializeField] float TopSwipeLimitOffset = 0.5f;
 
-    List<Action> swipeActions;
-    bool IsActive = true;
+    List<Action> mTopSwipeActions;
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool pressed = false;
-    DraggableStates CurrentState = DraggableStates.PLAY_STATE;
 
     Vector2 initialPosition;
 
-    public List<Action> SwipeActions => swipeActions;
+    public List<Action> TopSwipeActions => mTopSwipeActions;
 
     void Awake()
     {
-        swipeActions = new List<Action>();
+        mTopSwipeActions = new List<Action>();
     }
 
     // Start is called before the first frame update
@@ -98,8 +96,6 @@ public class VerticalDraggableComponent : MonoBehaviour
 
     void OnLeftClick()
     {
-        if (CurrentState != DraggableStates.PLAY_STATE) return;
-
         if (this.GetComponent<BoxCollider2D>().bounds.Contains(mousePosition))
         {
             pressed = true;
@@ -109,19 +105,15 @@ public class VerticalDraggableComponent : MonoBehaviour
 
     void OnLeftRelease()
     {
-        if(CurrentState != DraggableStates.PLAY_STATE) return;
-        
         pressed = false;
 
         bool isAboveTopLimit = transform.position.y >= initialPosition.y + TopSwipeLimitOffset;
 
         if (isAboveTopLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))
         {
-            if (!IsActive) return;
-            IsActive = false;
-            foreach (Action action in swipeActions)
+            foreach (Action TopSwipeAction in mTopSwipeActions)
             {
-                action();
+                TopSwipeAction();
             }
         }
     }

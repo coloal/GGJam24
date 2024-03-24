@@ -47,8 +47,6 @@ public class CombatManager : MonoBehaviour
     private GameObject DebugEnemyCardPrefab;
     [SerializeField]
     private CombatCardTemplate DebugEnemyCombatCardTemplate;
-    [SerializeField]
-    private GameObject DebugActionButtons;
 
     private PartyManager PartyManager;
     private CombatStates CurrentState;
@@ -176,7 +174,6 @@ public class CombatManager : MonoBehaviour
 
     void ChooseAttacker()
     {
-        DebugActionButtons.SetActive(false);
         SetPartyMembersCardsActivation(true);
     }
 
@@ -202,21 +199,31 @@ public class CombatManager : MonoBehaviour
                 PartyMemberInScene.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
             if (PartyMemberInteractiveCombatCardComponent)
             {
-                PartyMemberInteractiveCombatCardComponent.SetIsActive(AreCardsActive);
+                if (AreCardsActive)
+                {
+                    PartyMemberInteractiveCombatCardComponent.EnableVerticalDraggableComponent();
+                }
+                else
+                {
+                    PartyMemberInteractiveCombatCardComponent.DisableDraggableComponents();
+                }
             }
         }
     }
 
     void ChooseAttackerAction()
     {
-        // DEBUG PURPOSES ONLY
-        DebugActionButtons.SetActive(true);
-
         SetPartyMembersCardsActivation(false);
         if (CurrentAttacker.PartyMemberGameObject)
         {
             //TODO: Make the attacker card a *Draggable* card to make decisions
             //CurrentAttacker.AddComponent<Draggable>();
+            InteractiveCombatCardComponent CurrentAttackerInteractiveCombatCardComponent =
+                CurrentAttacker.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (CurrentAttackerInteractiveCombatCardComponent)
+            {
+                CurrentAttackerInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
+            }
         }
     }
 
@@ -245,8 +252,6 @@ public class CombatManager : MonoBehaviour
 
     void PerformEnemyAttackAction()
     {
-        DebugActionButtons.SetActive(false);
-
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMemberGameObject.GetComponent<CombatCard>();
         CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();

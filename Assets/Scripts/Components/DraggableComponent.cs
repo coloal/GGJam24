@@ -159,7 +159,8 @@ public class DraggableComponent : MonoBehaviour
 
     Vector2 CalculateTargetPosition()
     {
-        bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        //bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
+        bool IsInCorrectState = true;
         Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
         if(CurrentState == DraggableStates.TUTORIAL_MOVE_RIGHT)
         {
