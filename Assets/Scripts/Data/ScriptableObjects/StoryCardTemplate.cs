@@ -28,4 +28,5 @@ public class StoryCardTemplate : ScriptableObject
 
     public List<BrainAction> LeftActions = new List<BrainAction>();
     public List<BrainAction> RightActions = new List<BrainAction>();
+
 }

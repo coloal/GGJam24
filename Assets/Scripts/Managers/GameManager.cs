@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField]
+    AudioManager AudioManager;
+    [SerializeField]
     TurnManager TurnManager;
     [SerializeField]
     CardsManager CardsManager;
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
     EndManager EndManager;
     [SerializeField]
     BrainManager BrainManager;
+    [SerializeField]
+    BrainSoundManager BrainSoundManager;
     [SerializeField]
     StoryManager StoryManager;
     [SerializeField]
@@ -38,12 +42,12 @@ public class GameManager : MonoBehaviour
 
     void Start() 
     {
-        AudioManager.Instance.Play(SoundNames.GameBGM);
         StartGame();
     }
 
-    void StartGame() 
+    void StartGame()
     {
+        BrainSoundManager.StartGame();
         TurnManager.StartTurn();   
     }
 
@@ -59,6 +63,10 @@ public class GameManager : MonoBehaviour
     {
         return CardsManager;
     }
+    public AudioManager ProvideAudioManager()
+    {
+        return AudioManager;
+    }
 
     public TurnManager ProvideTurnManager()
     {
@@ -72,7 +80,12 @@ public class GameManager : MonoBehaviour
     {
         return BrainManager;
     }
-    
+
+    public BrainSoundManager ProvideBrainSoundManager()
+    {
+        return BrainSoundManager;
+    }
+
     public StoryManager ProvideStoryManager()
     {
         return StoryManager;

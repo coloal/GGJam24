@@ -21,3 +21,7 @@ MonoBehaviour:
   BackgroundSprite: {fileID: 21300000, guid: 7ee20b6cdd462d74fbd42ce6dbf59fc0, type: 3}
   LeftActions: []
   RightActions: []
+  LeftMusicActions:
+  - SoundTag: 0
+    NewValue: 0
+  RightMusicActions: []

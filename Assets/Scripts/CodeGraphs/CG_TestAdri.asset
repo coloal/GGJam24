@@ -27,13 +27,9 @@ MonoBehaviour:
   - rid: 2383942886125993987
   - rid: 2383942886125993989
   - rid: 2383942886125993991
+  - rid: 2383942973646962688
+  - rid: 2383942973646962689
   connections:
-  - outputPort:
-      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
-      portIndex: 0
-    inputPort:
-      nodeId: de0768f0-e6af-468c-8a7c-49b052198ca6
-      portIndex: 1
   - outputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
       portIndex: 0
@@ -59,19 +55,61 @@ MonoBehaviour:
       nodeId: 72b819f9-b878-4f99-adea-8d571edfce13
       portIndex: 0
   - outputPort:
-      nodeId: e38bd489-7eac-4628-8de2-a15878bfacfb
+      nodeId: 9685c70d-d18d-438a-80a3-60149b0f993c
       portIndex: 0
     inputPort:
-      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
+      nodeId: d0b49f3f-8fbc-4207-b17d-5d92a5085bd7
       portIndex: 2
   - outputPort:
-      nodeId: 9b114906-a0bc-4dcd-b0ff-ece9f6eb5489
+      nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
+      portIndex: 1
+    inputPort:
+      nodeId: e38bd489-7eac-4628-8de2-a15878bfacfb
+      portIndex: 1
+  - outputPort:
+      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
+      portIndex: 1
+    inputPort:
+      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
+      portIndex: 2
+  - outputPort:
+      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
       portIndex: 0
+    inputPort:
+      nodeId: 9b114906-a0bc-4dcd-b0ff-ece9f6eb5489
+      portIndex: 1
+  - outputPort:
+      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
+      portIndex: 1
     inputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
       portIndex: 2
   - outputPort:
+      nodeId: de0768f0-e6af-468c-8a7c-49b052198ca6
+      portIndex: 0
+    inputPort:
+      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
+      portIndex: 2
+  - outputPort:
+      nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
+      portIndex: 1
+    inputPort:
+      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
+      portIndex: 2
+  - outputPort:
+      nodeId: 23da4f16-f245-4d6e-abdb-ac9f30533c31
+      portIndex: 0
+    inputPort:
+      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
+      portIndex: 2
+  - outputPort:
+      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
+      portIndex: 1
+    inputPort:
       nodeId: 9685c70d-d18d-438a-80a3-60149b0f993c
+      portIndex: 1
+  - outputPort:
+      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
       portIndex: 0
     inputPort:
       nodeId: d0b49f3f-8fbc-4207-b17d-5d92a5085bd7
@@ -83,64 +121,40 @@ MonoBehaviour:
       nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
       portIndex: 2
   - outputPort:
-      nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
-      portIndex: 1
-    inputPort:
       nodeId: e38bd489-7eac-4628-8de2-a15878bfacfb
+      portIndex: 0
+    inputPort:
+      nodeId: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
       portIndex: 1
   - outputPort:
       nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
       portIndex: 0
     inputPort:
-      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
-      portIndex: 2
-  - outputPort:
-      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
+      nodeId: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
       portIndex: 1
-    inputPort:
-      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
-      portIndex: 2
   - outputPort:
-      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
+      nodeId: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
       portIndex: 0
     inputPort:
-      nodeId: 9b114906-a0bc-4dcd-b0ff-ece9f6eb5489
-      portIndex: 1
-  - outputPort:
-      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
-      portIndex: 1
-    inputPort:
-      nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
+      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
       portIndex: 2
   - outputPort:
+      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
+      portIndex: 0
+    inputPort:
       nodeId: de0768f0-e6af-468c-8a7c-49b052198ca6
+      portIndex: 1
+  - outputPort:
+      nodeId: 9b114906-a0bc-4dcd-b0ff-ece9f6eb5489
       portIndex: 0
     inputPort:
-      nodeId: 3085e3d6-9d98-4cf1-8b7c-a66771d83866
-      portIndex: 2
+      nodeId: 162ae644-3de8-41a2-8090-e5a8cc0c955a
+      portIndex: 1
   - outputPort:
+      nodeId: 162ae644-3de8-41a2-8090-e5a8cc0c955a
+      portIndex: 0
+    inputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
-      portIndex: 1
-    inputPort:
-      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
-      portIndex: 2
-  - outputPort:
-      nodeId: 23da4f16-f245-4d6e-abdb-ac9f30533c31
-      portIndex: 0
-    inputPort:
-      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
-      portIndex: 2
-  - outputPort:
-      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
-      portIndex: 1
-    inputPort:
-      nodeId: 9685c70d-d18d-438a-80a3-60149b0f993c
-      portIndex: 1
-  - outputPort:
-      nodeId: b4449b89-149b-458a-bd79-736f1863cbe3
-      portIndex: 0
-    inputPort:
-      nodeId: d0b49f3f-8fbc-4207-b17d-5d92a5085bd7
       portIndex: 2
   references:
     version: 2
@@ -275,8 +289,8 @@ MonoBehaviour:
         guid: e38bd489-7eac-4628-8de2-a15878bfacfb
         position:
           serializedVersion: 2
-          x: 389
-          y: -154
+          x: 202
+          y: -113
           width: 219
           height: 188
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
@@ -287,25 +301,10 @@ MonoBehaviour:
           TagType: 0
           BoolTag: 0
           NewValue: 1
-          BrainBoolTagAction:
-            m_PersistentCalls:
-              m_Calls: []
           NumericTag: 0
           Increment: 0
-          BrainNumericTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          StateTuple:
-            selectedTag: 0
-            selectedTagState: 0
           TagState: 0
           NewState: 0
-          BrainStateTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          BrainStateIntTagAction:
-            m_PersistentCalls:
-              m_Calls: []
     - rid: 2383942886125993985
       type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -324,25 +323,10 @@ MonoBehaviour:
           TagType: 1
           BoolTag: 0
           NewValue: 0
-          BrainBoolTagAction:
-            m_PersistentCalls:
-              m_Calls: []
           NumericTag: 0
           Increment: 5
-          BrainNumericTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          StateTuple:
-            selectedTag: 0
-            selectedTagState: 0
           TagState: 0
           NewState: 0
-          BrainStateTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          BrainStateIntTagAction:
-            m_PersistentCalls:
-              m_Calls: []
     - rid: 2383942886125993986
       type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -361,33 +345,18 @@ MonoBehaviour:
           TagType: 2
           BoolTag: 0
           NewValue: 0
-          BrainBoolTagAction:
-            m_PersistentCalls:
-              m_Calls: []
           NumericTag: 0
           Increment: 0
-          BrainNumericTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          StateTuple:
-            selectedTag: 0
-            selectedTagState: 0
           TagState: 1
           NewState: 2
-          BrainStateTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          BrainStateIntTagAction:
-            m_PersistentCalls:
-              m_Calls: []
     - rid: 2383942886125993987
       type: {class: ForkCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: bfbaa049-8e62-4788-9462-406f507ffa0f
         position:
           serializedVersion: 2
-          x: 0
-          y: 195
+          x: -107
+          y: 183
           width: 315
           height: 122
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -428,3 +397,35 @@ MonoBehaviour:
         - Left
         - Right
         card: {fileID: 11400000, guid: 94e93bb33d4f8b247bc211c26ce805fe, type: 2}
+    - rid: 2383942973646962688
+      type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
+        position:
+          serializedVersion: 2
+          x: 436
+          y: 22
+          width: 204
+          height: 98
+        typeName: CodeGraph.ZoneSoundNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: 1
+    - rid: 2383942973646962689
+      type: {class: SoundActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 162ae644-3de8-41a2-8090-e5a8cc0c955a
+        position:
+          serializedVersion: 2
+          x: 1611
+          y: -49
+          width: 231
+          height: 136
+        typeName: CodeGraph.SoundActionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        Parameters:
+          SoundTag: 5
+          NewValue: 1
