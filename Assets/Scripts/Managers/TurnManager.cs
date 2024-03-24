@@ -128,6 +128,52 @@ public class TurnManager : MonoBehaviour
     }
 
 
+    public void OnHitmenSelected(HitManTypes selectedHitman) {
+        //AudioManager.Instance.Play(SoundNames.PickPhone);
+
+        // --Deprecated--
+        //CalculateHitmanStats(selectedHitman);
+    }
+
+    void CalculateHitmanStats(HitManTypes SelectedHitman)
+    {
+        // --Deprecated--
+        /*
+        SetGameState(GameStates.STATS_CALCULATION);
+
+        if (StatsManager != null && CurrentCard != null)
+        {
+            HitmanInfo info = null;
+            switch (SelectedHitman)
+            {
+                case HitManTypes.Maton:
+                    info = CurrentCard.Maton;
+                    break;
+                case HitManTypes.Contable:
+                    info = CurrentCard.Contable;
+                    break;
+                case HitManTypes.Comisario:
+                    info = CurrentCard.Comisario;
+                    break;
+                default: break;
+            }
+            StatsManager.ModifyStats(
+                info.ViolenceStat,
+                info.MoneyStat,
+                info.InfluenceStat
+            );
+
+            GameUtils.createTemporizer(() => {
+                PhoneObject.SetActive(true);
+                GivePhoneFeedback(info.FeedbackName, info.FeedbackText);
+            }, 2.3f, this);
+
+        }
+
+        */
+    }
+
+
     private void DestroyCard()
     {
         GameObject CardToDestroy = CurrentCard.gameObject;

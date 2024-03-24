@@ -1,0 +1,39 @@
+using CodeGraph;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static UnityEditor.Rendering.CameraUI;
+
+namespace CodeGraph
+{
+    [NodeInfo("Sound Action", "Sound Nodes/Sound Action", color: "#bb9eff")] 
+    public class SoundActionNode : CodeGraphNode
+    {
+        [ExposedProperty()]
+        public SoundAction Parameters;
+
+        
+
+        public SoundActionNode()
+        {
+
+           
+        }
+
+        public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
+        {
+            GameManager.Instance.ProvideBrainSoundManager().ExecuteSoundAction(Parameters);
+
+
+            //Avanza al siguiente nodo
+            CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
+            if (nextNode != null)
+            {
+                return nextNode.id;
+            }
+            return string.Empty;
+        }
+    }
+
+}
+

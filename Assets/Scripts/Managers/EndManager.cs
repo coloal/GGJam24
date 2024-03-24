@@ -115,11 +115,13 @@ public class EndManager : MonoBehaviour
 
     void PlayGoodEndingMusic()
     {
-        AudioManager.Instance.Play(SoundNames.PositiveFinal);
+        //AudioManager.Instance.Play(SoundNames.PositiveFinal);
+
     }
 
     void PlayBadEndingMusic()
     {
-        AudioManager.Instance.Play(SoundNames.NegativeFinal);
+        //AudioManager.Instance.Play(SoundNames.NegativeFinal);
+
     }
 }

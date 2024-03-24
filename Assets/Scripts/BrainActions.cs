@@ -26,6 +26,14 @@ public class BrainAction
     public int NewState;
 }
 
+[System.Serializable]
+public class SoundAction
+{
+    public BrainSoundTag SoundTag;
+    public float NewValue;
+}
+
+
 [CustomPropertyDrawer(typeof(BrainAction))]
 public class Option_Editor : PropertyDrawer
 {

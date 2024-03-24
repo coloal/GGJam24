@@ -3,10 +3,55 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
+    private FMOD.Studio.EventInstance FModInstance;
+
     // Singleton instance
     public static AudioManager Instance;
 
+
+    void Start()
+    {
+        FModInstance = FMODUnity.RuntimeManager.CreateInstance("event:/MaquetaAudioLeve");
+    }
+
+    public void Play()
+    {
+        FModInstance.start();
+
+        FModInstance.setParameterByName("Flautista", 1f);
+        float f;
+        FModInstance.getParameterByName("Flautista",out f);
+        f -= 0.25f;
+
+        FModInstance.setParameterByName("Flautista", f);
+    }
+
+    /*
+    Musica:
+    Por zonas:
+    -cambia el evento
+    -se autoajustan parametros
+
+    implementación:
+    scriptableObject:
+    Zona(Enum) y valores que debe tomar cada var del evento de historia
+
+    Por Acciones:
+    Las cartas contendran actions si se tira izq o derecha estas Actions activaran/desactivaran los eventos
+    
+    Accion NumIntegrantes:
+    Acción que autoajusta como van a sonar los instrumentos de fondo por multiplicadores ??(preguntar a Omar)
+    Esta acción se llamara al finalizar un combate/cuando se reclute alguien para actualizar el balance de tipos
+
+     */
+
+
+
+    //-----------------------------------------------------------------
+    /*
     public Sound[] Sounds;
+
+
 
     void Awake() {
         void SetUpSounds() {
@@ -72,5 +117,5 @@ public class AudioManager : MonoBehaviour {
             sound.AudioSource.Stop();
             sound.IsPlaying = false;
         }
-    }
+    }*/
 }

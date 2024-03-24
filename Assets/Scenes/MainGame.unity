@@ -229,6 +229,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139169207}
   m_CullTransparentMesh: 1
+--- !u!1 &179863776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179863778}
+  - component: {fileID: 179863777}
+  m_Layer: 0
+  m_Name: BrainSoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &179863777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179863776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5edce3b5e237254d82a608357a88791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoryEventPath: event:/MaquetaAudioLeve
+  CombatEventPath: 
+  MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
+  Speed: 0.2
+--- !u!4 &179863778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179863776}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.31314078, y: -0.4988591, z: 0.013886644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259584300
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,55 +979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8877cf02275472aa391b873ecd3d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds:
-  - Name: MenuBGM
-    AudioClip: {fileID: 8300000, guid: 12ca76c66c70a4c7d9ccce116f5a37bc, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 1
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: GameBGM
-    AudioClip: {fileID: 8300000, guid: a6a0c61011f2b403ab5edcfc956e442d, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 1
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: PositiveFinal
-    AudioClip: {fileID: 8300000, guid: 01f4fb951739e8244a33fb32259f266e, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: NegativeFinal
-    AudioClip: {fileID: 8300000, guid: 2ce1798f04c03da48b32b09ed3e41fb2, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: PickPhone
-    AudioClip: {fileID: 8300000, guid: c65ecddb8425f8a468f52c0911d92ffb, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 0
-  - Name: StartGame
-    AudioClip: {fileID: 8300000, guid: 26df4e483d3157940bc1e5b9d55cb576, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 0
 --- !u!4 &511489517
 Transform:
   m_ObjectHideFlags: 0
@@ -1903,7 +1902,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OverlayImage: {fileID: 566170229}
-  PhoneObject: {fileID: 1714025201}
   NameFeedbackBox: {fileID: 1931046305}
   TextFeedbackBox: {fileID: 527178066}
 --- !u!1 &1035966883
@@ -2414,10 +2412,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9e19440bdb741d19a8ac3f7f6459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 511489516}
   TurnManager: {fileID: 1029993838}
   CardsManager: {fileID: 1958423316}
   EndManager: {fileID: 1043067325}
   BrainManager: {fileID: 1945957144}
+  BrainSoundManager: {fileID: 179863777}
   StoryManager: {fileID: 1327554469}
   PartyManager: {fileID: 1058266036}
 --- !u!1001 &1281724104
@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: 636901b1de0264d4a993050a5f2a563a, type: 2}
+  FirstStory: {fileID: 11400000, guid: e22f3f6c77218514daabe35e526cb5ce, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0
@@ -2960,11 +2960,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1714025201 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6518776799395749597, guid: e4c605c7fd11f7a4395e3bd59e15db3e, type: 3}
-  m_PrefabInstance: {fileID: 1280579036742506665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1716491714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,6 +3721,7 @@ SceneRoots:
   - {fileID: 1958423317}
   - {fileID: 1043067326}
   - {fileID: 553772904135817550}
+  - {fileID: 179863778}
   - {fileID: 1327554470}
   - {fileID: 1058266037}
   - {fileID: 1853371290}
