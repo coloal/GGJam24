@@ -160,17 +160,27 @@ public class HorizontalDraggableComponent : MonoBehaviour
             // It's swipping right
             if (Mathf.Sign(transform.position.x - InitialPosition.x) > 0)
             {
-                foreach (Action RightSwipeAction in mRigthtSwipeActions)
+                bool HasPassedEscapeDistance = transform.position.x >= GameObjectMidPoint.x + EscapeDistance;
+                if (HasPassedEscapeDistance)
                 {
-                    RightSwipeAction();
+                    Debug.Log("On Swipe Right!");
+                    foreach (Action RightSwipeAction in mRigthtSwipeActions)
+                    {
+                        RightSwipeAction();
+                    }   
                 }
             }
             // It's swipping left
             else
             {
-                foreach (Action LeftSwipeAction in mRigthtSwipeActions)
+                bool HasPassedEscapeDistance = transform.position.x < GameObjectMidPoint.x - EscapeDistance;
+                if (HasPassedEscapeDistance)
                 {
-                    LeftSwipeAction();
+                    Debug.Log("On Swipe Left!");
+                    foreach (Action LeftSwipeAction in mRigthtSwipeActions)
+                    {
+                        LeftSwipeAction();
+                    }    
                 }
             }
         }
