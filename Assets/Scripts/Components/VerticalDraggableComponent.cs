@@ -14,13 +14,8 @@ public class VerticalDraggableComponent : MonoBehaviour
     [SerializeField] private float maxVelocity = 500;
 
     [SerializeField] float brakeDistance = 50;
-    [SerializeField] float EscapeDistance = 5;
-    [SerializeField] float RotateDistance = 5;
-    [SerializeField] float MaxArcRotation = 15;
-    [SerializeField] float MaxFinalRotation = 30;
-    [SerializeField] float FinalRotationVelocity = 10;
     [SerializeField] float EscapeAcceleration = 100;
-    
+    [SerializeField] float TopSwipeLimitOffset = 0.5f;
 
     List<Action> swipeActions;
     bool IsActive = true;
@@ -28,7 +23,6 @@ public class VerticalDraggableComponent : MonoBehaviour
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool pressed = false;
-    bool isInLimit = false;
     DraggableStates CurrentState = DraggableStates.PLAY_STATE;
 
     Vector2 initialPosition;
@@ -78,12 +72,9 @@ public class VerticalDraggableComponent : MonoBehaviour
 
     }
 
-
     Vector2 CalculateVerticalTargetPosition()
     {
-        //bool IsInCorrectState = GameManager.Instance.ProvideTurnManager().GetCurrentGameState() == GameStates.MAKE_DECISION;
-        bool IsInCorrectState = true;
-        Vector2 targetPosition = pressed && IsInCorrectState ? mousePosition - clickedPosition : initialPosition;
+        Vector2 targetPosition = pressed ? mousePosition - clickedPosition : initialPosition;
         return targetPosition + initialPosition;
     }
 
@@ -100,14 +91,10 @@ public class VerticalDraggableComponent : MonoBehaviour
 
     void SwipeUpMovement()
     {
-        
         float position = -1;
         position *= EscapeAcceleration;
         velocity += (position * Time.deltaTime);
-        //TODO MOVE TO POSITION
     }
-
-   
 
     void OnLeftClick()
     {
@@ -123,14 +110,15 @@ public class VerticalDraggableComponent : MonoBehaviour
     void OnLeftRelease()
     {
         if(CurrentState != DraggableStates.PLAY_STATE) return;
-
+        
         pressed = false;
-        if (isInLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))
+
+        bool isAboveTopLimit = transform.position.y >= initialPosition.y + TopSwipeLimitOffset;
+
+        if (isAboveTopLimit && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))
         {
             if (!IsActive) return;
             IsActive = false;
-            CurrentState = DraggableStates.SWIPE_RIGHT;
-            GameManager.Instance.ProvideTurnManager().SwipeRight();
             foreach (Action action in swipeActions)
             {
                 action();
@@ -141,16 +129,5 @@ public class VerticalDraggableComponent : MonoBehaviour
     void OnMouseMove(InputValue value)
     {
         mousePosition = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
-        //Debug.Log(value.Get<Vector2>());
     }
-
-    public void SetInLimit(bool NewIsInLimit)
-    {
-        isInLimit = NewIsInLimit;
-    }
-
-    
-
-   
-
 }

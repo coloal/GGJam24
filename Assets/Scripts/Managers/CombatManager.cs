@@ -131,11 +131,24 @@ public class CombatManager : MonoBehaviour
 
     void SpawnPlayerCards()
     {
+        void SetUpOnSwipeUpActions(PartyMemberInSceneInfo PartyMemberInScene)
+        {
+            InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
+                PartyMemberInScene.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (PartyMemberInteractiveCombatCardComponent)
+            {
+                PartyMemberInteractiveCombatCardComponent.SetOnSwipeUpAction(() => {
+                    SetCurrentAttacker(PartyMemberInScene);
+                });
+            }
+        }
+
         List<PartyMember> PartyMembers = PartyManager.GetPartyMembers();
         GameObject CombatCardPrefab = (GameObject) Resources.Load("Prefabs/CombatCard");
 
         for (int i = 0; i < PartyMembers.Count; i++)
         {
+            // Setting up PartyMember as a GameObject (physically) in scene
             GameObject PartyMemberGameObject = Instantiate(CombatCardPrefab);
             
             float CardWidth = 0.0f;
@@ -153,26 +166,18 @@ public class CombatManager : MonoBehaviour
 
             PartyMemberGameObject.transform.position = SpawnPosition;
 
-            PartyMembersInScene.Add(new PartyMemberInSceneInfo(PartyMembers[i], PartyMemberGameObject, SpawnPosition));
+            // Setting up PartyMember as an object in the local scene logic context
+            PartyMemberInSceneInfo PartyMemberInScene = new PartyMemberInSceneInfo(PartyMembers[i], PartyMemberGameObject, SpawnPosition);
+            SetUpOnSwipeUpActions(PartyMemberInScene);
+
+            PartyMembersInScene.Add(PartyMemberInScene);
         }
     }
 
     void ChooseAttacker()
     {
         DebugActionButtons.SetActive(false);
-
         SetPartyMembersCardsActivation(true);
-        foreach (PartyMemberInSceneInfo PartyMemberInScene in PartyMembersInScene)
-        {
-            InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMemberInScene.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
-            if (PartyMemberInteractiveCombatCardComponent)
-            {
-                PartyMemberInteractiveCombatCardComponent.SetOnSwipeUpAction(() => {
-                    SetCurrentAttacker(PartyMemberInScene);
-                });
-            }
-        }
     }
 
     void SetCurrentAttacker(PartyMemberInSceneInfo NewAttacker)

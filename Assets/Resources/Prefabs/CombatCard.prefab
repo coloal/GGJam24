@@ -965,12 +965,8 @@ MonoBehaviour:
   acceleration: 500
   maxVelocity: 500
   brakeDistance: 50
-  EscapeDistance: 5
-  RotateDistance: 5
-  MaxArcRotation: 15
-  MaxFinalRotation: 30
-  FinalRotationVelocity: 10
   EscapeAcceleration: 100
+  TopSwipeLimitOffset: 2
 --- !u!114 &4385715541035092019
 MonoBehaviour:
   m_ObjectHideFlags: 0
