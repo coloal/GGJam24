@@ -8,17 +8,14 @@ using UnityEngine.Rendering;
 
 public class BrainSoundManager : MonoBehaviour
 {
-    //TODO:Refactor brainSoundTag
-    // Metodos start combat y end combat
-    // ejemplo para para SoundAction en el metodo setParameters
-
-
-
+    //TODO:Metodos start combat y end combat
+    
     /***** PARAMETERS *****/
     [SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
     [SerializeField] private string CampfireEventPath = "event:/Settlement";
     [SerializeField] private string CombatEventPath;
-
+    [SerializeField] private string GameOverEventPath = "event:/GameOver";
+    
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float SpeedFadeIn = 0.2f;
 
@@ -34,8 +31,9 @@ public class BrainSoundManager : MonoBehaviour
 
     //List<> zones
 
-    private FMOD.Studio.EventInstance StoryInstance;
+    private FMOD.Studio.EventInstance StoryEventInstance;
     private FMOD.Studio.EventInstance CampfireInstance;
+    private FMOD.Studio.EventInstance GameOverInstance;
     private FMOD.Studio.EventInstance CombatInstance;
 
     /***** INITIALIZE *****/
@@ -43,8 +41,9 @@ public class BrainSoundManager : MonoBehaviour
     {
         InitializeData();
 
-        StoryInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
+        StoryEventInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
         CampfireInstance = FMODUnity.RuntimeManager.CreateInstance(CampfireEventPath);
+        GameOverInstance = FMODUnity.RuntimeManager.CreateInstance(GameOverEventPath);
     }
 
     void InitializeData()
@@ -67,7 +66,7 @@ public class BrainSoundManager : MonoBehaviour
             /*foreach (BrainSoundTag tag in Enum.GetValues(typeof(BrainSoundTag)))
             {
                 float DefaultValue = 0.0f;
-                StoryInstance.getParameterByName(tag.ToString(), out DefaultValue);
+                StoryEventInstance.getParameterByName(tag.ToString(), out DefaultValue);
                 SoundsMap.Add(tag, DefaultValue);
             }*/
         }
@@ -103,7 +102,7 @@ public class BrainSoundManager : MonoBehaviour
     }
 
     /***** ACTIONS *****/
-    public void StartGame(MusicZones zone = MusicZones.AdmiredTown)
+    public void StartGame(MusicZones zone = MusicZones.YourSettlement)
     {
         ActualZone = zone;
         ActualEvent = ZoneSoundsMap[zone].FMODEvent;
@@ -123,19 +122,20 @@ public class BrainSoundManager : MonoBehaviour
         {
             if (ActualEvent != ZoneSoundsMap[zone].FMODEvent)
             {
-                GetActualEventInstance().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                ActualZone = zone;
-                ActualEvent = ZoneSoundsMap[zone].FMODEvent;
+                /*
+                 GetActualEventInstance().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                 ActualZone = zone;
+                 ActualEvent = ZoneSoundsMap[zone].FMODEvent;
 
-                SetZoneParameters(ActualEvent, ActualZone);
-                GetActualEventInstance().start();
+                 SetZoneParameters(ActualEvent, ActualZone);
+                 GetActualEventInstance().start();*/
 
             }
             else
             {
                 //GetActualEventInstance().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 //*
-                 if (zone == MusicZones.Campfire)
+                if (zone == MusicZones.Campfire)
                 {
                     TurnOnCampfire();
 
@@ -144,18 +144,62 @@ public class BrainSoundManager : MonoBehaviour
                 else if (ActualZone == MusicZones.Campfire)
                 {
                     TurnOffCampfire();
-                }/**/
+                } /**/
+
+                //*
+                if (zone == MusicZones.Prueba)
+                {
+                    StartCombat();
+                }
+                else if (ActualZone == MusicZones.Prueba)
+                {
+                    EndCombat();
+                } /**/
+
 
                 ActualZone = zone;
                 SetZoneParameters(ActualEvent, ActualZone);
-                
+
                 //GetActualEventInstance().start();
             }
 
         }
     }
 
+    public void StartCombat()
+    {
+        StoryEventInstance.setPaused(true);
+
+        /*cogemos el CombatInstance y seteamos los parametros según los party members
+
+        //CombatInstance.setParameterByName("",0.0f);
+        //CombatInstance.start();
+
+        */
+
+    }
+
+    public void EndCombat()
+    {
+        StoryEventInstance.setPaused(false); 
+        //CombatInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void StartGameOver()
+    {
+        GameOverInstance.start();
+
+    }
+
+    public void EndGameOver()
+    {
+        
+        GameOverInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+    }
     /***** QUERIES *****/
+
+    //Mete un instrumento con fade In (se realiza en el update)
     public void AddSoundAction(SoundAction Action, float InitialValue = 0.0f)
     {
         SoundsMap[Action.SoundTag] = InitialValue;
@@ -167,7 +211,7 @@ public class BrainSoundManager : MonoBehaviour
     public void SetStorySound(string tag, float NewValue)
     {
         SoundsMap[tag] = NewValue;
-        StoryInstance.setParameterByName(tag.ToString(), NewValue);
+        StoryEventInstance.setParameterByName(tag, NewValue);
     }
 
     public float GetSound(string tag)
@@ -177,6 +221,9 @@ public class BrainSoundManager : MonoBehaviour
 
     private void SetZoneParameters(SoundEvent Event, MusicZones zone)
     {
+        //Importante coger el eventInstance que corresponda a cada parametro
+        // Ejemplo: StoryEventInstance.setParameterByName(BrainSoundTag.Acordeonista, ZoneSoundsMap[zone].Acordeonista);
+
         GetActualEventInstance().setParameterByName(BrainSoundTag.Acordeonista, ZoneSoundsMap[zone].Acordeonista);
         GetActualEventInstance().setParameterByName(BrainSoundTag.Bajista, ZoneSoundsMap[zone].Bajista);
         GetActualEventInstance().setParameterByName(BrainSoundTag.Cavaquinhista, ZoneSoundsMap[zone].Cavaquinhista);
@@ -188,8 +235,9 @@ public class BrainSoundManager : MonoBehaviour
         GetActualEventInstance().setParameterByName(BrainSoundTag.Fight, ZoneSoundsMap[zone].Fight);
         GetActualEventInstance().setParameterByName(BrainSoundTag.Zapato, ZoneSoundsMap[zone].Zapato);
 
-        /*
+        /*  importante
         Para parametros que sean sound Actions:
+
         if(SoundsMap[BrainSoundTag.Zapato] != 0)
         {
             GetActualEventInstance().setParameterByName(BrainSoundTag.Zapato, SoundsMap[BrainSoundTag.Zapato]);    
@@ -199,13 +247,13 @@ public class BrainSoundManager : MonoBehaviour
 
     }
 
-
+    //Aviso de adri del pasado: De momento coger el evento manualmente y luego ya veremos para automatizarlo
     private FMOD.Studio.EventInstance GetActualEventInstance()
     {
         switch (ActualEvent)
         {
             case SoundEvent.StoryEvent1:
-                return StoryInstance;
+                return StoryEventInstance;
                 break;
             case SoundEvent.CombatEvent:
                 return CombatInstance;
@@ -221,7 +269,7 @@ public class BrainSoundManager : MonoBehaviour
         switch (Event)
         {
             case SoundEvent.StoryEvent1:
-                return StoryInstance;
+                return StoryEventInstance;
                 break;
             case SoundEvent.CombatEvent:
                 return CombatInstance;

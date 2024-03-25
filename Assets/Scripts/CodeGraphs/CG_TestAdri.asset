@@ -159,13 +159,13 @@ MonoBehaviour:
       nodeId: 2f793910-2b0c-402f-b2d4-48e69c6007cb
       portIndex: 1
   - outputPort:
-      nodeId: 2f793910-2b0c-402f-b2d4-48e69c6007cb
+      nodeId: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
       portIndex: 0
     inputPort:
-      nodeId: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
-      portIndex: 1
+      nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
+      portIndex: 2
   - outputPort:
-      nodeId: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
+      nodeId: 2f793910-2b0c-402f-b2d4-48e69c6007cb
       portIndex: 0
     inputPort:
       nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
@@ -425,7 +425,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        NewZone: 1
+        NewZone: 3
     - rid: 2383942973646962690
       type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -447,8 +447,8 @@ MonoBehaviour:
         guid: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
         position:
           serializedVersion: 2
-          x: 471
-          y: 302
+          x: 503
+          y: 236
           width: 244
           height: 135
         typeName: CodeGraph.SoundActionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -472,4 +472,4 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        NewZone: 2
+        NewZone: 4

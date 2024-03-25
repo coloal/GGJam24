@@ -69,11 +69,6 @@ public class BrainManager : MonoBehaviour
                     //action.BrainStateIntTagAction.Invoke(action.StateTuple.selectedTag, action.StateTuple.selectedTagState);
                     SetState(action.TagState, action.NewState);
                     break;
-                case BrainTagType.Combat:
-                    //Enter in combat
-                    Debug.Log("Combateeee");
-                    GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard();
-                    break;
             }
         }
     }
@@ -94,11 +89,6 @@ public class BrainManager : MonoBehaviour
             case BrainTagType.State:
                 //action.BrainStateIntTagAction.Invoke(action.StateTuple.selectedTag, action.StateTuple.selectedTagState);
                 SetState(action.TagState, action.NewState);
-                break;
-            case BrainTagType.Combat:
-                //Enter in combat
-                Debug.Log("Combateeee");
-                GameObject a = GameManager.Instance.ProvideCardsManager().SpawnCombatCard();
                 break;
         }
     }

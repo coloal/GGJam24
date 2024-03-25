@@ -261,6 +261,7 @@ MonoBehaviour:
   StoryEventPath: event:/MaquetaAudioLeve
   CampfireEventPath: event:/Settlement
   CombatEventPath: 
+  GameOverEventPath: event:/GameOver
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &179863778

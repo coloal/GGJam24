@@ -19,7 +19,9 @@ public static class BrainSoundTag
 
 public enum MusicZones
 {
-    AdmiredTown,
+    YourSettlement,
+    SquareTown,
+    GasStation,
     Campfire,
     Prueba
 

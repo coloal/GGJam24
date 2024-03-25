@@ -26,7 +26,7 @@ MonoBehaviour:
     VolumenHoguera: 0
     ApagarHoguera: 0
   - FMODEvent: 0
-    zone: 2
+    zone: 4
     Acordeonista: 0
     Bajista: 0
     Cavaquinhista: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     VolumenHoguera: 0
     ApagarHoguera: 0
   - FMODEvent: 0
-    zone: 1
+    zone: 3
     Acordeonista: 0.6
     Bajista: 0.6
     Cavaquinhista: 0.6
