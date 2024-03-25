@@ -419,12 +419,6 @@ MonoBehaviour:
       nodeId: 4eaa45c0-f620-4ed5-b171-4249ccb6508b
       portIndex: 1
   - outputPort:
-      nodeId: 1b80debf-1bcb-4384-8b70-100140e376a7
-      portIndex: 0
-    inputPort:
-      nodeId: e7d5152b-f320-4823-982f-0525348b462a
-      portIndex: 2
-  - outputPort:
       nodeId: e7d5152b-f320-4823-982f-0525348b462a
       portIndex: 0
     inputPort:
@@ -490,6 +484,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 5e57d65b-baf5-46ba-b9f7-d5b2a919cdfb
       portIndex: 1
+  - outputPort:
+      nodeId: 1b80debf-1bcb-4384-8b70-100140e376a7
+      portIndex: 0
+    inputPort:
+      nodeId: e7d5152b-f320-4823-982f-0525348b462a
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -499,9 +499,9 @@ MonoBehaviour:
         guid: 5e57d65b-baf5-46ba-b9f7-d5b2a919cdfb
         position:
           serializedVersion: 2
-          x: 2423
-          y: 325
-          width: 351
+          x: 2441
+          y: 454
+          width: 373
           height: 98
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -761,25 +761,10 @@ MonoBehaviour:
           TagType: 1
           BoolTag: 0
           NewValue: 0
-          BrainBoolTagAction:
-            m_PersistentCalls:
-              m_Calls: []
           NumericTag: 4
           Increment: 1
-          BrainNumericTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          StateTuple:
-            selectedTag: 0
-            selectedTagState: 0
           TagState: 0
           NewState: 0
-          BrainStateTagAction:
-            m_PersistentCalls:
-              m_Calls: []
-          BrainStateIntTagAction:
-            m_PersistentCalls:
-              m_Calls: []
     - rid: 8580623337150218269
       type: {class: RecruitActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -893,9 +878,9 @@ MonoBehaviour:
         guid: ce5415cc-5988-46d0-b3e1-65d640cb1378
         position:
           serializedVersion: 2
-          x: 6660
-          y: -27
-          width: 321
+          x: 6656
+          y: -50
+          width: 358
           height: 122
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1060,9 +1045,9 @@ MonoBehaviour:
         guid: 2adb0ed6-2c04-494e-913d-94c16df3d6cf
         position:
           serializedVersion: 2
-          x: 9329
-          y: 10
-          width: 335
+          x: 9392
+          y: 4
+          width: 372
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1076,9 +1061,9 @@ MonoBehaviour:
         guid: 11f9feea-0989-4cfc-ac36-60f5245aef6a
         position:
           serializedVersion: 2
-          x: 9336
-          y: 145
-          width: 335
+          x: 9398
+          y: 134
+          width: 356
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1092,9 +1077,9 @@ MonoBehaviour:
         guid: 1589cf1a-13dc-47b1-9e6c-9b6f01471ff0
         position:
           serializedVersion: 2
-          x: 9336
-          y: 286
-          width: 335
+          x: 9436
+          y: 296
+          width: 363
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1171,8 +1156,8 @@ MonoBehaviour:
         guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
         position:
           serializedVersion: 2
-          x: 53
-          y: 305
+          x: -101
+          y: -7
           width: 81
           height: 77
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1185,8 +1170,8 @@ MonoBehaviour:
         guid: e7d5152b-f320-4823-982f-0525348b462a
         position:
           serializedVersion: 2
-          x: 3655
-          y: 187
+          x: 3649
+          y: 142
           width: 256
           height: 161
         typeName: CodeGraph.NumericConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1203,17 +1188,20 @@ MonoBehaviour:
         guid: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
         position:
           serializedVersion: 2
-          x: 150
-          y: 266
-          width: 388
-          height: 155
+          x: 90
+          y: -27
+          width: 352
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Hey, good morning babe
-        LeftText: Morning
-        RightText: ...
+        CardText: '
+
+
+'
+        LeftText: 
+        RightText: 
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 8580623337150218304
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1221,16 +1209,19 @@ MonoBehaviour:
         guid: 3225811d-427c-4fe3-9a25-ee91bec7e996
         position:
           serializedVersion: 2
-          x: 567
-          y: 239
-          width: 321
-          height: 179
+          x: 500
+          y: -30
+          width: 352
+          height: 320
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: Everyone is expectant. A big day it is my friend
+        CardText: 'Everyone is expectant. A big day it is my friend
+
+
+'
         LeftText: Big Day?
         RightText: I know...
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -1240,10 +1231,10 @@ MonoBehaviour:
         guid: 7f7bb316-deeb-4804-a5d9-f6fcd531387f
         position:
           serializedVersion: 2
-          x: 983
-          y: 54
-          width: 484
-          height: 155
+          x: 932
+          y: -133
+          width: 362
+          height: 302
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1258,8 +1249,8 @@ MonoBehaviour:
         guid: 58fb11c8-5ff4-492e-86c4-769d15d22fbe
         position:
           serializedVersion: 2
-          x: 1436
-          y: 247
+          x: 1324
+          y: 252
           width: 358
           height: 179
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1277,8 +1268,8 @@ MonoBehaviour:
         guid: d0b044c9-d01e-4b33-aacd-6fa59bbafac5
         position:
           serializedVersion: 2
-          x: 1493
-          y: -191
+          x: 1583
+          y: -183
           width: 495
           height: 155
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1295,16 +1286,21 @@ MonoBehaviour:
         guid: 56f59c74-7c03-45d6-bf9d-6a4ae35a8f31
         position:
           serializedVersion: 2
-          x: 1802
-          y: 53
-          width: 858
-          height: 155
+          x: 2128
+          y: -16
+          width: 358
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'The sooner you start enjoying making decisions and learning about
-          their effects, the better. We will be proud of you no matter the result  '
+        CardText: 'The sooner you start enjoying making decisions and
+
+          learning
+          about their effects, the better.
+
+          We will be proud of you no
+          matter the result  '
         LeftText: Thank, [Gentle Giant]
         RightText: I'll try
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}

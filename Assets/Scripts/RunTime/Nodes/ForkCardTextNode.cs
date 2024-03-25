@@ -1,6 +1,7 @@
 using CodeGraph;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 namespace CodeGraph
@@ -10,12 +11,15 @@ namespace CodeGraph
     {
 
         [ExposedProperty()]
+        [TextArea(3, 3)]
         public string CardText;
 
         [ExposedProperty()]
+        [TextArea(1, 1)]
         public string LeftText;
 
         [ExposedProperty()]
+        [TextArea(1, 1)]
         public string RightText;
 
         [ExposedProperty()]
@@ -36,9 +40,9 @@ namespace CodeGraph
             if (this.card != null)
             {
                 StoryCardTemplate copiedcard = Object.Instantiate(card);
-                copiedcard.Background = CardText;
-                copiedcard.LeftText = this.LeftText;
-                copiedcard.RightText = this.RightText;
+                copiedcard.Background = CardText.Replace("\n", " ").Replace("///", "\n");
+                copiedcard.LeftText = LeftText.Replace("\n", " ").Replace("///", "\n"); 
+                copiedcard.RightText = RightText.Replace("\n", " ").Replace("///", "\n"));
                 stepInfo = new StoryStep(copiedcard);
             }
             else
