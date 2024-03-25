@@ -15,8 +15,9 @@ public class BrainSoundManager : MonoBehaviour
     [SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
     [SerializeField] private string CampfireEventPath = "event:/Settlement";
     [SerializeField] private string CombatEventPath;
+
     [SerializeField] private MusicZonesTemplate MusicZoneData;
-    [SerializeField] private float Speed = 0.2f;
+    [SerializeField] private float SpeedFadeIn = 0.2f;
 
     private MusicZones ActualZone;
     private SoundEvent ActualEvent;
@@ -75,7 +76,7 @@ public class BrainSoundManager : MonoBehaviour
         {
             for (int i = 0; i < PendingActions.Count; i++)
             {
-                float newValue = Mathf.Lerp(SoundsMap[PendingActions[i].SoundTag], PendingActions[i].NewValue, Speed * Time.deltaTime);
+                float newValue = Mathf.Lerp(SoundsMap[PendingActions[i].SoundTag], PendingActions[i].NewValue, SpeedFadeIn * Time.deltaTime);
                 SetStorySound(PendingActions[i].SoundTag, newValue);
                 if (SoundsMap[PendingActions[i].SoundTag] >= PendingActions[i].NewValue - 0.02f)
                 {
@@ -139,10 +140,11 @@ public class BrainSoundManager : MonoBehaviour
     }
 
     /***** QUERIES *****/
-    public void AddSoundAction(SoundAction Action)
+    public void AddSoundAction(SoundAction Action, float InitialValue = 0.0f)
     {
-        Debug.Log("Entra " + Action.SoundTag.ToString());
-        SoundsMap[Action.SoundTag] = 0f;
+        SoundsMap[Action.SoundTag] = InitialValue;
+        
+        //Contiene el instrumento a meter con su valor objetivo;
         PendingActions.Add(Action);
     }
 

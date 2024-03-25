@@ -33,6 +33,16 @@ public class SoundAction
     public float NewValue;
 }
 
+[System.Serializable]
+public class SoundTypeCard
+{
+    public SoundAction MoneySoundAction;
+
+    public SoundAction ViolenceSoundAction;
+
+    public SoundAction InfluenceSoundAction;
+}
+
 
 [CustomPropertyDrawer(typeof(BrainAction))]
 public class Option_Editor : PropertyDrawer
