@@ -10,22 +10,32 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class VerticalDraggableComponent : MonoBehaviour
 {
-    [SerializeField] private float acceleration = 500;
-    [SerializeField] private float maxVelocity = 500;
+    [Header("Swipe speed configuration")]
+    [SerializeField] private float acceleration = 500.0f;
+    [SerializeField] private float maxVelocity = 500.0f;
 
-    [SerializeField] float brakeDistance = 50;
-    [SerializeField] float escapeAcceleration = 100;
-    [SerializeField] float escapeDistance = 0.5f;
+    [Header("Swipe Movement Escape Zone configuration")]
+    [SerializeField] float escapeZoneUpperLimitDistance = 3.0f;
+    [SerializeField] float escapeZoneLowerLimitDistance = 3.0f;
+    [SerializeField] float brakeDistance = 50.0f;
+    [SerializeField] float topEscapeAcceleration = 100.0f;
 
     List<Action> topSwipeActions;
-    float velocity = 0;
+    List<Action> topSwipeEscapeZoneEnterActions;
+    List<Action> topSwipeEscapeZoneExitActions;
+
+    float velocity = 0.0f;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool isMouseClickPressed = false;
+    bool hasToTriggerEnterEscapeZone = true;
+    bool hasToTriggerExitEscapeZone = false;
 
     Vector2 initialPosition;
 
     public List<Action> TopSwipeActions => topSwipeActions;
+    public List<Action> TopSwipeEscapeZoneEnterActions => topSwipeEscapeZoneEnterActions;
+    public List<Action> TopSwipeEscapeZoneExitActions => topSwipeEscapeZoneExitActions;
 
     void OnEnable()
     {
@@ -35,6 +45,8 @@ public class VerticalDraggableComponent : MonoBehaviour
     void Awake()
     {
         topSwipeActions = new List<Action>();
+        topSwipeEscapeZoneEnterActions = new List<Action>();
+        topSwipeEscapeZoneExitActions = new List<Action>();
     }
 
     // Update is called once per frame
@@ -52,7 +64,7 @@ public class VerticalDraggableComponent : MonoBehaviour
         float velocity = CalculateVerticalActualVelocity(targetPosition, distance);
 
 
-        if (transform.position.y >= initialPosition.y + escapeDistance)
+        if (transform.position.y >= initialPosition.y + escapeZoneUpperLimitDistance)
         {
             velocity = Mathf.Min(0, velocity);
             this.velocity = Mathf.Min(0, this.velocity);
@@ -63,8 +75,9 @@ public class VerticalDraggableComponent : MonoBehaviour
             this.velocity = Mathf.Max(0, this.velocity);
         }
 
-        transform.Translate(new Vector2(0, velocity * Time.deltaTime));
+        CheckForEscapeZone();
 
+        transform.Translate(new Vector2(0, velocity * Time.deltaTime));
     }
 
     Vector2 CalculateVerticalTargetPosition()
@@ -87,31 +100,40 @@ public class VerticalDraggableComponent : MonoBehaviour
     void SwipeUpMovement()
     {
         float position = -1;
-        position *= escapeAcceleration;
+        position *= topEscapeAcceleration;
         velocity += (position * Time.deltaTime);
     }
 
     void OnLeftClick()
     {
-        if (this.GetComponent<BoxCollider2D>().bounds.Contains(mousePosition))
+        BoxCollider2D boxCollider2DComponent = GetComponent<BoxCollider2D>();
+        if (boxCollider2DComponent)
         {
-            isMouseClickPressed = true;
-            clickedPosition = mousePosition;
+            if (boxCollider2DComponent.bounds.Contains(mousePosition))
+            {
+                isMouseClickPressed = true;
+                clickedPosition = mousePosition;
+            }
         }
     }
 
     void OnLeftRelease()
     {
         isMouseClickPressed = false;
+        hasToTriggerEnterEscapeZone = true;
+        hasToTriggerExitEscapeZone = false;
 
-        bool isAboveTopLimit = transform.position.y >= initialPosition.y + escapeDistance;
-
-        if (enabled && isAboveTopLimit && 
+        bool isInsideEscapeZoneOrAbove = transform.position.y >= initialPosition.y + escapeZoneLowerLimitDistance;
+        if (enabled && isInsideEscapeZoneOrAbove &&
             (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x)|| Mathf.Abs(velocity) < 0.5))
         {
-            foreach (Action TopSwipeAction in topSwipeActions)
+            foreach (Action topSwipeOnWarningZoneExitAction in topSwipeEscapeZoneExitActions)
             {
-                TopSwipeAction();
+                topSwipeOnWarningZoneExitAction();
+            }
+            foreach (Action topSwipeAction in topSwipeActions)
+            {
+                topSwipeAction();
             }
         }
     }
@@ -119,5 +141,32 @@ public class VerticalDraggableComponent : MonoBehaviour
     void OnMouseMove(InputValue value)
     {
         mousePosition = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
+    }
+
+    void CheckForEscapeZone()
+    {   
+        if (isMouseClickPressed)
+        {
+            bool isInsideEscapeZoneOrAbove = transform.position.y >= initialPosition.y + escapeZoneLowerLimitDistance;
+
+            if (isInsideEscapeZoneOrAbove && hasToTriggerEnterEscapeZone)
+            {
+                hasToTriggerEnterEscapeZone = false;
+                hasToTriggerExitEscapeZone = true;
+                foreach (Action topSwipeOnWarningZoneEnterAction in topSwipeEscapeZoneEnterActions)
+                {
+                    topSwipeOnWarningZoneEnterAction();
+                }
+            }
+            else if (!isInsideEscapeZoneOrAbove && hasToTriggerExitEscapeZone)
+            {
+                hasToTriggerExitEscapeZone = false;
+                hasToTriggerEnterEscapeZone = true;
+                foreach (Action topSwipeOnWarningZoneExitAction in topSwipeEscapeZoneExitActions)
+                {
+                    topSwipeOnWarningZoneExitAction();
+                }
+            }
+        }
     }
 }

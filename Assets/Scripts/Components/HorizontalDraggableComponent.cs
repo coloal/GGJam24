@@ -7,26 +7,42 @@ using UnityEngine.InputSystem;
 
 public class HorizontalDraggableComponent : MonoBehaviour
 {   
-    [SerializeField] private float acceleration = 0.3f;
-    [SerializeField] private float maxVelocity = 3;
+    [Header("Swipe speed configuration")]
+    [SerializeField] private float acceleration = 100.0f;
+    [SerializeField] private float maxVelocity = 200.0f;
 
+    [Header("Swipe Movement Escape Zone configuration")]
+    [SerializeField] float escapeZoneUpperLimitDistance = 3.0f;
+    [SerializeField] float escapeZoneLowerLimitDistance = 3.0f;
     [SerializeField] float brakeDistance = 10;
-    [SerializeField] float escapeDistance = 5;
     [SerializeField] float rotateDistance = 5;
     [SerializeField] float maxArcRotation = 15;
     [SerializeField] float maxFinalRotation = 30;
     [SerializeField] float finalRotationVelocity = 10;
     [SerializeField] float escapeAcceleration = 100;
-    bool isActive = true;
+    
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
     Vector2 clickedPosition = Vector2.zero;
     bool isMouseClickPressed = false;
+    bool hasToTriggerEnterEscapeZone = true;
+    bool hasToTriggerExitEscapeZone = true;
+
     List<Action> leftSwipeActions;
-    List<Action> rigthtSwipeActions;
+    List<Action> leftSwipeEscapeZoneEnterActions;
+    List<Action> leftSwipeEscapeZoneExitActions;
+
+    List<Action> rightSwipeActions;
+    List<Action> rightSwipeEscapeZoneEnterActions;
+    List<Action> rightSwipeEscapeZoneExitActions;
     
-    public List<Action> RightSwipeActions => rigthtSwipeActions;
     public List<Action> LeftSwipeActions => leftSwipeActions;
+    public List<Action> LeftSwipeEscapeZoneEnterActions => leftSwipeEscapeZoneEnterActions;
+    public List<Action> LeftSwipeEscapeZoneExitActions => leftSwipeEscapeZoneExitActions;
+
+    public List<Action> RightSwipeActions => rightSwipeActions;
+    public List<Action> RightSwipeEscapeZoneEnterActions => rightSwipeEscapeZoneEnterActions;
+    public List<Action> RightSwipeEscapeZoneExitActions => rightSwipeEscapeZoneExitActions;
 
     Vector2 initialPosition;
 
@@ -38,7 +54,12 @@ public class HorizontalDraggableComponent : MonoBehaviour
     void Awake()
     {
         leftSwipeActions = new List<Action>();
-        rigthtSwipeActions = new List<Action>();
+        leftSwipeEscapeZoneEnterActions = new List<Action>();
+        leftSwipeEscapeZoneExitActions = new List<Action>();
+
+        rightSwipeActions = new List<Action>();
+        rightSwipeEscapeZoneEnterActions = new List<Action>();
+        rightSwipeEscapeZoneExitActions = new List<Action>();
     }
 
     void Update()
@@ -53,7 +74,7 @@ public class HorizontalDraggableComponent : MonoBehaviour
         float velocity = CalculateActualVelocity(targetPosition, distance);
 
         // It's on right swipe limit
-        if (transform.position.x >= initialPosition.x + escapeDistance)
+        if (transform.position.x >= initialPosition.x + escapeZoneUpperLimitDistance)
         {
             if (targetPosition.x > transform.position.x)
             {
@@ -72,7 +93,7 @@ public class HorizontalDraggableComponent : MonoBehaviour
             this.velocity = Mathf.Min(0, this.velocity);
         }
         // It's on left swipe limit
-        else if (transform.position.x <= initialPosition.x - escapeDistance)
+        else if (transform.position.x <= initialPosition.x - escapeZoneUpperLimitDistance)
         {
             if (targetPosition.x < transform.position.x)
             {
@@ -92,7 +113,7 @@ public class HorizontalDraggableComponent : MonoBehaviour
         }
         else
         {
-            float totalDistance = escapeDistance;
+            float totalDistance = escapeZoneUpperLimitDistance;
             float alreadyTraveledDistance = transform.position.x - initialPosition.x;
 
             if (alreadyTraveledDistance > 0.0f)
@@ -104,6 +125,8 @@ public class HorizontalDraggableComponent : MonoBehaviour
                 transform.eulerAngles = new Vector3(0.0f, 0.0f, Mathf.Lerp(0.0f, maxArcRotation, alreadyTraveledDistance / -totalDistance));
             }
         }
+
+        CheckForEscapeZone();
 
         transform.Translate(new Vector2(velocity * Time.deltaTime, 0.0f));
         if (transform.position.y > initialPosition.y)
@@ -143,29 +166,40 @@ public class HorizontalDraggableComponent : MonoBehaviour
     void OnLeftRelease()
     {
         isMouseClickPressed = false;
+        hasToTriggerEnterEscapeZone = true;
+        hasToTriggerExitEscapeZone = false;
+
         if (enabled && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x) || Mathf.Abs(velocity) < 0.5))
         {
             // It's swipping right
             if (Mathf.Sign(transform.position.x - initialPosition.x) > 0)
             {
-                bool HasPassedEscapeDistance = transform.position.x >= initialPosition.x + escapeDistance;
-                if (HasPassedEscapeDistance)
+                bool isInsideEscapeZoneOrFarther = transform.position.x >= initialPosition.x + escapeZoneLowerLimitDistance;
+                if (isInsideEscapeZoneOrFarther)
                 {
-                    foreach (Action RightSwipeAction in rigthtSwipeActions)
+                    foreach (Action rightSwipeOnWarningZoneExitAction in rightSwipeEscapeZoneExitActions)
                     {
-                        RightSwipeAction();
+                        rightSwipeOnWarningZoneExitAction();
+                    }
+                    foreach (Action rightSwipeAction in rightSwipeActions)
+                    {
+                        rightSwipeAction();
                     }   
                 }
             }
             // It's swipping left
             else
             {
-                bool HasPassedEscapeDistance = transform.position.x < initialPosition.x - escapeDistance;
-                if (HasPassedEscapeDistance)
+                bool isInsideEscapeZoneOrFarther = transform.position.x < initialPosition.x - escapeZoneLowerLimitDistance;
+                if (isInsideEscapeZoneOrFarther)
                 {
-                    foreach (Action LeftSwipeAction in leftSwipeActions)
+                    foreach (Action leftSwipeOnWarningZoneExitAction in leftSwipeEscapeZoneExitActions)
                     {
-                        LeftSwipeAction();
+                        leftSwipeOnWarningZoneExitAction();
+                    }
+                    foreach (Action leftSwipeAction in leftSwipeActions)
+                    {
+                        leftSwipeAction();
                     }    
                 }
             }
@@ -175,5 +209,58 @@ public class HorizontalDraggableComponent : MonoBehaviour
     void OnMouseMove(InputValue Value)
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
+    }
+
+    void CheckForEscapeZone()
+    {
+        if (isMouseClickPressed)
+        {
+            // It's swipping right
+            if (Mathf.Sign(transform.position.x - initialPosition.x) > 0)
+            {
+                bool isInsideEscapeZoneOrFarther = transform.position.x >= initialPosition.x + escapeZoneLowerLimitDistance;
+                if (isInsideEscapeZoneOrFarther && hasToTriggerEnterEscapeZone)
+                {
+                    hasToTriggerEnterEscapeZone = false;
+                    hasToTriggerExitEscapeZone = true;
+                    foreach (Action rightSwipeOnWarningZoneEnterAction in rightSwipeEscapeZoneEnterActions)
+                    {
+                        rightSwipeOnWarningZoneEnterAction();
+                    }   
+                }
+                else if (!isInsideEscapeZoneOrFarther && hasToTriggerExitEscapeZone)
+                {
+                    hasToTriggerExitEscapeZone = false;
+                    hasToTriggerEnterEscapeZone = true;
+                    foreach (Action rightSwipeOnWarningZoneExitAction in rightSwipeEscapeZoneExitActions)
+                    {
+                        rightSwipeOnWarningZoneExitAction();
+                    }
+                }
+            }
+            // It's swipping left
+            else
+            {
+                bool isInsideEscapeZoneOrFarther = transform.position.x < initialPosition.x - escapeZoneLowerLimitDistance;
+                if (isInsideEscapeZoneOrFarther && hasToTriggerEnterEscapeZone)
+                {
+                    hasToTriggerEnterEscapeZone = false;
+                    hasToTriggerExitEscapeZone = true;
+                    foreach (Action leftSwipeOnWarningZoneEnterAction in leftSwipeEscapeZoneEnterActions)
+                    {
+                        leftSwipeOnWarningZoneEnterAction();
+                    }   
+                }
+                else if (!isInsideEscapeZoneOrFarther && hasToTriggerExitEscapeZone)
+                {
+                    hasToTriggerExitEscapeZone = false;
+                    hasToTriggerEnterEscapeZone = true;
+                    foreach (Action leftSwipeOnWarningZoneExitAction in leftSwipeEscapeZoneExitActions)
+                    {
+                        leftSwipeOnWarningZoneExitAction();
+                    }
+                }
+            }
+        }
     }
 }

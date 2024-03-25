@@ -8,56 +8,56 @@ public class CombatManager : MonoBehaviour
 {
     private struct PartyMemberInSceneInfo
     {
-        public PartyMember PartyMemberInScene;
-        public GameObject PartyMemberGameObject;
-        public Vector2 PositionInHand;
+        public PartyMember partyMemberInScene;
+        public GameObject partyMemberGameObject;
+        public Vector2 positionInHand;
 
         public PartyMemberInSceneInfo(
-            PartyMember PartyMemberInScene,
-            GameObject PartyMemberGameObject,
-            Vector2 PositionInHand)
+            PartyMember partyMemberInScene,
+            GameObject partyMemberGameObject,
+            Vector2 positionInHand)
         {
-            this.PartyMemberInScene = PartyMemberInScene;
-            this.PartyMemberGameObject = PartyMemberGameObject;
-            this.PositionInHand = PositionInHand;
+            this.partyMemberInScene = partyMemberInScene;
+            this.partyMemberGameObject = partyMemberGameObject;
+            this.positionInHand = positionInHand;
         }
 
         public void Reset()
         {
-            PartyMemberInScene = null;
-            PartyMemberGameObject = null;
-            PositionInHand = new Vector2();
+            partyMemberInScene = null;
+            partyMemberGameObject = null;
+            positionInHand = new Vector2();
         }
     }
 
     [Header("Combat field configuration")]
     [Header("Cards positions")]
     [SerializeField]
-    private Transform EnemyCardOrigin;
+    private Transform enemyCardOrigin;
     [SerializeField]
-    private Transform PlayerCardsOrigin;
+    private Transform playerCardsOrigin;
     [SerializeField]
-    private float PlayerCardsHorizontalOffset = 3.0f;
+    private float playerCardsHorizontalOffset = 3.0f;
     [SerializeField]
-    private Transform AttackerCardOrigin;
+    private Transform attackerCardOrigin;
 
 
     [Header("Debug")]
     [SerializeField]
-    private GameObject DebugEnemyCardPrefab;
+    private GameObject debugEnemyCardPrefab;
     [SerializeField]
-    private CombatCardTemplate DebugEnemyCombatCardTemplate;
+    private CombatCardTemplate debugEnemyCombatCardTemplate;
 
-    private PartyManager PartyManager;
-    private CombatStates CurrentState;
-    private List<PartyMemberInSceneInfo> PartyMembersInScene;
-    private PartyMemberInSceneInfo CurrentAttacker;
-    private GameObject EnemyCard;
+    private PartyManager partyManager;
+    private CombatStates currentState;
+    private List<PartyMemberInSceneInfo> partyMembersInScene;
+    private PartyMemberInSceneInfo currentAttacker;
+    private GameObject enemyCard;
 
     void Awake()
     {
-        PartyMembersInScene = new List<PartyMemberInSceneInfo>();
-        CurrentAttacker.Reset();
+        partyMembersInScene = new List<PartyMemberInSceneInfo>();
+        currentAttacker.Reset();
     }
 
     void Start()
@@ -68,19 +68,19 @@ public class CombatManager : MonoBehaviour
 
     void SetUpManagers()
     {
-        PartyManager = GameManager.Instance.ProvidePartyManager();
+        partyManager = GameManager.Instance.ProvidePartyManager();
     }
 
-    public void SetCombatState(CombatStates State)
+    public void SetCombatState(CombatStates state)
     {
-        Debug.Log("Started: " + State.ToString());
-        CurrentState = State;
+        Debug.Log("Started: " + state.ToString());
+        currentState = state;
         ProcessCurrentCombatState();
     }
 
     void ProcessCurrentCombatState()
     {
-        switch (CurrentState)
+        switch (currentState)
         {
             case CombatStates.INIT:
                 SpawnCombatCards();
@@ -107,7 +107,7 @@ public class CombatManager : MonoBehaviour
 
     public CombatStates GetCurrentCombatState()
     {
-        return CurrentState;
+        return currentState;
     }
 
     void SpawnCombatCards() {
@@ -119,29 +119,17 @@ public class CombatManager : MonoBehaviour
 
     void SpawnEnemyCard()
     {
-        EnemyCard = Instantiate(DebugEnemyCardPrefab, EnemyCardOrigin.position, Quaternion.identity);
-        CombatCard EnemyCardCombatCardComponent = EnemyCard.GetComponent<CombatCard>();
-        if (EnemyCardCombatCardComponent)
+        enemyCard = Instantiate(debugEnemyCardPrefab, enemyCardOrigin.position, Quaternion.identity);
+        CombatCard enemyCardCombatCardComponent = enemyCard.GetComponent<CombatCard>();
+        if (enemyCardCombatCardComponent)
         {
-            EnemyCardCombatCardComponent.SetDataCard(DebugEnemyCombatCardTemplate);
+            enemyCardCombatCardComponent.SetDataCard(debugEnemyCombatCardTemplate);
         }
     }
 
     void SpawnPlayerCards()
     {
-        void SetUpOnSwipeUpActions(PartyMemberInSceneInfo PartyMemberInScene)
-        {
-            InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMemberInScene.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
-            if (PartyMemberInteractiveCombatCardComponent)
-            {
-                PartyMemberInteractiveCombatCardComponent.SetOnSwipeUpAction(() => {
-                    SetCurrentAttacker(PartyMemberInScene);
-                });
-            }
-        }
-
-        List<PartyMember> PartyMembers = PartyManager.GetPartyMembers();
+        List<PartyMember> PartyMembers = partyManager.GetPartyMembers();
         GameObject CombatCardPrefab = (GameObject) Resources.Load("Prefabs/CombatCard");
 
         for (int i = 0; i < PartyMembers.Count; i++)
@@ -158,18 +146,114 @@ public class CombatManager : MonoBehaviour
             }
 
             Vector2 SpawnPosition = new Vector2(
-                PlayerCardsOrigin.position.x + i * (CardWidth + PlayerCardsHorizontalOffset),
-                PlayerCardsOrigin.position.y
+                playerCardsOrigin.position.x + i * (CardWidth + playerCardsHorizontalOffset),
+                playerCardsOrigin.position.y
             );
 
             PartyMemberGameObject.transform.position = SpawnPosition;
 
             // Setting up PartyMember as an object in the local scene logic context
             PartyMemberInSceneInfo PartyMemberInScene = new PartyMemberInSceneInfo(PartyMembers[i], PartyMemberGameObject, SpawnPosition);
-            SetUpOnSwipeUpActions(PartyMemberInScene);
+            SetUpPartyMemberCard(PartyMemberInScene);
 
-            PartyMembersInScene.Add(PartyMemberInScene);
+            partyMembersInScene.Add(PartyMemberInScene);
         }
+    }
+
+    void SetUpPartyMemberCard(PartyMemberInSceneInfo partyMemberInSceneInfo)
+    {
+        void SetUpOnSwipeUpActions(PartyMemberInSceneInfo partyMemberInScene)
+        {
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (partyMemberInteractiveCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeUpAction(() =>
+                {
+                    SetCurrentAttacker(partyMemberInScene);
+                });
+            }
+        }
+
+        void SetUpOnSwipeUpWarningActions(PartyMemberInSceneInfo partyMemberInScene)
+        {
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard partyMemberCombatCardComponent = 
+                partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+            if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeUpEscapeZoneActions(
+                    () => { partyMemberCombatCardComponent.EnableTopSwipeWarningText(); },
+                    () => { partyMemberCombatCardComponent.DisableWarningText(); }
+                );
+            }
+        }
+
+        void SetUpOnSwipeLeftActions(PartyMemberInSceneInfo partyMemberInScene)
+        {
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (partyMemberInteractiveCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeLeftAction(() => 
+                {
+                    SetCombatState(CombatStates.CHOOSE_ATTACKER);
+                });
+            }
+        }
+
+        void SetUpOnSwipeLeftWarningActions(PartyMemberInSceneInfo partyMemberInScene)
+        {
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard partyMemberCombatCardComponent = 
+                partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+            if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeLeftEscapeZoneActions(
+                    () => { partyMemberCombatCardComponent.EnableLeftSwipeWarningText(); },
+                    () => { partyMemberCombatCardComponent.DisableWarningText(); }
+                );
+            }
+        }
+
+        void SetUpOnSwipeRightActions(PartyMemberInSceneInfo partyMemberInScene)
+        {
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (partyMemberInteractiveCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeRightAction(() => 
+                {
+                    SetCombatState(CombatStates.PLAYER_ATTACK);
+                });
+            }
+        }
+
+        void SetUpOnSwipeRightWarningActions(PartyMemberInSceneInfo partyMemberInScene)
+        {
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard partyMemberCombatCardComponent = 
+                partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+            if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeRightEscapeZoneActions(
+                    () => { partyMemberCombatCardComponent.EnableRightSwipeWarningText(); },
+                    () => { partyMemberCombatCardComponent.DisableWarningText(); }
+                );
+            }
+        }
+
+        SetUpOnSwipeUpActions(partyMemberInSceneInfo);
+        SetUpOnSwipeUpWarningActions(partyMemberInSceneInfo);
+
+        SetUpOnSwipeLeftActions(partyMemberInSceneInfo);
+        SetUpOnSwipeLeftWarningActions(partyMemberInSceneInfo);
+
+        SetUpOnSwipeRightActions(partyMemberInSceneInfo);
+        SetUpOnSwipeRightWarningActions(partyMemberInSceneInfo);
     }
 
     void ChooseAttacker()
@@ -180,23 +264,23 @@ public class CombatManager : MonoBehaviour
     void SetCurrentAttacker(PartyMemberInSceneInfo NewAttacker)
     {
         // If there's already an atacker card, swap it with the new card
-        if (CurrentAttacker.PartyMemberGameObject)
+        if (currentAttacker.partyMemberGameObject)
         {
-            CurrentAttacker.PartyMemberGameObject.transform.position = CurrentAttacker.PositionInHand;
+            currentAttacker.partyMemberGameObject.transform.position = currentAttacker.positionInHand;
         }
 
-        CurrentAttacker = NewAttacker;
-        CurrentAttacker.PartyMemberGameObject.transform.position = AttackerCardOrigin.position;
+        currentAttacker = NewAttacker;
+        currentAttacker.partyMemberGameObject.transform.position = attackerCardOrigin.position;
 
         SetCombatState(CombatStates.CHOOSE_ACTION);
     }
 
     void SetPartyMembersCardsActivation(bool AreCardsActive)
     {
-        foreach (PartyMemberInSceneInfo PartyMemberInScene in PartyMembersInScene)
+        foreach (PartyMemberInSceneInfo PartyMemberInScene in partyMembersInScene)
         {
             InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMemberInScene.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+                PartyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
             if (PartyMemberInteractiveCombatCardComponent)
             {
                 if (AreCardsActive)
@@ -214,12 +298,12 @@ public class CombatManager : MonoBehaviour
     void ChooseAttackerAction()
     {
         SetPartyMembersCardsActivation(false);
-        if (CurrentAttacker.PartyMemberGameObject)
+        if (currentAttacker.partyMemberGameObject)
         {
             //TODO: Make the attacker card a *Draggable* card to make decisions
             //CurrentAttacker.AddComponent<Draggable>();
             InteractiveCombatCardComponent CurrentAttackerInteractiveCombatCardComponent =
-                CurrentAttacker.PartyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+                currentAttacker.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
             if (CurrentAttackerInteractiveCombatCardComponent)
             {
                 CurrentAttackerInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
@@ -234,8 +318,8 @@ public class CombatManager : MonoBehaviour
         SetCombatState(CombatStates.PLAYER_ATTACK);
 
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
-        CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
+        CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
+        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
 
         if (CurrentAttackerCombatCard && EnemyCombatCard)
         {
@@ -253,10 +337,10 @@ public class CombatManager : MonoBehaviour
     void PerformEnemyAttackAction()
     {
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
-        CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
+        CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
+        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
 
-        if (CurrentAttackerCombatCard && EnemyCard)
+        if (CurrentAttackerCombatCard && enemyCard)
         {
             CombatUtils.Attack(
                 AttackerCombatCard: EnemyCombatCard,
@@ -271,8 +355,8 @@ public class CombatManager : MonoBehaviour
 
     void CheckCombatResults()
     {
-        CombatCard CurrentAttackerCombatCard = CurrentAttacker.PartyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = EnemyCard.GetComponent<CombatCard>();
+        CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
+        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
         if (CurrentAttackerCombatCard && EnemyCombatCard)
         {
             if (EnemyCombatCard.GetHealthPoints() <= 0)
@@ -288,7 +372,7 @@ public class CombatManager : MonoBehaviour
             {
                 KillCurrentAttackerCard();
 
-                if (PartyMembersInScene.Count <= 0)
+                if (partyMembersInScene.Count <= 0)
                 {
                     SetCombatState(CombatStates.GAME_OVER);
                 }
@@ -300,7 +384,7 @@ public class CombatManager : MonoBehaviour
             else if (CurrentAttackerCombatCard.GetCardEnergy() == 0)
             {
                 // 1 represents the out-of-energy card, i.e. there are no cards left in the players' hand
-                if (PartyMembersInScene.Count <= 1)
+                if (partyMembersInScene.Count <= 1)
                 {
                     SetCombatState(CombatStates.GAME_OVER);
                 }
@@ -314,9 +398,9 @@ public class CombatManager : MonoBehaviour
 
     void KillCurrentAttackerCard()
     {
-        PartyMembersInScene.Remove(CurrentAttacker);
-        PartyManager.RemovePartyMember(CurrentAttacker.PartyMemberInScene.CombatCardTemplate);
-        Destroy(CurrentAttacker.PartyMemberGameObject);
-        CurrentAttacker.Reset();
+        partyMembersInScene.Remove(currentAttacker);
+        partyManager.RemovePartyMember(currentAttacker.partyMemberInScene.CombatCardTemplate);
+        Destroy(currentAttacker.partyMemberGameObject);
+        currentAttacker.Reset();
     }
 }

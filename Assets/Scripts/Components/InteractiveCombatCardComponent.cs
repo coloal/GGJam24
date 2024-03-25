@@ -5,30 +5,111 @@ using UnityEngine;
 
 public class InteractiveCombatCardComponent : MonoBehaviour
 {
-    private VerticalDraggableComponent VerticalDraggableComponent;
-    private HorizontalDraggableComponent HorizontalDraggableComponent;
+    private VerticalDraggableComponent verticalDraggableComponent;
+    private HorizontalDraggableComponent horizontalDraggableComponent;
 
     void Awake()
     {
-        VerticalDraggableComponent = GetComponent<VerticalDraggableComponent>();
-        HorizontalDraggableComponent = GetComponent<HorizontalDraggableComponent>();
+        verticalDraggableComponent = GetComponent<VerticalDraggableComponent>();
+        horizontalDraggableComponent = GetComponent<HorizontalDraggableComponent>();
     }
 
-    void DoOnValidDraggableComponents(Action Lambda)
+    void DoOnValidDraggableComponents(Action lambda)
     {
-        if (VerticalDraggableComponent && HorizontalDraggableComponent)
+        if (verticalDraggableComponent && horizontalDraggableComponent)
         {
-            Lambda();
+            lambda();
         }
     }
 
-    public void SetOnSwipeUpAction(Action OnSwipeUpAction)
+    public void SetOnSwipeUpAction(Action onSwipeUpAction)
     {
         DoOnValidDraggableComponents(() => {
-            VerticalDraggableComponent.TopSwipeActions.Add(() => {
-                if (VerticalDraggableComponent.enabled)
+            verticalDraggableComponent.TopSwipeActions.Add(() => {
+                if (verticalDraggableComponent.enabled)
                 {
-                    OnSwipeUpAction();
+                    onSwipeUpAction();
+                }
+            });
+        });
+    }
+
+    public void SetOnSwipeUpEscapeZoneActions(
+        Action onSwipeUpEscapeZoneEnterAction, Action onSwipeUpEscapeZoneExitAction)
+    {
+        DoOnValidDraggableComponents(() => {
+            verticalDraggableComponent.TopSwipeEscapeZoneEnterActions.Add(() => {
+                if (verticalDraggableComponent.enabled)
+                {
+                    onSwipeUpEscapeZoneEnterAction();
+                }
+            });
+            verticalDraggableComponent.TopSwipeEscapeZoneExitActions.Add(() => {
+                if (verticalDraggableComponent.enabled)
+                {
+                    onSwipeUpEscapeZoneExitAction();
+                }
+            });
+        });
+    }
+
+    public void SetOnSwipeLeftAction(Action onSwipeLeftAction)
+    {
+        DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.LeftSwipeActions.Add(() => {
+                if (horizontalDraggableComponent.enabled)
+                {
+                    onSwipeLeftAction();
+                }
+            });
+        });
+    }
+
+    public void SetOnSwipeLeftEscapeZoneActions(
+        Action onSwipeLeftEscapeZoneEnterAction, Action onSwipeLeftEscapeZoneExitAction)
+    {
+        DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.LeftSwipeEscapeZoneEnterActions.Add(() => {
+                if (horizontalDraggableComponent.enabled)
+                {
+                    onSwipeLeftEscapeZoneEnterAction();
+                }
+            });
+            horizontalDraggableComponent.LeftSwipeEscapeZoneExitActions.Add(() => {
+                if (horizontalDraggableComponent.enabled)
+                {
+                    onSwipeLeftEscapeZoneExitAction();
+                }
+            });
+        });
+    }
+
+    public void SetOnSwipeRightAction(Action onSwipeRightAction)
+    {
+        DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.RightSwipeActions.Add(() => {
+                if (horizontalDraggableComponent.enabled)
+                {
+                    onSwipeRightAction();
+                }
+            });
+        });
+    }
+
+    public void SetOnSwipeRightEscapeZoneActions(
+        Action onSwipeRightEscapeZoneEnterAction, Action onSwipeRightEscapeZoneExitAction)
+    {
+        DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.RightSwipeEscapeZoneEnterActions.Add(() => {
+                if (horizontalDraggableComponent.enabled)
+                {
+                    onSwipeRightEscapeZoneEnterAction();
+                }
+            });
+            horizontalDraggableComponent.RightSwipeEscapeZoneExitActions.Add(() => {
+                if (horizontalDraggableComponent.enabled)
+                {
+                    onSwipeRightEscapeZoneExitAction();
                 }
             });
         });
@@ -37,24 +118,24 @@ public class InteractiveCombatCardComponent : MonoBehaviour
     public void EnableVerticalDraggableComponent()
     {
         DoOnValidDraggableComponents(() => {
-            VerticalDraggableComponent.enabled = true;
-            HorizontalDraggableComponent.enabled = false;
+            verticalDraggableComponent.enabled = true;
+            horizontalDraggableComponent.enabled = false;
         });
     }
 
     public void EnableHorizontalDraggableComponent()
     {
         DoOnValidDraggableComponents(() => {
-            HorizontalDraggableComponent.enabled = true;
-            VerticalDraggableComponent.enabled = false;
+            horizontalDraggableComponent.enabled = true;
+            verticalDraggableComponent.enabled = false;
         });
     }
 
     public void DisableDraggableComponents()
     {
         DoOnValidDraggableComponents(() => {
-            HorizontalDraggableComponent.enabled = false;
-            VerticalDraggableComponent.enabled = false;
+            horizontalDraggableComponent.enabled = false;
+            verticalDraggableComponent.enabled = false;
         });
     }
 }

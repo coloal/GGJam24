@@ -6,58 +6,58 @@ using UnityEngine;
 
 public class CombatCard : MonoBehaviour
 {
-    [SerializeField]
-    private SpriteRenderer BackgroundCombatSprite;
-    [SerializeField]
-    private SpriteRenderer CombatSprite;
+    [Header("Visual configurations")]
+    [SerializeField] private TextMeshPro nameOfCard;
+    [SerializeField] private TextMeshPro healthText;
+    [SerializeField] private SpriteRenderer backgroundCombatSprite;
+    [SerializeField] private SpriteRenderer combatSprite;
 
+    [Header("Overlay text configurations")]
+    [SerializeField] GameObject overlayTextContainer;
+    [SerializeField] TextMeshProUGUI overlayTextMesh;
+    [SerializeField] string leftSwipeWarningText;
+    [SerializeField] string rightSwipeWarningText;
+    [SerializeField] string topSwipeWarningText;
 
-    [SerializeField]
-    private List<SpriteRenderer> AttackPoints;
+    [Header("Combat stats configurations")]
+    [SerializeField] private List<SpriteRenderer> attackPoints;
+    [SerializeField] private List<SpriteRenderer> defensePoints;
 
-    [SerializeField]
-    private List<SpriteRenderer> DefensePoints;
+    [SerializeField] private List<SpriteRenderer> energyPoints;
 
-    [SerializeField]
-    private List<SpriteRenderer> EnergyPoints;
+    private int healthPoints;
+    private int damage = 0;
+    private int armor = 0;
+    private int energy = 0;
+    private int turns = 0;
+    private CombatTypes combatType;
 
-    [SerializeField] private TextMeshPro NameOfCard;
-    [SerializeField] private TextMeshPro HealthText;
-    //[SerializeField] private TextMeshProUGUI DialogText;
-
-    private int HealthPoints;
-    private int Damage = 0;
-    private int Armor = 0;
-    private int Energy = 0;
-    private int Turns = 0;
-    private CombatTypes CombatType;
-
-    private string InitialText;
-    private string EffectiveText;
-    private string NonEffectiveText;
+    private string initialText;
+    private string superEffectiveText;
+    private string notVeryEffectiveText;
 
     public void SetDataCard(CombatCardTemplate DataCard)
     {
-        BackgroundCombatSprite.sprite = DataCard.BackgroundSprite;
-        CombatSprite.sprite = DataCard.CardSprite;
+        backgroundCombatSprite.sprite = DataCard.BackgroundSprite;
+        combatSprite.sprite = DataCard.CardSprite;
 
-        NameOfCard.text = DataCard.NameOfCard;
-        HealthPoints = DataCard.HealthPoints;
-        Damage = DataCard.Damage;
-        Armor = DataCard.Armor;
-        Turns = DataCard.Turns;
-        Energy = CombatUtils.CalculateEnergy(Turns);
-        CombatType = DataCard.CombatType;
+        nameOfCard.text = DataCard.NameOfCard;
+        healthPoints = DataCard.HealthPoints;
+        damage = DataCard.Damage;
+        armor = DataCard.Armor;
+        turns = DataCard.Turns;
+        energy = CombatUtils.CalculateEnergy(turns);
+        combatType = DataCard.CombatType;
 
-        InitialText = DataCard.InitialText;
-        EffectiveText = DataCard.EffectiveText;
-        NonEffectiveText = DataCard.NonEffectiveText;
+        initialText = DataCard.InitialText;
+        superEffectiveText = DataCard.EffectiveText;
+        notVeryEffectiveText = DataCard.NonEffectiveText;
 
         //Encendemos los puntos de cada stat
-        SetStat(Damage, AttackPoints);
-        SetStat(Armor, DefensePoints);
-        SetStat(Energy, EnergyPoints);
-        HealthText.text = HealthPoints.ToString();
+        SetStat(damage, attackPoints);
+        SetStat(armor, defensePoints);
+        SetStat(energy, energyPoints);
+        healthText.text = healthPoints.ToString();
     }
 
     private void SetStat(int value, List<SpriteRenderer> sprites)
@@ -70,43 +70,66 @@ public class CombatCard : MonoBehaviour
 
     public void ReduceEnergy()
     {
-        Energy--;
-        EnergyPoints[Energy].enabled = false;
+        energy--;
+        energyPoints[energy].enabled = false;
     }
 
     public float GetCardWidth()
     {
-        return BackgroundCombatSprite.bounds.size.x;
+        return backgroundCombatSprite.bounds.size.x;
     }
 
     public CombatTypes GetCombatType()
     {
-        return CombatType;
+        return combatType;
     }
 
     public int GetDamage()
     {
-        return Damage;
+        return damage;
     }
 
     public int GetArmor()
     {
-        return Armor;
+        return armor;
     }
 
     public void ReduceHealthPoints(int PointsToReduce)
     {
-        HealthPoints = (HealthPoints - PointsToReduce) < 0 ? 0 : HealthPoints - PointsToReduce;
-        HealthText.text = HealthPoints.ToString();
+        healthPoints = (healthPoints - PointsToReduce) < 0 ? 0 : healthPoints - PointsToReduce;
+        healthText.text = healthPoints.ToString();
     }
 
     public int GetHealthPoints()
     {
-        return HealthPoints;
+        return healthPoints;
     }
 
     public int GetCardEnergy()
     {
-        return Energy;
+        return energy;
+    }
+
+    public void EnableTopSwipeWarningText()
+    {
+        overlayTextMesh.text = topSwipeWarningText;
+        overlayTextContainer.SetActive(true);
+    }
+
+    public void EnableLeftSwipeWarningText()
+    {
+        overlayTextMesh.text = leftSwipeWarningText;
+        overlayTextContainer.SetActive(true);
+    }
+
+    public void EnableRightSwipeWarningText()
+    {
+        overlayTextMesh.text = rightSwipeWarningText;
+        overlayTextContainer.SetActive(true);
+    }
+
+    public void DisableWarningText()
+    {
+        overlayTextContainer.SetActive(false);
     }
 }

@@ -913,15 +913,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a421d5658179b4ec0872df47c343e8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 100
-  MaxVelocity: 200
-  BrakeDistance: 10
-  EscapeDistance: 2
-  RotateDistance: 5
-  MaxArcRotation: 15
-  MaxFinalRotation: 30
-  FinalRotationVelocity: 10
-  EscapeAcceleration: 100
+  acceleration: 100
+  maxVelocity: 200
+  escapeZoneUpperLimitDistance: 3
+  escapeZoneLowerLimitDistance: 1.5
+  brakeDistance: 10
+  rotateDistance: 5
+  maxArcRotation: 15
+  maxFinalRotation: 30
+  finalRotationVelocity: 10
+  escapeAcceleration: 100
 --- !u!1 &4990159599200599031
 GameObject:
   m_ObjectHideFlags: 0

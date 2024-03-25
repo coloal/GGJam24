@@ -1311,12 +1311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b650ef1eaee4ae9bf4bdcbd5817b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCardOrigin: {fileID: 332947331}
-  PlayerCardsOrigin: {fileID: 1444337251}
-  PlayerCardsHorizontalOffset: 1
-  AttackerCardOrigin: {fileID: 78562894}
-  DebugEnemyCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
-  DebugEnemyCombatCardTemplate: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
+  enemyCardOrigin: {fileID: 332947331}
+  playerCardsOrigin: {fileID: 1444337251}
+  playerCardsHorizontalOffset: 3
+  attackerCardOrigin: {fileID: 78562894}
+  debugEnemyCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
+  debugEnemyCombatCardTemplate: {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
 --- !u!1 &1641306731
 GameObject:
   m_ObjectHideFlags: 0
