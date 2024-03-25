@@ -15,21 +15,27 @@ MonoBehaviour:
   Zones:
   - FMODEvent: 0
     zone: 0
-    Acordeonista: 0.8
-    Bajista: 0.8
-    Cavaquinhista: 0.8
-    Epic: 0
-    Fight: 0
-    Flautista: 0
-    Percusionista: 0.8
-    Zapato: 0
+    soundActions:
+    - SoundTag: 0
+      NewValue: 0.8
+    - SoundTag: 1
+      NewValue: 0.8
+    - SoundTag: 2
+      NewValue: 0.8
+    - SoundTag: 3
+      NewValue: 0.8
+    - SoundTag: 4
+      NewValue: 0.8
   - FMODEvent: 0
     zone: 1
-    Acordeonista: 0.6
-    Bajista: 0.6
-    Cavaquinhista: 0.6
-    Epic: 0.8
-    Fight: 0
-    Flautista: 0
-    Percusionista: 0.6
-    Zapato: 1
+    soundActions:
+    - SoundTag: 0
+      NewValue: 0.6
+    - SoundTag: 1
+      NewValue: 0.6
+    - SoundTag: 2
+      NewValue: 0.6
+    - SoundTag: 3
+      NewValue: 0.6
+    - SoundTag: 4
+      NewValue: 0.6

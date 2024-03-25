@@ -28,7 +28,7 @@ MonoBehaviour:
   - rid: 2383942886125993989
   - rid: 2383942886125993991
   - rid: 2383942973646962688
-  - rid: 2383942973646962689
+  - rid: 2383942973646962690
   connections:
   - outputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
@@ -133,12 +133,6 @@ MonoBehaviour:
       nodeId: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
       portIndex: 1
   - outputPort:
-      nodeId: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
-      portIndex: 0
-    inputPort:
-      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
-      portIndex: 2
-  - outputPort:
       nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
       portIndex: 0
     inputPort:
@@ -148,10 +142,16 @@ MonoBehaviour:
       nodeId: 9b114906-a0bc-4dcd-b0ff-ece9f6eb5489
       portIndex: 0
     inputPort:
-      nodeId: 162ae644-3de8-41a2-8090-e5a8cc0c955a
+      nodeId: 24732f11-cce2-4ce4-8f76-1643697a3cc9
       portIndex: 1
   - outputPort:
-      nodeId: 162ae644-3de8-41a2-8090-e5a8cc0c955a
+      nodeId: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
+      portIndex: 0
+    inputPort:
+      nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
+      portIndex: 2
+  - outputPort:
+      nodeId: 24732f11-cce2-4ce4-8f76-1643697a3cc9
       portIndex: 0
     inputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
@@ -179,8 +179,8 @@ MonoBehaviour:
         guid: 5334724c-62a3-427d-a934-7821ca0eed82
         position:
           serializedVersion: 2
-          x: 648
-          y: 18
+          x: 736
+          y: 15
           width: 212
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -412,20 +412,18 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: 1
-    - rid: 2383942973646962689
-      type: {class: SoundActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+    - rid: 2383942973646962690
+      type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 162ae644-3de8-41a2-8090-e5a8cc0c955a
+        guid: 24732f11-cce2-4ce4-8f76-1643697a3cc9
         position:
           serializedVersion: 2
-          x: 1611
-          y: -49
-          width: 231
-          height: 136
-        typeName: CodeGraph.SoundActionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          x: 1577
+          y: 7
+          width: 232
+          height: 98
+        typeName: CodeGraph.ZoneSoundNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Next
-        Parameters:
-          SoundTag: 5
-          NewValue: 1
+        NewZone: 0

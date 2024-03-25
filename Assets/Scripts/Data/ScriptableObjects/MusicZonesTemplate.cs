@@ -23,6 +23,10 @@ public class ZoneSoundValues
 {
     public SoundEvent FMODEvent;
     public MusicZones zone;
+    
+    public List<SoundAction> soundActions;
+
+    /*
     public float Acordeonista;
     public float Bajista;
     public float Cavaquinhista;
@@ -31,5 +35,5 @@ public class ZoneSoundValues
     public float Flautista;
     public float Percusionista;
     public float Zapato;
-
+    */
 }

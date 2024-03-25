@@ -7,10 +7,12 @@ public enum BrainSoundTag
     Acordeonista,
     Bajista,
     Cavaquinhista,
-    Epic,
-    Fight,
     Flautista,
     Percusionista,
+    ApagarHogera,
+    VolumenHoguera,
+    Epic,
+    Fight,
     Zapato
     
 }

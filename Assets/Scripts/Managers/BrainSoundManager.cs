@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BrainSoundManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BrainSoundManager : MonoBehaviour
 
     /***** PARAMETERS *****/
     [SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
+    [SerializeField] private string CampfireEventPath = "event:/Settlement";
     [SerializeField] private string CombatEventPath;
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float Speed = 0.2f;
@@ -29,6 +31,7 @@ public class BrainSoundManager : MonoBehaviour
     //List<> zones
 
     private FMOD.Studio.EventInstance StoryInstance;
+    private FMOD.Studio.EventInstance CampfireInstance;
     private FMOD.Studio.EventInstance CombatInstance;
 
     /***** INITIALIZE *****/
@@ -37,6 +40,7 @@ public class BrainSoundManager : MonoBehaviour
         InitializeData();
 
         StoryInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
+        CampfireInstance = FMODUnity.RuntimeManager.CreateInstance(CampfireEventPath);
     }
 
     void InitializeData()
@@ -114,8 +118,20 @@ public class BrainSoundManager : MonoBehaviour
             else
             {
                 //GetActualEventInstance().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                //*
+                 if (zone == MusicZones.Campfire)
+                {
+                    TurnOnCampfire();
+
+                }
+                else if (ActualZone == MusicZones.Campfire)
+                {
+                    TurnOffCampfire();
+                }/**/
+
                 ActualZone = zone;
                 SetZoneParameters(ActualEvent, ActualZone);
+                
                 //GetActualEventInstance().start();
             }
 
@@ -148,6 +164,13 @@ public class BrainSoundManager : MonoBehaviour
 
         //Se podria optimizar con los valores en una lista en vez de en float diferentes ?? 
 
+        for (int i = 0; i < ZoneSoundsMap[zone].soundActions.Count; i++)
+        {
+            GetActualEventInstance().setParameterByName(ZoneSoundsMap[zone].soundActions[i].SoundTag.ToString(),
+                ZoneSoundsMap[zone].soundActions[i].NewValue);
+        }
+
+        /*
         GetActualEventInstance().setParameterByName("Acordeonista", ZoneSoundsMap[zone].Acordeonista);
         GetActualEventInstance().setParameterByName("Bajista", ZoneSoundsMap[zone].Bajista);
         GetActualEventInstance().setParameterByName("Cavaquinhista", ZoneSoundsMap[zone].Cavaquinhista);
@@ -156,7 +179,7 @@ public class BrainSoundManager : MonoBehaviour
         GetActualEventInstance().setParameterByName("Flautista", ZoneSoundsMap[zone].Flautista);
         GetActualEventInstance().setParameterByName("Percusionista", ZoneSoundsMap[zone].Percusionista);
         GetActualEventInstance().setParameterByName("Zapato", ZoneSoundsMap[zone].Zapato);
-
+        */
     }
 
 
@@ -190,5 +213,23 @@ public class BrainSoundManager : MonoBehaviour
 
         Debug.LogError("El evento" + Event.ToString() + " de FMOD no esta configurado");
         return new EventInstance();
+    }
+
+    private void TurnOnCampfire(float volume = 1)
+    {
+        CampfireInstance.setParameterByName(BrainSoundTag.VolumenHoguera.ToString(), volume);
+        CampfireInstance.start();
+    }
+
+    private void TurnOffCampfire()
+    {
+        CampfireInstance.setParameterByName(BrainSoundTag.ApagarHogera.ToString(), 1);
+        //GameUtils.createTemporizer(() => StopCampfire(), 1f, this);
+
+    }
+
+    public void StopCampfire()
+    {
+        CampfireInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
