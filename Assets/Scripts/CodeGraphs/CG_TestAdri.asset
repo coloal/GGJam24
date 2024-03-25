@@ -29,6 +29,8 @@ MonoBehaviour:
   - rid: 2383942886125993991
   - rid: 2383942973646962688
   - rid: 2383942973646962690
+  - rid: 2383942997231534080
+  - rid: 2383942997231534081
   connections:
   - outputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
@@ -60,12 +62,6 @@ MonoBehaviour:
     inputPort:
       nodeId: d0b49f3f-8fbc-4207-b17d-5d92a5085bd7
       portIndex: 2
-  - outputPort:
-      nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
-      portIndex: 1
-    inputPort:
-      nodeId: e38bd489-7eac-4628-8de2-a15878bfacfb
-      portIndex: 1
   - outputPort:
       nodeId: 5334724c-62a3-427d-a934-7821ca0eed82
       portIndex: 1
@@ -155,6 +151,24 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
+      portIndex: 2
+  - outputPort:
+      nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
+      portIndex: 1
+    inputPort:
+      nodeId: 2f793910-2b0c-402f-b2d4-48e69c6007cb
+      portIndex: 1
+  - outputPort:
+      nodeId: 2f793910-2b0c-402f-b2d4-48e69c6007cb
+      portIndex: 0
+    inputPort:
+      nodeId: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
+      portIndex: 1
+  - outputPort:
+      nodeId: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
+      portIndex: 0
+    inputPort:
+      nodeId: bfbaa049-8e62-4788-9462-406f507ffa0f
       portIndex: 2
   references:
     version: 2
@@ -427,3 +441,35 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: 0
+    - rid: 2383942997231534080
+      type: {class: SoundActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
+        position:
+          serializedVersion: 2
+          x: 471
+          y: 302
+          width: 244
+          height: 135
+        typeName: CodeGraph.SoundActionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        Parameters:
+          SoundTag: Acordeonista
+          NewValue: 0.8
+    - rid: 2383942997231534081
+      type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2f793910-2b0c-402f-b2d4-48e69c6007cb
+        position:
+          serializedVersion: 2
+          x: 235
+          y: 304
+          width: 193
+          height: 98
+        typeName: CodeGraph.ZoneSoundNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: 2

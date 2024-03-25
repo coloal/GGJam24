@@ -29,7 +29,7 @@ public class BrainAction
 [System.Serializable]
 public class SoundAction
 {
-    public BrainSoundTag SoundTag;
+    public string SoundTag;
     public float NewValue;
 }
 

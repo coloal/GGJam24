@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class BrainSoundManager : MonoBehaviour
 {
-    //TODO: nuevos nodos de sonido / pasar a lista ordenada los intrumentos y que no esten tan hardcode
-    //TODO: probar / multiplicador de numero de integrantes
+    //TODO:Refactor brainSoundTag
+    // Metodos start combat y end combat
+    // ejemplo para para SoundAction en el metodo setParameters
+
 
 
     /***** PARAMETERS *****/
@@ -24,7 +27,7 @@ public class BrainSoundManager : MonoBehaviour
 
     /***** DATA *****/
 
-    private Dictionary<BrainSoundTag, float> SoundsMap;
+    private Dictionary<string, float> SoundsMap;
     private Dictionary<MusicZones, ZoneSoundValues> ZoneSoundsMap;
 
     private List<SoundAction> PendingActions;
@@ -48,13 +51,25 @@ public class BrainSoundManager : MonoBehaviour
     {
         if (SoundsMap == null)
         {
-            SoundsMap = new Dictionary<BrainSoundTag, float>();
-            foreach (BrainSoundTag tag in Enum.GetValues(typeof(BrainSoundTag)))
+            SoundsMap = new Dictionary<string, float>();
+
+            SoundsMap.Add(BrainSoundTag.Acordeonista, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Bajista, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Cavaquinhista, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Flautista, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Percusionista, 0.0f);
+            SoundsMap.Add(BrainSoundTag.ApagarHoguera, 0.0f);
+            SoundsMap.Add(BrainSoundTag.VolumenHoguera, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Epic, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Fight, 0.0f);
+            SoundsMap.Add(BrainSoundTag.Zapato, 0.0f);
+
+            /*foreach (BrainSoundTag tag in Enum.GetValues(typeof(BrainSoundTag)))
             {
                 float DefaultValue = 0.0f;
                 StoryInstance.getParameterByName(tag.ToString(), out DefaultValue);
                 SoundsMap.Add(tag, DefaultValue);
-            }
+            }*/
         }
 
         if (ZoneSoundsMap == null)
@@ -124,6 +139,7 @@ public class BrainSoundManager : MonoBehaviour
                 {
                     TurnOnCampfire();
 
+
                 }
                 else if (ActualZone == MusicZones.Campfire)
                 {
@@ -148,40 +164,39 @@ public class BrainSoundManager : MonoBehaviour
         PendingActions.Add(Action);
     }
 
-    public void SetStorySound(BrainSoundTag tag, float NewValue)
+    public void SetStorySound(string tag, float NewValue)
     {
         SoundsMap[tag] = NewValue;
         StoryInstance.setParameterByName(tag.ToString(), NewValue);
     }
 
-    public float GetSound(BrainSoundTag tag)
+    public float GetSound(string tag)
     {
         return SoundsMap[tag];
     }
 
     private void SetZoneParameters(SoundEvent Event, MusicZones zone)
     {
-        //Example line:
-        //GetActualEventInstance().setParameterByName("", ZoneSoundsMap[zone].);
-
-        //Se podria optimizar con los valores en una lista en vez de en float diferentes ?? 
-
-        for (int i = 0; i < ZoneSoundsMap[zone].soundActions.Count; i++)
-        {
-            GetActualEventInstance().setParameterByName(ZoneSoundsMap[zone].soundActions[i].SoundTag.ToString(),
-                ZoneSoundsMap[zone].soundActions[i].NewValue);
-        }
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Acordeonista, ZoneSoundsMap[zone].Acordeonista);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Bajista, ZoneSoundsMap[zone].Bajista);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Cavaquinhista, ZoneSoundsMap[zone].Cavaquinhista);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Flautista, ZoneSoundsMap[zone].Flautista);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Percusionista, ZoneSoundsMap[zone].Percusionista);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.ApagarHoguera, ZoneSoundsMap[zone].ApagarHoguera);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.VolumenHoguera, ZoneSoundsMap[zone].VolumenHoguera);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Epic, ZoneSoundsMap[zone].Epic);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Fight, ZoneSoundsMap[zone].Fight);
+        GetActualEventInstance().setParameterByName(BrainSoundTag.Zapato, ZoneSoundsMap[zone].Zapato);
 
         /*
-        GetActualEventInstance().setParameterByName("Acordeonista", ZoneSoundsMap[zone].Acordeonista);
-        GetActualEventInstance().setParameterByName("Bajista", ZoneSoundsMap[zone].Bajista);
-        GetActualEventInstance().setParameterByName("Cavaquinhista", ZoneSoundsMap[zone].Cavaquinhista);
-        GetActualEventInstance().setParameterByName("Epic", ZoneSoundsMap[zone].Epic);
-        GetActualEventInstance().setParameterByName("Fight", ZoneSoundsMap[zone].Fight);
-        GetActualEventInstance().setParameterByName("Flautista", ZoneSoundsMap[zone].Flautista);
-        GetActualEventInstance().setParameterByName("Percusionista", ZoneSoundsMap[zone].Percusionista);
-        GetActualEventInstance().setParameterByName("Zapato", ZoneSoundsMap[zone].Zapato);
-        */
+        Para parametros que sean sound Actions:
+        if(SoundsMap[BrainSoundTag.Zapato] != 0)
+        {
+            GetActualEventInstance().setParameterByName(BrainSoundTag.Zapato, SoundsMap[BrainSoundTag.Zapato]);    
+        }
+
+         */
+
     }
 
 
@@ -225,8 +240,8 @@ public class BrainSoundManager : MonoBehaviour
 
     private void TurnOffCampfire()
     {
-        CampfireInstance.setParameterByName(BrainSoundTag.ApagarHogera.ToString(), 1);
-        //GameUtils.createTemporizer(() => StopCampfire(), 1f, this);
+        CampfireInstance.setParameterByName(BrainSoundTag.ApagarHoguera.ToString(), 1);
+        GameUtils.createTemporizer(() => StopCampfire(), 1f, this);
 
     }
 
