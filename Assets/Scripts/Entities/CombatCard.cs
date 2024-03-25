@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class    CombatCard : MonoBehaviour
+public class CombatCard : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer BackgroundCombatSprite;

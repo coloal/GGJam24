@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 4256447019006546249}
   - component: {fileID: 5411388172794972099}
   m_Layer: 0
-  m_Name: CardPrefab
+  m_Name: StoryCardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
   Acceleration: 100
   MaxVelocity: 200
   BrakeDistance: 10
-  EscapeDistance: 5
+  EscapeDistance: 2
   RotateDistance: 5
   MaxArcRotation: 15
   MaxFinalRotation: 30

@@ -829,6 +829,7 @@ GameObject:
   - component: {fileID: 4385715541035092019}
   - component: {fileID: 6146736266690828701}
   - component: {fileID: 7100817756676060463}
+  - component: {fileID: 4082083330158380480}
   m_Layer: 0
   m_Name: CombatCard
   m_TagString: Untagged
@@ -910,8 +911,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2960121501592178493}
-  m_BodyType: 0
-  m_Simulated: 1
+  m_BodyType: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -926,7 +927,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &7754520879933252307
@@ -965,8 +966,8 @@ MonoBehaviour:
   acceleration: 500
   maxVelocity: 500
   brakeDistance: 50
-  EscapeAcceleration: 100
-  TopSwipeLimitOffset: 2
+  escapeAcceleration: 100
+  escapeDistance: 0.5
 --- !u!114 &4385715541035092019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1044,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619f42c61fa604b26a9054d790ca2383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4082083330158380480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960121501592178493}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a421d5658179b4ec0872df47c343e8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 100
+  maxVelocity: 200
+  brakeDistance: 10
+  escapeDistance: 5
+  rotateDistance: 5
+  maxArcRotation: 15
+  maxFinalRotation: 30
+  finalRotationVelocity: 10
+  escapeAcceleration: 100
 --- !u!1 &3224871603375664720
 GameObject:
   m_ObjectHideFlags: 0

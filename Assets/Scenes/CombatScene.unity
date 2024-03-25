@@ -867,55 +867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8877cf02275472aa391b873ecd3d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds:
-  - Name: MenuBGM
-    AudioClip: {fileID: 8300000, guid: 12ca76c66c70a4c7d9ccce116f5a37bc, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 1
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: GameBGM
-    AudioClip: {fileID: 8300000, guid: a6a0c61011f2b403ab5edcfc956e442d, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 1
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: PositiveFinal
-    AudioClip: {fileID: 8300000, guid: 01f4fb951739e8244a33fb32259f266e, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: NegativeFinal
-    AudioClip: {fileID: 8300000, guid: 2ce1798f04c03da48b32b09ed3e41fb2, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 1
-  - Name: PickPhone
-    AudioClip: {fileID: 8300000, guid: c65ecddb8425f8a468f52c0911d92ffb, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 0
-  - Name: StartGame
-    AudioClip: {fileID: 8300000, guid: 26df4e483d3157940bc1e5b9d55cb576, type: 3}
-    Volume: 0.55
-    Pitch: 1
-    Loop: 0
-    AudioSource: {fileID: 0}
-    IsPlaying: 0
-    IsBGM: 0
 --- !u!4 &1071831505
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,7 +1317,6 @@ MonoBehaviour:
   AttackerCardOrigin: {fileID: 78562894}
   DebugEnemyCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
   DebugEnemyCombatCardTemplate: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
-  DebugActionButtons: {fileID: 447074352}
 --- !u!1 &1641306731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,10 +1377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9e19440bdb741d19a8ac3f7f6459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioManager: {fileID: 0}
   TurnManager: {fileID: 0}
   CardsManager: {fileID: 0}
   EndManager: {fileID: 0}
   BrainManager: {fileID: 0}
+  BrainSoundManager: {fileID: 0}
   StoryManager: {fileID: 0}
   PartyManager: {fileID: 2141232687}
 --- !u!4 &1738950013

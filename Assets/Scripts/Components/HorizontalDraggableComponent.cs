@@ -7,50 +7,38 @@ using UnityEngine.InputSystem;
 
 public class HorizontalDraggableComponent : MonoBehaviour
 {   
-    [SerializeField] private float Acceleration = 0.3f;
-    [SerializeField] private float MaxVelocity = 3;
+    [SerializeField] private float acceleration = 0.3f;
+    [SerializeField] private float maxVelocity = 3;
 
-    [SerializeField] float BrakeDistance = 10;
-    [SerializeField] float EscapeDistance = 5;
-    [SerializeField] float RotateDistance = 5;
-    [SerializeField] float MaxArcRotation = 15;
-    [SerializeField] float MaxFinalRotation = 30;
-    [SerializeField] float FinalRotationVelocity = 10;
-    [SerializeField] float EscapeAcceleration = 100;
-    bool IsActive = true;
-    float Velocity = 0;
-    Vector2 MousePosition = Vector2.zero;
-    Vector2 ClickedPosition = Vector2.zero;
-    bool IsMouseClickPressed = false;
-    bool IsInLimit = false;
-    DraggableStates CurrentState = DraggableStates.PLAY_STATE;
-    List<Action> mLeftSwipeActions;
-    List<Action> mRigthtSwipeActions;
+    [SerializeField] float brakeDistance = 10;
+    [SerializeField] float escapeDistance = 5;
+    [SerializeField] float rotateDistance = 5;
+    [SerializeField] float maxArcRotation = 15;
+    [SerializeField] float maxFinalRotation = 30;
+    [SerializeField] float finalRotationVelocity = 10;
+    [SerializeField] float escapeAcceleration = 100;
+    bool isActive = true;
+    float velocity = 0;
+    Vector2 mousePosition = Vector2.zero;
+    Vector2 clickedPosition = Vector2.zero;
+    bool isMouseClickPressed = false;
+    List<Action> leftSwipeActions;
+    List<Action> rigthtSwipeActions;
     
-    public List<Action> RightSwipeActions => mRigthtSwipeActions;
-    public List<Action> LeftSwipeActions => mLeftSwipeActions;
+    public List<Action> RightSwipeActions => rigthtSwipeActions;
+    public List<Action> LeftSwipeActions => leftSwipeActions;
 
-    Vector2 InitialPosition;
+    Vector2 initialPosition;
 
-    Vector2 GameObjectMidPoint;
+    void OnEnable()
+    {
+        initialPosition = transform.position;
+    }
 
     void Awake()
     {
-        SpriteRenderer SpriteRendererComponent = GetComponent<SpriteRenderer>();
-        if (SpriteRendererComponent)
-        {
-            GameObjectMidPoint = new Vector2(
-                transform.position.x + SpriteRendererComponent.bounds.size.x / 2,
-                transform.position.y + SpriteRendererComponent.bounds.size.y / 2
-            );
-        }
-    }
-
-    void Start()
-    {
-        InitialPosition = transform.position;
-        mLeftSwipeActions = new List<Action>();
-        mRigthtSwipeActions = new List<Action>();
+        leftSwipeActions = new List<Action>();
+        rigthtSwipeActions = new List<Action>();
     }
 
     void Update()
@@ -60,111 +48,110 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     void HorizontalTick()
     {
-        Vector2 TargetPosition = CalculateHorizontalTargetPosition();
-        float Distance = MathF.Abs(transform.position.x - TargetPosition.x);
-        float Velocity = CalculateActualVelocity(TargetPosition, Distance);
+        Vector2 targetPosition = CalculateHorizontalTargetPosition();
+        float distance = MathF.Abs(transform.position.x - targetPosition.x);
+        float velocity = CalculateActualVelocity(targetPosition, distance);
 
-        // It's swipping right
-        if (transform.position.x >= GameObjectMidPoint.x + EscapeDistance)
+        // It's on right swipe limit
+        if (transform.position.x >= initialPosition.x + escapeDistance)
         {
-            if (TargetPosition.x > transform.position.x)
+            if (targetPosition.x > transform.position.x)
             {
-                float TargetRotation = -Mathf.Lerp(MaxArcRotation, MaxFinalRotation, Distance / RotateDistance);
-                if (-FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z <= TargetRotation + 360)
+                float TargetRotation = -Mathf.Lerp(maxArcRotation, maxFinalRotation, distance / rotateDistance);
+                if (-finalRotationVelocity * Time.deltaTime + transform.eulerAngles.z <= TargetRotation + 360)
                 {
                     transform.eulerAngles = new Vector3(0.0f, 0.0f, TargetRotation);
                 }
                 else
                 {
-                    transform.eulerAngles = new Vector3(0.0f, 0.0f, -FinalRotationVelocity) * Time.deltaTime;
+                    transform.eulerAngles += new Vector3(0.0f, 0.0f, -finalRotationVelocity) * Time.deltaTime;
                 }
-
-                Velocity = Mathf.Min(0, Velocity);
-                this.Velocity = Mathf.Min(0, this.Velocity);
             }
+
+            velocity = Mathf.Min(0, velocity);
+            this.velocity = Mathf.Min(0, this.velocity);
         }
-        // It's swipping left
-        else if (transform.position.x < GameObjectMidPoint.x - EscapeDistance)
+        // It's on left swipe limit
+        else if (transform.position.x <= initialPosition.x - escapeDistance)
         {
-            if (TargetPosition.x < transform.position.x)
+            if (targetPosition.x < transform.position.x)
             {
-                float TargetRotation = Mathf.Lerp(MaxArcRotation, MaxFinalRotation, Distance / RotateDistance);
-                if (FinalRotationVelocity * Time.deltaTime + transform.eulerAngles.z >= TargetRotation)
+                float TargetRotation = Mathf.Lerp(maxArcRotation, maxFinalRotation, distance / rotateDistance);
+                if (finalRotationVelocity * Time.deltaTime + transform.eulerAngles.z >= TargetRotation)
                 {
                     transform.eulerAngles = new Vector3(0.0f, 0.0f, TargetRotation);
                 }
                 else
                 {
-                    transform.eulerAngles = new Vector3(0.0f, 0.0f, FinalRotationVelocity) * Time.deltaTime;
+                    transform.eulerAngles += new Vector3(0.0f, 0.0f, finalRotationVelocity) * Time.deltaTime;
                 }
             }
 
-            Velocity = Mathf.Max(0, Velocity);
-            this.Velocity = Mathf.Max(0, this.Velocity);
+            velocity = Mathf.Max(0, velocity);
+            this.velocity = Mathf.Max(0, this.velocity);
         }
         else
         {
-            float TotalDistance = GameObjectMidPoint.x + EscapeDistance - InitialPosition.x;
-            float AlreadyTraveledDistance = transform.position.x - InitialPosition.x;
+            float totalDistance = escapeDistance;
+            float alreadyTraveledDistance = transform.position.x - initialPosition.x;
 
-            if (AlreadyTraveledDistance > 0.0f)
+            if (alreadyTraveledDistance > 0.0f)
             {
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, -Mathf.Lerp(0.0f, MaxArcRotation, AlreadyTraveledDistance / TotalDistance));
+                transform.eulerAngles = new Vector3(0.0f, 0.0f, -Mathf.Lerp(0.0f, maxArcRotation, alreadyTraveledDistance / totalDistance));
             }
             else
             {
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, Mathf.Lerp(0.0f, MaxArcRotation, AlreadyTraveledDistance / -TotalDistance));
+                transform.eulerAngles = new Vector3(0.0f, 0.0f, Mathf.Lerp(0.0f, maxArcRotation, alreadyTraveledDistance / -totalDistance));
             }
         }
 
-        transform.Translate(new Vector2(Velocity * Time.deltaTime, 0.0f));
-        if (transform.position.y > InitialPosition.y)
+        transform.Translate(new Vector2(velocity * Time.deltaTime, 0.0f));
+        if (transform.position.y > initialPosition.y)
         {
-            transform.position = new Vector2(transform.position.x, InitialPosition.y);
+            transform.position = new Vector2(transform.position.x, initialPosition.y);
         }
     }
 
     float CalculateActualVelocity(Vector2 TargetPosition, float Distance)
     {
-        float MovementDirection = Mathf.Sign(TargetPosition.x - transform.position.x);
-        float ActualMaxVelocity = Distance > BrakeDistance ? MaxVelocity : Mathf.Lerp(0, MaxVelocity, Distance / BrakeDistance);
+        float movementDirection = Mathf.Sign(TargetPosition.x - transform.position.x);
+        float actualMaxVelocity = Distance > brakeDistance ? maxVelocity : Mathf.Lerp(0, maxVelocity, Distance / brakeDistance);
 
-        MovementDirection *= Acceleration;
-        Velocity += MovementDirection * Time.deltaTime;
-        Velocity = Mathf.Abs(Velocity) > ActualMaxVelocity ? Mathf.Sign(Velocity) * ActualMaxVelocity : Velocity;
+        movementDirection *= acceleration;
+        velocity += movementDirection * Time.deltaTime;
+        velocity = Mathf.Abs(velocity) > actualMaxVelocity ? Mathf.Sign(velocity) * actualMaxVelocity : velocity;
 
-        return Velocity;
+        return velocity;
     }
 
     Vector2 CalculateHorizontalTargetPosition()
     {
-        Vector2 TargetPosition = IsMouseClickPressed ? MousePosition - ClickedPosition : InitialPosition;
-        return TargetPosition + InitialPosition;
+        Vector2 targetPosition = isMouseClickPressed ? mousePosition - clickedPosition : Vector2.zero;
+        return targetPosition + initialPosition;
     }
 
     void OnLeftClick()
     {
-        BoxCollider2D BoxCollider2DComponent = GetComponent<BoxCollider2D>();
-        if (BoxCollider2DComponent && BoxCollider2DComponent.bounds.Contains(MousePosition))
+        BoxCollider2D boxCollider2DComponent = GetComponent<BoxCollider2D>();
+        if (boxCollider2DComponent && boxCollider2DComponent.bounds.Contains(mousePosition))
         {
-            IsMouseClickPressed = true;
-            ClickedPosition = MousePosition;
+            isMouseClickPressed = true;
+            clickedPosition = mousePosition;
         }
     }
 
     void OnLeftRelease()
     {
-        IsMouseClickPressed = false;
-        if (Mathf.Sign(Velocity) == Mathf.Sign(transform.position.x - InitialPosition.x)|| Mathf.Abs(Velocity) < 0.5)
+        isMouseClickPressed = false;
+        if (enabled && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x) || Mathf.Abs(velocity) < 0.5))
         {
             // It's swipping right
-            if (Mathf.Sign(transform.position.x - InitialPosition.x) > 0)
+            if (Mathf.Sign(transform.position.x - initialPosition.x) > 0)
             {
-                bool HasPassedEscapeDistance = transform.position.x >= GameObjectMidPoint.x + EscapeDistance;
+                bool HasPassedEscapeDistance = transform.position.x >= initialPosition.x + escapeDistance;
                 if (HasPassedEscapeDistance)
                 {
-                    Debug.Log("On Swipe Right!");
-                    foreach (Action RightSwipeAction in mRigthtSwipeActions)
+                    foreach (Action RightSwipeAction in rigthtSwipeActions)
                     {
                         RightSwipeAction();
                     }   
@@ -173,11 +160,10 @@ public class HorizontalDraggableComponent : MonoBehaviour
             // It's swipping left
             else
             {
-                bool HasPassedEscapeDistance = transform.position.x < GameObjectMidPoint.x - EscapeDistance;
+                bool HasPassedEscapeDistance = transform.position.x < initialPosition.x - escapeDistance;
                 if (HasPassedEscapeDistance)
                 {
-                    Debug.Log("On Swipe Left!");
-                    foreach (Action LeftSwipeAction in mRigthtSwipeActions)
+                    foreach (Action LeftSwipeAction in leftSwipeActions)
                     {
                         LeftSwipeAction();
                     }    
@@ -188,6 +174,6 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     void OnMouseMove(InputValue Value)
     {
-        MousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
+        mousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
     }
 }

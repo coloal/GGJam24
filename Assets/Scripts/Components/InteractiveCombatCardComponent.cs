@@ -6,12 +6,12 @@ using UnityEngine;
 public class InteractiveCombatCardComponent : MonoBehaviour
 {
     private VerticalDraggableComponent VerticalDraggableComponent;
-    private DraggableComponent HorizontalDraggableComponent;
+    private HorizontalDraggableComponent HorizontalDraggableComponent;
 
     void Awake()
     {
         VerticalDraggableComponent = GetComponent<VerticalDraggableComponent>();
-        HorizontalDraggableComponent = GetComponent<DraggableComponent>();
+        HorizontalDraggableComponent = GetComponent<HorizontalDraggableComponent>();
     }
 
     void DoOnValidDraggableComponents(Action Lambda)
