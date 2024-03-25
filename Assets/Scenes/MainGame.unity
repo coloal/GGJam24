@@ -259,9 +259,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoryEventPath: event:/MaquetaAudioLeve
+  CampfireEventPath: event:/Settlement
   CombatEventPath: 
+  GameOverEventPath: event:/GameOver
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
-  Speed: 0.2
+  SpeedFadeIn: 0.2
 --- !u!4 &179863778
 Transform:
   m_ObjectHideFlags: 0
@@ -271,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 179863776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31314078, y: -0.4988591, z: 0.013886644}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2553,7 +2555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: e22f3f6c77218514daabe35e526cb5ce, type: 2}
+  FirstStory: {fileID: 11400000, guid: 636901b1de0264d4a993050a5f2a563a, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0

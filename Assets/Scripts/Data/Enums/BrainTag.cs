@@ -39,5 +39,4 @@ public enum BrainTagType
     Bool,
     Numeric, 
     State,
-    Combat
 }

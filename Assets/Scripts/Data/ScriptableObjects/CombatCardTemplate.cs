@@ -31,4 +31,6 @@ public class CombatCardTemplate : ScriptableObject
     public int Turns = 0;
     public CombatTypes CombatType;
 
+    //Instrument associated
+    public string Instrument;
 }

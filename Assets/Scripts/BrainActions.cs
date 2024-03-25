@@ -29,8 +29,18 @@ public class BrainAction
 [System.Serializable]
 public class SoundAction
 {
-    public BrainSoundTag SoundTag;
+    public string SoundTag;
     public float NewValue;
+}
+
+[System.Serializable]
+public class SoundTypeCard
+{
+    public SoundAction MoneySoundAction;
+
+    public SoundAction ViolenceSoundAction;
+
+    public SoundAction InfluenceSoundAction;
 }
 
 

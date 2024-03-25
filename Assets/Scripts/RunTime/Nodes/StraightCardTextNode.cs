@@ -12,12 +12,15 @@ namespace CodeGraph
     {
 
         [ExposedProperty()]
+        [TextArea(3, 3)]
         public string CardText;
 
         [ExposedProperty()]
+        [TextArea(1, 1)]
         public string LeftText;
 
         [ExposedProperty()]
+        [TextArea(1, 1)]
         public string RightText;
 
         [ExposedProperty()]
@@ -29,9 +32,9 @@ namespace CodeGraph
             if(this.card != null)
             {
                 StoryCardTemplate cardcopy = Object.Instantiate(this.card);
-                cardcopy.Background = CardText;
-                cardcopy.LeftText = this.LeftText;
-                cardcopy.RightText = this.RightText;
+                cardcopy.Background = CardText.Replace("\n", " ").Replace("///", "\n"); 
+                cardcopy.LeftText = LeftText.Replace("\n", " ").Replace("///", "\n"); 
+                cardcopy.RightText = RightText.Replace("\n", " ").Replace("///", "\n"); 
                 stepInfo = new StoryStep(cardcopy);
             }
             else
