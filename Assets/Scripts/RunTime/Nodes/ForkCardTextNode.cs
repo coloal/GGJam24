@@ -42,7 +42,7 @@ namespace CodeGraph
                 StoryCardTemplate copiedcard = Object.Instantiate(card);
                 copiedcard.Background = CardText.Replace("\n", " ").Replace("///", "\n");
                 copiedcard.LeftText = LeftText.Replace("\n", " ").Replace("///", "\n"); 
-                copiedcard.RightText = RightText.Replace("\n", " ").Replace("///", "\n"));
+                copiedcard.RightText = RightText.Replace("\n", " ").Replace("///", "\n");
                 stepInfo = new StoryStep(copiedcard);
             }
             else
