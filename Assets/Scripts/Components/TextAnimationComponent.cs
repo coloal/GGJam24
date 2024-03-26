@@ -11,16 +11,15 @@ public class TextAnimationComponent : MonoBehaviour
 
     public void PlayTypewriterAnimation(TextMeshProUGUI textMesh, string text)
     {
+        float animationDelay = perCharTimeDelay;
         textMesh.text = "";
-        StartCoroutine(GetTypewriterAnimationCoroutine(textMesh, text));
-    }
-
-    private IEnumerator GetTypewriterAnimationCoroutine(TextMeshProUGUI textMesh, string text)
-    {
         foreach (char letter in text)
         {
-            yield return new WaitForSeconds(perCharTimeDelay);
-            textMesh.text += letter;
+            GameUtils.CreateTemporizer(() =>
+            {
+                textMesh.text += letter;
+            }, animationDelay, this);
+            animationDelay += perCharTimeDelay;
         }
     }
 }

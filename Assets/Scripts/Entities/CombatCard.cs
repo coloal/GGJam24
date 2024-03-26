@@ -162,7 +162,7 @@ public class CombatCard : MonoBehaviour
         return superEffectiveText;
     }
 
-    public string GetNotVeryEffective()
+    public string GetNotVeryEffectiveText()
     {
         return notVeryEffectiveText;
     }

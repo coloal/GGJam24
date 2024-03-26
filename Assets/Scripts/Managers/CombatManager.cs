@@ -379,20 +379,44 @@ public class CombatManager : MonoBehaviour
 
     void PerformEnemyAttackAction()
     {
-        AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
-        CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
+        AttackEffectiveness attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+        CombatCard currentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
+        CombatCard enemyCombatCard = enemyCard.GetComponent<CombatCard>();
 
-        if (CurrentAttackerCombatCard && enemyCard)
+        if (currentAttackerCombatCard && enemyCombatCard && combatSceneUIController)
         {
             CombatUtils.Attack(
-                attackerCombatCard: EnemyCombatCard,
-                defenderCombatCard: CurrentAttackerCombatCard,
-                out AttackFinalEffectiveness
+                attackerCombatCard: enemyCombatCard,
+                defenderCombatCard: currentAttackerCombatCard,
+                out attackFinalEffectiveness
             );
+
+            if (enemyCombatCard.GetHealthPoints() > 0)
+            {
+                switch (attackFinalEffectiveness)
+                {
+                    case AttackEffectiveness.NEUTRAL:
+                        HideEnemyDialogBubble();
+                        break;
+                    case AttackEffectiveness.SUPER_EFFECTIVE:
+                        combatSceneUIController.ShowDialogText(enemyCombatCard.GetSuperEffectiveText());
+                        break;
+                    case AttackEffectiveness.NOT_VERY_EFFECTIVE:
+                        combatSceneUIController.ShowDialogText(enemyCombatCard.GetNotVeryEffectiveText());
+                        break;
+                }
+            }
         }
 
         SetCombatState(CombatStates.CHECK_COMBAT_RESULTS);
+    }
+
+    void HideEnemyDialogBubble()
+    {
+        if (combatSceneUIController)
+        {
+            combatSceneUIController.HideDialogText();
+        }
     }
 
     void EndTurnCycle()
