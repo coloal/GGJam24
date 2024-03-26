@@ -1150,9 +1150,24 @@ MonoBehaviour:
   leftSwipeWarningText: Cambiar
   rightSwipeWarningText: Atacar
   topSwipeWarningText: Elegir
-  attackPoints: []
-  defensePoints: []
-  energyPoints: []
+  attackPoints:
+  - {fileID: 5376680347481252718}
+  - {fileID: 6969225629786901326}
+  - {fileID: 5360579778651725177}
+  - {fileID: 1746822920273773433}
+  - {fileID: 7512969268053712648}
+  defensePoints:
+  - {fileID: 9160586217826278259}
+  - {fileID: 1189672392491080481}
+  - {fileID: 2395179749085861032}
+  - {fileID: 4221099751039971436}
+  - {fileID: 3943923011655708075}
+  energyPoints:
+  - {fileID: 8322417974753070956}
+  - {fileID: 226999477703837375}
+  - {fileID: 3889647787057038832}
+  - {fileID: 7129480454844772843}
+  - {fileID: 5889679671537260359}
 --- !u!114 &7100817756676060463
 MonoBehaviour:
   m_ObjectHideFlags: 0

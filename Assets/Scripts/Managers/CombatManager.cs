@@ -92,9 +92,9 @@ public class CombatManager : MonoBehaviour
             case CombatStates.CHOOSE_ACTION:
                 ChooseAttackerAction();
                 break;
-            // case CombatStates.PLAYER_ATTACK:
-            //     PerformPlayerAttackAction();
-            //     break;
+            case CombatStates.PLAYER_ATTACK:
+                PerformPlayerAttackAction();
+                break;
             case CombatStates.ENEMY_ATTACK:
                 PerformEnemyAttackAction();
                 break;
@@ -329,8 +329,6 @@ public class CombatManager : MonoBehaviour
         SetPartyMembersCardsInHandActivation(false);
         if (currentAttacker.partyMemberGameObject)
         {
-            //TODO: Make the attacker card a *Draggable* card to make decisions
-            //CurrentAttacker.AddComponent<Draggable>();
             InteractiveCombatCardComponent CurrentAttackerInteractiveCombatCardComponent =
                 currentAttacker.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
             if (CurrentAttackerInteractiveCombatCardComponent)
@@ -340,12 +338,8 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    // DEBUG PURPOSES ONLY
     public void PerformPlayerAttackAction()
     {
-        // DEBUG PURPOSES ONLY
-        SetCombatState(CombatStates.PLAYER_ATTACK);
-
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
         CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
