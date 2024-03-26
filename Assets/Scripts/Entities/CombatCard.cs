@@ -151,4 +151,19 @@ public class CombatCard : MonoBehaviour
     {
         return turns;
     }
+
+    public string GetInitialText()
+    {
+        return initialText;
+    }
+
+    public string GetSuperEffectiveText()
+    {
+        return superEffectiveText;
+    }
+
+    public string GetNotVeryEffective()
+    {
+        return notVeryEffectiveText;
+    }
 }
