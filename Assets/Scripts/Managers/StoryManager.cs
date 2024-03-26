@@ -22,16 +22,19 @@ public class StoryManager : MonoBehaviour
     private TurnResult LastActionResult = TurnResult.NO_RESULT;
 
     private void Awake()
-    {
+    { 
+        DontDestroyOnLoad(gameObject);
         existingStoryList = new List<CodeGraphObject>();
         storyStack = new List<CodeGraphObject>();
         InitStory();
+       
     }
 
 
     public void InitStory()
     {
         GameObject go = Instantiate(PrefabCodeGraph);
+        go.transform.parent = gameObject.transform;
         go.GetComponent<CodeGraphObject>().ExecuteAsset(FirstStory);
         currentStory = go.GetComponent<CodeGraphObject>();
     }
@@ -82,6 +85,7 @@ public class StoryManager : MonoBehaviour
         else
         {
             GameObject gameObject = Instantiate(PrefabCodeGraph);
+            gameObject.transform.parent = this.gameObject.transform;
             gameObject.GetComponent<CodeGraphObject>().ExecuteAsset(newHistory);
             currentStory = gameObject.GetComponent<CodeGraphObject>();
         }

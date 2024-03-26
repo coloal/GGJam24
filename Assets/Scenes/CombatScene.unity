@@ -1081,7 +1081,7 @@ MonoBehaviour:
   playerCardsHorizontalOffset: 3
   attackerCardOrigin: {fileID: 78562894}
   combatSceneUIController: {fileID: 1733910848}
-  debugEnemyCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
+  combatCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
   debugEnemyCombatCardTemplate: {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
 --- !u!1 &1641306731
 GameObject:

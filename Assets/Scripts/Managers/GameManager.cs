@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
     StoryManager StoryManager;
     [SerializeField]
     PartyManager PartyManager;
+
+    private CombatCardTemplate actualCombatEnemyCard;
+    public CombatCardTemplate ActualCombatEnemyCard => actualCombatEnemyCard;
 
     void Awake()
     {
@@ -50,6 +54,30 @@ public class GameManager : MonoBehaviour
         BrainSoundManager.StartGame();
         TurnManager.StartTurn();   
     }
+
+    public void StartCombat(CombatCardTemplate enemyCard)
+    {
+        actualCombatEnemyCard = enemyCard;
+        SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
+        
+    }
+
+    public void EndCombat(TurnResult combatResult)
+    {
+        switch (combatResult)
+        {
+            case TurnResult.COMBAT_WON:
+                TurnManager.WinCombat();
+                break;
+            case TurnResult.COMBAT_LOST:
+                TurnManager.LoseCombat();
+                break;
+            default:
+                Debug.LogError("Combat returned invalid result");
+                break;
+        }
+    }
+
 
     // Maybe we need several FinishGame functions for every final that the game has
     public void FinishGame() 
@@ -96,4 +124,5 @@ public class GameManager : MonoBehaviour
         return PartyManager;
     }
 
+    
 }

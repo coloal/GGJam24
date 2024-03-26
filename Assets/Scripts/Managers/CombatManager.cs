@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class CombatManager : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class CombatManager : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField]
-    private GameObject debugEnemyCardPrefab;
+    private GameObject combatCardPrefab;
     [SerializeField]
     private CombatCardTemplate debugEnemyCombatCardTemplate;
 
@@ -58,7 +59,7 @@ public class CombatManager : MonoBehaviour
     private CombatStates currentState;
     private List<PartyMemberInSceneInfo> partyMembersInScene;
     private PartyMemberInSceneInfo currentAttacker;
-    private GameObject enemyCard;
+    private CombatCard enemyCard;
     private int combatTurns;
 
     void Awake()
@@ -107,6 +108,12 @@ public class CombatManager : MonoBehaviour
             case CombatStates.CHECK_COMBAT_RESULTS:
                 EndTurnCycle();
                 break;
+            case CombatStates.CAPTURE_ENEMY:
+                EndCombat(true);
+                break;
+            case CombatStates.GAME_OVER:
+                EndCombat(false);
+                break;
             default:
                 break;
         }
@@ -119,6 +126,7 @@ public class CombatManager : MonoBehaviour
 
     void InitCombatField() {
         CombatCard enemyCombatCardComponent = SpawnEnemyCard();
+        enemyCard = enemyCombatCardComponent;
         SpawnPlayerCards();
 
         if (enemyCombatCardComponent && combatSceneUIController)
@@ -126,7 +134,7 @@ public class CombatManager : MonoBehaviour
             UpdateCombatTurns(enemyCombatCardComponent.GetCombatTurnsForCard());
             combatSceneUIController.ShowDialogText(enemyCombatCardComponent.GetInitialText());
         }
-
+       
         SetCombatState(CombatStates.CHOOSE_ATTACKER);
     }
 
@@ -138,14 +146,14 @@ public class CombatManager : MonoBehaviour
 
     CombatCard SpawnEnemyCard()
     {
-        enemyCard = Instantiate(debugEnemyCardPrefab, enemyCardOrigin.position, Quaternion.identity);
-        CombatCard enemyCardCombatCardComponent = enemyCard.GetComponent<CombatCard>();
-        if (enemyCardCombatCardComponent)
+        GameObject enemyCard = Instantiate(combatCardPrefab, enemyCardOrigin.position, Quaternion.identity);
+        CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
+        if (combatCardPrefab.GetComponent<CombatCard>() != null)
         {
-            enemyCardCombatCardComponent.SetDataCard(debugEnemyCombatCardTemplate);
+            combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
         }
-
-        return enemyCardCombatCardComponent;
+        
+        return combatCardComponent;
     }
 
     void SpawnPlayerCards()
@@ -362,13 +370,13 @@ public class CombatManager : MonoBehaviour
     {
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
+        
 
-        if (CurrentAttackerCombatCard && EnemyCombatCard)
+        if (CurrentAttackerCombatCard && enemyCard)
         {
             CombatUtils.Attack(
                 attackerCombatCard: CurrentAttackerCombatCard,
-                defenderCombatCard: EnemyCombatCard,
+                defenderCombatCard: enemyCard,
                 out AttackFinalEffectiveness
             );
             CurrentAttackerCombatCard.ReduceAttackerEnergy(energyToReduce: 1);
@@ -381,12 +389,12 @@ public class CombatManager : MonoBehaviour
     {
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
+        
 
         if (CurrentAttackerCombatCard && enemyCard)
         {
             CombatUtils.Attack(
-                attackerCombatCard: EnemyCombatCard,
+                attackerCombatCard: enemyCard,
                 defenderCombatCard: CurrentAttackerCombatCard,
                 out AttackFinalEffectiveness
             );
@@ -421,10 +429,9 @@ public class CombatManager : MonoBehaviour
     void CheckCombatResults()
     {
         CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
-        if (CurrentAttackerCombatCard && EnemyCombatCard)
+        if (CurrentAttackerCombatCard && enemyCard)
         {
-            if (EnemyCombatCard.GetHealthPoints() <= 0)
+            if (enemyCard.GetHealthPoints() <= 0)
             {
                 SetCombatState(CombatStates.CAPTURE_ENEMY);
             }
@@ -471,5 +478,64 @@ public class CombatManager : MonoBehaviour
         partyManager.RemovePartyMember(currentAttacker.partyMemberInScene.CombatCardTemplate);
         Destroy(currentAttacker.partyMemberGameObject);
         currentAttacker.Reset();
+    }
+
+    void EndCombat(bool combatWon)
+    {
+        int i = 0;
+        foreach(var partyMember in partyMembersInScene)
+        {
+
+            GameUtils.createTemporizer(() => { Destroy(partyMember.partyMemberGameObject); }, i, this);
+            i++;
+        }
+        GameUtils.createTemporizer(() => { Destroy(enemyCard.gameObject); }, i, this);
+        i++;
+        if(combatWon)
+        {
+            GameUtils.createTemporizer(() => {CaptureEnemy(); }, i, this);
+        }
+        else
+        {
+            GameUtils.createTemporizer(() => { CaptureEnemy(); }, i, this);
+        }
+        
+    }
+
+    void CaptureEnemy()
+    {
+        GameObject enemyCard = Instantiate(combatCardPrefab, Vector2.zero, Quaternion.identity);
+        CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
+        if (combatCardPrefab.GetComponent<CombatCard>() != null)
+        {
+            combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
+        }
+        InteractiveCombatCardComponent enemyInteractiveCombatCardComponent = enemyCard.GetComponent<InteractiveCombatCardComponent>();
+        if (enemyInteractiveCombatCardComponent)
+        {
+            enemyInteractiveCombatCardComponent.SetOnSwipeLeftAction(() =>
+            {
+                GameUtils.createTemporizer(() => { SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single); GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); GameManager.Instance.ProvidePartyManager().AddMemberToParty(GameManager.Instance.ActualCombatEnemyCard); }, 2, this);
+            });
+            enemyInteractiveCombatCardComponent.SetOnSwipeRightAction(() =>
+            {
+                GameUtils.createTemporizer(() => { SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single); GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); }, 2, this);
+            });
+            enemyInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
+        }
+        
+    }
+
+    void gameOver()
+    {
+        GameObject enemyCard = Instantiate(combatCardPrefab, Vector2.zero, Quaternion.identity);
+        CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
+        if (combatCardPrefab.GetComponent<CombatCard>() != null)
+        {
+            combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
+        }
+        HorizontalDraggableComponent draggableComponent = enemyCard.GetComponent<HorizontalDraggableComponent>();
+        GameUtils.createTemporizer(() => { SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single); GameManager.Instance.EndCombat(TurnResult.COMBAT_LOST); }, 2, this);
+
     }
 }
