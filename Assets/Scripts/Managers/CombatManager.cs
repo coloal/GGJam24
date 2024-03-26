@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager.Requests;
@@ -258,7 +259,27 @@ public class CombatManager : MonoBehaviour
 
     void ChooseAttacker()
     {
-        SetPartyMembersCardsActivation(true);
+        SetPartyMembersCardsInHandActivation(true);
+        DeactivateAttackerCard();
+    }
+
+    void DeactivateAttackerCard()
+    {
+        if (currentAttacker.partyMemberGameObject)
+        {
+            CombatCard attackerCombatCardComponent =
+            currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
+            InteractiveCombatCardComponent attackerInteractiveCombatCardComponent =
+                currentAttacker.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (attackerCombatCardComponent && attackerInteractiveCombatCardComponent)
+            {
+                attackerCombatCardComponent.SetInactiveOverlayActivation(true);
+                attackerInteractiveCombatCardComponent.DisableDraggableComponents();
+            }
+
+            currentAttacker.partyMemberGameObject.transform.position = attackerCardOrigin.position;
+            currentAttacker.partyMemberGameObject.transform.rotation = attackerCardOrigin.rotation;
+        }
     }
 
     void SetCurrentAttacker(PartyMemberInSceneInfo NewAttacker)
@@ -271,25 +292,33 @@ public class CombatManager : MonoBehaviour
 
         currentAttacker = NewAttacker;
         currentAttacker.partyMemberGameObject.transform.position = attackerCardOrigin.position;
+        currentAttacker.partyMemberGameObject.transform.rotation = attackerCardOrigin.rotation;
 
         SetCombatState(CombatStates.CHOOSE_ACTION);
     }
 
-    void SetPartyMembersCardsActivation(bool AreCardsActive)
+    void SetPartyMembersCardsInHandActivation(bool areCardsActive)
     {
-        foreach (PartyMemberInSceneInfo PartyMemberInScene in partyMembersInScene)
+        foreach (PartyMemberInSceneInfo partyMemberInScene in partyMembersInScene)
         {
-            InteractiveCombatCardComponent PartyMemberInteractiveCombatCardComponent =
-                PartyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
-            if (PartyMemberInteractiveCombatCardComponent)
+            if (partyMemberInScene.partyMemberGameObject != currentAttacker.partyMemberGameObject)
             {
-                if (AreCardsActive)
+                CombatCard partyMemberCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+                InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                    partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+                if (partyMemberCombatCardComponent && partyMemberInteractiveCombatCardComponent)
                 {
-                    PartyMemberInteractiveCombatCardComponent.EnableVerticalDraggableComponent();
-                }
-                else
-                {
-                    PartyMemberInteractiveCombatCardComponent.DisableDraggableComponents();
+                    if (areCardsActive)
+                    {
+                        partyMemberCombatCardComponent.SetInactiveOverlayActivation(false);
+                        partyMemberInteractiveCombatCardComponent.EnableVerticalDraggableComponent();
+                    }
+                    else
+                    {
+                        partyMemberCombatCardComponent.SetInactiveOverlayActivation(true);
+                        partyMemberInteractiveCombatCardComponent.DisableDraggableComponents();
+                    }
                 }
             }
         }
@@ -297,7 +326,7 @@ public class CombatManager : MonoBehaviour
 
     void ChooseAttackerAction()
     {
-        SetPartyMembersCardsActivation(false);
+        SetPartyMembersCardsInHandActivation(false);
         if (currentAttacker.partyMemberGameObject)
         {
             //TODO: Make the attacker card a *Draggable* card to make decisions

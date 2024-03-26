@@ -11,6 +11,7 @@ public class CombatCard : MonoBehaviour
     [SerializeField] private TextMeshPro healthText;
     [SerializeField] private SpriteRenderer backgroundCombatSprite;
     [SerializeField] private SpriteRenderer combatSprite;
+    [SerializeField] private GameObject inactiveOverlay;
 
     [Header("Overlay text configurations")]
     [SerializeField] GameObject overlayTextContainer;
@@ -131,5 +132,10 @@ public class CombatCard : MonoBehaviour
     public void DisableWarningText()
     {
         overlayTextContainer.SetActive(false);
+    }
+
+    public void SetInactiveOverlayActivation(bool isActive)
+    {
+        inactiveOverlay.SetActive(isActive);
     }
 }
