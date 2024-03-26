@@ -21,8 +21,19 @@ public class StoryManager : MonoBehaviour
 
     private TurnResult LastActionResult = TurnResult.NO_RESULT;
 
+    public static StoryManager Instance;
+
     private void Awake()
-    { 
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+            return;
+        }
         DontDestroyOnLoad(gameObject);
         existingStoryList = new List<CodeGraphObject>();
         storyStack = new List<CodeGraphObject>();

@@ -24,13 +24,9 @@ public class MainGameSceneManager : BaseSceneManager
         }
     }
 
-    void Start()
-    {
-        Init();
-        StartGame();
-    }
+    
 
-    void StartGame()
+    public void StartGame()
     {
         turnManager.StartTurn();
     }

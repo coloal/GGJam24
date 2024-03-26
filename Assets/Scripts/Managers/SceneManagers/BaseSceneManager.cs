@@ -11,7 +11,7 @@ public class BaseSceneManager : MonoBehaviour
 
     protected void Init()
     {
-        GameManager.Instance.CurrentSceneManager = this;
+         GameManager.Instance.CurrentSceneManager = this;
     }
 
 }

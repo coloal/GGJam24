@@ -23,8 +23,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     PartyManager PartyManager;
 
-    public BaseSceneManager CurrentSceneManager;
-   
+    private List<Action> disposableOnSceneChangeActions = new List<Action>();
+
+    private BaseSceneManager currentSceneManager ;
+    public BaseSceneManager CurrentSceneManager {
+        get
+        {
+            return currentSceneManager;
+        }
+        set
+        {
+            currentSceneManager = value;
+            OnSceneChanged();
+        }
+    }
 
     private CombatCardTemplate actualCombatEnemyCard;
     public CombatCardTemplate ActualCombatEnemyCard => actualCombatEnemyCard;
@@ -52,6 +64,10 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         BrainSoundManager.StartGame();
+        if(currentSceneManager != null && currentSceneManager is MainGameSceneManager mainGameSceneManager)
+        {
+            mainGameSceneManager.StartGame();
+        }
     }
 
     public void StartCombat(CombatCardTemplate enemyCard)
@@ -63,25 +79,35 @@ public class GameManager : MonoBehaviour
 
     public void EndCombat(TurnResult combatResult)
     {
-        SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
-            GameUtils.CreateTemporizer(() =>
-            {
-                if (CurrentSceneManager is MainGameSceneManager mainGameSceneManager)
+        Action action;
+        switch (combatResult)
+        {
+            case TurnResult.COMBAT_WON:
+                action = () =>
                 {
-                    switch (combatResult)
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
                     {
-                        case TurnResult.COMBAT_WON:
-                            mainGameSceneManager.ProvideTurnManager().WinCombat();
-                            break;
-                        case TurnResult.COMBAT_LOST:
-                            mainGameSceneManager.ProvideTurnManager().LoseCombat();
-                            break;
-                        default:
-                            Debug.LogError("Combat returned invalid result");
-                            break;
+                        mainGameSceneManager.ProvideTurnManager().WinCombat();
                     }
-                }
-            }, 2, this);
+                };
+                break;
+
+            case TurnResult.COMBAT_LOST:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        mainGameSceneManager.ProvideTurnManager().LoseCombat();
+                    }
+                };
+                break;
+            default:
+                action = () => { };
+                Debug.LogError("Combat returned invalid result");
+                break;
+        }
+        disposableOnSceneChangeActions.Add(action);
+        SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
     }
 
 
@@ -121,5 +147,13 @@ public class GameManager : MonoBehaviour
         return PartyManager;
     }
 
+    public void OnSceneChanged()
+    {
+        foreach(Action action in disposableOnSceneChangeActions)
+        {
+            action();
+        }
+        disposableOnSceneChangeActions.Clear();
+    }
     
 }

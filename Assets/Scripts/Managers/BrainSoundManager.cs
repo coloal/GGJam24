@@ -36,9 +36,20 @@ public class BrainSoundManager : MonoBehaviour
     private FMOD.Studio.EventInstance GameOverInstance;
     private FMOD.Studio.EventInstance CombatInstance;
 
+    public static BrainSoundManager Instance;
+
     /***** INITIALIZE *****/
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+            return;
+        }
         DontDestroyOnLoad(gameObject);
         InitializeData();
 

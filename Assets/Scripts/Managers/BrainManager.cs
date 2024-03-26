@@ -11,11 +11,22 @@ public class BrainManager : MonoBehaviour
     private Dictionary<NumericTags, int> BrainNumericMap;
     private Dictionary<string, string> BrainStateMap;
 
+    public static BrainManager Instance;
+
 
     /***** INITIALIZE *****/
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+            return;
+        }
         DontDestroyOnLoad(gameObject);
     }
 
