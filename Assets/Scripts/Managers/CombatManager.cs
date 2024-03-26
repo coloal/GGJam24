@@ -394,6 +394,8 @@ public class CombatManager : MonoBehaviour
 
     void CheckCombatResults()
     {
+        UpdateCombatTurns(--combatTurns);
+
         CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
         CombatCard EnemyCombatCard = enemyCard.GetComponent<CombatCard>();
         if (CurrentAttackerCombatCard && EnemyCombatCard)
@@ -401,6 +403,10 @@ public class CombatManager : MonoBehaviour
             if (EnemyCombatCard.GetHealthPoints() <= 0)
             {
                 SetCombatState(CombatStates.CAPTURE_ENEMY);
+            }
+            else if (combatTurns <= 0)
+            {
+                SetCombatState(CombatStates.GAME_OVER);
             }
             else if (CurrentAttackerCombatCard.GetHealthPoints() > 0 &&
                 CurrentAttackerCombatCard.GetCardEnergy() > 0)
