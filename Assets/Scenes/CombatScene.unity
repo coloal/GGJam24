@@ -736,6 +736,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946342918}
   m_CullTransparentMesh: 1
+--- !u!1 &1016396394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016396396}
+  - component: {fileID: 1016396395}
+  m_Layer: 0
+  m_Name: CombatSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1016396395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016396394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df62904ed26a8544b9c497ce4cb60fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatManager: {fileID: 1568843363}
+--- !u!4 &1016396396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016396394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071831503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,13 +1322,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioManager: {fileID: 0}
-  TurnManager: {fileID: 0}
-  CardsManager: {fileID: 0}
-  EndManager: {fileID: 0}
   BrainManager: {fileID: 0}
   BrainSoundManager: {fileID: 0}
   StoryManager: {fileID: 0}
   PartyManager: {fileID: 2141232687}
+  CurrentSceneManager: {fileID: 0}
 --- !u!4 &1738950013
 Transform:
   m_ObjectHideFlags: 0
@@ -1414,10 +1457,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1641306732}
-  - {fileID: 2040341250}
   - {fileID: 1071831505}
   - {fileID: 1738950013}
   - {fileID: 2141232686}
+  - {fileID: 2040341250}
+  - {fileID: 1016396396}
   - {fileID: 1568843362}
   - {fileID: 334614189}
   - {fileID: 1434853532}

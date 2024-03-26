@@ -4,5 +4,25 @@ using UnityEngine;
 
 public class CombatSceneManager : BaseSceneManager
 {
-    // Start is called before the first frame update
+    public static CombatSceneManager Instance;
+
+    [SerializeField] CombatManager combatManager;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
+    public CombatManager ProvideCombatManager()
+    {
+        return combatManager;
+    }
 }
