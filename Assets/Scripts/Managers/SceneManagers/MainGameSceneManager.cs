@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MainGameSceneManager : BaseSceneManager
 {
-    // Start is called before the first frame update
+    public static MainGameSceneManager Instance;
+    
     [SerializeField] 
     TurnManager turnManager;
     [SerializeField]
@@ -12,8 +13,20 @@ public class MainGameSceneManager : BaseSceneManager
     [SerializeField]
     EndManager endManager;
     
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
-    private void Start()
+    void Start()
     {
         Init();
         StartGame();

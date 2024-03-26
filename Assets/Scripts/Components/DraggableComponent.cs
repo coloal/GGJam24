@@ -232,7 +232,7 @@ public class DraggableComponent : MonoBehaviour
                 {
                     action();
                 }*/
-                GameManager.Instance.ProvideTurnManager().SwipeRight();   
+                //GameManager.Instance.ProvideTurnManager().SwipeRight();   
             }
             else
             {
@@ -241,7 +241,7 @@ public class DraggableComponent : MonoBehaviour
                 {
                     action();
                 }
-                GameManager.Instance.ProvideTurnManager().SwipeLeft();
+                //GameManager.Instance.ProvideTurnManager().SwipeLeft();
                 
             }
         }

@@ -20,31 +20,22 @@ public class TurnManager : MonoBehaviour
     GameStates CurrentGameState;
 
 
-    StoryManager StoryManager;
-    CardsManager CardsManager;
+    StoryManager StoryManager {
+        get {
+            return GameManager.Instance.ProvideStoryManager();
+        }
+    }
+    CardsManager CardsManager {
+        get {
+            return MainGameSceneManager.Instance.ProvideCardsManager();
+        }
+    }
 
     StoryCard CurrentCard;
 
-    private void Awake()
-    {
-        if(GameManager.Instance != null && GameManager.Instance.ProvideTurnManager() == null)
-        {
-            GameManager.Instance.SetTurnManager(this);
-        }
-        
-    }
     void Start()
     {
-        
         OverlayImage.SetActive(false);
-        SetUpManagers();
-
-    }
-
-    void SetUpManagers()
-    {
-        CardsManager = GameManager.Instance.ProvideCardsManager();
-        StoryManager = GameManager.Instance.ProvideStoryManager();
     }
 
     void GetNewCard(StoryCardTemplate nextCard)
@@ -54,7 +45,6 @@ public class TurnManager : MonoBehaviour
         CurrentCard = SpawnedCard.GetComponent<StoryCard>();
         SetGameState(GameStates.MAKE_DECISION);
     }
-
 
     public void StartTurn() 
     {
@@ -72,7 +62,7 @@ public class TurnManager : MonoBehaviour
             {
                 Debug.LogError("Story Card Node with no Card");
                 Debug.LogError("Something went wrong");
-                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+                //GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
             }
             else
             {
@@ -86,7 +76,7 @@ public class TurnManager : MonoBehaviour
             {
                 Debug.LogError("Combat Node with no Card");
                 Debug.LogError("Something went wrong");
-                GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+                //GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
             }
             else
             {
@@ -96,7 +86,8 @@ public class TurnManager : MonoBehaviour
         //Nodo de carta de final
         else if (nextStepInfo is EndStep endStep)
         {
-            GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+            //GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
+            Debug.LogWarning("Your deck is empty!");
         }
         else
         {
@@ -106,7 +97,7 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeLeft()
     {
-        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.LeftActions);
+        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.leftActions);
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -117,7 +108,7 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeRight()
     {
-        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.RightActions);
+        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.rightActions);
         if (CurrentCard != null)
         {
             DestroyCard();

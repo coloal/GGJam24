@@ -27,20 +27,57 @@ public class CardsManager : MonoBehaviour
 
     private int indexNextCard = 0;
 
-    private void Awake()
-    {
-        if (GameManager.Instance != null && GameManager.Instance.ProvideCardsManager() == null)
-        {
-            GameManager.Instance.SetCardsManager(this);
-        }
-    }
     public GameObject SpawnNextCard(StoryCardTemplate nextCard)
     {
-        GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);
+        void SetUpOnSwipeLeftActions(GameObject storyCard)
+        {
+            InteractiveStoryCardComponent interactiveStoryCardComponent =
+                storyCard.GetComponent<InteractiveStoryCardComponent>();
+            StoryCard storyCardComponent = storyCard.GetComponent<StoryCard>();
+            if (interactiveStoryCardComponent && storyCardComponent)
+            {
+                interactiveStoryCardComponent.SetOnSwipeLeftAction(() =>
+                {
+                    MainGameSceneManager.Instance.ProvideTurnManager().SwipeLeft();
+                });
 
+                interactiveStoryCardComponent.SetOnSwipeLeftEscapeZoneActions(
+                    () => { storyCardComponent.ShowText(isLeftText: true); },
+                    () => { storyCardComponent.HideText(); }
+                );
+            }
+        }
+
+        void SetUpOnSwipeRightActions(GameObject storyCard)
+        {
+            InteractiveStoryCardComponent interactiveStoryCardComponent =
+                storyCard.GetComponent<InteractiveStoryCardComponent>();
+            StoryCard storyCardComponent = storyCard.GetComponent<StoryCard>();
+            if (interactiveStoryCardComponent && storyCardComponent)
+            {
+                interactiveStoryCardComponent.SetOnSwipeRightAction(() =>
+                {
+                    MainGameSceneManager.Instance.ProvideTurnManager().SwipeRight();
+                });
+
+                interactiveStoryCardComponent.SetOnSwipeRightEscapeZoneActions(
+                    () => { storyCardComponent.ShowText(isLeftText: false); },
+                    () => { storyCardComponent.HideText(); }
+                );
+            }
+        }
+
+        GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);
         if(nextCard != null)
         {
-            newCard.GetComponent<StoryCard>().SetDataCard(nextCard);
+            StoryCard storyCardComponent = newCard.GetComponent<StoryCard>();
+            if (storyCardComponent)
+            {
+                storyCardComponent.SetDataCard(nextCard);
+            }
+
+            SetUpOnSwipeLeftActions(newCard);
+            SetUpOnSwipeRightActions(newCard);
         }
         
         //indexNextCard++;

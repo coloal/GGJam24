@@ -5,121 +5,76 @@ using UnityEngine;
 
 public class StoryCard : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshPro BoxNameOfCard;
+    [Header("Visual configurations")]
+    [SerializeField] private TextMeshPro boxNameOfCard;
+    [SerializeField] private TextMeshPro descriptionText;
+    [SerializeField] private SpriteRenderer cardSprite;
+    [SerializeField] protected SpriteRenderer backgroundSprite;
 
-    [SerializeField]
-    private GameObject RightTextBoxContainer;
-    [SerializeField]
-    private TextMeshProUGUI RightText;
+    [Header("Overlay text configurations")]
+    [SerializeField] private GameObject overlayTextContainer;
+    [SerializeField] private TextMeshProUGUI overlayTextMesh;
 
-    [SerializeField]
-    private GameObject LeftTextBoxContainer;
-    [SerializeField]
-    private TextMeshProUGUI LeftText;
-
-    [SerializeField]
-    private TextMeshPro DescriptionText;
-
-    [SerializeField]
-    private SpriteRenderer CardSprite;
-
-    [SerializeField]
-    protected SpriteRenderer BackgroundSprite;
-
-    [HideInInspector]
-    public List<BrainAction> LeftActions;
-    [HideInInspector]
-    public List<BrainAction> RightActions;
+    [HideInInspector] public List<BrainAction> leftActions;
+    [HideInInspector] public List<BrainAction> rightActions;
 
     //Information of the card
-    private string NameOfCard;
+    private string nameOfCard;
+    bool cardIsActive = true;
+    private string rightOverlayText;
+    private string leftOverlayText;
 
-
-    bool CardIsActive = true;
-
-    public void ShowText(bool IsLeft)
+    public void ShowText(bool isLeftText)
     {
-        if (!CardIsActive) return;
-        if (IsLeft)
-        {
-            if (LeftTextBoxContainer != null)
-            {
-                LeftTextBoxContainer.SetActive(true);
-            }
-        }
-        else 
-        {
-            if (RightTextBoxContainer != null)
-            {
-                RightTextBoxContainer.SetActive(true);
-            }
-        } 
+        if (!cardIsActive) return;
+        
+        overlayTextContainer.SetActive(true);
+        overlayTextMesh.text = isLeftText ? leftOverlayText : rightOverlayText;
     }
 
-    public void HideText(bool IsLeft)
+    public void HideText()
     {
-        if (IsLeft)
-        {
-            if (LeftTextBoxContainer != null)
-            {
-                LeftTextBoxContainer.SetActive(false);
-            }
-        }
-        else
-        {
-            if (RightTextBoxContainer != null)
-            {
-                RightTextBoxContainer.SetActive(false);
-            }
-        }
+        overlayTextContainer.SetActive(false);
     }
 
     public void SetDataCard(StoryCardTemplate DataCard) 
     {
         //Set informaci�n del DataCard
-        NameOfCard = DataCard.NameOfCard;
+        nameOfCard = DataCard.NameOfCard;
 
         //Mostrar texto en pantalla
-        BoxNameOfCard.text = NameOfCard;
+        boxNameOfCard.text = nameOfCard;
+        rightOverlayText = DataCard.RightText;
+        leftOverlayText = DataCard.LeftText;
 
-        if (RightText != null)
+        if (overlayTextMesh != null)
         {
-            RightText.text = DataCard.RightText;
-            RightTextBoxContainer.SetActive(false);
+            overlayTextContainer.SetActive(false);
         }
         
-        if (LeftText != null)
+        if (descriptionText != null)
         {
-            LeftText.text = DataCard.LeftText;
-            LeftTextBoxContainer.SetActive(false);
-        }
-        
-        if (DescriptionText != null)
-        {
-            DescriptionText.text = DataCard.Background;
-            DescriptionText.GetComponent<MeshRenderer>().sortingLayerID = CardSprite.sortingLayerID;
+            descriptionText.text = DataCard.Background;
+            descriptionText.GetComponent<MeshRenderer>().sortingLayerID = cardSprite.sortingLayerID;
         }
 
-        CardSprite.sprite = DataCard.CardSprite;
-        if (BackgroundSprite != null && DataCard.BackgroundSprite != null)
+        cardSprite.sprite = DataCard.CardSprite;
+        if (backgroundSprite != null && DataCard.BackgroundSprite != null)
         {
-            BackgroundSprite.sprite = DataCard.BackgroundSprite;
+            backgroundSprite.sprite = DataCard.BackgroundSprite;
         }
 
-        LeftActions = DataCard.LeftActions;
-        RightActions = DataCard.RightActions;
+        leftActions = DataCard.LeftActions;
+        rightActions = DataCard.RightActions;
     }
 
 
     public void GoToBackGroundAndDeactivate()
     {
-        BoxNameOfCard.sortingOrder = -2;
-        CardSprite.sortingOrder = -3;
-        DescriptionText.sortingOrder = -2;
-        LeftTextBoxContainer.SetActive(false);
-        RightTextBoxContainer.SetActive(false);
-        CardIsActive = false;
-        
+        boxNameOfCard.sortingOrder = -2;
+        cardSprite.sortingOrder = -3;
+        descriptionText.sortingOrder = -2;
+        overlayTextContainer.SetActive(false);
+        cardIsActive = false;        
     }
 }
