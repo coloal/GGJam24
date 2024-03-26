@@ -546,11 +546,11 @@ public class CombatManager : MonoBehaviour
         {
             enemyInteractiveCombatCardComponent.SetOnSwipeLeftAction(() =>
             {
-                GameUtils.CreateTemporizer(() => { SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single); GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); GameManager.Instance.ProvidePartyManager().AddMemberToParty(GameManager.Instance.ActualCombatEnemyCard); }, 2, this);
+                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); GameManager.Instance.ProvidePartyManager().AddMemberToParty(GameManager.Instance.ActualCombatEnemyCard); }, 2, this);
             });
             enemyInteractiveCombatCardComponent.SetOnSwipeRightAction(() =>
             {
-                GameUtils.CreateTemporizer(() => { SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single); GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); }, 2, this);
+                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); }, 2, this);
             });
             enemyInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
         }
@@ -566,7 +566,7 @@ public class CombatManager : MonoBehaviour
             combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
         }
         HorizontalDraggableComponent draggableComponent = enemyCard.GetComponent<HorizontalDraggableComponent>();
-        GameUtils.CreateTemporizer(() => { SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single); GameManager.Instance.EndCombat(TurnResult.COMBAT_LOST); }, 2, this);
+        GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_LOST); }, 2, this);
 
     }
 }

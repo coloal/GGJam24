@@ -39,6 +39,7 @@ public class BrainSoundManager : MonoBehaviour
     /***** INITIALIZE *****/
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         InitializeData();
 
         StoryEventInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);

@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour {
     // Singleton instance
     public static AudioManager Instance;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -32,7 +36,7 @@ public class AudioManager : MonoBehaviour {
     -cambia el evento
     -se autoajustan parametros
 
-    implementación:
+    implementaciï¿½n:
     scriptableObject:
     Zona(Enum) y valores que debe tomar cada var del evento de historia
 
@@ -40,8 +44,8 @@ public class AudioManager : MonoBehaviour {
     Las cartas contendran actions si se tira izq o derecha estas Actions activaran/desactivaran los eventos
     
     Accion NumIntegrantes:
-    Acción que autoajusta como van a sonar los instrumentos de fondo por multiplicadores ??(preguntar a Omar)
-    Esta acción se llamara al finalizar un combate/cuando se reclute alguien para actualizar el balance de tipos
+    Acciï¿½n que autoajusta como van a sonar los instrumentos de fondo por multiplicadores ??(preguntar a Omar)
+    Esta acciï¿½n se llamara al finalizar un combate/cuando se reclute alguien para actualizar el balance de tipos
 
      */
 

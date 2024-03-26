@@ -13,6 +13,12 @@ public class BrainManager : MonoBehaviour
 
 
     /***** INITIALIZE *****/
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         InitializeData();

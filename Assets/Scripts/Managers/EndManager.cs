@@ -50,7 +50,10 @@ public class EndManager : MonoBehaviour
     Sprite EmptyDeckEndingSprite;
 
     string EndGameText;
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     public void FinishGame()
     {
         /*

@@ -11,12 +11,9 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     [SerializeField]
     AudioManager AudioManager;
-    [SerializeField]
-    TurnManager TurnManager;
-    [SerializeField]
-    CardsManager CardsManager;
-    [SerializeField]
-    EndManager EndManager;
+    
+    
+    
     [SerializeField]
     BrainManager BrainManager;
     [SerializeField]
@@ -25,6 +22,9 @@ public class GameManager : MonoBehaviour
     StoryManager StoryManager;
     [SerializeField]
     PartyManager PartyManager;
+
+    public BaseSceneManager CurrentSceneManager;
+   
 
     private CombatCardTemplate actualCombatEnemyCard;
     public CombatCardTemplate ActualCombatEnemyCard => actualCombatEnemyCard;
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         BrainSoundManager.StartGame();
-        TurnManager.StartTurn();   
     }
 
     public void StartCombat(CombatCardTemplate enemyCard)
@@ -64,18 +63,25 @@ public class GameManager : MonoBehaviour
 
     public void EndCombat(TurnResult combatResult)
     {
-        switch (combatResult)
-        {
-            case TurnResult.COMBAT_WON:
-                TurnManager.WinCombat();
-                break;
-            case TurnResult.COMBAT_LOST:
-                TurnManager.LoseCombat();
-                break;
-            default:
-                Debug.LogError("Combat returned invalid result");
-                break;
-        }
+        SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
+            GameUtils.CreateTemporizer(() =>
+            {
+                if (CurrentSceneManager is MainGameSceneManager mainGameSceneManager)
+                {
+                    switch (combatResult)
+                    {
+                        case TurnResult.COMBAT_WON:
+                            mainGameSceneManager.ProvideTurnManager().WinCombat();
+                            break;
+                        case TurnResult.COMBAT_LOST:
+                            mainGameSceneManager.ProvideTurnManager().LoseCombat();
+                            break;
+                        default:
+                            Debug.LogError("Combat returned invalid result");
+                            break;
+                    }
+                }
+            }, 2, this);
     }
 
 
@@ -86,23 +92,14 @@ public class GameManager : MonoBehaviour
 
     }
 
-
-    public CardsManager ProvideCardsManager()
-    {
-        return CardsManager;
-    }
+    
+   
     public AudioManager ProvideAudioManager()
     {
         return AudioManager;
     }
 
-    public TurnManager ProvideTurnManager()
-    {
-        return TurnManager;
-    }
-    public EndManager ProvideEndManager() {
-        return EndManager;
-    }
+   
 
     public BrainManager ProvideBrainManager()
     {

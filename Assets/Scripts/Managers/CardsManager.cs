@@ -27,6 +27,13 @@ public class CardsManager : MonoBehaviour
 
     private int indexNextCard = 0;
 
+    private void Awake()
+    {
+        if (GameManager.Instance != null && GameManager.Instance.ProvideCardsManager() == null)
+        {
+            GameManager.Instance.SetCardsManager(this);
+        }
+    }
     public GameObject SpawnNextCard(StoryCardTemplate nextCard)
     {
         GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);

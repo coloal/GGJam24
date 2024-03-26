@@ -25,10 +25,20 @@ public class TurnManager : MonoBehaviour
 
     StoryCard CurrentCard;
 
+    private void Awake()
+    {
+        if(GameManager.Instance != null && GameManager.Instance.ProvideTurnManager() == null)
+        {
+            GameManager.Instance.SetTurnManager(this);
+        }
+        
+    }
     void Start()
     {
-        SetUpManagers();
+        
         OverlayImage.SetActive(false);
+        SetUpManagers();
+
     }
 
     void SetUpManagers()
