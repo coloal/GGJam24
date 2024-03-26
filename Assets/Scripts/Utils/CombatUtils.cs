@@ -5,34 +5,34 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public static class CombatUtils
 {
-    private static float GetDamageMultiplier(CombatTypes AttackerCombatType,
-        CombatTypes DefenderCombatType, out AttackEffectiveness AttackFinalEffectiveness)
+    private static float GetDamageMultiplier(CombatTypes attackerCombatType,
+        CombatTypes defenderCombatType, out AttackEffectiveness attackFinalEffectiveness)
     {
-        float DamageMultiplier = 1.0f;
-        AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+        float damageMultiplier = 1.0f;
+        attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
 
-        switch (AttackerCombatType)
+        switch (attackerCombatType)
         {
             case CombatTypes.Money:
             {
-                switch (DefenderCombatType)
+                switch (defenderCombatType)
                 {
                     case CombatTypes.Money:
                     {
-                        DamageMultiplier = 1.0f;
-                        AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+                        damageMultiplier = 1.0f;
+                        attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
                         break;    
                     }
                     case CombatTypes.Influence:
                     {
-                        DamageMultiplier = 2.0f;
-                        AttackFinalEffectiveness = AttackEffectiveness.SUPER_EFFECTIVE;
+                        damageMultiplier = 2.0f;
+                        attackFinalEffectiveness = AttackEffectiveness.SUPER_EFFECTIVE;
                         break;    
                     }
                     case CombatTypes.Violence:
                     {
-                        DamageMultiplier = 0.5f;
-                        AttackFinalEffectiveness = AttackEffectiveness.NOT_VERY_EFFECTIVE;
+                        damageMultiplier = 0.5f;
+                        attackFinalEffectiveness = AttackEffectiveness.NOT_VERY_EFFECTIVE;
                         break;    
                     }
                 }
@@ -40,24 +40,24 @@ public static class CombatUtils
             }
             case CombatTypes.Influence:
             {
-                switch (DefenderCombatType)
+                switch (defenderCombatType)
                 {
                     case CombatTypes.Money:
                     {
-                        DamageMultiplier = 0.5f;
-                        AttackFinalEffectiveness = AttackEffectiveness.NOT_VERY_EFFECTIVE;
+                        damageMultiplier = 0.5f;
+                        attackFinalEffectiveness = AttackEffectiveness.NOT_VERY_EFFECTIVE;
                         break;
                     }
                     case CombatTypes.Influence:
                     {
-                        DamageMultiplier = 1.0f;
-                        AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+                        damageMultiplier = 1.0f;
+                        attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
                         break;    
                     }
                     case CombatTypes.Violence:
                     {
-                        DamageMultiplier = 2.0f;
-                        AttackFinalEffectiveness = AttackEffectiveness.SUPER_EFFECTIVE;
+                        damageMultiplier = 2.0f;
+                        attackFinalEffectiveness = AttackEffectiveness.SUPER_EFFECTIVE;
                         break;    
                     }
                 }
@@ -65,24 +65,24 @@ public static class CombatUtils
             }
             case CombatTypes.Violence:
             {
-                switch (DefenderCombatType)
+                switch (defenderCombatType)
                 {
                     case CombatTypes.Money:
                     {
-                        DamageMultiplier = 2.0f;
-                        AttackFinalEffectiveness = AttackEffectiveness.SUPER_EFFECTIVE;
+                        damageMultiplier = 2.0f;
+                        attackFinalEffectiveness = AttackEffectiveness.SUPER_EFFECTIVE;
                         break;
                     }
                     case CombatTypes.Influence:
                     {
-                        DamageMultiplier = 0.5f;
-                        AttackFinalEffectiveness = AttackEffectiveness.NOT_VERY_EFFECTIVE;
+                        damageMultiplier = 0.5f;
+                        attackFinalEffectiveness = AttackEffectiveness.NOT_VERY_EFFECTIVE;
                         break;    
                     }
                     case CombatTypes.Violence:
                     {
-                        DamageMultiplier = 1.0f;
-                        AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+                        damageMultiplier = 1.0f;
+                        attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
                         break;    
                     }
                 }
@@ -90,22 +90,22 @@ public static class CombatUtils
             }
         }
 
-        return DamageMultiplier;
+        return damageMultiplier;
     }
 
-    private static int GetActualAttackDamage(CombatCard AttackerCombatCard, 
-        CombatCard DefenderCombatCard, out AttackEffectiveness AttackFinalEffectiveness)
+    private static int GetActualAttackDamage(CombatCard attackerCombatCard, 
+        CombatCard defenderCombatCard, out AttackEffectiveness attackFinalEffectiveness)
     {
-        float AttackMultiplier = GetDamageMultiplier(
-            AttackerCombatCard.GetCombatType(),
-            DefenderCombatCard.GetCombatType(),
-            out AttackFinalEffectiveness
+        float attackMultiplier = GetDamageMultiplier(
+            attackerCombatCard.GetCombatType(),
+            defenderCombatCard.GetCombatType(),
+            out attackFinalEffectiveness
         );
 
-        float AttackDamage = AttackerCombatCard.GetDamage() * AttackMultiplier;
-        if (AttackDamage >= DefenderCombatCard.GetArmor())
+        float attackDamage = attackerCombatCard.GetDamage() * attackMultiplier;
+        if (attackDamage >= defenderCombatCard.GetArmor())
         {
-            return (int) Mathf.Ceil(AttackDamage - DefenderCombatCard.GetArmor());
+            return (int) Mathf.Ceil(attackDamage - defenderCombatCard.GetArmor());
         }
         else
         {
@@ -113,19 +113,20 @@ public static class CombatUtils
         }
     }
 
-    public static void Attack(CombatCard AttackerCombatCard, CombatCard DefenderCombatCard, out AttackEffectiveness AttackFinalEffectiveness)
+    public static void Attack(CombatCard attackerCombatCard, 
+        CombatCard defenderCombatCard, out AttackEffectiveness attackFinalEffectiveness)
     {
-        int AttackDamage = GetActualAttackDamage(AttackerCombatCard, DefenderCombatCard, out AttackFinalEffectiveness);
-        DefenderCombatCard.ReduceHealthPoints(AttackDamage);
+        int attackDamage = GetActualAttackDamage(attackerCombatCard, defenderCombatCard, out attackFinalEffectiveness);
+        defenderCombatCard.ReduceHealthPoints(attackDamage);
     }
 
-    public static void ReduceAttackerEnergy(this CombatCard AttackerCombatCard)
+    public static void ReduceAttackerEnergy(this CombatCard attackerCombatCard, int energyToReduce)
     {
-        AttackerCombatCard.ReduceEnergy();
+        attackerCombatCard.ReduceEnergy(energyToReduce);
     }
-    public static int CalculateEnergy(int Turns)
+    public static int CalculateEnergy(int turns)
     {
-        return (int) Mathf.Ceil((float)Turns / 3f);
+        return (int) Mathf.Ceil((float)turns / 3f);
         
         /*
         float NewEnergy = Mathf ((float)Turns / 3f;

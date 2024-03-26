@@ -14,6 +14,6 @@ public class PartyMember
     {
         this.CombatCardTemplate = CombatCardTemplate;
         CurrentHealthPoints = CombatCardTemplate.HealthPoints;
-        CurrentEnergyPoints = 0;
+        CurrentEnergyPoints = CombatUtils.CalculateEnergy(CombatCardTemplate.Turns);
     }
 }

@@ -29,7 +29,8 @@ public class CombatCard : MonoBehaviour
     private int healthPoints;
     private int damage = 0;
     private int armor = 0;
-    private int energy = 0;
+    private int initialEnergy = 0;
+    private int currentEnergy = 0;
     private int turns = 0;
     private CombatTypes combatType;
 
@@ -47,7 +48,8 @@ public class CombatCard : MonoBehaviour
         damage = DataCard.Damage;
         armor = DataCard.Armor;
         turns = DataCard.Turns;
-        energy = CombatUtils.CalculateEnergy(turns);
+        initialEnergy = CombatUtils.CalculateEnergy(turns);
+        currentEnergy = initialEnergy;
         combatType = DataCard.CombatType;
 
         initialText = DataCard.InitialText;
@@ -57,7 +59,7 @@ public class CombatCard : MonoBehaviour
         //Encendemos los puntos de cada stat
         SetStat(damage, attackPoints);
         SetStat(armor, defensePoints);
-        SetStat(energy, energyPoints);
+        SetStat(initialEnergy, energyPoints);
         healthText.text = healthPoints.ToString();
     }
 
@@ -69,10 +71,16 @@ public class CombatCard : MonoBehaviour
         }
     }
 
-    public void ReduceEnergy()
+    public void ReduceEnergy(int energyToReduce)
     {
-        energy--;
-        energyPoints[energy].enabled = false;
+        currentEnergy = currentEnergy - energyToReduce > 0 ? currentEnergy - energyToReduce : 0;
+        energyPoints[currentEnergy].enabled = false;
+    }
+
+    public void RecoverEnergy(int energyToRecover)
+    {
+        currentEnergy = currentEnergy + energyToRecover < initialEnergy ? currentEnergy + energyToRecover : initialEnergy;
+        energyPoints[currentEnergy].enabled = true;
     }
 
     public float GetCardWidth()
@@ -106,9 +114,9 @@ public class CombatCard : MonoBehaviour
         return healthPoints;
     }
 
-    public int GetCardEnergy()
+    public int GetCardCurrentEnergy()
     {
-        return energy;
+        return currentEnergy;
     }
 
     public void EnableTopSwipeWarningText()
