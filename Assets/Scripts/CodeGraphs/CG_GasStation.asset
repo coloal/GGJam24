@@ -15,6 +15,31 @@ MonoBehaviour:
   nodes:
   - rid: 8580623337150218298
   - rid: 8580623337150218303
+  - rid: 8807612109458243618
+  - rid: 8807612109458243619
+  - rid: 8807612109458243620
+  - rid: 8807612109458243621
+  - rid: 8807612109458243623
+  - rid: 8807612109458243624
+  - rid: 8807612109458243625
+  - rid: 8807612109458243626
+  - rid: 8807612109458243627
+  - rid: 8807612109458243628
+  - rid: 8807612109458243629
+  - rid: 8807612109458243630
+  - rid: 8807612109458243631
+  - rid: 8807612109458243632
+  - rid: 8807612109458243633
+  - rid: 8807612109458243636
+  - rid: 8807612109458243637
+  - rid: 8807612109458243638
+  - rid: 8807612109458243639
+  - rid: 8807612109458243640
+  - rid: 8807612109458243641
+  - rid: 8807612109458243642
+  - rid: 8807612109458243643
+  - rid: 8807612109458243644
+  - rid: 8807612109458243645
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -22,6 +47,180 @@ MonoBehaviour:
     inputPort:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 1
+  - outputPort:
+      nodeId: 9b95a603-b8ef-4487-a5c8-67d92c5a3d1a
+      portIndex: 0
+    inputPort:
+      nodeId: 453c5259-741c-4dc6-ade2-d8e3949e0924
+      portIndex: 2
+  - outputPort:
+      nodeId: 453c5259-741c-4dc6-ade2-d8e3949e0924
+      portIndex: 1
+    inputPort:
+      nodeId: 491a19c9-9e6c-434f-97bc-125e719e1027
+      portIndex: 0
+  - outputPort:
+      nodeId: 453c5259-741c-4dc6-ade2-d8e3949e0924
+      portIndex: 0
+    inputPort:
+      nodeId: d16be06a-4c15-4e0c-a972-58c9b761effb
+      portIndex: 1
+  - outputPort:
+      nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
+      portIndex: 0
+    inputPort:
+      nodeId: e4abba81-e07a-478d-b802-bbd7ad7b6c7b
+      portIndex: 1
+  - outputPort:
+      nodeId: e4abba81-e07a-478d-b802-bbd7ad7b6c7b
+      portIndex: 0
+    inputPort:
+      nodeId: 3dee8f97-e0e0-40b3-9f18-6c46b45e8808
+      portIndex: 1
+  - outputPort:
+      nodeId: 3dee8f97-e0e0-40b3-9f18-6c46b45e8808
+      portIndex: 0
+    inputPort:
+      nodeId: 7c71f88b-1927-48f4-9f43-c80654c56b9b
+      portIndex: 1
+  - outputPort:
+      nodeId: 7c71f88b-1927-48f4-9f43-c80654c56b9b
+      portIndex: 0
+    inputPort:
+      nodeId: 1b39f73a-d0ee-4be7-9780-6288afddecec
+      portIndex: 1
+  - outputPort:
+      nodeId: 1b39f73a-d0ee-4be7-9780-6288afddecec
+      portIndex: 0
+    inputPort:
+      nodeId: 5a37dbbb-e263-4618-a21a-78fc2b331850
+      portIndex: 1
+  - outputPort:
+      nodeId: 5a37dbbb-e263-4618-a21a-78fc2b331850
+      portIndex: 0
+    inputPort:
+      nodeId: 9b95a603-b8ef-4487-a5c8-67d92c5a3d1a
+      portIndex: 1
+  - outputPort:
+      nodeId: d16be06a-4c15-4e0c-a972-58c9b761effb
+      portIndex: 0
+    inputPort:
+      nodeId: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
+      portIndex: 1
+  - outputPort:
+      nodeId: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
+      portIndex: 0
+    inputPort:
+      nodeId: 48067346-e300-404a-a102-7a5ebe7ebc86
+      portIndex: 2
+  - outputPort:
+      nodeId: 48067346-e300-404a-a102-7a5ebe7ebc86
+      portIndex: 0
+    inputPort:
+      nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
+      portIndex: 1
+  - outputPort:
+      nodeId: 9e4fa609-bf03-4729-b56e-e76c3d13e604
+      portIndex: 0
+    inputPort:
+      nodeId: 2d9272a2-bec2-494a-aaf4-1dd1623c98f7
+      portIndex: 0
+  - outputPort:
+      nodeId: 48067346-e300-404a-a102-7a5ebe7ebc86
+      portIndex: 1
+    inputPort:
+      nodeId: 9e4fa609-bf03-4729-b56e-e76c3d13e604
+      portIndex: 1
+  - outputPort:
+      nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
+      portIndex: 0
+    inputPort:
+      nodeId: e2c35763-16a1-464f-b359-d68423d52d6e
+      portIndex: 2
+  - outputPort:
+      nodeId: e2c35763-16a1-464f-b359-d68423d52d6e
+      portIndex: 1
+    inputPort:
+      nodeId: 8a53b958-d2f0-4d35-93b9-4f1f6644c373
+      portIndex: 2
+  - outputPort:
+      nodeId: 8a53b958-d2f0-4d35-93b9-4f1f6644c373
+      portIndex: 1
+    inputPort:
+      nodeId: 347a4f3d-fe6c-4f1b-a42a-228c4cdd4ec1
+      portIndex: 2
+  - outputPort:
+      nodeId: 347a4f3d-fe6c-4f1b-a42a-228c4cdd4ec1
+      portIndex: 1
+    inputPort:
+      nodeId: 37eb74b5-0d32-4f6d-ae62-d21569e68b63
+      portIndex: 2
+  - outputPort:
+      nodeId: 37eb74b5-0d32-4f6d-ae62-d21569e68b63
+      portIndex: 0
+    inputPort:
+      nodeId: 7b42d28e-eec4-48ba-bdb7-2acd6355eb07
+      portIndex: 1
+  - outputPort:
+      nodeId: 7b42d28e-eec4-48ba-bdb7-2acd6355eb07
+      portIndex: 0
+    inputPort:
+      nodeId: 99d2aa1f-6afe-4c44-8697-af28a4e3ba0d
+      portIndex: 0
+  - outputPort:
+      nodeId: 37eb74b5-0d32-4f6d-ae62-d21569e68b63
+      portIndex: 1
+    inputPort:
+      nodeId: 99d2aa1f-6afe-4c44-8697-af28a4e3ba0d
+      portIndex: 0
+  - outputPort:
+      nodeId: 347a4f3d-fe6c-4f1b-a42a-228c4cdd4ec1
+      portIndex: 0
+    inputPort:
+      nodeId: 6541de99-187d-4dc3-900a-e1703e92a47c
+      portIndex: 1
+  - outputPort:
+      nodeId: 6541de99-187d-4dc3-900a-e1703e92a47c
+      portIndex: 0
+    inputPort:
+      nodeId: 37eb74b5-0d32-4f6d-ae62-d21569e68b63
+      portIndex: 2
+  - outputPort:
+      nodeId: 8a53b958-d2f0-4d35-93b9-4f1f6644c373
+      portIndex: 0
+    inputPort:
+      nodeId: 5455cf6d-3e9f-4c24-a6f8-828137de33ac
+      portIndex: 1
+  - outputPort:
+      nodeId: 5455cf6d-3e9f-4c24-a6f8-828137de33ac
+      portIndex: 0
+    inputPort:
+      nodeId: fa4eddc1-0baf-4bdd-8b14-3d1e6ac4fecb
+      portIndex: 1
+  - outputPort:
+      nodeId: fa4eddc1-0baf-4bdd-8b14-3d1e6ac4fecb
+      portIndex: 0
+    inputPort:
+      nodeId: 6de5198d-17cb-47c3-80c9-87cb26c91040
+      portIndex: 1
+  - outputPort:
+      nodeId: 6de5198d-17cb-47c3-80c9-87cb26c91040
+      portIndex: 0
+    inputPort:
+      nodeId: 347a4f3d-fe6c-4f1b-a42a-228c4cdd4ec1
+      portIndex: 2
+  - outputPort:
+      nodeId: e2c35763-16a1-464f-b359-d68423d52d6e
+      portIndex: 0
+    inputPort:
+      nodeId: 1ac5c3f1-09b1-434b-97d9-25d833dd83d0
+      portIndex: 1
+  - outputPort:
+      nodeId: 1ac5c3f1-09b1-434b-97d9-25d833dd83d0
+      portIndex: 0
+    inputPort:
+      nodeId: 8a53b958-d2f0-4d35-93b9-4f1f6644c373
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -53,9 +252,447 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'Hey, good morning, darling.
+        CardText: 'A roadside gas station, at the outskirts of the town.
 
-'
-        LeftText: Morning
-        RightText: ...
+          The
+          Puritans gang are having a beers here today.'
+        LeftText: 'Next stop: fixing van.'
+        RightText: Let's see how puritan they are!
+        card: {fileID: 11400000, guid: 1215b9ae72d62aa4e9204a120bb24d9f, type: 2}
+    - rid: 8807612109458243618
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3dee8f97-e0e0-40b3-9f18-6c46b45e8808
+        position:
+          serializedVersion: 2
+          x: 477
+          y: -1
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Well... We were having quite a boring \nevening my young visitors\n
+          but know that you are here I think we'll \nbe able to entertain ourselves
+          a little bit, \ndon't you think?"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243619
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e4abba81-e07a-478d-b802-bbd7ad7b6c7b
+        position:
+          serializedVersion: 2
+          x: 2
+          y: -1
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Finally! The newbies have formed their gang. \nWe were waiting
+          for you, did you know?"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243620
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7c71f88b-1927-48f4-9f43-c80654c56b9b
+        position:
+          serializedVersion: 2
+          x: 961
+          y: -1
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "As you already know we very much appreciate \nviolence as a recreative
+          activity, my fellas, and \nfresh meat is always welcomed."
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243621
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1b39f73a-d0ee-4be7-9780-6288afddecec
+        position:
+          serializedVersion: 2
+          x: 1411
+          y: -1
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "But before that we need to find a way of giving a little\n bit
+          of drama to this fights, do you have any issue\n which could spice things
+          up a little bit?"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243623
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5a37dbbb-e263-4618-a21a-78fc2b331850
+        position:
+          serializedVersion: 2
+          x: 1858
+          y: -1
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Perfect! Let's make it a series of fights for\n your van then.
+          If you win, my mechanic will\n join you, if my boy wins I get your van."
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243624
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9b95a603-b8ef-4487-a5c8-67d92c5a3d1a
+        position:
+          serializedVersion: 2
+          x: 2318
+          y: -1
+          width: 590
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "But first, let's do a opening fight for the evening. \nYou will
+          first have to prove your value against\n my boy, Fluffy"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243625
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 453c5259-741c-4dc6-ade2-d8e3949e0924
+        position:
+          serializedVersion: 2
+          x: 2839
+          y: -1
+          width: 335
+          height: 122
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win
+        - Lose
+        card: {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
+    - rid: 8807612109458243626
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 491a19c9-9e6c-434f-97bc-125e719e1027
+        position:
+          serializedVersion: 2
+          x: 3322.3503
+          y: 205.85002
+          width: 0
+          height: 0
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 8807612109458243627
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d16be06a-4c15-4e0c-a972-58c9b761effb
+        position:
+          serializedVersion: 2
+          x: 3555
+          y: 0
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Ok, great, you are starting to earn my respect now. \nLet me then
+          introduce you to your next rival [mecha name],\n our mechanic. I bet you
+          won't last long against him/her"
+        LeftText: we'll see
+        RightText: can't wait to have my van fixed
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243628
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
+        position:
+          serializedVersion: 2
+          x: 4050
+          y: 0
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Nothing could appeal less to me\n than fixing that caravan, dude."
+        LeftText: we're going to beat the desire to fix it into you, mate.
+        RightText: you're going to get sick of grease, mate.
+        card: {fileID: 11400000, guid: 9fba73b7dc336a84f9f9201ad2753324, type: 2}
+    - rid: 8807612109458243629
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 48067346-e300-404a-a102-7a5ebe7ebc86
+        position:
+          serializedVersion: 2
+          x: 4560
+          y: 0
+          width: 335
+          height: 122
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win
+        - Lose
+        card: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
+    - rid: 8807612109458243630
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
+        position:
+          serializedVersion: 2
+          x: 5159
+          y: 0
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Wow, that was impressive although you are not\n prepared still
+          to fight me but I guess we will \n\tencounter our ways in the future. So
+          long, young gang."
+        LeftText: I can't wait for it, so long
+        RightText: don't know if I'll ever comeback, bye
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243631
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2d9272a2-bec2-494a-aaf4-1dd1623c98f7
+        position:
+          serializedVersion: 2
+          x: 5343
+          y: 308
+          width: 74
+          height: 77
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 8807612109458243632
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9e4fa609-bf03-4729-b56e-e76c3d13e604
+        position:
+          serializedVersion: 2
+          x: 4987
+          y: 308
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: hahaha I knew you were a bunch of weaklings
+        LeftText: We all knew
+        RightText: I'll come after you
+        card: {fileID: 11400000, guid: 544a5d2a2790e894e82a1bc9f0e5d8e2, type: 2}
+    - rid: 8807612109458243633
+      type: {class: CheckPartyMemberNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e2c35763-16a1-464f-b359-d68423d52d6e
+        position:
+          serializedVersion: 2
+          x: 5635
+          y: 0
+          width: 356
+          height: 122
+        typeName: CodeGraph.CheckPartyMemberNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        PartyMember: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
+    - rid: 8807612109458243636
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8a53b958-d2f0-4d35-93b9-4f1f6644c373
+        position:
+          serializedVersion: 2
+          x: 6219
+          y: 0
+          width: 224
+          height: 122
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 0
+    - rid: 8807612109458243637
+      type: {class: CheckPartyMemberNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 347a4f3d-fe6c-4f1b-a42a-228c4cdd4ec1
+        position:
+          serializedVersion: 2
+          x: 7771
+          y: -19
+          width: 363
+          height: 122
+        typeName: CodeGraph.CheckPartyMemberNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        PartyMember: {fileID: 11400000, guid: a486211195abb3848a1a5da2b2371154, type: 2}
+    - rid: 8807612109458243638
+      type: {class: CheckPartyMemberNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 37eb74b5-0d32-4f6d-ae62-d21569e68b63
+        position:
+          serializedVersion: 2
+          x: 8641
+          y: 0
+          width: 372
+          height: 122
+        typeName: CodeGraph.CheckPartyMemberNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        PartyMember: {fileID: 11400000, guid: e1aedf56eee34d14e8e45284fee25208, type: 2}
+    - rid: 8807612109458243639
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7b42d28e-eec4-48ba-bdb7-2acd6355eb07
+        position:
+          serializedVersion: 2
+          x: 9122
+          y: -526
+          width: 358
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Uhhh, what a kick-ass performance, buddyyyy!!
+        LeftText: You were glorious, buddy
+        RightText: We have not even started, bud!
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 8807612109458243640
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 99d2aa1f-6afe-4c44-8697-af28a4e3ba0d
+        position:
+          serializedVersion: 2
+          x: 9604
+          y: 26
+          width: 74
+          height: 77
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 8807612109458243641
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6541de99-187d-4dc3-900a-e1703e92a47c
+        position:
+          serializedVersion: 2
+          x: 8171
+          y: -498
+          width: 352
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "See, I do not know why you were so worried about\n your leader
+          skills, this is already a official gang with \nsome fights won"
+        LeftText: Yesss, you were obviosuly right...
+        RightText: I don't know why I don't listen to you more, my oracle.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 8807612109458243642
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5455cf6d-3e9f-4c24-a6f8-828137de33ac
+        position:
+          serializedVersion: 2
+          x: 6457
+          y: -315
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Supp, mate? I hear you fought against a Puritan at the gas station?
+        LeftText: Yep, he/she is fixing our van.
+        RightText: Yep, beated.
+        card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
+    - rid: 8807612109458243643
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: fa4eddc1-0baf-4bdd-8b14-3d1e6ac4fecb
+        position:
+          serializedVersion: 2
+          x: 6873
+          y: -315
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Epic! you are becoming a legend of gang culture, mate!
+        LeftText: Well, this is just starting, mate.
+        RightText: I am already :P
+        card: {fileID: 0}
+    - rid: 8807612109458243644
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6de5198d-17cb-47c3-80c9-87cb26c91040
+        position:
+          serializedVersion: 2
+          x: 7309
+          y: -315
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Well, I leave you alone now, mate.
+        LeftText: See ya ;)
+        RightText: Bye, mate
+        card: {fileID: 0}
+    - rid: 8807612109458243645
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1ac5c3f1-09b1-434b-97d9-25d833dd83d0
+        position:
+          serializedVersion: 2
+          x: 5951
+          y: -477
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "HoHo, my brother will be proud of me after\n this fight, we won
+          against a member of the\n puritans gang!!!"
+        LeftText: Why is this always about you?
+        RightText: We are team here, man
+        card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
