@@ -63,6 +63,7 @@ MonoBehaviour:
   - rid: 8580623337150218307
   - rid: 8580623337150218310
   - rid: 8580623337150218311
+  - rid: 8580623429159092224
   connections:
   - outputPort:
       nodeId: 5e57d65b-baf5-46ba-b9f7-d5b2a919cdfb
@@ -437,12 +438,6 @@ MonoBehaviour:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 1
   - outputPort:
-      nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
-      portIndex: 0
-    inputPort:
-      nodeId: 3225811d-427c-4fe3-9a25-ee91bec7e996
-      portIndex: 2
-  - outputPort:
       nodeId: 3225811d-427c-4fe3-9a25-ee91bec7e996
       portIndex: 0
     inputPort:
@@ -489,6 +484,24 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: e7d5152b-f320-4823-982f-0525348b462a
+      portIndex: 2
+  - outputPort:
+      nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
+      portIndex: 0
+    inputPort:
+      nodeId: 036cfc1f-5951-4733-9463-83a803358772
+      portIndex: 2
+  - outputPort:
+      nodeId: 036cfc1f-5951-4733-9463-83a803358772
+      portIndex: 0
+    inputPort:
+      nodeId: 3225811d-427c-4fe3-9a25-ee91bec7e996
+      portIndex: 2
+  - outputPort:
+      nodeId: 036cfc1f-5951-4733-9463-83a803358772
+      portIndex: 1
+    inputPort:
+      nodeId: 3225811d-427c-4fe3-9a25-ee91bec7e996
       portIndex: 2
   references:
     version: 2
@@ -1209,10 +1222,10 @@ MonoBehaviour:
         guid: 3225811d-427c-4fe3-9a25-ee91bec7e996
         position:
           serializedVersion: 2
-          x: 500
-          y: -30
+          x: 633
+          y: -38
           width: 352
-          height: 320
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1304,3 +1317,19 @@ MonoBehaviour:
         LeftText: Thank, [Gentle Giant]
         RightText: I'll try
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 8580623429159092224
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 036cfc1f-5951-4733-9463-83a803358772
+        position:
+          serializedVersion: 2
+          x: 417
+          y: -254
+          width: 335
+          height: 122
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win
+        - Lose
+        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}

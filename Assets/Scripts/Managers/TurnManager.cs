@@ -80,8 +80,7 @@ public class TurnManager : MonoBehaviour
             }
             else
             {
-                //Iniciar batalla aqui
-                Debug.Log("Batallaaaaaaaa");
+                GameManager.Instance.StartCombat(combatStep.CombatCard);
             }
         }
         //Nodo de carta de final
@@ -115,6 +114,18 @@ public class TurnManager : MonoBehaviour
         }
         GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
         StoryManager.SwipeRight();
+    }
+
+    public void WinCombat()
+    {
+        StoryManager.WinCombat();
+        StartTurn();
+    }
+
+    public void LoseCombat()
+    {
+        StoryManager.LoseCombat();
+        StartTurn();
     }
 
     void SetGameState(GameStates State)

@@ -228,10 +228,10 @@ public class DraggableComponent : MonoBehaviour
                 if (!IsActive) return;
                 IsActive = false;
                 CurrentState = DraggableStates.SWIPE_RIGHT;
-                foreach (Action action in rigthtSwipeActions)
+                /*foreach (Action action in rigthtSwipeActions)
                 {
                     action();
-                }
+                }*/
                 GameManager.Instance.ProvideTurnManager().SwipeRight();   
             }
             else
