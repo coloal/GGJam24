@@ -17,7 +17,7 @@ public class GameUtils : MonoBehaviour
         
     }
 
-    public static void createTemporizer(Action lambda, float Seconds, MonoBehaviour m)
+    public static void CreateTemporizer(Action lambda, float Seconds, MonoBehaviour m)
     {
         m.StartCoroutine(DelaySeconds(Seconds, lambda));
     }

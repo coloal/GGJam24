@@ -170,7 +170,7 @@ public class BrainSoundManager : MonoBehaviour
     {
         StoryEventInstance.setPaused(true);
 
-        /*cogemos el CombatInstance y seteamos los parametros según los party members
+        /*cogemos el CombatInstance y seteamos los parametros segï¿½n los party members
 
         //CombatInstance.setParameterByName("",0.0f);
         //CombatInstance.start();
@@ -289,7 +289,7 @@ public class BrainSoundManager : MonoBehaviour
     private void TurnOffCampfire()
     {
         CampfireInstance.setParameterByName(BrainSoundTag.ApagarHoguera.ToString(), 1);
-        GameUtils.createTemporizer(() => StopCampfire(), 1f, this);
+        GameUtils.CreateTemporizer(() => StopCampfire(), 1f, this);
 
     }
 

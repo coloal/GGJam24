@@ -121,9 +121,10 @@ public class CombatManager : MonoBehaviour
         CombatCard enemyCombatCardComponent = SpawnEnemyCard();
         SpawnPlayerCards();
 
-        if (enemyCombatCardComponent)
+        if (enemyCombatCardComponent && combatSceneUIController)
         {
             UpdateCombatTurns(enemyCombatCardComponent.GetCombatTurnsForCard());
+            combatSceneUIController.ShowDialogText(enemyCombatCardComponent.GetInitialText());
         }
 
         SetCombatState(CombatStates.CHOOSE_ATTACKER);

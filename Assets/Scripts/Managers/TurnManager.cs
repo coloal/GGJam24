@@ -102,7 +102,7 @@ public class TurnManager : MonoBehaviour
         {
             DestroyCard();
         }
-        GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
+        GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
         StoryManager.SwipeLeft();
     }
 
@@ -113,7 +113,7 @@ public class TurnManager : MonoBehaviour
         {
             DestroyCard();
         }
-        GameUtils.createTemporizer(() => StartTurn(), 0.5f, this);
+        GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
         StoryManager.SwipeRight();
     }
 
@@ -178,7 +178,7 @@ public class TurnManager : MonoBehaviour
     {
         GameObject CardToDestroy = CurrentCard.gameObject;
         CardToDestroy.GetComponent<BoxCollider2D>().enabled = false;
-        GameUtils.createTemporizer(() => Destroy(CardToDestroy), 1, this);
+        GameUtils.CreateTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 
     /*private void ExecuteActions(List<Option> Actions)
