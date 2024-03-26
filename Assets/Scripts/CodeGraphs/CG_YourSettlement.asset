@@ -1361,9 +1361,9 @@ MonoBehaviour:
         guid: 6bdc719f-8f35-4385-8759-585d77ae5fe1
         position:
           serializedVersion: 2
-          x: 11345
-          y: -397
-          width: 321
+          x: 11711
+          y: -440
+          width: 367
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1396,8 +1396,8 @@ MonoBehaviour:
         guid: ad68310c-c169-462d-b070-e0a4b188eafb
         position:
           serializedVersion: 2
-          x: 11754
-          y: -291
+          x: 12144
+          y: -198
           width: 380
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1491,9 +1491,9 @@ MonoBehaviour:
         guid: bfe88bcc-722c-4581-be05-b849eb4badc4
         position:
           serializedVersion: 2
-          x: 10424
-          y: -292
-          width: 308
+          x: 10623
+          y: -76
+          width: 368
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1506,9 +1506,9 @@ MonoBehaviour:
         guid: bb6e516d-d7be-4b89-97ec-a9d0a68af409
         position:
           serializedVersion: 2
-          x: 11694
-          y: -356
-          width: 308
+          x: 11307
+          y: -292
+          width: 368
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1521,8 +1521,8 @@ MonoBehaviour:
         guid: 04dc8cb5-9e37-41b5-b2e7-1c2e4a72fef1
         position:
           serializedVersion: 2
-          x: 11711
-          y: -162
+          x: 11417
+          y: -76
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

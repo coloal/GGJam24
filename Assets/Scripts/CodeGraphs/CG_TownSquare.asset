@@ -253,7 +253,7 @@ MonoBehaviour:
         CardText: Hmmm, but what do my eyes see? Isn't this the new town gang?
         LeftText: Affirmatively, affirmative, mam
         RightText: Definitely definitive, mam
-        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243588
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -273,15 +273,15 @@ MonoBehaviour:
           advices and relevant information for your journey."
         LeftText: I am good, thank you, I know what I am doing
         RightText: Yes, please, context finally!
-        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243589
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 2e7f5868-3deb-4a3d-8268-bccff6c68f5a
         position:
           serializedVersion: 2
-          x: 1084
-          y: 241
+          x: 1083
+          y: 265
           width: 380
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -294,7 +294,7 @@ MonoBehaviour:
           and new things awaits you, right?"
         LeftText: So we will be going around with no goal?
         RightText: I would like to know Why I am leaving my home
-        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243590
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -314,7 +314,7 @@ MonoBehaviour:
           that which inspires and \ndrives you ;)"
         LeftText: I'm driving a Van, I know that
         RightText: Feeling anxious already :/
-        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243591
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -333,7 +333,7 @@ MonoBehaviour:
           of vitamine D, darling."
         LeftText: Ok, thank you, miss
         RightText: '[Sometimes I just do silent inner reflections]'
-        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243592
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -352,7 +352,7 @@ MonoBehaviour:
         CardText: Well, we still need to fix our van if we want to travel around...
         LeftText: Go talk to Punkie boy
         RightText: Try to cross the square without being noticed
-        card: {fileID: 11400000, guid: 1215b9ae72d62aa4e9204a120bb24d9f, type: 2}
+        card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
     - rid: 8807612109458243593
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -373,7 +373,7 @@ MonoBehaviour:
           right now'
         LeftText: Yesssss
         RightText: Let's gooo
-        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
+        card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
     - rid: 8807612109458243594
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -392,7 +392,7 @@ MonoBehaviour:
           your gang and you are\n already trying to avoid violence? For fight sake!"
         LeftText: Fuck
         RightText: Fight then
-        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
+        card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
     - rid: 8807612109458243595
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -511,7 +511,7 @@ MonoBehaviour:
         CardText: It seems everything we could do here is already done.
         LeftText: Let's go to the Gas station then
         RightText: 'Next stop: Gas Station'
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
     - rid: 8807612109458243612
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -579,7 +579,7 @@ MonoBehaviour:
         CardText: Hey, what did you do to my boy?
         LeftText: You know he starts all fights
         RightText: You better let yourself lose if you want to keep up with him.
-        card: {fileID: 11400000, guid: a464de7fde61c844eaa568d000f18d16, type: 2}
+        card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
     - rid: 8807612109458243616
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
