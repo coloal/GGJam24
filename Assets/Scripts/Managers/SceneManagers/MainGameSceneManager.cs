@@ -10,8 +10,6 @@ public class MainGameSceneManager : BaseSceneManager
     TurnManager turnManager;
     [SerializeField]
     CardsManager cardsManager;
-    [SerializeField]
-    EndManager endManager;
     
     void Awake()
     {
@@ -41,10 +39,7 @@ public class MainGameSceneManager : BaseSceneManager
     {
         return turnManager;
     }
-    public EndManager ProvideEndManager()
-    {
-        return endManager;
-    }
+    
     public CardsManager ProvideCardsManager()
     {
         return cardsManager;

@@ -9,17 +9,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class TurnManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject OverlayImage;
-
-    [SerializeField]
-    TextMeshPro NameFeedbackBox;
-    [SerializeField]
-    TextMeshPro TextFeedbackBox;
-
     GameStates CurrentGameState;
-
-
     StoryManager StoryManager {
         get {
             return GameManager.Instance.ProvideStoryManager();
@@ -35,7 +25,7 @@ public class TurnManager : MonoBehaviour
 
     void Start()
     {
-        OverlayImage.SetActive(false);
+        
     }
 
     void GetNewCard(StoryCardTemplate nextCard)
