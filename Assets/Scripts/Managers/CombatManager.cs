@@ -42,6 +42,8 @@ public class CombatManager : MonoBehaviour
     [SerializeField]
     private Transform attackerCardOrigin;
 
+    [Header("UI configuration")]
+    [SerializeField] private CombatSceneController combatSceneUIController;
 
     [Header("Debug")]
     [SerializeField]
@@ -54,6 +56,7 @@ public class CombatManager : MonoBehaviour
     private List<PartyMemberInSceneInfo> partyMembersInScene;
     private PartyMemberInSceneInfo currentAttacker;
     private GameObject enemyCard;
+    private int combatTurns;
 
     void Awake()
     {
@@ -84,7 +87,7 @@ public class CombatManager : MonoBehaviour
         switch (currentState)
         {
             case CombatStates.INIT:
-                SpawnCombatCards();
+                InitCombatField();
                 break;
             case CombatStates.CHOOSE_ATTACKER:
                 ChooseAttacker();
@@ -111,14 +114,25 @@ public class CombatManager : MonoBehaviour
         return currentState;
     }
 
-    void SpawnCombatCards() {
-        SpawnEnemyCard();
+    void InitCombatField() {
+        CombatCard enemyCombatCardComponent = SpawnEnemyCard();
         SpawnPlayerCards();
+
+        if (enemyCombatCardComponent)
+        {
+            UpdateCombatTurns(enemyCombatCardComponent.GetCombatTurnsForCard());
+        }
 
         SetCombatState(CombatStates.CHOOSE_ATTACKER);
     }
 
-    void SpawnEnemyCard()
+    void UpdateCombatTurns(int newCombatTurns)
+    {
+        combatTurns = newCombatTurns;
+        combatSceneUIController.SetTurnNumber(combatTurns);
+    }
+
+    CombatCard SpawnEnemyCard()
     {
         enemyCard = Instantiate(debugEnemyCardPrefab, enemyCardOrigin.position, Quaternion.identity);
         CombatCard enemyCardCombatCardComponent = enemyCard.GetComponent<CombatCard>();
@@ -126,6 +140,8 @@ public class CombatManager : MonoBehaviour
         {
             enemyCardCombatCardComponent.SetDataCard(debugEnemyCombatCardTemplate);
         }
+
+        return enemyCardCombatCardComponent;
     }
 
     void SpawnPlayerCards()

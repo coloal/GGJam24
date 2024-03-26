@@ -138,4 +138,9 @@ public class CombatCard : MonoBehaviour
     {
         inactiveOverlay.SetActive(isActive);
     }
+
+    public int GetCombatTurnsForCard()
+    {
+        return turns;
+    }
 }
