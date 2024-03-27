@@ -107,9 +107,9 @@ public class TurnManager : MonoBehaviour
         StoryManager.SwipeRight();
     }
 
-    public void WinCombat()
+    public void WinCombat(bool captured)
     {
-        StoryManager.WinCombat();
+        StoryManager.WinCombat(captured);
         StartTurn();
     }
 
