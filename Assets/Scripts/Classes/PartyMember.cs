@@ -10,10 +10,17 @@ public class PartyMember
     public int CurrentHealthPoints;
     public int CurrentEnergyPoints;
 
-    public PartyMember(CombatCardTemplate CombatCardTemplate)
+    public PartyMember(CombatCardTemplate combatCardTemplate)
     {
-        this.CombatCardTemplate = CombatCardTemplate;
-        CurrentHealthPoints = CombatCardTemplate.HealthPoints;
-        CurrentEnergyPoints = CombatUtils.CalculateEnergy(CombatCardTemplate.Turns);
+        CombatCardTemplate = combatCardTemplate;
+        CurrentHealthPoints = combatCardTemplate.HealthPoints;
+        CurrentEnergyPoints = CombatUtils.CalculateEnergy(combatCardTemplate.Turns);
+    }
+
+    public PartyMember(CombatCardTemplate combatCardTemplate, int healthPoints, int energyPoints)
+    {
+        CombatCardTemplate = combatCardTemplate;
+        CurrentHealthPoints = healthPoints;
+        CurrentEnergyPoints = energyPoints;
     }
 }

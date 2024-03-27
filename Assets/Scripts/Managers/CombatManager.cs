@@ -37,23 +37,24 @@ public class CombatManager : MonoBehaviour
 
     [Header("Combat field configuration")]
     [Header("Cards positions")]
-    [SerializeField]
-    private Transform enemyCardOrigin;
-    [SerializeField]
-    private Transform playerCardsOrigin;
-    [SerializeField]
-    private float playerCardsHorizontalOffset = 3.0f;
-    [SerializeField]
-    private Transform attackerCardOrigin;
+    [SerializeField] private Transform enemyCardOrigin;
+    [SerializeField] private Transform attackerCardOrigin;
+    [SerializeField] private Transform caughtCardOrigin;
+    [SerializeField] private Transform playerCardsOrigin;
+    [SerializeField] private float playerCardsHorizontalOffset = 3.0f;
+    
+    [Header("Swipe actions texts")]
+    [SerializeField] private string placeAsAttackerCardText;
+    [SerializeField] private string changeAttackerCardText;
+    [SerializeField] private string attackText;
+    [SerializeField] private string captureCardText;
+    [SerializeField] private string letGoCardText;
 
     [Header("UI configuration")]
     [SerializeField] private CombatSceneController combatSceneUIController;
 
     [Header("Debug")]
-    [SerializeField]
-    private GameObject combatCardPrefab;
-    [SerializeField]
-    private CombatCardTemplate debugEnemyCombatCardTemplate;
+    [SerializeField] private CombatCardTemplate debugEnemyCombatCardTemplate;
 
     private PartyManager partyManager;
     private CombatStates currentState;
@@ -61,6 +62,7 @@ public class CombatManager : MonoBehaviour
     private PartyMemberInSceneInfo currentAttacker;
     private CombatCard enemyCard;
     private int combatTurns;
+    private CombatCardTemplate enemyCombatCardTemplate;
 
     void Awake()
     {
@@ -109,10 +111,10 @@ public class CombatManager : MonoBehaviour
                 EndTurnCycle();
                 break;
             case CombatStates.CAPTURE_ENEMY:
-                EndCombat(true);
+                ShowEnemyAsACaughtablePartyMember();
                 break;
             case CombatStates.GAME_OVER:
-                EndCombat(false);
+                StartEndCombatSequence(TurnResult.COMBAT_LOST);
                 break;
             default:
                 break;
@@ -146,18 +148,14 @@ public class CombatManager : MonoBehaviour
 
     CombatCard SpawnEnemyCard()
     {
+        GameObject combatCardPrefab = (GameObject) Resources.Load("Prefabs/CombatCard");
         GameObject enemyCard = Instantiate(combatCardPrefab, enemyCardOrigin.position, Quaternion.identity);
         CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
         if (combatCardPrefab.GetComponent<CombatCard>() != null)
         {
-            if (GameManager.Instance.ActualCombatEnemyCard)
-            {
-                combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
-            }
-            else
-            {
-                combatCardComponent.SetDataCard(debugEnemyCombatCardTemplate);
-            }
+            enemyCombatCardTemplate = GameManager.Instance.ActualCombatEnemyCard ?
+                GameManager.Instance.ActualCombatEnemyCard : debugEnemyCombatCardTemplate;
+            combatCardComponent.SetDataCard(enemyCombatCardTemplate);
         }
         
         return combatCardComponent;
@@ -219,6 +217,7 @@ public class CombatManager : MonoBehaviour
                 partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
             if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
             {
+                partyMemberCombatCardComponent.SetTopSwipeWarningText(placeAsAttackerCardText);
                 partyMemberInteractiveCombatCardComponent.SetOnSwipeUpEscapeZoneActions(
                     () => { partyMemberCombatCardComponent.EnableTopSwipeWarningText(); },
                     () => { partyMemberCombatCardComponent.DisableWarningText(); }
@@ -247,6 +246,7 @@ public class CombatManager : MonoBehaviour
                 partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
             if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
             {
+                partyMemberCombatCardComponent.SetLeftSwipeWarningText(changeAttackerCardText);
                 partyMemberInteractiveCombatCardComponent.SetOnSwipeLeftEscapeZoneActions(
                     () => { partyMemberCombatCardComponent.EnableLeftSwipeWarningText(); },
                     () => { partyMemberCombatCardComponent.DisableWarningText(); }
@@ -275,6 +275,7 @@ public class CombatManager : MonoBehaviour
                 partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
             if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
             {
+                partyMemberCombatCardComponent.SetRightSwipeWarningText(attackText);
                 partyMemberInteractiveCombatCardComponent.SetOnSwipeRightEscapeZoneActions(
                     () => { partyMemberCombatCardComponent.EnableRightSwipeWarningText(); },
                     () => { partyMemberCombatCardComponent.DisableWarningText(); }
@@ -320,16 +321,23 @@ public class CombatManager : MonoBehaviour
     void SetCurrentAttacker(PartyMemberInSceneInfo NewAttacker)
     {
         // If there's already an atacker card, swap it with the new card
-        if (currentAttacker.partyMemberGameObject)
-        {
-            currentAttacker.partyMemberGameObject.transform.position = currentAttacker.positionInHand;
-        }
+        ReturnAttackerCardToHand();
 
         currentAttacker = NewAttacker;
         currentAttacker.partyMemberGameObject.transform.position = attackerCardOrigin.position;
         currentAttacker.partyMemberGameObject.transform.rotation = attackerCardOrigin.rotation;
 
         SetCombatState(CombatStates.CHOOSE_ACTION);
+    }
+
+    void ReturnAttackerCardToHand()
+    {
+        if (currentAttacker.partyMemberGameObject)
+        {
+            currentAttacker.partyMemberGameObject.transform.position = currentAttacker.positionInHand;
+            currentAttacker.partyMemberGameObject.transform.rotation = Quaternion.identity;
+        }
+        currentAttacker.partyMemberGameObject = null;
     }
 
     void SetPartyMembersCardsInHandActivation(bool areCardsActive)
@@ -377,7 +385,6 @@ public class CombatManager : MonoBehaviour
     {
         AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-        
 
         if (CurrentAttackerCombatCard && enemyCard)
         {
@@ -511,64 +518,221 @@ public class CombatManager : MonoBehaviour
         currentAttacker.Reset();
     }
 
-    void EndCombat(bool combatWon)
-    {
-        int i = 0;
-        foreach(var partyMember in partyMembersInScene)
-        {
+    // void EndCombat(bool combatWon)
+    // {
+    //     int i = 0;
+    //     foreach(var partyMember in partyMembersInScene)
+    //     {
 
-            GameUtils.CreateTemporizer(() => { Destroy(partyMember.partyMemberGameObject); }, i, this);
-            i++;
-        }
-        GameUtils.CreateTemporizer(() => { Destroy(enemyCard.gameObject); }, i, this);
-        i++;
-        if(combatWon)
+    //         GameUtils.CreateTemporizer(() => { Destroy(partyMember.partyMemberGameObject); }, i, this);
+    //         i++;
+    //     }
+    //     GameUtils.CreateTemporizer(() => { Destroy(enemyCard.gameObject); }, i, this);
+    //     i++;
+    //     if(combatWon)
+    //     {
+    //         GameUtils.CreateTemporizer(() => {CaptureEnemy(); }, i, this);
+    //     }
+    //     else
+    //     {
+    //         GameUtils.CreateTemporizer(() => { CaptureEnemy(); }, i, this);
+    //     }
+        
+    // }
+
+    // void CaptureEnemy()
+    // {
+    //     GameObject enemyCard = Instantiate(combatCardPrefab, Vector2.zero, Quaternion.identity);
+    //     CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
+    //     if (combatCardPrefab.GetComponent<CombatCard>() != null)
+    //     {
+    //         combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
+    //     }
+    //     InteractiveCombatCardComponent enemyInteractiveCombatCardComponent = enemyCard.GetComponent<InteractiveCombatCardComponent>();
+    //     if (enemyInteractiveCombatCardComponent)
+    //     {
+    //         enemyInteractiveCombatCardComponent.SetOnSwipeLeftAction(() =>
+    //         {
+    //             GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_NO_CAPTURE); }, 2, this);
+    //         });
+    //         enemyInteractiveCombatCardComponent.SetOnSwipeRightAction(() =>
+    //         {
+    //             GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_CAPTURE);
+    //             GameManager.Instance.ProvidePartyManager().AddPartyMember(GameManager.Instance.ActualCombatEnemyCard);
+    //             }, 2, this);
+    //         });
+    //         enemyInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
+    //     }
+        
+    // }
+
+    void ShowEnemyAsACaughtablePartyMember()
+    {
+        SetUpEnemyCardCaughtableState();
+        ReturnAttackerCardToHand();
+        UpdatePartyMembersStateAfterBattle();
+        SetPartyMembersCardsInHandActivation(false);
+    }
+
+    void SetUpEnemyCardCaughtableState()
+    {
+        void SetUpEnemyOnSwipeLeftActions(
+            CombatCard enemyCombatCardComponent, 
+            InteractiveCombatCardComponent enemyInteractiveCombarCardComponent)
         {
-            GameUtils.CreateTemporizer(() => {CaptureEnemy(); }, i, this);
+            enemyCombatCardComponent.SetLeftSwipeWarningText(letGoCardText);
+
+            enemyInteractiveCombarCardComponent.SetOnSwipeLeftAction(() =>
+            {
+                StartEndCombatSequence(TurnResult.COMBAT_WON_NO_CAPTURE);
+            });
+
+            enemyInteractiveCombarCardComponent.SetOnSwipeLeftEscapeZoneActions(
+                () => { enemyCombatCardComponent.EnableLeftSwipeWarningText(); },
+                () => { enemyCombatCardComponent.DisableWarningText(); }
+            );
+        }
+
+        void SetUpEnemyOnSwipeRightActions(
+            CombatCard enemyCombatCardComponent, 
+            InteractiveCombatCardComponent enemyInteractiveCombarCardComponent)
+        {
+            enemyCombatCardComponent.SetRightSwipeWarningText(captureCardText);
+
+            enemyInteractiveCombarCardComponent.SetOnSwipeRightAction(() =>
+            {
+                AddOrSwapEnemyAsPartyMember();
+            });
+
+            enemyInteractiveCombarCardComponent.SetOnSwipeRightEscapeZoneActions(
+                () => { enemyCombatCardComponent.EnableRightSwipeWarningText(); },
+                () => { enemyCombatCardComponent.DisableWarningText(); }
+            );
+        }
+
+        enemyCard.transform.position = caughtCardOrigin.position;
+        enemyCard.transform.rotation = caughtCardOrigin.rotation;
+
+        CombatCard enemyCombatCardComponent = enemyCard.GetComponent<CombatCard>();
+        InteractiveCombatCardComponent enemyInteractiveCombarCardComponent =
+            enemyCard.GetComponent<InteractiveCombatCardComponent>();
+        if (enemyCombatCardComponent && enemyInteractiveCombarCardComponent)
+        {
+            SetUpEnemyOnSwipeLeftActions(enemyCombatCardComponent, enemyInteractiveCombarCardComponent);
+            SetUpEnemyOnSwipeRightActions(enemyCombatCardComponent, enemyInteractiveCombarCardComponent);
+            enemyInteractiveCombarCardComponent.EnableHorizontalDraggableComponent();
+        }
+    }
+
+    void AddOrSwapEnemyAsPartyMember()
+    {
+        // A party member must be removed
+        if (partyManager.GetPartyCount() == partyManager.GetMaxPartySize())
+        {
+            SetUpPartyMemberCardsForSwapingWithEnemy();
         }
         else
         {
-            GameUtils.CreateTemporizer(() => { CaptureEnemy(); }, i, this);
+            partyManager.AddPartyMember(enemyCombatCardTemplate);
+            StartEndCombatSequence(TurnResult.COMBAT_WON_CAPTURE);
         }
-        
     }
 
-    void CaptureEnemy()
+    void SetUpPartyMemberCardsForSwapingWithEnemy()
     {
-        GameObject enemyCard = Instantiate(combatCardPrefab, Vector2.zero, Quaternion.identity);
-        CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
-        if (combatCardPrefab.GetComponent<CombatCard>() != null)
+        void SetUpOnSwipeUpActions(PartyMemberInSceneInfo partyMemberInScene)
         {
-            combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (partyMemberInteractiveCombatCardComponent)
+            {
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeUpAction(() =>
+                {
+                    InteractiveCombatCardComponent enemyInteractiveCombatCardComponent =
+                        enemyCard.GetComponent<InteractiveCombatCardComponent>();
+                    if (enemyInteractiveCombatCardComponent)
+                    {
+                        enemyInteractiveCombatCardComponent.DisableDraggableComponents();
+
+                        partyMembersInScene.Remove(partyMemberInScene);
+                        partyManager.RemovePartyMember(partyMemberInScene.partyMemberInScene.CombatCardTemplate);
+
+                        Destroy(partyMemberInScene.partyMemberGameObject);
+                        partyManager.AddPartyMember(enemyCombatCardTemplate);
+
+                        StartEndCombatSequence(TurnResult.COMBAT_WON_CAPTURE);
+                    }
+                });
+            }
         }
-        InteractiveCombatCardComponent enemyInteractiveCombatCardComponent = enemyCard.GetComponent<InteractiveCombatCardComponent>();
-        if (enemyInteractiveCombatCardComponent)
+
+        void SetUpOnSwipeUpWarningActions(PartyMemberInSceneInfo partyMemberInScene)
         {
-            enemyInteractiveCombatCardComponent.SetOnSwipeLeftAction(() =>
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard partyMemberCombatCardComponent = 
+                partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+            if (partyMemberInteractiveCombatCardComponent && partyMemberCombatCardComponent)
             {
-                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_NO_CAPTURE); }, 2, this);
-            });
-            enemyInteractiveCombatCardComponent.SetOnSwipeRightAction(() =>
-            {
-                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_CAPTURE);
-                GameManager.Instance.ProvidePartyManager().AddMemberToParty(GameManager.Instance.ActualCombatEnemyCard);
-                }, 2, this);
-            });
-            enemyInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
+                partyMemberCombatCardComponent.SetTopSwipeWarningText(letGoCardText);
+                partyMemberInteractiveCombatCardComponent.SetOnSwipeUpEscapeZoneActions(
+                    () => { partyMemberCombatCardComponent.EnableTopSwipeWarningText(); },
+                    () => { partyMemberCombatCardComponent.DisableWarningText(); }
+                );
+            }
         }
-        
+
+        foreach (PartyMemberInSceneInfo partyMemberInScene in partyMembersInScene)
+        {
+            SetUpOnSwipeUpActions(partyMemberInScene);
+            SetUpOnSwipeUpWarningActions(partyMemberInScene);
+            CombatCard partyMemberCombatCardComponent =
+                    partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+            InteractiveCombatCardComponent partyMemberInteractiveCombatCardComponent =
+                partyMemberInScene.partyMemberGameObject.GetComponent<InteractiveCombatCardComponent>();
+            if (partyMemberCombatCardComponent && partyMemberInteractiveCombatCardComponent)
+            {
+                partyMemberCombatCardComponent.SetInactiveOverlayActivation(false);
+                partyMemberInteractiveCombatCardComponent.EnableVerticalDraggableComponent();
+            }
+        }
     }
 
-    void GameOver()
+    void UpdatePartyMembersStateAfterBattle()
     {
-        GameObject enemyCard = Instantiate(combatCardPrefab, Vector2.zero, Quaternion.identity);
-        CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
-        if (combatCardPrefab.GetComponent<CombatCard>() != null)
+        partyManager.ClearParty();
+        foreach (PartyMemberInSceneInfo partyMemberInScene in partyMembersInScene)
         {
-            combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
+            CombatCard partyMemberCombatCardComponent = 
+                partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+            if (partyMemberCombatCardComponent)
+            {
+                partyManager.AddPartyMember(
+                    cardToAdd: partyMemberInScene.partyMemberInScene.CombatCardTemplate,
+                    cardHealthPoints: partyMemberCombatCardComponent.GetHealthPoints(),
+                    cardEnergyPoints: partyMemberCombatCardComponent.GetCardCurrentEnergy());
+            }
         }
-        HorizontalDraggableComponent draggableComponent = enemyCard.GetComponent<HorizontalDraggableComponent>();
-        GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_LOST); }, 2, this);
+    }
 
+    // void InitGameOverSequence()
+    // {
+    //     GameObject enemyCard = Instantiate(combatCardPrefab, Vector2.zero, Quaternion.identity);
+    //     CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
+    //     if (combatCardPrefab.GetComponent<CombatCard>() != null)
+    //     {
+    //         combatCardComponent.SetDataCard(GameManager.Instance.ActualCombatEnemyCard);
+    //     }
+    //     HorizontalDraggableComponent draggableComponent = enemyCard.GetComponent<HorizontalDraggableComponent>();
+    //     GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_LOST); }, 2, this);
+
+    // }
+
+    void StartEndCombatSequence(TurnResult combatResult)
+    {
+        GameUtils.CreateTemporizer(() => 
+        {
+            GameManager.Instance.EndCombat(combatResult);
+        }, 1.0f, this);
     }
 }

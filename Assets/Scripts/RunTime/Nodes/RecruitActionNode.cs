@@ -16,7 +16,7 @@ namespace CodeGraph
 
         public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
-            GameManager.Instance.ProvidePartyManager().AddMemberToParty(RecruitedCard);
+            GameManager.Instance.ProvidePartyManager().AddPartyMember(RecruitedCard);
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
             if (nextNode != null)
             {

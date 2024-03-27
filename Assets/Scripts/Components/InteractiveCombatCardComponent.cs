@@ -25,6 +25,9 @@ public class InteractiveCombatCardComponent : MonoBehaviour
     public void SetOnSwipeUpAction(Action onSwipeUpAction)
     {
         DoOnValidDraggableComponents(() => {
+            //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
+            // and if we want more than one, we do it on the passed action itself
+            verticalDraggableComponent.TopSwipeActions.Clear();
             verticalDraggableComponent.TopSwipeActions.Add(() => {
                 if (verticalDraggableComponent.enabled)
                 {
@@ -38,6 +41,11 @@ public class InteractiveCombatCardComponent : MonoBehaviour
         Action onSwipeUpEscapeZoneEnterAction, Action onSwipeUpEscapeZoneExitAction)
     {
         DoOnValidDraggableComponents(() => {
+            //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
+            // and if we want more than one, we do it on the passed action itself
+            verticalDraggableComponent.TopSwipeEscapeZoneEnterActions.Clear();
+            verticalDraggableComponent.TopSwipeEscapeZoneExitActions.Clear();
+
             verticalDraggableComponent.TopSwipeEscapeZoneEnterActions.Add(() => {
                 if (verticalDraggableComponent.enabled)
                 {
@@ -56,6 +64,10 @@ public class InteractiveCombatCardComponent : MonoBehaviour
     public void SetOnSwipeLeftAction(Action onSwipeLeftAction)
     {
         DoOnValidDraggableComponents(() => {
+            //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
+            // and if we want more than one, we do it on the passed action itself
+            horizontalDraggableComponent.LeftSwipeActions.Clear();
+
             horizontalDraggableComponent.LeftSwipeActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
@@ -69,6 +81,11 @@ public class InteractiveCombatCardComponent : MonoBehaviour
         Action onSwipeLeftEscapeZoneEnterAction, Action onSwipeLeftEscapeZoneExitAction)
     {
         DoOnValidDraggableComponents(() => {
+            //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
+            // and if we want more than one, we do it on the passed action itself
+            horizontalDraggableComponent.LeftSwipeEscapeZoneEnterActions.Clear();
+            horizontalDraggableComponent.LeftSwipeEscapeZoneExitActions.Clear();
+
             horizontalDraggableComponent.LeftSwipeEscapeZoneEnterActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
@@ -87,6 +104,10 @@ public class InteractiveCombatCardComponent : MonoBehaviour
     public void SetOnSwipeRightAction(Action onSwipeRightAction)
     {
         DoOnValidDraggableComponents(() => {
+            //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
+            // and if we want more than one, we do it on the passed action itself
+            horizontalDraggableComponent.RightSwipeActions.Clear();
+
             horizontalDraggableComponent.RightSwipeActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
@@ -100,6 +121,11 @@ public class InteractiveCombatCardComponent : MonoBehaviour
         Action onSwipeRightEscapeZoneEnterAction, Action onSwipeRightEscapeZoneExitAction)
     {
         DoOnValidDraggableComponents(() => {
+            //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
+            // and if we want more than one, we do it on the passed action itself
+            horizontalDraggableComponent.RightSwipeEscapeZoneEnterActions.Clear();
+            horizontalDraggableComponent.RightSwipeEscapeZoneExitActions.Clear();
+
             horizontalDraggableComponent.RightSwipeEscapeZoneEnterActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {

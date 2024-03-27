@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    [Header("Party setup")]
-    [SerializeField]
-    private List<CombatCardTemplate> InitialPartyMembersCombatCardTemplates;
-
     public static PartyManager Instance;
-    private List<PartyMember> PartyMembers;
+
+    [Header("Party setup")]
+    [SerializeField] private List<CombatCardTemplate> initialPartyMembersCombatCardTemplates;
+    [SerializeField] private int maxPartySize = 5;
+
+    private List<PartyMember> partyMembers;
 
     void Awake()
     {
@@ -29,27 +30,31 @@ public class PartyManager : MonoBehaviour
 
     void Init()
     {
-        PartyMembers = new List<PartyMember>();
-        foreach (CombatCardTemplate InitialPartyMember in InitialPartyMembersCombatCardTemplates)
+        partyMembers = new List<PartyMember>();
+        foreach (CombatCardTemplate InitialPartyMember in initialPartyMembersCombatCardTemplates)
         {
-            PartyMembers.Add(new PartyMember(InitialPartyMember));
+            partyMembers.Add(new PartyMember(InitialPartyMember));
         }
     }
 
-
-    public void AddMemberToParty(CombatCardTemplate CardToAdd)
+    public void AddPartyMember(CombatCardTemplate cardToAdd)
     {
-        PartyMembers.Add(new PartyMember(CardToAdd));
+        partyMembers.Add(new PartyMember(cardToAdd));
+    }
+
+    public void AddPartyMember(CombatCardTemplate cardToAdd, int cardHealthPoints, int cardEnergyPoints)
+    {
+        partyMembers.Add(new PartyMember(cardToAdd, cardHealthPoints, cardEnergyPoints));
     }
 
     public int GetPartyCount()
     {
-        return PartyMembers.Count;
+        return partyMembers.Count;
     }
 
     public bool CheckPartyMember(CombatCardTemplate card)
     {
-        return PartyMembers.Find(x=>x.CombatCardTemplate.Equals(card)) != null;
+        return partyMembers.Find(x=>x.CombatCardTemplate.Equals(card)) != null;
     }
 
     void Start()
@@ -59,11 +64,21 @@ public class PartyManager : MonoBehaviour
 
     public List<PartyMember> GetPartyMembers()
     {
-        return PartyMembers;
+        return partyMembers;
     }
 
-    public void RemovePartyMember(CombatCardTemplate CardToRemove)
+    public void RemovePartyMember(CombatCardTemplate cardToRemove)
     {
-        PartyMembers.RemoveAll(Card => { return Card.CombatCardTemplate.Equals(CardToRemove); });
+        partyMembers.RemoveAll(Card => { return Card.CombatCardTemplate.Equals(cardToRemove); });
+    }
+
+    public int GetMaxPartySize()
+    {
+        return maxPartySize;
+    }
+
+    public void ClearParty()
+    {
+        partyMembers.Clear();
     }
 }

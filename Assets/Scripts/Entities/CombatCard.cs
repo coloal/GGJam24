@@ -16,9 +16,6 @@ public class CombatCard : MonoBehaviour
     [Header("Overlay text configurations")]
     [SerializeField] GameObject overlayTextContainer;
     [SerializeField] TextMeshProUGUI overlayTextMesh;
-    [SerializeField] string leftSwipeWarningText;
-    [SerializeField] string rightSwipeWarningText;
-    [SerializeField] string topSwipeWarningText;
 
     [Header("Combat stats configurations")]
     [SerializeField] private List<SpriteRenderer> attackPoints;
@@ -37,6 +34,10 @@ public class CombatCard : MonoBehaviour
     private string initialText;
     private string superEffectiveText;
     private string notVeryEffectiveText;
+
+    private string leftSwipeWarningText;
+    private string rightSwipeWarningText;
+    private string topSwipeWarningText;
 
     public void SetDataCard(CombatCardTemplate DataCard)
     {
@@ -165,5 +166,20 @@ public class CombatCard : MonoBehaviour
     public string GetNotVeryEffectiveText()
     {
         return notVeryEffectiveText;
+    }
+
+    public void SetTopSwipeWarningText(string topSwipeWarningText)
+    {
+        this.topSwipeWarningText = topSwipeWarningText;
+    }
+
+    public void SetLeftSwipeWarningText(string leftSwipeWarningText)
+    {
+        this.leftSwipeWarningText = leftSwipeWarningText;
+    }
+
+    public void SetRightSwipeWarningText(string rightSwipeWarningText)
+    {
+        this.rightSwipeWarningText = rightSwipeWarningText;
     }
 }

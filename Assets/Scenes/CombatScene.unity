@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 78562893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4399996, y: 1.17, z: 0}
+  m_LocalPosition: {x: -3.46, y: 0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1456,6 +1456,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1106306497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106306498}
+  m_Layer: 0
+  m_Name: CaughtCardOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1106306498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106306497}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175813944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,11 +1801,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCardOrigin: {fileID: 332947331}
-  playerCardsOrigin: {fileID: 1444337251}
-  playerCardsHorizontalOffset: 3
   attackerCardOrigin: {fileID: 78562894}
+  caughtCardOrigin: {fileID: 1106306498}
+  playerCardsOrigin: {fileID: 1444337251}
+  playerCardsHorizontalOffset: 1
+  placeAsAttackerCardText: I choose you!
+  changeAttackerCardText: Change me
+  attackText: Attack!
+  captureCardText: Capture!
+  letGoCardText: Let them go...
   combatSceneUIController: {fileID: 1733910848}
-  combatCardPrefab: {fileID: 2960121501592178493, guid: 752559f2ad9bf2d44bc4bab42fa680aa, type: 3}
   debugEnemyCombatCardTemplate: {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
 --- !u!1 &1641306731
 GameObject:
@@ -2176,10 +2212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2232971506263461f99d211cf05c49cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialPartyMembersCombatCardTemplates:
+  initialPartyMembersCombatCardTemplates:
+  - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
   - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
   - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
-  - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
+  maxPartySize: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2206,3 +2243,4 @@ SceneRoots:
   - {fileID: 332947331}
   - {fileID: 1444337251}
   - {fileID: 78562894}
+  - {fileID: 1106306498}
