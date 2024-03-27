@@ -63,9 +63,9 @@ public class StoryManager : MonoBehaviour
     {
         LastActionResult = TurnResult.COMBAT_LOST;
     }
-    public void WinCombat()
+    public void WinCombat(bool captured)
     {
-        LastActionResult = TurnResult.COMBAT_WON;
+        LastActionResult = captured ? TurnResult.COMBAT_WON_CAPTURE : TurnResult.COMBAT_WON_NO_CAPTURE;
     }
 
 

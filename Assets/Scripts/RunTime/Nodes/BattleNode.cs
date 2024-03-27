@@ -15,7 +15,8 @@ namespace CodeGraph
         public BattleNode()
         {
             outputs.Clear();
-            outputs.Add("Win");
+            outputs.Add("Win Capture");
+            outputs.Add("Win no Capture");
             outputs.Add("Lose");
             
         }
@@ -33,11 +34,14 @@ namespace CodeGraph
             int port;
             switch (turnResult)
             {
-                case TurnResult.COMBAT_WON: 
+                case TurnResult.COMBAT_WON_CAPTURE: 
                     port = 0; 
                     break;
+                case TurnResult.COMBAT_WON_NO_CAPTURE:
+                    port = 1;
+                    break;
                 case TurnResult.COMBAT_LOST: 
-                    port = 1; 
+                    port = 2; 
                     break;
                 default:
                     Debug.LogError("Wrong info was passed to combat node");

@@ -381,9 +381,9 @@ MonoBehaviour:
         guid: 453c5259-741c-4dc6-ade2-d8e3949e0924
         position:
           serializedVersion: 2
-          x: 2839
-          y: -1
-          width: 335
+          x: 2849
+          y: 16
+          width: 393
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null

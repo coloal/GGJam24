@@ -82,12 +82,22 @@ public class GameManager : MonoBehaviour
         Action action;
         switch (combatResult)
         {
-            case TurnResult.COMBAT_WON:
+            case TurnResult.COMBAT_WON_CAPTURE:
                 action = () =>
                 {
                     if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
                     {
-                        mainGameSceneManager.ProvideTurnManager().WinCombat();
+                        mainGameSceneManager.ProvideTurnManager().WinCombat(true);
+                    }
+                };
+                break;
+
+            case TurnResult.COMBAT_WON_NO_CAPTURE:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        mainGameSceneManager.ProvideTurnManager().WinCombat(false);
                     }
                 };
                 break;

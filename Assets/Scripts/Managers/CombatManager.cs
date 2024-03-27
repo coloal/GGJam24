@@ -546,11 +546,13 @@ public class CombatManager : MonoBehaviour
         {
             enemyInteractiveCombatCardComponent.SetOnSwipeLeftAction(() =>
             {
-                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); GameManager.Instance.ProvidePartyManager().AddMemberToParty(GameManager.Instance.ActualCombatEnemyCard); }, 2, this);
+                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_NO_CAPTURE); }, 2, this);
             });
             enemyInteractiveCombatCardComponent.SetOnSwipeRightAction(() =>
             {
-                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON); }, 2, this);
+                GameUtils.CreateTemporizer(() => {GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_CAPTURE);
+                GameManager.Instance.ProvidePartyManager().AddMemberToParty(GameManager.Instance.ActualCombatEnemyCard);
+                }, 2, this);
             });
             enemyInteractiveCombatCardComponent.EnableHorizontalDraggableComponent();
         }
