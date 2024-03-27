@@ -34,11 +34,19 @@ public class CardsManager : MonoBehaviour
             InteractiveStoryCardComponent interactiveStoryCardComponent =
                 storyCard.GetComponent<InteractiveStoryCardComponent>();
             StoryCard storyCardComponent = storyCard.GetComponent<StoryCard>();
-            if (interactiveStoryCardComponent && storyCardComponent)
+            HorizontalEscapeMovementComponent storyCardHorizontalEscapeComponent =
+                storyCard.GetComponent<HorizontalEscapeMovementComponent>();
+            HorizontalDraggableComponent storyCardHorizontalDraggableComponent =
+                storyCard.GetComponent<HorizontalDraggableComponent>();
+            if (interactiveStoryCardComponent && storyCardComponent 
+                && storyCardHorizontalEscapeComponent && storyCardHorizontalDraggableComponent)
             {
                 interactiveStoryCardComponent.SetOnSwipeLeftAction(() =>
                 {
                     MainGameSceneManager.Instance.ProvideTurnManager().SwipeLeft();
+                    storyCardHorizontalEscapeComponent.StartLeftEscapeMovement(
+                        storyCardHorizontalDraggableComponent.GetCurrentSpeed()
+                    );
                 });
 
                 interactiveStoryCardComponent.SetOnSwipeLeftEscapeZoneActions(
@@ -53,11 +61,19 @@ public class CardsManager : MonoBehaviour
             InteractiveStoryCardComponent interactiveStoryCardComponent =
                 storyCard.GetComponent<InteractiveStoryCardComponent>();
             StoryCard storyCardComponent = storyCard.GetComponent<StoryCard>();
-            if (interactiveStoryCardComponent && storyCardComponent)
+            HorizontalEscapeMovementComponent storyCardHorizontalEscapeComponent =
+                storyCard.GetComponent<HorizontalEscapeMovementComponent>();
+            HorizontalDraggableComponent storyCardHorizontalDraggableComponent =
+                storyCard.GetComponent<HorizontalDraggableComponent>();
+            if (interactiveStoryCardComponent && storyCardComponent
+                && storyCardHorizontalEscapeComponent && storyCardHorizontalDraggableComponent)
             {
                 interactiveStoryCardComponent.SetOnSwipeRightAction(() =>
                 {
                     MainGameSceneManager.Instance.ProvideTurnManager().SwipeRight();
+                    storyCardHorizontalEscapeComponent.StartRightEscapeMovement(
+                        storyCardHorizontalDraggableComponent.GetCurrentSpeed()
+                    );
                 });
 
                 interactiveStoryCardComponent.SetOnSwipeRightEscapeZoneActions(

@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 3272074950592057841}
   - component: {fileID: 5223644173063821705}
   - component: {fileID: 5411388172794972099}
+  - component: {fileID: 9156191397814739965}
   - component: {fileID: 6146736266690828701}
   - component: {fileID: -359985912787657153}
   - component: {fileID: 4256447019006546249}
@@ -611,7 +612,19 @@ MonoBehaviour:
   maxArcRotation: 15
   maxFinalRotation: 30
   finalRotationVelocity: 10
-  escapeAcceleration: 100
+--- !u!114 &9156191397814739965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2960121501592178493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d042f7ca83fc141f299cd0479c82d6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escapeAcceleration: 500
 --- !u!114 &6146736266690828701
 MonoBehaviour:
   m_ObjectHideFlags: 0

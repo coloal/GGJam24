@@ -19,7 +19,6 @@ public class HorizontalDraggableComponent : MonoBehaviour
     [SerializeField] float maxArcRotation = 15;
     [SerializeField] float maxFinalRotation = 30;
     [SerializeField] float finalRotationVelocity = 10;
-    [SerializeField] float escapeAcceleration = 100;
     
     float velocity = 0;
     Vector2 mousePosition = Vector2.zero;
@@ -262,5 +261,10 @@ public class HorizontalDraggableComponent : MonoBehaviour
                 }
             }
         }
+    }
+
+    public float GetCurrentSpeed()
+    {
+        return velocity;
     }
 }
