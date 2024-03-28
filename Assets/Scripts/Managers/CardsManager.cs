@@ -5,27 +5,12 @@ using UnityEngine;
 
 public class CardsManager : MonoBehaviour
 {
-    // Lists of cards to be added to the game
-    [SerializeField]
-    GameObject CardPrefab;
+    [Header("Card prefabs")]
+    [SerializeField] private GameObject storyCardPrefab;
 
-    [SerializeField]
-    GameObject CombatCardPrefab;
-
-    /*deprecated ????*/
-    [SerializeField]
-    List<StoryCardTemplate> DataCardsList;
-
-    //For testing by Psyduck(adri :) )
-    [SerializeField] private CombatCardTemplate CartaTESTING;
-
-    [SerializeField]
-    private bool isSequential;
-
-    [SerializeField]
-    private Transform CardSpawnerOrigin;
-
-    private int indexNextCard = 0;
+    [Header("Card locations data")]
+    [SerializeField] private Transform cardsSpawnerOrigin;
+    [SerializeField] private Transform cardsFinalPosition;
 
     public GameObject SpawnNextCard(StoryCardTemplate nextCard)
     {
@@ -83,7 +68,7 @@ public class CardsManager : MonoBehaviour
             }
         }
 
-        GameObject newCard = Instantiate(CardPrefab, CardSpawnerOrigin.position, Quaternion.identity);
+        GameObject newCard = Instantiate(storyCardPrefab, cardsSpawnerOrigin.position, Quaternion.identity);
         if(nextCard != null)
         {
             StoryCard storyCardComponent = newCard.GetComponent<StoryCard>();
@@ -92,29 +77,26 @@ public class CardsManager : MonoBehaviour
                 storyCardComponent.SetDataCard(nextCard);
             }
 
-            SetUpOnSwipeLeftActions(newCard);
-            SetUpOnSwipeRightActions(newCard);
+            MoveCardAnimationComponent moveCardAnimationComponent = GetComponent<MoveCardAnimationComponent>();
+            if (moveCardAnimationComponent)
+            {
+                moveCardAnimationComponent.StartMovingCardTowards(
+                    cardToMove: newCard,
+                    cardFinalPosition: cardsFinalPosition,
+                    () => {
+                        SetUpOnSwipeLeftActions(newCard);
+                        SetUpOnSwipeRightActions(newCard);
+                    }
+                );
+            }
+            else
+            {
+                SetUpOnSwipeLeftActions(newCard);
+                SetUpOnSwipeRightActions(newCard);
+            }
         }
         
         //indexNextCard++;
         return newCard;
-    }
-
-    public GameObject SpawnCombatCard()
-    {
-        GameObject newCard = Instantiate(CombatCardPrefab, new Vector3 (-6,0,0), Quaternion.identity);
-
-        if (CartaTESTING != null)
-        {
-            newCard.GetComponent<CombatCard>().SetDataCard(CartaTESTING);
-        }
-
-        //indexNextCard++;
-        return newCard;
-    }
-
-    public bool IsDeckEmpty()
-    {
-        return indexNextCard == DataCardsList.Count;
     }
 }
