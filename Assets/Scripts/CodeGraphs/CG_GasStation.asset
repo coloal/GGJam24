@@ -21,11 +21,9 @@ MonoBehaviour:
   - rid: 8807612109458243621
   - rid: 8807612109458243623
   - rid: 8807612109458243624
-  - rid: 8807612109458243625
   - rid: 8807612109458243626
   - rid: 8807612109458243627
   - rid: 8807612109458243628
-  - rid: 8807612109458243629
   - rid: 8807612109458243630
   - rid: 8807612109458243631
   - rid: 8807612109458243632
@@ -40,6 +38,8 @@ MonoBehaviour:
   - rid: 8807612109458243643
   - rid: 8807612109458243644
   - rid: 8807612109458243645
+  - rid: 8807612129735344128
+  - rid: 8807612129735344129
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -48,24 +48,6 @@ MonoBehaviour:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 1
   - outputPort:
-      nodeId: 9b95a603-b8ef-4487-a5c8-67d92c5a3d1a
-      portIndex: 0
-    inputPort:
-      nodeId: 453c5259-741c-4dc6-ade2-d8e3949e0924
-      portIndex: 2
-  - outputPort:
-      nodeId: 453c5259-741c-4dc6-ade2-d8e3949e0924
-      portIndex: 1
-    inputPort:
-      nodeId: 491a19c9-9e6c-434f-97bc-125e719e1027
-      portIndex: 0
-  - outputPort:
-      nodeId: 453c5259-741c-4dc6-ade2-d8e3949e0924
-      portIndex: 0
-    inputPort:
-      nodeId: d16be06a-4c15-4e0c-a972-58c9b761effb
-      portIndex: 1
-  - outputPort:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 0
     inputPort:
@@ -108,30 +90,12 @@ MonoBehaviour:
       nodeId: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
       portIndex: 1
   - outputPort:
-      nodeId: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
-      portIndex: 0
-    inputPort:
-      nodeId: 48067346-e300-404a-a102-7a5ebe7ebc86
-      portIndex: 2
-  - outputPort:
-      nodeId: 48067346-e300-404a-a102-7a5ebe7ebc86
-      portIndex: 0
-    inputPort:
-      nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
-      portIndex: 1
-  - outputPort:
       nodeId: 9e4fa609-bf03-4729-b56e-e76c3d13e604
       portIndex: 0
     inputPort:
       nodeId: 2d9272a2-bec2-494a-aaf4-1dd1623c98f7
       portIndex: 0
   - outputPort:
-      nodeId: 48067346-e300-404a-a102-7a5ebe7ebc86
-      portIndex: 1
-    inputPort:
-      nodeId: 9e4fa609-bf03-4729-b56e-e76c3d13e604
-      portIndex: 1
-  - outputPort:
       nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
       portIndex: 0
     inputPort:
@@ -221,6 +185,54 @@ MonoBehaviour:
     inputPort:
       nodeId: 8a53b958-d2f0-4d35-93b9-4f1f6644c373
       portIndex: 2
+  - outputPort:
+      nodeId: 9b95a603-b8ef-4487-a5c8-67d92c5a3d1a
+      portIndex: 0
+    inputPort:
+      nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
+      portIndex: 3
+  - outputPort:
+      nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
+      portIndex: 2
+    inputPort:
+      nodeId: 491a19c9-9e6c-434f-97bc-125e719e1027
+      portIndex: 0
+  - outputPort:
+      nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
+      portIndex: 0
+    inputPort:
+      nodeId: d16be06a-4c15-4e0c-a972-58c9b761effb
+      portIndex: 1
+  - outputPort:
+      nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
+      portIndex: 1
+    inputPort:
+      nodeId: d16be06a-4c15-4e0c-a972-58c9b761effb
+      portIndex: 1
+  - outputPort:
+      nodeId: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
+      portIndex: 0
+    inputPort:
+      nodeId: 78a5b88f-eee4-461b-897b-ae226e62b771
+      portIndex: 3
+  - outputPort:
+      nodeId: 78a5b88f-eee4-461b-897b-ae226e62b771
+      portIndex: 2
+    inputPort:
+      nodeId: 9e4fa609-bf03-4729-b56e-e76c3d13e604
+      portIndex: 1
+  - outputPort:
+      nodeId: 78a5b88f-eee4-461b-897b-ae226e62b771
+      portIndex: 0
+    inputPort:
+      nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
+      portIndex: 1
+  - outputPort:
+      nodeId: 78a5b88f-eee4-461b-897b-ae226e62b771
+      portIndex: 1
+    inputPort:
+      nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -276,8 +288,8 @@ MonoBehaviour:
         CardText: "Well... We were having quite a boring \nevening my young visitors\n
           but know that you are here I think we'll \nbe able to entertain ourselves
           a little bit, \ndon't you think?"
-        LeftText: 
-        RightText: 
+        LeftText: We had other plans for the evening
+        RightText: Yess, definitely
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243619
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -295,8 +307,8 @@ MonoBehaviour:
         - Next
         CardText: "Finally! The newbies have formed their gang. \nWe were waiting
           for you, did you know?"
-        LeftText: 
-        RightText: 
+        LeftText: Us? We're nobodies
+        RightText: Yes, that's everybody's reaction
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243620
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -314,8 +326,8 @@ MonoBehaviour:
         - Next
         CardText: "As you already know we very much appreciate \nviolence as a recreative
           activity, my fellas, and \nfresh meat is always welcomed."
-        LeftText: 
-        RightText: 
+        LeftText: Alright...
+        RightText: Who are we fighting?
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243621
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -334,8 +346,8 @@ MonoBehaviour:
         CardText: "But before that we need to find a way of giving a little\n bit
           of drama to this fights, do you have any issue\n which could spice things
           up a little bit?"
-        LeftText: 
-        RightText: 
+        LeftText: VvvanNn... issSs...
+        RightText: Yes! our van is broken!
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243623
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -353,8 +365,8 @@ MonoBehaviour:
         - Next
         CardText: "Perfect! Let's make it a series of fights for\n your van then.
           If you win, my mechanic will\n join you, if my boy wins I get your van."
-        LeftText: 
-        RightText: 
+        LeftText: Seems reasonable
+        RightText: I like the idea!
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243624
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -371,26 +383,10 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "But first, let's do a opening fight for the evening. \nYou will
-          first have to prove your value against\n my boy, Fluffy"
-        LeftText: 
-        RightText: 
+          first have to prove your value against\n my boy: Fluffy"
+        LeftText: Oh a doggie, so cute!
+        RightText: You do not appreciate him much, right?
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
-    - rid: 8807612109458243625
-      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 453c5259-741c-4dc6-ade2-d8e3949e0924
-        position:
-          serializedVersion: 2
-          x: 2849
-          y: 16
-          width: 393
-          height: 122
-        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Win
-        - Lose
-        card: {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
     - rid: 8807612109458243626
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -442,22 +438,6 @@ MonoBehaviour:
         LeftText: we're going to beat the desire to fix it into you, mate.
         RightText: you're going to get sick of grease, mate.
         card: {fileID: 11400000, guid: 9ae16110b6c520f43ba4deeae2035cad, type: 2}
-    - rid: 8807612109458243629
-      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 48067346-e300-404a-a102-7a5ebe7ebc86
-        position:
-          serializedVersion: 2
-          x: 4560
-          y: 0
-          width: 335
-          height: 122
-        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Win
-        - Lose
-        card: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
     - rid: 8807612109458243630
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -696,3 +676,37 @@ MonoBehaviour:
         LeftText: Why is this always about you?
         RightText: We are team here, man
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
+    - rid: 8807612129735344128
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5e9453d3-bbd9-497c-8191-65ccd3be3786
+        position:
+          serializedVersion: 2
+          x: 2883
+          y: 0
+          width: 335
+          height: 146
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Win no Capture
+        - Lose
+        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
+    - rid: 8807612129735344129
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 78a5b88f-eee4-461b-897b-ae226e62b771
+        position:
+          serializedVersion: 2
+          x: 4578
+          y: 0
+          width: 383
+          height: 146
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Win no Capture
+        - Lose
+        card: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
