@@ -171,12 +171,6 @@ MonoBehaviour:
       nodeId: 7982d667-8442-4641-a2b8-bb4f066071d9
       portIndex: 3
   - outputPort:
-      nodeId: 7982d667-8442-4641-a2b8-bb4f066071d9
-      portIndex: 1
-    inputPort:
-      nodeId: 7ae9ddc6-0bc0-4ebc-b18b-dd32c7932b59
-      portIndex: 1
-  - outputPort:
       nodeId: 664191d9-13e0-4062-960f-3d1c736a7e64
       portIndex: 0
     inputPort:
@@ -281,6 +275,12 @@ MonoBehaviour:
   - outputPort:
       nodeId: df347320-dec7-4641-ad4e-39887657c7bd
       portIndex: 0
+    inputPort:
+      nodeId: 7ae9ddc6-0bc0-4ebc-b18b-dd32c7932b59
+      portIndex: 1
+  - outputPort:
+      nodeId: 7982d667-8442-4641-a2b8-bb4f066071d9
+      portIndex: 1
     inputPort:
       nodeId: 7ae9ddc6-0bc0-4ebc-b18b-dd32c7932b59
       portIndex: 1
@@ -737,8 +737,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: I haven't only lose the fight but my girl too now that I have to
-          join your gang, dammit!
+        CardText: I haven't only lost the fight but my girl too, now that I have
+          to join your gang, dammit!
         LeftText: You started this.
         RightText: You'll forget her boy.
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
@@ -756,8 +756,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Wow a newbie wins me and then doesn't even\n want me at their
-          gang, wow, so disrespectful of you!"
+        CardText: "Wow a newbie wins me and then they don't even\n want me at their
+          gang. So disrespectful of you!"
         LeftText: You started this.
         RightText: Sorry, my bad!
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}

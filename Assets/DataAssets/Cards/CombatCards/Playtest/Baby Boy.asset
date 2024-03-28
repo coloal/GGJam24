@@ -21,6 +21,6 @@ MonoBehaviour:
   HealthPoints: 100
   Damage: 100
   Armor: 100
-  Turns: 100
+  Turns: 5
   CombatType: 0
   Instrument: 

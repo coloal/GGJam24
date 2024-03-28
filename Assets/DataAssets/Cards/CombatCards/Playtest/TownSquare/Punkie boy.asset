@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Punkie boy
   m_EditorClassIdentifier: 
   NameOfCard: Punkie boy
-  InitialText: I love fight newbies!
+  InitialText: I love fighting newbies!
   EffectiveText: Damn, that was effective
   NonEffectiveText: Pf, that's the harder you can hit me?
   CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}

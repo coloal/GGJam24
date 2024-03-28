@@ -685,7 +685,7 @@ MonoBehaviour:
         - Win Capture
         - Win no Capture
         - Lose
-        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
+        card: {fileID: 11400000, guid: dea5e90242ba4334cb145c3dea8c6a6e, type: 2}
     - rid: 8807612129735344129
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
