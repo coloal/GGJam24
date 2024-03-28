@@ -87,7 +87,6 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeLeft()
     {
-        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.leftActions);
         if (CurrentCard != null)
         {
             DestroyCard();
@@ -98,7 +97,6 @@ public class TurnManager : MonoBehaviour
 
     public void SwipeRight()
     {
-        GameManager.Instance.ProvideBrainManager().ExecuteActions(CurrentCard.rightActions);
         if (CurrentCard != null)
         {
             DestroyCard();

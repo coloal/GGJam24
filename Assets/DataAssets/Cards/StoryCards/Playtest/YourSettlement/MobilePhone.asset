@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: MobilePhone
   m_EditorClassIdentifier: 
   NameOfCard: Mobile Phone
-  Background: "Buenas de nuevo, Donnie. Puedes pasar de m\xED mand\xE1ndome a la
-    izquierda,  o asignarme a un sicario desliz\xE1ndome  hacia la derecha."
+  Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Enviar con..
-  CardSprite: {fileID: 0}
-  BackgroundSprite: {fileID: 21300000, guid: a7cfb541e48edc543b882e47ad186ecf, type: 3}
-  LeftActions: []
-  RightActions: []
+  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}

@@ -9,14 +9,10 @@ public class StoryCard : MonoBehaviour
     [SerializeField] private TextMeshPro boxNameOfCard;
     [SerializeField] private TextMeshPro descriptionText;
     [SerializeField] private SpriteRenderer cardSprite;
-    [SerializeField] protected SpriteRenderer backgroundSprite;
 
     [Header("Overlay text configurations")]
     [SerializeField] private GameObject overlayTextContainer;
     [SerializeField] private TextMeshProUGUI overlayTextMesh;
-
-    [HideInInspector] public List<BrainAction> leftActions;
-    [HideInInspector] public List<BrainAction> rightActions;
 
     //Information of the card
     private string nameOfCard;
@@ -54,18 +50,11 @@ public class StoryCard : MonoBehaviour
         
         if (descriptionText != null)
         {
-            descriptionText.text = DataCard.Background;
+            descriptionText.text = DataCard.Text;
             descriptionText.GetComponent<MeshRenderer>().sortingLayerID = cardSprite.sortingLayerID;
         }
 
         cardSprite.sprite = DataCard.CardSprite;
-        if (backgroundSprite != null && DataCard.BackgroundSprite != null)
-        {
-            backgroundSprite.sprite = DataCard.BackgroundSprite;
-        }
-
-        leftActions = DataCard.LeftActions;
-        rightActions = DataCard.RightActions;
     }
 
 

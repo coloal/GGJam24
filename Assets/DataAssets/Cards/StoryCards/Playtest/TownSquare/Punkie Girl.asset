@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Punkie Girl
   m_EditorClassIdentifier: 
   NameOfCard: Punkie girl
-  Background: "Se\xF1or, no me queda nada, estoy harto de comer de lo que me da la
-    calle. Le puedo servir para acojonar a esos **** morosos"
+  Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar
-  CardSprite: {fileID: 0}
-  BackgroundSprite: {fileID: 21300000, guid: 9fb09ab02ef37fe4c8d9475f8ac69fe6, type: 3}
-  LeftActions: []
-  RightActions: []
+  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}

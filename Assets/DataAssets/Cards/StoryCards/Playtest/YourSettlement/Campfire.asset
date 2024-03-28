@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Campfire
   m_EditorClassIdentifier: 
   NameOfCard: Campfire
-  Background: "Traigo buena mierda de muy... Muy lejos. \xBFTe interesa?"
+  Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Aceptar y gestionar con...
-  CardSprite: {fileID: 0}
-  BackgroundSprite: {fileID: 21300000, guid: 79b2cd070254aaa4abbf86d88656cb4e, type: 3}
-  LeftActions: []
-  RightActions: []
+  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}

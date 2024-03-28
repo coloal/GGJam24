@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Birthday Muffin
   m_EditorClassIdentifier: 
   NameOfCard: birthday muffin
-  Background: "... Hey, Don, vengo a informarte de que est\xE1s a mitad del camino
-    y a recordarte que tu objetivo es convertirte en un mito de la mafia"
+  Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: "Hmm nadie se creer\xE1 que vino una magdalena a verme"
-  CardSprite: {fileID: 0}
-  BackgroundSprite: {fileID: 21300000, guid: d59dd605c9e294f4ea3c3f956b75a573, type: 3}
-  LeftActions: []
-  RightActions: []
+  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}

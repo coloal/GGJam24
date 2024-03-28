@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: WheelChaired
   m_EditorClassIdentifier: 
   NameOfCard: WheelChaired
-  Background: "... Don, soy el tendero de la tienda de electrodom\xE9sticos de Fournier
-    town. A\xFAn no consegu\xED su dinero del alquiler..."
+  Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: "Me cobrare lo m\xEDo"
-  CardSprite: {fileID: 0}
-  BackgroundSprite: {fileID: 21300000, guid: a3d1e93a505ad654a8dd0250a0a87b6b, type: 3}
-  LeftActions: []
-  RightActions: []
+  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}

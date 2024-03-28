@@ -16,7 +16,7 @@ public class StoryCardTemplate : ScriptableObject
 {
     //Information of the card
     public string NameOfCard;
-    public string Background;
+    public string Text;
 
     //Choices text
     public string LeftText;
@@ -24,9 +24,4 @@ public class StoryCardTemplate : ScriptableObject
 
     //Card sprite
     public Sprite CardSprite;
-    public Sprite BackgroundSprite;
-
-    public List<BrainAction> LeftActions = new List<BrainAction>();
-    public List<BrainAction> RightActions = new List<BrainAction>();
-
 }
