@@ -19,7 +19,8 @@ public enum NumericTags
     Potion,
     Maldad, 
     ConverBabyBoy,
-    ConverSmokieGirl
+    ConverSmokieGirl,
+    ConverWheelchaired
 }
 
 

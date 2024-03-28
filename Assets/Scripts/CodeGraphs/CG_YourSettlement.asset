@@ -616,6 +616,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 1ce05de8-b363-4cdd-92a3-3a684ca90147
       portIndex: 2
+  - outputPort:
+      nodeId: 1ce05de8-b363-4cdd-92a3-3a684ca90147
+      portIndex: 0
+    inputPort:
+      nodeId: 759f0089-3b4a-40c3-9c44-41e87161fb15
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -1752,6 +1758,6 @@ MonoBehaviour:
         CardText: "I thought this day was never going to arrive, but it has come
           indeed.\n I am in a wheelchair, as you know, so I will not be able to go
           with you,\n but that's nothing to be sad for, mate. I'm happy for you indeed."
-        LeftText: Thanks, mate. I'm forming a great band here.
+        LeftText: Thanks, mate. I have a band to form, bye!
         RightText: Hey, you can be part of the gang team anyway.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
