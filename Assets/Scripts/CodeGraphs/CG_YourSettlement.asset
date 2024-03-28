@@ -75,6 +75,12 @@ MonoBehaviour:
   - rid: 8807612151756488772
   - rid: 8807612151756488773
   - rid: 8807612151756488775
+  - rid: 8807612156763701248
+  - rid: 8807612156763701249
+  - rid: 8807612156763701250
+  - rid: 8807612156763701251
+  - rid: 8807612156763701252
+  - rid: 8807612156763701253
   connections:
   - outputPort:
       nodeId: 58fb11c8-5ff4-492e-86c4-769d15d22fbe
@@ -617,11 +623,71 @@ MonoBehaviour:
       nodeId: 1ce05de8-b363-4cdd-92a3-3a684ca90147
       portIndex: 2
   - outputPort:
-      nodeId: 1ce05de8-b363-4cdd-92a3-3a684ca90147
+      nodeId: 91a4081a-19a5-4cfb-9777-56e6503ce241
+      portIndex: 1
+    inputPort:
+      nodeId: cbbc1911-e5c2-4055-9881-e6eb254cb801
+      portIndex: 2
+  - outputPort:
+      nodeId: cbbc1911-e5c2-4055-9881-e6eb254cb801
+      portIndex: 0
+    inputPort:
+      nodeId: 70d00f4f-a8a3-4ded-b735-2502dec27ccf
+      portIndex: 1
+  - outputPort:
+      nodeId: cbbc1911-e5c2-4055-9881-e6eb254cb801
+      portIndex: 1
+    inputPort:
+      nodeId: 55ca9259-156a-42e7-a100-4ecfa61658f9
+      portIndex: 2
+  - outputPort:
+      nodeId: 55ca9259-156a-42e7-a100-4ecfa61658f9
       portIndex: 0
     inputPort:
       nodeId: 759f0089-3b4a-40c3-9c44-41e87161fb15
       portIndex: 2
+  - outputPort:
+      nodeId: 1ce05de8-b363-4cdd-92a3-3a684ca90147
+      portIndex: 1
+    inputPort:
+      nodeId: 85acd43f-9db3-4647-a931-5d4a18c4ec61
+      portIndex: 1
+  - outputPort:
+      nodeId: 55ca9259-156a-42e7-a100-4ecfa61658f9
+      portIndex: 1
+    inputPort:
+      nodeId: 85acd43f-9db3-4647-a931-5d4a18c4ec61
+      portIndex: 1
+  - outputPort:
+      nodeId: 85acd43f-9db3-4647-a931-5d4a18c4ec61
+      portIndex: 0
+    inputPort:
+      nodeId: 9559010d-3562-40c1-880e-f775f3d31348
+      portIndex: 1
+  - outputPort:
+      nodeId: 9559010d-3562-40c1-880e-f775f3d31348
+      portIndex: 0
+    inputPort:
+      nodeId: c83f334e-0d2a-41ca-8ec5-205acc4b6964
+      portIndex: 1
+  - outputPort:
+      nodeId: c83f334e-0d2a-41ca-8ec5-205acc4b6964
+      portIndex: 0
+    inputPort:
+      nodeId: 2a0f1f05-d12b-438f-975a-10fbf90c75a1
+      portIndex: 1
+  - outputPort:
+      nodeId: 2a0f1f05-d12b-438f-975a-10fbf90c75a1
+      portIndex: 0
+    inputPort:
+      nodeId: 759f0089-3b4a-40c3-9c44-41e87161fb15
+      portIndex: 2
+  - outputPort:
+      nodeId: 1ce05de8-b363-4cdd-92a3-3a684ca90147
+      portIndex: 0
+    inputPort:
+      nodeId: 2a0f1f05-d12b-438f-975a-10fbf90c75a1
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -1761,3 +1827,122 @@ MonoBehaviour:
         LeftText: Thanks, mate. I have a band to form, bye!
         RightText: Hey, you can be part of the gang team anyway.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+    - rid: 8807612156763701248
+      type: {class: NumericConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cbbc1911-e5c2-4055-9881-e6eb254cb801
+        position:
+          serializedVersion: 2
+          x: 7796.0054
+          y: 1621.2527
+          width: 0
+          height: 0
+        typeName: CodeGraph.NumericConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        ComparedTag: 6
+        ConditionType: 2
+        ComparedNumber: 0
+    - rid: 8807612156763701249
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 55ca9259-156a-42e7-a100-4ecfa61658f9
+        position:
+          serializedVersion: 2
+          x: 8124
+          y: 1958
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Heeeey, mate, do you already have your gang formed?
+        LeftText: Nope, I should hurry indeed.
+        RightText: Nope, do you wanna join it?
+        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+    - rid: 8807612156763701250
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 85acd43f-9db3-4647-a931-5d4a18c4ec61
+        position:
+          serializedVersion: 2
+          x: 9178
+          y: 1982
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: ' You want me to join the Gang? In that case... I bought you something,
+          mate.'
+        LeftText: Really?!
+        RightText: THANK U
+        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+    - rid: 8807612156763701251
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9559010d-3562-40c1-880e-f775f3d31348
+        position:
+          serializedVersion: 2
+          x: 9855
+          y: 1982
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "I will not be able to go with you on adventures as\n you could
+          guess... So now, with this, we can\n keep in contact."
+        LeftText: We definitely will keep contact, mate.
+        RightText: Ok, now you have made it my best birthday.
+        card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
+    - rid: 8807612156763701252
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c83f334e-0d2a-41ca-8ec5-205acc4b6964
+        position:
+          serializedVersion: 2
+          x: 10216
+          y: 1715
+          width: 219
+          height: 188
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 0
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
+    - rid: 8807612156763701253
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2a0f1f05-d12b-438f-975a-10fbf90c75a1
+        position:
+          serializedVersion: 2
+          x: 10216
+          y: 1509
+          width: 219
+          height: 188
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 6
+          Increment: 1
+          TagState: 0
+          NewState: 0

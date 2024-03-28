@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a38bdde6b555245aa5008ae777d0b3, type: 3}
   m_Name: Puritan mechanic
   m_EditorClassIdentifier: 
-  NameOfCard: Puritan Mechanic
+  NameOfCard: Dave
   Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar

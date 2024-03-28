@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
-  m_Name: Baby Boy
+  m_Name: Punkie girl
   m_EditorClassIdentifier: 
-  NameOfCard: Billy
-  InitialText: ' '
-  EffectiveText: ' '
-  NonEffectiveText: ' '
+  NameOfCard: Punkie boy
+  InitialText: Cammon let's do this!
+  EffectiveText: Uh damn that was effective.
+  NonEffectiveText: Excuse me, was that an attack?
   CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
   BackgroundSprite: {fileID: 21300000, guid: 65e1bcae23b6c4d42a664a3775eb4c1c, type: 3}
-  HealthPoints: 100
-  Damage: 100
-  Armor: 100
-  Turns: 100
+  HealthPoints: 8
+  Damage: 3
+  Armor: 1
+  Turns: 3
   CombatType: 0
   Instrument: 

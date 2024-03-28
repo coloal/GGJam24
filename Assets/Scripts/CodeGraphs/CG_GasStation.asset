@@ -21,7 +21,6 @@ MonoBehaviour:
   - rid: 8807612109458243621
   - rid: 8807612109458243623
   - rid: 8807612109458243624
-  - rid: 8807612109458243626
   - rid: 8807612109458243627
   - rid: 8807612109458243628
   - rid: 8807612109458243630
@@ -40,6 +39,7 @@ MonoBehaviour:
   - rid: 8807612109458243645
   - rid: 8807612129735344128
   - rid: 8807612129735344129
+  - rid: 8807612156763701268
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -193,12 +193,6 @@ MonoBehaviour:
       portIndex: 3
   - outputPort:
       nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
-      portIndex: 2
-    inputPort:
-      nodeId: 491a19c9-9e6c-434f-97bc-125e719e1027
-      portIndex: 0
-  - outputPort:
-      nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
       portIndex: 0
     inputPort:
       nodeId: d16be06a-4c15-4e0c-a972-58c9b761effb
@@ -232,6 +226,18 @@ MonoBehaviour:
       portIndex: 1
     inputPort:
       nodeId: 7a8c6ed2-98cc-4dc9-8f88-6474e6a53433
+      portIndex: 1
+  - outputPort:
+      nodeId: 5e9453d3-bbd9-497c-8191-65ccd3be3786
+      portIndex: 2
+    inputPort:
+      nodeId: e13e5ba6-0c1d-4a66-a160-4e12f45b41c7
+      portIndex: 1
+  - outputPort:
+      nodeId: e13e5ba6-0c1d-4a66-a160-4e12f45b41c7
+      portIndex: 0
+    inputPort:
+      nodeId: d699d93a-f8e2-4da5-aef1-2e7e5166d67c
       portIndex: 1
   references:
     version: 2
@@ -288,8 +294,8 @@ MonoBehaviour:
         CardText: "Well... We were having quite a boring \nevening my young visitors\n
           but know that you are here I think we'll \nbe able to entertain ourselves
           a little bit, \ndon't you think?"
-        LeftText: We had other plans for the evening
-        RightText: Yess, definitely
+        LeftText: We had other plans for the evening.
+        RightText: Yess, definitely.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243619
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -307,8 +313,8 @@ MonoBehaviour:
         - Next
         CardText: "Finally! The newbies have formed their gang. \nWe were waiting
           for you, did you know?"
-        LeftText: Us? We're nobodies
-        RightText: Yes, that's everybody's reaction
+        LeftText: Us? We're nobodies.
+        RightText: Yes, that's everybody's reaction.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243620
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -383,23 +389,10 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "But first, let's do a opening fight for the evening. \nYou will
-          first have to prove your value against\n my boy: Fluffy"
+          first have to prove your value against\n my boy: Fluffy."
         LeftText: Oh a doggie, so cute!
         RightText: You do not appreciate him much, right?
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
-    - rid: 8807612109458243626
-      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 491a19c9-9e6c-434f-97bc-125e719e1027
-        position:
-          serializedVersion: 2
-          x: 3322.3503
-          y: 205.85002
-          width: 0
-          height: 0
-        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs: []
     - rid: 8807612109458243627
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -415,10 +408,10 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "Ok, great, you are starting to earn my respect now. \nLet me then
-          introduce you to your next rival [mecha name],\n our mechanic. I bet you
-          won't last long against him/her"
-        LeftText: we'll see
-        RightText: can't wait to have my van fixed
+          introduce you to your next rival, Dave,\n our mechanic. I bet you won't
+          last long against him."
+        LeftText: We'll see.
+        RightText: Can't wait to have my van fixed.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243628
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -453,10 +446,10 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "Wow, that was impressive although you are not\n prepared still
-          to fight me but I guess we will \n\tencounter our ways in the future. So
+          to fight me but I guess we will \nencounter our ways in the future. So
           long, young gang."
-        LeftText: I can't wait for it, so long
-        RightText: don't know if I'll ever comeback, bye
+        LeftText: I can't wait for it, so long.
+        RightText: don't know if I'll ever comeback, bye.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243631
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -464,7 +457,7 @@ MonoBehaviour:
         guid: 2d9272a2-bec2-494a-aaf4-1dd1623c98f7
         position:
           serializedVersion: 2
-          x: 5343
+          x: 5383
           y: 308
           width: 74
           height: 77
@@ -485,9 +478,9 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: hahaha I knew you were a bunch of weaklings
-        LeftText: We all knew
-        RightText: I'll come after you
+        CardText: HAHAHA I knew you were a bunch of weaklings.
+        LeftText: We all knew.
+        RightText: I'll come after you.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 8807612109458243633
       type: {class: CheckPartyMemberNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -567,9 +560,9 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Uhhh, what a kick-ass performance, buddyyyy!!
-        LeftText: You were glorious, buddy
-        RightText: We have not even started, bud!
+        CardText: Uhhh, what a kick-ass performance, buddieee!!
+        LeftText: You were glorious, buddie!
+        RightText: We have not even started, budd!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 8807612109458243640
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -599,7 +592,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "See, I do not know why you were so worried about\n your leader
-          skills, this is already a official gang with \nsome fights won"
+          skills, this is already a official gang with \nsome fights won."
         LeftText: Yesss, you were obviosuly right...
         RightText: I don't know why I don't listen to you more, my oracle.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -618,7 +611,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Supp, mate? I hear you fought against a Puritan at the gas station?
-        LeftText: Yep, he/she is fixing our van.
+        LeftText: Yep, he is fixing our van.
         RightText: Yep, beated.
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
     - rid: 8807612109458243643
@@ -655,7 +648,7 @@ MonoBehaviour:
         - Next
         CardText: Well, I leave you alone now, mate.
         LeftText: See ya ;)
-        RightText: Bye, mate
+        RightText: Bye, mate.
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
     - rid: 8807612109458243645
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -674,7 +667,7 @@ MonoBehaviour:
         CardText: "HoHo, my brother will be proud of me after\n this fight, we won
           against a member of the\n puritans gang!!!"
         LeftText: Why is this always about you?
-        RightText: We are team here, man
+        RightText: We are team here, man.
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
     - rid: 8807612129735344128
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -709,4 +702,24 @@ MonoBehaviour:
         - Win Capture
         - Win no Capture
         - Lose
-        card: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
+        card: {fileID: 11400000, guid: d805c878d4331c8439fe3505a6408d7e, type: 2}
+    - rid: 8807612156763701268
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e13e5ba6-0c1d-4a66-a160-4e12f45b41c7
+        position:
+          serializedVersion: 2
+          x: 3528
+          y: 367
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "HAHAHA it seems that my doggie got tired of you losing. \nLet
+          me then introduce you to your next rival, Dave,\n our mechanic. I bet you
+          won't last long against him."
+        LeftText: We'll see.
+        RightText: Can't wait to have my van fixed.
+        card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
