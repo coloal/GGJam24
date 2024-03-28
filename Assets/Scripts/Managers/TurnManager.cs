@@ -111,9 +111,9 @@ public class TurnManager : MonoBehaviour
         StartTurn();
     }
 
-    public void LoseCombat()
+    public void LoseCombat(bool gameOver)
     {
-        StoryManager.LoseCombat();
+        StoryManager.LoseCombat(gameOver);
         StartTurn();
     }
 

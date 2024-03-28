@@ -113,8 +113,11 @@ public class CombatManager : MonoBehaviour
             case CombatStates.CAPTURE_ENEMY:
                 ShowEnemyAsACaughtablePartyMember();
                 break;
-            case CombatStates.GAME_OVER:
+            case CombatStates.COMBAT_LOST:
                 StartEndCombatSequence(TurnResult.COMBAT_LOST);
+                break;
+            case CombatStates.GAME_OVER:
+                StartEndCombatSequence(TurnResult.COMBAT_GAME_OVER);
                 break;
             default:
                 break;
@@ -473,10 +476,6 @@ public class CombatManager : MonoBehaviour
             {
                 SetCombatState(CombatStates.CAPTURE_ENEMY);
             }
-            else if (combatTurns <= 0)
-            {
-                SetCombatState(CombatStates.GAME_OVER);
-            }
             else if (CurrentAttackerCombatCard.GetHealthPoints() > 0 &&
                 CurrentAttackerCombatCard.GetCardCurrentEnergy() > 0)
             {
@@ -506,6 +505,11 @@ public class CombatManager : MonoBehaviour
                 {
                     SetCombatState(CombatStates.CHOOSE_ATTACKER);
                 }
+            }
+
+            if (combatTurns <= 0 && currentState != CombatStates.GAME_OVER) 
+            {
+                SetCombatState(CombatStates.COMBAT_LOST);
             }
         }
     }

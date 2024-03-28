@@ -59,9 +59,9 @@ public class StoryManager : MonoBehaviour
     {
         LastActionResult = TurnResult.SWIPED_LEFT;
     }
-    public void LoseCombat()
+    public void LoseCombat(bool gameOver)
     {
-        LastActionResult = TurnResult.COMBAT_LOST;
+        LastActionResult = gameOver ? TurnResult.COMBAT_GAME_OVER: TurnResult.COMBAT_LOST;
     }
     public void WinCombat(bool captured)
     {

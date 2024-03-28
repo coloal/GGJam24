@@ -107,7 +107,17 @@ public class GameManager : MonoBehaviour
                 {
                     if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
                     {
-                        mainGameSceneManager.ProvideTurnManager().LoseCombat();
+                        mainGameSceneManager.ProvideTurnManager().LoseCombat(false);
+                    }
+                };
+                break;
+
+            case TurnResult.COMBAT_GAME_OVER:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        mainGameSceneManager.ProvideTurnManager().LoseCombat(true);
                     }
                 };
                 break;

@@ -7,5 +7,6 @@ public enum CombatStates
     ENEMY_ATTACK,
     CHECK_COMBAT_RESULTS,
     CAPTURE_ENEMY,
+    COMBAT_LOST,
     GAME_OVER,
 }

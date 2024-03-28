@@ -74,13 +74,13 @@ public class CombatCard : MonoBehaviour
 
     public void ReduceEnergy(int energyToReduce)
     {
-        currentEnergy = currentEnergy - energyToReduce > 0 ? currentEnergy - energyToReduce : 0;
+        currentEnergy = Mathf.Max(currentEnergy - energyToReduce, 0);
         energyPoints[currentEnergy].enabled = false;
     }
 
     public void RecoverEnergy(int energyToRecover)
     {
-        currentEnergy = currentEnergy + energyToRecover < initialEnergy ? currentEnergy + energyToRecover : initialEnergy;
+        currentEnergy = Mathf.Min(currentEnergy + energyToRecover, initialEnergy);
         energyPoints[currentEnergy].enabled = true;
     }
 
@@ -106,7 +106,7 @@ public class CombatCard : MonoBehaviour
 
     public void ReduceHealthPoints(int PointsToReduce)
     {
-        healthPoints = (healthPoints - PointsToReduce) < 0 ? 0 : healthPoints - PointsToReduce;
+        healthPoints = Mathf.Max(healthPoints - PointsToReduce, 0);
         healthText.text = healthPoints.ToString();
     }
 

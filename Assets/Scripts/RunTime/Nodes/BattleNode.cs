@@ -17,8 +17,8 @@ namespace CodeGraph
             outputs.Clear();
             outputs.Add("Win Capture");
             outputs.Add("Win no Capture");
-            outputs.Add("Lose");
-            
+            outputs.Add("Lose Combat");
+            outputs.Add("Game Over");
         }
 
 
@@ -43,9 +43,12 @@ namespace CodeGraph
                 case TurnResult.COMBAT_LOST: 
                     port = 2; 
                     break;
+                case TurnResult.COMBAT_GAME_OVER:
+                    port = 3;
+                    break;
                 default:
                     Debug.LogError("Wrong info was passed to combat node");
-                    port = 0; 
+                    port = 3; 
                     break;
             }
             

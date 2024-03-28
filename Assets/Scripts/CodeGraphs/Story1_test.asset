@@ -512,8 +512,8 @@ MonoBehaviour:
         guid: 5e57d65b-baf5-46ba-b9f7-d5b2a919cdfb
         position:
           serializedVersion: 2
-          x: 2441
-          y: 454
+          x: 2455
+          y: 451
           width: 373
           height: 98
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -527,9 +527,9 @@ MonoBehaviour:
         guid: eea79044-e52c-460c-b008-e95594e46b77
         position:
           serializedVersion: 2
-          x: 2817
-          y: 328
-          width: 321
+          x: 2887
+          y: 406
+          width: 358
           height: 98
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -542,9 +542,9 @@ MonoBehaviour:
         guid: 1b80debf-1bcb-4384-8b70-100140e376a7
         position:
           serializedVersion: 2
-          x: 3202
-          y: 328
-          width: 321
+          x: 3295
+          y: 336
+          width: 341
           height: 122
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -558,9 +558,9 @@ MonoBehaviour:
         guid: 1897f0ff-d028-4222-b4fa-2f3924d6ee15
         position:
           serializedVersion: 2
-          x: 3591
-          y: 600
-          width: 371
+          x: 3653
+          y: 574
+          width: 356
           height: 122
         typeName: CodeGraph.CheckPartyMemberNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -651,9 +651,9 @@ MonoBehaviour:
         guid: 0fc0b042-20b7-40b6-8d16-42a3e6994260
         position:
           serializedVersion: 2
-          x: 5931
-          y: 319
-          width: 321
+          x: 5873
+          y: 274
+          width: 341
           height: 122
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -922,8 +922,8 @@ MonoBehaviour:
         guid: ab1cef83-8f7b-4f68-8fd8-1dca67c248ea
         position:
           serializedVersion: 2
-          x: 9929
-          y: 160
+          x: 10282
+          y: 45
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1058,8 +1058,8 @@ MonoBehaviour:
         guid: 2adb0ed6-2c04-494e-913d-94c16df3d6cf
         position:
           serializedVersion: 2
-          x: 9392
-          y: 4
+          x: 9668
+          y: -161
           width: 372
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1074,8 +1074,8 @@ MonoBehaviour:
         guid: 11f9feea-0989-4cfc-ac36-60f5245aef6a
         position:
           serializedVersion: 2
-          x: 9398
-          y: 134
+          x: 9020
+          y: 101
           width: 356
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1090,8 +1090,8 @@ MonoBehaviour:
         guid: 1589cf1a-13dc-47b1-9e6c-9b6f01471ff0
         position:
           serializedVersion: 2
-          x: 9436
-          y: 296
+          x: 9016
+          y: 247
           width: 363
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1169,8 +1169,8 @@ MonoBehaviour:
         guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
         position:
           serializedVersion: 2
-          x: -101
-          y: -7
+          x: -531
+          y: -64
           width: 81
           height: 77
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1183,8 +1183,8 @@ MonoBehaviour:
         guid: e7d5152b-f320-4823-982f-0525348b462a
         position:
           serializedVersion: 2
-          x: 3649
-          y: 142
+          x: 3686
+          y: 111
           width: 256
           height: 161
         typeName: CodeGraph.NumericConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1201,8 +1201,8 @@ MonoBehaviour:
         guid: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
         position:
           serializedVersion: 2
-          x: 90
-          y: -27
+          x: -241
+          y: -172
           width: 352
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1222,8 +1222,8 @@ MonoBehaviour:
         guid: 3225811d-427c-4fe3-9a25-ee91bec7e996
         position:
           serializedVersion: 2
-          x: 633
-          y: -38
+          x: 653
+          y: -81
           width: 352
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1244,10 +1244,10 @@ MonoBehaviour:
         guid: 7f7bb316-deeb-4804-a5d9-f6fcd531387f
         position:
           serializedVersion: 2
-          x: 932
-          y: -133
+          x: 1097
+          y: -229
           width: 362
-          height: 302
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1262,10 +1262,10 @@ MonoBehaviour:
         guid: 58fb11c8-5ff4-492e-86c4-769d15d22fbe
         position:
           serializedVersion: 2
-          x: 1324
-          y: 252
+          x: 1499
+          y: 202
           width: 358
-          height: 179
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1281,10 +1281,10 @@ MonoBehaviour:
         guid: d0b044c9-d01e-4b33-aacd-6fa59bbafac5
         position:
           serializedVersion: 2
-          x: 1583
-          y: -183
-          width: 495
-          height: 155
+          x: 2056
+          y: -203
+          width: 373
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1299,8 +1299,8 @@ MonoBehaviour:
         guid: 56f59c74-7c03-45d6-bf9d-6a4ae35a8f31
         position:
           serializedVersion: 2
-          x: 2128
-          y: -16
+          x: 2250
+          y: 90
           width: 358
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1323,9 +1323,9 @@ MonoBehaviour:
         guid: 036cfc1f-5951-4733-9463-83a803358772
         position:
           serializedVersion: 2
-          x: 417
-          y: -254
-          width: 335
+          x: 210
+          y: -148
+          width: 356
           height: 122
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
