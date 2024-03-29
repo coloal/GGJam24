@@ -145,7 +145,7 @@ public class CombatCardVisualComposerComponent : MonoBehaviour
         return unknownHpStatsNumberSpritesDictionary.GetNumbersAsSprites(stat);
     }
 
-    public Sprite GetEnergyCellStatSprite(CombatTypes combatType, int numberOfEnergyCells, int energyCell)
+    public Sprite GetEnergyCellStatSprite(CombatTypes combatType, int currentEnergyCellImageCycle)
     {
         Sprite[] energyStatsSprites = cardEnergyStatsInfluenceSprites;
         
@@ -163,7 +163,7 @@ public class CombatCardVisualComposerComponent : MonoBehaviour
         }
 
         // CAREFUL! We start counting energy cells from 0
-        return energyStatsSprites[energyCell / numberOfEnergyCells];
+        return energyStatsSprites[currentEnergyCellImageCycle % energyStatsSprites.Length];
     }
 
     public (Sprite, Sprite) GetStatsNumberAsSprites(CombatTypes combatType, int stat)

@@ -63,9 +63,9 @@ public abstract class CombatCard : MonoBehaviour
     private int healthPoints;
     private int damage = 0;
     private int armor = 0;
-    private int initialEnergy = 0;
     private int currentEnergy = 0;
     private int turns = 0;
+    protected int initialEnergy = 0;
     protected CombatTypes combatType;
 
     private string initialText;

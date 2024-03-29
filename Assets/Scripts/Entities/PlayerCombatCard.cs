@@ -58,13 +58,32 @@ public class PlayerCombatCard : CombatCard
 
     protected override void SetUpEnergyPoints(int energyPoints)
     {
-        if (visualComposerComponent)
+        int energyCellsImagesCyclesToGo = initialEnergy / energyCellsImages.Length;
+        int currentCycle = 0;
+        int energyPointsToFill = 0;
+
+        // Deactivate all energy cells for not showing the ones that are not filled
+        for (int i = 0; i < energyCellsImages.Length; i++)
         {
-            for (int i = 0; i < energyCellsImages.Length; i++)
+            energyCellsImages[i].gameObject.SetActive(false);
+            energyCellsImages[i].sprite = null;
+        }
+
+        while (currentCycle <= energyCellsImagesCyclesToGo)
+        {
+            for (int i = 0; (energyPointsToFill < energyPoints) && (i < energyCellsImages.Length); i++)
             {
                 energyCellsImages[i].sprite =
-                    visualComposerComponent.GetEnergyCellStatSprite(combatType, energyCellsImages.Length, i);
+                    visualComposerComponent.GetEnergyCellStatSprite(combatType, currentCycle);
+                energyPointsToFill++;
             }
+            currentCycle++;
+        }
+
+        // Reactivate all valid energy cells
+        for (int i = 0; i < energyCellsImages.Length; i++)
+        {
+            energyCellsImages[i].gameObject.SetActive(energyCellsImages[i].sprite != null);
         }
     }
 }
