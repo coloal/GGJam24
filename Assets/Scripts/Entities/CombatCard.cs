@@ -129,6 +129,7 @@ public abstract class CombatCard : MonoBehaviour
         healthBarBackground.color = healthBarColors.Item2;
         healthBar.maxValue = combatCardTemplate.HealthPoints;
         healthPoints = combatCardTemplate.HealthPoints;
+        hpPointsSeparator.sprite = GetCardHpSeparatorSprite();
 
         SetCardTotalHpStatsSprites(healthPoints);
         SetCardCurrentHpStats(healthPoints);
