@@ -13,14 +13,17 @@ public class CombatCardVisualComposerComponent : MonoBehaviour
     [SerializeField] private Sprite cardBackgroundMoney;
     [SerializeField] private Sprite cardBackgroundViolence;
 
-    [Header("Card stats typography")]
+    [Header("Card stats sprites")]
     [SerializeField] private Sprite[] cardStatsUnknownSprites;
+    [SerializeField] private Sprite[] cardHpStatsUnknownSprites;
 
     private Dictionary<string, Sprite> unknownStatsNumberSpritesDictionary;
+    private Dictionary<string, Sprite> unknownHpStatsNumberSpritesDictionary;
 
     void Awake()
     {
         InitUnknownStatsNumberSpritesDictionary();
+        InitUnknownHpStatsNumberSpritesDictionary();
     }
 
     void InitUnknownStatsNumberSpritesDictionary()
@@ -29,6 +32,15 @@ public class CombatCardVisualComposerComponent : MonoBehaviour
         for (int i = 0; i < cardStatsUnknownSprites.Length; i++)
         {
             unknownStatsNumberSpritesDictionary.Add(i.ToString(), cardStatsUnknownSprites[i]);
+        }
+    }
+
+    void InitUnknownHpStatsNumberSpritesDictionary()
+    {
+        unknownHpStatsNumberSpritesDictionary = new Dictionary<string, Sprite>();
+        for (int i = 0; i < cardHpStatsUnknownSprites.Length; i++)
+        {
+            unknownHpStatsNumberSpritesDictionary.Add(i.ToString(), cardHpStatsUnknownSprites[i]);
         }
     }
 
@@ -68,5 +80,10 @@ public class CombatCardVisualComposerComponent : MonoBehaviour
     public (Sprite, Sprite) GetUnknownStatsNumberAsSprites(int stat)
     {
         return unknownStatsNumberSpritesDictionary.GetNumbersAsSprites(stat);
+    }
+
+    public (Sprite, Sprite) GetUnknownHpStatsNumberAsSprites(int stat)
+    {
+        return unknownHpStatsNumberSpritesDictionary.GetNumbersAsSprites(stat);
     }
 }

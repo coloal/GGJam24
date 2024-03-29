@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyCombatCard : CombatCard
 {
+    // DEBUG
+    protected override Color healthBarColor => Color.green;
+
     protected override void SetCardBackgroundSprite(CombatCardTemplate combatCardTemplate)
     {
         if (visualComposerComponent)
@@ -25,6 +28,16 @@ public class EnemyCombatCard : CombatCard
         if (visualComposerComponent)
         {
             return visualComposerComponent.GetUnknownStatsNumberAsSprites(stat);
+        }
+
+        return (null, null);
+    }
+
+    protected override (Sprite, Sprite) GetCardHpStatsSprites(int stat)
+    {
+        if (visualComposerComponent)
+        {
+            return visualComposerComponent.GetUnknownHpStatsNumberAsSprites(stat);
         }
 
         return (null, null);

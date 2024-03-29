@@ -35,6 +35,26 @@ public abstract class CombatCard : MonoBehaviour
     [SerializeField] private GameObject defenseStatTensNumberContainer;
     [SerializeField] private Image defenseStatTensUnitNumberImage;
     [SerializeField] private Image defenseStatTensTensNumberImage;
+    [Header("HP stat")]
+    [Header("Health bar")]
+    [SerializeField] private Slider healthBar;
+    [SerializeField] protected Image healthBarFill;
+    [Header("Current HP")]
+    [Header("Unit numbers")]
+    [SerializeField] private GameObject currentHpStatUnitNumberContainer;
+    [SerializeField] private Image currentHpStatUnitNumberImage;
+    [Header("Tens numbers")]
+    [SerializeField] private GameObject currentHpStatTensNumberContainer;
+    [SerializeField] private Image currentHpStatTensUnitNumberImage;
+    [SerializeField] private Image currentHpStatTensTensNumberImage;
+    [Header("Total HP")]
+    [Header("Unit numbers")]
+    [SerializeField] private GameObject totalHpStatUnitNumberContainer;
+    [SerializeField] private Image totalHpStatUnitNumberImage;
+    [Header("Tens numbers")]
+    [SerializeField] private GameObject totalHpStatTensNumberContainer;
+    [SerializeField] private Image totalHpStatTensUnitNumberImage;
+    [SerializeField] private Image totalHpStatTensTensNumberImage;
 
     private int healthPoints;
     private int damage = 0;
@@ -52,6 +72,8 @@ public abstract class CombatCard : MonoBehaviour
     private string rightSwipeWarningText;
     private string topSwipeWarningText;
 
+    protected abstract Color healthBarColor { get; }
+
     protected CombatCardVisualComposerComponent visualComposerComponent;
 
     protected abstract void SetCardBackgroundSprite(CombatCardTemplate combatCardTemplate);
@@ -59,6 +81,8 @@ public abstract class CombatCard : MonoBehaviour
     protected abstract void SetCardCharacterSprite(CombatCardTemplate combatCardTemplate);
 
     protected abstract (Sprite, Sprite) GetCardStatsSprites(int stat);
+
+    protected abstract (Sprite, Sprite) GetCardHpStatsSprites(int stat);
 
     void Awake()
     {
@@ -68,7 +92,6 @@ public abstract class CombatCard : MonoBehaviour
     public void SetDataCard(CombatCardTemplate dataCard)
     {
         nameOfCard.text = dataCard.NameOfCard;
-        healthPoints = dataCard.HealthPoints;
         damage = dataCard.Damage;
         armor = dataCard.Armor;
         turns = dataCard.Turns;
@@ -82,8 +105,53 @@ public abstract class CombatCard : MonoBehaviour
 
         SetCardBackgroundSprite(dataCard);
         SetCardCharacterSprite(dataCard);
+        
         SetCardAttackStatsSprites(dataCard.Damage);
         SetCardDefenseStatsSprites(dataCard.Armor);
+
+        SetUpHealthPoints(dataCard);
+    }
+
+    void SetUpHealthPoints(CombatCardTemplate combatCardTemplate)
+    {
+        healthBarFill.color = healthBarColor;
+        healthBar.maxValue = combatCardTemplate.HealthPoints;
+        healthPoints = combatCardTemplate.HealthPoints;
+
+        SetCardTotalHpStatsSprites(healthPoints);
+        SetCardCurrentHpStats(healthPoints);
+    }
+
+    void SetCardCurrentHpStats(int hpStat)
+    {
+        void SetCardCurrentHpStatsSprites(int hpStat)
+        {
+            SpritesUtils.SetNumberAsSprites(
+                unitNumberContainer: currentHpStatUnitNumberContainer,
+                tensNumberContainer: currentHpStatTensNumberContainer,
+                unitNumberImage: currentHpStatUnitNumberImage,
+                tensUnitNumberImage: currentHpStatTensUnitNumberImage,
+                tensTensNumberImage: currentHpStatTensTensNumberImage,
+                number: hpStat,
+                getNumberAsSprite: GetCardHpStatsSprites
+            );
+        }
+
+        healthBar.value = hpStat;
+        SetCardCurrentHpStatsSprites(hpStat);
+    }
+
+    void SetCardTotalHpStatsSprites(int hpStat)
+    {
+        SpritesUtils.SetNumberAsSprites(
+            unitNumberContainer: totalHpStatUnitNumberContainer,
+            tensNumberContainer: totalHpStatTensNumberContainer,
+            unitNumberImage: totalHpStatUnitNumberImage,
+            tensUnitNumberImage: totalHpStatTensUnitNumberImage,
+            tensTensNumberImage: totalHpStatTensTensNumberImage,
+            number: hpStat,
+            getNumberAsSprite: GetCardHpStatsSprites
+        );
     }
 
     void SetCardDefenseStatsSprites(int defenseStat)
@@ -145,6 +213,7 @@ public abstract class CombatCard : MonoBehaviour
     public void ReduceHealthPoints(int PointsToReduce)
     {
         healthPoints = Mathf.Max(healthPoints - PointsToReduce, 0);
+        SetCardCurrentHpStats(healthPoints);
     }
 
     public int GetHealthPoints()

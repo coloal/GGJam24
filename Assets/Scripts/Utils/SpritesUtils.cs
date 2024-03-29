@@ -19,8 +19,8 @@ public static class SpritesUtils
         }
         else if (numberAsString.Length > 1)
         {
-            unitNumberSprite = spritesDictionary[numberAsString[0].ToString()];
-            tensNumberSprite = spritesDictionary[numberAsString[1].ToString()];
+            tensNumberSprite = spritesDictionary[numberAsString[0].ToString()];
+            unitNumberSprite = spritesDictionary[numberAsString[1].ToString()];
         }
 
         return (tensNumberSprite, unitNumberSprite);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ed26fcff24a244d9836282bf3ad0a1f
+guid: aa93807b317f4455eb3088d3297a4fc3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_0
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b1d63b1c7c164f50ba5b39d478a0db5
-      internalID: -1093281167
+      spriteID: ae77bbefd82334069a3319e2694e8d32
+      internalID: -535994732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_1
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_1
       rect:
         serializedVersion: 2
-        x: 13
+        x: 6
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c99e5a4f023274fa79b377ae6eec7550
-      internalID: -1475598807
+      spriteID: 76176fd36e710459a8ca5c7dc9286e36
+      internalID: -1553961461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_2
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_2
       rect:
         serializedVersion: 2
-        x: 26
+        x: 12
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4985c72cba1b4f318eb7659ac9d4711
-      internalID: -849602771
+      spriteID: 7953ad24173aa4fd9bc5bf2ea87e8bf1
+      internalID: 1927254565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_3
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_3
       rect:
         serializedVersion: 2
-        x: 39
+        x: 18
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff8fb596da884e679fbafcb9e72cd96
-      internalID: -1096425677
+      spriteID: 5c33ee4ee62f9460db82ea5ab147c12c
+      internalID: -1899823459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_4
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_4
       rect:
         serializedVersion: 2
-        x: 52
+        x: 24
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3b195b69b80743efb46ced306581ce4
-      internalID: -185831088
+      spriteID: eab9be4afb1ca426a890e1f15d5acf4b
+      internalID: -583817082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_5
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_5
       rect:
         serializedVersion: 2
-        x: 65
+        x: 30
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5ed7be4490d42eabed267c23536e5f
-      internalID: -663862050
+      spriteID: c690185119706488fbba3a32a20df760
+      internalID: 2020484244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_6
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_6
       rect:
         serializedVersion: 2
-        x: 78
+        x: 36
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c72ea00e33e94d45a2256026cfd5f65
-      internalID: 931025330
+      spriteID: ebb0a10899ec1409a973201a655800b8
+      internalID: 1920921539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_7
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_7
       rect:
         serializedVersion: 2
-        x: 91
+        x: 42
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c11dcccc4a1f44465ae76d75be7c4800
-      internalID: -1810645950
+      spriteID: 210fc8e2a4b7c40e38db18bf7125b226
+      internalID: 1726095312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_8
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_8
       rect:
         serializedVersion: 2
-        x: 104
+        x: 48
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5aaf85aa402f24cb4bec5b9414236017
-      internalID: 1899604304
+      spriteID: 959f406fa54584356bc801cf4925e0e9
+      internalID: 1314683829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_CombatCard_StatsTypography_Unknown_9
+      name: Sprite_Card_CombatCard_HealthNumbers_Unknown_9
       rect:
         serializedVersion: 2
-        x: 117
+        x: 54
         y: 0
-        width: 13
-        height: 15
+        width: 6
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 472a38886aca941d08ba9efb344d6915
-      internalID: -275718575
+      spriteID: fb1d09128797c4a42a09739e6c4a2366
+      internalID: -2108056753
       vertices: []
       indices: 
       edges: []
@@ -343,16 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_CombatCard_StatsTypography_Unknown_0: -1093281167
-      Sprite_Card_CombatCard_StatsTypography_Unknown_1: -1475598807
-      Sprite_Card_CombatCard_StatsTypography_Unknown_2: -849602771
-      Sprite_Card_CombatCard_StatsTypography_Unknown_3: -1096425677
-      Sprite_Card_CombatCard_StatsTypography_Unknown_4: -185831088
-      Sprite_Card_CombatCard_StatsTypography_Unknown_5: -663862050
-      Sprite_Card_CombatCard_StatsTypography_Unknown_6: 931025330
-      Sprite_Card_CombatCard_StatsTypography_Unknown_7: -1810645950
-      Sprite_Card_CombatCard_StatsTypography_Unknown_8: 1899604304
-      Sprite_Card_CombatCard_StatsTypography_Unknown_9: -275718575
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_0: -535994732
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_1: -1553961461
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_2: 1927254565
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_3: -1899823459
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_4: -583817082
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_5: 2020484244
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_6: 1920921539
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_7: 1726095312
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_8: 1314683829
+      Sprite_Card_CombatCard_HealthNumbers_Unknown_9: -2108056753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
