@@ -17,11 +17,13 @@ MonoBehaviour:
   EffectiveText: "AH! Eso doli(hola soy un programador, me tienen encerrado en un
     s\xF3tano, llamen al 112)"
   NonEffectiveText: primo eso no me duele jeje salu2
-  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
-  BackgroundSprite: {fileID: 21300000, guid: 65e1bcae23b6c4d42a664a3775eb4c1c, type: 3}
-  HealthPoints: 10
-  Damage: 2
-  Armor: 2
+  CharacterSpriteUnknown: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  CharacterSpriteInlfuence: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  CharacterSpriteMoney: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  CharacterSpriteViolence: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  HealthPoints: 69
+  Damage: 23
+  Armor: 7
   Turns: 5
   CombatType: 1
   Instrument: 
