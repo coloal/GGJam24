@@ -1,14 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Events;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 [CreateAssetMenu(fileName = "New CombatCardData", menuName = "CombatCardData")]
 public class CombatCardTemplate : ScriptableObject
@@ -21,8 +11,10 @@ public class CombatCardTemplate : ScriptableObject
     public string NonEffectiveText;
 
     //Card sprite
-    public Sprite CardSprite;
-    public Sprite BackgroundSprite;
+    public Sprite CharacterSpriteUnknown;
+    public Sprite CharacterSpriteInlfuence;
+    public Sprite CharacterSpriteMoney;
+    public Sprite CharacterSpriteViolence;
 
     //Combat card stats
     public int HealthPoints = 0;

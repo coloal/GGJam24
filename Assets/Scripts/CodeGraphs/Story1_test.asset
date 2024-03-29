@@ -64,6 +64,7 @@ MonoBehaviour:
   - rid: 8580623337150218310
   - rid: 8580623337150218311
   - rid: 8580623429159092224
+  - rid: 2786998743839014912
   connections:
   - outputPort:
       nodeId: 5e57d65b-baf5-46ba-b9f7-d5b2a919cdfb
@@ -506,6 +507,23 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 2786998743839014912
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a943990f-2710-433a-9e51-353e6d89cbf7
+        position:
+          serializedVersion: 2
+          x: 381.5
+          y: -531
+          width: 334.5
+          height: 146
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Win no Capture
+        - Lose
+        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
     - rid: 8580623337150218250
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

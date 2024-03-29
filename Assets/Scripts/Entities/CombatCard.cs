@@ -1,16 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CombatCard : MonoBehaviour
+public abstract class CombatCard : MonoBehaviour
 {
     [Header("Visual configurations")]
     [SerializeField] private TextMeshPro nameOfCard;
-    [SerializeField] private TextMeshPro healthText;
-    [SerializeField] private SpriteRenderer backgroundCombatSprite;
-    [SerializeField] private SpriteRenderer combatSprite;
+    [SerializeField] protected SpriteRenderer backgroundCombatSprite;
+    [SerializeField] protected SpriteRenderer characterSprite;
     [SerializeField] private GameObject inactiveOverlay;
 
     [Header("Overlay text configurations")]
@@ -18,10 +19,22 @@ public class CombatCard : MonoBehaviour
     [SerializeField] TextMeshProUGUI overlayTextMesh;
 
     [Header("Combat stats configurations")]
-    [SerializeField] private List<SpriteRenderer> attackPoints;
-    [SerializeField] private List<SpriteRenderer> defensePoints;
-
-    [SerializeField] private List<SpriteRenderer> energyPoints;
+    [Header("Attack stat")]
+    [Header("Unit numbers")]
+    [SerializeField] private GameObject attackStatUnitNumberContainer;
+    [SerializeField] private Image attackStatUnitNumberImage;
+    [Header("Tens numbers")]
+    [SerializeField] private GameObject attackStatTensNumberContainer;
+    [SerializeField] private Image attackStatTensUnitNumberImage;
+    [SerializeField] private Image attackStatTensTensNumberImage;
+    [Header("Defense stat")]
+    [Header("Unit numbers")]
+    [SerializeField] private GameObject defenseStatUnitNumberContainer;
+    [SerializeField] private Image defenseStatUnitNumberImage;
+    [Header("Tens numbers")]
+    [SerializeField] private GameObject defenseStatTensNumberContainer;
+    [SerializeField] private Image defenseStatTensUnitNumberImage;
+    [SerializeField] private Image defenseStatTensTensNumberImage;
 
     private int healthPoints;
     private int damage = 0;
@@ -39,49 +52,74 @@ public class CombatCard : MonoBehaviour
     private string rightSwipeWarningText;
     private string topSwipeWarningText;
 
-    public void SetDataCard(CombatCardTemplate DataCard)
+    protected CombatCardVisualComposerComponent visualComposerComponent;
+
+    protected abstract void SetCardBackgroundSprite(CombatCardTemplate combatCardTemplate);
+
+    protected abstract void SetCardCharacterSprite(CombatCardTemplate combatCardTemplate);
+
+    protected abstract (Sprite, Sprite) GetCardStatsSprites(int stat);
+
+    void Awake()
     {
-        backgroundCombatSprite.sprite = DataCard.BackgroundSprite;
-        combatSprite.sprite = DataCard.CardSprite;
-
-        nameOfCard.text = DataCard.NameOfCard;
-        healthPoints = DataCard.HealthPoints;
-        damage = DataCard.Damage;
-        armor = DataCard.Armor;
-        turns = DataCard.Turns;
-        initialEnergy = CombatUtils.CalculateEnergy(turns);
-        currentEnergy = initialEnergy;
-        combatType = DataCard.CombatType;
-
-        initialText = DataCard.InitialText;
-        superEffectiveText = DataCard.EffectiveText;
-        notVeryEffectiveText = DataCard.NonEffectiveText;
-
-        //Encendemos los puntos de cada stat
-        SetStat(damage, attackPoints);
-        SetStat(armor, defensePoints);
-        SetStat(initialEnergy, energyPoints);
-        healthText.text = healthPoints.ToString();
+        visualComposerComponent = GetComponent<CombatCardVisualComposerComponent>();
     }
 
-    private void SetStat(int value, List<SpriteRenderer> sprites)
+    public void SetDataCard(CombatCardTemplate dataCard)
     {
-        for (int i = 0; i < value && i < sprites.Count; i++)
-        {
-            sprites[i].enabled = true;
-        }
+        nameOfCard.text = dataCard.NameOfCard;
+        healthPoints = dataCard.HealthPoints;
+        damage = dataCard.Damage;
+        armor = dataCard.Armor;
+        turns = dataCard.Turns;
+        initialEnergy = CombatUtils.CalculateEnergy(turns);
+        currentEnergy = initialEnergy;
+        combatType = dataCard.CombatType;
+
+        initialText = dataCard.InitialText;
+        superEffectiveText = dataCard.EffectiveText;
+        notVeryEffectiveText = dataCard.NonEffectiveText;
+
+        SetCardBackgroundSprite(dataCard);
+        SetCardCharacterSprite(dataCard);
+        SetCardAttackStatsSprites(dataCard.Damage);
+        SetCardDefenseStatsSprites(dataCard.Armor);
+    }
+
+    void SetCardDefenseStatsSprites(int defenseStat)
+    {
+        SpritesUtils.SetNumberAsSprites(
+            unitNumberContainer: defenseStatUnitNumberContainer,
+            tensNumberContainer: defenseStatTensNumberContainer,
+            unitNumberImage: defenseStatUnitNumberImage,
+            tensUnitNumberImage: defenseStatTensUnitNumberImage,
+            tensTensNumberImage: defenseStatTensTensNumberImage,
+            number: defenseStat,
+            getNumberAsSprite: GetCardStatsSprites
+        );
+    }
+
+    void SetCardAttackStatsSprites(int attackStat)
+    {
+        SpritesUtils.SetNumberAsSprites(
+            unitNumberContainer: attackStatUnitNumberContainer,
+            tensNumberContainer: attackStatTensNumberContainer,
+            unitNumberImage: attackStatUnitNumberImage,
+            tensUnitNumberImage: attackStatTensUnitNumberImage,
+            tensTensNumberImage: attackStatTensTensNumberImage,
+            number: attackStat,
+            getNumberAsSprite: GetCardStatsSprites
+        );
     }
 
     public void ReduceEnergy(int energyToReduce)
     {
         currentEnergy = Mathf.Max(currentEnergy - energyToReduce, 0);
-        energyPoints[currentEnergy].enabled = false;
     }
 
     public void RecoverEnergy(int energyToRecover)
     {
         currentEnergy = Mathf.Min(currentEnergy + energyToRecover, initialEnergy);
-        energyPoints[currentEnergy].enabled = true;
     }
 
     public float GetCardWidth()
@@ -107,7 +145,6 @@ public class CombatCard : MonoBehaviour
     public void ReduceHealthPoints(int PointsToReduce)
     {
         healthPoints = Mathf.Max(healthPoints - PointsToReduce, 0);
-        healthText.text = healthPoints.ToString();
     }
 
     public int GetHealthPoints()

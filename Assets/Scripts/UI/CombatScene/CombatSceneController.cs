@@ -31,26 +31,15 @@ public class CombatSceneController : MonoBehaviour
 
     public void SetTurnNumber(int turn)
     {
-        string turnAsString = turn.ToString();
-        // Turn number is an unit number
-        if (turnAsString.Length == 1)
-        {
-            unitNumberContainer.SetActive(true);
-            tensNumberContainer.SetActive(false);
-
-            (Sprite _, Sprite unitNumberSprite) = combatVisualManager.GetTurnNumberAsSprites(turnAsString);
-            unitNumberImage.sprite = unitNumberSprite;
-        }
-        // Turns number is a tens number
-        else if (turnAsString.Length > 1)
-        {
-            tensNumberContainer.SetActive(true);
-            unitNumberContainer.SetActive(false);
-
-            (Sprite unitNumberSprite, Sprite tensNumberSprite) = combatVisualManager.GetTurnNumberAsSprites(turnAsString);
-            tensUnitNumberImage.sprite = unitNumberSprite;
-            tensTensNumberImage.sprite = tensNumberSprite;
-        }        
+        SpritesUtils.SetNumberAsSprites(
+            unitNumberContainer: unitNumberContainer,
+            tensNumberContainer: tensNumberContainer,
+            unitNumberImage: unitNumberImage,
+            tensUnitNumberImage: tensUnitNumberImage,
+            tensTensNumberImage: tensTensNumberImage,
+            number: turn,
+            getNumberAsSprite: combatVisualManager.GetTurnNumberAsSprites 
+        );
     }
 
     public void ShowDialogText(string text)

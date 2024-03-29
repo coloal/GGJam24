@@ -151,7 +151,7 @@ public class CombatManager : MonoBehaviour
 
     CombatCard SpawnEnemyCard()
     {
-        GameObject combatCardPrefab = (GameObject) Resources.Load("Prefabs/CombatCard");
+        GameObject combatCardPrefab = (GameObject) Resources.Load("Prefabs/EnemyCombatCard");
         GameObject enemyCard = Instantiate(combatCardPrefab, enemyCardOrigin.position, Quaternion.identity);
         CombatCard combatCardComponent = enemyCard.GetComponent<CombatCard>();
         if (combatCardPrefab.GetComponent<CombatCard>() != null)
@@ -167,7 +167,7 @@ public class CombatManager : MonoBehaviour
     void SpawnPlayerCards()
     {
         List<PartyMember> partyMembers = partyManager.GetPartyMembers();
-        GameObject combatCardPrefab = (GameObject) Resources.Load("Prefabs/CombatCard");
+        GameObject combatCardPrefab = (GameObject) Resources.Load("Prefabs/PlayerCombatCard");
 
         for (int i = 0; i < partyMembers.Count; i++)
         {

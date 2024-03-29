@@ -31,21 +31,8 @@ public class CombatVisualManager : MonoBehaviour
         }
     }
 
-    public (Sprite, Sprite) GetTurnNumberAsSprites(string turnAsString)
+    public (Sprite, Sprite) GetTurnNumberAsSprites(int turn)
     {
-        Sprite unitNumberSprite = null;
-        Sprite tensNumberSprite = null;
-
-        if (turnAsString.Length == 1)
-        {
-            unitNumberSprite = numberSpritesDictionary[turnAsString[0].ToString()];
-        }
-        else if (turnAsString.Length > 1)
-        {
-            unitNumberSprite = numberSpritesDictionary[turnAsString[0].ToString()];
-            tensNumberSprite = numberSpritesDictionary[turnAsString[1].ToString()];
-        }
-
-        return (tensNumberSprite, unitNumberSprite);
+        return numberSpritesDictionary.GetNumbersAsSprites(turn);
     }
 }
