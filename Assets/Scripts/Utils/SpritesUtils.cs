@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,6 +78,15 @@ public static class SpritesUtils
             (Sprite tensNumberSprite, Sprite unitNumberSprite) = getNumberAsSprite(number);
             tensTensNumberSpriteRenderer.sprite = tensNumberSprite;
             tensUnitNumberSpriteRenderer.sprite = unitNumberSprite;
+        }
+    }
+
+    public static void InitNumberSpritesDictionary(out Dictionary<string, Sprite> dictionary, Sprite[] numbersSprites)
+    {
+        dictionary = new Dictionary<string, Sprite>();
+        for (int i = 0; i < numbersSprites.Length; i++)
+        {
+            dictionary.Add(i.ToString(), numbersSprites[i]);
         }
     }
 }

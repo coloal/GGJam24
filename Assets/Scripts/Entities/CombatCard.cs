@@ -27,6 +27,7 @@ public abstract class CombatCard : MonoBehaviour
     [SerializeField] private GameObject attackStatTensNumberContainer;
     [SerializeField] private Image attackStatTensUnitNumberImage;
     [SerializeField] private Image attackStatTensTensNumberImage;
+
     [Header("Defense stat")]
     [Header("Unit numbers")]
     [SerializeField] private GameObject defenseStatUnitNumberContainer;
@@ -35,6 +36,7 @@ public abstract class CombatCard : MonoBehaviour
     [SerializeField] private GameObject defenseStatTensNumberContainer;
     [SerializeField] private Image defenseStatTensUnitNumberImage;
     [SerializeField] private Image defenseStatTensTensNumberImage;
+
     [Header("HP stat")]
     [Header("Health bar")]
     [SerializeField] private Slider healthBar;
@@ -55,6 +57,8 @@ public abstract class CombatCard : MonoBehaviour
     [SerializeField] private GameObject totalHpStatTensNumberContainer;
     [SerializeField] private Image totalHpStatTensUnitNumberImage;
     [SerializeField] private Image totalHpStatTensTensNumberImage;
+    [Header("HP current and total HP separator")]
+    [SerializeField] private Image hpPointsSeparator;
 
     private int healthPoints;
     private int damage = 0;
@@ -62,7 +66,7 @@ public abstract class CombatCard : MonoBehaviour
     private int initialEnergy = 0;
     private int currentEnergy = 0;
     private int turns = 0;
-    private CombatTypes combatType;
+    protected CombatTypes combatType;
 
     private string initialText;
     private string superEffectiveText;
@@ -83,6 +87,10 @@ public abstract class CombatCard : MonoBehaviour
     protected abstract (Sprite, Sprite) GetCardStatsSprites(int stat);
 
     protected abstract (Sprite, Sprite) GetCardHpStatsSprites(int stat);
+
+    protected abstract Sprite GetCardHpSeparatorSprite();
+
+    protected abstract void SetUpEnergyPoints(int energyPoints);
 
     void Awake()
     {
@@ -110,6 +118,8 @@ public abstract class CombatCard : MonoBehaviour
         SetCardDefenseStatsSprites(dataCard.Armor);
 
         SetUpHealthPoints(dataCard);
+
+        SetUpEnergyPoints(currentEnergy);
     }
 
     void SetUpHealthPoints(CombatCardTemplate combatCardTemplate)
@@ -183,11 +193,13 @@ public abstract class CombatCard : MonoBehaviour
     public void ReduceEnergy(int energyToReduce)
     {
         currentEnergy = Mathf.Max(currentEnergy - energyToReduce, 0);
+        SetUpEnergyPoints(currentEnergy);
     }
 
     public void RecoverEnergy(int energyToRecover)
     {
         currentEnergy = Mathf.Min(currentEnergy + energyToRecover, initialEnergy);
+        SetUpEnergyPoints(currentEnergy);
     }
 
     public float GetCardWidth()

@@ -1009,6 +1009,7 @@ MonoBehaviour:
   totalHpStatTensNumberContainer: {fileID: 4375767345394376841}
   totalHpStatTensUnitNumberImage: {fileID: 4176002499214254253}
   totalHpStatTensTensNumberImage: {fileID: 8887953298488494148}
+  hpPointsSeparator: {fileID: 8637833076452243122}
 --- !u!114 &2635668833086684285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1026,7 @@ MonoBehaviour:
   cardBackgroundInfluence: {fileID: 21300000, guid: ef70239d8b2064725b3383243e160306, type: 3}
   cardBackgroundMoney: {fileID: 21300000, guid: 17669f832f86a49e3b38c272f3c1fe4b, type: 3}
   cardBackgroundViolence: {fileID: 21300000, guid: 53dbf6aaef01e453092059ec4a6bce81, type: 3}
-  cardStatsUnknownSprites:
+  cardStatsNumbersUnknownSprites:
   - {fileID: -1093281167, guid: 8ed26fcff24a244d9836282bf3ad0a1f, type: 3}
   - {fileID: -1475598807, guid: 8ed26fcff24a244d9836282bf3ad0a1f, type: 3}
   - {fileID: -849602771, guid: 8ed26fcff24a244d9836282bf3ad0a1f, type: 3}
@@ -1036,7 +1037,7 @@ MonoBehaviour:
   - {fileID: -1810645950, guid: 8ed26fcff24a244d9836282bf3ad0a1f, type: 3}
   - {fileID: 1899604304, guid: 8ed26fcff24a244d9836282bf3ad0a1f, type: 3}
   - {fileID: -275718575, guid: 8ed26fcff24a244d9836282bf3ad0a1f, type: 3}
-  cardHpStatsUnknownSprites:
+  cardHpStatsNumbersUnknownSprites:
   - {fileID: -535994732, guid: aa93807b317f4455eb3088d3297a4fc3, type: 3}
   - {fileID: -1553961461, guid: aa93807b317f4455eb3088d3297a4fc3, type: 3}
   - {fileID: 1927254565, guid: aa93807b317f4455eb3088d3297a4fc3, type: 3}
@@ -1047,6 +1048,85 @@ MonoBehaviour:
   - {fileID: 1726095312, guid: aa93807b317f4455eb3088d3297a4fc3, type: 3}
   - {fileID: 1314683829, guid: aa93807b317f4455eb3088d3297a4fc3, type: 3}
   - {fileID: -2108056753, guid: aa93807b317f4455eb3088d3297a4fc3, type: 3}
+  cardHpSeparatorUnknownSprite: {fileID: 21300000, guid: fb3555e48536245719fef52d8ab65b3c, type: 3}
+  cardEnergyStatsInfluenceSprites:
+  - {fileID: 2104486042, guid: 937ffcd37003e47f381159ae72d0a08a, type: 3}
+  - {fileID: 1252995339, guid: 937ffcd37003e47f381159ae72d0a08a, type: 3}
+  cardStatsNumbersInfluenceSprites:
+  - {fileID: -1709846507, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: 1252499731, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: 1842138702, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: -836306991, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: 705371846, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: -1548484921, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: 553893162, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: -1760631395, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: 46430382, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  - {fileID: 1621549122, guid: d34600a49b6cd439488743bd2c8a6b11, type: 3}
+  cardHpStatsNumbersInfluenceSprites:
+  - {fileID: -1588362913, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: -582779029, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: 1749184870, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: -142629978, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: -1191049964, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: -1426318376, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: 567338929, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: -818101635, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: 873463480, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  - {fileID: 603630283, guid: 7675068947a5f469a8733ed3766420e1, type: 3}
+  cardHpSeparatorInfluenceSprite: {fileID: 21300000, guid: 36ecca3c882be452f8a44aa40835a773, type: 3}
+  cardEnergyStatsMoneySprites:
+  - {fileID: -1778534486, guid: 3f5e8bdc5f4784628b2a5f1d15b7342b, type: 3}
+  - {fileID: 1818035809, guid: 3f5e8bdc5f4784628b2a5f1d15b7342b, type: 3}
+  cardStatsNumbersMoneySprites:
+  - {fileID: 1335882385, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 782643670, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 692396234, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 1023631349, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: -619162413, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 1203244286, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 455399641, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 2005249920, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: -1139302456, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  - {fileID: 1176232777, guid: 5e16b9d410d6d4f38b83257456f85b61, type: 3}
+  cardHpStatsNumbersMoneySprites:
+  - {fileID: 810494678, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: 1419666279, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: -539861651, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: -1669996534, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: -2027203945, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: 2079390701, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: 494655221, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: 498204720, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: -2116309701, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  - {fileID: -802156446, guid: 124328ab3613340a3b3e97fd6815009e, type: 3}
+  cardHpSeparatorMoneySprite: {fileID: 21300000, guid: 15a3404b93b014631b9797eae0c4cf99, type: 3}
+  cardEnergyStatsViolenceSprites:
+  - {fileID: 1215814907, guid: a71571cfe78c347a4a2e1d1d60e98f6e, type: 3}
+  - {fileID: -1995193901, guid: a71571cfe78c347a4a2e1d1d60e98f6e, type: 3}
+  cardStatsNumbersViolenceSprites:
+  - {fileID: -2077948009, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: -1866414235, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: 1302320921, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: 2064728676, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: 930692338, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: -263417897, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: 1117983665, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: -1024187800, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: 731344464, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  - {fileID: -1152050425, guid: 73ae6cf58fed3406b97ec8f363193050, type: 3}
+  cardHpStatsNumbersViolenceSprites:
+  - {fileID: 588147018, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -1730550370, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: 517677148, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -959704162, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -1258374679, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -1195701091, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: 220979907, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -935911513, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -1713334015, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  - {fileID: -929465702, guid: 9f153bdb182cf4e1eb36a3241d1fcb7d, type: 3}
+  cardHpSeparatorViolenceSprite: {fileID: 21300000, guid: ff98c23943fe247a9af7e375bf47492c, type: 3}
 --- !u!114 &7100817756676060463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2448,7 +2528,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 3776778930668575725}
   m_HandleRect: {fileID: 0}

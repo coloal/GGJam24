@@ -42,4 +42,19 @@ public class EnemyCombatCard : CombatCard
 
         return (null, null);
     }
+
+    protected override void SetUpEnergyPoints(int energyPoints)
+    {
+        // This method does nothing for an EnemyCombatCard
+    }
+
+    protected override Sprite GetCardHpSeparatorSprite()
+    {
+        if (visualComposerComponent)
+        {
+            return visualComposerComponent.GetCardHpSeparatorUnknownSprite();
+        }
+
+        return null;
+    }
 }
