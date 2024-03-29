@@ -41,6 +41,7 @@ public abstract class CombatCard : MonoBehaviour
     [Header("Health bar")]
     [SerializeField] private Slider healthBar;
     [SerializeField] protected Image healthBarFill;
+    [SerializeField] protected Image healthBarBackground;
     [Header("Current HP")]
     [Header("Unit numbers")]
     [SerializeField] private GameObject currentHpStatUnitNumberContainer;
@@ -76,7 +77,7 @@ public abstract class CombatCard : MonoBehaviour
     private string rightSwipeWarningText;
     private string topSwipeWarningText;
 
-    protected abstract Color healthBarColor { get; }
+    protected abstract (Color, Color) healthBarColors { get; }
 
     protected CombatCardVisualComposerComponent visualComposerComponent;
 
@@ -124,7 +125,8 @@ public abstract class CombatCard : MonoBehaviour
 
     void SetUpHealthPoints(CombatCardTemplate combatCardTemplate)
     {
-        healthBarFill.color = healthBarColor;
+        healthBarFill.color = healthBarColors.Item1;
+        healthBarBackground.color = healthBarColors.Item2;
         healthBar.maxValue = combatCardTemplate.HealthPoints;
         healthPoints = combatCardTemplate.HealthPoints;
 

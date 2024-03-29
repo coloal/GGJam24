@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyCombatCard : CombatCard
 {
     // DEBUG
-    protected override Color healthBarColor => Color.green;
+    protected override (Color, Color) healthBarColors => (new Color(0.27f, 0.62f, 0.83f), new Color(0.03f, 0.20f, 0.30f));
 
     protected override void SetCardBackgroundSprite(CombatCardTemplate combatCardTemplate)
     {

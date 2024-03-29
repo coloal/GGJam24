@@ -994,6 +994,7 @@ MonoBehaviour:
   defenseStatTensTensNumberImage: {fileID: 7966435727588809524}
   healthBar: {fileID: 9077286255905196845}
   healthBarFill: {fileID: 2552955711616318786}
+  healthBarBackground: {fileID: 6124206785611533426}
   currentHpStatUnitNumberContainer: {fileID: 6081473600605498004}
   currentHpStatUnitNumberImage: {fileID: 5079010811238344103}
   currentHpStatTensNumberContainer: {fileID: 8809654212135087637}
@@ -1519,7 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 0.20392157, b: 0.30980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1527,7 +1528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2270,7 +2271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.2784314, g: 0.62352943, b: 0.8392157, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2531,7 +2532,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 30
   m_WholeNumbers: 1
-  m_Value: 30
+  m_Value: 13
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
