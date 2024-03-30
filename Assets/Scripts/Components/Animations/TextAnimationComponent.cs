@@ -17,7 +17,7 @@ public class TextAnimationComponent : MonoBehaviour
         activeAnimations = new Dictionary<int, IEnumerator>();
     }
 
-    public void PlayTypewriterAnimation(TextMeshProUGUI textMesh, string text)
+    public void PlayTypewriterAnimation(TextMeshProUGUI textMesh, string text, Action onAnimationEnded = null)
     {
         IEnumerator activeAnimationCoroutine;
         activeAnimations.TryGetValue(textMesh.GetInstanceID(), out activeAnimationCoroutine);
@@ -31,6 +31,10 @@ public class TextAnimationComponent : MonoBehaviour
             TypewriterAnimation(textMesh, text, perCharTimeDelay,
                 onAnimationEnded: () => {
                     activeAnimations.Remove(textMesh.GetInstanceID());
+                    if (onAnimationEnded != null)
+                    {
+                        onAnimationEnded();
+                    }
                 });
         activeAnimations.Add(textMesh.GetInstanceID(), typewriterAnimationCoroutine);
         

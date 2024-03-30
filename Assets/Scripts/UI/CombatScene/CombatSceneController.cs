@@ -58,14 +58,14 @@ public class CombatSceneController : MonoBehaviour
         }
     }
 
-    public void ShowDialogText(string text)
+    public void ShowDialogText(string text, Action onAnimationEnded = null)
     {
         if (textAnimationComponent)
         {
             GameUtils.CreateTemporizer(() =>
             {
                 dialogTextContainer.SetActive(true);
-                textAnimationComponent.PlayTypewriterAnimation(dialogText, text);
+                textAnimationComponent.PlayTypewriterAnimation(dialogText, text, onAnimationEnded);
             }, 1.0f, this);       
         }
     }

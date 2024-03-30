@@ -10,10 +10,20 @@ public class CombatVisualManager : MonoBehaviour
     [SerializeField] private SpriteRenderer sceneBackgroundSpriteRenderer;
     [SerializeField] private Image combatTurnsContainerImage;
 
+    [Header("Scene animations")]
+    [Header("Move enemy card animation")]
+    [SerializeField] private Transform enemyCardFinalPosition;
+
     [Header("Debug")]
     [SerializeField] private List<Sprite> debugTurnsSprites;
 
+    private MoveCardAnimationComponent moveCardAnimationComponent;
     private Dictionary<string, Sprite> numberSpritesDictionary;
+
+    void Awake()
+    {
+        moveCardAnimationComponent = GetComponent<MoveCardAnimationComponent>();
+    }
 
     void Start()
     {
@@ -29,6 +39,11 @@ public class CombatVisualManager : MonoBehaviour
             combatTurnsContainerImage.sprite = brainManager.ZoneInfo.CombatTurnsContainerSprite;
             InitTurnsNumberSpritesDictionary(brainManager.ZoneInfo.CombatTurnSprites);
         }
+        // DEBUG
+        else
+        {
+            InitTurnsNumberSpritesDictionary(debugTurnsSprites);
+        }
     }
 
     void InitTurnsNumberSpritesDictionary(List<Sprite> numberImages)
@@ -43,5 +58,17 @@ public class CombatVisualManager : MonoBehaviour
     public (Sprite, Sprite) GetTurnNumberAsSprites(int turn)
     {
         return numberSpritesDictionary.GetNumbersAsSprites(turn);
+    }
+
+    public void PlayMoveEnemyCardAnimation(GameObject enemyCardToMove, Action onAnimationEnded)
+    {
+        if (moveCardAnimationComponent)
+        {
+            moveCardAnimationComponent.StartMovingCardTowards(
+                cardToMove: enemyCardToMove,
+                cardFinalPosition: enemyCardFinalPosition,
+                onAnimationEnded: onAnimationEnded
+            );
+        }
     }
 }
