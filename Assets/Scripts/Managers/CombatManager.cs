@@ -409,17 +409,16 @@ public class CombatManager : MonoBehaviour
     {
         AttackEffectiveness attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard currentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-        CombatCard enemyCombatCard = enemyCard.GetComponent<CombatCard>();
 
-        if (currentAttackerCombatCard && enemyCombatCard && combatSceneUIController)
+        if (currentAttackerCombatCard && enemyCard && combatSceneUIController)
         {
             CombatUtils.Attack(
-                attackerCombatCard: enemyCombatCard,
+                attackerCombatCard: enemyCard,
                 defenderCombatCard: currentAttackerCombatCard,
                 out attackFinalEffectiveness
             );
 
-            if (enemyCombatCard.GetHealthPoints() > 0)
+            if (enemyCard.GetHealthPoints() > 0)
             {
                 switch (attackFinalEffectiveness)
                 {
@@ -427,10 +426,10 @@ public class CombatManager : MonoBehaviour
                         HideEnemyDialogBubble();
                         break;
                     case AttackEffectiveness.SUPER_EFFECTIVE:
-                        combatSceneUIController.ShowDialogText(enemyCombatCard.GetSuperEffectiveText());
+                        combatSceneUIController.ShowDialogText(enemyCard.GetSuperEffectiveText());
                         break;
                     case AttackEffectiveness.NOT_VERY_EFFECTIVE:
-                        combatSceneUIController.ShowDialogText(enemyCombatCard.GetNotVeryEffectiveText());
+                        combatSceneUIController.ShowDialogText(enemyCard.GetNotVeryEffectiveText());
                         break;
                 }
             }

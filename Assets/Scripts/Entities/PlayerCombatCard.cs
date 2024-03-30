@@ -8,16 +8,19 @@ public class PlayerCombatCard : CombatCard
     [Header("Energy stat")]
     [SerializeField] private Image[] energyCellsImages;
 
+    // (Color1, Color2)
+    // Color1: Health bar fill color
+    // color2: Health bar background color (empty color)
     protected override (Color, Color) healthBarColors {
         get {
             switch (combatType)
             {
                 case CombatTypes.Influence:
-                    return (new Color(0.84f, 0.27f, 0.74f), new Color(0.21f, 0.03f, 0.31f));
+                    return (GameUtils.GetNormalizedColor(215, 71, 188), GameUtils.GetNormalizedColor(255, 193, 212));
                 case CombatTypes.Money:
-                    return (new Color(0.27f, 0.84f, 0.36f), new Color(0.14f, 0.31f, 0.03f));
+                    return (GameUtils.GetNormalizedColor(71, 215, 93), GameUtils.GetNormalizedColor(193, 255, 234));
                 case CombatTypes.Violence:
-                    return (new Color(0.85f, 0.43f, 0.37f), new Color(0.31f, 0.03f, 0.15f));
+                    return (GameUtils.GetNormalizedColor(235, 64, 52), GameUtils.GetNormalizedColor(255, 232, 193));
             }
 
             return (new Color(0.27f, 0.62f, 0.83f), new Color(0.03f, 0.20f, 0.30f));
