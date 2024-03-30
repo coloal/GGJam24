@@ -204,4 +204,4 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        NewZone: {fileID: 0}
+        NewZone: {fileID: 11400000, guid: 0bb4017791386c147a7d4ced72013643, type: 2}

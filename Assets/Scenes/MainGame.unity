@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 638de94434b1c9e4b98791148bbd3d7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ebbf30ee71339942adb6722600b5c24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -710,6 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 346274416}
   transitionObject: {fileID: 0}
+  waitTimeBetweenTransition: 0
 --- !u!1 &1045422845
 GameObject:
   m_ObjectHideFlags: 0
