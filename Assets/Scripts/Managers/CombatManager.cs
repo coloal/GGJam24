@@ -136,7 +136,10 @@ public class CombatManager : MonoBehaviour
 
         if (enemyCombatCardComponent && combatSceneUIController)
         {
-            UpdateCombatTurns(enemyCombatCardComponent.GetCombatTurnsForCard());
+            combatSceneUIController.SetTurnNumberAsAnimation(enemyCombatCardComponent.GetCombatTurnsForCard(),
+                onAnimationEnded: () => {
+                    UpdateCombatTurns(enemyCombatCardComponent.GetCombatTurnsForCard());
+                });
             combatSceneUIController.ShowDialogText(enemyCombatCardComponent.GetInitialText());
         }
        

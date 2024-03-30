@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,11 +23,13 @@ public class CombatSceneController : MonoBehaviour
 
     private CombatVisualManager combatVisualManager;
     private TextAnimationComponent textAnimationComponent;
+    private CombatAnimationsComponent combatAnimationsComponent;
 
     void Awake()
     {
         combatVisualManager = CombatSceneManager.Instance.ProvideCombatVisualManager();
         textAnimationComponent = GetComponent<TextAnimationComponent>();
+        combatAnimationsComponent = GetComponent<CombatAnimationsComponent>();
     }
 
     public void SetTurnNumber(int turn)
@@ -40,6 +43,19 @@ public class CombatSceneController : MonoBehaviour
             number: turn,
             getNumberAsSprite: combatVisualManager.GetTurnNumberAsSprites 
         );
+    }
+
+    public void SetTurnNumberAsAnimation(int turn, Action onAnimationEnded)
+    {
+        if (combatAnimationsComponent)
+        {
+            combatAnimationsComponent.PlayTurnCounterAnimation(turn,
+                onNextTurnNumber: (nextTurnNumber) => {
+                    SetTurnNumber(nextTurnNumber);
+                },
+                onAnimationEnded: onAnimationEnded
+            );
+        }
     }
 
     public void ShowDialogText(string text)

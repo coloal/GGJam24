@@ -22,7 +22,7 @@ MonoBehaviour:
   CharacterSpriteMoney: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
   CharacterSpriteViolence: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
   HealthPoints: 69
-  Damage: 23
+  Damage: 3
   Armor: 7
   Turns: 24
   CombatType: 1
