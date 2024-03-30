@@ -24,7 +24,12 @@ public class MainGameSceneManager : BaseSceneManager
         }
     }
 
-    
+    private void Start()
+    {
+        Init();
+        turnManager.SetZoneSprites();
+    }
+
 
     public void StartGame()
     {

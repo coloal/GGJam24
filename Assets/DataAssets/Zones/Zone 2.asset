@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098e0dbc12585214d9eba18b9b144f9f, type: 3}
+  m_Name: Zone 2
+  m_EditorClassIdentifier: 
+  storyBackgroundSprite: {fileID: 21300000, guid: 15beac87184fa794da7bc4362bdf26d7, type: 3}
+  storyMusicZone: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
+  zoneTransition: {fileID: 2504118667978227075, guid: f40b71bc5beb5414ca503a0f211cce08, type: 3}
+  combatBackgroundSprite: {fileID: 21300000, guid: c5c0550b04bd549068bcb15afba5e4a8, type: 3}
+  combatTurnSprites: []
+  combatTransition: {fileID: 2504118667978227075, guid: c89bba33adddfe44a841f08765e48aa1, type: 3}

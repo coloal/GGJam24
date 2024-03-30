@@ -11,11 +11,22 @@ public class ZoneTemplate : ScriptableObject
     Sprite storyBackgroundSprite;
     [SerializeField]
     MusicZonesTemplate storyMusicZone;
+    [SerializeField]
+    Animator zoneTransition;
 
     //Combat Information
     [Header("Combat information")]
     [SerializeField]
     Sprite combatBackgroundSprite;
     [SerializeField]
-    List<Sprite> CombatTurnSprites;
+    List<Sprite> combatTurnSprites;
+    [SerializeField]
+    Animator combatTransition;
+
+    public Sprite StoryBackgroundSprite => storyBackgroundSprite;
+    public MusicZonesTemplate StoryMusicZone => storyMusicZone;
+    public Sprite CombatBackgroundSprite => combatBackgroundSprite;
+    public List<Sprite> CombatTurnSprites => combatTurnSprites;
+    public Animator ZoneTransition => zoneTransition;
+    public Animator CombatTransition => combatTransition;
 }
