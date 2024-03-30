@@ -7,11 +7,16 @@ using UnityEngine;
 public class BrainManager : MonoBehaviour
 {
     /***** DATA *****/
+    [SerializeField]
+    private ZoneTemplate zoneInfo;
+
     private Dictionary<BrainTag, bool> BrainTagsMap;
     private Dictionary<NumericTags, int> BrainNumericMap;
     private Dictionary<string, string> BrainStateMap;
 
     public static BrainManager Instance;
+
+    public ZoneTemplate ZoneInfo => zoneInfo;
 
 
     /***** INITIALIZE *****/
@@ -85,6 +90,11 @@ public class BrainManager : MonoBehaviour
                 SetState(action.TagState, action.NewState);
                 break;
         }
+    }
+
+    public void ChangeZone(ZoneTemplate newZone)
+    {
+        zoneInfo = newZone;
     }
 
     /***** QUERIES *****/

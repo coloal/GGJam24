@@ -9,6 +9,10 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class TurnManager : MonoBehaviour
 {
+
+    [SerializeField] SpriteRenderer background;
+    [SerializeField] GameObject transitionObject;
+    [SerializeField] float waitTimeBetweenTransition;
     GameStates CurrentGameState;
     StoryManager StoryManager {
         get {
@@ -73,6 +77,19 @@ public class TurnManager : MonoBehaviour
                 GameManager.Instance.StartCombat(combatStep.CombatCard);
             }
         }
+        else if (nextStepInfo is ChangeZoneStep zoneStep)
+        {
+            if (zoneStep.Zone == null)
+            {
+                Debug.LogError("Zone Node with no Zone Info");
+                Debug.LogError("Something went wrong");
+            }
+            else
+            {
+                GameManager.Instance.ProvideBrainManager().ChangeZone(zoneStep.Zone);
+                TransitionToZone();
+            }
+        }
         //Nodo de carta de final
         else if (nextStepInfo is EndStep endStep)
         {
@@ -83,6 +100,31 @@ public class TurnManager : MonoBehaviour
         {
             Debug.LogError("Something went wrong");
         }
+    }
+
+
+    public void TransitionToZone()
+    {
+        Animator transition = GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition;
+        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
+        if(instantedAnimator != null)
+        {
+            instantedAnimator.SetTrigger("ExitAnimation");
+        }
+        GameUtils.CreateTemporizer(() => {
+            SetZoneSprites();
+            instantedAnimator.SetTrigger("EnterAnimation");
+        }, 1 + waitTimeBetweenTransition, this);
+        GameUtils.CreateTemporizer(() =>
+        {
+            StartTurn();
+            Destroy(instantedAnimator.gameObject);
+        }, 2 + waitTimeBetweenTransition, this);
+    }
+
+    public void SetZoneSprites()
+    {
+        background.sprite = GameManager.Instance.ProvideBrainManager().ZoneInfo.StoryBackgroundSprite;
     }
 
     public void SwipeLeft()

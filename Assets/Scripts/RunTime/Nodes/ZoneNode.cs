@@ -6,25 +6,21 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Zone Sound", "Sound Nodes/Zone Sound", color: "#bb9eff")] 
-    public class ZoneSoundNode : CodeGraphNode
+    [NodeInfo("Zone Change", "Zone Nodes/Zone Change", color: "#bb9eff")] 
+    public class ZoneNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public MusicZones NewZone;
+        public ZoneTemplate NewZone;
 
-        
 
-        public ZoneSoundNode()
+        public override bool GetStepInfo(out StepInfo stepInfo)
         {
-
-           
+            stepInfo = new ChangeZoneStep(NewZone);
+            return true;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
-            GameManager.Instance.ProvideBrainSoundManager().ChangeZone(NewZone);
-
-
             //Avanza al siguiente nodo
             CodeGraphNode nextNode = graphAsset.GetNodeConnected(id, 0);
             if (nextNode != null)

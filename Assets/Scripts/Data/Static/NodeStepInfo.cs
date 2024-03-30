@@ -27,6 +27,16 @@ public class StoryStep:StepInfo
     }
 }
 
+public class ChangeZoneStep : StepInfo
+{
+    ZoneTemplate zone;
+    public ZoneTemplate Zone => zone;
+    public ChangeZoneStep(ZoneTemplate zoneTemplate)
+    {
+        this.zone = zoneTemplate;
+    }
+}
+
 public class EndStep : StepInfo
 {
  

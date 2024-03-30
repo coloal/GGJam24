@@ -73,8 +73,7 @@ public class GameManager : MonoBehaviour
     public void StartCombat(CombatCardTemplate enemyCard)
     {
         actualCombatEnemyCard = enemyCard;
-        SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
-        
+        EnterBattleScene();
     }
 
     public void EndCombat(TurnResult combatResult)
@@ -126,8 +125,7 @@ public class GameManager : MonoBehaviour
                 Debug.LogError("Combat returned invalid result");
                 break;
         }
-        disposableOnSceneChangeActions.Add(action);
-        SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
+        ExitBattleScene(action);
     }
 
 
@@ -175,5 +173,58 @@ public class GameManager : MonoBehaviour
         }
         disposableOnSceneChangeActions.Clear();
     }
-    
+
+    public void EnterBattleScene()
+    {
+        Animator transition = BrainManager.ZoneInfo.CombatTransition;
+        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
+        if (instantedAnimator != null)
+        {
+            instantedAnimator.SetTrigger("ExitAnimation");
+            GameUtils.CreateTemporizer(() => {
+                SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
+            }, 1.0f, this);
+            disposableOnSceneChangeActions.Add(() =>
+            {
+                Animator transition_1 = BrainManager.ZoneInfo.CombatTransition;
+                Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
+                if (instantedAnimator_1 != null)
+                {
+                    instantedAnimator_1.SetTrigger("EnterAnimation");
+                    GameUtils.CreateTemporizer(() =>
+                    {
+                        Destroy(instantedAnimator_1);
+                    }, 1.0f, this);
+                }
+            });
+        }
+    }
+
+    public void ExitBattleScene(Action nextAction)
+    {
+        Animator transition = BrainManager.ZoneInfo.CombatTransition;
+        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
+        if (instantedAnimator != null)
+        {
+            instantedAnimator.SetTrigger("ExitAnimation");
+            GameUtils.CreateTemporizer(() => {
+                SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
+            }, 1.0f, this);
+            disposableOnSceneChangeActions.Add(() =>
+            {
+                Animator transition_1 = BrainManager.ZoneInfo.CombatTransition;
+                Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
+                if (instantedAnimator_1 != null)
+                {
+                    instantedAnimator_1.SetTrigger("EnterAnimation");
+                    GameUtils.CreateTemporizer(() =>
+                    {
+                        nextAction();
+                        Destroy(instantedAnimator_1);
+                    }, 1.0f, this);
+                }
+            });
+        }
+    }
+
 }
