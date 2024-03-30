@@ -11,10 +11,10 @@ public class BrainSoundManager : MonoBehaviour
     //TODO:Metodos start combat y end combat
     
     /***** PARAMETERS *****/
-    [SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
-    [SerializeField] private string CampfireEventPath = "event:/Settlement";
+    [SerializeField] private string StoryEventPath;
+    [SerializeField] private string CampfireEventPath;
     [SerializeField] private string CombatEventPath;
-    [SerializeField] private string GameOverEventPath = "event:/GameOver";
+    [SerializeField] private string GameOverEventPath;
     
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float SpeedFadeIn = 0.2f;

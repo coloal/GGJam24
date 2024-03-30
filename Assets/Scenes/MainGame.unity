@@ -184,9 +184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoryEventPath: event:/Zona1
-  CampfireEventPath: event:/Settlement
+  CampfireEventPath: event:/Ambient/Settlement
   CombatEventPath: 
-  GameOverEventPath: event:/GameOver
+  GameOverEventPath: event:/Music/GameOver
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &179863778

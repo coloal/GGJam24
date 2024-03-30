@@ -270,7 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3359ce329abf4cafba21328f1b2de38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBackgroundSpriteRenderer: {fileID: 0}
+  sceneBackgroundSpriteRenderer: {fileID: 953649471}
+  combatTurnsContainerImage: {fileID: 890889042}
   debugTurnsSprites:
   - {fileID: -1855501833, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
   - {fileID: -1780727845, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
@@ -744,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrainManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
+      propertyPath: zoneInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1234,7 +1239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &952670091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2077,9 +2082,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 952670091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 209.1968, y: -114.47605}
   m_SizeDelta: {x: 159.5144, y: 219.3323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768272401

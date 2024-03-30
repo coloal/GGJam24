@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,22 +8,30 @@ public class CombatVisualManager : MonoBehaviour
 {
     [Header("Scene visual configurations")]
     [SerializeField] private SpriteRenderer sceneBackgroundSpriteRenderer;
+    [SerializeField] private Image combatTurnsContainerImage;
 
     [Header("Debug")]
     [SerializeField] private List<Sprite> debugTurnsSprites;
 
-    //private ???? zoneAssets
     private Dictionary<string, Sprite> numberSpritesDictionary;
 
     void Start()
     {
-        //TODO: Get from GameManager the current zone assets
-        
-        // Debug
-        InitNumberSpritesDictionary(debugTurnsSprites);
+        InitCombatSceneVisuals();
     }
 
-    void InitNumberSpritesDictionary(List<Sprite> numberImages)
+    private void InitCombatSceneVisuals()
+    {
+        BrainManager brainManager = GameManager.Instance.ProvideBrainManager();
+        if (brainManager)
+        {
+            sceneBackgroundSpriteRenderer.sprite = brainManager.ZoneInfo.CombatBackgroundSprite;
+            combatTurnsContainerImage.sprite = brainManager.ZoneInfo.CombatTurnsContainerSprite;
+            InitTurnsNumberSpritesDictionary(brainManager.ZoneInfo.CombatTurnSprites);
+        }
+    }
+
+    void InitTurnsNumberSpritesDictionary(List<Sprite> numberImages)
     {
         numberSpritesDictionary = new Dictionary<string, Sprite>();
         for (int i = 0; i < numberImages.Count; i++)
