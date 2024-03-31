@@ -189,7 +189,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        NewZone: {fileID: 0}
+        NewZone: {fileID: 11400000, guid: a9f24948fadb04e47b15259cebc03b00, type: 2}
     - rid: 8580623540567670785
       type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -204,4 +204,4 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        NewZone: {fileID: 0}
+        NewZone: {fileID: 11400000, guid: 0bb4017791386c147a7d4ced72013643, type: 2}
