@@ -130,20 +130,24 @@ public class CombatManager : MonoBehaviour
     }
 
     void InitCombatField() {
-        CombatCard enemyCombatCardComponent = SpawnEnemyCard();
-        enemyCard = enemyCombatCardComponent;
-        SpawnPlayerCards();
+        enemyCard = SpawnEnemyCard();
 
-        if (enemyCombatCardComponent && combatSceneUIController)
-        {
-            combatSceneUIController.SetTurnNumberAsAnimation(enemyCombatCardComponent.GetCombatTurnsForCard(),
-                onAnimationEnded: () => {
-                    UpdateCombatTurns(enemyCombatCardComponent.GetCombatTurnsForCard());
-                });
-            combatSceneUIController.ShowDialogText(enemyCombatCardComponent.GetInitialText());
-        }
-       
-        SetCombatState(CombatStates.CHOOSE_ATTACKER);
+        combatSceneUIController.SetTurnNumberAsAnimation(enemyCard.GetCombatTurnsForCard(),
+            onAnimationEnded: () =>
+            {
+                UpdateCombatTurns(enemyCard.GetCombatTurnsForCard());
+            });
+
+        CombatSceneManager.Instance.ProvideCombatVisualManager().PlayMoveEnemyCardAnimation(
+            enemyCardToMove: enemyCard.gameObject,
+            onAnimationEnded: () =>
+            {
+                combatSceneUIController.ShowDialogText(enemyCard.GetInitialText(),
+                    onAnimationEnded: () => {
+                        SpawnPlayerCards();
+                        SetCombatState(CombatStates.CHOOSE_ATTACKER);
+                    });
+            });
     }
 
     void UpdateCombatTurns(int newCombatTurns)
