@@ -6,8 +6,8 @@ using static UnityEditor.Rendering.CameraUI;
 
 namespace CodeGraph
 {
-    [NodeInfo("Zone Change", "Zone Nodes/Zone Change", color: "#bb9eff")] 
-    public class ZoneNode : CodeGraphNode
+    [NodeInfo("Zone Change", "Zone Nodes/Zone Change", color: "#C275E6")] 
+    public class ChangeZoneNode : CodeGraphNode
     {
         [ExposedProperty()]
         public ZoneTemplate NewZone;
