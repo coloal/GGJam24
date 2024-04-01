@@ -16,4 +16,4 @@ MonoBehaviour:
   Text: 
   LeftText: 
   RightText: 
-  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  CardSprite: {fileID: 21300000, guid: f6a86a973fe546f449a6235153d216cc, type: 3}

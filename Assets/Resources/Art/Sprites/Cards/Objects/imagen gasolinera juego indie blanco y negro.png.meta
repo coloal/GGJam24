@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ec09b1ae5db86e42af07d404c4d83c0
+guid: 3ea3e572f0bb9524f8603b39f4c0c4a2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,91 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Baby boy image card_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 255
-        width: 110
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f36133cbf9c1a04997ae7923189ec44
-      internalID: -2035123982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Baby boy image card_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 170
-        width: 110
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b663ec04b74497043bc8324d61305065
-      internalID: -1166257571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Baby boy image card_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 85
-        width: 110
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0199b3ec666b0d4fa6d35e124abf3be
-      internalID: -823749814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Baby boy image card_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 110
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b923df21b2915f14c86dddfecb552d1c
-      internalID: 216123636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -216,11 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Baby boy image card_0: -2035123982
-      Baby boy image card_1: -1166257571
-      Baby boy image card_2: -823749814
-      Baby boy image card_3: 216123636
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
