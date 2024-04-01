@@ -14,6 +14,8 @@ public class BrainSoundManager : MonoBehaviour
     [SerializeField] private string CombatEventPath;
     [SerializeField] private string GameOverEventPath = "event:/Music/GameOver";
     [SerializeField] private string CombatSoundsEventPath = "event:/SFX/CombatSounds";
+    [SerializeField] private string CardSoundsEventPath = "event:/SFX/SwitchCard";
+
 
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float SpeedFadeIn = 0.2f;
@@ -35,6 +37,8 @@ public class BrainSoundManager : MonoBehaviour
     private FMOD.Studio.EventInstance GameOverInstance;
     private FMOD.Studio.EventInstance CombatInstance;
     private FMOD.Studio.EventInstance CombatSoundInstance;
+    private FMOD.Studio.EventInstance CardSoundsInstance;
+
 
     public static BrainSoundManager Instance;
 
@@ -57,6 +61,7 @@ public class BrainSoundManager : MonoBehaviour
         //CampfireInstance = FMODUnity.RuntimeManager.CreateInstance(CampfireEventPath);
         GameOverInstance = FMODUnity.RuntimeManager.CreateInstance(GameOverEventPath);
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
+        CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(CardSoundsEventPath);
     }
 
     void InitializeData()
@@ -289,6 +294,32 @@ public class BrainSoundManager : MonoBehaviour
             CombatSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }, 0.75f, this);
 
+    }
+
+    public void PlayCardSound(CardSounds type)
+    {
+        switch (type)
+        {
+            case CardSounds.Center:
+                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Center.ToString());
+                break;
+            case CardSounds.Left:
+                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Left.ToString());
+                break;
+            case CardSounds.Right:
+                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Right.ToString());
+                break;
+
+        }
+
+        CardSoundsInstance.start();
+
+        /*
+         GameUtils.CreateTemporizer(() =>
+        {
+            CardSoundsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }, 0.5f, this);
+        */
     }
 
     /***** QUERIES *****/

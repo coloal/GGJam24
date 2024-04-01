@@ -4,7 +4,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     //[SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
-    private FMOD.Studio.EventInstance FModInstance;
+    //private FMOD.Studio.EventInstance FModInstance;
 
     // Singleton instance
     public static AudioManager Instance;
@@ -30,14 +30,14 @@ public class AudioManager : MonoBehaviour {
 
     public void Play()
     {
-        FModInstance.start();
+        /*FModInstance.start();
 
         FModInstance.setParameterByName("Flautista", 1f);
         float f;
         FModInstance.getParameterByName("Flautista",out f);
         f -= 0.25f;
 
-        FModInstance.setParameterByName("Flautista", f);
+        FModInstance.setParameterByName("Flautista", f);*/
     }
 
     /*

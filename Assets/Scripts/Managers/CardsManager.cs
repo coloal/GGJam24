@@ -1,4 +1,5 @@
 using CodeGraph;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,8 @@ public class CardsManager : MonoBehaviour
     [SerializeField] private Transform cardsSpawnerOrigin;
     [SerializeField] private Transform cardsFinalPosition;
 
-    public GameObject SpawnNextCard(StoryCardTemplate nextCard)
+    public GameObject SpawnNextCard(StoryCardTemplate nextCard,
+        Action onSwipeLeft, Action onSwipeRight)
     {
         void SetUpOnSwipeLeftActions(GameObject storyCard)
         {
@@ -28,7 +30,7 @@ public class CardsManager : MonoBehaviour
             {
                 interactiveStoryCardComponent.SetOnSwipeLeftAction(() =>
                 {
-                    MainGameSceneManager.Instance.ProvideTurnManager().SwipeLeft();
+                    onSwipeLeft();
                     storyCardHorizontalEscapeComponent.StartLeftEscapeMovement(
                         storyCardHorizontalDraggableComponent.GetCurrentSpeed()
                     );
@@ -55,7 +57,7 @@ public class CardsManager : MonoBehaviour
             {
                 interactiveStoryCardComponent.SetOnSwipeRightAction(() =>
                 {
-                    MainGameSceneManager.Instance.ProvideTurnManager().SwipeRight();
+                    onSwipeRight();
                     storyCardHorizontalEscapeComponent.StartRightEscapeMovement(
                         storyCardHorizontalDraggableComponent.GetCurrentSpeed()
                     );
@@ -94,6 +96,8 @@ public class CardsManager : MonoBehaviour
                 SetUpOnSwipeLeftActions(newCard);
                 SetUpOnSwipeRightActions(newCard);
             }
+
+            GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Center);
         }
         
         //indexNextCard++;

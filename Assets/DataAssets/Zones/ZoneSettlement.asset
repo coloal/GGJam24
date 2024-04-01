@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyBackgroundSprite: {fileID: 21300000, guid: 15beac87184fa794da7bc4362bdf26d7, type: 3}
   storyMusicZone: 1
-  zoneTransition: {fileID: 2504118667978227075, guid: f40b71bc5beb5414ca503a0f211cce08, type: 3}
+  zoneTransition: {fileID: 2504118667978227075, guid: 6f3b74162e1c22646a5846aaa13b6270, type: 3}
   combatBackgroundSprite: {fileID: 21300000, guid: c5c0550b04bd549068bcb15afba5e4a8, type: 3}
   combatTurnsContainerSprite: {fileID: 21300000, guid: fa913aefab3b84fceaa744bb40cc466e, type: 3}
   combatTurnSprites:
@@ -28,4 +28,4 @@ MonoBehaviour:
   - {fileID: 1920412394, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
   - {fileID: 1441507578, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
   - {fileID: 2071546707, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  combatTransition: {fileID: 2504118667978227075, guid: c89bba33adddfe44a841f08765e48aa1, type: 3}
+  combatTransition: {fileID: 2504118667978227075, guid: b15b89575fe9f514d8b8b4e5b9bef9f6, type: 3}
