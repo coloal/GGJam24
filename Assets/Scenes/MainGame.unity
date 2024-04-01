@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: 97cc10f0674790342ae8009d58256bb3, type: 2}
+  FirstStory: {fileID: 11400000, guid: bc2488a36df7f3f4bb3ea433b89afb7c, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ PrefabInstance:
     - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
       propertyPath: zoneInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
+      objectReference: {fileID: 11400000, guid: a9f24948fadb04e47b15259cebc03b00, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
