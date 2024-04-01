@@ -17,12 +17,14 @@ public class CombatVisualManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private List<Sprite> debugTurnsSprites;
 
-    private MoveCardAnimationComponent moveCardAnimationComponent;
     private Dictionary<string, Sprite> numberSpritesDictionary;
+    private MoveCardAnimationComponent moveCardAnimationComponent;
+    private GetHitAnimationComponent getHitAnimationComponent;
 
     void Awake()
     {
         moveCardAnimationComponent = GetComponent<MoveCardAnimationComponent>();
+        getHitAnimationComponent = GetComponent<GetHitAnimationComponent>();
     }
 
     void Start()
@@ -80,6 +82,15 @@ public class CombatVisualManager : MonoBehaviour
                 cardFinalPosition: enemyCardFinalPosition,
                 onAnimationEnded: onAnimationEnded
             );
+        }
+    }
+
+    public void PlayGetHitAnimation(GameObject cardToGetHit,
+        AttackEffectiveness attackEffectiveness, Action onAnimationEnded)
+    {
+        if (getHitAnimationComponent)
+        {
+            getHitAnimationComponent.PlayHitAnimation(cardToGetHit, attackEffectiveness, onAnimationEnded);
         }
     }
 }
