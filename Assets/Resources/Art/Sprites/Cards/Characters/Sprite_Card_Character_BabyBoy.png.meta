@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Baby boy image card_0
+      name: Sprite_Card_Character_BabyBoy_Violence
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baby boy image card_1
+      name: Sprite_Card_Character_BabyBoy_Money
       rect:
         serializedVersion: 2
         x: 0
@@ -152,7 +152,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baby boy image card_2
+      name: Sprite_Card_Character_BabyBoy_Influence
       rect:
         serializedVersion: 2
         x: 0
@@ -173,7 +173,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baby boy image card_3
+      name: Sprite_Card_Character_BabyBoy_Unknown
       rect:
         serializedVersion: 2
         x: 0
@@ -194,7 +194,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Baby boy image card_0: -2035123982
-      Baby boy image card_1: -1166257571
-      Baby boy image card_2: -823749814
-      Baby boy image card_3: 216123636
+      Sprite_Card_Character_BabyBoy_Influence: -823749814
+      Sprite_Card_Character_BabyBoy_Money: -1166257571
+      Sprite_Card_Character_BabyBoy_Unknown: 216123636
+      Sprite_Card_Character_BabyBoy_Violence: -1166257571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

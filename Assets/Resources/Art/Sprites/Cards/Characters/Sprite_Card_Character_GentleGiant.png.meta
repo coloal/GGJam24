@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 802f0a17590de4547ae318f62d243285
+guid: 600cbb81119e106488379c4c8c80e2e7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punkie boy image card_0
+      name: Sprite_Card_Character_GentleGiant_Violence
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a437e5dae6abe914385dff37f6b4085c
-      internalID: -1348612388
+      spriteID: 22df51e34e9eac24180441ef7a8fb971
+      internalID: 1760196540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punkie boy image card_1
+      name: Sprite_Card_Character_GentleGiant_Money
       rect:
         serializedVersion: 2
         x: 0
@@ -152,20 +152,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1fd72795cc020f45b7c401b653be71e
-      internalID: -967948621
+      spriteID: ebe8db82c4686c94f8d8d901e14ec53e
+      internalID: -178224617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punkie boy image card_2
+      name: Sprite_Card_Character_GentleGiant_Influence
       rect:
         serializedVersion: 2
         x: 0
@@ -173,20 +173,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c9001a4ddb1624eab606805642bd56
-      internalID: -1683118172
+      spriteID: a1705f746ffb1bd4a8baf40da78e2cba
+      internalID: 1674341692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punkie boy image card_3
+      name: Sprite_Card_Character_GentleGiant_Unknown
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +194,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853ca3b06f92b8647926ba085d3360d9
-      internalID: -611397000
+      spriteID: c8c28b2b60d394b4383c086abf7a4290
+      internalID: 1529920742
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Punkie boy image card_0: -1348612388
-      Punkie boy image card_1: -967948621
-      Punkie boy image card_2: -1683118172
-      Punkie boy image card_3: -611397000
+      Sprite_Card_Character_GentleGiant_Influence: 1674341692
+      Sprite_Card_Character_GentleGiant_Money: -178224617
+      Sprite_Card_Character_GentleGiant_Unknown: 1529920742
+      Sprite_Card_Character_GentleGiant_Violence: 1760196540
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

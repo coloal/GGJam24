@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punkie girl image card_0
+      name: Sprite_Card_Character_PunkyGirl_Violence
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punkie girl image card_1
+      name: Sprite_Card_Character_PunkyGirl_Money
       rect:
         serializedVersion: 2
         x: 0
@@ -152,7 +152,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punkie girl image card_2
+      name: Sprite_Card_Character_PunkyGirl_Influence
       rect:
         serializedVersion: 2
         x: 0
@@ -173,7 +173,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Punkie girl image card_3
+      name: Sprite_Card_Character_PunkyGirl_Unknown
       rect:
         serializedVersion: 2
         x: 0
@@ -194,7 +194,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Punkie girl image card_0: -188566917
-      Punkie girl image card_1: 968828021
-      Punkie girl image card_2: 1014074617
-      Punkie girl image card_3: -1098709916
+      Sprite_Card_Character_PunkyGirl_Influence: 1014074617
+      Sprite_Card_Character_PunkyGirl_Money: 968828021
+      Sprite_Card_Character_PunkyGirl_Unknown: -1098709916
+      Sprite_Card_Character_PunkyGirl_Violence: -188566917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

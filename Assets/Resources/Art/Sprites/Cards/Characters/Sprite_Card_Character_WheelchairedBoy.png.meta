@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fa10bf4e344ab94c815aa83d277c4cd
+guid: 5f087a4dc2efc974c9fb919f9d687366
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smokie girl image card_0
+      name: Sprite_Card_Character_WheelchairedBoy_Violence
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b546dfa9f8525994d8026989f8be028d
-      internalID: 1911686710
+      spriteID: c6d439279a92c5f4d9c89530630bc8a0
+      internalID: -130010262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smokie girl image card_1
+      name: Sprite_Card_Character_WheelchairedBoy_Money
       rect:
         serializedVersion: 2
         x: 0
@@ -152,20 +152,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 281f23003cffe004b9fbdf434e0b871e
-      internalID: 115078626
+      spriteID: f326d790b03422a499e36ab0dd640488
+      internalID: -517579632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smokie girl image card_2
+      name: Sprite_Card_Character_WheelchairedBoy_Influence
       rect:
         serializedVersion: 2
         x: 0
@@ -173,20 +173,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e014e23175c0454d8f80070549316c1
-      internalID: 1457091112
+      spriteID: 0a2ae276d43b1f540aa6cfc11ec7879c
+      internalID: 399855348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smokie girl image card_3
+      name: Sprite_Card_Character_WheelchairedBoy_Unknown
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +194,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 354a327be092e044cbcc52ebff823cfc
-      internalID: 1840816634
+      spriteID: b8b117f81c2573743a0982d4d33ed153
+      internalID: -1499886356
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Smokie girl image card_0: 1911686710
-      Smokie girl image card_1: 115078626
-      Smokie girl image card_2: 1457091112
-      Smokie girl image card_3: 1840816634
+      Sprite_Card_Character_WheelchairedBoy_Influence: 399855348
+      Sprite_Card_Character_WheelchairedBoy_Money: -517579632
+      Sprite_Card_Character_WheelchairedBoy_Unknown: -1499886356
+      Sprite_Card_Character_WheelchairedBoy_Violence: -130010262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

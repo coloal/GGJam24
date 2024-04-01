@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mysterious man image card_0
+      name: Sprite_Card_Character_MisteriousMan_Violence
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mysterious man image card_1
+      name: Sprite_Card_Character_MisteriousMan_Money
       rect:
         serializedVersion: 2
         x: 0
@@ -152,7 +152,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mysterious man image card_2
+      name: Sprite_Card_Character_MisteriousMan_Influence
       rect:
         serializedVersion: 2
         x: 0
@@ -173,7 +173,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mysterious man image card_3
+      name: Sprite_Card_Character_MisteriousMan_Unknown
       rect:
         serializedVersion: 2
         x: 0
@@ -194,7 +194,7 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mysterious man image card_0: -846944458
-      Mysterious man image card_1: 1369020864
-      Mysterious man image card_2: 936377581
-      Mysterious man image card_3: 1117214279
+      Sprite_Card_Character_MisteriousMan_Influence: 936377581
+      Sprite_Card_Character_MisteriousMan_Money: 1369020864
+      Sprite_Card_Character_MisteriousMan_Unknown: 1117214279
+      Sprite_Card_Character_MisteriousMan_Violence: -846944458
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

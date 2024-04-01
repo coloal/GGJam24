@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f087a4dc2efc974c9fb919f9d687366
+guid: 802f0a17590de4547ae318f62d243285
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wheelchaired boy image card_0
+      name: Sprite_Card_Character_PunkyBoy_Violence
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6d439279a92c5f4d9c89530630bc8a0
-      internalID: -130010262
+      spriteID: a437e5dae6abe914385dff37f6b4085c
+      internalID: -1348612388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wheelchaired boy image card_1
+      name: Sprite_Card_Character_PunkyBoy_Money
       rect:
         serializedVersion: 2
         x: 0
@@ -152,41 +152,41 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f326d790b03422a499e36ab0dd640488
-      internalID: -517579632
+      spriteID: d1fd72795cc020f45b7c401b653be71e
+      internalID: -967948621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wheelchaired boy image card_2
+      name: Sprite_Card_Character_PunkyBoy_Influence
       rect:
         serializedVersion: 2
         x: 0
-        y: 85
+        y: 86
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a2ae276d43b1f540aa6cfc11ec7879c
-      internalID: 399855348
+      spriteID: f8c9001a4ddb1624eab606805642bd56
+      internalID: -1683118172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wheelchaired boy image card_3
+      name: Sprite_Card_Character_PunkyBoy_Unknown
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +194,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8b117f81c2573743a0982d4d33ed153
-      internalID: -1499886356
+      spriteID: 853ca3b06f92b8647926ba085d3360d9
+      internalID: -611397000
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wheelchaired boy image card_0: -130010262
-      Wheelchaired boy image card_1: -517579632
-      Wheelchaired boy image card_2: 399855348
-      Wheelchaired boy image card_3: -1499886356
+      Sprite_Card_Character_PunkyBoy_Influence: -1683118172
+      Sprite_Card_Character_PunkyBoy_Money: -967948621
+      Sprite_Card_Character_PunkyBoy_Unknown: -611397000
+      Sprite_Card_Character_PunkyBoy_Violence: -1348612388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
