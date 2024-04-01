@@ -403,6 +403,7 @@ public class CombatManager : MonoBehaviour
                 defenderCombatCard: enemyCard,
                 out AttackFinalEffectiveness
             );
+            GameManager.Instance.ProvideBrainSoundManager().PlaySoundCombat(AttackFinalEffectiveness);
             CurrentAttackerCombatCard.ReduceAttackerEnergy(energyToReduce: 1);
         }
 

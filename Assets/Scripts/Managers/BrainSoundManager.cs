@@ -260,8 +260,32 @@ public class BrainSoundManager : MonoBehaviour
         GameOverInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
     }
-    /***** QUERIES *****/
 
+    public void PlaySoundCombat(AttackEffectiveness effectiveness)
+    {
+        switch (effectiveness)
+        {
+            case AttackEffectiveness.NOT_VERY_EFFECTIVE:
+                CombatSoundInstance.setParameterByNameWithLabel(BrainSoundTag.Golpes, CombatSounds.Flojo);
+                break;
+            case AttackEffectiveness.NEUTRAL:
+                CombatSoundInstance.setParameterByNameWithLabel(BrainSoundTag.Golpes, CombatSounds.Medio);
+                break;
+            case AttackEffectiveness.SUPER_EFFECTIVE:
+                CombatSoundInstance.setParameterByNameWithLabel(BrainSoundTag.Golpes, CombatSounds.Fuerte);
+                break;
+        }
+
+        CombatSoundInstance.start();
+
+        GameUtils.CreateTemporizer(() =>
+        {
+            CombatSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }, 0.75f, this);
+
+    }
+
+    /***** QUERIES *****/
     //Mete un instrumento con fade In (se realiza en el update)
     public void AddSoundAction(SoundAction Action, float InitialValue = 0.0f)
     {

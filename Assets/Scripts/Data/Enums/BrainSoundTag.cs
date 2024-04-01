@@ -29,11 +29,11 @@ public enum MusicZones
 
 }
 
-public enum CombatSounds
+public static class CombatSounds
 {
-    Flojo = 0,
-    Medio = 1,
-    Fuerte = 2
+    public const string Flojo = "Flojo";
+    public const string Medio = "Medio";
+    public const string Fuerte = "Fuerte";
 }
 
 //Este enum se refiere al evento de fmod que se utilizara

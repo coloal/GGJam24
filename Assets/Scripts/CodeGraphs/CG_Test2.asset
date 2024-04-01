@@ -24,12 +24,6 @@ MonoBehaviour:
   - rid: 2901445191429259264
   connections:
   - outputPort:
-      nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
-      portIndex: 0
-    inputPort:
-      nodeId: 4cb425f5-7f76-4175-86c7-ccb3457b32f8
-      portIndex: 1
-  - outputPort:
       nodeId: 4cb425f5-7f76-4175-86c7-ccb3457b32f8
       portIndex: 0
     inputPort:
@@ -89,6 +83,12 @@ MonoBehaviour:
     inputPort:
       nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
       portIndex: 1
+  - outputPort:
+      nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
+      portIndex: 0
+    inputPort:
+      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
+      portIndex: 4
   references:
     version: 2
     RefIds:
@@ -127,8 +127,8 @@ MonoBehaviour:
         guid: afb8c32b-96a6-498a-92bc-f135d531c413
         position:
           serializedVersion: 2
-          x: 102
-          y: 258
+          x: 80
+          y: 251
           width: 373
           height: 98
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -157,10 +157,10 @@ MonoBehaviour:
         guid: 21a28c04-1d50-4381-9ef4-505ca4ac110b
         position:
           serializedVersion: 2
-          x: 1288
-          y: 253
+          x: 403
+          y: 426
           width: 393
-          height: 170
+          height: 188
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
