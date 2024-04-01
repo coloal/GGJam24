@@ -209,22 +209,22 @@ public class BrainSoundManager : MonoBehaviour
             CombatValue = 2;
         }
 
-        foreach (PartyMember menber in members)
+        foreach (PartyMember member in members)
         {
             //Smokey girl
-            if (menber.CombatCardTemplate.Instrument == BrainSoundTag.Acordeon)
+            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Acordeon)
             {
                 SetStorySound(BrainSoundTag.Acordeon, 1.0f);
             }
-            if (menber.CombatCardTemplate.Instrument == BrainSoundTag.Clavicordio)
+            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Clavicordio)
             {
                 SetStorySound(BrainSoundTag.Clavicordio, 1.0f);
             }
-            if (menber.CombatCardTemplate.Instrument == BrainSoundTag.Ness)
+            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Ness)
             {
                 SetStorySound(BrainSoundTag.Ness, 1.0f);
             }
-            if (menber.CombatCardTemplate.Instrument == BrainSoundTag.Guitar)
+            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Guitar)
             {
                 SetStorySound(BrainSoundTag.Guitar, 1.0f);
             }
@@ -243,10 +243,16 @@ public class BrainSoundManager : MonoBehaviour
         {
             CombatValue = 2;
         }
-        SetStorySound(BrainSoundTag.LetsFight, 0.0f);
         SetStorySound(BrainSoundTag.FinBatalla, CombatValue);
 
     }
+
+    public void RestartMusicFromCombat()
+    {
+        SetStorySound(BrainSoundTag.LetsFight, 0.0f);
+    }
+
+
 
     public void StartGameOver()
     {
