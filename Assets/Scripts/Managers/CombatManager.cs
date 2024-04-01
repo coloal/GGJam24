@@ -275,6 +275,9 @@ public class CombatManager : MonoBehaviour
                 partyMemberInteractiveCombatCardComponent.SetOnSwipeRightAction(() => 
                 {
                     SetCombatState(CombatStates.PLAYER_ATTACK);
+                    partyMemberInteractiveCombatCardComponent.DisableDraggableComponents();
+                    partyMemberInScene.partyMemberGameObject.transform.position = attackerCardOrigin.position;
+                    partyMemberInScene.partyMemberGameObject.transform.rotation = attackerCardOrigin.rotation;
                 });
             }
         }
