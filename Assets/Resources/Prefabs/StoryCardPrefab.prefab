@@ -194,7 +194,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  - {fileID: 5487583754222309863, guid: 4f7e54dc3d215fc4a998bdb87de0e563, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,15 +239,15 @@ MonoBehaviour:
   m_text: "Ni\xF1o adolescente que quiere que le ayudes introduci\xE9ndose en la
     mafia. No tiene padres, ni nadie que se haga cargo de \xE9l, es un poco macarra."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
-  m_sharedMaterial: {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4f7e54dc3d215fc4a998bdb87de0e563, type: 2}
+  m_sharedMaterial: {fileID: 5487583754222309863, guid: 4f7e54dc3d215fc4a998bdb87de0e563, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281281830
-  m_fontColor: {r: 0.14901961, g: 0.1764706, b: 0.18431373, a: 1}
+    rgba: 4280098077
+  m_fontColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -264,8 +264,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.6
-  m_fontSizeBase: 2.6
+  m_fontSize: 3.2
+  m_fontSizeBase: 3.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -451,8 +451,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Esto es un texto
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
-  m_sharedMaterial: {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9dcdfeada235e094abe46b2f16579b3d, type: 2}
+  m_sharedMaterial: {fileID: -1212691702983989964, guid: 9dcdfeada235e094abe46b2f16579b3d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -865,7 +865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  - {fileID: 4121296357306354637, guid: fc69dd0c31530aa4fa9cd761239e56de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -909,15 +909,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Joven desvalido
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
-  m_sharedMaterial: {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc69dd0c31530aa4fa9cd761239e56de, type: 2}
+  m_sharedMaterial: {fileID: 4121296357306354637, guid: fc69dd0c31530aa4fa9cd761239e56de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281281830
-  m_fontColor: {r: 0.14901961, g: 0.1764706, b: 0.18431373, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
