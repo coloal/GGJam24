@@ -4,27 +4,36 @@ using UnityEngine;
 
 public static class BrainSoundTag
 {
-    public const string Acordeonista = "Acordeonista";
-    public const string Bajista = "Bajista";
-    public const string Cavaquinhista = "Cavaquinhista";
-    public const string Flautista = "Flautista";
-    public const string Percusionista = "Percusionista";
-    public const string ApagarHoguera = "ApagarHogera";
-    public const string VolumenHoguera = "VolumenHoguera";
-    public const string Epic = "Epic";
-    public const string Fight = "Fight";
-    public const string Zapato = "Zapato";
+    public const string Zone = "Zone";
+    public const string Acordeon = "Acordeon";
+    public const string Clavicordio = "Clavicordio";
+    public const string Guitar = "Guitar";
+    public const string Ness = "Ness";
 
+    public const string LetsFight = "LetsFight";
+    public const string FinBatalla = "FinBatalla";
+    
+    public const string Curse = "Curse";
+    
+    public const string ApagarHoguera = "ApagarHogera";
+    public const string Golpes = "Golpes";
 }
 
 public enum MusicZones
 {
-    YourSettlement,
-    SquareTown,
-    GasStation,
-    Campfire,
-    Prueba
+    Settlement = 1,
+    SquareTown = 2,
+    GasStation = 3,
+    //Campfire,
+    //Prueba
 
+}
+
+public static class CombatSounds
+{
+    public const string Flojo = "Flojo";
+    public const string Medio = "Medio";
+    public const string Fuerte = "Fuerte";
 }
 
 //Este enum se refiere al evento de fmod que se utilizara

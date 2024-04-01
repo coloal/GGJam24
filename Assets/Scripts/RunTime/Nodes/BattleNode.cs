@@ -12,6 +12,10 @@ namespace CodeGraph
         [ExposedProperty()]
         public CombatCardTemplate card;
 
+        [ExposedProperty()]
+        public bool IsBossFight;
+
+
         public BattleNode()
         {
             outputs.Clear();
@@ -25,6 +29,7 @@ namespace CodeGraph
         public override bool GetStepInfo(out StepInfo stepInfo)
         {
             stepInfo = new CombatStep(card);
+            GameManager.Instance.ProvideBrainManager().bIsBossFight = IsBossFight;
             return true;
         }
 

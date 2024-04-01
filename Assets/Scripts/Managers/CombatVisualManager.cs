@@ -28,6 +28,7 @@ public class CombatVisualManager : MonoBehaviour
     void Start()
     {
         InitCombatSceneVisuals();
+        InitCombatSceneAudio();
     }
 
     private void InitCombatSceneVisuals()
@@ -44,6 +45,14 @@ public class CombatVisualManager : MonoBehaviour
         {
             InitTurnsNumberSpritesDictionary(debugTurnsSprites);
         }
+    }
+
+    private void InitCombatSceneAudio()
+    {
+        bool IsBoss = GameManager.Instance.ProvideBrainManager().bIsBossFight;
+        List<PartyMember> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
+
+        GameManager.Instance.ProvideBrainSoundManager().StartCombat(members ,IsBoss);
     }
 
     void InitTurnsNumberSpritesDictionary(List<Sprite> numberImages)

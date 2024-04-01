@@ -403,6 +403,7 @@ public class CombatManager : MonoBehaviour
                 defenderCombatCard: enemyCard,
                 out AttackFinalEffectiveness
             );
+            GameManager.Instance.ProvideBrainSoundManager().PlaySoundCombat(AttackFinalEffectiveness);
             CurrentAttackerCombatCard.ReduceAttackerEnergy(energyToReduce: 1);
         }
 
@@ -740,6 +741,8 @@ public class CombatManager : MonoBehaviour
 
     void StartEndCombatSequence(TurnResult combatResult)
     {
+        GameManager.Instance.ProvideBrainSoundManager()
+            .EndCombat(GameManager.Instance.ProvideBrainManager().bIsBossFight);
         GameUtils.CreateTemporizer(() => 
         {
             GameManager.Instance.EndCombat(combatResult);

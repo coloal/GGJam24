@@ -18,6 +18,7 @@ public class BrainManager : MonoBehaviour
 
     public ZoneTemplate ZoneInfo => zoneInfo;
 
+    [HideInInspector]public bool bIsBossFight;
 
     /***** INITIALIZE *****/
 

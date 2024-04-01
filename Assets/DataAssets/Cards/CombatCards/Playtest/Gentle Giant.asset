@@ -16,11 +16,13 @@ MonoBehaviour:
   InitialText: 
   EffectiveText: 
   NonEffectiveText: 
-  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
-  BackgroundSprite: {fileID: 21300000, guid: 65e1bcae23b6c4d42a664a3775eb4c1c, type: 3}
+  CharacterSpriteUnknown: {fileID: 0}
+  CharacterSpriteInlfuence: {fileID: 0}
+  CharacterSpriteMoney: {fileID: 0}
+  CharacterSpriteViolence: {fileID: 0}
   HealthPoints: 3
   Damage: 2
   Armor: 3
   Turns: 2
   CombatType: 2
-  Instrument: 
+  Instrument: Acordeon

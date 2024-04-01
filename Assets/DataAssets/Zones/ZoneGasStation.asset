@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 098e0dbc12585214d9eba18b9b144f9f, type: 3}
-  m_Name: Zone 1
+  m_Name: ZoneGasStation
   m_EditorClassIdentifier: 
   storyBackgroundSprite: {fileID: 21300000, guid: 638de94434b1c9e4b98791148bbd3d7b, type: 3}
-  storyMusicZone: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
+  storyMusicZone: 3
   zoneTransition: {fileID: 2504118667978227075, guid: f40b71bc5beb5414ca503a0f211cce08, type: 3}
   combatBackgroundSprite: {fileID: 21300000, guid: dd7dcdb0b5faa40aba87fde0a73fa873, type: 3}
   combatTurnsContainerSprite: {fileID: 21300000, guid: 5d45acc135028406aa01340d33d03381, type: 3}
