@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_Character_WheelchairedBoy_Violence
+      name: Sprite_Card_Character_WheelchairedBoy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5cd585e22cf9d41b8a8438479086d3
+      internalID: 19235665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_WheelchairedBoy_1
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +152,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6d439279a92c5f4d9c89530630bc8a0
-      internalID: -130010262
+      spriteID: fbdd9643ec0fc5e4fb4f4fc472a7c9c6
+      internalID: 1079163785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_WheelchairedBoy_Money
+      name: Sprite_Card_Character_WheelchairedBoy_2
       rect:
         serializedVersion: 2
         x: 0
@@ -152,20 +173,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f326d790b03422a499e36ab0dd640488
-      internalID: -517579632
+      spriteID: 68ac0abfbdbefdc42a74a915de47ce67
+      internalID: 2051085562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_WheelchairedBoy_Influence
+      name: Sprite_Card_Character_WheelchairedBoy_3
       rect:
         serializedVersion: 2
         x: 0
@@ -173,20 +194,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a2ae276d43b1f540aa6cfc11ec7879c
-      internalID: 399855348
+      spriteID: bf4a84eddc5cacd46b909b59fd77b93d
+      internalID: 1611865875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_WheelchairedBoy_Unknown
+      name: Sprite_Card_Character_WheelchairedBoy_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +215,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8b117f81c2573743a0982d4d33ed153
-      internalID: -1499886356
+      spriteID: 003735e2386d32b4f8df76d3b3516d2b
+      internalID: -619351885
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_WheelchairedBoy_Influence: 399855348
-      Sprite_Card_Character_WheelchairedBoy_Money: -517579632
-      Sprite_Card_Character_WheelchairedBoy_Unknown: -1499886356
-      Sprite_Card_Character_WheelchairedBoy_Violence: -130010262
+      Sprite_Card_Character_WheelchairedBoy_0: 19235665
+      Sprite_Card_Character_WheelchairedBoy_1: 1079163785
+      Sprite_Card_Character_WheelchairedBoy_2: 2051085562
+      Sprite_Card_Character_WheelchairedBoy_3: 1611865875
+      Sprite_Card_Character_WheelchairedBoy_4: -619351885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

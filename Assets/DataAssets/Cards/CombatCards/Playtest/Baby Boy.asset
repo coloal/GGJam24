@@ -16,10 +16,10 @@ MonoBehaviour:
   InitialText: ' '
   EffectiveText: ' '
   NonEffectiveText: ' '
-  CharacterSpriteUnknown: {fileID: 216123636, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
-  CharacterSpriteInlfuence: {fileID: -823749814, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
-  CharacterSpriteMoney: {fileID: -1166257571, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
-  CharacterSpriteViolence: {fileID: -2035123982, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteUnknown: {fileID: -84974202, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteInlfuence: {fileID: 1117891338, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteMoney: {fileID: 2047474421, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteViolence: {fileID: -1539618070, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   HealthPoints: 100
   Damage: 100
   Armor: 100

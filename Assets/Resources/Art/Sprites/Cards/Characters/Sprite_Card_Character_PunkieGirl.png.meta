@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ead3850fe37a9044aad518949e55cb7a
+guid: f21432b611ef8ad43ac1c467b5773b19
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puritans mechanic image card_0
+      name: Sprite_Card_Character_PunkieGirl_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca49c40eec469b444bf10933f1f10e80
+      internalID: -290622599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_PunkieGirl_1
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d354643402cf74442bc842a8bc97ace3
-      internalID: 1999905312
+      spriteID: c36fbea40342bd14f82a87329d7f3e0b
+      internalID: -1587256578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puritans mechanic image card_1
+      name: Sprite_Card_Character_PunkieGirl_2
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f7fe71bc00391045999b553c0f8069a
-      internalID: 600287925
+      spriteID: 7bc37556b72d08c49a45452d2951b711
+      internalID: 550063767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puritans mechanic image card_2
+      name: Sprite_Card_Character_PunkieGirl_3
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54c0b43d9376c7c418aed75a25d843ef
-      internalID: 1555512151
+      spriteID: 85d3f40fbf749fa4b9c769553bbfae2c
+      internalID: -2099994817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puritans mechanic image card_3
+      name: Sprite_Card_Character_PunkieGirl_4
       rect:
         serializedVersion: 2
         x: 0
@@ -200,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44abaf9d146570748a76a8fe6afa5e18
-      internalID: 1366980323
+      spriteID: 72348891c838f4a40a4c7721303b1800
+      internalID: 1959566124
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      puritans mechanic image card_0: 1999905312
-      puritans mechanic image card_1: 600287925
-      puritans mechanic image card_2: 1555512151
-      puritans mechanic image card_3: 1366980323
+      Sprite_Card_Character_PunkieGirl_0: -290622599
+      Sprite_Card_Character_PunkieGirl_1: -1587256578
+      Sprite_Card_Character_PunkieGirl_2: 550063767
+      Sprite_Card_Character_PunkieGirl_3: -2099994817
+      Sprite_Card_Character_PunkieGirl_4: 1959566124
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

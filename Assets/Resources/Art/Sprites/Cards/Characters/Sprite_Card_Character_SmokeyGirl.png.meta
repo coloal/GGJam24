@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59d92322a8fddb545a0bacc6adaed80a
+guid: 36182f627d679ea4d92cfaa8e54b7986
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_Character_MisteriousMan_Violence
+      name: Sprite_Card_Character_SmokeyGirl_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffea6acc4aeafd843b3f5d0d91998575
+      internalID: 508267745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_SmokeyGirl_1
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +152,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: addf40edb9bcdcd4ca95ddb83be7ca38
-      internalID: -846944458
+      spriteID: 1d341884b71749d41a2adb06d250a053
+      internalID: -269991186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_MisteriousMan_Money
+      name: Sprite_Card_Character_SmokeyGirl_2
       rect:
         serializedVersion: 2
         x: 0
@@ -152,20 +173,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b32308f074e49044aafabd25906f0fc
-      internalID: 1369020864
+      spriteID: d4f1efa8a96d2e44982e9fb3f6b37a7b
+      internalID: -302275415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_MisteriousMan_Influence
+      name: Sprite_Card_Character_SmokeyGirl_3
       rect:
         serializedVersion: 2
         x: 0
@@ -173,20 +194,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e248224b20453e342b4555053960bf0a
-      internalID: 936377581
+      spriteID: f57f0df591817e34ea7f183d20a638dc
+      internalID: 1466046590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_MisteriousMan_Unknown
+      name: Sprite_Card_Character_SmokeyGirl_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +215,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5858a328ac93f4f419a9d65f1c725cef
-      internalID: 1117214279
+      spriteID: 7b6042a6b43e183478a906fd94dd3400
+      internalID: 385345938
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_MisteriousMan_Influence: 936377581
-      Sprite_Card_Character_MisteriousMan_Money: 1369020864
-      Sprite_Card_Character_MisteriousMan_Unknown: 1117214279
-      Sprite_Card_Character_MisteriousMan_Violence: -846944458
+      Sprite_Card_Character_SmokeyGirl_0: 508267745
+      Sprite_Card_Character_SmokeyGirl_1: -269991186
+      Sprite_Card_Character_SmokeyGirl_2: -302275415
+      Sprite_Card_Character_SmokeyGirl_3: 1466046590
+      Sprite_Card_Character_SmokeyGirl_4: 385345938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

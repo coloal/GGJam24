@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d913cf3d3bbf23d429812cd2311d08e4
+guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Example character image card_0
+      name: Sprite_Card_Character_PuritansMechanic_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c4fe58684bfcd47906c349b3dedab7
+      internalID: 832523203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_PuritansMechanic_1
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5dd19f4199517b40ac76b844a851f5b
-      internalID: -811476501
+      spriteID: 8b5e5bd5c1a943a479a3984e7962a79a
+      internalID: 1551277456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Example character image card_1
+      name: Sprite_Card_Character_PuritansMechanic_2
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1a24aa3b17c07a44a0ce45c1a6801eb
-      internalID: 1531737212
+      spriteID: fface35822adb1e4cbb2c3e5807866b7
+      internalID: -1766761179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Example character image card_2
+      name: Sprite_Card_Character_PuritansMechanic_3
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d70f770b1b9aefb42b57546971b8fc5b
-      internalID: -695176027
+      spriteID: 3cfe1e7a17f86ce4f991a4321ee274a0
+      internalID: -681530388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Example character image card_3
+      name: Sprite_Card_Character_PuritansMechanic_4
       rect:
         serializedVersion: 2
         x: 0
@@ -200,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecf872e506c68bd43a44afcad759e150
-      internalID: 2077451364
+      spriteID: b72d4edcc19f4ac49854993eca90f218
+      internalID: 605515098
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Example character image card_0: -811476501
-      Example character image card_1: 1531737212
-      Example character image card_2: -695176027
-      Example character image card_3: 2077451364
+      Sprite_Card_Character_PuritansMechanic_0: 832523203
+      Sprite_Card_Character_PuritansMechanic_1: 1551277456
+      Sprite_Card_Character_PuritansMechanic_2: -1766761179
+      Sprite_Card_Character_PuritansMechanic_3: -681530388
+      Sprite_Card_Character_PuritansMechanic_4: 605515098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

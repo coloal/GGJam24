@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ceff2b699a3a94d43867233b8b7deb2a
+guid: 62dd98ed12963974694582a64f0061a9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: homeless girl image card_0
+      name: Sprite_Card_Character_ExampleCharacter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50aaad13aa5c1d845995bc07a281a285
+      internalID: -390869736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_ExampleCharacter_1
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ba6c99b92c73e84eb058225063a5a2a
-      internalID: 2102495307
+      spriteID: 6a2ff96e716fdc24ca402af50d0c3938
+      internalID: -1903403739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: homeless girl image card_1
+      name: Sprite_Card_Character_ExampleCharacter_2
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a588b94840df45b4987f7749755b987d
-      internalID: 960286204
+      spriteID: eb1388a8cbeea564a8b786a5d040adb8
+      internalID: 2134947061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: homeless girl image card_2
+      name: Sprite_Card_Character_ExampleCharacter_3
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ada1826c349d3e545909843871cda7fe
-      internalID: 2122172031
+      spriteID: 578fe7da2fb9f6345b7df68e6a92e5b1
+      internalID: 1555915212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: homeless girl image card_3
+      name: Sprite_Card_Character_ExampleCharacter_4
       rect:
         serializedVersion: 2
         x: 0
@@ -200,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02dd1ea55e7289945b7f9cf25d1fb02b
-      internalID: -1945489423
+      spriteID: 016401bb8bd8c9942bd3beb67b09917b
+      internalID: 243997701
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      homeless girl image card_0: 2102495307
-      homeless girl image card_1: 960286204
-      homeless girl image card_2: 2122172031
-      homeless girl image card_3: -1945489423
+      Sprite_Card_Character_ExampleCharacter_0: -390869736
+      Sprite_Card_Character_ExampleCharacter_1: -1903403739
+      Sprite_Card_Character_ExampleCharacter_2: 2134947061
+      Sprite_Card_Character_ExampleCharacter_3: 1555915212
+      Sprite_Card_Character_ExampleCharacter_4: 243997701
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

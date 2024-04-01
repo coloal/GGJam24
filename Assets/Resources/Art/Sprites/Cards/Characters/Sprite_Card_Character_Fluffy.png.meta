@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fa10bf4e344ab94c815aa83d277c4cd
+guid: fa16e83c0e2817d4eaf3dd57b07a2579
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_Character_SmokieGirl_Violence
+      name: Sprite_Card_Character_Fluffy_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 255
-        width: 110
-        height: 85
+        y: 680
+        width: 220
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b546dfa9f8525994d8026989f8be028d
-      internalID: 1911686710
+      spriteID: ef48d9e7f82b26e4f917337c166ecd25
+      internalID: 1701286051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_SmokieGirl_Money
+      name: Sprite_Card_Character_Fluffy_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 510
+        width: 220
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4b02d764dca4f4fb35b923772ef436
+      internalID: -1804146668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_Fluffy_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 220
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81815822f4cd09f4fa3ed0e89da7834d
+      internalID: 1269980941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_Fluffy_3
       rect:
         serializedVersion: 2
         x: 0
         y: 170
-        width: 110
-        height: 85
+        width: 220
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 281f23003cffe004b9fbdf434e0b871e
-      internalID: 115078626
+      spriteID: 0c3fdd7653464a849b4def04e56eaf8c
+      internalID: 1158179062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_SmokieGirl_Influence
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 85
-        width: 110
-        height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e014e23175c0454d8f80070549316c1
-      internalID: 1457091112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite_Card_Character_SmokieGirl_Unknown
+      name: Sprite_Card_Character_Fluffy_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 110
-        height: 85
+        width: 220
+        height: 170
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 354a327be092e044cbcc52ebff823cfc
-      internalID: 1840816634
+      spriteID: f87091db47ff8544d83585da0a1bfffa
+      internalID: 1696578606
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_SmokieGirl_Influence: 1457091112
-      Sprite_Card_Character_SmokieGirl_Money: 115078626
-      Sprite_Card_Character_SmokieGirl_Unknown: 1840816634
-      Sprite_Card_Character_SmokieGirl_Violence: 1911686710
+      Sprite_Card_Character_Fluffy_0: 1701286051
+      Sprite_Card_Character_Fluffy_1: -1804146668
+      Sprite_Card_Character_Fluffy_2: 1269980941
+      Sprite_Card_Character_Fluffy_3: 1158179062
+      Sprite_Card_Character_Fluffy_4: 1696578606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

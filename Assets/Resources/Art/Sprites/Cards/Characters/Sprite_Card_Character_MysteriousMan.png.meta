@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 802f0a17590de4547ae318f62d243285
+guid: bb2b04146d0ec034f8bd145537e30be7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyBoy_Violence
+      name: Sprite_Card_Character_MysteriousMan_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb23e0c3359b41478ac3a78385618af
+      internalID: 624485579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_MysteriousMan_1
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +152,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a437e5dae6abe914385dff37f6b4085c
-      internalID: -1348612388
+      spriteID: 43db9d6b58ffc7b4f8a26eccd065fd94
+      internalID: 117009463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyBoy_Money
+      name: Sprite_Card_Character_MysteriousMan_2
       rect:
         serializedVersion: 2
         x: 0
@@ -152,41 +173,41 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1fd72795cc020f45b7c401b653be71e
-      internalID: -967948621
+      spriteID: 86bf6978fa1d98a4db26122e314575d7
+      internalID: -1171322659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyBoy_Influence
+      name: Sprite_Card_Character_MysteriousMan_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 86
+        y: 85
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c9001a4ddb1624eab606805642bd56
-      internalID: -1683118172
+      spriteID: 995dbabc8bff25e4e8f027499ed68aff
+      internalID: -1404489086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyBoy_Unknown
+      name: Sprite_Card_Character_MysteriousMan_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +215,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853ca3b06f92b8647926ba085d3360d9
-      internalID: -611397000
+      spriteID: 70459acebf6348f488ecf5875564dedc
+      internalID: -745873571
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_PunkyBoy_Influence: -1683118172
-      Sprite_Card_Character_PunkyBoy_Money: -967948621
-      Sprite_Card_Character_PunkyBoy_Unknown: -611397000
-      Sprite_Card_Character_PunkyBoy_Violence: -1348612388
+      Sprite_Card_Character_MysteriousMan_0: 624485579
+      Sprite_Card_Character_MysteriousMan_1: 117009463
+      Sprite_Card_Character_MysteriousMan_2: -1171322659
+      Sprite_Card_Character_MysteriousMan_3: -1404489086
+      Sprite_Card_Character_MysteriousMan_4: -745873571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 600cbb81119e106488379c4c8c80e2e7
+guid: 846aeee414cc089479e555cca6e6af51
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_Character_GentleGiant_0
+      name: Sprite_Card_Character_HomelessGirl_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7bfaf34146cec8479184b5fccfe3fb4
-      internalID: 1216909103
+      spriteID: 49c7fbe7f5feeed42995cb6f23ca7a3a
+      internalID: -244090853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_GentleGiant_1
+      name: Sprite_Card_Character_HomelessGirl_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dfd7d9334c9112478c61e1da33a830f
-      internalID: -1852825200
+      spriteID: 7fa04c8a907257245a1ea6193f9c7a2d
+      internalID: -297913920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_GentleGiant_2
+      name: Sprite_Card_Character_HomelessGirl_2
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9580a51da693ab44be0c525693a8f8d
-      internalID: 687811324
+      spriteID: 933297d5a3fb6ba4bab2920a4765f1d6
+      internalID: -770707732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_GentleGiant_3
+      name: Sprite_Card_Character_HomelessGirl_3
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 284139a5e140b8341970ccd1334b4188
-      internalID: 314422098
+      spriteID: 1af158ab76d463d4693a76a0903a528e
+      internalID: 910133965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_GentleGiant_4
+      name: Sprite_Card_Character_HomelessGirl_4
       rect:
         serializedVersion: 2
         x: 0
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 634b4ed079ae2a1418688a8a1da7cbb9
-      internalID: 1612464085
+      spriteID: 4c13510ece6e76c43980655e82cb4e58
+      internalID: 816943111
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_GentleGiant_0: 1216909103
-      Sprite_Card_Character_GentleGiant_1: -1852825200
-      Sprite_Card_Character_GentleGiant_2: 687811324
-      Sprite_Card_Character_GentleGiant_3: 314422098
-      Sprite_Card_Character_GentleGiant_4: 1612464085
+      Sprite_Card_Character_HomelessGirl_0: -244090853
+      Sprite_Card_Character_HomelessGirl_1: -297913920
+      Sprite_Card_Character_HomelessGirl_2: -770707732
+      Sprite_Card_Character_HomelessGirl_3: 910133965
+      Sprite_Card_Character_HomelessGirl_4: 816943111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

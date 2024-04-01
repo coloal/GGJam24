@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b691c351f0ff53c44bc51202bf2e0fd5
+guid: d0e48fa8599744647a5f4ed41d14d063
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyGirl_Violence
+      name: Sprite_Card_Character_PunkieBoy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529d792aab6fc1342878289967bb67e1
+      internalID: -274480241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Card_Character_PunkieBoy_1
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +152,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d561bf001dfd9a04db88cd2ba034ab33
-      internalID: -188566917
+      spriteID: a7ebae0d925d56d4ebef76ccfd1d4714
+      internalID: -1965159758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyGirl_Money
+      name: Sprite_Card_Character_PunkieBoy_2
       rect:
         serializedVersion: 2
         x: 0
@@ -152,20 +173,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f476f74a358f734a931866d9d1f112e
-      internalID: 968828021
+      spriteID: 8fbabfa0e22405446b5edd5598d19b44
+      internalID: 1099726177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyGirl_Influence
+      name: Sprite_Card_Character_PunkieBoy_3
       rect:
         serializedVersion: 2
         x: 0
@@ -173,20 +194,20 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0fda2a7b42898341b33ebd7dc65c88f
-      internalID: 1014074617
+      spriteID: 22e8d9998c24e3440abcfd080589d7f0
+      internalID: -444505294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Card_Character_PunkyGirl_Unknown
+      name: Sprite_Card_Character_PunkieBoy_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +215,14 @@ TextureImporter:
         width: 110
         height: 85
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a592e0bbd76f43489c969e5b767bfba
-      internalID: -1098709916
+      spriteID: b9d7f7430567ba24e9bcbf93f86d2f84
+      internalID: -144132810
       vertices: []
       indices: 
       edges: []
@@ -217,10 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_PunkyGirl_Influence: 1014074617
-      Sprite_Card_Character_PunkyGirl_Money: 968828021
-      Sprite_Card_Character_PunkyGirl_Unknown: -1098709916
-      Sprite_Card_Character_PunkyGirl_Violence: -188566917
+      Sprite_Card_Character_PunkieBoy_0: -274480241
+      Sprite_Card_Character_PunkieBoy_1: -1965159758
+      Sprite_Card_Character_PunkieBoy_2: 1099726177
+      Sprite_Card_Character_PunkieBoy_3: -444505294
+      Sprite_Card_Character_PunkieBoy_4: -144132810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

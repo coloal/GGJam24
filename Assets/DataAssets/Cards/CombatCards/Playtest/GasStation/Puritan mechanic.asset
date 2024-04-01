@@ -16,10 +16,10 @@ MonoBehaviour:
   InitialText: Well, I fight is always fun in fact!
   EffectiveText: Put the throttle down, mate, that was effective!
   NonEffectiveText: You better heat up this, mate, that was pretty uneffective!
-  CharacterSpriteUnknown: {fileID: 1366980323, guid: ead3850fe37a9044aad518949e55cb7a, type: 3}
-  CharacterSpriteInlfuence: {fileID: 1555512151, guid: ead3850fe37a9044aad518949e55cb7a, type: 3}
-  CharacterSpriteMoney: {fileID: 600287925, guid: ead3850fe37a9044aad518949e55cb7a, type: 3}
-  CharacterSpriteViolence: {fileID: 1999905312, guid: ead3850fe37a9044aad518949e55cb7a, type: 3}
+  CharacterSpriteUnknown: {fileID: -681530388, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSpriteInlfuence: {fileID: -1766761179, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSpriteMoney: {fileID: 1551277456, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSpriteViolence: {fileID: 832523203, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
   HealthPoints: 15
   Damage: 5
   Armor: 3
