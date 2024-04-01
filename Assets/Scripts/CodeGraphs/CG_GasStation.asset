@@ -281,6 +281,7 @@ MonoBehaviour:
         - Lose Combat
         - Game Over
         card: {fileID: 11400000, guid: dea5e90242ba4334cb145c3dea8c6a6e, type: 2}
+        IsBossFight: 0
     - rid: 7416004749467320328
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -312,6 +313,7 @@ MonoBehaviour:
         - Lose Combat
         - Game Over
         card: {fileID: 11400000, guid: d805c878d4331c8439fe3505a6408d7e, type: 2}
+        IsBossFight: 1
     - rid: 7416004749467320330
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
