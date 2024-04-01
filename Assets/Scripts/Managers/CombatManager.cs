@@ -585,6 +585,10 @@ public class CombatManager : MonoBehaviour
         ReturnAttackerCardToHand();
         UpdatePartyMembersStateAfterBattle();
         SetPartyMembersCardsInHandActivation(false);
+
+        //LLama para parar la musica de combate
+        GameManager.Instance.ProvideBrainSoundManager()
+            .EndCombat(GameManager.Instance.ProvideBrainManager().bIsBossFight);
     }
 
     void SetUpEnemyCardCaughtableState()
@@ -743,8 +747,7 @@ public class CombatManager : MonoBehaviour
 
     void StartEndCombatSequence(TurnResult combatResult)
     {
-        GameManager.Instance.ProvideBrainSoundManager()
-            .EndCombat(GameManager.Instance.ProvideBrainManager().bIsBossFight);
+        GameManager.Instance.ProvideBrainSoundManager().RestartMusicFromCombat();
         GameUtils.CreateTemporizer(() => 
         {
             GameManager.Instance.EndCombat(combatResult);

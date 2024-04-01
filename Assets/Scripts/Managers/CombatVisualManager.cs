@@ -49,10 +49,12 @@ public class CombatVisualManager : MonoBehaviour
 
     private void InitCombatSceneAudio()
     {
+        /*
         bool IsBoss = GameManager.Instance.ProvideBrainManager().bIsBossFight;
         List<PartyMember> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
 
         GameManager.Instance.ProvideBrainSoundManager().StartCombat(members ,IsBoss);
+        /**/
     }
 
     void InitTurnsNumberSpritesDictionary(List<Sprite> numberImages)

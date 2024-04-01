@@ -37,12 +37,6 @@ MonoBehaviour:
       portIndex: 4
   - outputPort:
       nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
-      portIndex: 0
-    inputPort:
-      nodeId: f1aadcf3-79c8-47ef-acb7-a551970cdb5c
-      portIndex: 1
-  - outputPort:
-      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
       portIndex: 1
     inputPort:
       nodeId: f1aadcf3-79c8-47ef-acb7-a551970cdb5c
@@ -50,12 +44,6 @@ MonoBehaviour:
   - outputPort:
       nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
       portIndex: 2
-    inputPort:
-      nodeId: f1aadcf3-79c8-47ef-acb7-a551970cdb5c
-      portIndex: 1
-  - outputPort:
-      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
-      portIndex: 3
     inputPort:
       nodeId: f1aadcf3-79c8-47ef-acb7-a551970cdb5c
       portIndex: 1
@@ -72,12 +60,6 @@ MonoBehaviour:
       nodeId: a4b83506-1523-49c7-8c57-0836655cd0ce
       portIndex: 0
   - outputPort:
-      nodeId: d6f9ed1c-f189-4ae6-b46f-9ac7ecff61cf
-      portIndex: 0
-    inputPort:
-      nodeId: 64d52feb-3d88-435c-af9d-3f7c81be48d4
-      portIndex: 1
-  - outputPort:
       nodeId: 64d52feb-3d88-435c-af9d-3f7c81be48d4
       portIndex: 0
     inputPort:
@@ -89,6 +71,24 @@ MonoBehaviour:
     inputPort:
       nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
       portIndex: 4
+  - outputPort:
+      nodeId: d6f9ed1c-f189-4ae6-b46f-9ac7ecff61cf
+      portIndex: 0
+    inputPort:
+      nodeId: 64d52feb-3d88-435c-af9d-3f7c81be48d4
+      portIndex: 1
+  - outputPort:
+      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
+      portIndex: 0
+    inputPort:
+      nodeId: 93b20e64-69aa-4d7d-8581-2d606b31bc6f
+      portIndex: 1
+  - outputPort:
+      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
+      portIndex: 3
+    inputPort:
+      nodeId: c5d79d91-9460-4518-a4b0-30c0decb523e
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -157,8 +157,8 @@ MonoBehaviour:
         guid: 21a28c04-1d50-4381-9ef4-505ca4ac110b
         position:
           serializedVersion: 2
-          x: 403
-          y: 426
+          x: 441
+          y: 419
           width: 393
           height: 188
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -168,16 +168,16 @@ MonoBehaviour:
         - Win no Capture
         - Lose Combat
         - Game Over
-        card: {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
-        IsBossFight: 0
+        card: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
+        IsBossFight: 1
     - rid: 8580623518225399814
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: f1aadcf3-79c8-47ef-acb7-a551970cdb5c
         position:
           serializedVersion: 2
-          x: 1800
-          y: 290
+          x: 1564
+          y: 297
           width: 343
           height: 98
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

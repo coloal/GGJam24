@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edce3b5e237254d82a608357a88791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoryEventPath: event:/Level1
+  StoryEventPath: event:/Zona1
   CampfireEventPath: event:/Ambient/Settlement
   CombatEventPath: 
   GameOverEventPath: event:/Music/GameOver
@@ -263,7 +263,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 8ebbf30ee71339942adb6722600b5c24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15beac87184fa794da7bc4362bdf26d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -440,11 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2232971506263461f99d211cf05c49cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialPartyMembersCombatCardTemplates:
-  - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
-  - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
-  - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
-  maxPartySize: 3
+  initialPartyMembersCombatCardTemplates: []
+  maxPartySize: 5
 --- !u!4 &527357312
 Transform:
   m_ObjectHideFlags: 0
@@ -922,7 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: 636901b1de0264d4a993050a5f2a563a, type: 2}
+  FirstStory: {fileID: 11400000, guid: bc2488a36df7f3f4bb3ea433b89afb7c, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0
