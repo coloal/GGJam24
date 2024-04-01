@@ -35,7 +35,10 @@ public class TurnManager : MonoBehaviour
     void GetNewCard(StoryCardTemplate nextCard)
     {
         SetGameState(GameStates.SHOW_CARD);
-        GameObject SpawnedCard = CardsManager.SpawnNextCard(nextCard);
+        GameObject SpawnedCard = CardsManager.SpawnNextCard(
+            nextCard,
+            onSwipeLeft: () => { MainGameSceneManager.Instance.ProvideTurnManager().SwipeLeft(); },
+            onSwipeRight: () => { MainGameSceneManager.Instance.ProvideTurnManager().SwipeRight(); });
         CurrentCard = SpawnedCard.GetComponent<StoryCard>();
         SetGameState(GameStates.MAKE_DECISION);
     }
