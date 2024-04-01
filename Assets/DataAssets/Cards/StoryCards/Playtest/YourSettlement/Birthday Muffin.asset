@@ -16,4 +16,4 @@ MonoBehaviour:
   Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: "Hmm nadie se creer\xE1 que vino una magdalena a verme"
-  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  CardSprite: {fileID: 21300000, guid: 648d019d29a60174ea3ccbfc27779ec2, type: 3}

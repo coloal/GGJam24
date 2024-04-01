@@ -16,4 +16,4 @@ MonoBehaviour:
   Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Aceptar y gestionar con...
-  CardSprite: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
+  CardSprite: {fileID: 21300000, guid: 9bf453ff80e310e4d86e2984be571bd6, type: 3}
