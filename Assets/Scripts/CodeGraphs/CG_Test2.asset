@@ -30,12 +30,6 @@ MonoBehaviour:
       nodeId: 93b20e64-69aa-4d7d-8581-2d606b31bc6f
       portIndex: 1
   - outputPort:
-      nodeId: 93b20e64-69aa-4d7d-8581-2d606b31bc6f
-      portIndex: 0
-    inputPort:
-      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
-      portIndex: 4
-  - outputPort:
       nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
       portIndex: 1
     inputPort:
@@ -66,12 +60,6 @@ MonoBehaviour:
       nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
       portIndex: 1
   - outputPort:
-      nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
-      portIndex: 0
-    inputPort:
-      nodeId: 21a28c04-1d50-4381-9ef4-505ca4ac110b
-      portIndex: 4
-  - outputPort:
       nodeId: d6f9ed1c-f189-4ae6-b46f-9ac7ecff61cf
       portIndex: 0
     inputPort:
@@ -88,6 +76,18 @@ MonoBehaviour:
       portIndex: 3
     inputPort:
       nodeId: c5d79d91-9460-4518-a4b0-30c0decb523e
+      portIndex: 1
+  - outputPort:
+      nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
+      portIndex: 0
+    inputPort:
+      nodeId: 93b20e64-69aa-4d7d-8581-2d606b31bc6f
+      portIndex: 1
+  - outputPort:
+      nodeId: 93b20e64-69aa-4d7d-8581-2d606b31bc6f
+      portIndex: 0
+    inputPort:
+      nodeId: afb8c32b-96a6-498a-92bc-f135d531c413
       portIndex: 1
   references:
     version: 2
@@ -142,9 +142,9 @@ MonoBehaviour:
         guid: 93b20e64-69aa-4d7d-8581-2d606b31bc6f
         position:
           serializedVersion: 2
-          x: 915
-          y: 266
-          width: 321
+          x: 845
+          y: -44
+          width: 315
           height: 98
         typeName: CodeGraph.StraightCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -157,9 +157,9 @@ MonoBehaviour:
         guid: 21a28c04-1d50-4381-9ef4-505ca4ac110b
         position:
           serializedVersion: 2
-          x: 441
+          x: 439
           y: 419
-          width: 393
+          width: 383
           height: 188
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -168,7 +168,7 @@ MonoBehaviour:
         - Win no Capture
         - Lose Combat
         - Game Over
-        card: {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
+        card: {fileID: 11400000, guid: 69164a913ba6e7a4cb5a284c89d08f5b, type: 2}
         IsBossFight: 1
     - rid: 8580623518225399814
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}

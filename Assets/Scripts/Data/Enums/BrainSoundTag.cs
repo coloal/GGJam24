@@ -17,6 +17,7 @@ public static class BrainSoundTag
     
     public const string ApagarHoguera = "ApagarHogera";
     public const string Golpes = "Golpes";
+    public const string Cards = "Cards";
 }
 
 public enum MusicZones
@@ -34,6 +35,14 @@ public static class CombatSounds
     public const string Flojo = "Flojo";
     public const string Medio = "Medio";
     public const string Fuerte = "Fuerte";
+}
+
+public enum CardSounds
+{
+    Center = 0,
+    Left = 1,
+    Right = 2,
+
 }
 
 //Este enum se refiere al evento de fmod que se utilizara

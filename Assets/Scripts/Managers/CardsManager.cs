@@ -96,6 +96,8 @@ public class CardsManager : MonoBehaviour
                 SetUpOnSwipeLeftActions(newCard);
                 SetUpOnSwipeRightActions(newCard);
             }
+
+            GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Center);
         }
         
         //indexNextCard++;

@@ -140,6 +140,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
+        GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Left);
         StoryManager.SwipeLeft();
     }
 
@@ -150,6 +151,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
+        GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Right);
         StoryManager.SwipeRight();
     }
 
