@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
                     {
+                        GameManager.Instance.ProvideBrainSoundManager().StartGameOver();
                         mainGameSceneManager.ProvideTurnManager().LoseCombat(true);
                     }
                 };

@@ -183,10 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edce3b5e237254d82a608357a88791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoryEventPath: event:/Zona1
+  StoryEventPath: event:/Level1
   CampfireEventPath: event:/Ambient/Settlement
   CombatEventPath: 
   GameOverEventPath: event:/Music/GameOver
+  CombatSoundsEventPath: event:/SFX/CombatSounds
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &179863778
@@ -395,7 +396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8877cf02275472aa391b873ecd3d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StoryEventPath: event:/Zona1
 --- !u!4 &511489517
 Transform:
   m_ObjectHideFlags: 0

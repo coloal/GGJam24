@@ -27,10 +27,8 @@ MonoBehaviour:
   - rid: 2383942886125993987
   - rid: 2383942886125993989
   - rid: 2383942886125993991
-  - rid: 2383942973646962688
-  - rid: 2383942973646962690
   - rid: 2383942997231534080
-  - rid: 2383942997231534081
+  - rid: 2383943134434033664
   connections:
   - outputPort:
       nodeId: 4daccfe4-3b8d-4ba6-85be-ef66282642cf
@@ -369,8 +367,8 @@ MonoBehaviour:
         guid: bfbaa049-8e62-4788-9462-406f507ffa0f
         position:
           serializedVersion: 2
-          x: -107
-          y: 183
+          x: -156
+          y: 98
           width: 315
           height: 122
         typeName: CodeGraph.ForkCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -411,44 +409,14 @@ MonoBehaviour:
         - Left
         - Right
         card: {fileID: 11400000, guid: 94e93bb33d4f8b247bc211c26ce805fe, type: 2}
-    - rid: 2383942973646962688
-      type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 89659d49-a8b3-4254-8b3d-cf7f7e3a6b0d
-        position:
-          serializedVersion: 2
-          x: 436
-          y: 22
-          width: 204
-          height: 98
-        typeName: CodeGraph.ZoneSoundNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Next
-        NewZone: 3
-    - rid: 2383942973646962690
-      type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 24732f11-cce2-4ce4-8f76-1643697a3cc9
-        position:
-          serializedVersion: 2
-          x: 1577
-          y: 7
-          width: 232
-          height: 98
-        typeName: CodeGraph.ZoneSoundNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Next
-        NewZone: 0
     - rid: 2383942997231534080
       type: {class: SoundActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 7b2736bd-3ff9-43b0-9a93-49f3078f41c2
         position:
           serializedVersion: 2
-          x: 503
-          y: 236
+          x: 321
+          y: 227
           width: 244
           height: 135
         typeName: CodeGraph.SoundActionNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -458,18 +426,18 @@ MonoBehaviour:
         Parameters:
           SoundTag: Acordeonista
           NewValue: 0.8
-    - rid: 2383942997231534081
-      type: {class: ZoneSoundNode, ns: CodeGraph, asm: Assembly-CSharp}
+    - rid: 2383943134434033664
+      type: {class: ZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 2f793910-2b0c-402f-b2d4-48e69c6007cb
+        guid: 3869ab37-b291-476c-a499-23ba1c2e18ec
         position:
           serializedVersion: 2
-          x: 235
-          y: 304
-          width: 193
+          x: 469
+          y: -173
+          width: 292
           height: 98
-        typeName: CodeGraph.ZoneSoundNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        typeName: CodeGraph.ZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Next
-        NewZone: 4
+        NewZone: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}

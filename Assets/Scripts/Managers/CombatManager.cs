@@ -740,6 +740,8 @@ public class CombatManager : MonoBehaviour
 
     void StartEndCombatSequence(TurnResult combatResult)
     {
+        GameManager.Instance.ProvideBrainSoundManager()
+            .EndCombat(GameManager.Instance.ProvideBrainManager().bIsBossFight);
         GameUtils.CreateTemporizer(() => 
         {
             GameManager.Instance.EndCombat(combatResult);

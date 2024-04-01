@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-    [SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
+    //[SerializeField] private string StoryEventPath = "event:/MaquetaAudioLeve";
     private FMOD.Studio.EventInstance FModInstance;
 
     // Singleton instance
@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour {
 
     void Start()
     {
-        FModInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
+        //FModInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
     }
 
     public void Play()

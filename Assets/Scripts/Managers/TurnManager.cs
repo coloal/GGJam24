@@ -87,7 +87,9 @@ public class TurnManager : MonoBehaviour
             else
             {
                 GameManager.Instance.ProvideBrainManager().ChangeZone(zoneStep.Zone);
-                TransitionToZone();
+                GameManager.Instance.ProvideBrainSoundManager().ChangeZone(zoneStep.Zone.StoryMusicZone);
+
+                TransitionToZone(zoneStep.Zone);
             }
         }
         //Nodo de carta de final
@@ -103,9 +105,9 @@ public class TurnManager : MonoBehaviour
     }
 
 
-    public void TransitionToZone()
+    public void TransitionToZone(ZoneTemplate zoneInfo)
     {
-        Animator transition = GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition;
+        Animator transition = zoneInfo.ZoneTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
         if(instantedAnimator != null)
         {
@@ -117,6 +119,7 @@ public class TurnManager : MonoBehaviour
         }, 1 + waitTimeBetweenTransition, this);
         GameUtils.CreateTemporizer(() =>
         {
+            GameManager.Instance.ProvideBrainSoundManager().ChangeZone(zoneInfo.StoryMusicZone);
             StartTurn();
             Destroy(instantedAnimator.gameObject);
         }, 2 + waitTimeBetweenTransition, this);
