@@ -16,4 +16,4 @@ MonoBehaviour:
   Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Erasmus go home!
-  CardSprite: {fileID: 1760196540, guid: 600cbb81119e106488379c4c8c80e2e7, type: 3}
+  CardSprite: {fileID: 1529920742, guid: 600cbb81119e106488379c4c8c80e2e7, type: 3}
