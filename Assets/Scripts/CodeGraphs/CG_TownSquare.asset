@@ -46,6 +46,8 @@ MonoBehaviour:
   - rid: 7416004749467320325
   - rid: 7416004749467320326
   - rid: 7416004749467320331
+  - rid: 7416004762105020420
+  - rid: 7416004762105020421
   connections:
   - outputPort:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
@@ -258,12 +260,6 @@ MonoBehaviour:
       nodeId: f7db183f-20fe-4a16-b457-87f8fe220ffe
       portIndex: 1
   - outputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 3
-    inputPort:
-      nodeId: c8eff65c-aaf1-4972-8c88-01b81104748a
-      portIndex: 0
-  - outputPort:
       nodeId: 10021667-8065-4141-8b19-c7da6e624eac
       portIndex: 0
     inputPort:
@@ -288,12 +284,6 @@ MonoBehaviour:
       nodeId: b331e8f0-8c5a-45ef-a203-d7a2beb4433f
       portIndex: 2
   - outputPort:
-      nodeId: 0df42bc9-0a41-43d1-9c00-167b347c820a
-      portIndex: 3
-    inputPort:
-      nodeId: 0ad1a9e3-6d4b-41a8-9d78-cd00737fce2a
-      portIndex: 0
-  - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
       portIndex: 0
     inputPort:
@@ -305,6 +295,30 @@ MonoBehaviour:
     inputPort:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 1
+  - outputPort:
+      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
+      portIndex: 3
+    inputPort:
+      nodeId: db25036f-5eb1-48c2-84a9-b1e372ea7085
+      portIndex: 1
+  - outputPort:
+      nodeId: db25036f-5eb1-48c2-84a9-b1e372ea7085
+      portIndex: 0
+    inputPort:
+      nodeId: c8eff65c-aaf1-4972-8c88-01b81104748a
+      portIndex: 0
+  - outputPort:
+      nodeId: 0df42bc9-0a41-43d1-9c00-167b347c820a
+      portIndex: 3
+    inputPort:
+      nodeId: e000de39-273b-4fb5-b700-95881b0bc459
+      portIndex: 1
+  - outputPort:
+      nodeId: e000de39-273b-4fb5-b700-95881b0bc459
+      portIndex: 0
+    inputPort:
+      nodeId: 0ad1a9e3-6d4b-41a8-9d78-cd00737fce2a
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -326,16 +340,17 @@ MonoBehaviour:
         - Lose Combat
         - Game Over
         card: {fileID: 11400000, guid: 6816bbece414f654fbe5d3eb1a8e7957, type: 2}
+        IsBossFight: 0
     - rid: 7416004749467320324
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: c8eff65c-aaf1-4972-8c88-01b81104748a
         position:
           serializedVersion: 2
-          x: 4256.929
-          y: 672.22675
-          width: 0
-          height: 0
+          x: 4955
+          y: 653
+          width: 74
+          height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
@@ -357,14 +372,15 @@ MonoBehaviour:
         - Lose Combat
         - Game Over
         card: {fileID: 11400000, guid: 4e73d56420f694c4db550e03a780d306, type: 2}
+        IsBossFight: 0
     - rid: 7416004749467320326
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 0ad1a9e3-6d4b-41a8-9d78-cd00737fce2a
         position:
           serializedVersion: 2
-          x: 6408
-          y: 1336
+          x: 6683
+          y: 1366
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -385,6 +401,53 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: {fileID: 11400000, guid: 0bb4017791386c147a7d4ced72013643, type: 2}
+    - rid: 7416004762105020420
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: db25036f-5eb1-48c2-84a9-b1e372ea7085
+        position:
+          serializedVersion: 2
+          x: 4253
+          y: 653
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "You were not able to fix your van and get out of this shithole\n
+          called Admired Town. Being defeated in the first battle, we both (you,
+          player, and us, devs, deserve another chance!)"
+        LeftText: I'm tired of reading.
+        RightText: I'll try again.
+        card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
+    - rid: 7416004762105020421
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e000de39-273b-4fb5-b700-95881b0bc459
+        position:
+          serializedVersion: 2
+          x: 6303
+          y: 1366
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'You were not able to fix your van and get out of this shithole
+
+          called
+          Admired Town. You still had one more zone to visit
+
+          and several
+          additional battle to perform,
+
+          are you committed to the gang
+          or leaving us here in the limbo?'
+        LeftText: I'm tired of reading.
+        RightText: I'll try again.
+        card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -413,12 +476,14 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Admired town square, not a ver special place, except for being
-          where gangs\n from this town use to spend its spare time. Today seems is
-          pretty quite."
+        CardText: 'Admired Town Square, not a ver special place, except for being
+          where gangs
+
+          from this town are used to spend their spare time.
+          Today seems is pretty quite.'
         LeftText: Let's gang!!!
         RightText: Off world, exciting, indeed!
-        card: {fileID: 11400000, guid: 1215b9ae72d62aa4e9204a120bb24d9f, type: 2}
+        card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
     - rid: 8807612109458243585
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -434,8 +499,8 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Hmmm, but what do my eyes see? Isn't this the new town gang?
-        LeftText: Affirmatively, affirmative, mam
-        RightText: Definitely definitive, mam
+        LeftText: Affirmatively, affirmative, mam.
+        RightText: Definitely definitive, mam.
         card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243588
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -452,9 +517,11 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "I see you a little bit lost youngsters, Let me give you \nsome
-          advices and relevant information for your journey."
-        LeftText: I am good, thank you, I know what I am doing
+        CardText: 'I see you a little bit lost youngsters, Let me give you
+
+          some
+          advices and relevant information for your journey.'
+        LeftText: I am good, thank you, I know what I am doing.
         RightText: Yes, please, context finally!
         card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243589
@@ -471,12 +538,18 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "So you have already turn 18, so as it is stated in this world
-          of ours, \nyou have formed your gang with colleagues of your age. \nTaking
-          all your passion with you to see how far you get to and\n what secrets
-          and new things awaits you, right?"
+        CardText: 'You have just turned 18, youngster, so as it is stated in this
+          world of ours,
+
+          you have formed your gang with colleagues of
+          your age.
+
+          Taking all your passion with you to see how far you
+          get to and
+
+          what secrets awaits you, right?'
         LeftText: So we will be going around with no goal?
-        RightText: I would like to know Why I am leaving my home
+        RightText: I would like to know Why I am leaving my home.
         card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243590
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -492,10 +565,14 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Don't worry, my young friend, this is a journey. It's about keeping
-          your companions \nalive long enough to travel the world until you find
-          that which inspires and \ndrives you ;)"
-        LeftText: I'm driving a Van, I know that
+        CardText: 'Don''t worry, my young friend, this is a journey. It''s about
+          keeping your companions
+
+          alive long enough to travel the world
+          until you find that which inspires and
+
+          drives you ;)'
+        LeftText: I'm driving a Van, I know that.
         RightText: Feeling anxious already :/
         card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243591
@@ -512,8 +589,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Alright now move out of my way! You are \nblocking my daily dose
-          of vitamine D, babe."
+        CardText: Alright now move out of my way! You are blocking my daily dose
+          of vitamine D, babe.
         LeftText: Ok, thank you, miss
         RightText: '[Sometimes I just do silent inner reflections]'
         card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
@@ -533,8 +610,8 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Well, we still need to fix our van if we want to travel around...
-        LeftText: Go talk to Punkie boy
-        RightText: Try to cross the square without being noticed
+        LeftText: Go talk to Punkie Boy.
+        RightText: Try to cross the square without being noticed.
         card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
     - rid: 8807612109458243593
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -553,9 +630,9 @@ MonoBehaviour:
         CardText: 'Supp youngster, we are having
 
           first fight of the morning
-          right now'
-        LeftText: Yesssss
-        RightText: Let's gooo
+          right now.'
+        LeftText: Yesssss.
+        RightText: Let's gooo.
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
     - rid: 8807612109458243594
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -571,10 +648,15 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Hey, where did you think you are going?\nYou have just started
-          your gang and you are\n already trying to avoid violence? For fight sake!"
-        LeftText: Fuck
-        RightText: Fight then
+        CardText: 'Hey, where did you think you are going?
+
+          You have just
+          started your gang and you are
+
+          already trying to avoid violence?
+          For fight sake!'
+        LeftText: God, why always fighting!
+        RightText: Fight then.
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
     - rid: 8807612109458243607
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -582,8 +664,8 @@ MonoBehaviour:
         guid: 83724a4d-8315-4cdd-a5d2-e66bd2bdded6
         position:
           serializedVersion: 2
-          x: 4655
-          y: 106
+          x: 4731
+          y: 115
           width: 224
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -608,8 +690,8 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Supp, mate? Roger? Roger?
-        LeftText: I'm not interested to change company, sorry
-        RightText: I hear you loud and clear, buddy
+        LeftText: I'm not interested to change company, sorry.
+        RightText: I hear you loud and clear, buddy.
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
     - rid: 8807612109458243609
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -626,7 +708,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: I have useful information for you, idiot :P
-        LeftText: I am all ears
+        LeftText: I am all ears.
         RightText: "Useful information \xAC\xAC"
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
     - rid: 8807612109458243610
@@ -643,8 +725,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "So I have been able to hear there is a Mechanic \nof the Puritans
-          Gang in the Gas stationn, may \nbe he/she can fix our van."
+        CardText: 'So I have been able to hear there is a Mechanic
+
+          of
+          The Puritans gang in the Gas stationn, may be he can fix our van.'
         LeftText: Sweet, mate.
         RightText: I expect they don't want to fight :/
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
@@ -663,8 +747,8 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: It seems everything we could do here is already done.
-        LeftText: Let's go to the Gas station then
-        RightText: 'Next stop: Gas Station'
+        LeftText: Let's go to the Gas station then.
+        RightText: 'Next stop: Gas Station.'
         card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
     - rid: 8807612109458243612
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -711,10 +795,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Hey, my brother tall me the puritans are in the Gas Station\n
-          having some beers, they may be a helping hand with the van."
-        LeftText: Copy that
-        RightText: Oki doks
+        CardText: 'Hey, my brother tall me The Puritans gang are in the Gas Station
+
+          having
+          some beers, they may be a helping hand with the van.'
+        LeftText: Copy that.
+        RightText: Oki doks.
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
     - rid: 8807612109458243615
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -731,7 +817,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Hey, what did you do to my boy?
-        LeftText: You know he starts all fights
+        LeftText: You know he starts all fights.
         RightText: You better let yourself lose if you want to keep up with him.
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
     - rid: 8807612156763701258
@@ -785,7 +871,7 @@ MonoBehaviour:
         - Next
         CardText: At least now I will be able to keep sharing my life with my boy!
         LeftText: I'm happy for you.
-        RightText: if you get annoying, I'll kick you out of the gang soon!
+        RightText: If you get annoying, I'll kick you out of the gang soon!
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
     - rid: 8807612156763701261
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -801,8 +887,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: I haven't only lost the fight but my girl too, now that I have
-          to join your gang, dammit!
+        CardText: Now that I have to join your gang. I haven't only lost the fight
+          but my girl too, dammit!
         LeftText: You started this.
         RightText: You'll forget her boy.
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
@@ -820,8 +906,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Wow a newbie wins me and then they don't even\n want me at their
-          gang. So disrespectful of you!"
+        CardText: 'Wow a newbie wins me and then they don''t even
+
+          want
+          me at their gang. So disrespectful of you!'
         LeftText: You started this.
         RightText: Sorry, my bad!
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
@@ -849,16 +937,16 @@ MonoBehaviour:
         guid: 3e715e64-dab3-4db1-be7c-9cb6b7db7a58
         position:
           serializedVersion: 2
-          x: 6551
-          y: 1511
-          width: 321
+          x: 6624
+          y: 1869
+          width: 559
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
         CardText: I got tired of fighting against you and I don't even love my boy
-          that much.
+          that much to be losing my time with you.
         LeftText: Well.
         RightText: Well.
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
@@ -868,9 +956,9 @@ MonoBehaviour:
         guid: b331e8f0-8c5a-45ef-a203-d7a2beb4433f
         position:
           serializedVersion: 2
-          x: 6118
-          y: 1529
-          width: 335
+          x: 6191
+          y: 1887
+          width: 364
           height: 122
         typeName: CodeGraph.CheckPartyMemberNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -884,10 +972,10 @@ MonoBehaviour:
         guid: df347320-dec7-4641-ad4e-39887657c7bd
         position:
           serializedVersion: 2
-          x: 6559
-          y: 1885
-          width: 0
-          height: 0
+          x: 6632
+          y: 2243
+          width: 551
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:

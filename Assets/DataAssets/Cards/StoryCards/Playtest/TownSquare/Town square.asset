@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a38bdde6b555245aa5008ae777d0b3, type: 3}
   m_Name: Town square
   m_EditorClassIdentifier: 
-  NameOfCard: Town square
+  NameOfCard: Admired Town Square
   Text: 
   LeftText: 
   RightText: 

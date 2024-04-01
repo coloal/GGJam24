@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
   m_Name: Fluffy
   m_EditorClassIdentifier: 
-  NameOfCard: Punkie boy
-  InitialText: Guau! Gua!
-  EffectiveText: GuauEffective!
-  NonEffectiveText: GuauUneffective!
+  NameOfCard: Fluffy
+  InitialText: Guau! Guau!
+  EffectiveText: Guau-Effective!
+  NonEffectiveText: Guau-Uneffective!
   CharacterSpriteUnknown: {fileID: 1158179062, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CharacterSpriteInlfuence: {fileID: 1269980941, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CharacterSpriteMoney: {fileID: -1804146668, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}

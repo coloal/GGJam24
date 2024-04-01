@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
   m_Name: Puritan mechanic
   m_EditorClassIdentifier: 
-  NameOfCard: Dave
-  InitialText: Well, I fight is always fun in fact!
+  NameOfCard: Puritan Mechanic
+  InitialText: Well, a fight is always fun in fact!
   EffectiveText: Put the throttle down, mate, that was effective!
   NonEffectiveText: You better heat up this, mate, that was pretty uneffective!
   CharacterSpriteUnknown: {fileID: -681530388, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}

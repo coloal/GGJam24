@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
   m_Name: Punkie boy
   m_EditorClassIdentifier: 
-  NameOfCard: Punkie boy
+  NameOfCard: Punkie Boy
   InitialText: I love fighting newbies!
-  EffectiveText: Damn, that was effective
+  EffectiveText: Damn, that was effective.
   NonEffectiveText: Pf, that's the harder you can hit me?
   CharacterSpriteUnknown: {fileID: -444505294, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
   CharacterSpriteInlfuence: {fileID: 1099726177, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}

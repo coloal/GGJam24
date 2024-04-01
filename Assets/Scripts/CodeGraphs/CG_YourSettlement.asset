@@ -719,9 +719,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Don't play it cool, please, you know the importance of this day...\n
-          Biggie has even prepared you a muffin, so don't act indiferent, please."
-        LeftText: YeEess... I wa-ass just joking
+        CardText: 'Don''t play it cool, please, you know the importance of this day...
+
+          Biggie
+          has even prepared you a muffin, so don''t act indifferent, please.'
+        LeftText: YeEess... I wa-ass just joking.
         RightText: I love that guy!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 8580623337150218307
@@ -739,8 +741,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "Hey, buddy, How are you doing? I expect you have already \nthought
-          deeply about who will be your companions for this journey."
+        CardText: 'Hey, buddy, How are you doing? I expect you have already
+
+          thought
+          deeply about who will be your companions for this journey.'
         LeftText: Aghh, I don't know man...
         RightText: Me? Thinking?!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -759,9 +763,9 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Hey, don't worry, who ever you choose for the journey will do great.
-        LeftText: It's more about the rejected ones...
-        RightText: I feel I am a leader out of obligation
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+        LeftText: I feel bad for the ones I am not choosing to come with me.
+        RightText: I feel I am a leader out of obligation.
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 8580623337150218311
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -779,8 +783,8 @@ MonoBehaviour:
         CardText: "The sooner you start enjoying making decisions and learning about
           their \neffects, the better, buddie.  We will be proud of you no matter
           the result."
-        LeftText: Thanks, buddie.
-        RightText: I'll try, buddie.
+        LeftText: I'll try, buddie.
+        RightText: I won't overthink it for sure, buddie.
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 8807612087661232130
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -796,12 +800,16 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Happy birthday, buddie! Enjoy the day, you do not turn 18 again!
-          Now take a walk around \nand chat with all of your buddies. See you in
-          a while when you decide who's coming with \nyou. You're going to take on
-          the world, budd!!"
-        LeftText: ... [Feeling anxious already :/]
-        RightText: Yeah, I better hurry!"
+        CardText: 'Happy birthday, buddie! Enjoy the day, you do not turn 18 again!
+          Now take a walk around
+
+          and chat with all of your buddies. See
+          you in a while when you decide who''s coming with
+
+          you. You''re
+          going to take on the world, budd!!'
+        LeftText: Feeling anxious already :/
+        RightText: Yeah, I better hurry!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 8807612129735344130
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -818,8 +826,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "Hey, good morning, darling. Big day, huh?\n Everyone's buzzing
-          with excitement today!"
+        CardText: 'Hey, good morning, darling. Big day, huh?
+
+          Everyone''s
+          buzzing with excitement today!'
         LeftText: Have you said big day?
         RightText: I am overexcited too!!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -837,9 +847,13 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are finally turning 18, darling, so the time to form your
-          gang\n of friends and travel the world is already here. \nWheter you like 
-          it or not."
+        CardText: 'You are finally turning 18, darling, so the time to form your
+          gang
+
+          of friends and travel the world is already here.
+
+          Whether
+          you like  it or not.'
         LeftText: Pff, I hate my birthday.
         RightText: I love my birthday!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -858,7 +872,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "Yeah, you are right, who wants to think when we are forming a
-          band\n of bastards here. Just go for the ones you find cooler at the moment\n
+          band\n of bastards here. Just go for the ones you find cooler at the moment
           of choosing HA, HA."
         LeftText: I wasn't meaning that, Biggie.
         RightText: I act, therefore I am (cool).
@@ -878,8 +892,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "Your friend Biggie sets it in front of you so you can blow\n out
-          the candles; it's time to come of age and form your gang."
+        CardText: 'Your friend Biggie sets it in front of you so you can blow
+
+          out
+          the candles; it''s time to come of age and form your gang.'
         LeftText: Blow out the candles with doubts
         RightText: Blow out the candles with energy
         card: {fileID: 11400000, guid: eb656bfd03250c042aa0ea1f1fc492ed, type: 2}
@@ -897,10 +913,16 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Happy birthday, buddie! Enjoy the day, you do not turn 18 again!\n
-          Now take a walk around and chat with all of your buddies. \nSee you in
-          a while when you decide who's coming with you. \nAnd cheer up that face
-          ma friend!"
+        CardText: 'Happy birthday, buddie! Enjoy the day, you do not turn 18 again!
+
+          Now
+          take a walk around and chat with all of your buddies.
+
+          See you
+          in a while when you decide who''s coming with you.
+
+          And cheer
+          up that face ma friend!'
         LeftText: ... [Feeling anxious already :/]
         RightText: Yeah, I better hurry!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -918,8 +940,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "We all are, honey. But just take a moment to reflect \nbefore
-          you act, can you do that for me, please? :)"
+        CardText: 'We all are, honey. But just take a moment to reflect
+
+          before
+          you act, can you do that for me, please? :)'
         LeftText: My problems arise when I have to take action, certainly.
         RightText: Definitely, I am quite reflexive indeed :P
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -970,7 +994,8 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: I always liked the warmth of this fire.
+        CardText: I always liked the warmth of this fire. Sitting around on these
+          tires was home for me.
         LeftText: Keep admiring fire.
         RightText: Go talk to Mary.
         card: {fileID: 11400000, guid: 633726b1d42dab94c865a7d5dc4c5eb3, type: 2}
@@ -989,7 +1014,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: I always liked the warmth of this fire.
+        CardText: I always liked the warmth of this fire.///I'll miss it.
         LeftText: Keep admiring fire.
         RightText: Go talk to Billy.
         card: {fileID: 11400000, guid: 633726b1d42dab94c865a7d5dc4c5eb3, type: 2}
@@ -1008,7 +1033,8 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: I always liked the warmth of this fire.
+        CardText: I always liked the warmth of this fire.///I'll miss the dirty of
+          this camp.
         LeftText: Keep admiring fire.
         RightText: Go talk to Jim.
         card: {fileID: 11400000, guid: 633726b1d42dab94c865a7d5dc4c5eb3, type: 2}
@@ -1018,16 +1044,17 @@ MonoBehaviour:
         guid: 759f0089-3b4a-40c3-9c44-41e87161fb15
         position:
           serializedVersion: 2
-          x: 10307
-          y: 300
-          width: 341
+          x: 10291
+          y: 80
+          width: 759
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: I always liked the warmth of this fire.
+        CardText: I always liked the warmth of this fire.///I wonder if I'll feel
+          home ever again once I leave this place.
         LeftText: Keep admiring fire.
         RightText: Go talk to Biggie
         card: {fileID: 11400000, guid: 633726b1d42dab94c865a7d5dc4c5eb3, type: 2}
@@ -1111,10 +1138,18 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: " I see you have already decided your gang \nmembers, you then
-          have all set up to start \nyour journey. Except for your broken van, \nyou
-          will find it difficult to get out of Admired \nTown if you don't get it
-          fixed."
+        CardText: 'I see you have already decided your gang
+
+          members, you
+          then have all set up to start
+
+          your journey. Except for your
+          broken van,
+
+          you will find it difficult to get out of Admired
+
+          Town
+          if you don''t get it fixed.'
         LeftText: Here we go!
         RightText: Let's gooo!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1132,8 +1167,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "It's true, our caravan is broken down. \nWe better find a way
-          to fix it if we\n want to get out of Admired Town."
+        CardText: 'It''s true, our caravan is broken down.
+
+          We better find
+          a way to fix it if we
+
+          want to get out of Admired Town.'
         LeftText: Let's explore Admired Town on foot then.
         RightText: Let's explore Admired Town on foot then.
         card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
@@ -1251,9 +1290,18 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: " I'm delighted to go with you, buddie, \nwe then have all set
-          up to start our journey. \nExcept for our broken van, we will find it \ndifficult
-          to get out of Admired Town if don't\n get it fixed."
+        CardText: ' I''m delighted to go with you, buddie,
+
+          we then have
+          all set up to start our journey.
+
+          Except for our broken van,
+          we will find it
+
+          difficult to get out of Admired Town if don''t
+
+          get
+          it fixed.'
         LeftText: Here we go!
         RightText: Let's gooo!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1271,9 +1319,15 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "I'm delighted to go with you, buddie. \nBut you're  lacking some
-          members still, \ncome talk to me again when you have\n 3 members on your
-          deck :)"
+        CardText: 'I''m delighted to go with you, buddie.
+
+          But you''re 
+          lacking some members still,
+
+          come talk to me again when you have
+
+          3
+          members on your deck :)'
         LeftText: Alright, I'll comeback later.
         RightText: Alright, I'll comeback later.
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1357,8 +1411,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "I see you've already formed your gang\n and you're leaving me
-          in this shithole alone..."
+        CardText: 'I see you''ve already formed your gang
+
+          and you''re
+          leaving me in this shithole alone...'
         LeftText: I am sorry Mary. In another life, maybe.
         RightText: You are better here, Mary. Bye.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -1449,8 +1505,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "I am not staying at this shithole. Of course\n I want to. Moreover,
-          who else would scold you if not?"
+        CardText: 'I am not staying at this shithole.
+
+          Of course I want
+          to. Moreover, who else would scold you if not?'
         LeftText: Ok, great, mum.
         RightText: I like this shithole.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -1524,8 +1582,13 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yassss, I am not staying at this shithole.\n Of course I am joinng
-          the gang. \nMoreover, who else would scold you if not?"
+        CardText: 'Yassss, I am not staying at this shithole.
+
+          Of course
+          I am joinng the gang.
+
+          Moreover, who else would scold you if
+          not?'
         LeftText: Ok, great, mum.
         RightText: I like this shithole.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -1649,9 +1712,9 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Happy birthday, colleague! Are you\n ready to form the next big
+        CardText: "Happy birthday, colleague! Are you ready to form the next big
           band from \nAdmired Town?"
-        LeftText: Easy, Billy
+        LeftText: Easy, Billy.
         RightText: I am.
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
     - rid: 8807612151756488766
@@ -1669,11 +1732,11 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "So, as you know I am brother of  one of the members\n of the greatest
-          gang in town, the Puritans.\n You may find some help from their part if
-          you got me\n by your side when you leave the settlement."
+        CardText: "So, as you know I am brother of one of the members of the greatest
+          gang in town, the Puritans. \nYou may find some help from their part if
+          you got me by your side when you leave the settlement."
         LeftText: I do not like brown-noses.
-        RightText: You are coming with me
+        RightText: You are coming with me.
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
     - rid: 8807612151756488767
       type: {class: RecruitActionNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1681,8 +1744,8 @@ MonoBehaviour:
         guid: fec1ad08-8d12-4154-9799-d2d6038a89cd
         position:
           serializedVersion: 2
-          x: 7143
-          y: -790
+          x: 7218
+          y: -783
           width: 356
           height: 98
         typeName: CodeGraph.RecruitActionNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1783,8 +1846,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Heeeey, mate, I love the band you have\n formed we see each other
-          in another time, \ngood luck!"
+        CardText: 'Heeeey, mate, I love the band you have
+
+          formed we see
+          each other in another time,
+
+          good luck!'
         LeftText: Thanks. See you soon, Jim.
         RightText: I'll definitely see you soon, Jim. Bye!
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -1821,9 +1888,14 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "I thought this day was never going to arrive, but it has come
-          indeed.\n I am in a wheelchair, as you know, so I will not be able to go
-          with you,\n but that's nothing to be sad for, mate. I'm happy for you indeed."
+        CardText: 'I thought this day was never going to arrive, but it has come
+          indeed.
+
+          I am in a wheelchair, as you know, so I will not be
+          able to go with you,
+
+          but that''s nothing to be sad for, mate.
+          I''m happy for you indeed.'
         LeftText: Thanks, mate. I have a band to form, bye!
         RightText: Hey, you can be part of the gang team anyway.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -1878,8 +1950,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: ' You want me to join the Gang? In that case... I bought you something,
-          mate.'
+        CardText: You want me to join the Gang? In that case... I bought you something,
+          mate.
         LeftText: Really?!
         RightText: THANK U
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -1897,8 +1969,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "I will not be able to go with you on adventures as\n you could
-          guess... So now, with this, we can\n keep in contact."
+        CardText: 'I will not be able to go with you on adventures as
+
+          you
+          could guess... So now, with this, we can
+
+          keep in contact.'
         LeftText: We definitely will keep contact, mate.
         RightText: Ok, now you have made it my best birthday.
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
