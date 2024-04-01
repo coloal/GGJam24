@@ -36,6 +36,8 @@ public class CombatManager : MonoBehaviour
     }
 
     [Header("Combat field configuration")]
+    [Header("Combat general configurations")]
+    [SerializeField] private float secondsBetweenCombatPhases = 0.7f;
     [Header("Cards positions")]
     [SerializeField] private Transform enemyCardOrigin;
     [SerializeField] private Transform attackerCardOrigin;
@@ -393,34 +395,27 @@ public class CombatManager : MonoBehaviour
 
     public void PerformPlayerAttackAction()
     {
-        AttackEffectiveness AttackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
-        CombatCard CurrentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
-
-        if (CurrentAttackerCombatCard && enemyCard)
-        {
-            CombatUtils.Attack(
-                attackerCombatCard: CurrentAttackerCombatCard,
-                defenderCombatCard: enemyCard,
-                out AttackFinalEffectiveness
-            );
-            GameManager.Instance.ProvideBrainSoundManager().PlaySoundCombat(AttackFinalEffectiveness);
-            CurrentAttackerCombatCard.ReduceAttackerEnergy(energyToReduce: 1);
-        }
-
-        SetCombatState(CombatStates.ENEMY_ATTACK);
-    }
-
-    void PerformEnemyAttackAction()
-    {
         AttackEffectiveness attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
         CombatCard currentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
 
-        if (currentAttackerCombatCard && enemyCard && combatSceneUIController)
+        if (currentAttackerCombatCard && enemyCard)
         {
             CombatUtils.Attack(
-                attackerCombatCard: enemyCard,
-                defenderCombatCard: currentAttackerCombatCard,
+                attackerCombatCard: currentAttackerCombatCard,
+                defenderCombatCard: enemyCard,
                 out attackFinalEffectiveness
+            );
+
+            CombatSceneManager.Instance.ProvideCombatVisualManager().PlayGetHitAnimation(
+                cardToGetHit: enemyCard.gameObject,
+                attackEffectiveness: attackFinalEffectiveness,
+                onAnimationEnded: () => {
+                    currentAttackerCombatCard.ReduceAttackerEnergy(energyToReduce: 1);
+                    GameUtils.CreateTemporizer(() => {
+                        SetCombatState(CombatStates.ENEMY_ATTACK);
+                    }, secondsBetweenCombatPhases, this);
+
+                }
             );
 
             if (enemyCard.GetHealthPoints() > 0)
@@ -438,9 +433,36 @@ public class CombatManager : MonoBehaviour
                         break;
                 }
             }
-        }
 
-        SetCombatState(CombatStates.CHECK_COMBAT_RESULTS);
+            GameManager.Instance.ProvideBrainSoundManager().PlaySoundCombat(attackFinalEffectiveness);
+        }
+    }
+
+    void PerformEnemyAttackAction()
+    {
+        AttackEffectiveness attackFinalEffectiveness = AttackEffectiveness.NEUTRAL;
+        CombatCard currentAttackerCombatCard = currentAttacker.partyMemberGameObject.GetComponent<CombatCard>();
+
+        if (currentAttackerCombatCard && enemyCard && combatSceneUIController)
+        {
+            CombatUtils.Attack(
+                attackerCombatCard: enemyCard,
+                defenderCombatCard: currentAttackerCombatCard,
+                out attackFinalEffectiveness
+            );
+
+            CombatSceneManager.Instance.ProvideCombatVisualManager().PlayGetHitAnimation(
+                cardToGetHit: currentAttackerCombatCard.gameObject,
+                attackEffectiveness: attackFinalEffectiveness,
+                onAnimationEnded: () => {
+                    GameUtils.CreateTemporizer(() => {
+                        SetCombatState(CombatStates.CHECK_COMBAT_RESULTS);
+                    }, secondsBetweenCombatPhases, this);
+                }
+            );
+
+            GameManager.Instance.ProvideBrainSoundManager().PlaySoundCombat(attackFinalEffectiveness);
+        }
     }
 
     void HideEnemyDialogBubble()

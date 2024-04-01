@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 289858877}
   - component: {fileID: 289858876}
   - component: {fileID: 289858878}
+  - component: {fileID: 289858879}
   m_Layer: 0
   m_Name: CombatVisualManager
   m_TagString: Untagged
@@ -314,6 +315,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 50
+--- !u!114 &289858879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289858875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff142757762794becb5dd336cb026aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 0.7
+  animationUpdateRateSeconds: 0.05
+  superEffectiveAttackRadius: 0.5
+  neutralAttackRadius: 0.25
+  notVeryEffectiveAttackRadius: 0.1
 --- !u!1 &323448712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b650ef1eaee4ae9bf4bdcbd5817b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsBetweenCombatPhases: 0.7
   enemyCardOrigin: {fileID: 332947331}
   attackerCardOrigin: {fileID: 78562894}
   caughtCardOrigin: {fileID: 1106306498}
