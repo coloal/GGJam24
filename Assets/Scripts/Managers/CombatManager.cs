@@ -615,6 +615,12 @@ public class CombatManager : MonoBehaviour
 
     void SetUpEnemyCardCaughtableState()
     {
+        void SetEnemyCardPositionToCaughtableCardPosition()
+        {
+            enemyCard.transform.position = caughtCardOrigin.position;
+            enemyCard.transform.rotation = caughtCardOrigin.rotation;   
+        }
+
         void SetUpEnemyOnSwipeLeftActions(
             CombatCard enemyCombatCardComponent, 
             InteractiveCombatCardComponent enemyInteractiveCombarCardComponent)
@@ -641,6 +647,8 @@ public class CombatManager : MonoBehaviour
             enemyInteractiveCombarCardComponent.SetOnSwipeRightAction(() =>
             {
                 AddOrSwapEnemyAsPartyMember();
+                enemyInteractiveCombarCardComponent.DisableDraggableComponents();
+                SetEnemyCardPositionToCaughtableCardPosition();
             });
 
             enemyInteractiveCombarCardComponent.SetOnSwipeRightEscapeZoneActions(
@@ -649,8 +657,7 @@ public class CombatManager : MonoBehaviour
             );
         }
 
-        enemyCard.transform.position = caughtCardOrigin.position;
-        enemyCard.transform.rotation = caughtCardOrigin.rotation;
+        SetEnemyCardPositionToCaughtableCardPosition();
 
         CombatCard enemyCombatCardComponent = enemyCard.GetComponent<CombatCard>();
         InteractiveCombatCardComponent enemyInteractiveCombarCardComponent =
