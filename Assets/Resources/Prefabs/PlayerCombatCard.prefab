@@ -687,7 +687,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Esto es un texto
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4f7e54dc3d215fc4a998bdb87de0e563, type: 2}
   m_sharedMaterial: {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2130166981060958153
@@ -2248,7 +2248,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  - {fileID: 4121296357306354637, guid: fc69dd0c31530aa4fa9cd761239e56de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2292,15 +2292,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Joven desvalido
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
-  m_sharedMaterial: {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fc69dd0c31530aa4fa9cd761239e56de, type: 2}
+  m_sharedMaterial: {fileID: 4121296357306354637, guid: fc69dd0c31530aa4fa9cd761239e56de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281281830
-  m_fontColor: {r: 0.14901961, g: 0.1764706, b: 0.18431373, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
