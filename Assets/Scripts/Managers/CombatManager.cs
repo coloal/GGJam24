@@ -44,6 +44,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private Transform caughtCardOrigin;
     [SerializeField] private Transform playerCardsOrigin;
     [SerializeField] private float playerCardsHorizontalOffset = 3.0f;
+    [SerializeField] private Transform CardsContainer;
     
     [Header("Swipe actions texts")]
     [SerializeField] private string placeAsAttackerCardText;
@@ -51,6 +52,10 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private string attackText;
     [SerializeField] private string captureCardText;
     [SerializeField] private string letGoCardText;
+
+    [Header("Hide Config")]
+    [SerializeField] private float hideDistance;
+    [SerializeField] private float activationTime;
 
     [Header("UI configuration")]
     [SerializeField] private CombatSceneController combatSceneUIController;
@@ -85,6 +90,14 @@ public class CombatManager : MonoBehaviour
 
     public void SetCombatState(CombatStates state)
     {
+        if(state == CombatStates.CHOOSE_ATTACKER)
+        {
+            ShowCards();
+        }
+        else if(currentState == CombatStates.CHOOSE_ATTACKER)
+        {
+            HideCards();
+        }
         Debug.Log("Started: " + state.ToString());
         currentState = state;
         ProcessCurrentCombatState();
@@ -197,7 +210,7 @@ public class CombatManager : MonoBehaviour
             );
 
             partyMemberGameObject.transform.position = spawnPosition;
-
+            partyMemberGameObject.transform.parent = CardsContainer;
             // Setting up PartyMember as an object in the local scene logic context
             PartyMemberInSceneInfo partyMemberInScene = new PartyMemberInSceneInfo(partyMembers[i], partyMemberGameObject, spawnPosition);
             SetUpPartyMemberCard(partyMemberInScene);
@@ -310,7 +323,7 @@ public class CombatManager : MonoBehaviour
 
     void ChooseAttacker()
     {
-        SetPartyMembersCardsInHandActivation(true);
+        GameUtils.CreateTemporizer(() => SetPartyMembersCardsInHandActivation(true), activationTime, this);
         DeactivateAttackerCard();
     }
 
@@ -337,11 +350,10 @@ public class CombatManager : MonoBehaviour
     {
         // If there's already an atacker card, swap it with the new card
         ReturnAttackerCardToHand();
-
+        NewAttacker.partyMemberGameObject.transform.parent = null;
         currentAttacker = NewAttacker;
         currentAttacker.partyMemberGameObject.transform.position = attackerCardOrigin.position;
         currentAttacker.partyMemberGameObject.transform.rotation = attackerCardOrigin.rotation;
-
         SetCombatState(CombatStates.CHOOSE_ACTION);
     }
 
@@ -351,8 +363,29 @@ public class CombatManager : MonoBehaviour
         {
             currentAttacker.partyMemberGameObject.transform.position = currentAttacker.positionInHand;
             currentAttacker.partyMemberGameObject.transform.rotation = Quaternion.identity;
+            currentAttacker.partyMemberGameObject.transform.parent = CardsContainer;
         }
         currentAttacker.partyMemberGameObject = null;
+    }
+
+    void HideCards()
+    {
+        VerticalDraggableComponentNoInput hideComponent = CardsContainer.GetComponent<VerticalDraggableComponentNoInput>();
+        if (hideComponent != null)
+        {
+            hideComponent.RestartMovement();
+            hideComponent.SetRelativeTargetPosition(-hideDistance);
+        }
+    }
+
+    void ShowCards()
+    {
+        VerticalDraggableComponentNoInput hideComponent = CardsContainer.GetComponent<VerticalDraggableComponentNoInput>();
+        if(hideComponent != null)
+        {
+            hideComponent.RestartMovement();
+            hideComponent.SetRelativeTargetPosition(0);
+        }
     }
 
     void SetPartyMembersCardsInHandActivation(bool areCardsActive)
