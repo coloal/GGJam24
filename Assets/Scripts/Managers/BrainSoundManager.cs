@@ -289,15 +289,19 @@ public class BrainSoundManager : MonoBehaviour
 
         CombatSoundInstance.start();
 
+        /*
         GameUtils.CreateTemporizer(() =>
         {
             CombatSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }, 0.75f, this);
-
+        */
     }
 
     public void PlayCardSound(CardSounds type)
     {
+        CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, type.ToString());
+
+        /*
         switch (type)
         {
             case CardSounds.Center:
@@ -309,17 +313,14 @@ public class BrainSoundManager : MonoBehaviour
             case CardSounds.Right:
                 CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Right.ToString());
                 break;
-
+            case CardSounds.Phone:
+                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Phone.ToString());
+                break;
         }
-
+        */
         CardSoundsInstance.start();
 
-        /*
-         GameUtils.CreateTemporizer(() =>
-        {
-            CardSoundsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }, 0.5f, this);
-        */
+
     }
 
     /***** QUERIES *****/
