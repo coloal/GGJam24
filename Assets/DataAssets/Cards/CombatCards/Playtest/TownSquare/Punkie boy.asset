@@ -21,8 +21,8 @@ MonoBehaviour:
   CharacterSpriteMoney: {fileID: -1965159758, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
   CharacterSpriteViolence: {fileID: -274480241, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
   HealthPoints: 6
-  Damage: 1
-  Armor: 1
-  Turns: 3
+  Damage: 2
+  Armor: 0
+  Turns: 5
   CombatType: 2
   Instrument: 
