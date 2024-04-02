@@ -237,6 +237,7 @@ public class GameManager : MonoBehaviour
         StoryManager.ResetStory();
         BrainManager.ResetMemories();
         BrainSoundManager.ChangeZone(BrainManager.ZoneInfo.StoryMusicZone);
+        BrainSoundManager.ResetNess();
         PartyManager.ClearParty();
         SetHasToResetGame(true);
     }

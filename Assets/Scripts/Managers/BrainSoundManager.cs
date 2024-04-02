@@ -64,7 +64,7 @@ public class BrainSoundManager : MonoBehaviour
         GameOverInstance = FMODUnity.RuntimeManager.CreateInstance(GameOverEventPath);
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
         CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(CardSoundsEventPath);
-        StepsInstance = CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(StepsEventPath);
+        StepsInstance =  FMODUnity.RuntimeManager.CreateInstance(StepsEventPath);
     }
 
     void InitializeData()
@@ -209,6 +209,11 @@ public class BrainSoundManager : MonoBehaviour
         }*/
     }
 
+    public void ResetNess()
+    {
+        SetStorySound(BrainSoundTag.Ness, 0.0f);
+    }
+
     public void StartCombat(List<PartyMember> members, bool bIsBossFight = false)
     {
         //Valor por defecto para que comience el combate
@@ -218,9 +223,19 @@ public class BrainSoundManager : MonoBehaviour
             CombatValue = 2;
         }
 
+        SetStorySound(BrainSoundTag.Acordeon, 0.0f);
+        SetStorySound(BrainSoundTag.Clavicordio, 0.0f);
+        SetStorySound(BrainSoundTag.Guitar, 0.0f);
+
+
         foreach (PartyMember member in members)
         {
-            //Smokey girl
+            if (member.CombatCardTemplate.Instrument != "")
+            {
+                SetStorySound(member.CombatCardTemplate.Instrument, 1.0f);
+            }
+
+            /*
             if (member.CombatCardTemplate.Instrument == BrainSoundTag.Acordeon)
             {
                 SetStorySound(BrainSoundTag.Acordeon, 1.0f);
@@ -236,7 +251,7 @@ public class BrainSoundManager : MonoBehaviour
             if (member.CombatCardTemplate.Instrument == BrainSoundTag.Guitar)
             {
                 SetStorySound(BrainSoundTag.Guitar, 1.0f);
-            }
+            }*/
         }
 
         SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
