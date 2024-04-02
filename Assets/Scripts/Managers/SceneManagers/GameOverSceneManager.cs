@@ -28,10 +28,26 @@ public class GameOverSceneManager : BaseSceneManager
 
     void Start()
     {
+        Init();
         cardsManager.SpawnNextCard(
             gameOverCardTemplate,
-            onSwipeLeft: () => { Application.Quit(); },
-            onSwipeRight: () => { SceneManager.LoadScene(ScenesNames.MainGameScene); });
+            onSwipeLeft: () => {
+                if (Application.isEditor)
+                {
+                    ResetGame();
+                }
+                else
+                {
+                    Application.Quit();
+                }
+            },
+            onSwipeRight: () => { ResetGame(); });
+    }
+
+    void ResetGame()
+    {
+        GameManager.Instance.ResetGame();
+        SceneManager.LoadScene(ScenesNames.MainGameScene);
     }
 
     public CardsManager ProvideCardsManager()

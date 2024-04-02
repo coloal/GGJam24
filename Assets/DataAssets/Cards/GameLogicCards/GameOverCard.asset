@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameOverCard
   m_EditorClassIdentifier: 
   NameOfCard: Game Over
-  Text: Thank you so much for playing my game!
-  LeftText: Close game
-  RightText: Restart!
+  Text: 
+  LeftText: I'm tired of reading
+  RightText: I'll try again
   CardSprite: {fileID: 21300000, guid: 692f40adcc25f7f499fa9a2c1e302281, type: 3}

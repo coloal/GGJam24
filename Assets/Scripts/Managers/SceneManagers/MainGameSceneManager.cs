@@ -28,6 +28,12 @@ public class MainGameSceneManager : BaseSceneManager
     {
         Init();
         turnManager.SetZoneSprites();
+
+        if (GameManager.Instance.HasToResetGame())
+        {
+            turnManager.StartTurn();
+            GameManager.Instance.SetHasToResetGame(false);
+        }
     }
 
 

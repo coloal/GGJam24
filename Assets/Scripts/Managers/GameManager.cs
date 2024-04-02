@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     [SerializeField]
     AudioManager AudioManager;
-    
-    
-    
     [SerializeField]
     BrainManager BrainManager;
     [SerializeField]
@@ -22,6 +19,8 @@ public class GameManager : MonoBehaviour
     StoryManager StoryManager;
     [SerializeField]
     PartyManager PartyManager;
+
+    private bool hasToResetGame = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();
 
@@ -118,6 +117,7 @@ public class GameManager : MonoBehaviour
                     {
                         GameManager.Instance.ProvideBrainSoundManager().StartGameOver();
                         mainGameSceneManager.ProvideTurnManager().LoseCombat(true);
+                        SceneManager.LoadScene(ScenesNames.GameOverScene);
                     }
                 };
                 break;
@@ -230,6 +230,25 @@ public class GameManager : MonoBehaviour
                 }
             });
         }
+    }
+
+    public void ResetGame()
+    {
+        StoryManager.ResetStory();
+        BrainManager.ResetMemories();
+        BrainSoundManager.ChangeZone(BrainManager.ZoneInfo.StoryMusicZone);
+        PartyManager.ClearParty();
+        SetHasToResetGame(true);
+    }
+
+    public bool HasToResetGame()
+    {
+        return hasToResetGame;
+    }
+
+    public void SetHasToResetGame(bool hasToResetGame)
+    {
+        this.hasToResetGame = hasToResetGame;
     }
 
 }

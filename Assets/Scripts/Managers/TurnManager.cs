@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -98,8 +99,8 @@ public class TurnManager : MonoBehaviour
         //Nodo de carta de final
         else if (nextStepInfo is EndStep endStep)
         {
-            //GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
             Debug.LogWarning("Your deck is empty!");
+            SceneManager.LoadScene(ScenesNames.GameOverScene);
         }
         else
         {

@@ -40,8 +40,7 @@ public class StoryManager : MonoBehaviour
         InitStory();
        
     }
-
-
+    
     public void InitStory()
     {
         GameObject go = Instantiate(PrefabCodeGraph);
@@ -124,6 +123,11 @@ public class StoryManager : MonoBehaviour
             return other.GetGraphAsset().Equals(story);
         });
     }
-    
 
+    public void ResetStory()
+    {
+        existingStoryList = new List<CodeGraphObject>();
+        storyStack = new List<CodeGraphObject>();
+        InitStory();
+    }
 }

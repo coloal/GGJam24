@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
+  m_Name: GameOver_test
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 1338229946866728962
+  - rid: 1338229946866728964
+  - rid: 1338229946866728965
+  - rid: 1338229949134798848
+  - rid: 1338229950059642882
+  connections:
+  - outputPort:
+      nodeId: ef93b4ee-6ee1-4102-9853-9d24b6a963ab
+      portIndex: 0
+    inputPort:
+      nodeId: cc272e3a-2f63-4abb-be40-9847a288c3fb
+      portIndex: 0
+  - outputPort:
+      nodeId: ef93b4ee-6ee1-4102-9853-9d24b6a963ab
+      portIndex: 1
+    inputPort:
+      nodeId: cc272e3a-2f63-4abb-be40-9847a288c3fb
+      portIndex: 0
+  - outputPort:
+      nodeId: ef93b4ee-6ee1-4102-9853-9d24b6a963ab
+      portIndex: 2
+    inputPort:
+      nodeId: cc272e3a-2f63-4abb-be40-9847a288c3fb
+      portIndex: 0
+  - outputPort:
+      nodeId: ef93b4ee-6ee1-4102-9853-9d24b6a963ab
+      portIndex: 3
+    inputPort:
+      nodeId: cc272e3a-2f63-4abb-be40-9847a288c3fb
+      portIndex: 0
+  - outputPort:
+      nodeId: 69bba53d-bb4f-49db-9b68-aef95f4fe50a
+      portIndex: 1
+    inputPort:
+      nodeId: ef93b4ee-6ee1-4102-9853-9d24b6a963ab
+      portIndex: 4
+  - outputPort:
+      nodeId: b38dbeb1-b676-4921-8526-cd5398036012
+      portIndex: 0
+    inputPort:
+      nodeId: 69bba53d-bb4f-49db-9b68-aef95f4fe50a
+      portIndex: 2
+  - outputPort:
+      nodeId: 69bba53d-bb4f-49db-9b68-aef95f4fe50a
+      portIndex: 0
+    inputPort:
+      nodeId: 48c82e6e-e6ad-47f7-bc7b-0d664e5daa56
+      portIndex: 1
+  - outputPort:
+      nodeId: 48c82e6e-e6ad-47f7-bc7b-0d664e5daa56
+      portIndex: 0
+    inputPort:
+      nodeId: cc272e3a-2f63-4abb-be40-9847a288c3fb
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 1338229946866728962
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b38dbeb1-b676-4921-8526-cd5398036012
+        position:
+          serializedVersion: 2
+          x: -401.5
+          y: 270
+          width: 81
+          height: 77
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+    - rid: 1338229946866728964
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ef93b4ee-6ee1-4102-9853-9d24b6a963ab
+        position:
+          serializedVersion: 2
+          x: 616
+          y: 401
+          width: 395.5
+          height: 188
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Win no Capture
+        - Lose Combat
+        - Game Over
+        card: {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
+        IsBossFight: 0
+    - rid: 1338229946866728965
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cc272e3a-2f63-4abb-be40-9847a288c3fb
+        position:
+          serializedVersion: 2
+          x: 1235
+          y: 347
+          width: 73.5
+          height: 77
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1338229949134798848
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 69bba53d-bb4f-49db-9b68-aef95f4fe50a
+        position:
+          serializedVersion: 2
+          x: -163.5
+          y: 233.5
+          width: 342.5
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: This is a test for game over screen
+        LeftText: End game
+        RightText: Go to a battle
+        card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
+    - rid: 1338229950059642882
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 48c82e6e-e6ad-47f7-bc7b-0d664e5daa56
+        position:
+          serializedVersion: 2
+          x: 560.9173
+          y: 158.44469
+          width: 0
+          height: 0
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}

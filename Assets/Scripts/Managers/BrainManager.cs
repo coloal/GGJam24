@@ -20,6 +20,8 @@ public class BrainManager : MonoBehaviour
 
     [HideInInspector]public bool bIsBossFight;
 
+    private ZoneTemplate defaultZoneInfo;
+
     /***** INITIALIZE *****/
 
     private void Awake()
@@ -34,41 +36,36 @@ public class BrainManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+
+        InitializeData();
+        defaultZoneInfo = ZoneInfo;
     }
 
-    void Start()
+    public void ResetMemories()
     {
+        zoneInfo = defaultZoneInfo;
         InitializeData();
     }
 
-    void InitializeData()
+    public void InitializeData()
     {
-        if (BrainTagsMap == null)
+        BrainTagsMap = new Dictionary<BrainTag, bool>();
+        foreach (BrainTag tag in Enum.GetValues(typeof(BrainTag)))
         {
-            BrainTagsMap = new Dictionary<BrainTag, bool>();
-            foreach (BrainTag tag in Enum.GetValues(typeof(BrainTag)))
-            {
-                BrainTagsMap.Add(tag, false);
-            }
+            BrainTagsMap.Add(tag, false);
         }
 
-        if (BrainNumericMap == null)
+        BrainNumericMap = new Dictionary<NumericTags, int>();
+        foreach (NumericTags tag in Enum.GetValues(typeof(NumericTags)))
         {
-            BrainNumericMap = new Dictionary<NumericTags, int>();
-            foreach (NumericTags tag in Enum.GetValues(typeof(NumericTags)))
-            {
-                BrainNumericMap.Add(tag,0);
-            }
+            BrainNumericMap.Add(tag, 0);
         }
 
-        if (BrainStateMap == null)
-        {
-            BrainStateMap = new Dictionary<string, string>();
+        BrainStateMap = new Dictionary<string, string>();
 
-            for (int i = 0; i < StateInfo.info.Count; i++)
-            {
-                BrainStateMap.Add(StateInfo.info[i].Item1, StateInfo.info[i].Item2[0]);
-            }
+        for (int i = 0; i < StateInfo.info.Count; i++)
+        {
+            BrainStateMap.Add(StateInfo.info[i].Item1, StateInfo.info[i].Item2[0]);
         }
     }
 
