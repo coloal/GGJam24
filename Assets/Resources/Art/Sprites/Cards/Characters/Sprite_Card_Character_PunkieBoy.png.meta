@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 529d792aab6fc1342878289967bb67e1
-      internalID: -274480241
+      spriteID: def9c3c3a0333654aae2c24cbbd39920
+      internalID: 1569568018
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7ebae0d925d56d4ebef76ccfd1d4714
-      internalID: -1965159758
+      spriteID: bd4191f707caac444a70029ba1524388
+      internalID: -327455295
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fbabfa0e22405446b5edd5598d19b44
-      internalID: 1099726177
+      spriteID: c01324a01735602449af61a3007c1e28
+      internalID: -1607803143
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22e8d9998c24e3440abcfd080589d7f0
-      internalID: -444505294
+      spriteID: 19cff81f12622ab4a9fa40e2b663f9a8
+      internalID: -1023199691
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9d7f7430567ba24e9bcbf93f86d2f84
-      internalID: -144132810
+      spriteID: 8a12984f2ae1eb6429e436ce6d2da27f
+      internalID: 2096799782
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_PunkieBoy_0: -274480241
-      Sprite_Card_Character_PunkieBoy_1: -1965159758
-      Sprite_Card_Character_PunkieBoy_2: 1099726177
-      Sprite_Card_Character_PunkieBoy_3: -444505294
-      Sprite_Card_Character_PunkieBoy_4: -144132810
+      Sprite_Card_Character_PunkieBoy_0: 1569568018
+      Sprite_Card_Character_PunkieBoy_1: -327455295
+      Sprite_Card_Character_PunkieBoy_2: -1607803143
+      Sprite_Card_Character_PunkieBoy_3: -1023199691
+      Sprite_Card_Character_PunkieBoy_4: 2096799782
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

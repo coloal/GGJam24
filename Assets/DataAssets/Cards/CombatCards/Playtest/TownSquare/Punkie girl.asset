@@ -16,10 +16,10 @@ MonoBehaviour:
   InitialText: Cammon let's do this!
   EffectiveText: Uh damn that was effective.
   NonEffectiveText: Excuse me, was that an attack?
-  CharacterSpriteUnknown: {fileID: -2099994817, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
-  CharacterSpriteInlfuence: {fileID: 550063767, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
-  CharacterSpriteMoney: {fileID: -1587256578, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
-  CharacterSpriteViolence: {fileID: -290622599, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  CharacterSpriteUnknown: {fileID: -1353890200, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  CharacterSpriteInlfuence: {fileID: -1956172489, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  CharacterSpriteMoney: {fileID: -297802928, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  CharacterSpriteViolence: {fileID: -1348423698, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
   HealthPoints: 6
   Damage: 3
   Armor: 1

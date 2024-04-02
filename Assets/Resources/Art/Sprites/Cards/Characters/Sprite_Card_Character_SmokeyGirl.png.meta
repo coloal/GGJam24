@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffea6acc4aeafd843b3f5d0d91998575
-      internalID: 508267745
+      spriteID: 16def1a92b71f25498701c1357ea2305
+      internalID: 1923692519
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d341884b71749d41a2adb06d250a053
-      internalID: -269991186
+      spriteID: 2fba45ff65123124ca5cf9a10375fe5c
+      internalID: -1886042128
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4f1efa8a96d2e44982e9fb3f6b37a7b
-      internalID: -302275415
+      spriteID: 73c393b994081c345aa7d0886f10e7c3
+      internalID: -1393349691
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f57f0df591817e34ea7f183d20a638dc
-      internalID: 1466046590
+      spriteID: 67c8f1336f5191242b33f712dede7dc1
+      internalID: -2085667841
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b6042a6b43e183478a906fd94dd3400
-      internalID: 385345938
+      spriteID: 01fc13436da5712488f49974ffa7ed41
+      internalID: 1712325361
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_SmokeyGirl_0: 508267745
-      Sprite_Card_Character_SmokeyGirl_1: -269991186
-      Sprite_Card_Character_SmokeyGirl_2: -302275415
-      Sprite_Card_Character_SmokeyGirl_3: 1466046590
-      Sprite_Card_Character_SmokeyGirl_4: 385345938
+      Sprite_Card_Character_SmokeyGirl_0: 1923692519
+      Sprite_Card_Character_SmokeyGirl_1: -1886042128
+      Sprite_Card_Character_SmokeyGirl_2: -1393349691
+      Sprite_Card_Character_SmokeyGirl_3: -2085667841
+      Sprite_Card_Character_SmokeyGirl_4: 1712325361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

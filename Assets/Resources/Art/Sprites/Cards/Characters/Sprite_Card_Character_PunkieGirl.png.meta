@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca49c40eec469b444bf10933f1f10e80
-      internalID: -290622599
+      spriteID: 28ba9132b6b4226429b5ce01d0c9a59e
+      internalID: -1348423698
       vertices: []
       indices: 
       edges: []
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c36fbea40342bd14f82a87329d7f3e0b
-      internalID: -1587256578
+      spriteID: 4bb25e56123254c45b48f8bd4bc8122e
+      internalID: -297802928
       vertices: []
       indices: 
       edges: []
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bc37556b72d08c49a45452d2951b711
-      internalID: 550063767
+      spriteID: 85db566a437d6da4da8f920ca0319c77
+      internalID: -1956172489
       vertices: []
       indices: 
       edges: []
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85d3f40fbf749fa4b9c769553bbfae2c
-      internalID: -2099994817
+      spriteID: a1fa679e07314ac488b899ac2ee48acd
+      internalID: -1353890200
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72348891c838f4a40a4c7721303b1800
-      internalID: 1959566124
+      spriteID: a6f5c6c3f537a9c46a0377fae6750de0
+      internalID: -1734718243
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Card_Character_PunkieGirl_0: -290622599
-      Sprite_Card_Character_PunkieGirl_1: -1587256578
-      Sprite_Card_Character_PunkieGirl_2: 550063767
-      Sprite_Card_Character_PunkieGirl_3: -2099994817
-      Sprite_Card_Character_PunkieGirl_4: 1959566124
+      Sprite_Card_Character_PunkieGirl_0: -1348423698
+      Sprite_Card_Character_PunkieGirl_1: -297802928
+      Sprite_Card_Character_PunkieGirl_2: -1956172489
+      Sprite_Card_Character_PunkieGirl_3: -1353890200
+      Sprite_Card_Character_PunkieGirl_4: -1734718243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
