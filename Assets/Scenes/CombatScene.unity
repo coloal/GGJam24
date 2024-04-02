@@ -1929,8 +1929,8 @@ MonoBehaviour:
   placeAsAttackerCardText: I choose you!
   changeAttackerCardText: Change me
   attackText: Attack!
-  captureCardText: Capture!
-  letGoCardText: Let them go...
+  captureCardText: Join our gang!
+  letGoCardText: Go away!
   hideDistance: 2.5
   activationTime: 1.3
   combatSceneUIController: {fileID: 1733910848}
