@@ -188,6 +188,7 @@ MonoBehaviour:
   CombatEventPath: 
   GameOverEventPath: event:/Music/GameOver
   CombatSoundsEventPath: event:/SFX/CombatSounds
+  CardSoundsEventPath: event:/SFX/SwitchCard
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &179863778
@@ -919,7 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: bc2488a36df7f3f4bb3ea433b89afb7c, type: 2}
+  FirstStory: {fileID: 11400000, guid: 0453ffdf7c7768d41820d1f35d43a2e4, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0

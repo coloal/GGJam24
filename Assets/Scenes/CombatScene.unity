@@ -907,7 +907,7 @@ MonoBehaviour:
   m_text: lorem ipsum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f7e54dc3d215fc4a998bdb87de0e563, type: 2}
-  m_sharedMaterial: {fileID: 1228279822843557400, guid: 800db890c84384c84bfdd8477246fdaa, type: 2}
+  m_sharedMaterial: {fileID: 5487583754222309863, guid: 4f7e54dc3d215fc4a998bdb87de0e563, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1168,8 +1168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 590, y: 209}
-  m_SizeDelta: {x: 500.4547, y: 500.4523}
+  m_AnchoredPosition: {x: 590, y: 381.28223}
+  m_SizeDelta: {x: 500.4547, y: 155.8879}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &946342918
 GameObject:
@@ -1929,8 +1929,8 @@ MonoBehaviour:
   placeAsAttackerCardText: I choose you!
   changeAttackerCardText: Change me
   attackText: Attack!
-  captureCardText: Capture!
-  letGoCardText: Let them go...
+  captureCardText: Join our gang!
+  letGoCardText: Go away!
   hideDistance: 2.5
   activationTime: 1.3
   combatSceneUIController: {fileID: 1733910848}

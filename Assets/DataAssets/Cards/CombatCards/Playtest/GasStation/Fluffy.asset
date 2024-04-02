@@ -23,6 +23,6 @@ MonoBehaviour:
   HealthPoints: 8
   Damage: 3
   Armor: 2
-  Turns: 3
+  Turns: 5
   CombatType: 1
   Instrument: 

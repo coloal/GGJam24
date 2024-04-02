@@ -382,8 +382,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You were not able to fix your van and get out of this shithole
-          \ncalled Admired Town. Although you almost did it, this was the final boss."
+        CardText: 'You were not able to fix your van and get out of this shithole
+
+          called
+          Admired Town. Although you almost did it, this was the final boss.'
         LeftText: I'm tired of reading.
         RightText: I'll try again.
         card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
@@ -468,9 +470,17 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Well... We were having quite a boring \nevening my young visitors\n
-          but know that you are here I think we'll \nbe able to entertain ourselves
-          a little bit, \ndon't you think?"
+        CardText: 'Well... We were having quite a boring
+
+          evening my young
+          visitors
+
+          but know that you are here I think we''ll
+
+          be
+          able to entertain ourselves a little bit,
+
+          don''t you think?'
         LeftText: We had other plans for the evening.
         RightText: Yess, definitely.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
@@ -603,8 +613,8 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "Ok, great, you are starting to earn my respect now. \nLet me then
-          introduce you to your next rival, Dave,\n our mechanic. I bet you won't
-          last long against him."
+          introduce you to your next rival:\nour mechanic. I bet you won't last long
+          against him."
         LeftText: We'll see.
         RightText: Can't wait to have my van fixed.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
@@ -672,15 +682,24 @@ MonoBehaviour:
         guid: 9e4fa609-bf03-4729-b56e-e76c3d13e604
         position:
           serializedVersion: 2
-          x: 4987
-          y: 308
-          width: 321
+          x: 4913
+          y: 338
+          width: 440
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: HAHAHA I knew you were a bunch of weaklings.
+        CardText: 'HAHAHA I knew you were a bunch of weaklings,
+
+          we are
+          not gonna stay all evening looking at you.
+
+          You run out of battling
+          time, if you want to win
+
+          battles in this land you better optimse
+          your turns in battle.'
         LeftText: We all knew.
         RightText: I'll come after you.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}

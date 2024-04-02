@@ -499,8 +499,8 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Hmmm, but what do my eyes see? Isn't this the new town gang?
-        LeftText: Affirmatively, affirmative, mam.
-        RightText: Definitely definitive, mam.
+        LeftText: Affirmatively, affirmative, ma'am.
+        RightText: Definitely definitive, ma'am.
         card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
     - rid: 8807612109458243588
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -728,7 +728,7 @@ MonoBehaviour:
         CardText: 'So I have been able to hear there is a Mechanic
 
           of
-          The Puritans gang in the Gas stationn, may be he can fix our van.'
+          The Puritans gang in the Gas Station, may be he can fix our van.'
         LeftText: Sweet, mate.
         RightText: I expect they don't want to fight :/
         card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}

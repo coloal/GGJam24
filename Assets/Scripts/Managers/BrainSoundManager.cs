@@ -15,7 +15,8 @@ public class BrainSoundManager : MonoBehaviour
     [SerializeField] private string GameOverEventPath = "event:/Music/GameOver";
     [SerializeField] private string CombatSoundsEventPath = "event:/SFX/CombatSounds";
     [SerializeField] private string CardSoundsEventPath = "event:/SFX/SwitchCard";
-
+    [SerializeField] private string StepsEventPath = "event:/SFX/Steps";
+    
 
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float SpeedFadeIn = 0.2f;
@@ -38,6 +39,7 @@ public class BrainSoundManager : MonoBehaviour
     private FMOD.Studio.EventInstance CombatInstance;
     private FMOD.Studio.EventInstance CombatSoundInstance;
     private FMOD.Studio.EventInstance CardSoundsInstance;
+    private FMOD.Studio.EventInstance StepsInstance;
 
 
     public static BrainSoundManager Instance;
@@ -62,6 +64,7 @@ public class BrainSoundManager : MonoBehaviour
         GameOverInstance = FMODUnity.RuntimeManager.CreateInstance(GameOverEventPath);
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
         CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(CardSoundsEventPath);
+        StepsInstance = CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(StepsEventPath);
     }
 
     void InitializeData()
@@ -144,6 +147,7 @@ public class BrainSoundManager : MonoBehaviour
 
     public void ChangeZone(MusicZones zone)
     {
+        StepsInstance.start();
         SetStorySound(BrainSoundTag.Zone, (int)zone);
 
         if (zone == MusicZones.Settlement)
@@ -289,15 +293,19 @@ public class BrainSoundManager : MonoBehaviour
 
         CombatSoundInstance.start();
 
+        /*
         GameUtils.CreateTemporizer(() =>
         {
             CombatSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }, 0.75f, this);
-
+        */
     }
 
     public void PlayCardSound(CardSounds type)
     {
+        CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, type.ToString());
+
+        /*
         switch (type)
         {
             case CardSounds.Center:
@@ -309,17 +317,14 @@ public class BrainSoundManager : MonoBehaviour
             case CardSounds.Right:
                 CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Right.ToString());
                 break;
-
+            case CardSounds.Phone:
+                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Phone.ToString());
+                break;
         }
-
+        */
         CardSoundsInstance.start();
 
-        /*
-         GameUtils.CreateTemporizer(() =>
-        {
-            CardSoundsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }, 0.5f, this);
-        */
+
     }
 
     /***** QUERIES *****/
