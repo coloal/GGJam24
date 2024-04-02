@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a38bdde6b555245aa5008ae777d0b3, type: 3}
   m_Name: GameOverCard
   m_EditorClassIdentifier: 
-  NameOfCard: Game Over
+  NameOfCard: End of run
   Text: 
   LeftText: I'm tired of reading
   RightText: I'll try again
