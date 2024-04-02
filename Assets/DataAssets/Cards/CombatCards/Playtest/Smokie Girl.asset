@@ -23,6 +23,6 @@ MonoBehaviour:
   HealthPoints: 6
   Damage: 2
   Armor: 2
-  Turns: 2
+  Turns: 4
   CombatType: 1
   Instrument: Guitar

@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Fluffy
   m_EditorClassIdentifier: 
   NameOfCard: Fluffy
-  InitialText: Guau! Guau!
-  EffectiveText: Guau-Effective!
-  NonEffectiveText: Guau-Uneffective!
+  InitialText: Woof! Woof! I'm the the gang's puppy.
+  EffectiveText: Woof-Effective!
+  NonEffectiveText: Woof-Uneffective!
   CharacterSpriteUnknown: {fileID: 1158179062, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CharacterSpriteInlfuence: {fileID: 1269980941, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CharacterSpriteMoney: {fileID: -1804146668, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CharacterSpriteViolence: {fileID: 1701286051, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   HealthPoints: 8
-  Damage: 4
+  Damage: 3
   Armor: 2
-  Turns: 6
+  Turns: 8
   CombatType: 1
   Instrument: 
