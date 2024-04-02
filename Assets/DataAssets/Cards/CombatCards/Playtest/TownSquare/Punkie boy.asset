@@ -16,10 +16,10 @@ MonoBehaviour:
   InitialText: I love fighting newbies!
   EffectiveText: Damn, that was effective.
   NonEffectiveText: Pf, that's the harder you can hit me?
-  CharacterSpriteUnknown: {fileID: -444505294, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
-  CharacterSpriteInlfuence: {fileID: 1099726177, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
-  CharacterSpriteMoney: {fileID: -1965159758, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
-  CharacterSpriteViolence: {fileID: -274480241, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
+  CharacterSpriteUnknown: {fileID: -1023199691, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
+  CharacterSpriteInlfuence: {fileID: -1607803143, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
+  CharacterSpriteMoney: {fileID: -327455295, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
+  CharacterSpriteViolence: {fileID: 1569568018, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
   HealthPoints: 6
   Damage: 2
   Armor: 0
