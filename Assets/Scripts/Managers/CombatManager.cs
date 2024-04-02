@@ -152,6 +152,8 @@ public class CombatManager : MonoBehaviour
             onAnimationEnded: () =>
             {
                 UpdateCombatTurns(enemyCard.GetCombatTurnsForCard());
+                SpawnPlayerCards();
+                SetCombatState(CombatStates.CHOOSE_ATTACKER);
             });
 
         CombatSceneManager.Instance.ProvideCombatVisualManager().PlayMoveEnemyCardAnimation(
@@ -159,10 +161,7 @@ public class CombatManager : MonoBehaviour
             onAnimationEnded: () =>
             {
                 combatSceneUIController.ShowDialogText(enemyCard.GetInitialText(),
-                    onAnimationEnded: () => {
-                        SpawnPlayerCards();
-                        SetCombatState(CombatStates.CHOOSE_ATTACKER);
-                    });
+                    onAnimationEnded: () => {});
             });
     }
 

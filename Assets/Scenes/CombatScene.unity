@@ -1869,7 +1869,7 @@ Transform:
   m_GameObject: {fileID: 1444337250}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.67, y: -2.98, z: 0}
+  m_LocalPosition: {x: -7, y: -2.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1924,7 +1924,7 @@ MonoBehaviour:
   attackerCardOrigin: {fileID: 78562894}
   caughtCardOrigin: {fileID: 1106306498}
   playerCardsOrigin: {fileID: 1444337251}
-  playerCardsHorizontalOffset: 1
+  playerCardsHorizontalOffset: 0.25
   CardsContainer: {fileID: 397115839}
   placeAsAttackerCardText: I choose you!
   changeAttackerCardText: Change me
@@ -2384,7 +2384,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
   - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
   - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
-  maxPartySize: 3
+  - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
+  - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
+  maxPartySize: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
