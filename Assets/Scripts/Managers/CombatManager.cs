@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -258,7 +259,22 @@ public class CombatManager : MonoBehaviour
             {
                 partyMemberInteractiveCombatCardComponent.SetOnSwipeLeftAction(() => 
                 {
-                    SetCombatState(CombatStates.CHOOSE_ATTACKER);
+                    bool isThereAnyPlayerCardWithEnergy = partyMembersInScene.Any(partyMemberInScene => {
+                        CombatCard partyMemberInHandCombatCardComponent =
+                            partyMemberInScene.partyMemberGameObject.GetComponent<CombatCard>();
+                        if (partyMemberInHandCombatCardComponent 
+                            && partyMemberInScene.partyMemberGameObject != currentAttacker.partyMemberGameObject)
+                        {
+                            return partyMemberInHandCombatCardComponent.GetCardCurrentEnergy() > 0;
+                        }
+
+                        return false;
+                    });
+
+                    if (isThereAnyPlayerCardWithEnergy)
+                    {
+                        SetCombatState(CombatStates.CHOOSE_ATTACKER);
+                    }
                 });
             }
         }
