@@ -150,7 +150,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
+        card: {fileID: 11400000, guid: aa4a781ca92f71a4f8229c038ff8873f, type: 2}
     - rid: 8580623518225399813
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

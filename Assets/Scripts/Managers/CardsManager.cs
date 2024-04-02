@@ -97,7 +97,15 @@ public class CardsManager : MonoBehaviour
                 SetUpOnSwipeRightActions(newCard);
             }
 
-            GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Center);
+            if (!nextCard.NameOfCard.Equals("Mobile Phone"))
+            {
+                GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Center);
+            }
+            else
+            {
+                GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Phone);
+            }
+
         }
         
         //indexNextCard++;
