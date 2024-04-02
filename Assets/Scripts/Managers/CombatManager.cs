@@ -350,7 +350,7 @@ public class CombatManager : MonoBehaviour
     {
         // If there's already an atacker card, swap it with the new card
         ReturnAttackerCardToHand();
-        NewAttacker.partyMemberGameObject.transform.parent = null;
+        TakeCardFromContainer(NewAttacker);
         currentAttacker = NewAttacker;
         currentAttacker.partyMemberGameObject.transform.position = attackerCardOrigin.position;
         currentAttacker.partyMemberGameObject.transform.rotation = attackerCardOrigin.rotation;
@@ -361,11 +361,29 @@ public class CombatManager : MonoBehaviour
     {
         if (currentAttacker.partyMemberGameObject)
         {
+            
             currentAttacker.partyMemberGameObject.transform.position = currentAttacker.positionInHand;
             currentAttacker.partyMemberGameObject.transform.rotation = Quaternion.identity;
-            currentAttacker.partyMemberGameObject.transform.parent = CardsContainer;
+            PutCardInContainer(currentAttacker);
+
         }
         currentAttacker.partyMemberGameObject = null;
+    }
+
+    void PutCardInContainer(PartyMemberInSceneInfo card)
+    {
+
+        card.partyMemberGameObject.transform.parent = CardsContainer;
+        VerticalDraggableComponentNoInput hideComponent = CardsContainer.GetComponent<VerticalDraggableComponentNoInput>();
+        if (hideComponent != null)
+        {
+            currentAttacker.partyMemberGameObject.transform.position += hideComponent.GetMovedPosition();
+        }
+
+    }
+    void TakeCardFromContainer(PartyMemberInSceneInfo card)
+    {
+        card.partyMemberGameObject.transform.parent = null;
     }
 
     void HideCards()

@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 using static UnityEngine.Rendering.DebugUI;
 
 public class VerticalDraggableComponentNoInput : MonoBehaviour
@@ -74,4 +75,13 @@ public class VerticalDraggableComponentNoInput : MonoBehaviour
         velocity = 0;
     }
    
+    public float GetVerticalMovedPosition()
+    {
+        return transform.position.y - initialPosition.y;
+    }
+
+    public Vector3 GetMovedPosition()
+    {
+        return transform.position - new Vector3(initialPosition.x, initialPosition.y, 0);
+    }
 }
