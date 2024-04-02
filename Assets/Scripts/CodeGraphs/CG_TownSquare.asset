@@ -816,7 +816,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Hey, what did you do to my boy?
+        CardText: Hey, what did you do to my boy?!
         LeftText: You know he starts all fights.
         RightText: You better let yourself lose if you want to keep up with him.
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
