@@ -134,12 +134,6 @@ MonoBehaviour:
       nodeId: ee8c45c9-97bd-4629-ade9-e188ff79f69d
       portIndex: 0
   - outputPort:
-      nodeId: 3b4f6e0c-9a28-4e5d-92d7-3fa0ee494252
-      portIndex: 0
-    inputPort:
-      nodeId: 7ae9ddc6-0bc0-4ebc-b18b-dd32c7932b59
-      portIndex: 1
-  - outputPort:
       nodeId: 83724a4d-8315-4cdd-a5d2-e66bd2bdded6
       portIndex: 1
     inputPort:
@@ -154,12 +148,6 @@ MonoBehaviour:
   - outputPort:
       nodeId: a34924d0-356f-4ac7-bfba-935244e99114
       portIndex: 1
-    inputPort:
-      nodeId: 10021667-8065-4141-8b19-c7da6e624eac
-      portIndex: 1
-  - outputPort:
-      nodeId: 6b0f9f4b-d703-42f3-abda-5c782a42994d
-      portIndex: 0
     inputPort:
       nodeId: 10021667-8065-4141-8b19-c7da6e624eac
       portIndex: 1
@@ -319,6 +307,18 @@ MonoBehaviour:
     inputPort:
       nodeId: 0ad1a9e3-6d4b-41a8-9d78-cd00737fce2a
       portIndex: 0
+  - outputPort:
+      nodeId: 6b0f9f4b-d703-42f3-abda-5c782a42994d
+      portIndex: 0
+    inputPort:
+      nodeId: 7ae9ddc6-0bc0-4ebc-b18b-dd32c7932b59
+      portIndex: 1
+  - outputPort:
+      nodeId: 3b4f6e0c-9a28-4e5d-92d7-3fa0ee494252
+      portIndex: 0
+    inputPort:
+      nodeId: 10021667-8065-4141-8b19-c7da6e624eac
+      portIndex: 1
   references:
     version: 2
     RefIds:
