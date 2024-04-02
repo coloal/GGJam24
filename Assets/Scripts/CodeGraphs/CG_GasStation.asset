@@ -682,15 +682,24 @@ MonoBehaviour:
         guid: 9e4fa609-bf03-4729-b56e-e76c3d13e604
         position:
           serializedVersion: 2
-          x: 4987
-          y: 308
-          width: 321
+          x: 4913
+          y: 338
+          width: 440
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: HAHAHA I knew you were a bunch of weaklings.
+        CardText: 'HAHAHA I knew you were a bunch of weaklings,
+
+          we are
+          not gonna stay all evening looking at you.
+
+          You run out of battling
+          time, if you want to win
+
+          battles in this land you better optimse
+          your turns in battle.'
         LeftText: We all knew.
         RightText: I'll come after you.
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}

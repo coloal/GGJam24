@@ -20,9 +20,9 @@ MonoBehaviour:
   CharacterSpriteInlfuence: {fileID: 1117891338, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CharacterSpriteMoney: {fileID: 2047474421, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CharacterSpriteViolence: {fileID: -1539618070, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
-  HealthPoints: 100
-  Damage: 100
-  Armor: 100
-  Turns: 5
+  HealthPoints: 4
+  Damage: 3
+  Armor: 1
+  Turns: 2
   CombatType: 0
   Instrument: Clavicordio
