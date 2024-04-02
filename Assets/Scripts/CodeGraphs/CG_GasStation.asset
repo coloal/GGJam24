@@ -365,8 +365,8 @@ MonoBehaviour:
         - Next
         CardText: "You were not able to fix your van and get out of this shithole\n
           called Admired Town. Moreover, you were defeated by a doggie: GUAU!"
-        LeftText: I'm tired of reading.
-        RightText: I'll try again.
+        LeftText: This was a confusing experience.
+        RightText: I really liked this shit!
         card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
     - rid: 7416004762105020417
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -386,8 +386,8 @@ MonoBehaviour:
 
           called
           Admired Town. Although you almost did it, this was the final boss.'
-        LeftText: I'm tired of reading.
-        RightText: I'll try again.
+        LeftText: This was a confusing experience.
+        RightText: I really liked this shit!
         card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
     - rid: 7416004762105020418
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}

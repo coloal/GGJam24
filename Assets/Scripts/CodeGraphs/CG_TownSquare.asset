@@ -418,8 +418,8 @@ MonoBehaviour:
         CardText: "You were not able to fix your van and get out of this shithole\n
           called Admired Town. Being defeated in the first battle, we both (you,
           player, and us, devs, deserve another chance!)"
-        LeftText: I'm tired of reading.
-        RightText: I'll try again.
+        LeftText: This was a confusing experience.
+        RightText: I really liked this shit!
         card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
     - rid: 7416004762105020421
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -445,8 +445,8 @@ MonoBehaviour:
 
           are you committed to the gang
           or leaving us here in the limbo?'
-        LeftText: I'm tired of reading.
-        RightText: I'll try again.
+        LeftText: This was a confusing experience.
+        RightText: I really liked this shit!
         card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
