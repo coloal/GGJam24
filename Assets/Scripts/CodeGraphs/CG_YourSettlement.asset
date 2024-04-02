@@ -780,7 +780,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Hey, don't worry, who ever you choose for the journey will do great.
+        CardText: Hey, don't worry, whoever you choose for the journey will do great.
         LeftText: I feel bad for the ones I am not choosing to come with me.
         RightText: I feel I am a leader out of obligation.
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -871,7 +871,7 @@ MonoBehaviour:
           of friends and travel the world is already here.
 
           Whether
-          you like  it or not.'
+          you like it or not.'
         LeftText: Pff, I hate my birthday.
         RightText: I love my birthday!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -1226,7 +1226,7 @@ MonoBehaviour:
         - Right
         CardText: Hey, come to me when you have your 3 gang members decided so we
           can start our journey.
-        LeftText: Alright, I'll comeback later
+        LeftText: Alright, I'll come back later
         RightText: But I want you to come with me
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 8807612151756488733
