@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a38bdde6b555245aa5008ae777d0b3, type: 3}
+  m_Name: New CardData
+  m_EditorClassIdentifier: 
+  NameOfCard: 
+  Background: 
+  LeftText: 
+  RightText: 
+  CardSprite: {fileID: 0}
+  BackgroundSprite: {fileID: 0}
+  CombatInfo:
+    HealthPoints: 0
+    Damage: 0
+    Armor: 0
+    Energy: 0
+    CombatType: 0
+    InitialText: 
+    EffectiveText: 
+    NonEffectiveText: 
+    BackgroundCombatSprite: {fileID: 0}
+  LeftActions:
+  - TagType: 0
+    BoolTag: 1
+    NewValue: 1
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  - TagType: 1
+    BoolTag: 0
+    NewValue: 0
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 1
+    Increment: 5
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 1
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  - TagType: 2
+    BoolTag: 0
+    NewValue: 0
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 1
+    Increment: 5
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 1
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  - TagType: 3
+    BoolTag: 0
+    NewValue: 0
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 1
+    Increment: 5
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 1
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  RightActions:
+  - TagType: 0
+    BoolTag: 3
+    NewValue: 1
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+  - TagType: 3
+    BoolTag: 3
+    NewValue: 1
+    BrainBoolTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    NumericTag: 0
+    Increment: 0
+    BrainNumericTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    StateTuple:
+      selectedTag: 0
+      selectedTagState: 0
+    TagState: 0
+    NewState: 0
+    BrainStateTagAction:
+      m_PersistentCalls:
+        m_Calls: []
+    BrainStateIntTagAction:
+      m_PersistentCalls:
+        m_Calls: []

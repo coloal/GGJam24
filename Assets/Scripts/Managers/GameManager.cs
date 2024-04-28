@@ -1,22 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Managers")]
     [SerializeField]
-    TurnManager TurnManager;
+    AudioManager AudioManager;
+    [SerializeField]
+    BrainManager BrainManager;
+    [SerializeField]
+    BrainSoundManager BrainSoundManager;
+    [SerializeField]
+    StoryManager StoryManager;
+    [SerializeField]
+    PartyManager PartyManager;
 
-    [SerializeField]
-    StatsManager StatsManager;
+    private bool hasToResetGame = false;
 
-    [SerializeField]
-    CardsManager CardsManager;
+    private List<Action> disposableOnSceneChangeActions = new List<Action>();
 
-    [SerializeField]
-    EndManager EndManager;
+    private BaseSceneManager currentSceneManager ;
+    public BaseSceneManager CurrentSceneManager {
+        get
+        {
+            return currentSceneManager;
+        }
+        set
+        {
+            currentSceneManager = value;
+            OnSceneChanged();
+        }
+    }
+
+    private CombatCardTemplate actualCombatEnemyCard;
+    public CombatCardTemplate ActualCombatEnemyCard => actualCombatEnemyCard;
 
     void Awake()
     {
@@ -29,18 +51,84 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start() 
     {
-        AudioManager.Instance.Play(SoundNames.GameBGM);
         StartGame();
     }
 
-    void StartGame() 
+    void StartGame()
     {
-        TurnManager.StartTurn();
+        BrainSoundManager.StartGame();
+        if(currentSceneManager != null && currentSceneManager is MainGameSceneManager mainGameSceneManager)
+        {
+            mainGameSceneManager.StartGame();
+        }
     }
+
+    public void StartCombat(CombatCardTemplate enemyCard)
+    {
+        actualCombatEnemyCard = enemyCard;
+        EnterBattleScene();
+    }
+
+    public void EndCombat(TurnResult combatResult)
+    {
+        Action action;
+        switch (combatResult)
+        {
+            case TurnResult.COMBAT_WON_CAPTURE:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        mainGameSceneManager.ProvideTurnManager().WinCombat(true);
+                    }
+                };
+                break;
+
+            case TurnResult.COMBAT_WON_NO_CAPTURE:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        mainGameSceneManager.ProvideTurnManager().WinCombat(false);
+                    }
+                };
+                break;
+
+            case TurnResult.COMBAT_LOST:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        mainGameSceneManager.ProvideTurnManager().LoseCombat(false);
+                    }
+                };
+                break;
+
+            case TurnResult.COMBAT_GAME_OVER:
+                action = () =>
+                {
+                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
+                    {
+                        GameManager.Instance.ProvideBrainSoundManager().StartGameOver();
+                        mainGameSceneManager.ProvideTurnManager().LoseCombat(true);
+                        SceneManager.LoadScene(ScenesNames.GameOverScene);
+                    }
+                };
+                break;
+            default:
+                action = () => { };
+                Debug.LogError("Combat returned invalid result");
+                break;
+        }
+        ExitBattleScene(action);
+    }
+
 
     // Maybe we need several FinishGame functions for every final that the game has
     public void FinishGame() 
@@ -49,21 +137,119 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public StatsManager ProvideStatsManager()
+    
+   
+    public AudioManager ProvideAudioManager()
     {
-        return StatsManager;
+        return AudioManager;
     }
 
-    public CardsManager ProvideCardsManager()
+   
+
+    public BrainManager ProvideBrainManager()
     {
-        return CardsManager;
+        return BrainManager;
     }
 
-    public TurnManager ProvideTurnManager()
+    public BrainSoundManager ProvideBrainSoundManager()
     {
-        return TurnManager;
+        return BrainSoundManager;
     }
-    public EndManager ProvideEndManager() {
-        return EndManager;
+
+    public StoryManager ProvideStoryManager()
+    {
+        return StoryManager;
     }
+
+    public PartyManager ProvidePartyManager()
+    {
+        return PartyManager;
+    }
+
+    public void OnSceneChanged()
+    {
+        foreach(Action action in disposableOnSceneChangeActions)
+        {
+            action();
+        }
+        disposableOnSceneChangeActions.Clear();
+    }
+
+    public void EnterBattleScene()
+    {
+        bool IsBoss = GameManager.Instance.ProvideBrainManager().bIsBossFight;
+        List<PartyMember> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
+        GameManager.Instance.ProvideBrainSoundManager().StartCombat(members, IsBoss);
+
+        Animator transition = BrainManager.ZoneInfo.CombatTransition;
+        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
+        if (instantedAnimator != null)
+        {
+            instantedAnimator.SetTrigger("ExitAnimation");
+            GameUtils.CreateTemporizer(() => {
+                SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
+            }, 1.0f, this);
+            disposableOnSceneChangeActions.Add(() =>
+            {
+                Animator transition_1 = BrainManager.ZoneInfo.CombatTransition;
+                Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
+                if (instantedAnimator_1 != null)
+                {
+                    instantedAnimator_1.SetTrigger("EnterAnimation");
+                    GameUtils.CreateTemporizer(() =>
+                    {
+                        Destroy(instantedAnimator_1);
+                    }, 1.0f, this);
+                }
+            });
+        }
+    }
+
+    public void ExitBattleScene(Action nextAction)
+    {
+        Animator transition = BrainManager.ZoneInfo.CombatTransition;
+        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
+        if (instantedAnimator != null)
+        {
+            instantedAnimator.SetTrigger("ExitAnimation");
+            GameUtils.CreateTemporizer(() => {
+                SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
+            }, 1.0f, this);
+            disposableOnSceneChangeActions.Add(() =>
+            {
+                Animator transition_1 = BrainManager.ZoneInfo.CombatTransition;
+                Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
+                if (instantedAnimator_1 != null)
+                {
+                    instantedAnimator_1.SetTrigger("EnterAnimation");
+                    GameUtils.CreateTemporizer(() =>
+                    {
+                        nextAction();
+                        Destroy(instantedAnimator_1);
+                    }, 1.0f, this);
+                }
+            });
+        }
+    }
+
+    public void ResetGame()
+    {
+        StoryManager.ResetStory();
+        BrainManager.ResetMemories();
+        BrainSoundManager.ChangeZone(BrainManager.ZoneInfo.StoryMusicZone);
+        BrainSoundManager.ResetNess();
+        PartyManager.ClearParty();
+        SetHasToResetGame(true);
+    }
+
+    public bool HasToResetGame()
+    {
+        return hasToResetGame;
+    }
+
+    public void SetHasToResetGame(bool hasToResetGame)
+    {
+        this.hasToResetGame = hasToResetGame;
+    }
+
 }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
+  m_Name: Puritan mechanic
+  m_EditorClassIdentifier: 
+  NameOfCard: Puritan Mechanic
+  InitialText: Well, a fight is always fun in fact!
+  EffectiveText: Put the throttle down, mate, that was effective!
+  NonEffectiveText: You better heat up this, mate, that was pretty uneffective!
+  CharacterSpriteUnknown: {fileID: -681530388, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSpriteInlfuence: {fileID: -1766761179, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSpriteMoney: {fileID: 1551277456, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSpriteViolence: {fileID: 832523203, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  HealthPoints: 20
+  Damage: 6
+  Armor: 3
+  Turns: 12
+  CombatType: 2
+  Instrument: 

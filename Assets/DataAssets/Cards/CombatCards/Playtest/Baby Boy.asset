@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
+  m_Name: Baby Boy
+  m_EditorClassIdentifier: 
+  NameOfCard: Billy
+  InitialText: ' '
+  EffectiveText: ' '
+  NonEffectiveText: ' '
+  CharacterSpriteUnknown: {fileID: -84974202, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteInlfuence: {fileID: 1117891338, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteMoney: {fileID: 2047474421, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CharacterSpriteViolence: {fileID: -1539618070, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  HealthPoints: 5
+  Damage: 2
+  Armor: 2
+  Turns: 6
+  CombatType: 0
+  Instrument: Clavicordio

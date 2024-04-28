@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a38bdde6b555245aa5008ae777d0b3, type: 3}
+  m_Name: Abuela
+  m_EditorClassIdentifier: 
+  NameOfCard: Marietta
+  Background: "Chiquitin, tengo un nuevo vecino erasmus que no para de darme la lata,
+    el puto guiri es un toca ovarios de manual, \xBFpodr\xEDas ayudarme a amansarle?"
+  LeftText: "No me hagas re\xEDr"
+  RightText: Erasmus go home!
+  CardSprite: {fileID: 21300000, guid: 9fb09ab02ef37fe4c8d9475f8ac69fe6, type: 3}
+  BackgroundSprite: {fileID: 0}
+  CombatInfo:
+    HealthPoints: 0
+    Damage: 0
+    Armor: 0
+    CombatType: 0
+  BrainTagAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

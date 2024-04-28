@@ -1,0 +1,12 @@
+public enum CombatStates
+{
+    INIT,
+    CHOOSE_ATTACKER,
+    CHOOSE_ACTION,
+    PLAYER_ATTACK,
+    ENEMY_ATTACK,
+    CHECK_COMBAT_RESULTS,
+    COMBAT_WON,
+    COMBAT_LOST,
+    GAME_OVER,
+}

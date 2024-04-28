@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
+  m_Name: Gentle Giant
+  m_EditorClassIdentifier: 
+  NameOfCard: Biggie
+  InitialText: 
+  EffectiveText: 
+  NonEffectiveText: 
+  CharacterSpriteUnknown: {fileID: 314422098, guid: 600cbb81119e106488379c4c8c80e2e7, type: 3}
+  CharacterSpriteInlfuence: {fileID: 687811324, guid: 600cbb81119e106488379c4c8c80e2e7, type: 3}
+  CharacterSpriteMoney: {fileID: -1852825200, guid: 600cbb81119e106488379c4c8c80e2e7, type: 3}
+  CharacterSpriteViolence: {fileID: 1216909103, guid: 600cbb81119e106488379c4c8c80e2e7, type: 3}
+  HealthPoints: 4
+  Damage: 2
+  Armor: 3
+  Turns: 2
+  CombatType: 2
+  Instrument: Acordeon
