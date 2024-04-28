@@ -157,6 +157,8 @@ MonoBehaviour:
   CombatEventPath: 
   GameOverEventPath: event:/Music/GameOver
   CombatSoundsEventPath: event:/SFX/CombatSounds
+  CardSoundsEventPath: event:/SFX/SwitchCard
+  StepsEventPath: event:/SFX/Steps
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &12272434
@@ -572,50 +574,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1219471164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1219471166}
-  - component: {fileID: 1219471165}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1219471165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219471164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8877cf02275472aa391b873ecd3d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1219471166
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219471164}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1523662297
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9e19440bdb741d19a8ac3f7f6459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioManager: {fileID: 1219471165}
+  AudioManager: {fileID: 0}
   BrainManager: {fileID: 686396485}
   BrainSoundManager: {fileID: 12272433}
   StoryManager: {fileID: 979989386}
@@ -986,7 +944,6 @@ SceneRoots:
   - {fileID: 1168870287}
   - {fileID: 1987585452}
   - {fileID: 738218459}
-  - {fileID: 1219471166}
   - {fileID: 979989387}
   - {fileID: 12272434}
   - {fileID: 686396484}

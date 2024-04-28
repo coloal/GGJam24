@@ -14,7 +14,6 @@ public class TurnManager : MonoBehaviour
     [SerializeField] SpriteRenderer background;
     [SerializeField] GameObject transitionObject;
     [SerializeField] float waitTimeBetweenTransition;
-    GameStates CurrentGameState;
     StoryManager StoryManager {
         get {
             return GameManager.Instance.ProvideStoryManager();
@@ -35,13 +34,11 @@ public class TurnManager : MonoBehaviour
 
     void GetNewCard(StoryCardTemplate nextCard)
     {
-        SetGameState(GameStates.SHOW_CARD);
         GameObject SpawnedCard = CardsManager.SpawnNextCard(
             nextCard,
             onSwipeLeft: () => { MainGameSceneManager.Instance.ProvideTurnManager().SwipeLeft(); },
             onSwipeRight: () => { MainGameSceneManager.Instance.ProvideTurnManager().SwipeRight(); });
         CurrentCard = SpawnedCard.GetComponent<StoryCard>();
-        SetGameState(GameStates.MAKE_DECISION);
     }
 
     public void StartTurn() 
@@ -167,63 +164,6 @@ public class TurnManager : MonoBehaviour
         StoryManager.LoseCombat(gameOver);
         StartTurn();
     }
-
-    void SetGameState(GameStates State)
-    {
-        CurrentGameState = State;
-    }
-
-    public GameStates GetCurrentGameState()
-    {
-        return CurrentGameState;
-    }
-
-
-    public void OnHitmenSelected(HitManTypes selectedHitman) {
-        //AudioManager.Instance.Play(SoundNames.PickPhone);
-
-        // --Deprecated--
-        //CalculateHitmanStats(selectedHitman);
-    }
-
-    void CalculateHitmanStats(HitManTypes SelectedHitman)
-    {
-        // --Deprecated--
-        /*
-        SetGameState(GameStates.STATS_CALCULATION);
-
-        if (StatsManager != null && CurrentCard != null)
-        {
-            HitmanInfo info = null;
-            switch (SelectedHitman)
-            {
-                case HitManTypes.Maton:
-                    info = CurrentCard.Maton;
-                    break;
-                case HitManTypes.Contable:
-                    info = CurrentCard.Contable;
-                    break;
-                case HitManTypes.Comisario:
-                    info = CurrentCard.Comisario;
-                    break;
-                default: break;
-            }
-            StatsManager.ModifyStats(
-                info.ViolenceStat,
-                info.MoneyStat,
-                info.InfluenceStat
-            );
-
-            GameUtils.createTemporizer(() => {
-                PhoneObject.SetActive(true);
-                GivePhoneFeedback(info.FeedbackName, info.FeedbackText);
-            }, 2.3f, this);
-
-        }
-
-        */
-    }
-
 
     private void DestroyCard()
     {
