@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418dc86c03a82e049aea817b6c22d225, type: 3}
   m_Name: Punkie girl
   m_EditorClassIdentifier: 
-  NameOfCard: Punkie Boy
+  NameOfCard: Punkie Girl
   InitialText: Cammon let's do this!
   EffectiveText: Uh damn that was effective.
   NonEffectiveText: Excuse me, was that an attack?
