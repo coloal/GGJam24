@@ -116,6 +116,63 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Mobile",
+            "id": "ba357b15-03b6-4164-acea-73de243c0193",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "PassThrough",
+                    "id": "73e4ad88-354c-4ca4-ba82-6cad36a2e4d1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Release",
+                    "type": "PassThrough",
+                    "id": "9920df83-6026-41da-a2f6-21ceb240924a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchPosition",
+                    "type": "PassThrough",
+                    "id": "d58ef712-a7a5-41a2-86b1-b155757bf1bd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4b502235-848e-4dbb-8329-d29ec2323cd9",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Release",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b1ae9a35-bfd9-4327-ada2-3ef0e4ee6ead",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

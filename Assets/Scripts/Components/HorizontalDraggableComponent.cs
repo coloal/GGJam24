@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class HorizontalDraggableComponent : MonoBehaviour
 {   
@@ -203,9 +204,73 @@ public class HorizontalDraggableComponent : MonoBehaviour
         }
     }
 
+    //Refactor
     void OnMouseMove(InputValue Value)
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
+    }
+
+    public void OnTouch() 
+    {
+        Debug.Log("TOUCH");
+        isMouseClickPressed = true;
+        clickedPosition = mousePosition;
+        /*BoxCollider2D boxCollider2DComponent = GetComponent<BoxCollider2D>();
+        if (boxCollider2DComponent && boxCollider2DComponent.bounds.Contains(mousePosition))
+        {
+            
+        }*/
+
+    }
+    void OnRelease() 
+    {
+        Debug.Log("Release");
+        isMouseClickPressed = false;
+        hasToTriggerEnterEscapeZone = true;
+        hasToTriggerExitEscapeZone = false;
+
+        if (enabled && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x) || Mathf.Abs(velocity) < 0.5))
+        {
+            // It's swipping right
+            if (Mathf.Sign(transform.position.x - initialPosition.x) > 0)
+            {
+                bool isInsideEscapeZoneOrFarther = transform.position.x >= initialPosition.x + escapeZoneLowerLimitDistance;
+                if (isInsideEscapeZoneOrFarther)
+                {
+                    foreach (Action rightSwipeOnWarningZoneExitAction in rightSwipeEscapeZoneExitActions)
+                    {
+                        rightSwipeOnWarningZoneExitAction();
+                    }
+                    foreach (Action rightSwipeAction in rightSwipeActions)
+                    {
+                        rightSwipeAction();
+                    }
+                }
+            }
+            // It's swipping left
+            else
+            {
+                bool isInsideEscapeZoneOrFarther = transform.position.x < initialPosition.x - escapeZoneLowerLimitDistance;
+                if (isInsideEscapeZoneOrFarther)
+                {
+                    foreach (Action leftSwipeOnWarningZoneExitAction in leftSwipeEscapeZoneExitActions)
+                    {
+                        leftSwipeOnWarningZoneExitAction();
+                    }
+                    foreach (Action leftSwipeAction in leftSwipeActions)
+                    {
+                        leftSwipeAction();
+                    }
+                }
+            }
+        }
+    }
+
+    //Position of the finger
+    void OnTouchPosition(InputValue Value)
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
+        //Debug.Log("X: " + mousePosition.x + " Y: " + mousePosition.y);
     }
 
     void CheckForEscapeZone()
