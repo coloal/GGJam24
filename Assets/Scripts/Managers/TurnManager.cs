@@ -75,13 +75,9 @@ public class TurnManager : MonoBehaviour
             }
             else
             {
-                GameObject enemy = Instantiate(EnemyPrefab);
-                EnemyDeckManager enemyManager = enemy.GetComponent<EnemyDeckManager>();
-                enemyManager.Init(combatStep.Enemy);
-                if(enemyManager)
-                {
-                    //Call start combat
-                }
+                
+                //Call start combat
+                
                 //GameManager.Instance.StartCombat(combatStep.CombatCard);
             }
         }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyDeckManager : MonoBehaviour
 {
-
-    private List<CombatCard> Hand;
-    private List<CombatCard> Graveyard;
-
+    private EnemyTemplate template;
+    private GameObject combatCardPrefab;
+    private List<CombatCard> hand;
+    private List<CombatCard> graveyard;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,24 +22,31 @@ public class EnemyDeckManager : MonoBehaviour
     
     public CombatCard SelectRandomCard()
     {
-        int idx = Random.Range(0, Hand.Count);
-        return Hand[idx];
+        int idx = Random.Range(0, hand.Count);
+        return hand[idx];
     }
 
     public void KillCard(CombatCard card) 
     {
-        Hand.Remove(card);
+        hand.Remove(card);
     }
 
     public void Init(EnemyTemplate template)
     {
+        this.template = template;
         template.CombatCards.ForEach(handTemplate =>
         {
-            EnemyCombatCard card = new EnemyCombatCard();
+            CombatCard card = Instantiate(combatCardPrefab)?.GetComponent<CombatCard>();
+            card.gameObject.SetActive(false);
             card.SetDataCard(handTemplate);
-            Hand.Add(card);
-            Graveyard.Add(card);
+            hand.Add(card);
+            graveyard.Add(card);
         });
+    }
+
+    public CombatCardTemplate SelectCardToSave(int cardIndex)
+    {
+        return template.CombatCards[cardIndex];
     }
 
 }

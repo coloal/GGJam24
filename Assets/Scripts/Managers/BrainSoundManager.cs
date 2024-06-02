@@ -214,7 +214,7 @@ public class BrainSoundManager : MonoBehaviour
         SetStorySound(BrainSoundTag.Ness, 0.0f);
     }
 
-    public void StartCombat(List<PartyMember> members, bool bIsBossFight = false)
+    public void StartCombat(List<CombatCardTemplate> members, bool bIsBossFight = false)
     {
         //Valor por defecto para que comience el combate
         int CombatValue = 1;
@@ -228,11 +228,11 @@ public class BrainSoundManager : MonoBehaviour
         SetStorySound(BrainSoundTag.Guitar, 0.0f);
 
 
-        foreach (PartyMember member in members)
+        foreach (CombatCardTemplate member in members)
         {
-            if (member.CombatCardTemplate.Instrument != "")
+            if (member.Instrument != "")
             {
-                SetStorySound(member.CombatCardTemplate.Instrument, 1.0f);
+                SetStorySound(member.Instrument, 1.0f);
             }
 
             /*
@@ -402,10 +402,8 @@ public class BrainSoundManager : MonoBehaviour
         {
             case SoundEvent.StoryEvent1:
                 return StoryEventInstance;
-                break;
             case SoundEvent.CombatEvent:
                 return CombatInstance;
-                break;
         }
 
         Debug.LogError("El evento actual de FMOD no es valido");
@@ -418,10 +416,10 @@ public class BrainSoundManager : MonoBehaviour
         {
             case SoundEvent.StoryEvent1:
                 return StoryEventInstance;
-                break;
+               
             case SoundEvent.CombatEvent:
                 return CombatInstance;
-                break;
+               
         }
 
         Debug.LogError("El evento" + Event.ToString() + " de FMOD no esta configurado");

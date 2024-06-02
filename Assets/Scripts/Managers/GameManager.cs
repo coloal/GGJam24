@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
     public void EnterBattleScene()
     {
         bool IsBoss = GameManager.Instance.ProvideBrainManager().bIsBossFight;
-        List<PartyMember> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
+        List<CombatCardTemplate> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
         GameManager.Instance.ProvideBrainSoundManager().StartCombat(members, IsBoss);
 
         Animator transition = BrainManager.ZoneInfo.CombatTransition;

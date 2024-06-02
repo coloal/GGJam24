@@ -6,7 +6,7 @@ public class CombatSceneManager : BaseSceneManager
 {
     public static CombatSceneManager Instance;
 
-    [SerializeField] CombatManager combatManager;
+   
     [SerializeField] CombatVisualManager combatVisualManager;
     [SerializeField] CombatV2Manager combatV2Manager;
 
@@ -26,11 +26,6 @@ public class CombatSceneManager : BaseSceneManager
     void Start()
     { 
         Init();
-    }
-
-    public CombatManager ProvideCombatManager()
-    {
-        return combatManager;
     }
 
     public CombatVisualManager ProvideCombatVisualManager()
