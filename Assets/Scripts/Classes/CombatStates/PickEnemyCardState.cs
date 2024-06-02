@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PickEnemyCardState : CombatState
 {
-    public override CombatState PostProcess()
+    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        return new PickPlayerCardState();
+        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickPlayerCardState());
     }
 
-    public override void Preprocess()
+    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation()
+    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        PostProcess(combatContext);
     }
 }

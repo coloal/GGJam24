@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class StartCombatState : CombatState
 {
-    public override CombatState PostProcess()
+    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        return new PresentPlayerCardsState();
+        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PresentEnemyCardsState());
     }
 
-    public override void Preprocess()
+    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation()
+    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        PostProcess(combatContext);
     }
 }

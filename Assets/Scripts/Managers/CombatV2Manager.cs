@@ -8,19 +8,22 @@ public class CombatV2Manager : MonoBehaviour
 {
     public struct CombatContext
     {
-        GameObject enemyCardsContainer;
-        GameObject playerHandContainer;
-        GameObject playerDeck;
-        GameObject playerOnCombatCard;
-        GameObject enemyOnCombatCard;
+        public GameObject enemyCardsContainer;
+        public Transform enemyCardsContainerFinalPosition;
+        public GameObject playerHandContainer;
+        public GameObject playerDeck;
+        public GameObject playerOnCombatCard;
+        public GameObject enemyOnCombatCard;
 
         public CombatContext(GameObject enemyCardsContainer,
+            Transform enemyCardsContainerFinalPosition,
             GameObject playerHandContainer,
             GameObject playerDeck,
             GameObject playerOnCombatCard,
             GameObject enemyOnCombatCard)
         {
             this.enemyCardsContainer = enemyCardsContainer;
+            this.enemyCardsContainerFinalPosition = enemyCardsContainerFinalPosition;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
             this.playerOnCombatCard = playerOnCombatCard;
@@ -30,6 +33,7 @@ public class CombatV2Manager : MonoBehaviour
 
     [Header("Board configurations")]
     [SerializeField] private GameObject EnemyCardsContainer;
+    [SerializeField] private Transform EnemyCardsContainerFinalPosition;
     [SerializeField] private GameObject PlayerHandContainer;
     [SerializeField] private GameObject PlayerDeck;
     [SerializeField] private GameObject PlayerOnCombatCard;
@@ -40,14 +44,15 @@ public class CombatV2Manager : MonoBehaviour
     void Start()
     {
         SetUpManagers();
-        InitCombarContext();
-        ProcessCombat();
+        InitCombatContext();
+        ProcessCombat(new StartCombatState());
     }
 
-    private void InitCombarContext()
+    private void InitCombatContext()
     {
         combatContext = new CombatContext(
             EnemyCardsContainer,
+            EnemyCardsContainerFinalPosition,
             PlayerHandContainer,
             PlayerDeck,
             PlayerOnCombatCard,
@@ -55,14 +60,9 @@ public class CombatV2Manager : MonoBehaviour
         );
     }
 
-    private void ProcessCombat()
+    public void ProcessCombat(CombatState combatState)
     {
-        CombatState currentCombatState = new StartCombatState();
-        while (!(currentCombatState is ResultWinState) 
-            || !(currentCombatState is ResultLoseState))
-        {
-            currentCombatState = currentCombatState.Process(combatContext);
-        }
+        combatState.Process(combatContext);
     }
 
     private void SetUpManagers()

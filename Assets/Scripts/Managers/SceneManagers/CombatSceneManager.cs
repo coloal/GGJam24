@@ -8,6 +8,7 @@ public class CombatSceneManager : BaseSceneManager
 
     [SerializeField] CombatManager combatManager;
     [SerializeField] CombatVisualManager combatVisualManager;
+    [SerializeField] CombatV2Manager combatV2Manager;
 
     void Awake()
     {
@@ -22,6 +23,11 @@ public class CombatSceneManager : BaseSceneManager
         }
     }
 
+    void Start()
+    { 
+        Init();
+    }
+
     public CombatManager ProvideCombatManager()
     {
         return combatManager;
@@ -30,5 +36,10 @@ public class CombatSceneManager : BaseSceneManager
     public CombatVisualManager ProvideCombatVisualManager()
     {
         return combatVisualManager;
+    }
+
+    public CombatV2Manager ProvideCombatV2Manager()
+    {
+        return combatV2Manager;
     }
 }
