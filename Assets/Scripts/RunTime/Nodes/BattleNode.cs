@@ -6,7 +6,7 @@ namespace CodeGraph
     public class BattleNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public CombatCardTemplate card;
+        public EnemyTemplate card;
 
         [ExposedProperty()]
         public bool IsBossFight;
@@ -36,13 +36,13 @@ namespace CodeGraph
             switch (turnResult)
             {
                 case TurnResult.COMBAT_WON_CAPTURE: 
-                    port = 0; 
+                    port = 0;
                     break;
                 case TurnResult.COMBAT_WON_NO_CAPTURE:
                     port = 1;
                     break;
                 case TurnResult.COMBAT_LOST: 
-                    port = 2; 
+                    port = 2;
                     break;
                 case TurnResult.COMBAT_GAME_OVER:
                     port = 3;
