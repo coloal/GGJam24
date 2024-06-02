@@ -1,13 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
-
-
 
 [System.Serializable]
 public class BrainAction
@@ -43,8 +36,7 @@ public class SoundTypeCard
     public SoundAction InfluenceSoundAction;
 }
 
-
-[CustomPropertyDrawer(typeof(BrainAction))]
+/*[CustomPropertyDrawer(typeof(BrainAction))]
 public class Option_Editor : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -94,4 +86,4 @@ public class Option_Editor : PropertyDrawer
     {
         return base.GetPropertyHeight(property, label) * 6;
     }
-}
+}*/

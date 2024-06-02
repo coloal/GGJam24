@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Managers")]
     [SerializeField]
-    AudioManager AudioManager;
-    [SerializeField]
     BrainManager BrainManager;
     [SerializeField]
     BrainSoundManager BrainSoundManager;
@@ -129,22 +127,12 @@ public class GameManager : MonoBehaviour
         ExitBattleScene(action);
     }
 
-
     // Maybe we need several FinishGame functions for every final that the game has
     public void FinishGame() 
     {
         Debug.Log("The game has finished! Congratulations ...or maybe not?");
 
     }
-
-    
-   
-    public AudioManager ProvideAudioManager()
-    {
-        return AudioManager;
-    }
-
-   
 
     public BrainManager ProvideBrainManager()
     {

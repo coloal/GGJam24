@@ -1,15 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Events;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
-
 
 [CreateAssetMenu(fileName = "New MusicZonesData", menuName = "MusicZonesData")]
 public class MusicZonesTemplate : ScriptableObject

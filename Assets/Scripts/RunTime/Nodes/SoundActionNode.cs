@@ -1,9 +1,3 @@
-using CodeGraph;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using static UnityEditor.Rendering.CameraUI;
-
 namespace CodeGraph
 {
     [NodeInfo("Sound Action", "Sound Nodes/Sound Action", color: "#bb9eff")] 
