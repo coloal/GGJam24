@@ -9,11 +9,11 @@ public class StepInfo
 
 public class CombatStep:StepInfo
 {
-    CombatCardTemplate combatCard;
-    public CombatCardTemplate CombatCard => combatCard;
-    public CombatStep(CombatCardTemplate combatCard)
+    EnemyTemplate enemy;
+    public EnemyTemplate Enemy => enemy;
+    public CombatStep(EnemyTemplate enemy)
     {
-        this.combatCard = combatCard;
+        this.enemy = enemy;
     }
 }
 
