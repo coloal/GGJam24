@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyDeckManager : MonoBehaviour
 {
+    [SerializeField] private GameObject combatCardPrefab;
+
     private EnemyTemplate template;
-    private GameObject combatCardPrefab;
     private List<CombatCard> hand;
     private List<CombatCard> graveyard;
     // Start is called before the first frame update

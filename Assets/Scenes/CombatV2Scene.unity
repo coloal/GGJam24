@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56bfdb225b17bd4418e56cfd56a26be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
 --- !u!4 &1197101117
 Transform:
   m_ObjectHideFlags: 0
@@ -1952,6 +1953,7 @@ MonoBehaviour:
   PlayerOnCombatCard: {fileID: 187807793}
   EnemyOnCombatCard: {fileID: 1300605630}
   EnemyOnCombatCardFinalPosition: {fileID: 862520345}
+  EnemyTemplate: {fileID: 0}
 --- !u!1 &1993801134
 GameObject:
   m_ObjectHideFlags: 0
