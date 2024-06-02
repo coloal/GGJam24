@@ -10,7 +10,7 @@ public class PartyManager : MonoBehaviour
     [SerializeField] private List<CombatCardTemplate> initialPartyMembersCombatCardTemplates;
     [SerializeField] private int maxPartySize = 5;
 
-    private List<PartyMember> partyMembers;
+    private List<CombatCardTemplate> partyMembers;
 
     void Awake()
     {
@@ -30,21 +30,16 @@ public class PartyManager : MonoBehaviour
 
     void Init()
     {
-        partyMembers = new List<PartyMember>();
+        partyMembers = new List<CombatCardTemplate>();
         foreach (CombatCardTemplate InitialPartyMember in initialPartyMembersCombatCardTemplates)
         {
-            partyMembers.Add(new PartyMember(InitialPartyMember));
+            partyMembers.Add(InitialPartyMember);
         }
     }
 
     public void AddPartyMember(CombatCardTemplate cardToAdd)
     {
-        partyMembers.Add(new PartyMember(cardToAdd));
-    }
-
-    public void AddPartyMember(CombatCardTemplate cardToAdd, int cardHealthPoints, int cardEnergyPoints)
-    {
-        partyMembers.Add(new PartyMember(cardToAdd, cardHealthPoints, cardEnergyPoints));
+        partyMembers.Add(cardToAdd);
     }
 
     public int GetPartyCount()
@@ -54,7 +49,7 @@ public class PartyManager : MonoBehaviour
 
     public bool CheckPartyMember(CombatCardTemplate card)
     {
-        return partyMembers.Find(x=>x.CombatCardTemplate.Equals(card)) != null;
+        return partyMembers.Find(x=>x.Equals(card)) != null;
     }
 
     void Start()
@@ -62,14 +57,14 @@ public class PartyManager : MonoBehaviour
 
     }
 
-    public List<PartyMember> GetPartyMembers()
+    public List<CombatCardTemplate> GetPartyMembers()
     {
         return partyMembers;
     }
 
     public void RemovePartyMember(CombatCardTemplate cardToRemove)
     {
-        partyMembers.RemoveAll(Card => { return Card.CombatCardTemplate.Equals(cardToRemove); });
+        partyMembers.RemoveAll(Card => { return Card.Equals(cardToRemove); });
     }
 
     public int GetMaxPartySize()

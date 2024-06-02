@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
-
+    private GameObject CombatCardPrefab;
+    private List<CombatCardTemplate> PlayerCards;
     private List<CombatCard> Hand;
     private List<CombatCard> Deck;
-    private List<CombatCard> GraveYard;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -60,23 +61,22 @@ public class DeckManager : MonoBehaviour
     public void KillCard(CombatCard card)
     {
         Hand.Remove(card);
-        GraveYard.Add(card);
     }
 
-    public void RestoreDeck()
+    
+    public void FinishCombat()
     {
-        foreach (CombatCard card in GraveYard)
-        {
-            Deck.Add(card);
-        }
-        GraveYard.Clear();
-
-        foreach (CombatCard card in Hand)
-        {
-            Deck.Add(card);
-        }
         Hand.Clear();
+        Deck.Clear();
     }
 
-
+    public void StartCombat()
+    {
+        PlayerCards.ForEach(cardTemplate => {
+            CombatCard card = Instantiate(CombatCardPrefab)?.GetComponent<CombatCard>();
+            card.gameObject.SetActive(false);
+            card.SetDataCard(cardTemplate);
+            Hand.Add(card);
+        });
+    }
 }
