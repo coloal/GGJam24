@@ -5,11 +5,35 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
-    private GameObject CombatCardPrefab;
-    private List<CombatCardTemplate> PlayerCards;
+    
+    [SerializeField] private List<CombatCardTemplate> PlayerCards;
+    [SerializeField] private GameObject CombatCardPrefab;
     private List<CombatCard> Hand;
     private List<CombatCard> Deck;
-  
+    public static DeckManager Instance;
+
+    public DeckManager()
+    {
+        Hand = new List<CombatCard>();
+        Deck = new List<CombatCard>();
+}
+
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +100,7 @@ public class DeckManager : MonoBehaviour
             CombatCard card = Instantiate(CombatCardPrefab)?.GetComponent<CombatCard>();
             card.gameObject.SetActive(false);
             card.SetDataCard(cardTemplate);
-            Hand.Add(card);
+            Deck.Add(card);
         });
     }
 }

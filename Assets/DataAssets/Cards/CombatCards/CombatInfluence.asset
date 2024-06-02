@@ -13,17 +13,6 @@ MonoBehaviour:
   m_Name: CombatInfluence
   m_EditorClassIdentifier: 
   NameOfCard: Influence
-  InitialText: hola pipo como ta tu
-  EffectiveText: "AH! Eso doli(hola soy un programador, me tienen encerrado en un
-    s\xF3tano, llamen al 112)"
-  NonEffectiveText: primo eso no me duele jeje salu2
-  CharacterSpriteUnknown: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
-  CharacterSpriteInlfuence: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
-  CharacterSpriteMoney: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
-  CharacterSpriteViolence: {fileID: 21300000, guid: 1a6aa1a5aa3a08548bdb616d87b89518, type: 3}
-  HealthPoints: 69
-  Damage: 3
-  Armor: 1
-  Turns: 24
+  CharacterSprite: {fileID: 21300000, guid: 3610334d7ba60324caccffd4e598a289, type: 3}
   CombatType: 1
   Instrument: 

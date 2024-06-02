@@ -9,13 +9,8 @@ using UnityEngine.UI;
 public class CombatCard : MonoBehaviour
 {
     [Header("Visual configurations")]
-    [SerializeField] private TextMeshPro nameOfCard;
-    [SerializeField] protected SpriteRenderer cardSprite;
+    [SerializeField] protected Image cardSprite;
     [SerializeField] private GameObject inactiveOverlay;
-
-    [Header("Overlay text configurations")]
-    [SerializeField] GameObject overlayTextContainer;
-    [SerializeField] TextMeshProUGUI overlayTextMesh;
 
     protected CombatTypes combatType;
     protected CombatCardVisualComposerComponent visualComposerComponent;
@@ -31,15 +26,11 @@ public class CombatCard : MonoBehaviour
 
     public void SetDataCard(CombatCardTemplate dataCard)
     {
-        nameOfCard.text = dataCard.NameOfCard;
         combatType = dataCard.CombatType;
         SetCardSprite(dataCard);
     }
 
-    public float GetCardWidth()
-    {
-        return cardSprite.bounds.size.x;
-    }
+  
 
     public CombatTypes GetCombatType()
     {
