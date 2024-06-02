@@ -9,6 +9,7 @@ public class CombatSceneManager : BaseSceneManager
    
     [SerializeField] CombatVisualManager combatVisualManager;
     [SerializeField] CombatV2Manager combatV2Manager;
+    [SerializeField] EnemyDeckManager enemyDeckManager;
 
     void Awake()
     {
@@ -36,5 +37,10 @@ public class CombatSceneManager : BaseSceneManager
     public CombatV2Manager ProvideCombatV2Manager()
     {
         return combatV2Manager;
+    }
+
+    public EnemyDeckManager ProvideEnemyDeckManager()
+    {
+        return enemyDeckManager;
     }
 }

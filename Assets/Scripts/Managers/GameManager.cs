@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     StoryManager StoryManager;
     [SerializeField]
     PartyManager PartyManager;
+    [SerializeField]
+    DeckManager deckManager;
 
     private bool hasToResetGame = false;
 
@@ -238,6 +240,11 @@ public class GameManager : MonoBehaviour
     public void SetHasToResetGame(bool hasToResetGame)
     {
         this.hasToResetGame = hasToResetGame;
+    }
+
+    public DeckManager ProvideDeckManager()
+    {
+        return deckManager;
     }
 
 }

@@ -15,6 +15,12 @@ public class StartCombatState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        DeckManager deckManager = GameManager.Instance.ProvideDeckManager();
+        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+
+        deckManager.StartCombat();
+        enemyDeckManager.StartCombat(combatContext.enemyTemplate);
+
         PostProcess(combatContext);
     }
 }

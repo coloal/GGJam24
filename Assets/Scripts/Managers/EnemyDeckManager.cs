@@ -31,7 +31,7 @@ public class EnemyDeckManager : MonoBehaviour
         hand.Remove(card);
     }
 
-    public void Init(EnemyTemplate template)
+    public void StartCombat(EnemyTemplate template)
     {
         this.template = template;
         template.CombatCards.ForEach(handTemplate =>

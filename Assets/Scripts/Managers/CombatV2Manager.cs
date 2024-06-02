@@ -14,13 +14,17 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject playerDeck;
         public GameObject playerOnCombatCard;
         public GameObject enemyOnCombatCard;
+        public GameObject enemyOnCombatCardFinalPosition;
+        public EnemyTemplate enemyTemplate;
 
         public CombatContext(GameObject enemyCardsContainer,
             Transform enemyCardsContainerFinalPosition,
             GameObject playerHandContainer,
             GameObject playerDeck,
             GameObject playerOnCombatCard,
-            GameObject enemyOnCombatCard)
+            GameObject enemyOnCombatCard,
+            GameObject enemyOnCombatCardFinalPosition,
+            EnemyTemplate enemyTemplate)
         {
             this.enemyCardsContainer = enemyCardsContainer;
             this.enemyCardsContainerFinalPosition = enemyCardsContainerFinalPosition;
@@ -28,6 +32,8 @@ public class CombatV2Manager : MonoBehaviour
             this.playerDeck = playerDeck;
             this.playerOnCombatCard = playerOnCombatCard;
             this.enemyOnCombatCard = enemyOnCombatCard;
+            this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
+            this.enemyTemplate = enemyTemplate;
         }
     }
 
@@ -38,6 +44,8 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject PlayerDeck;
     [SerializeField] private GameObject PlayerOnCombatCard;
     [SerializeField] private GameObject EnemyOnCombatCard;
+    [SerializeField] private GameObject EnemyOnCombatCardFinalPosition;
+    [SerializeField] private EnemyTemplate EnemyTemplate;
 
     private CombatContext combatContext;
 
@@ -56,7 +64,9 @@ public class CombatV2Manager : MonoBehaviour
             PlayerHandContainer,
             PlayerDeck,
             PlayerOnCombatCard,
-            EnemyOnCombatCard
+            EnemyOnCombatCard,
+            EnemyOnCombatCardFinalPosition,
+            EnemyTemplate
         );
     }
 
