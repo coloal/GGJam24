@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New CombatCardData", menuName = "CombatCardData")]
@@ -22,6 +23,7 @@ public class CombatCardTemplate : ScriptableObject
     public int Armor = 0;
     public int Turns = 0;
     public CombatTypes CombatType;
+
 
     //Instrument associated
     public string Instrument;

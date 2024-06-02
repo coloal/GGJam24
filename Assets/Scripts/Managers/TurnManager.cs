@@ -10,7 +10,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class TurnManager : MonoBehaviour
 {
-
+    [SerializeField] GameObject EnemyPrefab;
     [SerializeField] SpriteRenderer background;
     [SerializeField] GameObject transitionObject;
     [SerializeField] float waitTimeBetweenTransition;
@@ -67,15 +67,22 @@ public class TurnManager : MonoBehaviour
         //Nodo de carta de batalla
         else if (nextStepInfo is CombatStep combatStep)
         {
-            if (combatStep.CombatCard == null)
+            if (combatStep.Enemy == null)
             {
-                Debug.LogError("Combat Node with no Card");
+                Debug.LogError("Combat Node with no Enemy");
                 Debug.LogError("Something went wrong");
                 //GameManager.Instance.ProvideEndManager().FinishGameDeckEmpty();
             }
             else
             {
-                GameManager.Instance.StartCombat(combatStep.CombatCard);
+                GameObject enemy = Instantiate(EnemyPrefab);
+                EnemyDeckManager enemyManager = enemy.GetComponent<EnemyDeckManager>();
+                enemyManager.Init(combatStep.Enemy);
+                if(enemyManager)
+                {
+                    //Call start combat
+                }
+                //GameManager.Instance.StartCombat(combatStep.CombatCard);
             }
         }
         else if (nextStepInfo is ChangeZoneStep zoneStep)
