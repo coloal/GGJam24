@@ -1006,9 +1006,6 @@ GameObject:
   - component: {fileID: -359985912787657153}
   - component: {fileID: 4256447019006546249}
   - component: {fileID: 2635668833086684285}
-  - component: {fileID: 7100817756676060463}
-  - component: {fileID: 716506290496682850}
-  - component: {fileID: 4082083330158380480}
   - component: {fileID: 6146736266690828701}
   - component: {fileID: 7584840995440819424}
   m_Layer: 0
@@ -1118,57 +1115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d36d4aa0c0f4b5084290beb87f7c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7100817756676060463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960121501592178493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619f42c61fa604b26a9054d790ca2383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &716506290496682850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960121501592178493}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d63390f9aa7074d88582315e9196f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: 800
-  maxVelocity: 800
-  escapeZoneUpperLimitDistance: 2
-  escapeZoneLowerLimitDistance: 1
-  brakeDistance: 50
-  topEscapeAcceleration: 100
---- !u!114 &4082083330158380480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960121501592178493}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a421d5658179b4ec0872df47c343e8eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: 200
-  maxVelocity: 300
-  escapeZoneUpperLimitDistance: 2
-  escapeZoneLowerLimitDistance: 1
-  brakeDistance: 10
-  rotateDistance: 5
-  maxArcRotation: 15
-  maxFinalRotation: 30
-  finalRotationVelocity: 10
 --- !u!114 &6146736266690828701
 MonoBehaviour:
   m_ObjectHideFlags: 0

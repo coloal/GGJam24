@@ -24,8 +24,6 @@ public class CombatCard : MonoBehaviour
         cardSprite.sprite = combatCardTemplate.CharacterSprite;
     }
 
-    
-
     void Awake()
     {
         visualComposerComponent = GetComponent<CombatCardVisualComposerComponent>();
@@ -37,7 +35,6 @@ public class CombatCard : MonoBehaviour
         combatType = dataCard.CombatType;
         SetCardSprite(dataCard);
     }
-
 
     public float GetCardWidth()
     {
