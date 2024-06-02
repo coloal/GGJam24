@@ -229,7 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df62904ed26a8544b9c497ce4cb60fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatManager: {fileID: 0}
   combatVisualManager: {fileID: 0}
   combatV2Manager: {fileID: 1934736124}
 --- !u!4 &126443635
@@ -1047,7 +1046,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065748726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6639ea9f839486694f6bd5d6ac34c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 80be1ef01c7494c2cad909dff494b855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 500

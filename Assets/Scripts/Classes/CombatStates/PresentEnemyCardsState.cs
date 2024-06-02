@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,15 +19,25 @@ public class PresentEnemyCardsState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        MoveCardAnimationComponent animationComponent = 
-            combatContext.enemyCardsContainer.GetComponent<MoveCardAnimationComponent>();
+        MoveUIElementComponent animationComponent = 
+            combatContext.enemyCardsContainer.GetComponent<MoveUIElementComponent>();
         if (animationComponent)
         {
-            animationComponent.StartMovingCardTowards(
-                cardToMove: combatContext.enemyCardsContainer,
-                cardFinalPosition: combatContext.enemyCardsContainerFinalPosition,
+            Transform enemyCardsContainerOriginalPos = Transform.Instantiate(combatContext.enemyCardsContainer.transform);
+
+            animationComponent.StartMovingTowards(
+                objectToMove: combatContext.enemyCardsContainer,
+                finalPosition: Vector2.zero,
                 () => {
-                    PostProcess(combatContext);
+                    GameUtils.CreateTemporizer(() => {
+                        animationComponent.StartMovingTowards(
+                            objectToMove: combatContext.enemyCardsContainer,
+                            finalPosition: new Vector2(0f, 2000f),
+                            () => {
+                                PostProcess(combatContext);
+                            }
+                        );
+                    }, 3, CombatSceneManager.Instance);
                 }
             );
         }   
