@@ -1,37 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PresentPlayerCardsState : CombatState
 {
-    [SerializeField] int numberOfCards = 3;
+    private bool hasFinishedPresentigCards = false;
+
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
+        if (hasFinishedPresentigCards)
+        {
+            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
+        }
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)
     {
+        hasFinishedPresentigCards = false;
     }
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        // for(int i = 0; i < numberOfCards; i++)
-        // {
-        //     CombatCard cardToSpawn = GameManager.Instance.ProvideDeckManager().GiveTopCardToHand();
-        //     if(cardToSpawn != null)
-        //     {
-        //         GameUtils.CreateTemporizer(() =>
-        //         {
-        //             cardToSpawn.gameObject.SetActive(true);
-        //             cardToSpawn.gameObject.transform.parent = combatContext.playerHandContainer.transform;
-        //             PostProcess(combatContext);
-        //         }, i * 1, GameManager.Instance);
-        //     }
-           
-        // }
+        Preprocess(combatContext);
 
-        PostProcess(combatContext);
-        
+        DeckManager deckManager = GameManager.Instance.ProvideDeckManager();
+        for (int i = 0; i < deckManager.GetMaxNumberOfCardsInHand(); i++)
+        {
+            CombatCard cardToSpawnOnHand = deckManager.GiveTopCardToHand();
+            if (cardToSpawnOnHand != null)
+            {
+                int cardIndex = i;
+                GameUtils.CreateTemporizer(() => 
+                {
+                    cardToSpawnOnHand.gameObject.SetActive(true);
+                    cardToSpawnOnHand.gameObject.transform.SetParent(
+                        combatContext.playerHandContainer.transform,
+                        worldPositionStays: false
+                    );
+                    
+                    hasFinishedPresentigCards = cardIndex == deckManager.GetMaxNumberOfCardsInHand() - 1;
+                    PostProcess(combatContext);
+                }, i * .5f, GameManager.Instance);
+            }
+        }        
     }
 }

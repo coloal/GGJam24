@@ -8,6 +8,8 @@ public class DeckManager : MonoBehaviour
     
     [SerializeField] private List<CombatCardTemplate> PlayerCards;
     [SerializeField] private GameObject CombatCardPrefab;
+    [SerializeField] private int MaxNumberOfCardInHand = 3;
+
     private List<CombatCard> Hand;
     private List<CombatCard> Deck;
     public static DeckManager Instance;
@@ -16,7 +18,7 @@ public class DeckManager : MonoBehaviour
     {
         Hand = new List<CombatCard>();
         Deck = new List<CombatCard>();
-}
+    }
 
 
     void Awake()
@@ -102,5 +104,10 @@ public class DeckManager : MonoBehaviour
             card.SetDataCard(cardTemplate);
             Deck.Add(card);
         });
+    }
+
+    public int GetMaxNumberOfCardsInHand()
+    {
+        return MaxNumberOfCardInHand;
     }
 }
