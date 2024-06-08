@@ -15,6 +15,17 @@ public class ShowCardsState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        // Show enemy card first
+        CardAnimationsComponent enemyCardAnimationsComponent = combatContext.enemyOnCombatCard.GetComponent<CardAnimationsComponent>();
+        CardAnimationsComponent playerCardAnimationsComponent = combatContext.playerOnCombatCard.GetComponent<CardAnimationsComponent>();
+        if (enemyCardAnimationsComponent != null && playerCardAnimationsComponent != null)
+        {
+            enemyCardAnimationsComponent.ShowCard();
+            GameUtils.CreateTemporizer(() => {
+                playerCardAnimationsComponent.ShowCard();
+            }, 2.0f, GameManager.Instance);
+        }
+
         PostProcess(combatContext);
     }
 }

@@ -16,20 +16,22 @@ public class PresentPlayerCardsState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        for(int i = 0; i < numberOfCards; i++)
-        {
-            CombatCard cardToSpawn = GameManager.Instance.ProvideDeckManager().GiveTopCardToHand();
-            if(cardToSpawn != null)
-            {
-                GameUtils.CreateTemporizer(() =>
-                {
-                    cardToSpawn.gameObject.SetActive(true);
-                    cardToSpawn.gameObject.transform.parent = combatContext.playerHandContainer.transform;
-                    PostProcess(combatContext);
-                }, i * 1, GameManager.Instance);
-            }
+        // for(int i = 0; i < numberOfCards; i++)
+        // {
+        //     CombatCard cardToSpawn = GameManager.Instance.ProvideDeckManager().GiveTopCardToHand();
+        //     if(cardToSpawn != null)
+        //     {
+        //         GameUtils.CreateTemporizer(() =>
+        //         {
+        //             cardToSpawn.gameObject.SetActive(true);
+        //             cardToSpawn.gameObject.transform.parent = combatContext.playerHandContainer.transform;
+        //             PostProcess(combatContext);
+        //         }, i * 1, GameManager.Instance);
+        //     }
            
-        }
+        // }
+
+        PostProcess(combatContext);
         
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickEnemyCardState : CombatState
 {
+    private const float ENEMY_CARD_CANVAS_OFFSET = 360.15f;
+
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
         CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickPlayerCardState());
@@ -17,11 +19,17 @@ public class PickEnemyCardState : CombatState
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        CombatCard enemyCard = enemyDeckManager.SelectRandomCard();
+        // CombatCard enemyCard = enemyDeckManager.SelectRandomCard();
+        //GameObject enemyCard = enemyDeckManager.DebugGetRamdomCard();
+        GameObject enemyCard = GameObject.Instantiate(
+            enemyDeckManager.DebugGetRamdomCard(),
+            combatContext.combatContainer.transform
+        );
+        
         RectTransform enemyCardTransform = enemyCard.GetComponent<RectTransform>();
         if (enemyCardTransform)
         {
-            enemyCardTransform.anchoredPosition = new Vector2(0,2000);
+            enemyCardTransform.anchoredPosition = new Vector2(0, ENEMY_CARD_CANVAS_OFFSET);
         }
         
 

@@ -16,6 +16,7 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject enemyOnCombatCard;
         public GameObject enemyOnCombatCardFinalPosition;
         public EnemyTemplate enemyTemplate;
+        public GameObject combatContainer;
 
         public CombatContext(GameObject enemyCardsContainer,
             Transform enemyCardsContainerFinalPosition,
@@ -24,7 +25,8 @@ public class CombatV2Manager : MonoBehaviour
             GameObject playerOnCombatCard,
             GameObject enemyOnCombatCard,
             GameObject enemyOnCombatCardFinalPosition,
-            EnemyTemplate enemyTemplate)
+            EnemyTemplate enemyTemplate,
+            GameObject combatContainer)
         {
             this.enemyCardsContainer = enemyCardsContainer;
             this.enemyCardsContainerFinalPosition = enemyCardsContainerFinalPosition;
@@ -34,6 +36,7 @@ public class CombatV2Manager : MonoBehaviour
             this.enemyOnCombatCard = enemyOnCombatCard;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.enemyTemplate = enemyTemplate;
+            this.combatContainer = combatContainer;
         }
     }
 
@@ -46,6 +49,7 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject EnemyOnCombatCard;
     [SerializeField] private GameObject EnemyOnCombatCardFinalPosition;
     [SerializeField] private EnemyTemplate EnemyTemplate;
+    [SerializeField] private GameObject CombatContainer;
 
     private CombatContext combatContext;
 
@@ -66,7 +70,8 @@ public class CombatV2Manager : MonoBehaviour
             PlayerOnCombatCard,
             EnemyOnCombatCard,
             EnemyOnCombatCardFinalPosition,
-            EnemyTemplate
+            EnemyTemplate,
+            CombatContainer
         );
     }
 

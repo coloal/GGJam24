@@ -9,6 +9,10 @@ public class EnemyDeckManager : MonoBehaviour
     private EnemyTemplate template;
     private List<CombatCard> hand;
     private List<CombatCard> graveyard;
+
+    [Header("Debug")]
+    [SerializeField] private GameObject debugCombatCardPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,4 +54,8 @@ public class EnemyDeckManager : MonoBehaviour
         return template.CombatCards[cardIndex];
     }
 
+    public GameObject DebugGetRamdomCard()
+    {
+        return debugCombatCardPrefab;
+    }
 }

@@ -34,4 +34,12 @@ public class GameUtils : MonoBehaviour
     {
         return new Color(r / 255.0f, g / 255.0f, b / 255.0f, alpha / 255.0f);
     }
+
+    public static GameObject InstantiateOnCanvas(GameObject gameObjectToInstantiate)
+    {
+        return GameObject.Instantiate(
+            gameObjectToInstantiate,    
+            GameObject.FindGameObjectWithTag(TagsNames.MainCanvasTag).transform
+        );
+    }
 }

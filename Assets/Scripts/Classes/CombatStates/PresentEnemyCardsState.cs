@@ -37,7 +37,7 @@ public class PresentEnemyCardsState : CombatState
                                 PostProcess(combatContext);
                             }
                         );
-                    }, 3, CombatSceneManager.Instance);
+                    }, 1, CombatSceneManager.Instance);
                 }
             );
         }   
