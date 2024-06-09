@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickEnemyCardState : CombatState
 {
-    private const float ENEMY_CARD_CANVAS_OFFSET = 360.15f;
-
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
         CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickPlayerCardState());
@@ -21,15 +20,16 @@ public class PickEnemyCardState : CombatState
 
         // CombatCard enemyCard = enemyDeckManager.SelectRandomCard();
         //GameObject enemyCard = enemyDeckManager.DebugGetRamdomCard();
-        GameObject enemyCard = GameObject.Instantiate(
-            enemyDeckManager.DebugGetRamdomCard(),
-            combatContext.combatContainer.transform
-        );
+        GameObject enemyCard = GameObject.Instantiate(enemyDeckManager.DebugGetRamdomCard());
         
-        RectTransform enemyCardTransform = enemyCard.GetComponent<RectTransform>();
-        if (enemyCardTransform)
+        RectTransform rectTransformComponent = enemyCard.GetComponent<RectTransform>();
+        if (rectTransformComponent != null)
         {
-            enemyCardTransform.anchoredPosition = new Vector2(0, ENEMY_CARD_CANVAS_OFFSET);
+            rectTransformComponent.gameObject.transform.SetParent(
+                combatContext.enemyOnCombatCardFinalPosition.transform.parent,
+                worldPositionStays: false
+            );
+            rectTransformComponent.position = combatContext.enemyOnCombatCardFinalPosition.transform.position;
         }
         
 

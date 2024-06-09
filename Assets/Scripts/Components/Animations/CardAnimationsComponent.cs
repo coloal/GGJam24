@@ -10,11 +10,18 @@ public class CardAnimationsComponent : MonoBehaviour
     [Tooltip("Shoaw crad animation in seconds")]
     [SerializeField] private float showCardAnimationDuration = 3.0f;
 
-    public void ShowCard() {
+    public void ShowCard() 
+    {
         // Placeholder logics for showing a card. Here must be place the final animation logic
         gameObject.SetActive(false);
         GameUtils.CreateTemporizer(() => {
             gameObject.SetActive(true);
         }, showCardAnimationDuration, this);
+    }
+
+    public void HideCard()
+    {
+        // Placeholder logics for showing a card. Here must be place the final animation logic
+        gameObject.SetActive(false);
     }
 }

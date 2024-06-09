@@ -110,4 +110,9 @@ public class DeckManager : MonoBehaviour
     {
         return MaxNumberOfCardInHand;
     }
+
+    public List<CombatCard> GetCardsInHand()
+    {
+        return Hand;
+    }
 }

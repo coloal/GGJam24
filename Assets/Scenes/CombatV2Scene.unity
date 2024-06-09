@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 187807796}
   - component: {fileID: 187807795}
   m_Layer: 5
-  m_Name: PlayerCard
+  m_Name: PlayerCardFinalPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1640,7 +1640,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1812,6 +1812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCards: []
   CombatCardPrefab: {fileID: 0}
+  MaxNumberOfCardInHand: 3
 --- !u!1 &1785266794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1967,7 @@ MonoBehaviour:
   EnemyCardsContainerFinalPosition: {fileID: 717364041}
   PlayerHandContainer: {fileID: 1473415284}
   PlayerDeck: {fileID: 1160582997}
-  PlayerOnCombatCard: {fileID: 187807793}
+  PlayerOnCombatCardFinalPosition: {fileID: 187807793}
   EnemyOnCombatCard: {fileID: 1300605630}
   EnemyOnCombatCardFinalPosition: {fileID: 862520345}
   EnemyTemplate: {fileID: 0}
@@ -2005,6 +2006,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
   - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
   CombatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
+  MaxNumberOfCardInHand: 3
 --- !u!4 &1993801136
 Transform:
   m_ObjectHideFlags: 0
