@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,33 +6,31 @@ public class EnemyDeckManager : MonoBehaviour
     [SerializeField] private GameObject combatCardPrefab;
 
     private EnemyTemplate template;
-    private List<CombatCard> hand;
-    private List<CombatCard> graveyard;
+    private List<CombatCard> cardsInUse;
+    private List<CombatCard> deck;
 
     [Header("Debug")]
     [SerializeField] private GameObject debugCombatCardPrefab;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        cardsInUse = new List<CombatCard>();
+        deck = new List<CombatCard>();
     }
     
     public CombatCard SelectRandomCard()
     {
-        int idx = Random.Range(0, hand.Count);
-        return hand[idx];
+        CombatCard selectedCard = deck[Random.Range(0, cardsInUse.Count)];
+        cardsInUse.Add(selectedCard);
+        deck.Remove(selectedCard);
+
+        return selectedCard;
     }
 
     public void KillCard(CombatCard card) 
     {
-        hand.Remove(card);
+        cardsInUse.Remove(card);
+        deck.Remove(card);
     }
 
     public void StartCombat(EnemyTemplate template)
@@ -44,14 +41,30 @@ public class EnemyDeckManager : MonoBehaviour
             CombatCard card = Instantiate(combatCardPrefab)?.GetComponent<CombatCard>();
             card.gameObject.SetActive(false);
             card.SetDataCard(handTemplate);
-            hand.Add(card);
-            graveyard.Add(card);
+
+            deck.Add(card);
         });
     }
 
     public CombatCardTemplate SelectCardToSave(int cardIndex)
     {
         return template.CombatCards[cardIndex];
+    }
+
+    public void ReturnCardToDeck(CombatCard cardToReturnToDeck)
+    {
+        cardsInUse.Remove(cardToReturnToDeck);
+        deck.Add(cardToReturnToDeck);
+    }
+
+    public int GetNumberOfCardsInDeck()
+    {
+        return deck.Count;
+    }
+
+    public List<CombatCardTemplate> GetAllEnemyCards()
+    {
+        return template.CombatCards;
     }
 
     public GameObject DebugGetRamdomCard()

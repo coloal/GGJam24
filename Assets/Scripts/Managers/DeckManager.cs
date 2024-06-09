@@ -6,20 +6,19 @@ using UnityEngine;
 public class DeckManager : MonoBehaviour
 {
     
-    [SerializeField] private List<CombatCardTemplate> PlayerCards;
-    [SerializeField] private GameObject CombatCardPrefab;
-    [SerializeField] private int MaxNumberOfCardInHand = 3;
+    [SerializeField] private List<CombatCardTemplate> playerCards;
+    [SerializeField] private GameObject combatCardPrefab;
+    [SerializeField] private int maxNumberOfCardInHand = 3;
 
-    private List<CombatCard> Hand;
-    private List<CombatCard> Deck;
+    private List<CombatCard> hand;
+    private List<CombatCard> deck;
     public static DeckManager Instance;
 
     public DeckManager()
     {
-        Hand = new List<CombatCard>();
-        Deck = new List<CombatCard>();
+        hand = new List<CombatCard>();
+        deck = new List<CombatCard>();
     }
-
 
     void Awake()
     {
@@ -36,83 +35,77 @@ public class DeckManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public CombatCard GetTopCard()
     {
-        if (Deck.Count <= 0) return null;
-        CombatCard card = Deck[0];
+        if (deck.Count <= 0) return null;
+        CombatCard card = deck[0];
         return card;
     }
 
     public CombatCard GiveTopCardToHand()
     {
         CombatCard card = GetTopCard();
-        Deck.Remove(card);
+        deck.Remove(card);
         if (card != null)
         {
-            Hand.Add(card);
+            hand.Add(card);
         }
         return card;
     }
 
     public void ReturnCardToDeck(CombatCard card)
     {
-        Hand.Remove(card);
-        Deck.Add(card);
+        hand.Remove(card);
+        deck.Add(card);
     }
 
     public void ShuffleDeck()
     {
-        List<CombatCard> auxList = new List<CombatCard>(Deck);
-        Deck.Clear();
+        List<CombatCard> auxList = new List<CombatCard>(deck);
+        deck.Clear();
         while (auxList.Any())
         {
             int idx = Random.Range(0, auxList.Count - 1);
-            Deck.Add(auxList[idx]);
+            deck.Add(auxList[idx]);
             auxList.RemoveAt(idx);
         }
     }
 
     public void KillCard(CombatCard card)
     {
-        Hand.Remove(card);
+        hand.Remove(card);
+        deck.Remove(card);
     }
 
     
     public void FinishCombat()
     {
-        Hand.Clear();
-        Deck.Clear();
+        hand.Clear();
+        deck.Clear();
     }
 
     public void StartCombat()
     {
-        PlayerCards.ForEach(cardTemplate => {
-            CombatCard card = Instantiate(CombatCardPrefab)?.GetComponent<CombatCard>();
+        playerCards.ForEach(cardTemplate => {
+            CombatCard card = Instantiate(combatCardPrefab)?.GetComponent<CombatCard>();
             card.gameObject.SetActive(false);
             card.SetDataCard(cardTemplate);
-            Deck.Add(card);
+            deck.Add(card);
         });
     }
 
     public int GetMaxNumberOfCardsInHand()
     {
-        return MaxNumberOfCardInHand;
+        return maxNumberOfCardInHand;
     }
 
     public List<CombatCard> GetCardsInHand()
     {
-        return Hand;
+        return hand;
+    }
+
+    public int GetNumberOfCardsInDeck()
+    {
+        return deck.Count;
     }
 }
