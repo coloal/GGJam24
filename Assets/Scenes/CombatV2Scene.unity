@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 717364041}
   m_Layer: 5
-  m_Name: EnemyCardsShowPosition
+  m_Name: EnemyCardsCombatTypeHintsContainerFinalPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 1065748728}
   - component: {fileID: 1065748731}
   m_Layer: 5
-  m_Name: EnemyCardsContainer
+  m_Name: EnemyCardsCombatTypeHintsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1045,10 +1045,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 626067131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2000}
-  m_SizeDelta: {x: 0, y: 428.2473}
+  m_AnchorMin: {x: 0, y: 0.4}
+  m_AnchorMax: {x: 1, y: 0.6}
+  m_AnchoredPosition: {x: 0, y: 2121}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065748728
 MonoBehaviour:
@@ -1067,7 +1067,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1886,14 +1886,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8b17f49e51143ac959a667989aebf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCardsContainer: {fileID: 1065748726}
-  EnemyCardsContainerFinalPosition: {fileID: 717364041}
+  EnemyCardsCombatTypeHintsContainer: {fileID: 1065748726}
+  EnemyCardsCombatTypeHintsContainerFinalPosition: {fileID: 717364041}
   PlayerHandContainer: {fileID: 1473415284}
   PlayerDeck: {fileID: 1160582997}
   PlayerOnCombatCardFinalPosition: {fileID: 187807793}
   EnemyOnCombatCardFinalPosition: {fileID: 862520345}
   EnemyTemplate: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
   CombatContainer: {fileID: 22281070}
+  combatTypeHintPrefab: {fileID: 1413738314295996990, guid: 293e3e0d1cedb4d4987d78793a6669ed, type: 3}
 --- !u!1 &1993801134
 GameObject:
   m_ObjectHideFlags: 0
