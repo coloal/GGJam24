@@ -138,6 +138,63 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Mobile"",
+            ""id"": ""ba357b15-03b6-4164-acea-73de243c0193"",
+            ""actions"": [
+                {
+                    ""name"": ""Touch"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""73e4ad88-354c-4ca4-ba82-6cad36a2e4d1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Release"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""9920df83-6026-41da-a2f6-21ceb240924a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TouchPosition"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""d58ef712-a7a5-41a2-86b1-b155757bf1bd"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4b502235-848e-4dbb-8329-d29ec2323cd9"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Release"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1ae9a35-bfd9-4327-ada2-3ef0e4ee6ead"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -151,6 +208,11 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Controller = asset.FindActionMap("Controller", throwIfNotFound: true);
         m_Controller_MouseOverRay = m_Controller.FindAction("MouseOverRay", throwIfNotFound: true);
         m_Controller_LeftClickRay = m_Controller.FindAction("LeftClickRay", throwIfNotFound: true);
+        // Mobile
+        m_Mobile = asset.FindActionMap("Mobile", throwIfNotFound: true);
+        m_Mobile_Touch = m_Mobile.FindAction("Touch", throwIfNotFound: true);
+        m_Mobile_Release = m_Mobile.FindAction("Release", throwIfNotFound: true);
+        m_Mobile_TouchPosition = m_Mobile.FindAction("TouchPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -324,6 +386,68 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public ControllerActions @Controller => new ControllerActions(this);
+
+    // Mobile
+    private readonly InputActionMap m_Mobile;
+    private List<IMobileActions> m_MobileActionsCallbackInterfaces = new List<IMobileActions>();
+    private readonly InputAction m_Mobile_Touch;
+    private readonly InputAction m_Mobile_Release;
+    private readonly InputAction m_Mobile_TouchPosition;
+    public struct MobileActions
+    {
+        private @InputActions m_Wrapper;
+        public MobileActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Touch => m_Wrapper.m_Mobile_Touch;
+        public InputAction @Release => m_Wrapper.m_Mobile_Release;
+        public InputAction @TouchPosition => m_Wrapper.m_Mobile_TouchPosition;
+        public InputActionMap Get() { return m_Wrapper.m_Mobile; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MobileActions set) { return set.Get(); }
+        public void AddCallbacks(IMobileActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MobileActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MobileActionsCallbackInterfaces.Add(instance);
+            @Touch.started += instance.OnTouch;
+            @Touch.performed += instance.OnTouch;
+            @Touch.canceled += instance.OnTouch;
+            @Release.started += instance.OnRelease;
+            @Release.performed += instance.OnRelease;
+            @Release.canceled += instance.OnRelease;
+            @TouchPosition.started += instance.OnTouchPosition;
+            @TouchPosition.performed += instance.OnTouchPosition;
+            @TouchPosition.canceled += instance.OnTouchPosition;
+        }
+
+        private void UnregisterCallbacks(IMobileActions instance)
+        {
+            @Touch.started -= instance.OnTouch;
+            @Touch.performed -= instance.OnTouch;
+            @Touch.canceled -= instance.OnTouch;
+            @Release.started -= instance.OnRelease;
+            @Release.performed -= instance.OnRelease;
+            @Release.canceled -= instance.OnRelease;
+            @TouchPosition.started -= instance.OnTouchPosition;
+            @TouchPosition.performed -= instance.OnTouchPosition;
+            @TouchPosition.canceled -= instance.OnTouchPosition;
+        }
+
+        public void RemoveCallbacks(IMobileActions instance)
+        {
+            if (m_Wrapper.m_MobileActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMobileActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MobileActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MobileActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MobileActions @Mobile => new MobileActions(this);
     public interface IDefaultActions
     {
         void OnLeftClick(InputAction.CallbackContext context);
@@ -334,5 +458,11 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     {
         void OnMouseOverRay(InputAction.CallbackContext context);
         void OnLeftClickRay(InputAction.CallbackContext context);
+    }
+    public interface IMobileActions
+    {
+        void OnTouch(InputAction.CallbackContext context);
+        void OnRelease(InputAction.CallbackContext context);
+        void OnTouchPosition(InputAction.CallbackContext context);
     }
 }
