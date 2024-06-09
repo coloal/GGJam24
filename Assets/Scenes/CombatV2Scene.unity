@@ -1232,7 +1232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
-  debugCombatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
 --- !u!4 &1197101117
 Transform:
   m_ObjectHideFlags: 0
@@ -1734,9 +1733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce15a6f66c62e0a4e9a135f3d9cf51b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCards: []
-  CombatCardPrefab: {fileID: 0}
-  MaxNumberOfCardInHand: 3
+  playerCards: []
+  combatCardPrefab: {fileID: 0}
+  maxNumberOfCardInHand: 3
 --- !u!1 &1785266794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1892,7 @@ MonoBehaviour:
   PlayerDeck: {fileID: 1160582997}
   PlayerOnCombatCardFinalPosition: {fileID: 187807793}
   EnemyOnCombatCardFinalPosition: {fileID: 862520345}
-  EnemyTemplate: {fileID: 0}
+  EnemyTemplate: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
   CombatContainer: {fileID: 22281070}
 --- !u!1 &1993801134
 GameObject:
@@ -1924,12 +1923,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce15a6f66c62e0a4e9a135f3d9cf51b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCards:
+  playerCards:
   - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
   - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
   - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
-  CombatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
-  MaxNumberOfCardInHand: 3
+  combatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
+  maxNumberOfCardInHand: 3
 --- !u!4 &1993801136
 Transform:
   m_ObjectHideFlags: 0

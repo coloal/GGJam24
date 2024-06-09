@@ -17,16 +17,17 @@ public class PickEnemyCardState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        combatContext.enemyOnCombatCard = null;
+
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        // CombatCard enemyCard = enemyDeckManager.SelectRandomCard();
-        //GameObject enemyCard = enemyDeckManager.DebugGetRamdomCard();
-        GameObject enemyCard = GameObject.Instantiate(enemyDeckManager.DebugGetRamdomCard());
+        GameObject enemyCard = enemyDeckManager.SelectRandomCard().gameObject;
         combatContext.enemyOnCombatCard = enemyCard;
         
         RectTransform rectTransformComponent = enemyCard.GetComponent<RectTransform>();
         if (rectTransformComponent != null)
         {
+            enemyCard.SetActive(true);
             rectTransformComponent.gameObject.transform.SetParent(
                 combatContext.enemyOnCombatCardFinalPosition.transform.parent,
                 worldPositionStays: false

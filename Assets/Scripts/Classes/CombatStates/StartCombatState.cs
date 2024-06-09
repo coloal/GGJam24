@@ -19,7 +19,7 @@ public class StartCombatState : CombatState
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
         deckManager.StartCombat();
-//        enemyDeckManager.StartCombat(combatContext.enemyTemplate);
+        enemyDeckManager.StartCombat(combatContext.enemyTemplate);
 
         PostProcess(combatContext);
     }

@@ -9,9 +9,6 @@ public class EnemyDeckManager : MonoBehaviour
     private List<CombatCard> cardsInUse;
     private List<CombatCard> deck;
 
-    [Header("Debug")]
-    [SerializeField] private GameObject debugCombatCardPrefab;
-
     void Awake()
     {
         cardsInUse = new List<CombatCard>();
@@ -65,10 +62,5 @@ public class EnemyDeckManager : MonoBehaviour
     public List<CombatCardTemplate> GetAllEnemyCards()
     {
         return template.CombatCards;
-    }
-
-    public GameObject DebugGetRamdomCard()
-    {
-        return debugCombatCardPrefab;
     }
 }
