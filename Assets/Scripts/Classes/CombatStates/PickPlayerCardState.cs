@@ -19,6 +19,7 @@ public class PickPlayerCardState : CombatState
             }
         }
 
+        CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
         CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ShowCardsState());
     }
 
@@ -48,6 +49,8 @@ public class PickPlayerCardState : CombatState
                         );
                         rectTransformComponent.position = combatContext.playerOnCombatCardFinalPosition.transform.position;
                     }
+
+                    combatContext.playerOnCombatCard = cardInHand.gameObject;
 
                     PostProcess(combatContext);
                 });

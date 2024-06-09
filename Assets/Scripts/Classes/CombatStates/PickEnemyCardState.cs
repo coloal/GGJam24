@@ -7,6 +7,7 @@ public class PickEnemyCardState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
+        CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
         CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickPlayerCardState());
     }
 
@@ -21,6 +22,7 @@ public class PickEnemyCardState : CombatState
         // CombatCard enemyCard = enemyDeckManager.SelectRandomCard();
         //GameObject enemyCard = enemyDeckManager.DebugGetRamdomCard();
         GameObject enemyCard = GameObject.Instantiate(enemyDeckManager.DebugGetRamdomCard());
+        combatContext.enemyOnCombatCard = enemyCard;
         
         RectTransform rectTransformComponent = enemyCard.GetComponent<RectTransform>();
         if (rectTransformComponent != null)

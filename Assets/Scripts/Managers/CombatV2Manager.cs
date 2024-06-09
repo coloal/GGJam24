@@ -12,6 +12,7 @@ public class CombatV2Manager : MonoBehaviour
         public Transform enemyCardsContainerFinalPosition;
         public GameObject playerHandContainer;
         public GameObject playerDeck;
+        public GameObject playerOnCombatCard;
         public GameObject playerOnCombatCardFinalPosition;
         public GameObject enemyOnCombatCard;
         public GameObject enemyOnCombatCardFinalPosition;
@@ -23,7 +24,6 @@ public class CombatV2Manager : MonoBehaviour
             GameObject playerHandContainer,
             GameObject playerDeck,
             GameObject playerOnCombatCardFinalPosition,
-            GameObject enemyOnCombatCard,
             GameObject enemyOnCombatCardFinalPosition,
             EnemyTemplate enemyTemplate,
             GameObject combatContainer)
@@ -33,10 +33,12 @@ public class CombatV2Manager : MonoBehaviour
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
             this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
-            this.enemyOnCombatCard = enemyOnCombatCard;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.enemyTemplate = enemyTemplate;
             this.combatContainer = combatContainer;
+
+            this.playerOnCombatCard = null;
+            this.enemyOnCombatCard = null;
         }
     }
 
@@ -46,7 +48,6 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject PlayerHandContainer;
     [SerializeField] private GameObject PlayerDeck;
     [SerializeField] private GameObject PlayerOnCombatCardFinalPosition;
-    [SerializeField] private GameObject EnemyOnCombatCard;
     [SerializeField] private GameObject EnemyOnCombatCardFinalPosition;
     [SerializeField] private EnemyTemplate EnemyTemplate;
     [SerializeField] private GameObject CombatContainer;
@@ -68,7 +69,6 @@ public class CombatV2Manager : MonoBehaviour
             PlayerHandContainer,
             PlayerDeck,
             PlayerOnCombatCardFinalPosition,
-            EnemyOnCombatCard,
             EnemyOnCombatCardFinalPosition,
             EnemyTemplate,
             CombatContainer
@@ -84,5 +84,10 @@ public class CombatV2Manager : MonoBehaviour
     {
         // Set up DeckManager
         Debug.Log("Managers, set uped!");
+    }
+
+    public void OverwriteCombatContext(CombatContext newCombatContext)
+    {
+        combatContext = newCombatContext;
     }
 }

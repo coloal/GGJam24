@@ -17,7 +17,7 @@ public class ShowCardsState : CombatState
     {
         // Show enemy card first
         CardAnimationsComponent enemyCardAnimationsComponent = combatContext.enemyOnCombatCard.GetComponent<CardAnimationsComponent>();
-        CardAnimationsComponent playerCardAnimationsComponent = combatContext.playerOnCombatCardFinalPosition.GetComponent<CardAnimationsComponent>();
+        CardAnimationsComponent playerCardAnimationsComponent = combatContext.playerOnCombatCard.GetComponent<CardAnimationsComponent>();
         if (enemyCardAnimationsComponent != null && playerCardAnimationsComponent != null)
         {
             enemyCardAnimationsComponent.ShowCard();
