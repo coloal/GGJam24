@@ -55,6 +55,10 @@ MonoBehaviour:
   - rid: 3107022144919568433
   - rid: 3107022144919568434
   - rid: 3107022144919568435
+  - rid: 3107022160606265344
+  - rid: 3107022160606265345
+  - rid: 3107022160606265346
+  - rid: 3107022160606265347
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -373,6 +377,30 @@ MonoBehaviour:
       portIndex: 1
     inputPort:
       nodeId: a1e21976-d314-4aba-8624-f4f9bbff775b
+      portIndex: 1
+  - outputPort:
+      nodeId: 1428572b-5737-413f-886a-91ce84d6b98b
+      portIndex: 1
+    inputPort:
+      nodeId: 51d3a3bd-22be-4f67-baf2-51f23528e83c
+      portIndex: 2
+  - outputPort:
+      nodeId: 1428572b-5737-413f-886a-91ce84d6b98b
+      portIndex: 0
+    inputPort:
+      nodeId: 2a88bc38-ef8a-4732-9800-63d1069c6bed
+      portIndex: 1
+  - outputPort:
+      nodeId: 51d3a3bd-22be-4f67-baf2-51f23528e83c
+      portIndex: 0
+    inputPort:
+      nodeId: 4287a2d1-3e18-418b-97af-814352bcc15a
+      portIndex: 1
+  - outputPort:
+      nodeId: 51d3a3bd-22be-4f67-baf2-51f23528e83c
+      portIndex: 1
+    inputPort:
+      nodeId: a804dc46-3070-4629-b197-a446c3931798
       portIndex: 1
   references:
     version: 2
@@ -957,9 +985,9 @@ MonoBehaviour:
         guid: f62b3f53-62a3-4f9a-a77b-db8145a01a33
         position:
           serializedVersion: 2
-          x: 3203
-          y: 4412
-          width: 508
+          x: 3119
+          y: 4920
+          width: 610
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1076,8 +1104,8 @@ MonoBehaviour:
         guid: 1428572b-5737-413f-886a-91ce84d6b98b
         position:
           serializedVersion: 2
-          x: 2951
-          y: 3782
+          x: 3123
+          y: 3894
           width: 321
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1085,29 +1113,31 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 
-        LeftText: 
-        RightText: 
-        card: {fileID: 0}
+        CardText: "I was waiting for a newbie that will endlessly help me on the
+          birds care.\nYou must learn to treat them properly as they will get violent
+          if you don't. \nHere, take this birdie in your arm."
+        LeftText: Punch bird in the face and try to escape
+        RightText: Try to win time letting it stay in your arm
+        card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
     - rid: 3107022144919568431
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: c8ac2311-0cf7-4765-b8fc-78ee0202c295
         position:
           serializedVersion: 2
-          x: 3969
-          y: 4412
-          width: 321
+          x: 3885
+          y: 4920
+          width: 571
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: Hey, buddy, sorry for the unemployment, think about this way, now
-          you will have more time for yourself
+        CardText: Hey, buddy, sorry for the unemployment, think about it this way,
+          now you will have more time for yourself
         LeftText: Go destroy your home PC
-        RightText: Look for other option
+        RightText: '[Look for other option]'
         card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
     - rid: 3107022144919568432
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1115,10 +1145,10 @@ MonoBehaviour:
         guid: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
         position:
           serializedVersion: 2
-          x: 4736.746
-          y: 4455.1562
-          width: 0
-          height: 0
+          x: 4849
+          y: 5340
+          width: 498
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1135,8 +1165,8 @@ MonoBehaviour:
         guid: 41b7899c-cea6-4d04-9430-c6d3903e07d2
         position:
           serializedVersion: 2
-          x: 4479
-          y: 3944
+          x: 4619
+          y: 4633
           width: 423
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1154,8 +1184,8 @@ MonoBehaviour:
         guid: e2c633fd-3014-479b-822a-3e5fe096c863
         position:
           serializedVersion: 2
-          x: 5360
-          y: 4108
+          x: 5472
+          y: 4993
           width: 414
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1166,17 +1196,17 @@ MonoBehaviour:
           your deck!'
         LeftText: Finally, a good new
         RightText: Yes, money first!
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 3107022144919568435
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: a1e21976-d314-4aba-8624-f4f9bbff775b
         position:
           serializedVersion: 2
-          x: 5374.772
-          y: 4742.0884
-          width: 0
-          height: 0
+          x: 5487
+          y: 5627
+          width: 427
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1184,6 +1214,82 @@ MonoBehaviour:
         CardText: 'Info card: Your last decisions has made you get a influence card
           to your deck!'
         LeftText: Influence is a very positive way of describing it
+        RightText: Nice, I like being influent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265344
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 51d3a3bd-22be-4f67-baf2-51f23528e83c
+        position:
+          serializedVersion: 2
+          x: 3717
+          y: 4058
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: You seem pretty nervous, buddie, don't you like birds?
+        LeftText: NO, can I pay you to avoid this work?
+        RightText: NO, and you better let me go
+        card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
+    - rid: 3107022160606265345
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2a88bc38-ef8a-4732-9800-63d1069c6bed
+        position:
+          serializedVersion: 2
+          x: 3748
+          y: 3583
+          width: 314
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Info card: Your last decisions has made you get a violence card
+          to your deck!'
+        LeftText: '**** I thought this was inconsequential'
+        RightText: Nice, I like being violent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265346
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4287a2d1-3e18-418b-97af-814352bcc15a
+        position:
+          serializedVersion: 2
+          x: 4315
+          y: 3882
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Info card: Your last decisions has made you get a money card to
+          your deck!'
+        LeftText: Wow, I thought this was inconsequential
+        RightText: Nice, money first
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265347
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a804dc46-3070-4629-b197-a446c3931798
+        position:
+          serializedVersion: 2
+          x: 4315
+          y: 4253
+          width: 427
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Info card: Your last decisions has made you get a influence card
+          to your deck!'
+        LeftText: Damn, I thought this was inconsequential
         RightText: Nice, I like being influent
         card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 8580623337150218298
