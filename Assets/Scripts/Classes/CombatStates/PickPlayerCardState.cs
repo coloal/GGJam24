@@ -29,8 +29,6 @@ public class PickPlayerCardState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        combatContext.playerOnCombatCard = null;
-
         DeckManager deckManager = GameManager.Instance.ProvideDeckManager();
         List<CombatCard> cardsInHand = deckManager.GetCardsInHand();
         

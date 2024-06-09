@@ -17,6 +17,7 @@ public class ResolveCombatState : CombatState
     {
         if (nextCombatState != null)
         {
+            CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
             CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(nextCombatState);   
         }
     }
@@ -35,7 +36,7 @@ public class ResolveCombatState : CombatState
 
         if (playerOnCombatCard != null && enemyOnCombatCard != null)
         {
-            nextCombatState = ProcessCombatResult(ResolveCombat(playerOnCombatCard, enemyOnCombatCard));
+            nextCombatState = ProcessCombatResult(ResolveCombat(playerOnCombatCard, enemyOnCombatCard), ref combatContext);
             PostProcess(combatContext);
         }
     }
@@ -87,17 +88,14 @@ public class ResolveCombatState : CombatState
         return CombatResult.Draw;
     }
 
-    CombatState ProcessCombatResult(CombatResult combatResult)
+    CombatState ProcessCombatResult(CombatResult combatResult, ref CombatV2Manager.CombatContext combatContext)
     {
-        int enemyCardsLeftOnDeck = CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck();
-        int playerCardsLeftOnDeck = GameManager.Instance.ProvideDeckManager().GetNumberOfCardsInDeck();
-
         switch (combatResult)
         {
             case CombatResult.PlayerWon:
-                return ProcessPlayerWonState(enemyCardsLeftOnDeck);
+                return ProcessPlayerWonState(ref combatContext);
             case CombatResult.EnemyWon:
-                return ProcessEnemyWonState(playerCardsLeftOnDeck);
+                return ProcessEnemyWonState(ref combatContext);
             case CombatResult.Draw:
                 return new ResultDrawState();
             default:
@@ -107,11 +105,39 @@ public class ResolveCombatState : CombatState
         return null;
     }
 
-    CombatState ProcessPlayerWonState(int enemyCardsLeftOnDeck)
+    CombatState ProcessPlayerWonState(ref CombatV2Manager.CombatContext combatContext)
     {
-        if (enemyCardsLeftOnDeck > 0)
+        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        DeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+
+        void KillEnemyCard(ref CombatV2Manager.CombatContext combatContext)
         {
-            return new PickEnemyCardState();
+            CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+            if (enemyCombatCard != null)
+            {
+                enemyDeckManager.KillCard(enemyCombatCard);
+                GameObject.Destroy(combatContext.enemyOnCombatCard.gameObject);
+                combatContext.enemyOnCombatCard = null;
+            }
+        }
+
+        void ReturnPlayerCardToDeck(ref CombatV2Manager.CombatContext combatContext)
+        {
+            CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+            if (playerCombatCard != null)
+            {
+                playerDeckManager.ReturnCardToDeck(playerCombatCard);
+                combatContext.playerOnCombatCard.SetActive(false);
+                combatContext.playerOnCombatCard = null;
+            }
+        }
+
+        KillEnemyCard(ref combatContext);
+        ReturnPlayerCardToDeck(ref combatContext);
+
+        if (enemyDeckManager.GetNumberOfCardsInDeck() > 0)
+        {
+            return new PresentPlayerCardsState();
         }
         else
         {
@@ -119,11 +145,39 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    CombatState ProcessEnemyWonState(int playerCardsLeftOnDeck)
+    CombatState ProcessEnemyWonState(ref CombatV2Manager.CombatContext combatContext)
     {
-        if (playerCardsLeftOnDeck > 0)
+        DeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+
+        void KillPlayerCard(ref CombatV2Manager.CombatContext combatContext)
         {
-            return new PickEnemyCardState();
+            CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+            if (playerCombatCard != null)
+            {
+                playerDeckManager.KillCard(playerCombatCard);
+                GameObject.Destroy(combatContext.playerOnCombatCard.gameObject);
+                combatContext.playerOnCombatCard = null;
+            }
+        }
+
+        void ReturnEnemyCardToDeck(ref CombatV2Manager.CombatContext combatContext)
+        {
+            CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+            if (enemyCombatCard != null)
+            {
+                enemyDeckManager.ReturnCardToDeck(enemyCombatCard);
+                combatContext.enemyOnCombatCard.SetActive(false);
+                combatContext.enemyOnCombatCard = null;
+            }
+        }
+
+        KillPlayerCard(ref combatContext);
+        ReturnEnemyCardToDeck(ref combatContext);
+
+        if (playerDeckManager.GetNumberOfCardsInDeck() > 0 || playerDeckManager.GetNumberOfCardsInHand() > 0)
+        {
+            return new PresentPlayerCardsState();
         }
         else
         {

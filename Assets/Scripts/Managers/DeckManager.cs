@@ -94,7 +94,7 @@ public class DeckManager : MonoBehaviour
         });
     }
 
-    public int GetMaxNumberOfCardsInHand()
+    public int GetMaxAllowedCardsInHand()
     {
         return maxNumberOfCardInHand;
     }
@@ -107,5 +107,10 @@ public class DeckManager : MonoBehaviour
     public int GetNumberOfCardsInDeck()
     {
         return deck.Count;
+    }
+
+    public int GetNumberOfCardsInHand()
+    {
+        return hand.Count;
     }
 }

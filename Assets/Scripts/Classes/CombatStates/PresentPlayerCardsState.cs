@@ -25,24 +25,34 @@ public class PresentPlayerCardsState : CombatState
         Preprocess(combatContext);
 
         DeckManager deckManager = GameManager.Instance.ProvideDeckManager();
-        for (int i = 0; i < deckManager.GetMaxNumberOfCardsInHand(); i++)
+        int cardsLeftToFillHand = deckManager.GetMaxAllowedCardsInHand() - deckManager.GetNumberOfCardsInHand();
+
+        if (deckManager.GetNumberOfCardsInDeck() > 0)
         {
-            CombatCard cardToSpawnOnHand = deckManager.GiveTopCardToHand();
-            if (cardToSpawnOnHand != null)
+            for (int i = 0; i < cardsLeftToFillHand; i++)
             {
-                int cardIndex = i;
-                GameUtils.CreateTemporizer(() => 
+                CombatCard cardToSpawnOnHand = deckManager.GiveTopCardToHand();
+                if (cardToSpawnOnHand != null)
                 {
-                    cardToSpawnOnHand.gameObject.SetActive(true);
-                    cardToSpawnOnHand.gameObject.transform.SetParent(
-                        combatContext.playerHandContainer.transform,
-                        worldPositionStays: false
-                    );
-                    
-                    hasFinishedPresentigCards = cardIndex == deckManager.GetMaxNumberOfCardsInHand() - 1;
-                    PostProcess(combatContext);
-                }, i * .5f, GameManager.Instance);
-            }
-        }        
+                    int cardIndex = i;
+                    GameUtils.CreateTemporizer(() => 
+                    {
+                        cardToSpawnOnHand.gameObject.SetActive(true);
+                        cardToSpawnOnHand.gameObject.transform.SetParent(
+                            combatContext.playerHandContainer.transform,
+                            worldPositionStays: false
+                        );
+                        
+                        hasFinishedPresentigCards = cardIndex == cardsLeftToFillHand - 1;
+                        PostProcess(combatContext);
+                    }, i * .5f, GameManager.Instance);
+                }
+            }   
+        }
+        else if (deckManager.GetNumberOfCardsInHand() > 0)
+        {
+            hasFinishedPresentigCards = true;
+            PostProcess(combatContext);
+        }
     }
 }

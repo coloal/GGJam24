@@ -17,8 +17,6 @@ public class PickEnemyCardState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        combatContext.enemyOnCombatCard = null;
-
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
         GameObject enemyCard = enemyDeckManager.SelectRandomCard().gameObject;
