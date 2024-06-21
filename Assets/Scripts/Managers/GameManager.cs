@@ -9,16 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Managers")]
-    [SerializeField]
-    BrainManager BrainManager;
-    [SerializeField]
-    BrainSoundManager BrainSoundManager;
-    [SerializeField]
-    StoryManager StoryManager;
-    [SerializeField]
-    PartyManager PartyManager;
-    [SerializeField]
-    PlayerDeckManager playerDeckManager;
+    [SerializeField] BrainManager brainManager;
+    [SerializeField] BrainSoundManager brainSoundManager;
+    [SerializeField] StoryManager storyManager;
+    [SerializeField] PartyManager partyManager;
+    [SerializeField] InventoryManager inventoryManager;
 
     private bool hasToResetGame = false;
 
@@ -62,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
-        BrainSoundManager.StartGame();
+        brainSoundManager.StartGame();
         if(currentSceneManager != null && currentSceneManager is MainGameSceneManager mainGameSceneManager)
         {
             mainGameSceneManager.StartGame();
@@ -138,22 +133,27 @@ public class GameManager : MonoBehaviour
 
     public BrainManager ProvideBrainManager()
     {
-        return BrainManager;
+        return brainManager;
     }
 
     public BrainSoundManager ProvideBrainSoundManager()
     {
-        return BrainSoundManager;
+        return brainSoundManager;
     }
 
     public StoryManager ProvideStoryManager()
     {
-        return StoryManager;
+        return storyManager;
     }
 
     public PartyManager ProvidePartyManager()
     {
-        return PartyManager;
+        return partyManager;
+    }
+
+    public InventoryManager ProvideInventoryManager()
+    {
+        return inventoryManager;
     }
 
     public void OnSceneChanged()
@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
         List<CombatCardTemplate> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
         GameManager.Instance.ProvideBrainSoundManager().StartCombat(members, IsBoss);
 
-        Animator transition = BrainManager.ZoneInfo.CombatTransition;
+        Animator transition = brainManager.ZoneInfo.CombatTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
         if (instantedAnimator != null)
         {
@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
             }, 1.0f, this);
             disposableOnSceneChangeActions.Add(() =>
             {
-                Animator transition_1 = BrainManager.ZoneInfo.CombatTransition;
+                Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
                 Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
                 if (instantedAnimator_1 != null)
                 {
@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitBattleScene(Action nextAction)
     {
-        Animator transition = BrainManager.ZoneInfo.CombatTransition;
+        Animator transition = brainManager.ZoneInfo.CombatTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
         if (instantedAnimator != null)
         {
@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
             }, 1.0f, this);
             disposableOnSceneChangeActions.Add(() =>
             {
-                Animator transition_1 = BrainManager.ZoneInfo.CombatTransition;
+                Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
                 Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
                 if (instantedAnimator_1 != null)
                 {
@@ -224,11 +224,11 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        StoryManager.ResetStory();
-        BrainManager.ResetMemories();
-        BrainSoundManager.ChangeZone(BrainManager.ZoneInfo.StoryMusicZone);
-        BrainSoundManager.ResetNess();
-        PartyManager.ClearParty();
+        storyManager.ResetStory();
+        brainManager.ResetMemories();
+        brainSoundManager.ChangeZone(brainManager.ZoneInfo.StoryMusicZone);
+        brainSoundManager.ResetNess();
+        partyManager.ClearParty();
         SetHasToResetGame(true);
     }
 
@@ -240,11 +240,6 @@ public class GameManager : MonoBehaviour
     public void SetHasToResetGame(bool hasToResetGame)
     {
         this.hasToResetGame = hasToResetGame;
-    }
-
-    public PlayerDeckManager ProvideDeckManager()
-    {
-        return playerDeckManager;
     }
 
 }

@@ -15,16 +15,47 @@ public class StartCombatState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        SetUpPlayerDeck();
+        SetUpEnemyDeck();
+        PostProcess(combatContext);
+    }
+
+    void SetUpPlayerDeck()
+    {
+        InventoryManager inventoryManager = GameManager.Instance.ProvideInventoryManager();
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+
+        List<CombatCardTemplate> playerSavedDeck = inventoryManager.GetDeckCopy();
+        playerSavedDeck.ForEach((combatCardData) =>
+        {
+            CombatCard combatCard = CombatSceneManager.Instance
+                .ProvideCombatV2Manager()
+                .InstantiateCombatCardGameObject()
+                .GetComponent<CombatCard>();
+            if (combatCard != null)
+            {
+                combatCard.gameObject.SetActive(false);
+                playerDeckManager.AddCardToDeck(combatCard);
+            }
+        });
+    }
+
+    void SetUpEnemyDeck()
+    {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        // TODO: Fill the deck with whats saved inside the PlayerInventoryManager...
-        // ...and, if there's an inventory manager, it seems like the PlayerDeckManager does not necessary has to live
-        // inside the GameManager, and instead inside the CombatSceneManager ⚠️
-
-        //playerDeckManager.StartCombat();
-        //enemyDeckManager.StartCombat(combatContext.enemyTemplate);
-
-        PostProcess(combatContext);
+        List<CombatCardTemplate> enemyDeck = CombatSceneManager.Instance.ProvideEnemyData().CombatCards;
+        enemyDeck.ForEach((combatCardData) =>
+        {
+            CombatCard combatCard = CombatSceneManager.Instance
+                .ProvideCombatV2Manager()
+                .InstantiateCombatCardGameObject()
+                .GetComponent<CombatCard>();
+            if (combatCard != null)
+            {
+                combatCard.gameObject.SetActive(false);
+                enemyDeckManager.AddCardToDeck(combatCard);
+            }
+        });
     }
 }

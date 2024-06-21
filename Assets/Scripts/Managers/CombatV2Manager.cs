@@ -17,7 +17,6 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject playerOnCombatCardFinalPosition;
         public GameObject enemyOnCombatCard;
         public GameObject enemyOnCombatCardFinalPosition;
-        public EnemyTemplate enemyTemplate;
         public GameObject combatContainer;
 
         public CombatContext(GameObject enemyCardsCombatTypeHintsContainer,
@@ -35,7 +34,6 @@ public class CombatV2Manager : MonoBehaviour
             this.playerDeck = playerDeck;
             this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
-            this.enemyTemplate = enemyTemplate;
             this.combatContainer = combatContainer;
 
             this.playerOnCombatCard = null;

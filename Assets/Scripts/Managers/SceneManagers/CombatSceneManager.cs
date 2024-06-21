@@ -6,10 +6,14 @@ public class CombatSceneManager : BaseSceneManager
 {
     public static CombatSceneManager Instance;
 
-   
+    [Header("Managers on scene")]
     [SerializeField] CombatVisualManager combatVisualManager;
     [SerializeField] CombatV2Manager combatV2Manager;
+    [SerializeField] PlayerDeckManager playerDeckManager;
     [SerializeField] EnemyDeckManager enemyDeckManager;
+
+    [Header("Scene configurations")]
+    [SerializeField] EnemyTemplate enemyTemplate;
 
     void Awake()
     {
@@ -39,8 +43,18 @@ public class CombatSceneManager : BaseSceneManager
         return combatV2Manager;
     }
 
+    public PlayerDeckManager ProvidePlayerDeckManager()
+    {
+        return playerDeckManager;
+    }
+
     public EnemyDeckManager ProvideEnemyDeckManager()
     {
         return enemyDeckManager;
+    }
+
+    public EnemyTemplate ProvideEnemyData()
+    {
+        return enemyTemplate;
     }
 }

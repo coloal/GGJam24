@@ -10,7 +10,7 @@ public class ResultDrawState : CombatState
 
         //Al enemigo o al Player le quedan cartas
         if (CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() > 0
-            && GameManager.Instance.ProvideDeckManager().GetNumberOfCardsInHand() > 0 )
+            && CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand() > 0 )
         {
             CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
         }

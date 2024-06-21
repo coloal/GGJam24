@@ -108,7 +108,7 @@ public class ResolveCombatState : CombatState
     CombatState ProcessPlayerWonState(ref CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
-        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
         void KillEnemyCard(ref CombatV2Manager.CombatContext combatContext)
         {
@@ -147,7 +147,7 @@ public class ResolveCombatState : CombatState
 
     CombatState ProcessEnemyWonState(ref CombatV2Manager.CombatContext combatContext)
     {
-        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
         void KillPlayerCard(ref CombatV2Manager.CombatContext combatContext)

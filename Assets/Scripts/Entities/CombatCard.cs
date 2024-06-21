@@ -9,6 +9,9 @@ public class CombatCard : MonoBehaviour
 
     protected CombatTypes combatType;
     protected CombatCardVisualComposerComponent visualComposerComponent;
+
+    protected CombatCardTemplate cardData;
+
     protected void SetCardSprite(CombatCardTemplate combatCardTemplate)
     {
         cardSprite.sprite = combatCardTemplate.CharacterSprite;
@@ -19,13 +22,17 @@ public class CombatCard : MonoBehaviour
         visualComposerComponent = GetComponent<CombatCardVisualComposerComponent>();
     }
 
-    public void SetDataCard(CombatCardTemplate dataCard)
+    public void SetDataCard(CombatCardTemplate cardData)
     {
-        combatType = dataCard.CombatType;
-        SetCardSprite(dataCard);
+        this.cardData = cardData;
+        combatType = cardData.CombatType;
+        SetCardSprite(cardData);
     }
 
-  
+    public CombatCardTemplate GetCardData()
+    {
+        return cardData;
+    }
 
     public CombatTypes GetCombatType()
     {
