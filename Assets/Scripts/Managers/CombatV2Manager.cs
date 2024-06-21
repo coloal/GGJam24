@@ -20,13 +20,6 @@ public class CombatV2Manager : MonoBehaviour
         public EnemyTemplate enemyTemplate;
         public GameObject combatContainer;
 
-        public List<GameObject> enemiesCardsOnDraw;
-        public List<GameObject> playerCardsOnDraw;
-        public Transform firtsEnemyPositionOnDraw;
-        public Transform firtsPlayerPositionOnDraw;
-        public Transform secondEnemyPositionOnDraw;
-        public Transform secondPlayerPositionOnDraw;
-
         public CombatContext(GameObject enemyCardsCombatTypeHintsContainer,
             Transform enemyCardsCombatTypeHintsContainerFinalPosition,
             GameObject playerHandContainer,
@@ -34,13 +27,7 @@ public class CombatV2Manager : MonoBehaviour
             GameObject playerOnCombatCardFinalPosition,
             GameObject enemyOnCombatCardFinalPosition,
             EnemyTemplate enemyTemplate,
-            GameObject combatContainer,
-            List<GameObject> enemiesCardsOnDraw,
-            List<GameObject> playerCardsOnDraw,
-            Transform firtsEnemyPositionOnDraw,
-            Transform firtsPlayerPositionOnDraw,
-            Transform secondEnemyPositionOnDraw,
-            Transform secondPlayerPositionOnDraw)
+            GameObject combatContainer)
         {
             this.enemyCardsCombatTypeHintsContainer = enemyCardsCombatTypeHintsContainer;
             this.enemyCardsCombatTypeHintsContainerFinalPosition = enemyCardsCombatTypeHintsContainerFinalPosition;
@@ -50,13 +37,6 @@ public class CombatV2Manager : MonoBehaviour
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.enemyTemplate = enemyTemplate;
             this.combatContainer = combatContainer;
-
-            this.enemiesCardsOnDraw = enemiesCardsOnDraw;
-            this.playerCardsOnDraw = playerCardsOnDraw;
-            this.firtsEnemyPositionOnDraw = firtsEnemyPositionOnDraw;
-            this.firtsPlayerPositionOnDraw = firtsPlayerPositionOnDraw;
-            this.secondEnemyPositionOnDraw = secondEnemyPositionOnDraw;
-            this.secondPlayerPositionOnDraw = secondPlayerPositionOnDraw;
 
             this.playerOnCombatCard = null;
             this.enemyOnCombatCard = null;
@@ -79,6 +59,7 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private Transform SecondEnemyPositionOnDraw;
     [SerializeField] private Transform SecondPlayerPositionOnDraw;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
+    [SerializeField] private CombatCard combatCardPrefab;
 
     private CombatContext combatContext;
 
@@ -99,13 +80,7 @@ public class CombatV2Manager : MonoBehaviour
             PlayerOnCombatCardFinalPosition,
             EnemyOnCombatCardFinalPosition,
             EnemyTemplate,
-            CombatContainer,
-            EnemiesCardsOnDraw,
-            PlayerCardsOnDraw,
-            FirtsEnemyPositionOnDraw,
-            FirtsPlayerPositionOnDraw,
-            SecondEnemyPositionOnDraw,
-            SecondPlayerPositionOnDraw
+            CombatContainer
         );
     }
 
@@ -128,5 +103,10 @@ public class CombatV2Manager : MonoBehaviour
     public GameObject InstantiateCombatTypeHintGameObject()
     {
         return Instantiate(combatTypeHintPrefab).gameObject;
+    }
+
+    public GameObject InstantiateCombatCardGameObject()
+    {
+        return Instantiate(combatCardPrefab).gameObject;
     }
 }

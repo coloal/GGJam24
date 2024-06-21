@@ -6,8 +6,8 @@ public class PickPlayerCardState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        DeckManager deckManager = GameManager.Instance.ProvideDeckManager();
-        List<CombatCard> cardsInHand = deckManager.GetCardsInHand();
+        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        List<CombatCard> cardsInHand = playerDeckManager.GetCardsInHand();
         
         foreach (CombatCard cardInHand in cardsInHand)
         {
@@ -29,8 +29,8 @@ public class PickPlayerCardState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        DeckManager deckManager = GameManager.Instance.ProvideDeckManager();
-        List<CombatCard> cardsInHand = deckManager.GetCardsInHand();
+        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        List<CombatCard> cardsInHand = playerDeckManager.GetCardsInHand();
         
         foreach (CombatCard cardInHand in cardsInHand)
         {

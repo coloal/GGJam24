@@ -26,7 +26,7 @@ public class PresentEnemyCardsState : CombatState
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         List<CombatTypes> enemyCardsCombatTypes = 
-            enemyDeckManager.GetAllEnemyCards().Select((combatCardTemplate) => combatCardTemplate.CombatType).ToList();
+            enemyDeckManager.GetAllCardsData().Select((combatCardTemplate) => combatCardTemplate.CombatType).ToList();
 
         foreach (CombatTypes combatType in enemyCardsCombatTypes)
         {

@@ -108,14 +108,14 @@ public class ResolveCombatState : CombatState
     CombatState ProcessPlayerWonState(ref CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
-        DeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
 
         void KillEnemyCard(ref CombatV2Manager.CombatContext combatContext)
         {
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             if (enemyCombatCard != null)
             {
-                enemyDeckManager.KillCard(enemyCombatCard);
+                enemyDeckManager.DestroyCard(enemyCombatCard);
                 GameObject.Destroy(combatContext.enemyOnCombatCard.gameObject);
                 combatContext.enemyOnCombatCard = null;
             }
@@ -126,7 +126,7 @@ public class ResolveCombatState : CombatState
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             if (playerCombatCard != null)
             {
-                playerDeckManager.ReturnCardToDeck(playerCombatCard);
+                playerDeckManager.ReturnCardFromHandToDeck(playerCombatCard);
                 combatContext.playerOnCombatCard.SetActive(false);
                 combatContext.playerOnCombatCard = null;
             }
@@ -147,7 +147,7 @@ public class ResolveCombatState : CombatState
 
     CombatState ProcessEnemyWonState(ref CombatV2Manager.CombatContext combatContext)
     {
-        DeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
+        PlayerDeckManager playerDeckManager = GameManager.Instance.ProvideDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
         void KillPlayerCard(ref CombatV2Manager.CombatContext combatContext)
@@ -155,7 +155,7 @@ public class ResolveCombatState : CombatState
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             if (playerCombatCard != null)
             {
-                playerDeckManager.KillCard(playerCombatCard);
+                playerDeckManager.DestroyCard(playerCombatCard);
                 GameObject.Destroy(combatContext.playerOnCombatCard.gameObject);
                 combatContext.playerOnCombatCard = null;
             }
@@ -166,7 +166,7 @@ public class ResolveCombatState : CombatState
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             if (enemyCombatCard != null)
             {
-                enemyDeckManager.ReturnCardToDeck(enemyCombatCard);
+                enemyDeckManager.ReturnCardFromHandToDeck(enemyCombatCard);
                 combatContext.enemyOnCombatCard.SetActive(false);
                 combatContext.enemyOnCombatCard = null;
             }

@@ -19,7 +19,7 @@ public class PickEnemyCardState : CombatState
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        GameObject enemyCard = enemyDeckManager.SelectRandomCard().gameObject;
+        GameObject enemyCard = enemyDeckManager.DrawCardFromDeckToHand().gameObject;
         combatContext.enemyOnCombatCard = enemyCard;
         
         enemyCard.SetActive(true);
