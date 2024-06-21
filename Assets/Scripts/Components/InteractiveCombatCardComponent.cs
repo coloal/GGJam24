@@ -20,7 +20,7 @@ public class InteractiveCombatCardComponent : MonoBehaviour
         }
     }
 
-    public void SetOnClickAction(Action onSwipeUpAction)
+    public void SetOnClickAction(Action onClickAction)
     {
         DoOnValidInteractiveComponents(() => {
             //TODO: Change this patched behaviour: Maybe it is better to have only one action than several of them
@@ -29,7 +29,7 @@ public class InteractiveCombatCardComponent : MonoBehaviour
             clickableCardComponent.OnClickActions.Add(() => {
                 if (clickableCardComponent.enabled)
                 {
-                    onSwipeUpAction();
+                    onClickAction();
                 }
             });
         });

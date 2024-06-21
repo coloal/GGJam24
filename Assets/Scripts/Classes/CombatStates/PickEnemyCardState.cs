@@ -22,17 +22,12 @@ public class PickEnemyCardState : CombatState
         GameObject enemyCard = enemyDeckManager.SelectRandomCard().gameObject;
         combatContext.enemyOnCombatCard = enemyCard;
         
-        RectTransform rectTransformComponent = enemyCard.GetComponent<RectTransform>();
-        if (rectTransformComponent != null)
-        {
-            enemyCard.SetActive(true);
-            rectTransformComponent.gameObject.transform.SetParent(
-                combatContext.enemyOnCombatCardFinalPosition.transform.parent,
-                worldPositionStays: false
-            );
-            rectTransformComponent.position = combatContext.enemyOnCombatCardFinalPosition.transform.position;
-        }
-        
+        enemyCard.SetActive(true);
+        enemyCard.gameObject.transform.SetParent(
+            combatContext.enemyOnCombatCardFinalPosition.transform.parent,
+            worldPositionStays: false
+        );
+        enemyCard.transform.position = combatContext.enemyOnCombatCardFinalPosition.transform.position;
 
         PostProcess(combatContext);
     }

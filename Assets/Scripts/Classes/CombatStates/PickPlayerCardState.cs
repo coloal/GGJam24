@@ -39,16 +39,11 @@ public class PickPlayerCardState : CombatState
             if (interactiveCombatCardComponent != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(() => {
-                    RectTransform rectTransformComponent = 
-                        cardInHand.GetComponent<RectTransform>();
-                    if (rectTransformComponent != null)
-                    {
-                        rectTransformComponent.gameObject.transform.SetParent(
-                            combatContext.playerOnCombatCardFinalPosition.transform.parent,
-                            worldPositionStays: false
-                        );
-                        rectTransformComponent.position = combatContext.playerOnCombatCardFinalPosition.transform.position;
-                    }
+                    cardInHand.gameObject.transform.SetParent(
+                        combatContext.playerOnCombatCardFinalPosition.transform.parent,
+                        worldPositionStays: false
+                    );
+                    cardInHand.transform.position = combatContext.playerOnCombatCardFinalPosition.transform.position;
 
                     combatContext.playerOnCombatCard = cardInHand.gameObject;
 
