@@ -200,6 +200,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22281070}
   m_CullTransparentMesh: 1
+--- !u!1 &83053010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83053012}
+  - component: {fileID: 83053011}
+  m_Layer: 0
+  m_Name: PlayerDeckManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &83053011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83053010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce15a6f66c62e0a4e9a135f3d9cf51b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxNumberOfCardInHand: 3
+--- !u!4 &83053012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83053010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126443633
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatVisualManager: {fileID: 0}
   combatV2Manager: {fileID: 1934736124}
+  playerDeckManager: {fileID: 83053011}
   enemyDeckManager: {fileID: 1197101116}
+  enemyTemplate: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
 --- !u!4 &126443635
 Transform:
   m_ObjectHideFlags: 0
@@ -457,11 +504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9e19440bdb741d19a8ac3f7f6459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrainManager: {fileID: 854269452}
-  BrainSoundManager: {fileID: 667495227}
-  StoryManager: {fileID: 1624545320}
-  PartyManager: {fileID: 1710088849}
-  deckManager: {fileID: 1993801135}
+  brainManager: {fileID: 854269452}
+  brainSoundManager: {fileID: 667495227}
+  storyManager: {fileID: 1624545320}
+  partyManager: {fileID: 1710088849}
+  inventoryManager: {fileID: 904941048}
 --- !u!4 &261926448
 Transform:
   m_ObjectHideFlags: 0
@@ -1011,6 +1058,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862520345}
   m_CullTransparentMesh: 1
+--- !u!1 &904941046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904941047}
+  - component: {fileID: 904941048}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904941047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904941046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904941048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904941046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600646bfe132e45f39df0f864145b589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugDeck:
+  - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
+  - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
+  - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
 --- !u!1 &1065748726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56bfdb225b17bd4418e56cfd56a26be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
 --- !u!4 &1197101117
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,7 +1335,7 @@ Transform:
   m_GameObject: {fileID: 1197101115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 420.10153, y: 1483.4452, z: -13.009954}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1733,8 +1827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce15a6f66c62e0a4e9a135f3d9cf51b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCards: []
-  combatCardPrefab: {fileID: 0}
   maxNumberOfCardInHand: 3
 --- !u!1 &1785266794
 GameObject:
@@ -1901,6 +1993,7 @@ MonoBehaviour:
   SecondEnemyPositionOnDraw: {fileID: 0}
   SecondPlayerPositionOnDraw: {fileID: 0}
   combatTypeHintPrefab: {fileID: 1413738314295996990, guid: 293e3e0d1cedb4d4987d78793a6669ed, type: 3}
+  combatCardPrefab: {fileID: 3755057994084975065, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
 --- !u!1 &1993801134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,11 +2023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce15a6f66c62e0a4e9a135f3d9cf51b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCards:
-  - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
-  - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
-  - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
-  combatCardPrefab: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
   maxNumberOfCardInHand: 3
 --- !u!4 &1993801136
 Transform:
@@ -2024,10 +2112,12 @@ SceneRoots:
   - {fileID: 667495228}
   - {fileID: 854269451}
   - {fileID: 1993801136}
+  - {fileID: 904941047}
   - {fileID: 2027239300}
   - {fileID: 126443635}
   - {fileID: 1934736123}
   - {fileID: 1197101117}
+  - {fileID: 83053012}
   - {fileID: 772079422}
   - {fileID: 1355352010}
   - {fileID: 143578295}

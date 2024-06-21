@@ -18,8 +18,6 @@ public abstract class BaseDeckManager : MonoBehaviour
 
     public abstract CombatCard GetCardFromDeck();
 
-    public abstract List<CombatCardTemplate> GetAllCardsData();
-
     public CombatCard DrawCardFromDeckToHand()
     {
         CombatCard cardToDraw = GetCardFromDeck();
@@ -79,6 +77,11 @@ public abstract class BaseDeckManager : MonoBehaviour
     public List<CombatCard> GetCardsInDeck()
     {
         return deck;
+    }
+
+    public List<CombatCardTemplate> GetAllDeckCardsData()
+    {
+        return deck.Select((combatCard) => combatCard.GetCardData()).ToList();
     }
 
     public List<CombatCard> GetCardsInTieZone()

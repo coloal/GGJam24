@@ -9,6 +9,9 @@ public class InventoryManager : MonoBehaviour
     private List<CombatCardTemplate> cardsVault;
     private List<CombatCardTemplate> deck;
 
+    [Header("Debug")]
+    [SerializeField] List<CombatCardTemplate> debugDeck;
+
     void Awake()
     {
         if (Instance == null)
@@ -22,13 +25,27 @@ public class InventoryManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        Init();
+    }
+
+    void Init()
+    {
+        cardsVault = new List<CombatCardTemplate>();
+        deck = new List<CombatCardTemplate>();
     }
 
     public List<CombatCardTemplate> GetDeckCopy()
     {
         List<CombatCardTemplate> clonedDeck = new List<CombatCardTemplate>();
         
-        deck.ForEach((combatCardData) => 
+        // deck.ForEach((combatCardData) => 
+        // {
+        //     clonedDeck.Add(combatCardData);
+        // });
+        //DEBUG PURPOSES ONLY
+
+        debugDeck.ForEach((combatCardData) => 
         {
             clonedDeck.Add(combatCardData);
         });

@@ -35,6 +35,7 @@ public class StartCombatState : CombatState
             if (combatCard != null)
             {
                 combatCard.gameObject.SetActive(false);
+                combatCard.SetDataCard(combatCardData);
                 playerDeckManager.AddCardToDeck(combatCard);
             }
         });
@@ -54,6 +55,7 @@ public class StartCombatState : CombatState
             if (combatCard != null)
             {
                 combatCard.gameObject.SetActive(false);
+                combatCard.SetDataCard(combatCardData);
                 enemyDeckManager.AddCardToDeck(combatCard);
             }
         });
