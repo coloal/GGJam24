@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CodeGraph
@@ -20,7 +21,7 @@ namespace CodeGraph
 
 
         public CodeGraphAsset() 
-        { 
+        {
             nodes = new List<CodeGraphNode>();
             connections = new List<CodeGraphConnection>();
         }
