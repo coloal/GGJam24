@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-
+    [SerializeField]
+    private int deckSize = 8;
     private List<CombatCardTemplate> cardsVault;
     private List<CombatCardTemplate> deck;
+
+    
 
     [Header("Debug")]
     [SerializeField] List<CombatCardTemplate> debugDeck;
@@ -51,5 +55,13 @@ public class InventoryManager : MonoBehaviour
         });
 
         return clonedDeck;
+    }
+
+    public void AddCombatCardToVault(CombatCardTemplate combatCard)
+    {
+        cardsVault.Add(combatCard);
+        if(deck.Count < deckSize) {
+            deck.Add(combatCard);
+        }
     }
 }

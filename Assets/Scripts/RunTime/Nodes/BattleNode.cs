@@ -24,14 +24,14 @@ namespace CodeGraph
 
         public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            stepInfo = new CombatStep(card);
+            stepInfo = new CombatStep(card, IsBossFight);
+            //TODO quitar esto
             GameManager.Instance.ProvideBrainManager().bIsBossFight = IsBossFight;
             return true;
         }
 
         public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
-            //TODO iniciar batalla
             int port;
             switch (turnResult)
             {

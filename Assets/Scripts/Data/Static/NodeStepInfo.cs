@@ -10,11 +10,20 @@ public class StepInfo
 public class CombatStep:StepInfo
 {
     EnemyTemplate enemy;
+    bool isBossFigth;
     public EnemyTemplate Enemy => enemy;
+    public bool IsBossFigth => isBossFigth;
     public CombatStep(EnemyTemplate enemy)
     {
         this.enemy = enemy;
+        isBossFigth = false; 
     }
+    public CombatStep(EnemyTemplate enemy, bool isBossFigth)
+    {
+        this.enemy = enemy;
+        this.isBossFigth = isBossFigth;
+    }
+
 }
 
 public class StoryStep:StepInfo
