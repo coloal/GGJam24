@@ -121,6 +121,19 @@ public class ResolveCombatState : CombatState
             }
         }
 
+        void KillEnemyCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        {
+            foreach (Transform cardInTieZone in combatContext.enemyTieZone)
+            {
+                CombatCard enemyCombatCard = cardInTieZone.GetComponent<CombatCard>();
+                if (enemyCombatCard != null)
+                {
+                    enemyDeckManager.DestroyCard(enemyCombatCard);
+                    GameObject.Destroy(enemyCombatCard.gameObject);
+                }
+            }
+        }
+
         void ReturnPlayerCardToDeck(ref CombatV2Manager.CombatContext combatContext)
         {
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
@@ -132,8 +145,23 @@ public class ResolveCombatState : CombatState
             }
         }
 
+        void ReturnPlayerCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        {
+            foreach (Transform cardInTieZone in combatContext.playerTieZone)
+            {
+                CombatCard playerCombatCard = cardInTieZone.GetComponent<CombatCard>();
+                if (playerCombatCard != null)
+                {
+                    playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
+                    playerCombatCard.gameObject.SetActive(false);
+                }
+            }
+        }
+
         KillEnemyCard(ref combatContext);
+        KillEnemyCardsInTieZone(combatContext);
         ReturnPlayerCardToDeck(ref combatContext);
+        ReturnPlayerCardsInTieZoneToDeck(combatContext);
 
         if (enemyDeckManager.GetNumberOfCardsInDeck() > 0)
         {
@@ -161,6 +189,19 @@ public class ResolveCombatState : CombatState
             }
         }
 
+        void KillPlayerCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        {
+            foreach (Transform cardInTieZone in combatContext.playerTieZone)
+            {
+                CombatCard playerCombatCard = cardInTieZone.GetComponent<CombatCard>();
+                if (playerCombatCard != null)
+                {
+                    playerDeckManager.DestroyCard(playerCombatCard);
+                    GameObject.Destroy(playerCombatCard.gameObject);
+                }
+            }
+        }
+
         void ReturnEnemyCardToDeck(ref CombatV2Manager.CombatContext combatContext)
         {
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
@@ -172,8 +213,23 @@ public class ResolveCombatState : CombatState
             }
         }
 
+        void ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        {
+            foreach (Transform cardInTieZone in combatContext.enemyTieZone)
+            {
+                CombatCard enemyCombatCard = cardInTieZone.GetComponent<CombatCard>();
+                if (enemyCombatCard != null)
+                {
+                    enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
+                    enemyCombatCard.gameObject.SetActive(false);
+                }
+            }
+        }
+
         KillPlayerCard(ref combatContext);
+        KillPlayerCardsInTieZone(combatContext);
         ReturnEnemyCardToDeck(ref combatContext);
+        ReturnEnemyCardsInTieZoneToDeck(combatContext);
 
         if (playerDeckManager.GetNumberOfCardsInDeck() > 0 || playerDeckManager.GetNumberOfCardsInHand() > 0)
         {

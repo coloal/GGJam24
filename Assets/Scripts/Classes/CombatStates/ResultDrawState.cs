@@ -26,12 +26,12 @@ public class ResultDrawState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        SendPlayerCombatCardToTieZone(combatContext);
-        SendEnemyCombatCardToTieZone(combatContext);
+        SendPlayerCombatCardToTieZone(ref combatContext);
+        SendEnemyCombatCardToTieZone(ref combatContext);
         PostProcess(combatContext);
     }
 
-    void SendPlayerCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
+    void SendPlayerCombatCardToTieZone(ref CombatV2Manager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
@@ -43,10 +43,12 @@ public class ResultDrawState : CombatState
                 combatContext.playerTieZone,
                 worldPositionStays: false
             );
+
+            combatContext.playerOnCombatCard = null;
         }
     }
 
-    void SendEnemyCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
+    void SendEnemyCombatCardToTieZone(ref CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
@@ -59,6 +61,8 @@ public class ResultDrawState : CombatState
                 combatContext.enemyTieZone,
                 worldPositionStays: false
             );
+
+            combatContext.enemyOnCombatCard = null;
         }
     }
 }
