@@ -24,14 +24,14 @@ public class PresentPlayerCardsState : CombatState
     {
         Preprocess(combatContext);
 
-        PlayerDeckManager PlayerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        int cardsLeftToFillHand = PlayerDeckManager.GetMaxAllowedCardsInHand() - PlayerDeckManager.GetNumberOfCardsInHand();
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+        int cardsLeftToFillHand = playerDeckManager.GetMaxAllowedCardsInHand() - playerDeckManager.GetNumberOfCardsInHand();
 
-        if (PlayerDeckManager.GetNumberOfCardsInDeck() > 0)
+        if (playerDeckManager.GetNumberOfCardsInDeck() > 0)
         {
             for (int i = 0; i < cardsLeftToFillHand; i++)
             {
-                CombatCard cardToSpawnOnHand = PlayerDeckManager.DrawCardFromDeckToHand();
+                CombatCard cardToSpawnOnHand = playerDeckManager.DrawCardFromDeckToHand();
                 if (cardToSpawnOnHand != null)
                 {
                     int cardIndex = i;
@@ -49,7 +49,7 @@ public class PresentPlayerCardsState : CombatState
                 }
             }   
         }
-        else if (PlayerDeckManager.GetNumberOfCardsInHand() > 0)
+        else if (playerDeckManager.GetNumberOfCardsInHand() > 0)
         {
             hasFinishedPresentigCards = true;
             PostProcess(combatContext);

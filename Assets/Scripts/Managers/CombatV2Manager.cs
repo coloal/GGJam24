@@ -18,6 +18,8 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject enemyOnCombatCard;
         public GameObject enemyOnCombatCardFinalPosition;
         public GameObject combatContainer;
+        public Transform playerTieZone;
+        public Transform enemyTieZone; 
 
         public CombatContext(GameObject enemyCardsCombatTypeHintsContainer,
             Transform enemyCardsCombatTypeHintsContainerFinalPosition,
@@ -25,8 +27,9 @@ public class CombatV2Manager : MonoBehaviour
             GameObject playerDeck,
             GameObject playerOnCombatCardFinalPosition,
             GameObject enemyOnCombatCardFinalPosition,
-            EnemyTemplate enemyTemplate,
-            GameObject combatContainer)
+            GameObject combatContainer,
+            Transform playerTieZone,
+            Transform enemyTieZone)
         {
             this.enemyCardsCombatTypeHintsContainer = enemyCardsCombatTypeHintsContainer;
             this.enemyCardsCombatTypeHintsContainerFinalPosition = enemyCardsCombatTypeHintsContainerFinalPosition;
@@ -35,6 +38,8 @@ public class CombatV2Manager : MonoBehaviour
             this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.combatContainer = combatContainer;
+            this.playerTieZone = playerTieZone;
+            this.enemyTieZone = enemyTieZone;
 
             this.playerOnCombatCard = null;
             this.enemyOnCombatCard = null;
@@ -42,22 +47,17 @@ public class CombatV2Manager : MonoBehaviour
     }
 
     [Header("Board configurations")]
-    [SerializeField] private GameObject EnemyCardsCombatTypeHintsContainer;
-    [SerializeField] private Transform EnemyCardsCombatTypeHintsContainerFinalPosition;
-    [SerializeField] private GameObject PlayerHandContainer;
-    [SerializeField] private GameObject PlayerDeck;
-    [SerializeField] private GameObject PlayerOnCombatCardFinalPosition;
-    [SerializeField] private GameObject EnemyOnCombatCardFinalPosition;
-    [SerializeField] private EnemyTemplate EnemyTemplate;
-    [SerializeField] private GameObject CombatContainer;
-    [SerializeField] private List<GameObject> EnemiesCardsOnDraw;
-    [SerializeField] private List<GameObject> PlayerCardsOnDraw;
-    [SerializeField] private Transform FirtsEnemyPositionOnDraw;
-    [SerializeField] private Transform FirtsPlayerPositionOnDraw;
-    [SerializeField] private Transform SecondEnemyPositionOnDraw;
-    [SerializeField] private Transform SecondPlayerPositionOnDraw;
+    [SerializeField] private GameObject enemyCardsCombatTypeHintsContainer;
+    [SerializeField] private Transform enemyCardsCombatTypeHintsContainerFinalPosition;
+    [SerializeField] private GameObject playerHandContainer;
+    [SerializeField] private GameObject playerDeck;
+    [SerializeField] private GameObject playerOnCombatCardFinalPosition;
+    [SerializeField] private GameObject enemyOnCombatCardFinalPosition;
+    [SerializeField] private GameObject combatContainer;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private CombatCard combatCardPrefab;
+    [SerializeField] private Transform playerTieZone;
+    [SerializeField] private Transform enemyTieZone;
 
     private CombatContext combatContext;
 
@@ -71,14 +71,15 @@ public class CombatV2Manager : MonoBehaviour
     private void InitCombatContext()
     {
         combatContext = new CombatContext(
-            EnemyCardsCombatTypeHintsContainer,
-            EnemyCardsCombatTypeHintsContainerFinalPosition,
-            PlayerHandContainer,
-            PlayerDeck,
-            PlayerOnCombatCardFinalPosition,
-            EnemyOnCombatCardFinalPosition,
-            EnemyTemplate,
-            CombatContainer
+            enemyCardsCombatTypeHintsContainer,
+            enemyCardsCombatTypeHintsContainerFinalPosition,
+            playerHandContainer,
+            playerDeck,
+            playerOnCombatCardFinalPosition,
+            enemyOnCombatCardFinalPosition,
+            combatContainer,
+            playerTieZone,
+            enemyTieZone
         );
     }
 

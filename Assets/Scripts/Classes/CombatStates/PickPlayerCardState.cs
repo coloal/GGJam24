@@ -39,13 +39,14 @@ public class PickPlayerCardState : CombatState
             if (interactiveCombatCardComponent != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(() => {
+                    playerDeckManager.PutCardFromHandToCombatZone(cardInHand);
+                    combatContext.playerOnCombatCard = cardInHand.gameObject;
+
                     cardInHand.gameObject.transform.SetParent(
                         combatContext.playerOnCombatCardFinalPosition.transform.parent,
                         worldPositionStays: false
                     );
                     cardInHand.transform.position = combatContext.playerOnCombatCardFinalPosition.transform.position;
-
-                    combatContext.playerOnCombatCard = cardInHand.gameObject;
 
                     PostProcess(combatContext);
                 });

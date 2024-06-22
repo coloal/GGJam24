@@ -18,16 +18,17 @@ public class PickEnemyCardState : CombatState
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
-
-        GameObject enemyCard = enemyDeckManager.DrawCardFromDeckToHand().gameObject;
-        combatContext.enemyOnCombatCard = enemyCard;
         
-        enemyCard.SetActive(true);
-        enemyCard.gameObject.transform.SetParent(
+        CombatCard enemyCombatCard = enemyDeckManager.DrawCardFromDeckToHand();
+        enemyDeckManager.PutCardFromHandToCombatZone(enemyCombatCard);
+        combatContext.enemyOnCombatCard = enemyCombatCard.gameObject;
+        
+        enemyCombatCard.gameObject.SetActive(true);
+        enemyCombatCard.gameObject.transform.SetParent(
             combatContext.enemyOnCombatCardFinalPosition.transform.parent,
             worldPositionStays: false
         );
-        enemyCard.transform.position = combatContext.enemyOnCombatCardFinalPosition.transform.position;
+        enemyCombatCard.transform.position = combatContext.enemyOnCombatCardFinalPosition.transform.position;
 
         PostProcess(combatContext);
     }

@@ -16,7 +16,7 @@ public class ResultDrawState : CombatState
         }
         else
         {
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new TossCoindState());
+            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new TossCoinState());
         }
     }
 
@@ -26,5 +26,39 @@ public class ResultDrawState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        SendPlayerCombatCardToTieZone(combatContext);
+        SendEnemyCombatCardToTieZone(combatContext);
+        PostProcess(combatContext);
+    }
+
+    void SendPlayerCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
+    {
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+        CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+
+        if (playerCombatCard != null)
+        {
+            playerDeckManager.AddCardToTieZone(playerCombatCard);
+            playerCombatCard.gameObject.transform.SetParent(
+                combatContext.playerTieZone,
+                worldPositionStays: false
+            );
+        }
+    }
+
+    void SendEnemyCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
+    {
+        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+
+
+        if (enemyCombatCard != null)
+        {
+            enemyDeckManager.AddCardToTieZone(enemyCombatCard);
+            enemyCombatCard.gameObject.transform.SetParent(
+                combatContext.enemyTieZone,
+                worldPositionStays: false
+            );
+        }
     }
 }

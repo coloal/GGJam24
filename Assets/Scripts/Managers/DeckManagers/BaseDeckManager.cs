@@ -27,10 +27,9 @@ public abstract class BaseDeckManager : MonoBehaviour
         return cardToDraw;
     }
 
-    public void ReturnCardFromHandToDeck(CombatCard combatCard)
+    public void PutCardFromHandToCombatZone(CombatCard combatCard)
     {
         hand.Remove(combatCard);
-        deck.Add(combatCard);
     }
 
     public void ReturnCardFromTieZoneToDeck(CombatCard combatCard)
@@ -44,9 +43,8 @@ public abstract class BaseDeckManager : MonoBehaviour
         deck.Add(combatCard);
     }
 
-    public void AddCardFromHandToTieZone(CombatCard combatCard)
+    public void AddCardToTieZone(CombatCard combatCard)
     {
-        hand.Remove(combatCard);
         tieZone.Add(combatCard);
     }
 

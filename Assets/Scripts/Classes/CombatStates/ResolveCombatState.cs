@@ -126,7 +126,7 @@ public class ResolveCombatState : CombatState
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             if (playerCombatCard != null)
             {
-                playerDeckManager.ReturnCardFromHandToDeck(playerCombatCard);
+                playerDeckManager.AddCardToDeck(playerCombatCard);
                 combatContext.playerOnCombatCard.SetActive(false);
                 combatContext.playerOnCombatCard = null;
             }
@@ -166,7 +166,7 @@ public class ResolveCombatState : CombatState
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             if (enemyCombatCard != null)
             {
-                enemyDeckManager.ReturnCardFromHandToDeck(enemyCombatCard);
+                enemyDeckManager.AddCardToDeck(enemyCombatCard);
                 combatContext.enemyOnCombatCard.SetActive(false);
                 combatContext.enemyOnCombatCard = null;
             }

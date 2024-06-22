@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TossCoindState : CombatState
+public class TossCoinState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
