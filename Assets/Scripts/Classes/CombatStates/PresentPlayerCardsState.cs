@@ -25,7 +25,19 @@ public class PresentPlayerCardsState : CombatState
         Preprocess(combatContext);
 
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        int cardsLeftToFillHand = playerDeckManager.GetMaxAllowedCardsInHand() - playerDeckManager.GetNumberOfCardsInHand();
+        
+        // Calculate how much cards left to fill the hand
+        int cardsLeftToFillHand;
+        if (playerDeckManager.GetNumberOfCardsInDeck() < playerDeckManager.GetMaxAllowedCardsInHand())
+        {
+            cardsLeftToFillHand = playerDeckManager.GetNumberOfCardsInDeck();
+        }
+        else
+        {
+            cardsLeftToFillHand = playerDeckManager.GetMaxAllowedCardsInHand();
+        }
+        cardsLeftToFillHand -= playerDeckManager.GetNumberOfCardsInHand();
+
 
         if (playerDeckManager.GetNumberOfCardsInDeck() > 0)
         {
