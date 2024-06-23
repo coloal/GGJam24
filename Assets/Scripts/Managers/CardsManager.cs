@@ -71,6 +71,7 @@ public class CardsManager : MonoBehaviour
         }
 
         GameObject newCard = Instantiate(storyCardPrefab, cardsSpawnerOrigin.position, Quaternion.identity);
+        newCard.transform.SetParent(GameManager.Instance.Canvas);
         if(nextCard != null)
         {
             StoryCard storyCardComponent = newCard.GetComponent<StoryCard>();
@@ -88,6 +89,7 @@ public class CardsManager : MonoBehaviour
                     () => {
                         SetUpOnSwipeLeftActions(newCard);
                         SetUpOnSwipeRightActions(newCard);
+                        newCard.GetComponent<HorizontalDraggableComponent>()?.SetInitialPosition();
                     }
                 );
             }

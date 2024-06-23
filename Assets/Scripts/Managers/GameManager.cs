@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] StoryManager storyManager;
     [SerializeField] PartyManager partyManager;
     [SerializeField] InventoryManager inventoryManager;
+    [SerializeField] Transform canvas;
+
+    public Transform Canvas => canvas;
 
     private bool hasToResetGame = false;
 
