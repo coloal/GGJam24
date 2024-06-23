@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Managers")]
+    [SerializeField] InputManager inputManager;
     [SerializeField] BrainManager brainManager;
     [SerializeField] BrainSoundManager brainSoundManager;
     [SerializeField] StoryManager storyManager;
@@ -129,6 +130,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("The game has finished! Congratulations ...or maybe not?");
 
+    }
+
+    public InputManager ProvideInputManager()
+    {
+        return inputManager;
     }
 
     public BrainManager ProvideBrainManager()

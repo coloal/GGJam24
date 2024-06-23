@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class ClickableCardComponent : MonoBehaviour
 {
@@ -12,6 +11,20 @@ public class ClickableCardComponent : MonoBehaviour
     Vector2 clickPosition;
 
     public List<Action> OnClickActions => onClickActions;
+
+    void OnEnable()
+    {
+        GameManager.Instance.ProvideInputManager().onClickEvent += OnClick;
+        GameManager.Instance.ProvideInputManager().onMoveEvent += OnMove;
+        GameManager.Instance.ProvideInputManager().onReleaseEvent += OnRelease;
+    }
+
+    void OnDisable()
+    {
+        GameManager.Instance.ProvideInputManager().onClickEvent -= OnClick;
+        GameManager.Instance.ProvideInputManager().onMoveEvent -= OnMove;
+        GameManager.Instance.ProvideInputManager().onReleaseEvent -= OnRelease;
+    }
 
     void Awake()
     {
@@ -29,9 +42,9 @@ public class ClickableCardComponent : MonoBehaviour
         }
     }
 
-    void OnMove(InputValue inputValue)
+    void OnMove(Vector2 cursorPosition)
     {
-        clickPosition = inputValue.Get<Vector2>();
+        clickPosition = cursorPosition;
     }
 
     void OnRelease()
