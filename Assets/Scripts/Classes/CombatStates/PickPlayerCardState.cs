@@ -5,11 +5,8 @@ using UnityEngine;
 public class PickPlayerCardState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
-    {
-        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        List<CombatCard> cardsInHand = playerDeckManager.GetCardsInHand();
-        
-        foreach (CombatCard cardInHand in cardsInHand)
+    {   
+        foreach (Transform cardInHand in combatContext.playerHandContainer.transform)
         {
             InteractiveCombatCardComponent interactiveCombatCardComponent =
                 cardInHand.GetComponent<InteractiveCombatCardComponent>();
@@ -30,16 +27,17 @@ public class PickPlayerCardState : CombatState
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        List<CombatCard> cardsInHand = playerDeckManager.GetCardsInHand();
-        
-        foreach (CombatCard cardInHand in cardsInHand)
-        {
+
+        foreach (Transform cardInHand in combatContext.playerHandContainer.transform)
+        {            
             InteractiveCombatCardComponent interactiveCombatCardComponent =
                 cardInHand.GetComponent<InteractiveCombatCardComponent>();
-            if (interactiveCombatCardComponent != null)
+            CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
+
+            if (interactiveCombatCardComponent != null && playerCombatCard != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(() => {
-                    playerDeckManager.PutCardFromHandToCombatZone(cardInHand);
+                    playerDeckManager.PutCardFromHandToCombatZone(playerCombatCard);
                     combatContext.playerOnCombatCard = cardInHand.gameObject;
 
                     cardInHand.gameObject.transform.SetParent(
