@@ -25,23 +25,18 @@ public class PresentPlayerCardsState : CombatState
         Preprocess(combatContext);
 
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        
-        // Calculate how much cards left to fill the hand
-        int cardsLeftToFillHand;
-        if (playerDeckManager.GetNumberOfCardsInDeck() < playerDeckManager.GetMaxAllowedCardsInHand())
-        {
-            cardsLeftToFillHand = playerDeckManager.GetNumberOfCardsInDeck();
-        }
-        else
-        {
-            cardsLeftToFillHand = playerDeckManager.GetMaxAllowedCardsInHand();
-        }
-        cardsLeftToFillHand -= playerDeckManager.GetNumberOfCardsInHand();
 
+        // Calculate how much cards needs to draw to fill the hand
+        int availableCardsToDraw = Mathf.Min(
+            playerDeckManager.GetNumberOfCardsInDeck(),
+            playerDeckManager.GetMaxAllowedCardsInHand()
+        );
+        int cardsLeftToFillHand = playerDeckManager.GetMaxAllowedCardsInHand() - playerDeckManager.GetNumberOfCardsInHand();
+        int cardsToDraw = Mathf.Min(availableCardsToDraw, cardsLeftToFillHand);
 
-        if (playerDeckManager.GetNumberOfCardsInDeck() > 0)
+        if (cardsToDraw > 0)
         {
-            for (int i = 0; i < cardsLeftToFillHand; i++)
+            for (int i = 0; i < cardsToDraw; i++)
             {
                 CombatCard cardToSpawnOnHand = playerDeckManager.DrawCardFromDeckToHand();
                 if (cardToSpawnOnHand != null)
@@ -55,7 +50,7 @@ public class PresentPlayerCardsState : CombatState
                             worldPositionStays: false
                         );
                         
-                        hasFinishedPresentigCards = cardIndex == cardsLeftToFillHand - 1;
+                        hasFinishedPresentigCards = cardIndex == cardsToDraw - 1;
                         PostProcess(combatContext);
                     }, i * .5f, GameManager.Instance);
                 }
