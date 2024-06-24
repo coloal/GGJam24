@@ -9,7 +9,8 @@ public class CombatV2Manager : MonoBehaviour
 {
     public struct CombatContext
     {
-        public GameObject enemyCardsCombatTypeHintsContainer;
+        public GameObject enemyCardsHintRow0;
+        public GameObject enemyCardsHintRow1;
         public Transform enemyCardsCombatTypeHintsContainerFinalPosition;
         public GameObject playerHandContainer;
         public GameObject playerDeck;
@@ -24,7 +25,8 @@ public class CombatV2Manager : MonoBehaviour
         public Transform playerCardInHandPosition1;
         public Transform playerCardInHandPosition2;
 
-        public CombatContext(GameObject enemyCardsCombatTypeHintsContainer,
+        public CombatContext(GameObject enemyCardsHintRow0,
+            GameObject enemyCardsHintRow1,
             Transform enemyCardsCombatTypeHintsContainerFinalPosition,
             GameObject playerHandContainer,
             GameObject playerDeck,
@@ -37,7 +39,8 @@ public class CombatV2Manager : MonoBehaviour
             Transform playerCardInHandPosition1,
             Transform playerCardInHandPosition2)
         {
-            this.enemyCardsCombatTypeHintsContainer = enemyCardsCombatTypeHintsContainer;
+            this.enemyCardsHintRow0 = enemyCardsHintRow0;
+            this.enemyCardsHintRow1 = enemyCardsHintRow1;
             this.enemyCardsCombatTypeHintsContainerFinalPosition = enemyCardsCombatTypeHintsContainerFinalPosition;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
@@ -56,7 +59,8 @@ public class CombatV2Manager : MonoBehaviour
     }
 
     [Header("Board configurations")]
-    [SerializeField] private GameObject enemyCardsCombatTypeHintsContainer;
+    [SerializeField] private GameObject enemyCardsHintRow0;
+    [SerializeField] private GameObject enemyCardsHintRow1;
     [SerializeField] private Transform enemyCardsCombatTypeHintsContainerFinalPosition;
     [SerializeField] private GameObject playerDeck;
     [SerializeField] private GameObject playerOnCombatCardFinalPosition;
@@ -64,6 +68,7 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject combatContainer;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private CombatCard combatCardPrefab;
+    [SerializeField] private GameObject emptyCardDummy;
     [SerializeField] private Transform playerTieZone;
     [SerializeField] private Transform enemyTieZone;
     
@@ -72,6 +77,9 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private Transform playerCardInHandPosition0;
     [SerializeField] private Transform playerCardInHandPosition1;
     [SerializeField] private Transform playerCardInHandPosition2;
+
+    [Header("Enemy deck")]
+    [SerializeField] private int maxAllowedEnemyCards = 8;
 
 
     private CombatContext combatContext;
@@ -86,7 +94,8 @@ public class CombatV2Manager : MonoBehaviour
     private void InitCombatContext()
     {
         combatContext = new CombatContext(
-            enemyCardsCombatTypeHintsContainer,
+            enemyCardsHintRow0,
+            enemyCardsHintRow1,
             enemyCardsCombatTypeHintsContainerFinalPosition,
             playerHandContainer,
             playerDeck,
@@ -125,5 +134,15 @@ public class CombatV2Manager : MonoBehaviour
     public GameObject InstantiateCombatCardGameObject()
     {
         return Instantiate(combatCardPrefab).gameObject;
+    }
+
+    public GameObject InstantiateEmptyCardDummyGameObject()
+    {
+        return Instantiate(emptyCardDummy).gameObject;
+    }
+
+    public int GetMaxAllowedEnemyCards()
+    {
+        return maxAllowedEnemyCards;
     }
 }

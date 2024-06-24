@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class CombatFeedbacksManager : MonoBehaviour
 {
-    [Header("Player Draw Card from Deck feedbacks")]
+    [Header("Scene feedbacks")]
+    [SerializeField] public MMF_Player ShowEnemyCardsTypesHintsFeedbackPlayer;
     [SerializeField] public MMF_Player PlayerDrawCardFromDeckFeedbackPlayer;
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, Transform cardInHandPosition)
@@ -25,6 +26,18 @@ public class CombatFeedbacksManager : MonoBehaviour
             cardFrontRevealFeedback.BoundImage = playerCard.GetCardFrontImage();
 
             await PlayerDrawCardFromDeckFeedbackPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayShowEnemyCardsTypesHints(float pauseTime)
+    {
+        MMF_HoldingPause showPauseFeedback =
+            ShowEnemyCardsTypesHintsFeedbackPlayer.GetFeedbackOfType<MMF_HoldingPause>();
+        if (showPauseFeedback != null)
+        {
+            showPauseFeedback.PauseDuration = pauseTime;
+
+            await ShowEnemyCardsTypesHintsFeedbackPlayer.PlayFeedbacksTask();
         }
     }
 }

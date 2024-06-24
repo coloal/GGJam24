@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyTemplate : ScriptableObject
 {
     public List<CombatCardTemplate> CombatCards;
+    public float ShowHintsTimeInSeconds;
 
     
 }
