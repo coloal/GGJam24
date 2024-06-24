@@ -154,6 +154,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &163239568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163239570}
+  - component: {fileID: 163239569}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &163239569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163239568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600646bfe132e45f39df0f864145b589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckSize: 8
+  debugDeck:
+  - {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+--- !u!4 &163239570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163239568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.42472497, y: -1.0789863, z: 0.0485532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179863776
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +973,7 @@ MonoBehaviour:
   brainSoundManager: {fileID: 179863777}
   storyManager: {fileID: 1327554469}
   partyManager: {fileID: 527357311}
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 163239569}
   canvas: {fileID: 1089200395}
 --- !u!1 &1327554468
 GameObject:
@@ -955,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: bc2488a36df7f3f4bb3ea433b89afb7c, type: 2}
+  FirstStory: {fileID: 11400000, guid: 06326608fd6e79f46a002d540c1d5a6e, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0
@@ -1285,6 +1335,7 @@ SceneRoots:
   - {fileID: 1327554470}
   - {fileID: 527357312}
   - {fileID: 221680344}
+  - {fileID: 163239570}
   - {fileID: 583164619}
   - {fileID: 2026473451}
   - {fileID: 1029993837}

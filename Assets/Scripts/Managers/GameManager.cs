@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private CombatCardTemplate actualCombatEnemyCard;
-    public CombatCardTemplate ActualCombatEnemyCard => actualCombatEnemyCard;
+    private EnemyTemplate actualEnemy;
+    public EnemyTemplate ActualEnemy => actualEnemy;
 
     void Awake()
     {
@@ -68,10 +68,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartCombat(CombatCardTemplate enemyCard)
+
+    public void StartCombat(EnemyTemplate enemy, bool isBossFigth)
     {
-        actualCombatEnemyCard = enemyCard;
-        EnterBattleScene();
+        actualEnemy = enemy;
+        EnterBattleScene(isBossFigth);
     }
 
     public void EndCombat(TurnResult combatResult)
@@ -174,11 +175,10 @@ public class GameManager : MonoBehaviour
         disposableOnSceneChangeActions.Clear();
     }
 
-    public void EnterBattleScene()
+    public void EnterBattleScene(bool isBoss)
     {
-        bool IsBoss = GameManager.Instance.ProvideBrainManager().bIsBossFight;
         List<CombatCardTemplate> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
-        GameManager.Instance.ProvideBrainSoundManager().StartCombat(members, IsBoss);
+        GameManager.Instance.ProvideBrainSoundManager().StartCombat(members, isBoss);
 
         Animator transition = brainManager.ZoneInfo.CombatTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
         {
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
-                SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
+                SceneManager.LoadScene("CombatV2Scene", LoadSceneMode.Single);
             }, 1.0f, this);
             disposableOnSceneChangeActions.Add(() =>
             {
