@@ -37,4 +37,9 @@ public class CombatCard : MonoBehaviour
     {
         return combatType;
     }
+
+    public Image GetCardFrontImage()
+    {
+        return cardFrontSprite;
+    }
 }

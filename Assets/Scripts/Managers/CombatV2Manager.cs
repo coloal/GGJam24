@@ -20,6 +20,9 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject combatContainer;
         public Transform playerTieZone;
         public Transform enemyTieZone; 
+        public Transform playerCardInHandPosition0;
+        public Transform playerCardInHandPosition1;
+        public Transform playerCardInHandPosition2;
 
         public CombatContext(GameObject enemyCardsCombatTypeHintsContainer,
             Transform enemyCardsCombatTypeHintsContainerFinalPosition,
@@ -29,7 +32,10 @@ public class CombatV2Manager : MonoBehaviour
             GameObject enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
             Transform playerTieZone,
-            Transform enemyTieZone)
+            Transform enemyTieZone,
+            Transform playerCardInHandPosition0,
+            Transform playerCardInHandPosition1,
+            Transform playerCardInHandPosition2)
         {
             this.enemyCardsCombatTypeHintsContainer = enemyCardsCombatTypeHintsContainer;
             this.enemyCardsCombatTypeHintsContainerFinalPosition = enemyCardsCombatTypeHintsContainerFinalPosition;
@@ -40,6 +46,9 @@ public class CombatV2Manager : MonoBehaviour
             this.combatContainer = combatContainer;
             this.playerTieZone = playerTieZone;
             this.enemyTieZone = enemyTieZone;
+            this.playerCardInHandPosition0 = playerCardInHandPosition0;
+            this.playerCardInHandPosition1 = playerCardInHandPosition1;
+            this.playerCardInHandPosition2 = playerCardInHandPosition2;
 
             this.playerOnCombatCard = null;
             this.enemyOnCombatCard = null;
@@ -49,7 +58,6 @@ public class CombatV2Manager : MonoBehaviour
     [Header("Board configurations")]
     [SerializeField] private GameObject enemyCardsCombatTypeHintsContainer;
     [SerializeField] private Transform enemyCardsCombatTypeHintsContainerFinalPosition;
-    [SerializeField] private GameObject playerHandContainer;
     [SerializeField] private GameObject playerDeck;
     [SerializeField] private GameObject playerOnCombatCardFinalPosition;
     [SerializeField] private GameObject enemyOnCombatCardFinalPosition;
@@ -58,6 +66,13 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private CombatCard combatCardPrefab;
     [SerializeField] private Transform playerTieZone;
     [SerializeField] private Transform enemyTieZone;
+    
+    [Header("Player hand")]
+    [SerializeField] private GameObject playerHandContainer;
+    [SerializeField] private Transform playerCardInHandPosition0;
+    [SerializeField] private Transform playerCardInHandPosition1;
+    [SerializeField] private Transform playerCardInHandPosition2;
+
 
     private CombatContext combatContext;
 
@@ -79,7 +94,10 @@ public class CombatV2Manager : MonoBehaviour
             enemyOnCombatCardFinalPosition,
             combatContainer,
             playerTieZone,
-            enemyTieZone
+            enemyTieZone,
+            playerCardInHandPosition0,
+            playerCardInHandPosition1,
+            playerCardInHandPosition2
         );
     }
 

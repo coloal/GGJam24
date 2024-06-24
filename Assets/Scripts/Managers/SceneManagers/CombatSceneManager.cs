@@ -11,6 +11,7 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] CombatV2Manager combatV2Manager;
     [SerializeField] PlayerDeckManager playerDeckManager;
     [SerializeField] EnemyDeckManager enemyDeckManager;
+    [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
 
     [Header("Scene configurations")]
     [SerializeField] EnemyTemplate enemyTemplate;
@@ -51,6 +52,11 @@ public class CombatSceneManager : BaseSceneManager
     public EnemyDeckManager ProvideEnemyDeckManager()
     {
         return enemyDeckManager;
+    }
+
+    public CombatFeedbacksManager ProvideCombatFeedbacksManager()
+    {
+        return combatFeedbacksManager;
     }
 
     public EnemyTemplate ProvideEnemyData()

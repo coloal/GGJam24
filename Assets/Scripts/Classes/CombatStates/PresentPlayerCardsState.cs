@@ -5,25 +5,17 @@ using UnityEngine.Assertions;
 
 public class PresentPlayerCardsState : CombatState
 {
-    private bool hasFinishedPresentigCards = false;
-
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        if (hasFinishedPresentigCards)
-        {
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
-        }
+        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)
     {
-        hasFinishedPresentigCards = false;
     }
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        Preprocess(combatContext);
-
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
         // Calculate how much cards needs to draw to fill the hand
@@ -36,30 +28,56 @@ public class PresentPlayerCardsState : CombatState
 
         if (cardsToDraw > 0)
         {
-            for (int i = 0; i < cardsToDraw; i++)
-            {
-                CombatCard cardToSpawnOnHand = playerDeckManager.DrawCardFromDeckToHand();
-                if (cardToSpawnOnHand != null)
-                {
-                    int cardIndex = i;
-                    GameUtils.CreateTemporizer(() => 
-                    {
-                        cardToSpawnOnHand.gameObject.SetActive(true);
-                        cardToSpawnOnHand.gameObject.transform.SetParent(
-                            combatContext.playerHandContainer.transform,
-                            worldPositionStays: false
-                        );
-                        
-                        hasFinishedPresentigCards = cardIndex == cardsToDraw - 1;
-                        PostProcess(combatContext);
-                    }, i * .5f, GameManager.Instance);
-                }
-            }   
+            DrawCardFromDeckToHand(combatContext, cardsToDraw);
+            PostProcess(combatContext);
         }
         else if (playerDeckManager.GetNumberOfCardsInHand() > 0)
         {
-            hasFinishedPresentigCards = true;
             PostProcess(combatContext);
+        }
+    }
+
+    async void DrawCardFromDeckToHand(CombatV2Manager.CombatContext combatContext, int cardsToDraw)
+    {
+        Transform GetCardInHandTransform(int cardIndex)
+        {
+            Transform cardInHandTransform = combatContext.playerCardInHandPosition0;
+            switch (cardIndex)
+            {
+                case 0:
+                    cardInHandTransform = combatContext.playerCardInHandPosition0;
+                    break;
+                case 1:
+                    cardInHandTransform = combatContext.playerCardInHandPosition1;
+                    break;
+                case 2:
+                    cardInHandTransform = combatContext.playerCardInHandPosition2;
+                    break;
+                default:
+                    break;
+            }
+
+            return cardInHandTransform;
+        }
+
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+        CombatFeedbacksManager combatFeedbacksManager = CombatSceneManager.Instance.ProvideCombatFeedbacksManager();
+        
+        for (int i = 0; i < cardsToDraw; ++i)
+        {
+            int cardIndex = playerDeckManager.GetNumberOfCardsInHand();
+
+            CombatCard cardToDraw = playerDeckManager.DrawCardFromDeckToHand();
+            cardToDraw.gameObject.SetActive(true);
+            cardToDraw.transform.SetParent(
+                combatContext.playerHandContainer.transform,
+                worldPositionStays: false
+            );
+
+            await combatFeedbacksManager.PlayPlayerDrawCardFromDeck(
+                playerCard: cardToDraw,
+                cardInHandPosition: GetCardInHandTransform(cardIndex)
+            );
         }
     }
 }
