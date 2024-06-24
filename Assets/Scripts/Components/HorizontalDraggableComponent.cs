@@ -20,8 +20,11 @@ public class HorizontalDraggableComponent : MonoBehaviour
     [SerializeField] float finalRotationVelocity = 10;
     
     float velocity = 0;
-    Vector2 mousePosition = Vector2.zero;
-    Vector2 clickedPosition = Vector2.zero;
+
+    Vector2 ClickedPosition => GameManager.Instance.ProvideInputManager().ClickedPosition;
+    Vector2 WorldClickedPosition => GameManager.Instance.ProvideInputManager().WorldClickedPosition;
+    Vector2 WorldMousePosition => GameManager.Instance.ProvideInputManager().WorldMousePosition;
+
     bool isMouseClickPressed = false;
     bool hasToTriggerEnterEscapeZone = true;
     bool hasToTriggerExitEscapeZone = true;
@@ -33,7 +36,8 @@ public class HorizontalDraggableComponent : MonoBehaviour
     List<Action> rightSwipeActions;
     List<Action> rightSwipeEscapeZoneEnterActions;
     List<Action> rightSwipeEscapeZoneExitActions;
-    
+    RectTransform rectTransformComponent;
+
     public List<Action> LeftSwipeActions => leftSwipeActions;
     public List<Action> LeftSwipeEscapeZoneEnterActions => leftSwipeEscapeZoneEnterActions;
     public List<Action> LeftSwipeEscapeZoneExitActions => leftSwipeEscapeZoneExitActions;
@@ -43,6 +47,8 @@ public class HorizontalDraggableComponent : MonoBehaviour
     public List<Action> RightSwipeEscapeZoneExitActions => rightSwipeEscapeZoneExitActions;
 
     Vector2 initialPosition;
+
+
 
     void OnEnable()
     {
@@ -58,11 +64,25 @@ public class HorizontalDraggableComponent : MonoBehaviour
         rightSwipeActions = new List<Action>();
         rightSwipeEscapeZoneEnterActions = new List<Action>();
         rightSwipeEscapeZoneExitActions = new List<Action>();
+        rectTransformComponent = GetComponent<RectTransform>();
+        GameManager.Instance.ProvideInputManager().onClickEvent += OnClick;
+        GameManager.Instance.ProvideInputManager().onReleaseEvent += OnRelease;
+    }
+
+    public void SetInitialPosition()
+    {
+        initialPosition = transform.position;
     }
 
     void Update()
     {
         HorizontalTick();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.ProvideInputManager().onClickEvent -= OnClick;
+        GameManager.Instance.ProvideInputManager().onReleaseEvent -= OnRelease;
     }
 
     void HorizontalTick()
@@ -147,84 +167,20 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     Vector2 CalculateHorizontalTargetPosition()
     {
-        Vector2 targetPosition = isMouseClickPressed ? mousePosition - clickedPosition : Vector2.zero;
+        Vector2 targetPosition = isMouseClickPressed ? WorldMousePosition - WorldClickedPosition : Vector2.zero;
         return targetPosition + initialPosition;
     }
 
-    void OnLeftClick()
+    void OnClick()
     {
-        BoxCollider2D boxCollider2DComponent = GetComponent<BoxCollider2D>();
-        if (boxCollider2DComponent && boxCollider2DComponent.bounds.Contains(mousePosition))
+        if (rectTransformComponent && RectTransformUtility.RectangleContainsScreenPoint(rectTransformComponent, ClickedPosition, Camera.main))
         {
             isMouseClickPressed = true;
-            clickedPosition = mousePosition;
         }
     }
 
-    void OnLeftRelease()
-    {
-        isMouseClickPressed = false;
-        hasToTriggerEnterEscapeZone = true;
-        hasToTriggerExitEscapeZone = false;
-
-        if (enabled && (Mathf.Sign(velocity) == Mathf.Sign(transform.position.x - initialPosition.x) || Mathf.Abs(velocity) < 0.5))
-        {
-            // It's swipping right
-            if (Mathf.Sign(transform.position.x - initialPosition.x) > 0)
-            {
-                bool isInsideEscapeZoneOrFarther = transform.position.x >= initialPosition.x + escapeZoneLowerLimitDistance;
-                if (isInsideEscapeZoneOrFarther)
-                {
-                    foreach (Action rightSwipeOnWarningZoneExitAction in rightSwipeEscapeZoneExitActions)
-                    {
-                        rightSwipeOnWarningZoneExitAction();
-                    }
-                    foreach (Action rightSwipeAction in rightSwipeActions)
-                    {
-                        rightSwipeAction();
-                    }   
-                }
-            }
-            // It's swipping left
-            else
-            {
-                bool isInsideEscapeZoneOrFarther = transform.position.x < initialPosition.x - escapeZoneLowerLimitDistance;
-                if (isInsideEscapeZoneOrFarther)
-                {
-                    foreach (Action leftSwipeOnWarningZoneExitAction in leftSwipeEscapeZoneExitActions)
-                    {
-                        leftSwipeOnWarningZoneExitAction();
-                    }
-                    foreach (Action leftSwipeAction in leftSwipeActions)
-                    {
-                        leftSwipeAction();
-                    }    
-                }
-            }
-        }
-    }
-
-    //Refactor
-    void OnMouseMove(InputValue Value)
-    {
-        mousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
-    }
-
-    public void OnTouch() 
-    {
-        Debug.Log("TOUCH");
-        isMouseClickPressed = true;
-        clickedPosition = mousePosition;
-        /*BoxCollider2D boxCollider2DComponent = GetComponent<BoxCollider2D>();
-        if (boxCollider2DComponent && boxCollider2DComponent.bounds.Contains(mousePosition))
-        {
-            
-        }*/
-
-    }
     void OnRelease() 
     {
-        Debug.Log("Release");
         isMouseClickPressed = false;
         hasToTriggerEnterEscapeZone = true;
         hasToTriggerExitEscapeZone = false;
@@ -267,11 +223,7 @@ public class HorizontalDraggableComponent : MonoBehaviour
     }
 
     //Position of the finger
-    void OnTouchPosition(InputValue Value)
-    {
-        mousePosition = Camera.main.ScreenToWorldPoint(Value.Get<Vector2>());
-        //Debug.Log("X: " + mousePosition.x + " Y: " + mousePosition.y);
-    }
+   
 
     void CheckForEscapeZone()
     {

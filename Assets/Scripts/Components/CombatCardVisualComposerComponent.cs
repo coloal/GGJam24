@@ -9,6 +9,6 @@ public class CombatCardVisualComposerComponent : MonoBehaviour
    
     public Sprite GetCardCharacterSprite(CombatCardTemplate combatCardTemplate)
     {
-        return combatCardTemplate.CharacterSprite;
+        return combatCardTemplate.cardSprite;
     }
 }

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8761958502218879962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +531,6 @@ GameObject:
   - component: {fileID: 5223644173063821705}
   - component: {fileID: 5411388172794972099}
   - component: {fileID: 9156191397814739965}
-  - component: {fileID: 6146736266690828701}
   - component: {fileID: -359985912787657153}
   - component: {fileID: 4256447019006546249}
   m_Layer: 0
@@ -604,11 +603,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a421d5658179b4ec0872df47c343e8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 100
-  maxVelocity: 200
+  acceleration: 3000
+  maxVelocity: 800
   escapeZoneUpperLimitDistance: 3
   escapeZoneLowerLimitDistance: 1.5
-  brakeDistance: 10
+  brakeDistance: 20
   rotateDistance: 5
   maxArcRotation: 15
   maxFinalRotation: 30
@@ -625,37 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d042f7ca83fc141f299cd0479c82d6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapeAcceleration: 500
---- !u!114 &6146736266690828701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2960121501592178493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f7fb3f160b18440c3938f13acf3a8d08, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 16af3edd-1c7e-4146-b8c8-f0fbf6c92d0b
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  escapeAcceleration: 3000
 --- !u!61 &-359985912787657153
 BoxCollider2D:
   m_ObjectHideFlags: 0

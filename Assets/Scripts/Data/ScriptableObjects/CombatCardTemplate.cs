@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New CombatCardData", menuName = "CombatCardData")]
+[CreateAssetMenu(fileName = "NewCombatCard", menuName = "Combat Card")]
 public class CombatCardTemplate : ScriptableObject
 {
     public string NameOfCard;
 
     //Card sprite
-    public Sprite CharacterSprite;
+    public Sprite cardSprite;
 
     //Combat card stats
     public CombatTypes CombatType;

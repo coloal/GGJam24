@@ -4,8 +4,7 @@ using UnityEngine.UI;
 public class CombatCard : MonoBehaviour
 {
     [Header("Visual configurations")]
-    [SerializeField] protected Image cardSprite;
-    [SerializeField] private GameObject inactiveOverlay;
+    [SerializeField] protected Image cardFrontSprite;
 
     protected CombatTypes combatType;
     protected CombatCardVisualComposerComponent visualComposerComponent;
@@ -14,7 +13,7 @@ public class CombatCard : MonoBehaviour
 
     protected void SetCardSprite(CombatCardTemplate combatCardTemplate)
     {
-        cardSprite.sprite = combatCardTemplate.CharacterSprite;
+        cardFrontSprite.sprite = combatCardTemplate.cardSprite;
     }
 
     void Awake()
@@ -37,10 +36,5 @@ public class CombatCard : MonoBehaviour
     public CombatTypes GetCombatType()
     {
         return combatType;
-    }
-
-    public void SetInactiveOverlayActivation(bool isActive)
-    {
-        inactiveOverlay.SetActive(isActive);
     }
 }
