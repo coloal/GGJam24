@@ -510,6 +510,7 @@ MonoBehaviour:
   storyManager: {fileID: 1624545320}
   partyManager: {fileID: 1710088849}
   inventoryManager: {fileID: 904941048}
+  canvas: {fileID: 0}
 --- !u!4 &261926448
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,9 +1108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckSize: 8
   debugDeck:
-  - {fileID: 11400000, guid: 46c394662141c4e0fa0a21a2a1049ecf, type: 2}
-  - {fileID: 11400000, guid: d92f8c1b274613f439a6f7580cafd22f, type: 2}
-  - {fileID: 11400000, guid: 86d3b53590b6942f48ca0d5e6debd07a, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
 --- !u!1 &1065748726
 GameObject:
   m_ObjectHideFlags: 0
