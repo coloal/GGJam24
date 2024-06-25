@@ -73,6 +73,7 @@ public class PresentEnemyCardsState : CombatState
         // Case when there's only 1 row of card type hints to fill
         if (enemyCardTypesHints.Count <= maxCardsPerRow)
         {
+            combatContext.enemyCardsHintRow0.SetActive(true);
             combatContext.enemyCardsHintRow1.SetActive(false);
             foreach (GameObject enemyCardTypesHint in enemyCardTypesHints)
             {
@@ -85,6 +86,7 @@ public class PresentEnemyCardsState : CombatState
         // Case when there's more than 1 row of card type hints to fill
         else if (enemyCardTypesHints.Count > maxCardsPerRow && enemyCardTypesHints.Count <= maxAllowedEnemyCards)
         {
+            combatContext.enemyCardsHintRow0.SetActive(true);
             combatContext.enemyCardsHintRow1.SetActive(true);
             int cardIndex;
             // Fills the row 0 for the enemy card type hints
