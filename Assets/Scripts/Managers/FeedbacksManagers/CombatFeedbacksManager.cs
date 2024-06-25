@@ -12,6 +12,14 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player DeckFeedbackPlayer;
     [SerializeField] public MMF_Player PlaceCardOnCombatPlayer;
     [SerializeField] public MMF_Player HideCardFromPlayerHandPlayer;
+    [SerializeField] public MMF_Player RevealCardPlayer;
+
+    [Header("Feedbacks configuration")]
+    [Header("Place Card on Combat")]
+    [SerializeField] public float PlaceCardOnCombatScaleFactor = 2.0f;
+    [Header("Reveal Card")]
+    [SerializeField] public float RevealCardScaleFactor = 2.0f;
+    
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
     {
@@ -69,7 +77,7 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             scaleCardFeedback.AnimateScaleTarget = cardToPlaceOnCombat.gameObject.transform;
             scaleCardFeedback.RemapCurveZero = onCombatTransform.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x * 2;
+            scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x * PlaceCardOnCombatScaleFactor;
 
             await PlaceCardOnCombatPlayer.PlayFeedbacksTask();
         }
@@ -94,7 +102,7 @@ public class CombatFeedbacksManager : MonoBehaviour
             scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x;
 
             horizontalFlipFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
-            horizontalFlipFeedback.RemapCurveZero = -cardToPlaceOnCombat.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveZero = - cardToPlaceOnCombat.transform.localScale.x;
             horizontalFlipFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x;
 
             cardFrontHideFeedback.BoundImage = cardToPlaceOnCombat.GetCardFrontImage();
@@ -102,6 +110,42 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
             await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
+        }
+    }
+
+    public async Task PlayRevealCard(CombatCard cardToReveal)
+    {
+        MMF_Scale scaleCardFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale horizontalFlipFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Horizontal Flip"));
+        MMF_ImageAlpha cardFrontRevealFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Front Reveal"));
+        MMF_ImageAlpha cardBackHideFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Back Hide"));
+        MMF_Scale scaleBackCardFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Back Card"));
+
+        if (scaleCardFeedback != null && horizontalFlipFeedback != null
+            && cardFrontRevealFeedback != null && cardBackHideFeedback != null
+            && scaleBackCardFeedback != null)
+        {
+            scaleCardFeedback.AnimateScaleTarget = cardToReveal.transform;
+            scaleCardFeedback.RemapCurveZero = cardToReveal.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+
+            horizontalFlipFeedback.AnimateScaleTarget = cardToReveal.transform;
+            horizontalFlipFeedback.RemapCurveZero = - cardToReveal.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveOne = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+
+            cardFrontRevealFeedback.BoundImage = cardToReveal.GetCardFrontImage();
+            cardBackHideFeedback.BoundImage = cardToReveal.GetCardBackImage();
+
+            scaleBackCardFeedback.AnimateScaleTarget = cardToReveal.transform;
+            scaleBackCardFeedback.RemapCurveZero = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+            scaleBackCardFeedback.RemapCurveOne = cardToReveal.transform.localScale.x;
+
+            await RevealCardPlayer.PlayFeedbacksTask();
         }
     }
 }
