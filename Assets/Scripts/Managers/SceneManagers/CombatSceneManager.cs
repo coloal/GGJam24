@@ -16,6 +16,9 @@ public class CombatSceneManager : BaseSceneManager
     [Header("Scene configurations")]
     [SerializeField] EnemyTemplate enemyTemplate;
 
+    [Header("GameObjects")]
+    [SerializeField] private GameObject CoinCardGO;
+
     void Awake()
     {
         if (Instance == null)
@@ -62,5 +65,10 @@ public class CombatSceneManager : BaseSceneManager
     public EnemyTemplate ProvideEnemyData()
     {
         return enemyTemplate;
+    }
+
+    public GameObject ProvideCoinCardGO() 
+    {
+        return CoinCardGO;
     }
 }

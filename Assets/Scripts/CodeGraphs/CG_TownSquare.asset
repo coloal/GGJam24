@@ -339,7 +339,7 @@ MonoBehaviour:
         - Win no Capture
         - Lose Combat
         - Game Over
-        card: {fileID: 11400000, guid: 6816bbece414f654fbe5d3eb1a8e7957, type: 2}
+        card: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
         IsBossFight: 0
     - rid: 7416004749467320324
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -371,7 +371,7 @@ MonoBehaviour:
         - Win no Capture
         - Lose Combat
         - Game Over
-        card: {fileID: 11400000, guid: 4e73d56420f694c4db550e03a780d306, type: 2}
+        card: {fileID: 0}
         IsBossFight: 0
     - rid: 7416004749467320326
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
