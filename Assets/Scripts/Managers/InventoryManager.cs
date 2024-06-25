@@ -64,4 +64,10 @@ public class InventoryManager : MonoBehaviour
             deck.Add(combatCard);
         }
     }
+
+    public int GetNumberOfCardsInDeck()
+    {
+        // return deck.Count;
+        return debugDeck.Count;
+    }
 }

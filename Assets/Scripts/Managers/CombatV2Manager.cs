@@ -13,7 +13,7 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject enemyCardsHintRow1;
         public Transform enemyCardsCombatTypeHintsContainerFinalPosition;
         public GameObject playerHandContainer;
-        public GameObject playerDeck;
+        public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
         public GameObject playerOnCombatCardFinalPosition;
         public GameObject enemyOnCombatCard;
@@ -29,7 +29,7 @@ public class CombatV2Manager : MonoBehaviour
             GameObject enemyCardsHintRow1,
             Transform enemyCardsCombatTypeHintsContainerFinalPosition,
             GameObject playerHandContainer,
-            GameObject playerDeck,
+            DeckBehaviourComponent playerDeck,
             GameObject playerOnCombatCardFinalPosition,
             GameObject enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
@@ -62,7 +62,6 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject enemyCardsHintRow0;
     [SerializeField] private GameObject enemyCardsHintRow1;
     [SerializeField] private Transform enemyCardsCombatTypeHintsContainerFinalPosition;
-    [SerializeField] private GameObject playerDeck;
     [SerializeField] private GameObject playerOnCombatCardFinalPosition;
     [SerializeField] private GameObject enemyOnCombatCardFinalPosition;
     [SerializeField] private GameObject combatContainer;
@@ -71,6 +70,9 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject emptyCardDummy;
     [SerializeField] private Transform playerTieZone;
     [SerializeField] private Transform enemyTieZone;
+
+    [Header("Player deck")]
+    [SerializeField] private DeckBehaviourComponent playerDeck;
     
     [Header("Player hand")]
     [SerializeField] private GameObject playerHandContainer;

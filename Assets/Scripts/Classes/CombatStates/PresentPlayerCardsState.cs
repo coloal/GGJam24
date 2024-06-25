@@ -76,6 +76,7 @@ public class PresentPlayerCardsState : CombatState
 
             await combatFeedbacksManager.PlayPlayerDrawCardFromDeck(
                 playerCard: cardToDraw,
+                playerDeck: combatContext.playerDeck,
                 cardInHandPosition: GetCardInHandTransform(cardIndex)
             );
         }

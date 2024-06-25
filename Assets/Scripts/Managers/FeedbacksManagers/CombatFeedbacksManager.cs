@@ -9,8 +9,9 @@ public class CombatFeedbacksManager : MonoBehaviour
     [Header("Scene feedbacks")]
     [SerializeField] public MMF_Player ShowEnemyCardsTypesHintsFeedbackPlayer;
     [SerializeField] public MMF_Player PlayerDrawCardFromDeckFeedbackPlayer;
+    [SerializeField] public MMF_Player DeckFeedbackPlayer;
 
-    public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, Transform cardInHandPosition)
+    public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
     {
         MMF_DestinationTransform moveCardFromDeckToHandFeedback =
             PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_DestinationTransform>();
@@ -32,6 +33,10 @@ public class CombatFeedbacksManager : MonoBehaviour
             }
             cardFrontRevealFeedback.BoundImage = playerCard.GetCardFrontImage();
 
+            // Shake the deck
+            playerDeck.DrawCardFromDeck();
+            DeckFeedbackPlayer.PlayFeedbacks();
+            // Draw a card
             await PlayerDrawCardFromDeckFeedbackPlayer.PlayFeedbacksTask();
         }
     }
