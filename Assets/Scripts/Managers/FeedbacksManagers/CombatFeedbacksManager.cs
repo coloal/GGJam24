@@ -20,9 +20,16 @@ public class CombatFeedbacksManager : MonoBehaviour
             PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_ImageAlpha>();
         if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null && cardFrontRevealFeedback != null)
         {
+            RectTransform playerCardRectTransform = playerCard.GetComponent<RectTransform>();
+
             moveCardFromDeckToHandFeedback.TargetTransform = playerCard.gameObject.transform;
             moveCardFromDeckToHandFeedback.Destination = cardInHandPosition;
             horizontalFlipFeedback.AnimateScaleTarget = playerCard.gameObject.transform;
+            if (playerCardRectTransform != null)
+            {
+                horizontalFlipFeedback.RemapCurveZero = -playerCardRectTransform.localScale.x;
+                horizontalFlipFeedback.RemapCurveOne = playerCardRectTransform.localScale.x;
+            }
             cardFrontRevealFeedback.BoundImage = playerCard.GetCardFrontImage();
 
             await PlayerDrawCardFromDeckFeedbackPlayer.PlayFeedbacksTask();

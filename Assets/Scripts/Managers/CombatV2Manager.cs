@@ -67,7 +67,7 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private GameObject enemyOnCombatCardFinalPosition;
     [SerializeField] private GameObject combatContainer;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
-    [SerializeField] private CombatCard combatCardPrefab;
+    [SerializeField] private GameObject combatCardPrefab;
     [SerializeField] private GameObject emptyCardDummy;
     [SerializeField] private Transform playerTieZone;
     [SerializeField] private Transform enemyTieZone;
