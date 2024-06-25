@@ -11,6 +11,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player PlayerDrawCardFromDeckFeedbackPlayer;
     [SerializeField] public MMF_Player DeckFeedbackPlayer;
     [SerializeField] public MMF_Player PlaceCardOnCombatPlayer;
+    [SerializeField] public MMF_Player HideCardFromPlayerHandPlayer;
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
     {
@@ -71,6 +72,36 @@ public class CombatFeedbacksManager : MonoBehaviour
             scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x * 2;
 
             await PlaceCardOnCombatPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayPlacePlayerCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
+    {
+        MMF_Scale scaleCardFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale horizontalFlipFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Horizontal Flip"));
+        MMF_ImageAlpha cardFrontHideFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Front Hide"));
+        MMF_ImageAlpha cardBackRevealFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Back Reveal"));
+
+        if (scaleCardFeedback != null && horizontalFlipFeedback != null
+            && cardFrontHideFeedback != null && cardBackRevealFeedback != null)
+        {
+            scaleCardFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
+            scaleCardFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x;
+
+            horizontalFlipFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
+            horizontalFlipFeedback.RemapCurveZero = -cardToPlaceOnCombat.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x;
+
+            cardFrontHideFeedback.BoundImage = cardToPlaceOnCombat.GetCardFrontImage();
+            cardBackRevealFeedback.BoundImage = cardToPlaceOnCombat.GetCardBackImage();
+
+            await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
+            await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
         }
     }
 }

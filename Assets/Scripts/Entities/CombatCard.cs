@@ -5,6 +5,7 @@ public class CombatCard : MonoBehaviour
 {
     [Header("Visual configurations")]
     [SerializeField] protected Image cardFrontSprite;
+    [SerializeField] protected Image cardBackSprite;
 
     protected CombatTypes combatType;
     protected CombatCardVisualComposerComponent visualComposerComponent;
@@ -41,5 +42,10 @@ public class CombatCard : MonoBehaviour
     public Image GetCardFrontImage()
     {
         return cardFrontSprite;
+    }
+
+    public Image GetCardBackImage()
+    {
+        return cardBackSprite;
     }
 }
