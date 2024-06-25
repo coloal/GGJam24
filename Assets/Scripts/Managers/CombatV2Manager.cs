@@ -11,13 +11,13 @@ public class CombatV2Manager : MonoBehaviour
     {
         public GameObject enemyCardsHintRow0;
         public GameObject enemyCardsHintRow1;
-        public Transform enemyCardsCombatTypeHintsContainerFinalPosition;
         public GameObject playerHandContainer;
         public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
-        public GameObject playerOnCombatCardFinalPosition;
+        public RectTransform playerOnCombatCardFinalPosition;
         public GameObject enemyOnCombatCard;
-        public GameObject enemyOnCombatCardFinalPosition;
+        public RectTransform enemyOnCombatCardOriginalPosition;
+        public RectTransform enemyOnCombatCardFinalPosition;
         public GameObject combatContainer;
         public Transform playerTieZone;
         public Transform enemyTieZone; 
@@ -27,11 +27,11 @@ public class CombatV2Manager : MonoBehaviour
 
         public CombatContext(GameObject enemyCardsHintRow0,
             GameObject enemyCardsHintRow1,
-            Transform enemyCardsCombatTypeHintsContainerFinalPosition,
             GameObject playerHandContainer,
             DeckBehaviourComponent playerDeck,
-            GameObject playerOnCombatCardFinalPosition,
-            GameObject enemyOnCombatCardFinalPosition,
+            RectTransform playerOnCombatCardFinalPosition,
+            RectTransform enemyOnCombatCardOriginalPosition,
+            RectTransform enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
             Transform playerTieZone,
             Transform enemyTieZone,
@@ -41,10 +41,10 @@ public class CombatV2Manager : MonoBehaviour
         {
             this.enemyCardsHintRow0 = enemyCardsHintRow0;
             this.enemyCardsHintRow1 = enemyCardsHintRow1;
-            this.enemyCardsCombatTypeHintsContainerFinalPosition = enemyCardsCombatTypeHintsContainerFinalPosition;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
             this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
+            this.enemyOnCombatCardOriginalPosition = enemyOnCombatCardOriginalPosition;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.combatContainer = combatContainer;
             this.playerTieZone = playerTieZone;
@@ -61,15 +61,18 @@ public class CombatV2Manager : MonoBehaviour
     [Header("Board configurations")]
     [SerializeField] private GameObject enemyCardsHintRow0;
     [SerializeField] private GameObject enemyCardsHintRow1;
-    [SerializeField] private Transform enemyCardsCombatTypeHintsContainerFinalPosition;
-    [SerializeField] private GameObject playerOnCombatCardFinalPosition;
-    [SerializeField] private GameObject enemyOnCombatCardFinalPosition;
-    [SerializeField] private GameObject combatContainer;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private GameObject combatCardPrefab;
     [SerializeField] private GameObject emptyCardDummy;
     [SerializeField] private Transform playerTieZone;
     [SerializeField] private Transform enemyTieZone;
+
+    [Header("Combat zone")]
+    [SerializeField] private GameObject combatContainer;
+    [SerializeField] private RectTransform playerOnCombatCardFinalPosition;
+    [SerializeField] private RectTransform enemyOnCombatCardOriginalPosition;
+    [SerializeField] private RectTransform enemyOnCombatCardFinalPosition;
+
 
     [Header("Player deck")]
     [SerializeField] private DeckBehaviourComponent playerDeck;
@@ -98,10 +101,10 @@ public class CombatV2Manager : MonoBehaviour
         combatContext = new CombatContext(
             enemyCardsHintRow0,
             enemyCardsHintRow1,
-            enemyCardsCombatTypeHintsContainerFinalPosition,
             playerHandContainer,
             playerDeck,
             playerOnCombatCardFinalPosition,
+            enemyOnCombatCardOriginalPosition,
             enemyOnCombatCardFinalPosition,
             combatContainer,
             playerTieZone,

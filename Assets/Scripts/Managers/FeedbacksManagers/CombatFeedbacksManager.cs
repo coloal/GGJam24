@@ -10,6 +10,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player ShowEnemyCardsTypesHintsFeedbackPlayer;
     [SerializeField] public MMF_Player PlayerDrawCardFromDeckFeedbackPlayer;
     [SerializeField] public MMF_Player DeckFeedbackPlayer;
+    [SerializeField] public MMF_Player PlaceCardOnCombatPlayer;
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
     {
@@ -50,6 +51,26 @@ public class CombatFeedbacksManager : MonoBehaviour
             showPauseFeedback.PauseDuration = pauseTime;
 
             await ShowEnemyCardsTypesHintsFeedbackPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayPlaceCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
+    {
+        MMF_DestinationTransform moveCardFeedback =
+            PlaceCardOnCombatPlayer.GetFeedbackOfType<MMF_DestinationTransform>();
+        MMF_Scale scaleCardFeedback =
+            PlaceCardOnCombatPlayer.GetFeedbackOfType<MMF_Scale>();
+        
+        if (moveCardFeedback != null && scaleCardFeedback != null)
+        {
+            moveCardFeedback.TargetTransform = cardToPlaceOnCombat.gameObject.transform;
+            moveCardFeedback.Destination = onCombatTransform;
+
+            scaleCardFeedback.AnimateScaleTarget = cardToPlaceOnCombat.gameObject.transform;
+            scaleCardFeedback.RemapCurveZero = onCombatTransform.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x * 2;
+
+            await PlaceCardOnCombatPlayer.PlayFeedbacksTask();
         }
     }
 }

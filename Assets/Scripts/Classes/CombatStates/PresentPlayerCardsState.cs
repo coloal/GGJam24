@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -14,7 +15,7 @@ public class PresentPlayerCardsState : CombatState
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override async void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
@@ -28,7 +29,7 @@ public class PresentPlayerCardsState : CombatState
 
         if (cardsToDraw > 0)
         {
-            DrawCardFromDeckToHand(combatContext, cardsToDraw);
+            await DrawCardFromDeckToHand(combatContext, cardsToDraw);
             PostProcess(combatContext);
         }
         else if (playerDeckManager.GetNumberOfCardsInHand() > 0)
@@ -37,7 +38,7 @@ public class PresentPlayerCardsState : CombatState
         }
     }
 
-    async void DrawCardFromDeckToHand(CombatV2Manager.CombatContext combatContext, int cardsToDraw)
+    async Task DrawCardFromDeckToHand(CombatV2Manager.CombatContext combatContext, int cardsToDraw)
     {
         Transform GetCardInHandTransform(int cardIndex)
         {
