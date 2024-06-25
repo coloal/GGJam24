@@ -17,9 +17,9 @@ public class TossCoinState : CombatState
 
         CoinCard.GetComponent<CoinCard>().ShowCoinResult(CoinResult);
 
-        GameUtils.CreateTemporizer(() => {
+        /*GameUtils.CreateTemporizer(() => {
             CoinCard.GetComponent<CoinCard>().EnableCard(false);
-        }, 3, CombatSceneManager.Instance);
+        }, 3, CombatSceneManager.Instance);*/
 
 
         //Game Over
@@ -64,7 +64,7 @@ public class TossCoinState : CombatState
         /*
         OnSwipeLeft();
         /*/
-        OnSwipeRight();
+        //OnSwipeRight();
         /**/
 
         //PostProcess(combatContext);
