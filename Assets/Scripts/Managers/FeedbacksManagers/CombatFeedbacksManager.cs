@@ -15,6 +15,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player RevealCardPlayer;
     [SerializeField] public MMF_Player AttackCardPlayer;
     [SerializeField] public MMF_Player KillACardPlayer;
+    [SerializeField] public MMF_Player MoveCardToTransformPlayer;
 
     [Header("Feedbacks configuration")]
     [Header("Place Card on Combat")]
@@ -202,6 +203,51 @@ public class CombatFeedbacksManager : MonoBehaviour
             cardDisappearFeedback.BoundImage = cardToKill.GetCardFrontImage();
 
             await KillACardPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayReturnCardToDeck(CombatCard cardToReturn, Transform deckTransform)
+    {
+        MMF_Scale scaleCardFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale horizontalFlipFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Horizontal Flip"));
+        MMF_ImageAlpha cardFrontHideFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Front Hide"));
+        MMF_ImageAlpha cardBackRevealFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Back Reveal"));
+
+        MMF_DestinationTransform moveRotateAndScaleCardFeedback =
+            MoveCardToTransformPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move and Rotate Card"));
+        
+        if (scaleCardFeedback != null && horizontalFlipFeedback != null
+            && cardFrontHideFeedback != null && cardBackRevealFeedback != null
+            && moveRotateAndScaleCardFeedback != null)
+        {
+            scaleCardFeedback.AnimateScaleTarget = cardToReturn.transform;
+            scaleCardFeedback.RemapCurveZero = cardToReturn.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = deckTransform.localScale.x;
+
+            horizontalFlipFeedback.AnimateScaleTarget = cardToReturn.transform;
+            horizontalFlipFeedback.RemapCurveZero = cardToReturn.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveOne = - deckTransform.localScale.x;
+
+            cardFrontHideFeedback.BoundImage = cardToReturn.GetCardFrontImage();
+            cardBackRevealFeedback.BoundImage = cardToReturn.GetCardBackImage();
+
+            moveRotateAndScaleCardFeedback.TargetTransform = cardToReturn.transform;
+            moveRotateAndScaleCardFeedback.Destination = deckTransform;
+
+            await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
+            deckTransform.SetAsLastSibling();
+            await MoveCardToTransformPlayer.PlayFeedbacksTask();
+
+            DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
+            if (deckBehaviourComponent != null)
+            {
+                deckBehaviourComponent.AddCardToDeck();
+                await DeckFeedbackPlayer.PlayFeedbacksTask();
+            }
         }
     }
 }
