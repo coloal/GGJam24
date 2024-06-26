@@ -11,6 +11,8 @@ public class CombatV2Manager : MonoBehaviour
     {
         public GameObject enemyCardsHintRow0;
         public GameObject enemyCardsHintRow1;
+        public GameObject enemyCardsPickUpRow0;
+        public GameObject enemyCardsPickUpRow1;
         public GameObject playerHandContainer;
         public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
@@ -27,6 +29,8 @@ public class CombatV2Manager : MonoBehaviour
 
         public CombatContext(GameObject enemyCardsHintRow0,
             GameObject enemyCardsHintRow1,
+            GameObject enemyCardsPickUpRow0,
+            GameObject enemyCardsPickUpRow1,
             GameObject playerHandContainer,
             DeckBehaviourComponent playerDeck,
             RectTransform playerOnCombatCardFinalPosition,
@@ -41,6 +45,8 @@ public class CombatV2Manager : MonoBehaviour
         {
             this.enemyCardsHintRow0 = enemyCardsHintRow0;
             this.enemyCardsHintRow1 = enemyCardsHintRow1;
+            this.enemyCardsPickUpRow0 = enemyCardsPickUpRow0;
+            this.enemyCardsPickUpRow1 = enemyCardsPickUpRow1;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
             this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
@@ -61,6 +67,8 @@ public class CombatV2Manager : MonoBehaviour
     [Header("Board configurations")]
     [SerializeField] private GameObject enemyCardsHintRow0;
     [SerializeField] private GameObject enemyCardsHintRow1;
+    [SerializeField] private GameObject enemyCardsPickUpRow0;
+    [SerializeField] private GameObject enemyCardsPickUpRow1;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private GameObject combatCardPrefab;
     [SerializeField] private GameObject emptyCardDummy;
@@ -101,6 +109,8 @@ public class CombatV2Manager : MonoBehaviour
         combatContext = new CombatContext(
             enemyCardsHintRow0,
             enemyCardsHintRow1,
+            enemyCardsPickUpRow0,
+            enemyCardsPickUpRow1,
             playerHandContainer,
             playerDeck,
             playerOnCombatCardFinalPosition,
