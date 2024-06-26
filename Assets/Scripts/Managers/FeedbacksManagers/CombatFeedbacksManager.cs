@@ -13,12 +13,15 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player PlaceCardOnCombatPlayer;
     [SerializeField] public MMF_Player HideCardFromPlayerHandPlayer;
     [SerializeField] public MMF_Player RevealCardPlayer;
+    [SerializeField] public MMF_Player AttackCardPlayer;
 
     [Header("Feedbacks configuration")]
     [Header("Place Card on Combat")]
     [SerializeField] public float PlaceCardOnCombatScaleFactor = 2.0f;
     [Header("Reveal Card")]
     [SerializeField] public float RevealCardScaleFactor = 2.0f;
+    [Header("Attack a Card")]
+    [SerializeField] public float AttackACardScaleFactor = 2.0f;
     
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -146,6 +149,36 @@ public class CombatFeedbacksManager : MonoBehaviour
             scaleBackCardFeedback.RemapCurveOne = cardToReveal.transform.localScale.x;
 
             await RevealCardPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayAttackCard(CombatCard attackerCard)
+    {
+        MMF_DestinationTransform moveCardToCenterFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Card to Center"));
+        MMF_Scale scaleCardFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Rotation rotateCardFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Rotation>().Find((feedback) => feedback.Label.Equals("Rotate Card"));
+        MMF_Scale attackHitFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Attack Hit"));
+
+        if (scaleCardFeedback != null && rotateCardFeedback != null
+            && moveCardToCenterFeedback != null && attackHitFeedback != null)
+        {
+            moveCardToCenterFeedback.TargetTransform = attackerCard.transform;
+
+            scaleCardFeedback.AnimateScaleTarget = attackerCard.transform;
+            scaleCardFeedback.RemapCurveZero = attackerCard.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = attackerCard.transform.localScale.x * AttackACardScaleFactor;
+
+            rotateCardFeedback.AnimateRotationTarget = attackerCard.transform;
+
+            attackHitFeedback.AnimateScaleTarget = attackerCard.transform;
+            attackHitFeedback.RemapCurveZero = attackerCard.transform.localScale.x * AttackACardScaleFactor;
+            attackHitFeedback.RemapCurveOne = attackerCard.transform.localScale.x;
+
+            await AttackCardPlayer.PlayFeedbacksTask();
         }
     }
 }
