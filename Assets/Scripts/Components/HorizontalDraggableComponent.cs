@@ -65,6 +65,11 @@ public class HorizontalDraggableComponent : MonoBehaviour
         rightSwipeEscapeZoneEnterActions = new List<Action>();
         rightSwipeEscapeZoneExitActions = new List<Action>();
         rectTransformComponent = GetComponent<RectTransform>();
+        
+    }
+
+    private void Start()
+    {
         GameManager.Instance.ProvideInputManager().onClickEvent += OnClick;
         GameManager.Instance.ProvideInputManager().onReleaseEvent += OnRelease;
     }
@@ -173,9 +178,10 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     void OnClick()
     {
+
+        isMouseClickPressed = true;
         if (rectTransformComponent && RectTransformUtility.RectangleContainsScreenPoint(rectTransformComponent, ClickedPosition, Camera.main))
         {
-            isMouseClickPressed = true;
         }
     }
 
