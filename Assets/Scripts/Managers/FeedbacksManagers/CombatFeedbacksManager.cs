@@ -14,6 +14,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player HideCardFromPlayerHandPlayer;
     [SerializeField] public MMF_Player RevealCardPlayer;
     [SerializeField] public MMF_Player AttackCardPlayer;
+    [SerializeField] public MMF_Player KillACardPlayer;
 
     [Header("Feedbacks configuration")]
     [Header("Place Card on Combat")]
@@ -166,6 +167,8 @@ public class CombatFeedbacksManager : MonoBehaviour
         if (scaleCardFeedback != null && rotateCardFeedback != null
             && moveCardToCenterFeedback != null && attackHitFeedback != null)
         {
+            attackerCard.transform.SetAsLastSibling();
+
             moveCardToCenterFeedback.TargetTransform = attackerCard.transform;
 
             scaleCardFeedback.AnimateScaleTarget = attackerCard.transform;
@@ -179,6 +182,26 @@ public class CombatFeedbacksManager : MonoBehaviour
             attackHitFeedback.RemapCurveOne = attackerCard.transform.localScale.x;
 
             await AttackCardPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayKillACard(CombatCard cardToKill)
+    {
+        MMF_RotationShake rotationShakeFeedback =
+            KillACardPlayer.GetFeedbacksOfType<MMF_RotationShake>().Find((feedback) => feedback.Label.Equals("Rotation Shake"));
+        MMF_ImageAlpha cardDisappearFeedback =
+            KillACardPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Disappear"));
+
+        MMRotationShaker cardRotationShakerComponent = cardToKill.GetComponent<MMRotationShaker>();
+
+        if (rotationShakeFeedback != null && cardDisappearFeedback != null 
+            && cardRotationShakerComponent != null)
+        {
+            rotationShakeFeedback.TargetShaker = cardRotationShakerComponent;
+
+            cardDisappearFeedback.BoundImage = cardToKill.GetCardFrontImage();
+
+            await KillACardPlayer.PlayFeedbacksTask();
         }
     }
 }

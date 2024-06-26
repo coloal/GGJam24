@@ -123,6 +123,9 @@ public class ResolveCombatState : CombatState
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             if (enemyCombatCard != null)
             {
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillACard(enemyCombatCard);
+
                 enemyDeckManager.DestroyCard(enemyCombatCard);
                 GameObject.Destroy(combatContext.enemyOnCombatCard.gameObject);
                 combatContext.enemyOnCombatCard = null;
@@ -198,6 +201,9 @@ public class ResolveCombatState : CombatState
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             if (playerCombatCard != null)
             {
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillACard(playerCombatCard);
+
                 playerDeckManager.DestroyCard(playerCombatCard);
                 GameObject.Destroy(combatContext.playerOnCombatCard.gameObject);
                 combatContext.playerOnCombatCard = null;
@@ -228,7 +234,7 @@ public class ResolveCombatState : CombatState
             }
         }
 
-        async void ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        void ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
         {
             foreach (Transform cardInTieZone in combatContext.enemyTieZone)
             {
