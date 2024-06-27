@@ -17,9 +17,10 @@ public class TossCoinState : CombatState
 
         CoinCard.GetComponent<CoinCard>().ShowCoinResult(CoinResult);
 
-        /*GameUtils.CreateTemporizer(() => {
+        
+        GameUtils.CreateTemporizer(() => {
             CoinCard.GetComponent<CoinCard>().EnableCard(false);
-        }, 3, CombatSceneManager.Instance);*/
+        }, 3, CombatSceneManager.Instance);/**/
 
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()

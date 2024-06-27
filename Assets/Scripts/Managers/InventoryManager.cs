@@ -43,17 +43,20 @@ public class InventoryManager : MonoBehaviour
     {
         List<CombatCardTemplate> clonedDeck = new List<CombatCardTemplate>();
         
-        // deck.ForEach((combatCardData) => 
-        // {
-        //     clonedDeck.Add(combatCardData);
-        // });
-        //DEBUG PURPOSES ONLY
 
+        /*
+         deck.ForEach((combatCardData) => 
+         {
+             clonedDeck.Add(combatCardData);
+         });
+        
+        //DEBUG PURPOSES ONLY
+        /*/
         debugDeck.ForEach((combatCardData) => 
         {
             clonedDeck.Add(combatCardData);
         });
-
+        /**/
         return clonedDeck;
     }
 
@@ -62,6 +65,9 @@ public class InventoryManager : MonoBehaviour
         cardsVault.Add(combatCard);
         if(deck.Count < deckSize) {
             deck.Add(combatCard);
+
+            //DEBUG PURPOSES ONLY
+            debugDeck.Add(combatCard);
         }
     }
 
