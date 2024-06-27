@@ -67,6 +67,11 @@ public class CombatSceneManager : BaseSceneManager
         return enemyTemplate;
     }
 
+    public void SetEnemyData(EnemyTemplate EnemyData) 
+    {
+        enemyTemplate = EnemyData;
+    }
+
     public GameObject ProvideCoinCardGO() 
     {
         return CoinCardGO;

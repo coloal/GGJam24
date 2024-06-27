@@ -185,9 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckSize: 8
   debugDeck:
-  - {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
 --- !u!4 &163239570
 Transform:
@@ -1005,7 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabCodeGraph: {fileID: 6361588695723404713, guid: 80cce8e39d0572147af717bd8474e4c3, type: 3}
-  FirstStory: {fileID: 11400000, guid: 06326608fd6e79f46a002d540c1d5a6e, type: 2}
+  FirstStory: {fileID: 11400000, guid: 636901b1de0264d4a993050a5f2a563a, type: 2}
 --- !u!4 &1327554470
 Transform:
   m_ObjectHideFlags: 0

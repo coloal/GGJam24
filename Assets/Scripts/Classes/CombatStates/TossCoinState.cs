@@ -22,8 +22,10 @@ public class TossCoinState : CombatState
         }, 3, CombatSceneManager.Instance);*/
 
 
+        int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
+            + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
         //Game Over
-        if (CoinResult != PlayerCoinChoice && CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck() <= 0)
+        if (CoinResult != PlayerCoinChoice && playerTotalCards <= 0)
         {
             Debug.Log("El player ha perdido");
             CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ResultLoseState());

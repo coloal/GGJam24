@@ -63,8 +63,10 @@ MonoBehaviour:
   - rid: 8580623337150218307
   - rid: 8580623337150218310
   - rid: 8580623337150218311
-  - rid: 8580623429159092224
   - rid: 2786998743839014912
+  - rid: 1306970302061740032
+  - rid: 1306970302061740033
+  - rid: 1306970302061740035
   connections:
   - outputPort:
       nodeId: 5e57d65b-baf5-46ba-b9f7-d5b2a919cdfb
@@ -490,23 +492,97 @@ MonoBehaviour:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 0
     inputPort:
-      nodeId: 036cfc1f-5951-4733-9463-83a803358772
-      portIndex: 2
+      nodeId: cbd6eaf3-c1de-4086-b1b0-3194d7fb9f37
+      portIndex: 4
   - outputPort:
-      nodeId: 036cfc1f-5951-4733-9463-83a803358772
+      nodeId: cbd6eaf3-c1de-4086-b1b0-3194d7fb9f37
+      portIndex: 3
+    inputPort:
+      nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
+      portIndex: 1
+  - outputPort:
+      nodeId: 3ad622f0-076b-4811-a870-a4ac24c89c5a
+      portIndex: 0
+    inputPort:
+      nodeId: ad0b6f9c-f775-4666-b19b-bf6653bf92bb
+      portIndex: 4
+  - outputPort:
+      nodeId: ad0b6f9c-f775-4666-b19b-bf6653bf92bb
+      portIndex: 3
+    inputPort:
+      nodeId: 3ad622f0-076b-4811-a870-a4ac24c89c5a
+      portIndex: 1
+  - outputPort:
+      nodeId: ad0b6f9c-f775-4666-b19b-bf6653bf92bb
       portIndex: 0
     inputPort:
       nodeId: 3225811d-427c-4fe3-9a25-ee91bec7e996
       portIndex: 2
   - outputPort:
-      nodeId: 036cfc1f-5951-4733-9463-83a803358772
-      portIndex: 1
+      nodeId: cbd6eaf3-c1de-4086-b1b0-3194d7fb9f37
+      portIndex: 0
     inputPort:
-      nodeId: 3225811d-427c-4fe3-9a25-ee91bec7e996
-      portIndex: 2
+      nodeId: 3ad622f0-076b-4811-a870-a4ac24c89c5a
+      portIndex: 1
   references:
     version: 2
     RefIds:
+    - rid: 1306970302061740032
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cbd6eaf3-c1de-4086-b1b0-3194d7fb9f37
+        position:
+          serializedVersion: 2
+          x: 122
+          y: -205
+          width: 391
+          height: 188
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Win no Capture
+        - Lose Combat
+        - Game Over
+        card: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
+        IsBossFight: 0
+    - rid: 1306970302061740033
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ad0b6f9c-f775-4666-b19b-bf6653bf92bb
+        position:
+          serializedVersion: 2
+          x: 883
+          y: -197
+          width: 399
+          height: 188
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Win no Capture
+        - Lose Combat
+        - Game Over
+        card: {fileID: 11400000, guid: 1fc42d54876f25b408384c0495a29f9d, type: 2}
+        IsBossFight: 0
+    - rid: 1306970302061740035
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3ad622f0-076b-4811-a870-a4ac24c89c5a
+        position:
+          serializedVersion: 2
+          x: 540
+          y: -246
+          width: 324
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Tu eres el HolloKnight
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 2786998743839014912
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -523,7 +599,8 @@ MonoBehaviour:
         - Win Capture
         - Win no Capture
         - Lose
-        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
+        card: {fileID: 0}
+        IsBossFight: 0
     - rid: 8580623337150218250
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -826,7 +903,7 @@ MonoBehaviour:
         outputs:
         - True
         - False
-        PartyMember: {fileID: 11400000, guid: 3241e206b71779f49b06913378fa9845, type: 2}
+        PartyMember: {fileID: 0}
     - rid: 8580623337150218271
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -902,7 +979,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        RecruitedCard: {fileID: 11400000, guid: 3241e206b71779f49b06913378fa9845, type: 2}
+        RecruitedCard: {fileID: 0}
     - rid: 8580623337150218278
       type: {class: ForkCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1024,7 +1101,7 @@ MonoBehaviour:
         outputs:
         - True
         - False
-        PartyMember: {fileID: 11400000, guid: 3241e206b71779f49b06913378fa9845, type: 2}
+        PartyMember: {fileID: 0}
     - rid: 8580623337150218288
       type: {class: StraightCardNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1085,7 +1162,8 @@ MonoBehaviour:
         outputs:
         - Win
         - Lose
-        card: {fileID: 11400000, guid: e1aedf56eee34d14e8e45284fee25208, type: 2}
+        card: {fileID: 0}
+        IsBossFight: 0
     - rid: 8580623337150218292
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1101,7 +1179,8 @@ MonoBehaviour:
         outputs:
         - Win
         - Lose
-        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}
+        card: {fileID: 0}
+        IsBossFight: 0
     - rid: 8580623337150218293
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1117,7 +1196,8 @@ MonoBehaviour:
         outputs:
         - Win
         - Lose
-        card: {fileID: 11400000, guid: a486211195abb3848a1a5da2b2371154, type: 2}
+        card: {fileID: 0}
+        IsBossFight: 0
     - rid: 8580623337150218294
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1133,7 +1213,8 @@ MonoBehaviour:
         outputs:
         - Win
         - Lose
-        card: {fileID: 11400000, guid: e1aedf56eee34d14e8e45284fee25208, type: 2}
+        card: {fileID: 0}
+        IsBossFight: 0
     - rid: 8580623337150218295
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1219,7 +1300,7 @@ MonoBehaviour:
         guid: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
         position:
           serializedVersion: 2
-          x: -241
+          x: -243
           y: -172
           width: 352
           height: 242
@@ -1240,8 +1321,8 @@ MonoBehaviour:
         guid: 3225811d-427c-4fe3-9a25-ee91bec7e996
         position:
           serializedVersion: 2
-          x: 653
-          y: -81
+          x: 846
+          y: -654
           width: 352
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1262,8 +1343,8 @@ MonoBehaviour:
         guid: 7f7bb316-deeb-4804-a5d9-f6fcd531387f
         position:
           serializedVersion: 2
-          x: 1097
-          y: -229
+          x: 1290
+          y: -802
           width: 362
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1280,8 +1361,8 @@ MonoBehaviour:
         guid: 58fb11c8-5ff4-492e-86c4-769d15d22fbe
         position:
           serializedVersion: 2
-          x: 1499
-          y: 202
+          x: 1692
+          y: -371
           width: 358
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1335,19 +1416,3 @@ MonoBehaviour:
         LeftText: Thank, [Gentle Giant]
         RightText: I'll try
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
-    - rid: 8580623429159092224
-      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 036cfc1f-5951-4733-9463-83a803358772
-        position:
-          serializedVersion: 2
-          x: 210
-          y: -148
-          width: 356
-          height: 122
-        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Win
-        - Lose
-        card: {fileID: 11400000, guid: f4a22caa74fd0404ea90bd99c295b2f1, type: 2}

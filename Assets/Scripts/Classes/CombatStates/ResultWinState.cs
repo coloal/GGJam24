@@ -14,6 +14,7 @@ public class ResultWinState : CombatState
         CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
 
         //TODO: return to history
+        GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_CAPTURE);
     
     }
 
