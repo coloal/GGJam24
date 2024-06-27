@@ -27,10 +27,11 @@ public class PresentPlayerCardsState : CombatState
         );
         int cardsLeftToFillHand = playerDeckManager.GetMaxAllowedCardsInHand() - playerDeckManager.GetNumberOfCardsInHand();
         int cardsToDraw = Mathf.Min(availableCardsToDraw, cardsLeftToFillHand);
-
+    
+        await MakeSpaceInHandForNewCards(combatContext);
+        
         if (cardsToDraw > 0)
         {
-            await MakeSpaceInHandForNewCards(combatContext);
             await DrawCardFromDeckToHand(combatContext, cardsToDraw);
             PostProcess(combatContext);
         }
