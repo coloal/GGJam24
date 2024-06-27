@@ -250,4 +250,18 @@ public class CombatFeedbacksManager : MonoBehaviour
             }
         }
     }
+
+    public async Task PlayMoveCardPositionInHand(CombatCard cardToMove, Transform newCardPosition)
+    {
+        MMF_DestinationTransform moveRotateAndScaleCardFeedback =
+            MoveCardToTransformPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move and Rotate Card"));
+
+        if (moveRotateAndScaleCardFeedback != null)
+        {
+            moveRotateAndScaleCardFeedback.TargetTransform = cardToMove.transform;
+            moveRotateAndScaleCardFeedback.Destination = newCardPosition;
+
+            await MoveCardToTransformPlayer.PlayFeedbacksTask();
+        }
+    }
 }

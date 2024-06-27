@@ -5516,7 +5516,7 @@ MonoBehaviour:
         TargetTransform: {fileID: 0}
         ForceOrigin: 0
         Origin: {fileID: 0}
-        Destination: {fileID: 1601379099}
+        Destination: {fileID: 0}
         GlobalAnimationTween:
           MMTweenDefinitionType: 1
           MMTweenCurve: 4
@@ -10113,7 +10113,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_Name
-      value: CombatCard
+      value: CardForAnimationTests
       objectReference: {fileID: 0}
     - target: {fileID: 2772179573574537977, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_IsActive
@@ -10189,7 +10189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136901865201778702, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -387.90005
+      value: -137.70004
       objectReference: {fileID: 0}
     - target: {fileID: 5136901865201778702, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_AnchoredPosition.y

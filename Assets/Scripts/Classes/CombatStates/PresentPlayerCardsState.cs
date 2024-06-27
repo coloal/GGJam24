@@ -30,7 +30,7 @@ public class PresentPlayerCardsState : CombatState
 
         if (cardsToDraw > 0)
         {
-            MakeSpaceInHandForNewCards(combatContext);
+            await MakeSpaceInHandForNewCards(combatContext);
             await DrawCardFromDeckToHand(combatContext, cardsToDraw);
             PostProcess(combatContext);
         }
@@ -40,7 +40,7 @@ public class PresentPlayerCardsState : CombatState
         }
     }
 
-    void MakeSpaceInHandForNewCards(CombatV2Manager.CombatContext combatContext)
+    async Task MakeSpaceInHandForNewCards(CombatV2Manager.CombatContext combatContext)
     {
         bool HasACard(Transform cardInHandContainer)
         {
@@ -60,7 +60,16 @@ public class PresentPlayerCardsState : CombatState
                 GameObject cardToMove = playerCardInHandContainers[i].GetChild(0).gameObject;
 
                 cardToMove.transform.SetParent(playerCardInHandContainers[i - 1]);
-                cardToMove.transform.position = playerCardInHandContainers[i - 1].position; // here goes the animation
+
+                CombatCard combatCardToMove = cardToMove.GetComponent<CombatCard>();
+                if (combatCardToMove != null)
+                {
+                    await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                        .PlayMoveCardPositionInHand(
+                            cardToMove: combatCardToMove,
+                            playerCardInHandContainers[i - 1]
+                        );
+                }
             }
         }
     }
