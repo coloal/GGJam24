@@ -16,7 +16,7 @@ public class CombatV2Manager : MonoBehaviour
         public Transform playerHandContainer;
         public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
-        public RectTransform playerOnCombatCardFinalPosition;
+        public Transform playerOnCombatCardTransform;
         public GameObject enemyOnCombatCard;
         public RectTransform enemyOnCombatCardOriginalPosition;
         public RectTransform enemyOnCombatCardFinalPosition;
@@ -30,7 +30,7 @@ public class CombatV2Manager : MonoBehaviour
             GameObject enemyCardsPickUpRow1,
             Transform playerHandContainer,
             DeckBehaviourComponent playerDeck,
-            RectTransform playerOnCombatCardFinalPosition,
+            Transform playerOnCombatCardTransform,
             RectTransform enemyOnCombatCardOriginalPosition,
             RectTransform enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
@@ -43,7 +43,7 @@ public class CombatV2Manager : MonoBehaviour
             this.enemyCardsPickUpRow1 = enemyCardsPickUpRow1;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
-            this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
+            this.playerOnCombatCardTransform = playerOnCombatCardTransform;
             this.enemyOnCombatCardOriginalPosition = enemyOnCombatCardOriginalPosition;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.combatContainer = combatContainer;
@@ -79,7 +79,7 @@ public class CombatV2Manager : MonoBehaviour
 
     [Header("Combat zone")]
     [SerializeField] private GameObject combatContainer;
-    [SerializeField] private RectTransform playerOnCombatCardFinalPosition;
+    [SerializeField] private Transform playerOnCombatCardTransform;
     [SerializeField] private RectTransform enemyOnCombatCardOriginalPosition;
     [SerializeField] private RectTransform enemyOnCombatCardFinalPosition;
 
@@ -112,7 +112,7 @@ public class CombatV2Manager : MonoBehaviour
             enemyCardsPickUpRow1,
             playerHandContainer,
             playerDeck,
-            playerOnCombatCardFinalPosition,
+            playerOnCombatCardTransform,
             enemyOnCombatCardOriginalPosition,
             enemyOnCombatCardFinalPosition,
             combatContainer,

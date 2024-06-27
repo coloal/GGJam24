@@ -68,7 +68,7 @@ public class PickPlayerCardState : CombatState
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayPlacePlayerCardOnCombat(
                 cardToPlaceOnCombat: cardInHand,
-                onCombatTransform: combatContext.playerOnCombatCardFinalPosition
+                onCombatTransform: combatContext.playerOnCombatCardTransform
             );
 
         PostProcess(combatContext);
