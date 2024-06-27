@@ -13,7 +13,7 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject enemyCardsHintRow1;
         public GameObject enemyCardsPickUpRow0;
         public GameObject enemyCardsPickUpRow1;
-        public GameObject playerHandContainer;
+        public Transform playerHandContainer;
         public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
         public RectTransform playerOnCombatCardFinalPosition;
@@ -23,25 +23,19 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject combatContainer;
         public Transform playerTieZone;
         public Transform enemyTieZone; 
-        public Transform playerCardInHandPosition0;
-        public Transform playerCardInHandPosition1;
-        public Transform playerCardInHandPosition2;
 
         public CombatContext(GameObject enemyCardsHintRow0,
             GameObject enemyCardsHintRow1,
             GameObject enemyCardsPickUpRow0,
             GameObject enemyCardsPickUpRow1,
-            GameObject playerHandContainer,
+            Transform playerHandContainer,
             DeckBehaviourComponent playerDeck,
             RectTransform playerOnCombatCardFinalPosition,
             RectTransform enemyOnCombatCardOriginalPosition,
             RectTransform enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
             Transform playerTieZone,
-            Transform enemyTieZone,
-            Transform playerCardInHandPosition0,
-            Transform playerCardInHandPosition1,
-            Transform playerCardInHandPosition2)
+            Transform enemyTieZone)
         {
             this.enemyCardsHintRow0 = enemyCardsHintRow0;
             this.enemyCardsHintRow1 = enemyCardsHintRow1;
@@ -55,12 +49,20 @@ public class CombatV2Manager : MonoBehaviour
             this.combatContainer = combatContainer;
             this.playerTieZone = playerTieZone;
             this.enemyTieZone = enemyTieZone;
-            this.playerCardInHandPosition0 = playerCardInHandPosition0;
-            this.playerCardInHandPosition1 = playerCardInHandPosition1;
-            this.playerCardInHandPosition2 = playerCardInHandPosition2;
 
             this.playerOnCombatCard = null;
             this.enemyOnCombatCard = null;
+        }
+
+        public List<Transform> GetPlayerCardInHandContainers()
+        {
+            List<Transform> playerCardInHandContainers = new List<Transform>();
+            foreach (Transform cardInHandContainer in playerHandContainer.transform)
+            {
+                playerCardInHandContainers.Add(cardInHandContainer);
+            }
+
+            return playerCardInHandContainers;
         }
     }
 
@@ -86,10 +88,7 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private DeckBehaviourComponent playerDeck;
     
     [Header("Player hand")]
-    [SerializeField] private GameObject playerHandContainer;
-    [SerializeField] private Transform playerCardInHandPosition0;
-    [SerializeField] private Transform playerCardInHandPosition1;
-    [SerializeField] private Transform playerCardInHandPosition2;
+    [SerializeField] private Transform playerHandContainer;
 
     [Header("Enemy deck")]
     [SerializeField] private int maxAllowedEnemyCards = 8;
@@ -118,10 +117,7 @@ public class CombatV2Manager : MonoBehaviour
             enemyOnCombatCardFinalPosition,
             combatContainer,
             playerTieZone,
-            enemyTieZone,
-            playerCardInHandPosition0,
-            playerCardInHandPosition1,
-            playerCardInHandPosition2
+            enemyTieZone
         );
     }
 

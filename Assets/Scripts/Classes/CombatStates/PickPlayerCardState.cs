@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickPlayerCardState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {   
-        foreach (Transform cardInHand in combatContext.playerHandContainer.transform)
+        ForEachCardInHand(combatContext, (cardInHand) =>
         {
             InteractiveCombatCardComponent interactiveCombatCardComponent =
                 cardInHand.GetComponent<InteractiveCombatCardComponent>();
@@ -15,7 +17,7 @@ public class PickPlayerCardState : CombatState
             {
                 interactiveCombatCardComponent.DisableInteractiveComponent();
             }
-        }
+        });
 
         CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
         CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ShowCardsState());
@@ -27,8 +29,8 @@ public class PickPlayerCardState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        foreach (Transform cardInHand in combatContext.playerHandContainer.transform)
-        {            
+        ForEachCardInHand(combatContext, (cardInHand) =>
+        {
             InteractiveCombatCardComponent interactiveCombatCardComponent =
                 cardInHand.GetComponent<InteractiveCombatCardComponent>();
             CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
@@ -40,7 +42,7 @@ public class PickPlayerCardState : CombatState
                 });
                 interactiveCombatCardComponent.EnableInteractiveComponent();
             }
-        }
+        });
     }
 
     async Task PickAPlayerCard(CombatV2Manager.CombatContext combatContext, CombatCard cardInHand)
@@ -70,5 +72,17 @@ public class PickPlayerCardState : CombatState
             );
 
         PostProcess(combatContext);
+    }
+
+    void ForEachCardInHand(CombatV2Manager.CombatContext combatContext, Action<GameObject> lambda)
+    {
+        foreach (Transform cardInHandContainer in combatContext.GetPlayerCardInHandContainers())
+        {
+            if (cardInHandContainer.childCount > 0)
+            {
+                GameObject cardInHand = cardInHandContainer.GetChild(0).gameObject;
+                lambda(cardInHand);   
+            }
+        }
     }
 }

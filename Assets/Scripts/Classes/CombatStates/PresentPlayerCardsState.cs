@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -29,6 +30,7 @@ public class PresentPlayerCardsState : CombatState
 
         if (cardsToDraw > 0)
         {
+            MakeSpaceInHandForNewCards(combatContext);
             await DrawCardFromDeckToHand(combatContext, cardsToDraw);
             PostProcess(combatContext);
         }
@@ -38,47 +40,53 @@ public class PresentPlayerCardsState : CombatState
         }
     }
 
-    async Task DrawCardFromDeckToHand(CombatV2Manager.CombatContext combatContext, int cardsToDraw)
+    void MakeSpaceInHandForNewCards(CombatV2Manager.CombatContext combatContext)
     {
-        Transform GetCardInHandTransform(int cardIndex)
+        bool HasACard(Transform cardInHandContainer)
         {
-            Transform cardInHandTransform = combatContext.playerCardInHandPosition0;
-            switch (cardIndex)
-            {
-                case 0:
-                    cardInHandTransform = combatContext.playerCardInHandPosition0;
-                    break;
-                case 1:
-                    cardInHandTransform = combatContext.playerCardInHandPosition1;
-                    break;
-                case 2:
-                    cardInHandTransform = combatContext.playerCardInHandPosition2;
-                    break;
-                default:
-                    break;
-            }
-
-            return cardInHandTransform;
+            return cardInHandContainer.childCount > 0;    
         }
 
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+        
+        List<Transform> playerCardInHandContainers = combatContext.GetPlayerCardInHandContainers();
+
+        for (int i = playerDeckManager.GetMaxAllowedCardsInHand() - 1; i > 0; i--)
+        {
+            // Is there a card in the current hand position?
+            if (HasACard(playerCardInHandContainers[i]) 
+                && !HasACard(playerCardInHandContainers[i - 1]))
+            {
+                GameObject cardToMove = playerCardInHandContainers[i].GetChild(0).gameObject;
+
+                cardToMove.transform.SetParent(playerCardInHandContainers[i - 1]);
+                cardToMove.transform.position = playerCardInHandContainers[i - 1].position; // here goes the animation
+            }
+        }
+    }
+
+    async Task DrawCardFromDeckToHand(CombatV2Manager.CombatContext combatContext, int cardsToDraw)
+    {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         CombatFeedbacksManager combatFeedbacksManager = CombatSceneManager.Instance.ProvideCombatFeedbacksManager();
         
         for (int i = 0; i < cardsToDraw; ++i)
         {
-            int cardIndex = playerDeckManager.GetNumberOfCardsInHand();
+            Transform firstAvailbalePositionInHand = combatContext
+                .GetPlayerCardInHandContainers()
+                .Find((cardInHandContainer) => cardInHandContainer.childCount == 0);
 
             CombatCard cardToDraw = playerDeckManager.DrawCardFromDeckToHand();
             cardToDraw.gameObject.SetActive(true);
             cardToDraw.transform.SetParent(
-                combatContext.playerHandContainer.transform,
+                firstAvailbalePositionInHand,
                 worldPositionStays: false
             );
 
             await combatFeedbacksManager.PlayPlayerDrawCardFromDeck(
                 playerCard: cardToDraw,
                 playerDeck: combatContext.playerDeck,
-                cardInHandPosition: GetCardInHandTransform(cardIndex)
+                cardInHandPosition: firstAvailbalePositionInHand
             );
         }
     }
