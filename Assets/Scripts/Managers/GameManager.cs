@@ -90,37 +90,17 @@ public class GameManager : MonoBehaviour
                 };
                 break;
 
-            case TurnResult.COMBAT_WON_NO_CAPTURE:
-                action = () =>
-                {
-                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
-                    {
-                        mainGameSceneManager.ProvideTurnManager().WinCombat(false);
-                    }
-                };
-                break;
-
-            case TurnResult.COMBAT_LOST:
-                action = () =>
-                {
-                    if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
-                    {
-                        mainGameSceneManager.ProvideTurnManager().LoseCombat(false);
-                    }
-                };
-                break;
-
             case TurnResult.COMBAT_GAME_OVER:
                 action = () =>
                 {
                     if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
                     {
-                        GameManager.Instance.ProvideBrainSoundManager().StartGameOver();
-                        mainGameSceneManager.ProvideTurnManager().LoseCombat(true);
-                        SceneManager.LoadScene(ScenesNames.GameOverScene);
+                        ProvideBrainSoundManager().StartGameOver();
+                        mainGameSceneManager.ProvideTurnManager().LoseCombat();
                     }
                 };
                 break;
+
             default:
                 action = () => { };
                 Debug.LogError("Combat returned invalid result");
@@ -177,8 +157,9 @@ public class GameManager : MonoBehaviour
 
     public void EnterBattleScene(bool isBoss)
     {
-        List<CombatCardTemplate> members = GameManager.Instance.ProvidePartyManager().GetPartyMembers();
-        GameManager.Instance.ProvideBrainSoundManager().StartCombat(members, isBoss);
+        List<CombatCardTemplate> members = ProvidePartyManager().GetPartyMembers();
+        ProvideBrainSoundManager().StartCombat(members, isBoss);
+        ProvideBrainManager().bIsBossFight = isBoss;
 
         Animator transition = brainManager.ZoneInfo.CombatTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
@@ -197,7 +178,7 @@ public class GameManager : MonoBehaviour
                     instantedAnimator_1.SetTrigger("EnterAnimation");
                     GameUtils.CreateTemporizer(() =>
                     {
-                        Destroy(instantedAnimator_1);
+                        Destroy(instantedAnimator_1.gameObject);
                     }, 1.0f, this);
                 }
             });

@@ -41,13 +41,13 @@ MonoBehaviour:
   - rid: 8807612156763701265
   - rid: 8807612156763701266
   - rid: 8807612156763701267
-  - rid: 7416004749467320323
   - rid: 7416004749467320324
   - rid: 7416004749467320325
   - rid: 7416004749467320326
   - rid: 7416004749467320331
   - rid: 7416004762105020420
   - rid: 7416004762105020421
+  - rid: 2760983171626958849
   connections:
   - outputPort:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
@@ -218,36 +218,6 @@ MonoBehaviour:
       nodeId: 7ae9ddc6-0bc0-4ebc-b18b-dd32c7932b59
       portIndex: 1
   - outputPort:
-      nodeId: 664191d9-13e0-4062-960f-3d1c736a7e64
-      portIndex: 0
-    inputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 4
-  - outputPort:
-      nodeId: 76b3c7c4-acf7-4b14-a1ce-bfbc8517b001
-      portIndex: 0
-    inputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 4
-  - outputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 0
-    inputPort:
-      nodeId: 0aad61fe-ff5a-4b92-85a0-a0e6b3d3b693
-      portIndex: 1
-  - outputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 1
-    inputPort:
-      nodeId: 53ba18ef-aadb-4116-b295-d4b8182df0a1
-      portIndex: 1
-  - outputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 2
-    inputPort:
-      nodeId: f7db183f-20fe-4a16-b457-87f8fe220ffe
-      portIndex: 1
-  - outputPort:
       nodeId: 10021667-8065-4141-8b19-c7da6e624eac
       portIndex: 0
     inputPort:
@@ -284,12 +254,6 @@ MonoBehaviour:
       nodeId: 30b49c7f-abbc-45a8-baf0-4a80e8898aa1
       portIndex: 1
   - outputPort:
-      nodeId: 63c575da-33e0-4cd9-925d-eb779df24c59
-      portIndex: 3
-    inputPort:
-      nodeId: db25036f-5eb1-48c2-84a9-b1e372ea7085
-      portIndex: 1
-  - outputPort:
       nodeId: db25036f-5eb1-48c2-84a9-b1e372ea7085
       portIndex: 0
     inputPort:
@@ -319,27 +283,49 @@ MonoBehaviour:
     inputPort:
       nodeId: 10021667-8065-4141-8b19-c7da6e624eac
       portIndex: 1
+  - outputPort:
+      nodeId: 76b3c7c4-acf7-4b14-a1ce-bfbc8517b001
+      portIndex: 0
+    inputPort:
+      nodeId: 9cd10b9b-f3e7-4cae-8cdc-4dfe88cab292
+      portIndex: 2
+  - outputPort:
+      nodeId: 664191d9-13e0-4062-960f-3d1c736a7e64
+      portIndex: 0
+    inputPort:
+      nodeId: 9cd10b9b-f3e7-4cae-8cdc-4dfe88cab292
+      portIndex: 2
+  - outputPort:
+      nodeId: 9cd10b9b-f3e7-4cae-8cdc-4dfe88cab292
+      portIndex: 0
+    inputPort:
+      nodeId: 53ba18ef-aadb-4116-b295-d4b8182df0a1
+      portIndex: 1
+  - outputPort:
+      nodeId: 9cd10b9b-f3e7-4cae-8cdc-4dfe88cab292
+      portIndex: 1
+    inputPort:
+      nodeId: f7db183f-20fe-4a16-b457-87f8fe220ffe
+      portIndex: 1
   references:
     version: 2
     RefIds:
-    - rid: 7416004749467320323
+    - rid: 2760983171626958849
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
-        guid: 63c575da-33e0-4cd9-925d-eb779df24c59
+        guid: 9cd10b9b-f3e7-4cae-8cdc-4dfe88cab292
         position:
           serializedVersion: 2
-          x: 3846
-          y: 115
-          width: 364
-          height: 170
+          x: 3904
+          y: 113
+          width: 300
+          height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Win Capture
-        - Win no Capture
-        - Lose Combat
         - Game Over
-        card: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
+        enemy: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
         IsBossFight: 0
     - rid: 7416004749467320324
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -371,7 +357,7 @@ MonoBehaviour:
         - Win no Capture
         - Lose Combat
         - Game Over
-        card: {fileID: 0}
+        enemy: {fileID: 0}
         IsBossFight: 0
     - rid: 7416004749467320326
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
