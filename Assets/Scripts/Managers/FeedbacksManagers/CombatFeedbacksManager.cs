@@ -18,6 +18,10 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player MoveCardToTransformPlayer;
     [SerializeField] public MMF_Player MoveCardToTieZonePlayer;
 
+    [Header("Cards scale configurations")]
+    [SerializeField] public float CardOnCombatScale = 3.5f;
+    [SerializeField] public float CardOnTieZoneScale = 2.2f;
+
     [Header("Feedbacks configuration")]
     [Header("Place a Card on Combat")]
     [SerializeField] public float PlaceCardOnCombatScaleFactor = 2.0f;
@@ -25,8 +29,6 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public float RevealCardScaleFactor = 2.0f;
     [Header("Attack a Card")]
     [SerializeField] public float AttackACardScaleFactor = 2.0f;
-    [Header("Move a Card to tie zone")]
-    [SerializeField] public float CardOnTieZoneScale = 2.2f;
     
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -74,18 +76,18 @@ public class CombatFeedbacksManager : MonoBehaviour
     public async Task PlayPlaceCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
     {
         MMF_DestinationTransform moveCardFeedback =
-            PlaceCardOnCombatPlayer.GetFeedbackOfType<MMF_DestinationTransform>();
-        MMF_Scale scaleCardFeedback =
-            PlaceCardOnCombatPlayer.GetFeedbackOfType<MMF_Scale>();
+            PlaceCardOnCombatPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Card"));
+        MMF_Scale getCardCloseToCameraFeedback =
+            PlaceCardOnCombatPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Get Card close to Camera"));
         
-        if (moveCardFeedback != null && scaleCardFeedback != null)
+        if (moveCardFeedback != null && getCardCloseToCameraFeedback != null)
         {
             moveCardFeedback.TargetTransform = cardToPlaceOnCombat.gameObject.transform;
             moveCardFeedback.Destination = onCombatTransform;
 
-            scaleCardFeedback.AnimateScaleTarget = cardToPlaceOnCombat.gameObject.transform;
-            scaleCardFeedback.RemapCurveZero = onCombatTransform.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x * PlaceCardOnCombatScaleFactor;
+            getCardCloseToCameraFeedback.AnimateScaleTarget = cardToPlaceOnCombat.gameObject.transform;
+            getCardCloseToCameraFeedback.RemapCurveZero = CardOnCombatScale;
+            getCardCloseToCameraFeedback.RemapCurveOne = CardOnCombatScale * PlaceCardOnCombatScaleFactor;
 
             await PlaceCardOnCombatPlayer.PlayFeedbacksTask();
         }
@@ -107,11 +109,11 @@ public class CombatFeedbacksManager : MonoBehaviour
         {
             scaleCardFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
             scaleCardFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = CardOnCombatScale;
 
             horizontalFlipFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
             horizontalFlipFeedback.RemapCurveZero = - cardToPlaceOnCombat.transform.localScale.x;
-            horizontalFlipFeedback.RemapCurveOne = onCombatTransform.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveOne = CardOnCombatScale;
 
             cardFrontHideFeedback.BoundImage = cardToPlaceOnCombat.GetCardFrontImage();
             cardBackRevealFeedback.BoundImage = cardToPlaceOnCombat.GetCardBackImage();

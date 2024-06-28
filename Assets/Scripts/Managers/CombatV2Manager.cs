@@ -18,8 +18,8 @@ public class CombatV2Manager : MonoBehaviour
         public GameObject playerOnCombatCard;
         public Transform playerOnCombatCardTransform;
         public GameObject enemyOnCombatCard;
-        public RectTransform enemyOnCombatCardOriginalPosition;
-        public RectTransform enemyOnCombatCardFinalPosition;
+        public Transform enemyOnCombatCardOriginalPosition;
+        public Transform enemyOnCombatCardFinalPosition;
         public GameObject combatContainer;
         public Transform playerTieZone;
         public Transform enemyTieZone; 
@@ -31,8 +31,8 @@ public class CombatV2Manager : MonoBehaviour
             Transform playerHandContainer,
             DeckBehaviourComponent playerDeck,
             Transform playerOnCombatCardTransform,
-            RectTransform enemyOnCombatCardOriginalPosition,
-            RectTransform enemyOnCombatCardFinalPosition,
+            Transform enemyOnCombatCardOriginalPosition,
+            Transform enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
             Transform playerTieZone,
             Transform enemyTieZone)
@@ -89,14 +89,14 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private GameObject combatCardPrefab;
     [SerializeField] private GameObject emptyCardDummy;
-    [SerializeField] private Transform playerTieZone;
-    [SerializeField] private Transform enemyTieZone;
 
     [Header("Combat zone")]
     [SerializeField] private GameObject combatContainer;
     [SerializeField] private Transform playerOnCombatCardTransform;
-    [SerializeField] private RectTransform enemyOnCombatCardOriginalPosition;
-    [SerializeField] private RectTransform enemyOnCombatCardFinalPosition;
+    [SerializeField] private Transform enemyOnCombatCardOriginalPosition;
+    [SerializeField] private Transform enemyOnCombatCardFinalPosition;
+    [SerializeField] private Transform playerTieZone;
+    [SerializeField] private Transform enemyTieZone;
 
     [Header("Player deck")]
     [SerializeField] private DeckBehaviourComponent playerDeck;
