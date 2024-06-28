@@ -9,7 +9,7 @@ public class ResultLoseState : CombatState
 
         //TODO: eliminar cartas obtenidas mediante BrainManager ??
         
-        GameManager.Instance.EndCombat(TurnResult.COMBAT_GAME_OVER);
+        //GameManager.Instance.EndCombat(TurnResult.COMBAT_GAME_OVER);
         //throw new System.NotImplementedException();
     }
 
