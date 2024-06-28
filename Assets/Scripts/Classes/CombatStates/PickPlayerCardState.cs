@@ -9,7 +9,7 @@ public class PickPlayerCardState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {   
-        ForEachCardInHand(combatContext, (cardInHand) =>
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
         {
             InteractiveCombatCardComponent interactiveCombatCardComponent =
                 cardInHand.GetComponent<InteractiveCombatCardComponent>();
@@ -29,7 +29,7 @@ public class PickPlayerCardState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        ForEachCardInHand(combatContext, (cardInHand) =>
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
         {
             InteractiveCombatCardComponent interactiveCombatCardComponent =
                 cardInHand.GetComponent<InteractiveCombatCardComponent>();
@@ -72,17 +72,5 @@ public class PickPlayerCardState : CombatState
             );
 
         PostProcess(combatContext);
-    }
-
-    void ForEachCardInHand(CombatV2Manager.CombatContext combatContext, Action<GameObject> lambda)
-    {
-        foreach (Transform cardInHandContainer in combatContext.GetPlayerCardInHandContainers())
-        {
-            if (cardInHandContainer.childCount > 0)
-            {
-                GameObject cardInHand = cardInHandContainer.GetChild(0).gameObject;
-                lambda(cardInHand);   
-            }
-        }
     }
 }
