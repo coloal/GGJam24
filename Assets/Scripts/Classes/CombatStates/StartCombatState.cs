@@ -48,9 +48,6 @@ public class StartCombatState : CombatState
     void SetUpEnemyDeck(CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
-
-        //Set current enemy 
-        CombatSceneManager.Instance.SetEnemyData(GameManager.Instance.ActualEnemy);
         
         List<CombatCardTemplate> enemyDeck = CombatSceneManager.Instance.ProvideEnemyData().CombatCards;
         enemyDeck.ForEach((combatCardData) =>

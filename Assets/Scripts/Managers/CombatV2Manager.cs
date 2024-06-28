@@ -56,13 +56,28 @@ public class CombatV2Manager : MonoBehaviour
 
         public List<Transform> GetPlayerCardInHandContainers()
         {
-            List<Transform> playerCardInHandContainers = new List<Transform>();
-            foreach (Transform cardInHandContainer in playerHandContainer.transform)
+            return GetCardContainers(playerHandContainer);
+        }
+
+        public List<Transform> GetPlayerCardInTieZoneContainers()
+        {
+            return GetCardContainers(playerTieZone);
+        }
+
+        public List<Transform> GetEnemyCardInTieZoneContainers()
+        {
+            return GetCardContainers(enemyTieZone);
+        }
+
+        List<Transform> GetCardContainers(Transform cardContainersParentTransform)
+        {
+            List<Transform> cardContainers = new List<Transform>();
+            foreach (Transform cardContainer in cardContainersParentTransform)
             {
-                playerCardInHandContainers.Add(cardInHandContainer);
+                cardContainers.Add(cardContainer);
             }
 
-            return playerCardInHandContainers;
+            return cardContainers;
         }
     }
 
@@ -82,7 +97,6 @@ public class CombatV2Manager : MonoBehaviour
     [SerializeField] private Transform playerOnCombatCardTransform;
     [SerializeField] private RectTransform enemyOnCombatCardOriginalPosition;
     [SerializeField] private RectTransform enemyOnCombatCardFinalPosition;
-
 
     [Header("Player deck")]
     [SerializeField] private DeckBehaviourComponent playerDeck;

@@ -16,14 +16,17 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player AttackCardPlayer;
     [SerializeField] public MMF_Player KillACardPlayer;
     [SerializeField] public MMF_Player MoveCardToTransformPlayer;
+    [SerializeField] public MMF_Player MoveCardToTieZonePlayer;
 
     [Header("Feedbacks configuration")]
-    [Header("Place Card on Combat")]
+    [Header("Place a Card on Combat")]
     [SerializeField] public float PlaceCardOnCombatScaleFactor = 2.0f;
-    [Header("Reveal Card")]
+    [Header("Reveal a Card")]
     [SerializeField] public float RevealCardScaleFactor = 2.0f;
     [Header("Attack a Card")]
     [SerializeField] public float AttackACardScaleFactor = 2.0f;
+    [Header("Move a Card to tie zone")]
+    [SerializeField] public float CardOnTieZoneScale = 2.2f;
     
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -262,6 +265,32 @@ public class CombatFeedbacksManager : MonoBehaviour
             moveRotateAndScaleCardFeedback.Destination = newCardPosition;
 
             await MoveCardToTransformPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayMoveCardToTieZone(CombatCard cardToMove, Transform newCardPosition)
+    {
+        MMF_DestinationTransform moveCardFeedback =
+            MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Card"));
+        MMF_Rotation rotateCardFeedback =
+            MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_Rotation>().Find((feedback) => feedback.Label.Equals("Rotate Card"));
+        MMF_Scale scaleCardFeedback =
+            MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+
+        if (moveCardFeedback != null && rotateCardFeedback != null)
+        {
+            cardToMove.transform.SetAsLastSibling();
+
+            moveCardFeedback.TargetTransform = cardToMove.transform;
+            moveCardFeedback.Destination = newCardPosition;
+
+            rotateCardFeedback.AnimateRotationTarget = cardToMove.transform;
+
+            scaleCardFeedback.AnimateScaleTarget = cardToMove.transform;
+            scaleCardFeedback.RemapCurveZero = cardToMove.transform.localScale.x;
+            scaleCardFeedback.RemapCurveOne = CardOnTieZoneScale;
+
+            await MoveCardToTieZonePlayer.PlayFeedbacksTask();
         }
     }
 }

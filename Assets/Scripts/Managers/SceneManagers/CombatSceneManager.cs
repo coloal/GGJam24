@@ -13,11 +13,12 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] EnemyDeckManager enemyDeckManager;
     [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
 
-    [Header("Scene configurations")]
-    [SerializeField] EnemyTemplate enemyTemplate;
-
     [Header("GameObjects")]
     [SerializeField] private GameObject CoinCardGO;
+
+    [Header("Debug configurations")]
+    [SerializeField] private bool isDebugging = false;
+    [SerializeField] private EnemyTemplate debugEnemyTemplate;
 
     void Awake()
     {
@@ -64,12 +65,14 @@ public class CombatSceneManager : BaseSceneManager
 
     public EnemyTemplate ProvideEnemyData()
     {
-        return enemyTemplate;
-    }
-
-    public void SetEnemyData(EnemyTemplate EnemyData) 
-    {
-        enemyTemplate = EnemyData;
+        if (isDebugging)
+        {
+            return debugEnemyTemplate;
+        }
+        else
+        {
+            return GameManager.Instance.ActualEnemy;
+        }
     }
 
     public GameObject ProvideCoinCardGO() 
