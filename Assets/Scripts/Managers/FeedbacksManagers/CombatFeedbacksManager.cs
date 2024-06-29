@@ -30,6 +30,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public float RevealCardScaleFactor = 2.0f;
     [Header("Attack a Card")]
     [SerializeField] public float AttackACardScaleFactor = 2.0f;
+    [SerializeField] public AnimCombatExplosionsManagerComponent animCombatExplosionsManager;
     
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -141,6 +142,8 @@ public class CombatFeedbacksManager : MonoBehaviour
             && cardFrontRevealFeedback != null && cardBackHideFeedback != null
             && scaleBackCardFeedback != null)
         {
+            cardToReveal.transform.SetAsLastSibling();
+
             scaleCardFeedback.AnimateScaleTarget = cardToReveal.transform;
             scaleCardFeedback.RemapCurveZero = cardToReveal.transform.localScale.x;
             scaleCardFeedback.RemapCurveOne = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
@@ -192,7 +195,7 @@ public class CombatFeedbacksManager : MonoBehaviour
         }
     }
 
-    public async Task PlayKillACard(CombatCard cardToKill)
+    public async Task PlayKillACard(CombatCard cardToKill, CombatCard attackerCard)
     {
         MMF_RotationShake rotationShakeFeedback =
             KillACardPlayer.GetFeedbacksOfType<MMF_RotationShake>().Find((feedback) => feedback.Label.Equals("Rotation Shake"));
@@ -204,6 +207,11 @@ public class CombatFeedbacksManager : MonoBehaviour
         if (rotationShakeFeedback != null && cardDisappearFeedback != null 
             && cardRotationShakerComponent != null)
         {
+            animCombatExplosionsManager.SetAnimExplosionToPlay(
+                attackerCard: attackerCard,
+                animPositionTransform: cardToKill.transform
+            );
+
             rotationShakeFeedback.TargetShaker = cardRotationShakerComponent;
 
             cardDisappearFeedback.BoundImage = cardToKill.GetCardFrontImage();

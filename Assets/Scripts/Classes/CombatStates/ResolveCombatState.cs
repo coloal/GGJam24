@@ -115,19 +115,20 @@ public class ResolveCombatState : CombatState
         async Task KillEnemyCard(CombatV2Manager.CombatContext combatContext)
         {
             CombatCard playerOnCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
-            if (playerOnCombatCard != null)
+            CombatCard enemyOnCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+
+            if (playerOnCombatCard != null && enemyOnCombatCard != null)
             {
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayAttackCard(playerOnCombatCard);   
-            }
 
-            CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
-            if (enemyCombatCard != null)
-            {
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                    .PlayKillACard(enemyCombatCard);
+                    .PlayKillACard(
+                        cardToKill: enemyOnCombatCard,
+                        attackerCard: playerOnCombatCard
+                    );
 
-                enemyDeckManager.DestroyCard(enemyCombatCard);
+                enemyDeckManager.DestroyCard(enemyOnCombatCard);
                 GameObject.Destroy(combatContext.enemyOnCombatCard.gameObject);
                 combatContext.enemyOnCombatCard = null;
             }
@@ -205,19 +206,20 @@ public class ResolveCombatState : CombatState
         async Task KillPlayerCard(CombatV2Manager.CombatContext combatContext)
         {
             CombatCard enemyOnCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
-            if (enemyOnCombatCard != null)
+            CombatCard playerOnCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+
+            if (enemyOnCombatCard != null && playerOnCombatCard != null)
             {
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayAttackCard(enemyOnCombatCard);
-            }
-
-            CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
-            if (playerCombatCard != null)
-            {
+            
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                    .PlayKillACard(playerCombatCard);
+                    .PlayKillACard(
+                        cardToKill: playerOnCombatCard,
+                        attackerCard: enemyOnCombatCard
+                    );
 
-                playerDeckManager.DestroyCard(playerCombatCard);
+                playerDeckManager.DestroyCard(playerOnCombatCard);
                 GameObject.Destroy(combatContext.playerOnCombatCard.gameObject);
                 combatContext.playerOnCombatCard = null;
             }

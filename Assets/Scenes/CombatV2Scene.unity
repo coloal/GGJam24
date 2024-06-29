@@ -156,6 +156,7 @@ RectTransform:
   - {fileID: 547758587}
   - {fileID: 1731878868}
   - {fileID: 2001874746}
+  - {fileID: 1260645430}
   m_Father: {fileID: 1058913408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.22}
@@ -5537,8 +5538,8 @@ MonoBehaviour:
   deckSize: 8
   debugDeck:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
 --- !u!1 &956305255
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,6 +6885,7 @@ RectTransform:
   - {fileID: 656074510}
   - {fileID: 1883189670}
   - {fileID: 1240989634}
+  - {fileID: 1266143818}
   m_Father: {fileID: 1506965357}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.05}
@@ -7459,8 +7461,11 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 2928510234677739571
-  - rid: 2928510234677739572
+  - rid: 2928510305327382557
+  - rid: 2928510305327382558
+  - rid: 2928510305327382559
+  - rid: 2928510305327382560
+  - rid: 2928510305327382561
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
@@ -7468,11 +7473,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2928510234677739571
+    - rid: 2928510305327382557
       type: {class: MMF_RotationShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 947403538
+        UniqueID: -1333992606
         Label: Rotation Shake
         ChannelMode: 0
         Channel: 0
@@ -7537,7 +7542,7 @@ MonoBehaviour:
         Owner: {fileID: 1259882958}
         DebugActive: 0
         TargetShaker: {fileID: 0}
-        Duration: 1.5
+        Duration: 0.9
         ResetShakerValuesAfterShake: 1
         ResetTargetValuesAfterShake: 1
         ShakeSpeed: 50
@@ -7576,11 +7581,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 2928510234677739572
+    - rid: 2928510305327382558
       type: {class: MMF_ImageAlpha, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -467144755
+        UniqueID: 63042149
         Label: Card Disappear
         ChannelMode: 0
         Channel: 0
@@ -7681,6 +7686,352 @@ MonoBehaviour:
         CurveRemapOne: 1
         DestinationAlpha: 1
         DisableOnStop: 0
+    - rid: 2928510305327382559
+      type: {class: MMF_Events, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: 1953617061
+        Label: Play Explosion Anim
+        ChannelMode: 0
+        Channel: 0
+        MMChannelDefinition: {fileID: 0}
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        AutomatedTargetAcquisition:
+          Mode: 0
+          ChildIndex: 0
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        UseRange: 0
+        RangeDistance: 5
+        UseRangeFalloff: 0
+        RangeFalloff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        RemapRangeFalloff: {x: 0, y: 1}
+        Owner: {fileID: 1259882958}
+        DebugActive: 0
+        PlayEvents:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1266143819}
+              m_TargetAssemblyTypeName: AnimCombatExplosionsManagerComponent, Assembly-CSharp
+              m_MethodName: PlayExplosionAnimation
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        StopEvents:
+          m_PersistentCalls:
+            m_Calls: []
+        InitializationEvents:
+          m_PersistentCalls:
+            m_Calls: []
+        ResetEvents:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 2928510305327382560
+      type: {class: MMF_HoldingPause, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: 1749897705
+        Label: Pause for Destroying Anim
+        ChannelMode: 0
+        Channel: 0
+        MMChannelDefinition: {fileID: 0}
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        AutomatedTargetAcquisition:
+          Mode: 0
+          ChildIndex: 0
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        UseRange: 0
+        RangeDistance: 5
+        UseRangeFalloff: 0
+        RangeFalloff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        RemapRangeFalloff: {x: 0, y: 1}
+        Owner: {fileID: 1259882958}
+        DebugActive: 0
+        PauseDuration: 0.01
+        RandomizePauseDuration: 0
+        MinPauseDuration: 1
+        MaxPauseDuration: 3
+        RandomizeOnEachPlay: 1
+        ScriptDriven: 0
+        AutoResume: 0
+        AutoResumeAfter: 0.25
+    - rid: 2928510305327382561
+      type: {class: MMF_Events, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
+      data:
+        Active: 1
+        UniqueID: -673816083
+        Label: Stop Explosion Anim
+        ChannelMode: 0
+        Channel: 0
+        MMChannelDefinition: {fileID: 0}
+        Chance: 100
+        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
+        Timing:
+          TimescaleMode: 0
+          ExcludeFromHoldingPauses: 0
+          ContributeToTotalDuration: 1
+          InitialDelay: 0
+          CooldownDuration: 0
+          InterruptsOnStop: 1
+          NumberOfRepeats: 0
+          RepeatForever: 0
+          DelayBetweenRepeats: 1
+          MMFeedbacksDirectionCondition: 0
+          PlayDirection: 0
+          ConstantIntensity: 0
+          UseIntensityInterval: 0
+          IntensityIntervalMin: 0
+          IntensityIntervalMax: 0
+          Sequence: {fileID: 0}
+          TrackID: 0
+          Quantized: 0
+          TargetBPM: 120
+        AutomatedTargetAcquisition:
+          Mode: 0
+          ChildIndex: 0
+        RandomizeOutput: 0
+        RandomMultiplier: {x: 0.8, y: 1}
+        RandomizeDuration: 0
+        RandomDurationMultiplier: {x: 0.5, y: 2}
+        UseRange: 0
+        RangeDistance: 5
+        UseRangeFalloff: 0
+        RangeFalloff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        RemapRangeFalloff: {x: 0, y: 1}
+        Owner: {fileID: 1259882958}
+        DebugActive: 0
+        PlayEvents:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1266143819}
+              m_TargetAssemblyTypeName: AnimCombatExplosionsManagerComponent, Assembly-CSharp
+              m_MethodName: StopExplosionAnimation
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+        StopEvents:
+          m_PersistentCalls:
+            m_Calls: []
+        InitializationEvents:
+          m_PersistentCalls:
+            m_Calls: []
+        ResetEvents:
+          m_PersistentCalls:
+            m_Calls: []
+--- !u!1 &1260645429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1260645430}
+  m_Layer: 5
+  m_Name: AnimExplosionsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1260645430
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260645429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 22281071}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1266143817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1266143818}
+  - component: {fileID: 1266143819}
+  m_Layer: 5
+  m_Name: AnimCombatExplosionsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!224 &1266143818
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266143817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058913408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1266143819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266143817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82dd704725ca64f07a868646b9db2cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animCombatExplosionInfluence: {fileID: 2097967964180562117, guid: 5a46daf28537b436dae63d987ba242d5, type: 3}
+  animCombatExplosionMoney: {fileID: 2097967964180562117, guid: 5a46daf28537b436dae63d987ba242d5, type: 3}
+  animCombatExplosionViolence: {fileID: 2097967964180562117, guid: 5a46daf28537b436dae63d987ba242d5, type: 3}
 --- !u!1 &1289959943
 GameObject:
   m_ObjectHideFlags: 0
@@ -7906,14 +8257,14 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 2928510234677739560
-  - rid: 2928510234677739561
-  - rid: 2928510234677739562
-  - rid: 2928510234677739563
-  - rid: 2928510234677739564
-  - rid: 2928510234677739565
-  - rid: 2928510234677739566
-  - rid: 2928510234677739567
+  - rid: 2928510305327382534
+  - rid: 2928510305327382535
+  - rid: 2928510305327382536
+  - rid: 2928510305327382537
+  - rid: 2928510305327382538
+  - rid: 2928510305327382539
+  - rid: 2928510305327382540
+  - rid: 2928510305327382541
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
@@ -7921,11 +8272,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2928510234677739560
+    - rid: 2928510305327382534
       type: {class: MMF_DestinationTransform, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -1189400399
+        UniqueID: 741681831
         Label: Move Card to Center
         ChannelMode: 0
         Channel: 0
@@ -8170,11 +8521,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 2928510234677739561
+    - rid: 2928510305327382535
       type: {class: MMF_Scale, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 421273133
+        UniqueID: 227805348
         Label: Scale Card
         ChannelMode: 0
         Channel: 0
@@ -8362,11 +8713,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 2928510234677739562
+    - rid: 2928510305327382536
       type: {class: MMF_Rotation, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -1792100107
+        UniqueID: 1366568790
         Label: Rotate Card
         ChannelMode: 0
         Channel: 0
@@ -8597,11 +8948,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 2928510234677739563
+    - rid: 2928510305327382537
       type: {class: MMF_HoldingPause, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -1058816348
+        UniqueID: 507752524
         Label: Attack Pause
         ChannelMode: 0
         Channel: 0
@@ -8673,11 +9024,11 @@ MonoBehaviour:
         ScriptDriven: 0
         AutoResume: 0
         AutoResumeAfter: 0.25
-    - rid: 2928510234677739564
+    - rid: 2928510305327382538
       type: {class: MMF_Scale, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -658045253
+        UniqueID: 1715972869
         Label: Attack Hit
         ChannelMode: 0
         Channel: 0
@@ -8865,11 +9216,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 2928510234677739565
+    - rid: 2928510305327382539
       type: {class: MMF_HoldingPause, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -1751943499
+        UniqueID: 1680954200
         Label: Pause for Screen Shake
         ChannelMode: 0
         Channel: 0
@@ -8941,11 +9292,11 @@ MonoBehaviour:
         ScriptDriven: 0
         AutoResume: 0
         AutoResumeAfter: 0.25
-    - rid: 2928510234677739566
+    - rid: 2928510305327382540
       type: {class: MMF_RotationShake, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 46109952
+        UniqueID: 1846463671
         Label: Rotation Shake
         ChannelMode: 0
         Channel: 1
@@ -9067,11 +9418,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 2928510234677739567
+    - rid: 2928510305327382541
       type: {class: MMF_NVPreset, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.NiceVibrations}
       data:
         Active: 1
-        UniqueID: -943612567
+        UniqueID: -2101293670
         Label: Vibration Haptic
         ChannelMode: 0
         Channel: 0
@@ -11174,6 +11525,7 @@ MonoBehaviour:
   PlaceCardOnCombatScaleFactor: 2
   RevealCardScaleFactor: 2
   AttackACardScaleFactor: 2
+  animCombatExplosionsManager: {fileID: 1266143819}
 --- !u!1 &1624545319
 GameObject:
   m_ObjectHideFlags: 0
@@ -11624,11 +11976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136901865201778702, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136901865201778702, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136901865201778702, guid: 1227c64b4dc9349f69ad058b152dd4de, type: 3}
       propertyPath: m_LocalPosition.x
