@@ -69,6 +69,9 @@ public class ResultWinState : CombatState
                     PickAEnemyCard(combatContext, playerCombatCard.GetCardData());
                 });
                 interactiveCombatCardComponent.EnableInteractiveComponent();
+
+                playerCombatCard.ActivateCardFront(true);
+                playerCombatCard.ActivateCardBack(false);
             }
         }
 

@@ -65,6 +65,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardFrontSprite: {fileID: 6084605130377057598}
   cardBackSprite: {fileID: 6361186887887227091}
+  cardFront: {fileID: 7894371333665573746}
+  cardBack: {fileID: 6205915471103908246}
 --- !u!114 &5704587637892363517
 MonoBehaviour:
   m_ObjectHideFlags: 0
