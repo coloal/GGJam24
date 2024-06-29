@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ResultDrawState : CombatState
@@ -24,31 +25,41 @@ public class ResultDrawState : CombatState
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override async void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        SendPlayerCombatCardToTieZone(ref combatContext);
-        SendEnemyCombatCardToTieZone(ref combatContext);
+        await SendPlayerCombatCardToTieZone(combatContext);
+        await SendEnemyCombatCardToTieZone(combatContext);
         PostProcess(combatContext);
     }
 
-    void SendPlayerCombatCardToTieZone(ref CombatV2Manager.CombatContext combatContext)
+    async Task SendPlayerCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
 
         if (playerCombatCard != null)
         {
+            Transform firstAvailablePositionInTieZone = combatContext
+                .GetPlayerCardInTieZoneContainers()
+                .Find((cardInTieZoneContainer) => cardInTieZoneContainer.childCount == 0);
+
             playerDeckManager.AddCardToTieZone(playerCombatCard);
             playerCombatCard.gameObject.transform.SetParent(
-                combatContext.playerTieZone,
-                worldPositionStays: false
+                firstAvailablePositionInTieZone,
+                worldPositionStays: true
             );
 
             combatContext.playerOnCombatCard = null;
+            
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayMoveCardToTieZone(
+                    cardToMove: playerCombatCard,
+                    firstAvailablePositionInTieZone
+                );
         }
     }
 
-    void SendEnemyCombatCardToTieZone(ref CombatV2Manager.CombatContext combatContext)
+    async Task SendEnemyCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
@@ -56,13 +67,23 @@ public class ResultDrawState : CombatState
 
         if (enemyCombatCard != null)
         {
+            Transform firstAvailablePositionInTieZone = combatContext
+                .GetEnemyCardInTieZoneContainers()
+                .Find((cardInTieZoneContainer) => cardInTieZoneContainer.childCount == 0);
+
             enemyDeckManager.AddCardToTieZone(enemyCombatCard);
             enemyCombatCard.gameObject.transform.SetParent(
-                combatContext.enemyTieZone,
-                worldPositionStays: false
+                firstAvailablePositionInTieZone,
+                worldPositionStays: true
             );
 
             combatContext.enemyOnCombatCard = null;
+
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayMoveCardToTieZone(
+                    cardToMove: enemyCombatCard,
+                    firstAvailablePositionInTieZone
+                );
         }
     }
 }

@@ -6,7 +6,11 @@ public class ResultLoseState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        throw new System.NotImplementedException();
+
+        //TODO: eliminar cartas obtenidas mediante BrainManager ??
+        
+        //GameManager.Instance.EndCombat(TurnResult.COMBAT_GAME_OVER);
+        //throw new System.NotImplementedException();
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

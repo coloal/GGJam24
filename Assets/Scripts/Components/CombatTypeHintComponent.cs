@@ -3,25 +3,26 @@ using UnityEngine.UI;
 
 public class CombatTypeHintComponent : MonoBehaviour
 {
+    [SerializeField] private Image cardBackImage;
+
+    [Header("Type hints visual assets")]
+    [SerializeField] private Sprite influenceTypeHintSprite;
+    [SerializeField] private Sprite moneyTypeHintSprite;
+    [SerializeField] private Sprite violenceTypeHintSprite;
+
     public void SetCombatTypeHint(CombatTypes combatType)
     {
-        Image imageComponent = GetComponent<Image>();
-        if (imageComponent != null)
+        switch (combatType)
         {
-            switch (combatType)
-            {
-                case CombatTypes.Money:
-                    imageComponent.color = Color.green;
-                    break;
-                case CombatTypes.Influence:
-                    imageComponent.color = Color.blue;
-                    break;
-                case CombatTypes.Violence:
-                    imageComponent.color = Color.red;
-                    break;
-                default:
-                    break;
-            }
+            case CombatTypes.Influence:
+                cardBackImage.sprite = influenceTypeHintSprite;
+                break;
+            case CombatTypes.Money:
+                cardBackImage.sprite = moneyTypeHintSprite;
+                break;
+            case CombatTypes.Violence:
+                cardBackImage.sprite = violenceTypeHintSprite;
+                break;
         }
     }
 }

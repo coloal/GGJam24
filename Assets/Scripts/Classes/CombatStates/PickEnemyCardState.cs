@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,7 +16,12 @@ public class PickEnemyCardState : CombatState
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public async override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    {
+        await PickAnEnemyCard(combatContext);
+    }
+
+    async Task PickAnEnemyCard(CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         
@@ -24,11 +30,17 @@ public class PickEnemyCardState : CombatState
         combatContext.enemyOnCombatCard = enemyCombatCard.gameObject;
         
         enemyCombatCard.gameObject.SetActive(true);
-        enemyCombatCard.gameObject.transform.SetParent(
-            combatContext.enemyOnCombatCardFinalPosition.transform.parent,
+        enemyCombatCard.transform.SetParent(
+            combatContext.combatContainer.transform.parent,
             worldPositionStays: false
         );
-        enemyCombatCard.transform.position = combatContext.enemyOnCombatCardFinalPosition.transform.position;
+        enemyCombatCard.transform.position = combatContext.enemyOnCombatCardOriginalPosition.position;
+
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayPlaceCardOnCombat(
+                cardToPlaceOnCombat: enemyCombatCard,
+                onCombatTransform: combatContext.enemyOnCombatCardFinalPosition
+            );
 
         PostProcess(combatContext);
     }

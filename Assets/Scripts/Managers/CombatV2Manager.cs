@@ -4,38 +4,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class CombatV2Manager : MonoBehaviour
 {
     public struct CombatContext
     {
-        public GameObject enemyCardsCombatTypeHintsContainer;
-        public Transform enemyCardsCombatTypeHintsContainerFinalPosition;
-        public GameObject playerHandContainer;
-        public GameObject playerDeck;
+        public GameObject enemyCardsHintRow0;
+        public GameObject enemyCardsHintRow1;
+        public GameObject enemyCardsPickUpRow0;
+        public GameObject enemyCardsPickUpRow1;
+        public Transform playerHandContainer;
+        public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
-        public GameObject playerOnCombatCardFinalPosition;
+        public Transform playerOnCombatCardTransform;
         public GameObject enemyOnCombatCard;
-        public GameObject enemyOnCombatCardFinalPosition;
+        public Transform enemyOnCombatCardOriginalPosition;
+        public Transform enemyOnCombatCardFinalPosition;
         public GameObject combatContainer;
         public Transform playerTieZone;
         public Transform enemyTieZone; 
 
-        public CombatContext(GameObject enemyCardsCombatTypeHintsContainer,
-            Transform enemyCardsCombatTypeHintsContainerFinalPosition,
-            GameObject playerHandContainer,
-            GameObject playerDeck,
-            GameObject playerOnCombatCardFinalPosition,
-            GameObject enemyOnCombatCardFinalPosition,
+        public CombatContext(GameObject enemyCardsHintRow0,
+            GameObject enemyCardsHintRow1,
+            GameObject enemyCardsPickUpRow0,
+            GameObject enemyCardsPickUpRow1,
+            Transform playerHandContainer,
+            DeckBehaviourComponent playerDeck,
+            Transform playerOnCombatCardTransform,
+            Transform enemyOnCombatCardOriginalPosition,
+            Transform enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
             Transform playerTieZone,
             Transform enemyTieZone)
         {
-            this.enemyCardsCombatTypeHintsContainer = enemyCardsCombatTypeHintsContainer;
-            this.enemyCardsCombatTypeHintsContainerFinalPosition = enemyCardsCombatTypeHintsContainerFinalPosition;
+            this.enemyCardsHintRow0 = enemyCardsHintRow0;
+            this.enemyCardsHintRow1 = enemyCardsHintRow1;
+            this.enemyCardsPickUpRow0 = enemyCardsPickUpRow0;
+            this.enemyCardsPickUpRow1 = enemyCardsPickUpRow1;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
-            this.playerOnCombatCardFinalPosition = playerOnCombatCardFinalPosition;
+            this.playerOnCombatCardTransform = playerOnCombatCardTransform;
+            this.enemyOnCombatCardOriginalPosition = enemyOnCombatCardOriginalPosition;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
             this.combatContainer = combatContainer;
             this.playerTieZone = playerTieZone;
@@ -44,38 +54,88 @@ public class CombatV2Manager : MonoBehaviour
             this.playerOnCombatCard = null;
             this.enemyOnCombatCard = null;
         }
+
+        public List<Transform> GetPlayerCardInHandContainers()
+        {
+            return GetCardContainers(playerHandContainer);
+        }
+
+        public List<Transform> GetPlayerCardInTieZoneContainers()
+        {
+            return GetCardContainers(playerTieZone);
+        }
+
+        public List<Transform> GetEnemyCardInTieZoneContainers()
+        {
+            return GetCardContainers(enemyTieZone);
+        }
+
+        List<Transform> GetCardContainers(Transform cardContainersParentTransform)
+        {
+            List<Transform> cardContainers = new List<Transform>();
+            foreach (Transform cardContainer in cardContainersParentTransform)
+            {
+                cardContainers.Add(cardContainer);
+            }
+
+            return cardContainers;
+        }
     }
 
     [Header("Board configurations")]
-    [SerializeField] private GameObject enemyCardsCombatTypeHintsContainer;
-    [SerializeField] private Transform enemyCardsCombatTypeHintsContainerFinalPosition;
-    [SerializeField] private GameObject playerHandContainer;
-    [SerializeField] private GameObject playerDeck;
-    [SerializeField] private GameObject playerOnCombatCardFinalPosition;
-    [SerializeField] private GameObject enemyOnCombatCardFinalPosition;
-    [SerializeField] private GameObject combatContainer;
+    [SerializeField] private Image enemyCharacterImage;
+    [SerializeField] private GameObject enemyCardsHintRow0;
+    [SerializeField] private GameObject enemyCardsHintRow1;
+    [SerializeField] private GameObject enemyCardsPickUpRow0;
+    [SerializeField] private GameObject enemyCardsPickUpRow1;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
-    [SerializeField] private CombatCard combatCardPrefab;
+    [SerializeField] private GameObject combatCardPrefab;
+    [SerializeField] private GameObject emptyCardDummy;
+
+    [Header("Combat zone")]
+    [SerializeField] private GameObject combatContainer;
+    [SerializeField] private Transform playerOnCombatCardTransform;
+    [SerializeField] private Transform enemyOnCombatCardOriginalPosition;
+    [SerializeField] private Transform enemyOnCombatCardFinalPosition;
     [SerializeField] private Transform playerTieZone;
     [SerializeField] private Transform enemyTieZone;
+
+    [Header("Player deck")]
+    [SerializeField] private DeckBehaviourComponent playerDeck;
+    
+    [Header("Player hand")]
+    [SerializeField] private Transform playerHandContainer;
+
+    [Header("Enemy deck")]
+    [SerializeField] private int maxAllowedEnemyCards = 8;
+
 
     private CombatContext combatContext;
 
     void Start()
     {
         SetUpManagers();
+        InitEnemyInfo();
         InitCombatContext();
         ProcessCombat(new StartCombatState());
     }
 
-    private void InitCombatContext()
+    void InitEnemyInfo()
+    {
+        enemyCharacterImage.sprite = CombatSceneManager.Instance.ProvideEnemyData().characterSprite;
+    }
+
+    void InitCombatContext()
     {
         combatContext = new CombatContext(
-            enemyCardsCombatTypeHintsContainer,
-            enemyCardsCombatTypeHintsContainerFinalPosition,
+            enemyCardsHintRow0,
+            enemyCardsHintRow1,
+            enemyCardsPickUpRow0,
+            enemyCardsPickUpRow1,
             playerHandContainer,
             playerDeck,
-            playerOnCombatCardFinalPosition,
+            playerOnCombatCardTransform,
+            enemyOnCombatCardOriginalPosition,
             enemyOnCombatCardFinalPosition,
             combatContainer,
             playerTieZone,
@@ -88,7 +148,7 @@ public class CombatV2Manager : MonoBehaviour
         combatState.Process(combatContext);
     }
 
-    private void SetUpManagers()
+    void SetUpManagers()
     {
         // Set up DeckManager
         Debug.Log("Managers, set uped!");
@@ -107,5 +167,15 @@ public class CombatV2Manager : MonoBehaviour
     public GameObject InstantiateCombatCardGameObject()
     {
         return Instantiate(combatCardPrefab).gameObject;
+    }
+
+    public GameObject InstantiateEmptyCardDummyGameObject()
+    {
+        return Instantiate(emptyCardDummy).gameObject;
+    }
+
+    public int GetMaxAllowedEnemyCards()
+    {
+        return maxAllowedEnemyCards;
     }
 }

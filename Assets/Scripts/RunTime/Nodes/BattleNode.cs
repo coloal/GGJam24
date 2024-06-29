@@ -6,7 +6,7 @@ namespace CodeGraph
     public class BattleNode : CodeGraphNode
     {
         [ExposedProperty()]
-        public EnemyTemplate card;
+        public EnemyTemplate enemy;
 
         [ExposedProperty()]
         public bool IsBossFight;
@@ -16,17 +16,13 @@ namespace CodeGraph
         {
             outputs.Clear();
             outputs.Add("Win Capture");
-            outputs.Add("Win no Capture");
-            outputs.Add("Lose Combat");
             outputs.Add("Game Over");
         }
 
 
         public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            stepInfo = new CombatStep(card, IsBossFight);
-            //TODO quitar esto
-            GameManager.Instance.ProvideBrainManager().bIsBossFight = IsBossFight;
+            stepInfo = new CombatStep(enemy, IsBossFight);
             return true;
         }
 
@@ -38,18 +34,12 @@ namespace CodeGraph
                 case TurnResult.COMBAT_WON_CAPTURE: 
                     port = 0;
                     break;
-                case TurnResult.COMBAT_WON_NO_CAPTURE:
-                    port = 1;
-                    break;
-                case TurnResult.COMBAT_LOST: 
-                    port = 2;
-                    break;
                 case TurnResult.COMBAT_GAME_OVER:
-                    port = 3;
+                    port = 1;
                     break;
                 default:
                     Debug.LogError("Wrong info was passed to combat node");
-                    port = 3; 
+                    port = 1; 
                     break;
             }
             

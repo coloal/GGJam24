@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ResolveCombatState : CombatState
@@ -27,7 +29,7 @@ public class ResolveCombatState : CombatState
         nextCombatState = null;
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public async override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
         Preprocess(combatContext);
 
@@ -36,7 +38,7 @@ public class ResolveCombatState : CombatState
 
         if (playerOnCombatCard != null && enemyOnCombatCard != null)
         {
-            nextCombatState = ProcessCombatResult(ResolveCombat(playerOnCombatCard, enemyOnCombatCard), ref combatContext);
+            nextCombatState = await ProcessCombatResult(ResolveCombat(playerOnCombatCard, enemyOnCombatCard), combatContext);
             PostProcess(combatContext);
         }
     }
@@ -88,14 +90,14 @@ public class ResolveCombatState : CombatState
         return CombatResult.Draw;
     }
 
-    CombatState ProcessCombatResult(CombatResult combatResult, ref CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessCombatResult(CombatResult combatResult, CombatV2Manager.CombatContext combatContext)
     {
         switch (combatResult)
         {
             case CombatResult.PlayerWon:
-                return ProcessPlayerWonState(ref combatContext);
+                return await ProcessPlayerWonState(combatContext);
             case CombatResult.EnemyWon:
-                return ProcessEnemyWonState(ref combatContext);
+                return await ProcessEnemyWonState(combatContext);
             case CombatResult.Draw:
                 return new ResultDrawState();
             default:
@@ -105,63 +107,87 @@ public class ResolveCombatState : CombatState
         return null;
     }
 
-    CombatState ProcessPlayerWonState(ref CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessPlayerWonState(CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
-        void KillEnemyCard(ref CombatV2Manager.CombatContext combatContext)
+        async Task KillEnemyCard(CombatV2Manager.CombatContext combatContext)
         {
-            CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
-            if (enemyCombatCard != null)
+            CombatCard playerOnCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+            CombatCard enemyOnCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+
+            if (playerOnCombatCard != null && enemyOnCombatCard != null)
             {
-                enemyDeckManager.DestroyCard(enemyCombatCard);
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayAttackCard(playerOnCombatCard);   
+
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillACard(
+                        cardToKill: enemyOnCombatCard,
+                        attackerCard: playerOnCombatCard,
+                        hasToFlipExplosions: false
+                    );
+
+                enemyDeckManager.DestroyCard(enemyOnCombatCard);
                 GameObject.Destroy(combatContext.enemyOnCombatCard.gameObject);
                 combatContext.enemyOnCombatCard = null;
             }
         }
 
-        void KillEnemyCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        async Task KillEnemyCardsInTieZone(CombatV2Manager.CombatContext combatContext)
         {
-            foreach (Transform cardInTieZone in combatContext.enemyTieZone)
+            await ForEachCardInTieZone(combatContext.GetEnemyCardInTieZoneContainers(), async (cardInTieZone) =>
             {
-                CombatCard enemyCombatCard = cardInTieZone.GetComponent<CombatCard>();
-                if (enemyCombatCard != null)
-                {
-                    enemyDeckManager.DestroyCard(enemyCombatCard);
-                    GameObject.Destroy(enemyCombatCard.gameObject);
-                }
-            }
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillACardInTieZone(cardInTieZone);
+
+                enemyDeckManager.DestroyCard(cardInTieZone);
+                GameObject.Destroy(cardInTieZone.gameObject);
+            });
         }
 
-        void ReturnPlayerCardToDeck(ref CombatV2Manager.CombatContext combatContext)
+        async Task ReturnPlayerCardToDeck(CombatV2Manager.CombatContext combatContext)
         {
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             if (playerCombatCard != null)
             {
                 playerDeckManager.AddCardToDeck(playerCombatCard);
+
+                combatContext.playerOnCombatCard.transform.SetParent(
+                    combatContext.playerDeck.transform.parent,
+                    worldPositionStays: true
+                );
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayReturnCardToDeck(
+                        cardToReturn: playerCombatCard,
+                        deckTransform: combatContext.playerDeck.transform
+                    );
                 combatContext.playerOnCombatCard.SetActive(false);
                 combatContext.playerOnCombatCard = null;
             }
         }
 
-        void ReturnPlayerCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnPlayerCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
         {
-            foreach (Transform cardInTieZone in combatContext.playerTieZone)
+            await ForEachCardInTieZone(combatContext.GetPlayerCardInTieZoneContainers(), async (cardInTieZone) =>
             {
                 CombatCard playerCombatCard = cardInTieZone.GetComponent<CombatCard>();
                 if (playerCombatCard != null)
                 {
+                    await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                        .PlayReturnCardToDeck(playerCombatCard, combatContext.playerDeck.transform);
+
                     playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
                     playerCombatCard.gameObject.SetActive(false);
                 }
-            }
+            });
         }
 
-        KillEnemyCard(ref combatContext);
-        KillEnemyCardsInTieZone(combatContext);
-        ReturnPlayerCardToDeck(ref combatContext);
-        ReturnPlayerCardsInTieZoneToDeck(combatContext);
+        await KillEnemyCard(combatContext);
+        await KillEnemyCardsInTieZone(combatContext);
+        await ReturnPlayerCardsInTieZoneToDeck(combatContext);
+        await ReturnPlayerCardToDeck(combatContext);
 
         if (enemyDeckManager.GetNumberOfCardsInDeck() > 0)
         {
@@ -173,63 +199,87 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    CombatState ProcessEnemyWonState(ref CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessEnemyWonState(CombatV2Manager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        void KillPlayerCard(ref CombatV2Manager.CombatContext combatContext)
+        async Task KillPlayerCard(CombatV2Manager.CombatContext combatContext)
         {
-            CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
-            if (playerCombatCard != null)
+            CombatCard enemyOnCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+            CombatCard playerOnCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+
+            if (enemyOnCombatCard != null && playerOnCombatCard != null)
             {
-                playerDeckManager.DestroyCard(playerCombatCard);
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayAttackCard(enemyOnCombatCard);
+            
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillACard(
+                        cardToKill: playerOnCombatCard,
+                        attackerCard: enemyOnCombatCard,
+                        hasToFlipExplosions: true
+                    );
+
+                playerDeckManager.DestroyCard(playerOnCombatCard);
                 GameObject.Destroy(combatContext.playerOnCombatCard.gameObject);
                 combatContext.playerOnCombatCard = null;
             }
         }
 
-        void KillPlayerCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        async Task KillPlayerCardsInTieZone(CombatV2Manager.CombatContext combatContext)
         {
-            foreach (Transform cardInTieZone in combatContext.playerTieZone)
+            await ForEachCardInTieZone(combatContext.GetPlayerCardInTieZoneContainers(), async (cardInTieZone) =>
             {
-                CombatCard playerCombatCard = cardInTieZone.GetComponent<CombatCard>();
-                if (playerCombatCard != null)
-                {
-                    playerDeckManager.DestroyCard(playerCombatCard);
-                    GameObject.Destroy(playerCombatCard.gameObject);
-                }
-            }
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillACardInTieZone(cardInTieZone);
+                
+                playerDeckManager.DestroyCard(cardInTieZone);
+                GameObject.Destroy(cardInTieZone.gameObject);
+            });
         }
 
-        void ReturnEnemyCardToDeck(ref CombatV2Manager.CombatContext combatContext)
+        async Task ReturnEnemyCardToDeck(CombatV2Manager.CombatContext combatContext)
         {
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             if (enemyCombatCard != null)
             {
                 enemyDeckManager.AddCardToDeck(enemyCombatCard);
+
+                combatContext.enemyOnCombatCard.transform.SetParent(
+                    combatContext.enemyOnCombatCardOriginalPosition.transform.parent,
+                    worldPositionStays: true
+                );
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayReturnCardToDeck(
+                        cardToReturn: enemyCombatCard,
+                        deckTransform: combatContext.enemyOnCombatCardOriginalPosition
+                    );
                 combatContext.enemyOnCombatCard.SetActive(false);
                 combatContext.enemyOnCombatCard = null;
             }
         }
 
-        void ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
         {
-            foreach (Transform cardInTieZone in combatContext.enemyTieZone)
+            await ForEachCardInTieZone(combatContext.GetEnemyCardInTieZoneContainers(), async (cardInTieZone) =>
             {
                 CombatCard enemyCombatCard = cardInTieZone.GetComponent<CombatCard>();
                 if (enemyCombatCard != null)
                 {
+                    await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                        .PlayReturnCardToDeck(enemyCombatCard, combatContext.enemyOnCombatCardOriginalPosition);
+
                     enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
                     enemyCombatCard.gameObject.SetActive(false);
                 }
-            }
+            });
         }
 
-        KillPlayerCard(ref combatContext);
-        KillPlayerCardsInTieZone(combatContext);
-        ReturnEnemyCardToDeck(ref combatContext);
-        ReturnEnemyCardsInTieZoneToDeck(combatContext);
+        await KillPlayerCard(combatContext);
+        await KillPlayerCardsInTieZone(combatContext);
+        await ReturnEnemyCardsInTieZoneToDeck(combatContext);
+        await ReturnEnemyCardToDeck(combatContext);
 
         if (playerDeckManager.GetNumberOfCardsInDeck() > 0 || playerDeckManager.GetNumberOfCardsInHand() > 0)
         {
@@ -239,5 +289,18 @@ public class ResolveCombatState : CombatState
         {
             return new ResultLoseState();
         }
+    }
+
+    async Task ForEachCardInTieZone(List<Transform> cardInTieZoneContainers, Func<CombatCard, Task> withCardInTieZone)
+    {
+        // Reverses the cards in tie zone containers to start killing from the latest added to the oldest one
+        List<Transform> reversedCardInTieZoneContainers = new List<Transform>(cardInTieZoneContainers);
+        reversedCardInTieZoneContainers.Reverse();
+
+        await CombatUtils.ForEachCardInCardsContainerTask(reversedCardInTieZoneContainers, async (cardInTieZone) =>
+        {
+            CombatCard combatCard = cardInTieZone.GetComponent<CombatCard>();
+            await withCardInTieZone(combatCard);
+        });
     }
 }

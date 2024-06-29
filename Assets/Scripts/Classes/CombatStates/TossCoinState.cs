@@ -17,13 +17,16 @@ public class TossCoinState : CombatState
 
         CoinCard.GetComponent<CoinCard>().ShowCoinResult(CoinResult);
 
-        /*GameUtils.CreateTemporizer(() => {
+        
+        GameUtils.CreateTemporizer(() => {
             CoinCard.GetComponent<CoinCard>().EnableCard(false);
-        }, 3, CombatSceneManager.Instance);*/
+        }, 3, CombatSceneManager.Instance);/**/
 
 
+        int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
+            + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
         //Game Over
-        if (CoinResult != PlayerCoinChoice && CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck() <= 0)
+        if (CoinResult != PlayerCoinChoice && playerTotalCards <= 0)
         {
             Debug.Log("El player ha perdido");
             CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ResultLoseState());

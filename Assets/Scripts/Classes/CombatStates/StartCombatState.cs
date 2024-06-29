@@ -15,12 +15,12 @@ public class StartCombatState : CombatState
 
     public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        SetUpPlayerDeck();
-        SetUpEnemyDeck();
+        SetUpPlayerDeck(combatContext);
+        SetUpEnemyDeck(combatContext);
         PostProcess(combatContext);
     }
 
-    void SetUpPlayerDeck()
+    void SetUpPlayerDeck(CombatV2Manager.CombatContext combatContext)
     {
         InventoryManager inventoryManager = GameManager.Instance.ProvideInventoryManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -35,16 +35,20 @@ public class StartCombatState : CombatState
             if (combatCard != null)
             {
                 combatCard.gameObject.SetActive(false);
+                combatCard.transform.SetParent(
+                    combatContext.combatContainer.transform,
+                    worldPositionStays: false
+                );
                 combatCard.SetDataCard(combatCardData);
                 playerDeckManager.AddCardToDeck(combatCard);
             }
         });
     }
 
-    void SetUpEnemyDeck()
+    void SetUpEnemyDeck(CombatV2Manager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
-
+        
         List<CombatCardTemplate> enemyDeck = CombatSceneManager.Instance.ProvideEnemyData().CombatCards;
         enemyDeck.ForEach((combatCardData) =>
         {
@@ -55,6 +59,10 @@ public class StartCombatState : CombatState
             if (combatCard != null)
             {
                 combatCard.gameObject.SetActive(false);
+                combatCard.transform.SetParent(
+                    combatContext.combatContainer.transform,
+                    worldPositionStays: false
+                );
                 combatCard.SetDataCard(combatCardData);
                 enemyDeckManager.AddCardToDeck(combatCard);
             }

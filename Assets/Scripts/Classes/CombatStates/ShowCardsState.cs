@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ShowCardsState : CombatState
@@ -13,19 +14,22 @@ public class ShowCardsState : CombatState
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override async void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
-        // Show enemy card first
-        CardAnimationsComponent enemyCardAnimationsComponent = combatContext.enemyOnCombatCard.GetComponent<CardAnimationsComponent>();
-        CardAnimationsComponent playerCardAnimationsComponent = combatContext.playerOnCombatCard.GetComponent<CardAnimationsComponent>();
-        if (enemyCardAnimationsComponent != null && playerCardAnimationsComponent != null)
+        CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+        CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+        if (enemyCombatCard != null && playerCombatCard != null)
         {
-            enemyCardAnimationsComponent.ShowCard();
-            GameUtils.CreateTemporizer(() => {
-                playerCardAnimationsComponent.ShowCard();
-            }, 2.0f, GameManager.Instance);
+            await RevealCard(enemyCombatCard);
+            await RevealCard(playerCombatCard);
         }
 
         PostProcess(combatContext);
+    }
+
+    async Task RevealCard(CombatCard combatCard)
+    {
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayRevealCard(combatCard);
     }
 }
