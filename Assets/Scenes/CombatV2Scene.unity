@@ -276,7 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df62904ed26a8544b9c497ce4cb60fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatVisualManager: {fileID: 0}
   combatV2Manager: {fileID: 1934736124}
   playerDeckManager: {fileID: 83053011}
   enemyDeckManager: {fileID: 1197101116}
@@ -7243,7 +7242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960121501592178493, guid: 8035b34a428f5d045bb511fcb900cb67, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6665920042292801255, guid: 8035b34a428f5d045bb511fcb900cb67, type: 3}
       propertyPath: m_Pivot.x
@@ -12266,6 +12265,16 @@ MonoBehaviour:
   playerDeck: {fileID: 1519592541}
   playerHandContainer: {fileID: 217401232}
   maxAllowedEnemyCards: 8
+  timeForPresentEnemyCards: 0.5
+  timeForPresentPlayerCards: 0.5
+  timeForPickEnemyCard: 0.5
+  timeForPickPlayerCard: 0.5
+  timeForShowCards: 0.5
+  timeForResolveCombat: 0.5
+  timeForNextCombatRound: 0.5
+  timeForDrawRound: 0.5
+  timeForTossCoin: 0.5
+  timeForCombatResultsRound: 0.5
 --- !u!1 &1993801134
 GameObject:
   m_ObjectHideFlags: 0
