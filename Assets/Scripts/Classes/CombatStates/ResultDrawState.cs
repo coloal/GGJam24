@@ -9,16 +9,26 @@ public class ResultDrawState : CombatState
     {
         CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
 
+        float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+        CombatState nextCombatState = null;
+
         //Al enemigo o al Player le quedan cartas
         if (CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() > 0
             && CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand() > 0 )
         {
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+            nextCombatState = new PickEnemyCardState();
         }
         else
         {
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new TossCoinState());
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForTossCoin;
+            nextCombatState = new TossCoinState();
         }
+
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: nextCombatState,
+            seconds: secondsForNextProcessState
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

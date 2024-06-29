@@ -9,7 +9,10 @@ public class PresentPlayerCardsState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: new PickEnemyCardState(),
+            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPickEnemyCard
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

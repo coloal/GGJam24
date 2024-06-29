@@ -7,7 +7,10 @@ public class ShowCardsState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ResolveCombatState());
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: new ResolveCombatState(),
+            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForResolveCombat
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

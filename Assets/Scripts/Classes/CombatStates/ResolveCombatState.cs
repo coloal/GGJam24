@@ -20,7 +20,21 @@ public class ResolveCombatState : CombatState
         if (nextCombatState != null)
         {
             CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(nextCombatState);   
+
+            float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+            if (nextCombatState is ResultDrawState)
+            {
+                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForDrawRound;
+            }
+            else if (nextCombatState is ResultWinState || nextCombatState is ResultLoseState)
+            {
+                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForCombatResultsRound;
+            }
+
+            CombatUtils.ProcessNextStateAfterSeconds(
+                nextState: nextCombatState,
+                seconds: secondsForNextProcessState
+            );
         }
     }
 

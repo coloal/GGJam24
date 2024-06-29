@@ -25,28 +25,37 @@ public class TossCoinState : CombatState
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
+        CombatState nextCombatState = null;
+        float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+        
         //Game Over
         if (CoinResult != PlayerCoinChoice && playerTotalCards <= 0)
         {
             Debug.Log("El player ha perdido");
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ResultLoseState());
+            nextCombatState = new ResultLoseState();
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForCombatResultsRound;
         }
 
         //Victory
         else if (CoinResult == PlayerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
         {
             Debug.Log("El player ha ganado");
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ResultWinState());
+            nextCombatState = new ResultWinState();
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForCombatResultsRound;
         }
 
         //Next Round
         else
         {
             Debug.Log("Next round");
-            //CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PickEnemyCardState());
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PresentPlayerCardsState());
+            nextCombatState = new PresentPlayerCardsState();
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
         }
 
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: nextCombatState,
+            seconds: secondsForNextProcessState
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

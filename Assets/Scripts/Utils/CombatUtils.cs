@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -31,5 +32,13 @@ public static class CombatUtils
                 await withCardInContainer(cardInContainer);
             }
         }
+    }
+
+    public static void ProcessNextStateAfterSeconds(CombatState nextState, float seconds)
+    {
+        GameUtils.CreateTemporizer(() =>
+        {
+            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(nextState);
+        }, seconds, CombatSceneManager.Instance);
     }
 }

@@ -109,6 +109,18 @@ public class CombatV2Manager : MonoBehaviour
     [Header("Enemy deck")]
     [SerializeField] private int maxAllowedEnemyCards = 8;
 
+    [Header("Time for next state configurations")]
+    [SerializeField] public float timeForPresentEnemyCards = 0.5f;
+    [SerializeField] public float timeForPresentPlayerCards = 0.5f;
+    [SerializeField] public float timeForPickEnemyCard = 0.5f;
+    [SerializeField] public float timeForPickPlayerCard = 0.5f;
+    [SerializeField] public float timeForShowCards = 0.5f;
+    [SerializeField] public float timeForResolveCombat = 0.5f;
+    [SerializeField] public float timeForNextCombatRound = 0.5f;
+    [SerializeField] public float timeForDrawRound = 0.5f;
+    [SerializeField] public float timeForTossCoin = 0.5f;
+    [SerializeField] public float timeForCombatResultsRound = 0.5f;
+
 
     private CombatContext combatContext;
 

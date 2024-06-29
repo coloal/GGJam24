@@ -14,7 +14,10 @@ public class PresentEnemyCardsState : CombatState
         combatContext.enemyCardsHintRow0.SetActive(false);
         combatContext.enemyCardsHintRow1.SetActive(false);
 
-        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PresentPlayerCardsState());
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: new PresentPlayerCardsState(),
+            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPresentPlayerCards
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

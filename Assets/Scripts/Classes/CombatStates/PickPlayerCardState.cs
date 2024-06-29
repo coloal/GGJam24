@@ -20,7 +20,11 @@ public class PickPlayerCardState : CombatState
         });
 
         CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
-        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new ShowCardsState());
+
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: new ShowCardsState(),
+            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForShowCards
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)

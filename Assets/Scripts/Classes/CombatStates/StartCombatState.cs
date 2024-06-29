@@ -6,7 +6,10 @@ public class StartCombatState : CombatState
 {
     public override void PostProcess(CombatV2Manager.CombatContext combatContext)
     {
-        CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(new PresentEnemyCardsState());
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: new PresentEnemyCardsState(),
+            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPresentEnemyCards
+        );
     }
 
     public override void Preprocess(CombatV2Manager.CombatContext combatContext)
