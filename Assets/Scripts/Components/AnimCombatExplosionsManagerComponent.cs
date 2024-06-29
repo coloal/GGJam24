@@ -32,7 +32,7 @@ public class AnimCombatExplosionsManagerComponent : MonoBehaviour
         animCombatExplosionViolenceInstance.SetActive(false);
     }
 
-    public void SetAnimExplosionToPlay(CombatCard attackerCard, Transform animPositionTransform)
+    public void SetAnimExplosionToPlay(CombatCard attackerCard, Transform animPositionTransform, bool hasToFlipExplosions)
     {
         switch (attackerCard.GetCombatType())
         {
@@ -48,6 +48,14 @@ public class AnimCombatExplosionsManagerComponent : MonoBehaviour
         }
 
         currentActiveAnimation.transform.position = animPositionTransform.position;
+        
+        if (hasToFlipExplosions)
+        {
+            currentActiveAnimation.transform.localScale = new Vector2(
+                currentActiveAnimation.transform.localScale.x,
+                currentActiveAnimation.transform.localScale.y * -1.0f
+            );
+        }
     }
 
     public void PlayExplosionAnimation()

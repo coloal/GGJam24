@@ -125,7 +125,8 @@ public class ResolveCombatState : CombatState
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayKillACard(
                         cardToKill: enemyOnCombatCard,
-                        attackerCard: playerOnCombatCard
+                        attackerCard: playerOnCombatCard,
+                        hasToFlipExplosions: false
                     );
 
                 enemyDeckManager.DestroyCard(enemyOnCombatCard);
@@ -216,7 +217,8 @@ public class ResolveCombatState : CombatState
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayKillACard(
                         cardToKill: playerOnCombatCard,
-                        attackerCard: enemyOnCombatCard
+                        attackerCard: enemyOnCombatCard,
+                        hasToFlipExplosions: true
                     );
 
                 playerDeckManager.DestroyCard(playerOnCombatCard);

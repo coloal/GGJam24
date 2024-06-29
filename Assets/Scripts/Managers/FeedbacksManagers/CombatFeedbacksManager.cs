@@ -195,7 +195,7 @@ public class CombatFeedbacksManager : MonoBehaviour
         }
     }
 
-    public async Task PlayKillACard(CombatCard cardToKill, CombatCard attackerCard)
+    public async Task PlayKillACard(CombatCard cardToKill, CombatCard attackerCard, bool hasToFlipExplosions)
     {
         MMF_RotationShake rotationShakeFeedback =
             KillACardPlayer.GetFeedbacksOfType<MMF_RotationShake>().Find((feedback) => feedback.Label.Equals("Rotation Shake"));
@@ -209,7 +209,8 @@ public class CombatFeedbacksManager : MonoBehaviour
         {
             animCombatExplosionsManager.SetAnimExplosionToPlay(
                 attackerCard: attackerCard,
-                animPositionTransform: cardToKill.transform
+                animPositionTransform: cardToKill.transform,
+                hasToFlipExplosions
             );
 
             rotationShakeFeedback.TargetShaker = cardRotationShakerComponent;
