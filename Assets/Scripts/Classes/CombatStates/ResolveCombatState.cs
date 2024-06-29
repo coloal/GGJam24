@@ -184,8 +184,8 @@ public class ResolveCombatState : CombatState
 
         await KillEnemyCard(combatContext);
         await KillEnemyCardsInTieZone(combatContext);
-        await ReturnPlayerCardToDeck(combatContext);
         await ReturnPlayerCardsInTieZoneToDeck(combatContext);
+        await ReturnPlayerCardToDeck(combatContext);
 
         if (enemyDeckManager.GetNumberOfCardsInDeck() > 0)
         {
@@ -274,8 +274,8 @@ public class ResolveCombatState : CombatState
 
         await KillPlayerCard(combatContext);
         await KillPlayerCardsInTieZone(combatContext);
-        await ReturnEnemyCardToDeck(combatContext);
         await ReturnEnemyCardsInTieZoneToDeck(combatContext);
+        await ReturnEnemyCardToDeck(combatContext);
 
         if (playerDeckManager.GetNumberOfCardsInDeck() > 0 || playerDeckManager.GetNumberOfCardsInHand() > 0)
         {
