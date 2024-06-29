@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -187,6 +188,9 @@ public class GameManager : MonoBehaviour
 
     public void ExitBattleScene(Action nextAction)
     {
+        ProvideBrainSoundManager().EndCombat();
+        ProvideBrainSoundManager().RestartMusicFromCombat();
+
         Animator transition = brainManager.ZoneInfo.CombatTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
         if (instantedAnimator != null)
