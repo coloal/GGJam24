@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class CombatV2Manager : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class CombatV2Manager : MonoBehaviour
     }
 
     [Header("Board configurations")]
+    [SerializeField] private Image enemyCharacterImage;
     [SerializeField] private GameObject enemyCardsHintRow0;
     [SerializeField] private GameObject enemyCardsHintRow1;
     [SerializeField] private GameObject enemyCardsPickUpRow0;
@@ -113,11 +115,17 @@ public class CombatV2Manager : MonoBehaviour
     void Start()
     {
         SetUpManagers();
+        InitEnemyInfo();
         InitCombatContext();
         ProcessCombat(new StartCombatState());
     }
 
-    private void InitCombatContext()
+    void InitEnemyInfo()
+    {
+        enemyCharacterImage.sprite = CombatSceneManager.Instance.ProvideEnemyData().characterSprite;
+    }
+
+    void InitCombatContext()
     {
         combatContext = new CombatContext(
             enemyCardsHintRow0,
@@ -140,7 +148,7 @@ public class CombatV2Manager : MonoBehaviour
         combatState.Process(combatContext);
     }
 
-    private void SetUpManagers()
+    void SetUpManagers()
     {
         // Set up DeckManager
         Debug.Log("Managers, set uped!");
