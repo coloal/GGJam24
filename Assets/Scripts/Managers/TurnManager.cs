@@ -11,7 +11,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class TurnManager : MonoBehaviour
 {
     [SerializeField] GameObject EnemyPrefab;
-    [SerializeField] SpriteRenderer background;
+    [SerializeField] Image background;
     [SerializeField] GameObject transitionObject;
     [SerializeField] float waitTimeBetweenTransition;
     StoryManager StoryManager {
@@ -171,7 +171,6 @@ public class TurnManager : MonoBehaviour
     private void DestroyCard()
     {
         GameObject CardToDestroy = CurrentCard.gameObject;
-        CardToDestroy.GetComponent<BoxCollider2D>().enabled = false;
         GameUtils.CreateTemporizer(() => Destroy(CardToDestroy), 1, this);
     }
 

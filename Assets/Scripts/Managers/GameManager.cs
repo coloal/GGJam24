@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform canvas;
 
-    public Transform Canvas => canvas;
-
     private bool hasToResetGame = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();

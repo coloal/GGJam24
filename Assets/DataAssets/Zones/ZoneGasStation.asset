@@ -12,20 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098e0dbc12585214d9eba18b9b144f9f, type: 3}
   m_Name: ZoneGasStation
   m_EditorClassIdentifier: 
-  storyBackgroundSprite: {fileID: 21300000, guid: 638de94434b1c9e4b98791148bbd3d7b, type: 3}
+  storyBackgroundSprite: {fileID: 21300000, guid: 1277b877507e74a66b98df63c0998674, type: 3}
   storyMusicZone: 3
   zoneTransition: {fileID: 2504118667978227075, guid: 6f3b74162e1c22646a5846aaa13b6270, type: 3}
-  combatBackgroundSprite: {fileID: 21300000, guid: dd7dcdb0b5faa40aba87fde0a73fa873, type: 3}
-  combatTurnsContainerSprite: {fileID: 21300000, guid: 5d45acc135028406aa01340d33d03381, type: 3}
-  combatTurnSprites:
-  - {fileID: -704976553, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: -1044618839, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: 1203584654, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: 1095720108, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: -1500175920, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: -2032970019, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: 748842017, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: -206646570, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: 1787588981, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  - {fileID: 1903755506, guid: 9292736b8af6149bf909f646cef61570, type: 3}
-  combatTransition: {fileID: 2504118667978227075, guid: c89bba33adddfe44a841f08765e48aa1, type: 3}

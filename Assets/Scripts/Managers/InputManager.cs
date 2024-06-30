@@ -18,11 +18,9 @@ public class InputManager : MonoBehaviour
 
     private Vector2 clickedPosition = Vector2.zero;
     public Vector2 ClickedPosition => clickedPosition;
-    public Vector2 WorldClickedPosition => Camera.main.ScreenToWorldPoint(clickedPosition);
 
     private Vector2 mousePosition = Vector2.zero;
     public Vector2 MousePosition => mousePosition;
-    public Vector2 WorldMousePosition => Camera.main.ScreenToWorldPoint(mousePosition);
 
     void Awake()
     {

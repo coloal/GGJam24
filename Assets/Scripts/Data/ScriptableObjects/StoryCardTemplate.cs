@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New StoryCardData", menuName = "StoryCardData")]
+[CreateAssetMenu(fileName = "StoryCardTemplate", menuName = "Story Card Template")]
 public class StoryCardTemplate : ScriptableObject
 {
     //Information of the card
@@ -12,5 +12,5 @@ public class StoryCardTemplate : ScriptableObject
     public string RightText;
 
     //Card sprite
-    public Sprite CardSprite;
+    public Sprite CharacterSprite;
 }

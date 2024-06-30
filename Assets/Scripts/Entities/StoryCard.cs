@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryCard : MonoBehaviour
 {
     [Header("Visual configurations")]
-    [SerializeField] private TextMeshPro boxNameOfCard;
-    [SerializeField] private TextMeshPro descriptionText;
-    [SerializeField] private SpriteRenderer cardSprite;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private Image characterSprite;
 
     [Header("Overlay text configurations")]
     [SerializeField] private GameObject overlayTextContainer;
-    [SerializeField] private TextMeshProUGUI overlayTextMesh;
+    [SerializeField] private TextMeshProUGUI overlayText;
 
     //Information of the card
-    private string nameOfCard;
     bool cardIsActive = true;
     private string rightOverlayText;
     private string leftOverlayText;
@@ -25,7 +25,9 @@ public class StoryCard : MonoBehaviour
         if (!cardIsActive) return;
         
         overlayTextContainer.SetActive(true);
-        overlayTextMesh.text = isLeftText ? leftOverlayText : rightOverlayText;
+        overlayText.text = isLeftText ? leftOverlayText : rightOverlayText;
+
+        overlayText.alignment = isLeftText ? TextAlignmentOptions.Right : TextAlignmentOptions.Left;
     }
 
     public void HideText()
@@ -33,36 +35,28 @@ public class StoryCard : MonoBehaviour
         overlayTextContainer.SetActive(false);
     }
 
-    public void SetDataCard(StoryCardTemplate DataCard) 
+    public void SetDataCard(StoryCardTemplate cardData) 
     {
-        //Set informaci�n del DataCard
-        nameOfCard = DataCard.NameOfCard;
+        //Set informacion del DataCard
+        nameText.text = cardData.NameOfCard;
+        rightOverlayText = cardData.RightText;
+        leftOverlayText = cardData.LeftText;
 
-        //Mostrar texto en pantalla
-        boxNameOfCard.text = nameOfCard;
-        rightOverlayText = DataCard.RightText;
-        leftOverlayText = DataCard.LeftText;
-
-        if (overlayTextMesh != null)
+        if (overlayText != null)
         {
-            overlayTextContainer.SetActive(false);
+            HideText();
         }
         
         if (descriptionText != null)
         {
-            descriptionText.text = DataCard.Text;
-            descriptionText.GetComponent<MeshRenderer>().sortingLayerID = cardSprite.sortingLayerID;
+            descriptionText.text = cardData.Text;
         }
 
-        cardSprite.sprite = DataCard.CardSprite;
+        characterSprite.sprite = cardData.CharacterSprite;
     }
-
 
     public void GoToBackGroundAndDeactivate()
     {
-        boxNameOfCard.sortingOrder = -2;
-        cardSprite.sortingOrder = -3;
-        descriptionText.sortingOrder = -2;
         overlayTextContainer.SetActive(false);
         cardIsActive = false;        
     }

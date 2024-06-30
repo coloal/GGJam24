@@ -7,23 +7,22 @@ using static UnityEngine.Rendering.DebugUI;
 public class HorizontalDraggableComponent : MonoBehaviour
 {   
     [Header("Swipe speed configuration")]
-    [SerializeField] private float acceleration = 100.0f;
-    [SerializeField] private float maxVelocity = 200.0f;
+    [SerializeField] private float acceleration = 30000.0f;
+    [SerializeField] private float maxVelocity = 5000.0f;
 
     [Header("Swipe Movement Escape Zone configuration")]
-    [SerializeField] float escapeZoneUpperLimitDistance = 3.0f;
-    [SerializeField] float escapeZoneLowerLimitDistance = 3.0f;
-    [SerializeField] float brakeDistance = 10;
+    [SerializeField] float escapeZoneUpperLimitDistance = 500.0f;
+    [SerializeField] float escapeZoneLowerLimitDistance = 100.0f;
+    [SerializeField] float brakeDistance = 75;
     [SerializeField] float rotateDistance = 5;
     [SerializeField] float maxArcRotation = 15;
-    [SerializeField] float maxFinalRotation = 30;
+    [SerializeField] float maxFinalRotation = 20;
     [SerializeField] float finalRotationVelocity = 10;
     
     float velocity = 0;
 
     Vector2 ClickedPosition => GameManager.Instance.ProvideInputManager().ClickedPosition;
-    Vector2 WorldClickedPosition => GameManager.Instance.ProvideInputManager().WorldClickedPosition;
-    Vector2 WorldMousePosition => GameManager.Instance.ProvideInputManager().WorldMousePosition;
+    Vector2 MousePosition => GameManager.Instance.ProvideInputManager().MousePosition;
 
     bool isMouseClickPressed = false;
     bool hasToTriggerEnterEscapeZone = true;
@@ -52,7 +51,14 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     void OnEnable()
     {
-        initialPosition = transform.position;
+        GameManager.Instance.ProvideInputManager().onClickEvent += OnClick;
+        GameManager.Instance.ProvideInputManager().onReleaseEvent += OnRelease;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.ProvideInputManager().onClickEvent -= OnClick;
+        GameManager.Instance.ProvideInputManager().onReleaseEvent -= OnRelease;
     }
 
     void Awake()
@@ -70,8 +76,7 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.ProvideInputManager().onClickEvent += OnClick;
-        GameManager.Instance.ProvideInputManager().onReleaseEvent += OnRelease;
+        initialPosition = transform.position;
     }
 
     public void SetInitialPosition()
@@ -82,12 +87,6 @@ public class HorizontalDraggableComponent : MonoBehaviour
     void Update()
     {
         HorizontalTick();
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.Instance.ProvideInputManager().onClickEvent -= OnClick;
-        GameManager.Instance.ProvideInputManager().onReleaseEvent -= OnRelease;
     }
 
     void HorizontalTick()
@@ -172,17 +171,14 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     Vector2 CalculateHorizontalTargetPosition()
     {
-        Vector2 targetPosition = isMouseClickPressed ? WorldMousePosition - WorldClickedPosition : Vector2.zero;
+        Vector2 targetPosition = isMouseClickPressed ? MousePosition - ClickedPosition : Vector2.zero;
         return targetPosition + initialPosition;
     }
 
     void OnClick()
     {
-
-        isMouseClickPressed = true;
-        if (rectTransformComponent && RectTransformUtility.RectangleContainsScreenPoint(rectTransformComponent, ClickedPosition, Camera.main))
-        {
-        }
+        isMouseClickPressed = rectTransformComponent != null 
+            && RectTransformUtility.RectangleContainsScreenPoint(rectTransformComponent, ClickedPosition);
     }
 
     void OnRelease() 

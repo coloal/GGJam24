@@ -10,6 +10,7 @@ public class CardsManager : MonoBehaviour
     [SerializeField] private GameObject storyCardPrefab;
 
     [Header("Card locations data")]
+    [SerializeField] private Transform cardsContainerTransform;
     [SerializeField] private Transform cardsSpawnerOrigin;
     [SerializeField] private Transform cardsFinalPosition;
 
@@ -70,8 +71,11 @@ public class CardsManager : MonoBehaviour
             }
         }
 
-        GameObject newCard = Instantiate(storyCardPrefab, cardsSpawnerOrigin.position, Quaternion.identity);
-        newCard.transform.SetParent(GameManager.Instance.Canvas);
+        // Spawns the next new card to show
+        GameObject newCard = Instantiate(storyCardPrefab);
+        newCard.transform.SetParent(cardsContainerTransform, worldPositionStays: false);
+        newCard.transform.position = cardsSpawnerOrigin.position;
+
         if(nextCard != null)
         {
             StoryCard storyCardComponent = newCard.GetComponent<StoryCard>();
