@@ -30,6 +30,13 @@ public enum MusicZones
 
 }
 
+public enum EventFolders
+{
+    Combat = 0,
+    SFX = 1,
+    
+}
+
 public static class CombatSounds
 {
     public const string Flojo = "Flojo";
