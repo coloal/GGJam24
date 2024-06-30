@@ -47,8 +47,6 @@ public class HorizontalDraggableComponent : MonoBehaviour
 
     Vector2 initialPosition;
 
-
-
     void OnEnable()
     {
         GameManager.Instance.ProvideInputManager().onClickEvent += OnClick;
@@ -222,10 +220,19 @@ public class HorizontalDraggableComponent : MonoBehaviour
                 }
             }
         }
+        // When the player releases the card just about a escape zone but does not trigger its events
+        else
+        {
+            foreach (Action rightSwipeOnWarningZoneExitAction in rightSwipeEscapeZoneExitActions)
+            {
+                rightSwipeOnWarningZoneExitAction();
+            }
+            foreach (Action leftSwipeOnWarningZoneExitAction in leftSwipeEscapeZoneExitActions)
+            {
+                leftSwipeOnWarningZoneExitAction();
+            }
+        }
     }
-
-    //Position of the finger
-   
 
     void CheckForEscapeZone()
     {
