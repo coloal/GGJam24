@@ -239,6 +239,7 @@ MonoBehaviour:
   CombatSoundsEventPath: event:/SFX/CombatSounds
   CardSoundsEventPath: event:/SFX/SwitchCard
   StepsEventPath: event:/SFX/Steps
+  SoundEvents: {fileID: 11400000, guid: 3a38acdc2bf149d42b65801318c41ef8, type: 2}
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &179863778

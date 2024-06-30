@@ -8,6 +8,10 @@ using UnityEngine.Rendering;
 
 public class BrainSoundManager : MonoBehaviour
 {
+    /***** CONST *****/
+
+    public const string FMOD_PATH = "event:/";
+
     /***** PARAMETERS *****/
     [SerializeField] private string StoryEventPath = "event:/Level1";
     [SerializeField] private string CampfireEventPath;
@@ -16,7 +20,8 @@ public class BrainSoundManager : MonoBehaviour
     [SerializeField] private string CombatSoundsEventPath = "event:/SFX/CombatSounds";
     [SerializeField] private string CardSoundsEventPath = "event:/SFX/SwitchCard";
     [SerializeField] private string StepsEventPath = "event:/SFX/Steps";
-    
+
+    [SerializeField] private SoundEventsTemplate SoundEvents;
 
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float SpeedFadeIn = 0.2f;
@@ -30,6 +35,8 @@ public class BrainSoundManager : MonoBehaviour
     private Dictionary<MusicZones, ZoneSoundValues> ZoneSoundsMap;
 
     private List<SoundAction> PendingActions;
+
+    private static Dictionary<string, FMOD.Studio.EventInstance> EventMap;
 
     //List<> zones
 
@@ -58,13 +65,16 @@ public class BrainSoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         InitializeData();
+        InitializeEventMap();
 
         StoryEventInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
         //CampfireInstance = FMODUnity.RuntimeManager.CreateInstance(CampfireEventPath);
         GameOverInstance = FMODUnity.RuntimeManager.CreateInstance(GameOverEventPath);
-        CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
         CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(CardSoundsEventPath);
         StepsInstance =  FMODUnity.RuntimeManager.CreateInstance(StepsEventPath);
+        
+        
+        CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
     }
 
     void InitializeData()
@@ -107,6 +117,25 @@ public class BrainSoundManager : MonoBehaviour
 
     }
 
+    void InitializeEventMap() 
+    {
+        if (SoundEvents != null)
+        {
+            EventMap = new Dictionary<string, EventInstance>();
+            foreach (EventIdentifier FMODevent in SoundEvents.EventsNames)
+            {
+                string path = FMOD_PATH + Enum.GetName(typeof(EventFolders), FMODevent.FoldersName) + "/" + FMODevent.EventName;
+
+                FMOD.Studio.EventInstance FmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(path);
+                EventMap.Add(FMODevent.EventName, FmodEventInstance);
+            }
+        }
+        else
+        {
+            Debug.LogError("No se ha cargado ninguna lista de eventos de FMOD");
+        }
+    }
+
     void Update()
     {
         if (PendingActions.Count > 0)
@@ -125,6 +154,18 @@ public class BrainSoundManager : MonoBehaviour
     }
 
     /***** ACTIONS *****/
+    public void PlaySFX(string EventName) 
+    {
+        if (EventMap.ContainsKey(EventName))
+        {
+            EventMap[EventName].start();
+        }
+        else 
+        {
+            Debug.LogError("No esta registrado el evento de FMOD: " + EventName);
+        }
+    }
+
     public void StartGame(MusicZones zone = MusicZones.Settlement)
     {
         /*ActualZone = zone;
