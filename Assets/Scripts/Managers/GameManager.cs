@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
         {
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
-                SceneManager.LoadScene("CombatV2Scene", LoadSceneMode.Single);
+                SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
             }, 1.0f, this);
             disposableOnSceneChangeActions.Add(() =>
             {
