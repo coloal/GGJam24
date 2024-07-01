@@ -60,4 +60,15 @@ public class CombatCard : MonoBehaviour
     {
         cardBack.SetActive(result);
     }
+
+    public void FlipCardUpsideDown()
+    {
+        if (Mathf.Sign(transform.localScale.x) > 0)
+        {
+            transform.localScale = new Vector2(
+                - transform.localScale.x,
+                transform.localScale.y
+            );
+        }
+    }
 }

@@ -22,8 +22,8 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player AttackCardsOnTiePlayer;
 
     [Header("Cards scale configurations")]
-    [SerializeField] public float CardOnCombatScale = 3.5f;
-    [SerializeField] public float CardOnTieZoneScale = 2.2f;
+    [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
+    [SerializeField] public float CardOnTieZoneScaleFactor = 0.75f;
 
     [Header("Feedbacks configuration")]
     [Header("Place a Card on Combat")]
@@ -43,21 +43,18 @@ public class CombatFeedbacksManager : MonoBehaviour
             PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_DestinationTransform>();
         MMF_Scale horizontalFlipFeedback =
             PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_Scale>();
-        MMF_ImageAlpha cardFrontRevealFeedback =
-            PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_ImageAlpha>();
-        if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null && cardFrontRevealFeedback != null)
+
+        if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null)
         {
-            RectTransform playerCardRectTransform = playerCard.GetComponent<RectTransform>();
+            playerCard.FlipCardUpsideDown();
 
             moveCardFromDeckToHandFeedback.TargetTransform = playerCard.gameObject.transform;
             moveCardFromDeckToHandFeedback.Destination = cardInHandPosition;
-            horizontalFlipFeedback.AnimateScaleTarget = playerCard.gameObject.transform;
-            if (playerCardRectTransform != null)
-            {
-                horizontalFlipFeedback.RemapCurveZero = -playerCardRectTransform.localScale.x;
-                horizontalFlipFeedback.RemapCurveOne = playerCardRectTransform.localScale.x;
-            }
-            cardFrontRevealFeedback.BoundImage = playerCard.GetCardFrontImage();
+            
+            horizontalFlipFeedback.AnimateScaleTarget = playerCard.transform;
+            horizontalFlipFeedback.RemapCurveZero = playerCard.transform.localScale.x;
+            // By negating its scale, the card is flipped
+            horizontalFlipFeedback.RemapCurveOne = - playerCard.transform.localScale.x;
 
             // Shake the deck
             playerDeck.DrawCardFromDeck();
@@ -79,21 +76,40 @@ public class CombatFeedbacksManager : MonoBehaviour
         }
     }
 
-    public async Task PlayPlaceCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
+    public async Task PlayPlaceEnemyCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
+    {
+        cardToPlaceOnCombat.FlipCardUpsideDown();
+
+        cardToPlaceOnCombat.transform.localScale = new Vector2(
+            cardToPlaceOnCombat.transform.localScale.x * CardOnCombatScaleFactor,
+            cardToPlaceOnCombat.transform.localScale.y * CardOnCombatScaleFactor
+        );
+
+        await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
+    }
+
+    async Task PlayPlaceCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
     {
         MMF_DestinationTransform moveCardFeedback =
             PlaceCardOnCombatPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Card"));
-        MMF_Scale getCardCloseToCameraFeedback =
-            PlaceCardOnCombatPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Get Card close to Camera"));
+        MMF_Scale getCardCloseToCameraOnXFeedback =
+            PlaceCardOnCombatPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Get Card close to Camera On X"));
+        MMF_Scale getCardCloseToCameraOnYFeedback =
+            PlaceCardOnCombatPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Get Card close to Camera On Y"));
         
-        if (moveCardFeedback != null && getCardCloseToCameraFeedback != null)
+        if (moveCardFeedback != null && getCardCloseToCameraOnXFeedback != null
+            && getCardCloseToCameraOnYFeedback != null)
         {
             moveCardFeedback.TargetTransform = cardToPlaceOnCombat.gameObject.transform;
             moveCardFeedback.Destination = onCombatTransform;
 
-            getCardCloseToCameraFeedback.AnimateScaleTarget = cardToPlaceOnCombat.gameObject.transform;
-            getCardCloseToCameraFeedback.RemapCurveZero = CardOnCombatScale;
-            getCardCloseToCameraFeedback.RemapCurveOne = CardOnCombatScale * PlaceCardOnCombatScaleFactor;
+            getCardCloseToCameraOnXFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
+            getCardCloseToCameraOnXFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.x;
+            getCardCloseToCameraOnXFeedback.RemapCurveOne = cardToPlaceOnCombat.transform.localScale.x * PlaceCardOnCombatScaleFactor;
+
+            getCardCloseToCameraOnYFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
+            getCardCloseToCameraOnYFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.y;
+            getCardCloseToCameraOnYFeedback.RemapCurveOne = cardToPlaceOnCombat.transform.localScale.y * PlaceCardOnCombatScaleFactor;
 
             await PlaceCardOnCombatPlayer.PlayFeedbacksTask();
         }
@@ -101,28 +117,20 @@ public class CombatFeedbacksManager : MonoBehaviour
 
     public async Task PlayPlacePlayerCardOnCombat(CombatCard cardToPlaceOnCombat, Transform onCombatTransform)
     {
-        MMF_Scale scaleCardFeedback =
-            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale scaleCardOnYFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On Y"));
         MMF_Scale horizontalFlipFeedback =
             HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Horizontal Flip"));
-        MMF_ImageAlpha cardFrontHideFeedback =
-            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Front Hide"));
-        MMF_ImageAlpha cardBackRevealFeedback =
-            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Back Reveal"));
 
-        if (scaleCardFeedback != null && horizontalFlipFeedback != null
-            && cardFrontHideFeedback != null && cardBackRevealFeedback != null)
+        if (scaleCardOnYFeedback != null && horizontalFlipFeedback != null)
         {
-            scaleCardFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
-            scaleCardFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = CardOnCombatScale;
+            scaleCardOnYFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
+            scaleCardOnYFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.y;
+            scaleCardOnYFeedback.RemapCurveOne = cardToPlaceOnCombat.transform.localScale.y * CardOnCombatScaleFactor;
 
             horizontalFlipFeedback.AnimateScaleTarget = cardToPlaceOnCombat.transform;
-            horizontalFlipFeedback.RemapCurveZero = - cardToPlaceOnCombat.transform.localScale.x;
-            horizontalFlipFeedback.RemapCurveOne = CardOnCombatScale;
-
-            cardFrontHideFeedback.BoundImage = cardToPlaceOnCombat.GetCardFrontImage();
-            cardBackRevealFeedback.BoundImage = cardToPlaceOnCombat.GetCardBackImage();
+            horizontalFlipFeedback.RemapCurveZero = cardToPlaceOnCombat.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveOne = - cardToPlaceOnCombat.transform.localScale.x * CardOnCombatScaleFactor;
 
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
             await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
@@ -131,37 +139,42 @@ public class CombatFeedbacksManager : MonoBehaviour
 
     public async Task PlayRevealCard(CombatCard cardToReveal)
     {
-        MMF_Scale scaleCardFeedback =
-            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale scaleCardOnXFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On X"));
+        MMF_Scale scaleCardOnYFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On Y"));
         MMF_Scale horizontalFlipFeedback =
             RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Horizontal Flip"));
-        MMF_ImageAlpha cardFrontRevealFeedback =
-            RevealCardPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Front Reveal"));
-        MMF_ImageAlpha cardBackHideFeedback =
-            RevealCardPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Back Hide"));
-        MMF_Scale scaleBackCardFeedback =
-            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Back Card"));
+        MMF_Scale scaleBackCardOnXFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Back Card On X"));
+        MMF_Scale scaleBackCardOnYFeedback =
+            RevealCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Back Card On Y"));
 
-        if (scaleCardFeedback != null && horizontalFlipFeedback != null
-            && cardFrontRevealFeedback != null && cardBackHideFeedback != null
-            && scaleBackCardFeedback != null)
+        if (scaleCardOnXFeedback != null && scaleCardOnYFeedback != null 
+            && horizontalFlipFeedback != null && scaleBackCardOnXFeedback != null
+            && scaleBackCardOnYFeedback != null)
         {
             cardToReveal.transform.SetAsLastSibling();
 
-            scaleCardFeedback.AnimateScaleTarget = cardToReveal.transform;
-            scaleCardFeedback.RemapCurveZero = cardToReveal.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+            scaleCardOnXFeedback.AnimateScaleTarget = cardToReveal.transform;
+            scaleCardOnXFeedback.RemapCurveZero = cardToReveal.transform.localScale.x;
+            scaleCardOnXFeedback.RemapCurveOne = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+
+            scaleCardOnYFeedback.AnimateScaleTarget = cardToReveal.transform;
+            scaleCardOnYFeedback.RemapCurveZero = cardToReveal.transform.localScale.y;
+            scaleCardOnYFeedback.RemapCurveOne = cardToReveal.transform.localScale.y * RevealCardScaleFactor;
 
             horizontalFlipFeedback.AnimateScaleTarget = cardToReveal.transform;
-            horizontalFlipFeedback.RemapCurveZero = - cardToReveal.transform.localScale.x;
-            horizontalFlipFeedback.RemapCurveOne = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+            horizontalFlipFeedback.RemapCurveZero = cardToReveal.transform.localScale.x;
+            horizontalFlipFeedback.RemapCurveOne = - cardToReveal.transform.localScale.x * RevealCardScaleFactor;
 
-            cardFrontRevealFeedback.BoundImage = cardToReveal.GetCardFrontImage();
-            cardBackHideFeedback.BoundImage = cardToReveal.GetCardBackImage();
+            scaleBackCardOnXFeedback.AnimateScaleTarget = cardToReveal.transform;
+            scaleBackCardOnXFeedback.RemapCurveZero = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
+            scaleBackCardOnXFeedback.RemapCurveOne = cardToReveal.transform.localScale.x;
 
-            scaleBackCardFeedback.AnimateScaleTarget = cardToReveal.transform;
-            scaleBackCardFeedback.RemapCurveZero = cardToReveal.transform.localScale.x * RevealCardScaleFactor;
-            scaleBackCardFeedback.RemapCurveOne = cardToReveal.transform.localScale.x;
+            scaleBackCardOnYFeedback.AnimateScaleTarget = cardToReveal.transform;
+            scaleBackCardOnYFeedback.RemapCurveZero = cardToReveal.transform.localScale.y * RevealCardScaleFactor;
+            scaleBackCardOnYFeedback.RemapCurveOne = cardToReveal.transform.localScale.y;
 
             await RevealCardPlayer.PlayFeedbacksTask();
         }
@@ -171,29 +184,42 @@ public class CombatFeedbacksManager : MonoBehaviour
     {
         MMF_DestinationTransform moveCardToCenterFeedback =
             AttackCardPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Card to Center"));
-        MMF_Scale scaleCardFeedback =
-            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale scaleCardOnXFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On X"));
+        MMF_Scale scaleCardOnYFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On Y"));
         MMF_Rotation rotateCardFeedback =
             AttackCardPlayer.GetFeedbacksOfType<MMF_Rotation>().Find((feedback) => feedback.Label.Equals("Rotate Card"));
-        MMF_Scale attackHitFeedback =
-            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Attack Hit"));
+        MMF_Scale attackHitOnXFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Attack Hit On X"));
+        MMF_Scale attackHitOnYFeedback =
+            AttackCardPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Attack Hit On Y"));
 
-        if (scaleCardFeedback != null && rotateCardFeedback != null
-            && moveCardToCenterFeedback != null && attackHitFeedback != null)
+        if (scaleCardOnXFeedback != null && scaleCardOnYFeedback != null 
+            && rotateCardFeedback != null && moveCardToCenterFeedback != null 
+            && attackHitOnXFeedback != null && attackHitOnYFeedback != null)
         {
             attackerCard.transform.SetAsLastSibling();
 
             moveCardToCenterFeedback.TargetTransform = attackerCard.transform;
 
-            scaleCardFeedback.AnimateScaleTarget = attackerCard.transform;
-            scaleCardFeedback.RemapCurveZero = attackerCard.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = attackerCard.transform.localScale.x * AttackACardScaleFactor;
+            scaleCardOnXFeedback.AnimateScaleTarget = attackerCard.transform;
+            scaleCardOnXFeedback.RemapCurveZero = attackerCard.transform.localScale.x;
+            scaleCardOnXFeedback.RemapCurveOne = attackerCard.transform.localScale.x * AttackACardScaleFactor;
+
+            scaleCardOnYFeedback.AnimateScaleTarget = attackerCard.transform;
+            scaleCardOnYFeedback.RemapCurveZero = attackerCard.transform.localScale.y;
+            scaleCardOnYFeedback.RemapCurveOne = attackerCard.transform.localScale.y * AttackACardScaleFactor;
 
             rotateCardFeedback.AnimateRotationTarget = attackerCard.transform;
 
-            attackHitFeedback.AnimateScaleTarget = attackerCard.transform;
-            attackHitFeedback.RemapCurveZero = attackerCard.transform.localScale.x * AttackACardScaleFactor;
-            attackHitFeedback.RemapCurveOne = attackerCard.transform.localScale.x;
+            attackHitOnXFeedback.AnimateScaleTarget = attackerCard.transform;
+            attackHitOnXFeedback.RemapCurveZero = attackerCard.transform.localScale.x * AttackACardScaleFactor;
+            attackHitOnXFeedback.RemapCurveOne = attackerCard.transform.localScale.x;
+
+            attackHitOnYFeedback.AnimateScaleTarget = attackerCard.transform;
+            attackHitOnYFeedback.RemapCurveZero = attackerCard.transform.localScale.y * AttackACardScaleFactor;
+            attackHitOnYFeedback.RemapCurveOne = attackerCard.transform.localScale.y;
 
             await AttackCardPlayer.PlayFeedbacksTask();
         }
@@ -227,32 +253,24 @@ public class CombatFeedbacksManager : MonoBehaviour
 
     public async Task PlayReturnCardToDeck(CombatCard cardToReturn, Transform deckTransform)
     {
-        MMF_Scale scaleCardFeedback =
-            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale scaleCardOnYFeedback =
+            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On Y"));
         MMF_Scale horizontalFlipFeedback =
             HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Horizontal Flip"));
-        MMF_ImageAlpha cardFrontHideFeedback =
-            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Front Hide"));
-        MMF_ImageAlpha cardBackRevealFeedback =
-            HideCardFromPlayerHandPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Card Back Reveal"));
 
         MMF_DestinationTransform moveRotateAndScaleCardFeedback =
             MoveCardToTransformPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move and Rotate Card"));
         
-        if (scaleCardFeedback != null && horizontalFlipFeedback != null
-            && cardFrontHideFeedback != null && cardBackRevealFeedback != null
+        if (scaleCardOnYFeedback != null && horizontalFlipFeedback != null
             && moveRotateAndScaleCardFeedback != null)
         {
-            scaleCardFeedback.AnimateScaleTarget = cardToReturn.transform;
-            scaleCardFeedback.RemapCurveZero = cardToReturn.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = deckTransform.localScale.x;
+            scaleCardOnYFeedback.AnimateScaleTarget = cardToReturn.transform;
+            scaleCardOnYFeedback.RemapCurveZero = cardToReturn.transform.localScale.y;
+            scaleCardOnYFeedback.RemapCurveOne = deckTransform.localScale.y;
 
             horizontalFlipFeedback.AnimateScaleTarget = cardToReturn.transform;
             horizontalFlipFeedback.RemapCurveZero = cardToReturn.transform.localScale.x;
             horizontalFlipFeedback.RemapCurveOne = - deckTransform.localScale.x;
-
-            cardFrontHideFeedback.BoundImage = cardToReturn.GetCardFrontImage();
-            cardBackRevealFeedback.BoundImage = cardToReturn.GetCardBackImage();
 
             moveRotateAndScaleCardFeedback.TargetTransform = cardToReturn.transform;
             moveRotateAndScaleCardFeedback.Destination = deckTransform;
@@ -260,12 +278,6 @@ public class CombatFeedbacksManager : MonoBehaviour
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
             deckTransform.SetAsLastSibling();
             await MoveCardToTransformPlayer.PlayFeedbacksTask();
-
-            // After completing the animation, reset the card to the deck's original scale to prevent image flipped bugs
-            cardToReturn.transform.localScale = new Vector2(
-                deckTransform.localScale.x,
-                cardToReturn.transform.localScale.y
-            );
 
             DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
             if (deckBehaviourComponent != null)
@@ -296,10 +308,13 @@ public class CombatFeedbacksManager : MonoBehaviour
             MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Card"));
         MMF_Rotation rotateCardFeedback =
             MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_Rotation>().Find((feedback) => feedback.Label.Equals("Rotate Card"));
-        MMF_Scale scaleCardFeedback =
-            MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card"));
+        MMF_Scale scaleCardOnXFeedback =
+            MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On X"));
+        MMF_Scale scaleCardOnYFeedback =
+            MoveCardToTieZonePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Card On Y"));
 
-        if (moveCardFeedback != null && rotateCardFeedback != null)
+        if (moveCardFeedback != null && rotateCardFeedback != null
+            && scaleCardOnXFeedback != null && scaleCardOnYFeedback != null)
         {
             cardToMove.transform.SetAsLastSibling();
 
@@ -308,9 +323,13 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             rotateCardFeedback.AnimateRotationTarget = cardToMove.transform;
 
-            scaleCardFeedback.AnimateScaleTarget = cardToMove.transform;
-            scaleCardFeedback.RemapCurveZero = cardToMove.transform.localScale.x;
-            scaleCardFeedback.RemapCurveOne = CardOnTieZoneScale;
+            scaleCardOnXFeedback.AnimateScaleTarget = cardToMove.transform;
+            scaleCardOnXFeedback.RemapCurveZero = cardToMove.transform.localScale.x;
+            scaleCardOnXFeedback.RemapCurveOne = cardToMove.transform.localScale.x * CardOnTieZoneScaleFactor;
+
+            scaleCardOnYFeedback.AnimateScaleTarget = cardToMove.transform;
+            scaleCardOnYFeedback.RemapCurveZero = cardToMove.transform.localScale.y;
+            scaleCardOnYFeedback.RemapCurveOne = cardToMove.transform.localScale.y * CardOnTieZoneScaleFactor;
 
             await MoveCardToTieZonePlayer.PlayFeedbacksTask();
         }
@@ -344,27 +363,40 @@ public class CombatFeedbacksManager : MonoBehaviour
     {
         MMF_DestinationTransform moveEnemyCardFeedback =
             AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Enemy Card"));
-        MMF_Scale scaleEnemyCardFeedback =
-            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Enemy Card"));
+        MMF_Scale scaleEnemyCardOnXFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Enemy Card On X"));
+        MMF_Scale scaleEnemyCardOnYFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Enemy Card On Y"));
         MMF_DestinationTransform movePlayerCardFeedback =
             AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Player Card"));
-        MMF_Scale scalePlayerCardFeedback =
-            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Player Card"));
+        MMF_Scale scalePlayerCardOnXFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Player Card On X"));
+        MMF_Scale scalePlayerCardOnYFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Player Card On Y"));
         
-        if (moveEnemyCardFeedback != null && scaleEnemyCardFeedback != null
-            && movePlayerCardFeedback != null && scalePlayerCardFeedback != null)
+        if (moveEnemyCardFeedback != null && scaleEnemyCardOnXFeedback != null
+            && scaleEnemyCardOnYFeedback != null && movePlayerCardFeedback != null 
+            && scalePlayerCardOnXFeedback != null && scalePlayerCardOnYFeedback != null)
         {
             movePlayerCardFeedback.TargetTransform = playerCard.transform;
 
-            scalePlayerCardFeedback.AnimateScaleTarget = playerCard.transform;
-            scalePlayerCardFeedback.RemapCurveZero = playerCard.transform.localScale.x;
-            scalePlayerCardFeedback.RemapCurveOne = playerCard.transform.localScale.x + (playerCard.transform.localScale.x * AttackCardsOnTieScaleFactor);
+            scalePlayerCardOnXFeedback.AnimateScaleTarget = playerCard.transform;
+            scalePlayerCardOnXFeedback.RemapCurveZero = playerCard.transform.localScale.x;
+            scalePlayerCardOnXFeedback.RemapCurveOne = playerCard.transform.localScale.x + (playerCard.transform.localScale.x * AttackCardsOnTieScaleFactor);
+
+            scalePlayerCardOnYFeedback.AnimateScaleTarget = playerCard.transform;
+            scalePlayerCardOnYFeedback.RemapCurveZero = playerCard.transform.localScale.y;
+            scalePlayerCardOnYFeedback.RemapCurveOne = playerCard.transform.localScale.y + (playerCard.transform.localScale.y * AttackCardsOnTieScaleFactor);
 
             moveEnemyCardFeedback.TargetTransform = enemyCard.transform;
 
-            scaleEnemyCardFeedback.AnimateScaleTarget = enemyCard.transform;
-            scaleEnemyCardFeedback.RemapCurveZero = enemyCard.transform.localScale.x;
-            scaleEnemyCardFeedback.RemapCurveOne = enemyCard.transform.localScale.x + (enemyCard.transform.localScale.x * AttackCardsOnTieScaleFactor);
+            scaleEnemyCardOnXFeedback.AnimateScaleTarget = enemyCard.transform;
+            scaleEnemyCardOnXFeedback.RemapCurveZero = enemyCard.transform.localScale.x;
+            scaleEnemyCardOnXFeedback.RemapCurveOne = enemyCard.transform.localScale.x + (enemyCard.transform.localScale.x * AttackCardsOnTieScaleFactor);
+
+            scaleEnemyCardOnYFeedback.AnimateScaleTarget = enemyCard.transform;
+            scaleEnemyCardOnYFeedback.RemapCurveZero = enemyCard.transform.localScale.y;
+            scaleEnemyCardOnYFeedback.RemapCurveOne = enemyCard.transform.localScale.y + (enemyCard.transform.localScale.y * AttackCardsOnTieScaleFactor);
 
             await AttackCardsOnTiePlayer.PlayFeedbacksTask();
         }

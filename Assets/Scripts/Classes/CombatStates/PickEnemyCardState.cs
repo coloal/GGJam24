@@ -41,7 +41,7 @@ public class PickEnemyCardState : CombatState
         enemyCombatCard.transform.position = combatContext.enemyOnCombatCardOriginalPosition.position;
 
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayPlaceCardOnCombat(
+            .PlayPlaceEnemyCardOnCombat(
                 cardToPlaceOnCombat: enemyCombatCard,
                 onCombatTransform: combatContext.enemyOnCombatCardFinalPosition
             );
