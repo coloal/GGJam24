@@ -15,3 +15,27 @@ MonoBehaviour:
   EventsNames:
   - FoldersName: 1
     EventName: CombatSounds
+  - FoldersName: 0
+    EventName: Barajar
+  - FoldersName: 0
+    EventName: Draw
+  - FoldersName: 0
+    EventName: FlipCards
+  - FoldersName: 0
+    EventName: FlipTableCards
+  - FoldersName: 0
+    EventName: FlyCardInCenter
+  - FoldersName: 0
+    EventName: FlyCardToCenter
+  - FoldersName: 0
+    EventName: GiveCards
+  - FoldersName: 0
+    EventName: HitInfluence
+  - FoldersName: 0
+    EventName: HitMoney
+  - FoldersName: 0
+    EventName: HitTable
+  - FoldersName: 0
+    EventName: HitViolence
+  - FoldersName: 0
+    EventName: ShowHideCards
