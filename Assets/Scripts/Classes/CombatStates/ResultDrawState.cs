@@ -37,9 +37,22 @@ public class ResultDrawState : CombatState
 
     public override async void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
     {
+        await AttackCards(combatContext);
         await SendPlayerCombatCardToTieZone(combatContext);
         await SendEnemyCombatCardToTieZone(combatContext);
         PostProcess(combatContext);
+    }
+
+    async Task AttackCards(CombatV2Manager.CombatContext combatContext)
+    {
+        CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
+        CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
+
+        if (playerCombatCard != null && enemyCombatCard != null)
+        {
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayAttackCardsOnTie(playerCombatCard, enemyCombatCard);
+        }
     }
 
     async Task SendPlayerCombatCardToTieZone(CombatV2Manager.CombatContext combatContext)
@@ -73,7 +86,6 @@ public class ResultDrawState : CombatState
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
-
 
         if (enemyCombatCard != null)
         {

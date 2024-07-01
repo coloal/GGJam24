@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MoreMountains.Feedbacks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CombatFeedbacksManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player MoveCardToTransformPlayer;
     [SerializeField] public MMF_Player MoveCardToTieZonePlayer;
     [SerializeField] public MMF_Player KillACardInTieZonePlayer;
+    [SerializeField] public MMF_Player AttackCardsOnTiePlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScale = 3.5f;
@@ -31,6 +33,8 @@ public class CombatFeedbacksManager : MonoBehaviour
     [Header("Attack a Card")]
     [SerializeField] public float AttackACardScaleFactor = 2.0f;
     [SerializeField] public AnimCombatExplosionsManagerComponent animCombatExplosionsManager;
+    [Header("Attack Cards On Tie")]
+    [SerializeField] public float AttackCardsOnTieScaleFactor = 0.25f;
     
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -333,6 +337,36 @@ public class CombatFeedbacksManager : MonoBehaviour
             cardDisappearFeedback.BoundImage = cardToKill.GetCardFrontImage();
 
             await KillACardInTieZonePlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayAttackCardsOnTie(CombatCard playerCard, CombatCard enemyCard)
+    {
+        MMF_DestinationTransform moveEnemyCardFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Enemy Card"));
+        MMF_Scale scaleEnemyCardFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Enemy Card"));
+        MMF_DestinationTransform movePlayerCardFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Player Card"));
+        MMF_Scale scalePlayerCardFeedback =
+            AttackCardsOnTiePlayer.GetFeedbacksOfType<MMF_Scale>().Find((feedback) => feedback.Label.Equals("Scale Player Card"));
+        
+        if (moveEnemyCardFeedback != null && scaleEnemyCardFeedback != null
+            && movePlayerCardFeedback != null && scalePlayerCardFeedback != null)
+        {
+            movePlayerCardFeedback.TargetTransform = playerCard.transform;
+
+            scalePlayerCardFeedback.AnimateScaleTarget = playerCard.transform;
+            scalePlayerCardFeedback.RemapCurveZero = playerCard.transform.localScale.x;
+            scalePlayerCardFeedback.RemapCurveOne = playerCard.transform.localScale.x + (playerCard.transform.localScale.x * AttackCardsOnTieScaleFactor);
+
+            moveEnemyCardFeedback.TargetTransform = enemyCard.transform;
+
+            scaleEnemyCardFeedback.AnimateScaleTarget = enemyCard.transform;
+            scaleEnemyCardFeedback.RemapCurveZero = enemyCard.transform.localScale.x;
+            scaleEnemyCardFeedback.RemapCurveOne = enemyCard.transform.localScale.x + (enemyCard.transform.localScale.x * AttackCardsOnTieScaleFactor);
+
+            await AttackCardsOnTiePlayer.PlayFeedbacksTask();
         }
     }
 }
