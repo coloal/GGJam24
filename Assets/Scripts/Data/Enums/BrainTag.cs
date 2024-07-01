@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //Toma valores bool, por defecto es false
 public enum BrainTag
 {
+    Alarm,
     Mobilephone,
     Bendecido,
     Maldito,
