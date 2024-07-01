@@ -6,26 +6,26 @@ using UnityEngine;
 
 public class PickEnemyCardState : CombatState
 {
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
-        CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
+        CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
 
         CombatUtils.ProcessNextStateAfterSeconds(
             nextState: new PickPlayerCardState(),
-            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPickPlayerCard
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPickPlayerCard
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public async override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public async override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         await PickAnEnemyCard(combatContext);
     }
 
-    async Task PickAnEnemyCard(CombatV2Manager.CombatContext combatContext)
+    async Task PickAnEnemyCard(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         

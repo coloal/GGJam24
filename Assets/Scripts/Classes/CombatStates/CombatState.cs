@@ -4,15 +4,15 @@ using UnityEngine;
 
 public abstract class CombatState
 {
-    abstract public void Preprocess(CombatV2Manager.CombatContext combatContext);
+    abstract public void Preprocess(CombatManager.CombatContext combatContext);
 
-    abstract public void ProcessImplementation(CombatV2Manager.CombatContext combatContext);
-
-    // This method should return the next state to process, not a void
-    abstract public void PostProcess(CombatV2Manager.CombatContext combatContext);
+    abstract public void ProcessImplementation(CombatManager.CombatContext combatContext);
 
     // This method should return the next state to process, not a void
-    public void Process(CombatV2Manager.CombatContext combatContext)
+    abstract public void PostProcess(CombatManager.CombatContext combatContext);
+
+    // This method should return the next state to process, not a void
+    public void Process(CombatManager.CombatContext combatContext)
     {
         Debug.Log($"Started: {this.GetType().Name}");
 

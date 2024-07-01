@@ -1,27 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static CombatV2Manager;
+using static CombatManager;
 
 public class ResultWinState : CombatState
 {
     private const int NUMBER_OF_ENEMY_CARDS_TYPE_HINTS_ROWS = 2;
 
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         combatContext.enemyCardsPickUpRow0.SetActive(false);
         combatContext.enemyCardsPickUpRow1.SetActive(false);
-        CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
+        CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
 
         //TODO: return to history
         GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_CAPTURE);
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
@@ -32,7 +32,7 @@ public class ResultWinState : CombatState
         foreach (CombatCardTemplate card in enemyCombatCards)
         {
             GameObject combatCard =
-                CombatSceneManager.Instance.ProvideCombatV2Manager().InstantiateCombatCardGameObject();
+                CombatSceneManager.Instance.ProvideCombatManager().InstantiateCombatCardGameObject();
             CombatCard combatCardComponent = combatCard.GetComponent<CombatCard>();
             if (combatCardComponent != null)
             {
@@ -41,7 +41,7 @@ public class ResultWinState : CombatState
             }
         }
 
-        int maxAllowedEnemyCards = CombatSceneManager.Instance.ProvideCombatV2Manager().GetMaxAllowedEnemyCards();
+        int maxAllowedEnemyCards = CombatSceneManager.Instance.ProvideCombatManager().GetMaxAllowedEnemyCards();
         int maxCardsPerRow = maxAllowedEnemyCards / NUMBER_OF_ENEMY_CARDS_TYPE_HINTS_ROWS;
 
         int cardsLeftToFill = 0;
@@ -81,7 +81,7 @@ public class ResultWinState : CombatState
         // (a workaround for the default HorizontalLayout component behaviour)
         for (int i = 0; i < cardsLeftToFill; i++)
         {
-            GameObject emptyCardDummy = CombatSceneManager.Instance.ProvideCombatV2Manager().InstantiateEmptyCardDummyGameObject();
+            GameObject emptyCardDummy = CombatSceneManager.Instance.ProvideCombatManager().InstantiateEmptyCardDummyGameObject();
             CombatCards.Add(emptyCardDummy);
         }
 
@@ -126,7 +126,7 @@ public class ResultWinState : CombatState
     }
 
 
-    private void PickAEnemyCard(CombatV2Manager.CombatContext combatContext, CombatCardTemplate CombatCardData) 
+    private void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCardTemplate CombatCardData) 
     {
         //Add card al deck
         GameManager.Instance.ProvideInventoryManager().AddCombatCardToVault(CombatCardData);

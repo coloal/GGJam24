@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class CombatV2Manager : MonoBehaviour
+public class CombatManager : MonoBehaviour
 {
     public struct CombatContext
     {

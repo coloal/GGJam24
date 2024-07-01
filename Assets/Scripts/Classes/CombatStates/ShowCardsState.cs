@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class ShowCardsState : CombatState
 {
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         CombatUtils.ProcessNextStateAfterSeconds(
             nextState: new ResolveCombatState(),
-            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForResolveCombat
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForResolveCombat
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override async void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
         CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();

@@ -7,19 +7,19 @@ using UnityEngine.Assertions;
 
 public class PresentPlayerCardsState : CombatState
 {
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         CombatUtils.ProcessNextStateAfterSeconds(
             nextState: new PickEnemyCardState(),
-            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPickEnemyCard
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPickEnemyCard
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override async void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
@@ -44,7 +44,7 @@ public class PresentPlayerCardsState : CombatState
         }
     }
 
-    async Task MakeSpaceInHandForNewCards(CombatV2Manager.CombatContext combatContext)
+    async Task MakeSpaceInHandForNewCards(CombatManager.CombatContext combatContext)
     {
         bool HasACard(Transform cardInHandContainer)
         {
@@ -78,7 +78,7 @@ public class PresentPlayerCardsState : CombatState
         }
     }
 
-    async Task DrawCardFromDeckToHand(CombatV2Manager.CombatContext combatContext, int cardsToDraw)
+    async Task DrawCardFromDeckToHand(CombatManager.CombatContext combatContext, int cardsToDraw)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         CombatFeedbacksManager combatFeedbacksManager = CombatSceneManager.Instance.ProvideCombatFeedbacksManager();

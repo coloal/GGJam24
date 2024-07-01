@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ResultLoseState : CombatState
 {
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
 
         //TODO: eliminar cartas obtenidas mediante BrainManager ??
@@ -13,11 +13,11 @@ public class ResultLoseState : CombatState
         //throw new System.NotImplementedException();
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         PostProcess(combatContext);
     }

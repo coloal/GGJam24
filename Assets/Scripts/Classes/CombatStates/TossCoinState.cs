@@ -9,9 +9,9 @@ public class TossCoinState : CombatState
 
     private GameObject CoinCard;
     private int PlayerCoinChoice;
-    private CombatV2Manager.CombatContext CombatContext;
+    private CombatManager.CombatContext CombatContext;
     
-    public override async void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override async void PostProcess(CombatManager.CombatContext combatContext)
     {
         /* Cara = 0 / Cruz = 1 */
         int CoinResult = UnityEngine.Random.Range(0, 2);
@@ -28,7 +28,7 @@ public class TossCoinState : CombatState
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
         CombatState nextCombatState = null;
-        float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+        float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
         
         //Game Over
         if (CoinResult != PlayerCoinChoice && playerTotalCards <= 0)
@@ -38,7 +38,7 @@ public class TossCoinState : CombatState
             await ProcessEnemyWonState(combatContext);
 
             nextCombatState = new ResultLoseState();
-            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForCombatResultsRound;
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForCombatResultsRound;
         }
 
         //Victory
@@ -49,7 +49,7 @@ public class TossCoinState : CombatState
             await ProcessPlayerWonState(combatContext);
 
             nextCombatState = new ResultWinState();
-            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForCombatResultsRound;
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForCombatResultsRound;
         }
 
         //Next Round
@@ -66,7 +66,7 @@ public class TossCoinState : CombatState
             }
             Debug.Log("Next round");
             nextCombatState = new PresentPlayerCardsState();
-            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
         }
 
         CombatUtils.ProcessNextStateAfterSeconds(
@@ -75,11 +75,11 @@ public class TossCoinState : CombatState
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         //Spawnea Moneda
         CoinCard = CombatSceneManager.Instance.ProvideCoinCardGO();
@@ -109,12 +109,12 @@ public class TossCoinState : CombatState
         PostProcess(CombatContext);
     }
 
-    async Task<CombatState>  ProcessPlayerWonState(CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
-        async Task KillEnemyCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        async Task KillEnemyCardsInTieZone(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetEnemyCardInTieZoneContainers(), async (cardInTieZone) =>
             {
@@ -126,7 +126,7 @@ public class TossCoinState : CombatState
             });
         }
 
-        async Task ReturnPlayerCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnPlayerCardsInTieZoneToDeck(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetPlayerCardInTieZoneContainers(), async (cardInTieZone) =>
             {
@@ -150,12 +150,12 @@ public class TossCoinState : CombatState
 
     }
 
-    async Task<CombatState> ProcessEnemyWonState(CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        async Task KillPlayerCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        async Task KillPlayerCardsInTieZone(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetPlayerCardInTieZoneContainers(), async (cardInTieZone) =>
             {
@@ -167,7 +167,7 @@ public class TossCoinState : CombatState
             });
         }
 
-        async Task ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnEnemyCardsInTieZoneToDeck(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetEnemyCardInTieZoneContainers(), async (cardInTieZone) =>
             {

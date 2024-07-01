@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PickPlayerCardState : CombatState
 {
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {   
         CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
         {
@@ -19,19 +19,19 @@ public class PickPlayerCardState : CombatState
             }
         });
 
-        CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
+        CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
 
         CombatUtils.ProcessNextStateAfterSeconds(
             nextState: new ShowCardsState(),
-            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForShowCards
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForShowCards
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
         {
@@ -49,7 +49,7 @@ public class PickPlayerCardState : CombatState
         });
     }
 
-    async Task PickAPlayerCard(CombatV2Manager.CombatContext combatContext, CombatCard cardInHand)
+    async Task PickAPlayerCard(CombatManager.CombatContext combatContext, CombatCard cardInHand)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 

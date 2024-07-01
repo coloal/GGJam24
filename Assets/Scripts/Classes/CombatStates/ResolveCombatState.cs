@@ -15,20 +15,20 @@ public class ResolveCombatState : CombatState
 
     CombatState nextCombatState;
 
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         if (nextCombatState != null)
         {
-            CombatSceneManager.Instance.ProvideCombatV2Manager().OverwriteCombatContext(combatContext);
+            CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
 
-            float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForNextCombatRound;
+            float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
             if (nextCombatState is ResultDrawState)
             {
-                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForDrawRound;
+                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForDrawRound;
             }
             else if (nextCombatState is ResultWinState || nextCombatState is ResultLoseState)
             {
-                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatV2Manager().timeForCombatResultsRound;
+                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForCombatResultsRound;
             }
 
             CombatUtils.ProcessNextStateAfterSeconds(
@@ -38,12 +38,12 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
         nextCombatState = null;
     }
 
-    public async override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public async override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         Preprocess(combatContext);
 
@@ -104,7 +104,7 @@ public class ResolveCombatState : CombatState
         return CombatResult.Draw;
     }
 
-    async Task<CombatState> ProcessCombatResult(CombatResult combatResult, CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessCombatResult(CombatResult combatResult, CombatManager.CombatContext combatContext)
     {
         switch (combatResult)
         {
@@ -121,12 +121,12 @@ public class ResolveCombatState : CombatState
         return null;
     }
 
-    async Task<CombatState> ProcessPlayerWonState(CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
-        async Task KillEnemyCard(CombatV2Manager.CombatContext combatContext)
+        async Task KillEnemyCard(CombatManager.CombatContext combatContext)
         {
             CombatCard playerOnCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             CombatCard enemyOnCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
@@ -149,7 +149,7 @@ public class ResolveCombatState : CombatState
             }
         }
 
-        async Task KillEnemyCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        async Task KillEnemyCardsInTieZone(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetEnemyCardInTieZoneContainers(), async (cardInTieZone) =>
             {
@@ -161,7 +161,7 @@ public class ResolveCombatState : CombatState
             });
         }
 
-        async Task ReturnPlayerCardToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnPlayerCardToDeck(CombatManager.CombatContext combatContext)
         {
             CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
             if (playerCombatCard != null)
@@ -182,7 +182,7 @@ public class ResolveCombatState : CombatState
             }
         }
 
-        async Task ReturnPlayerCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnPlayerCardsInTieZoneToDeck(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetPlayerCardInTieZoneContainers(), async (cardInTieZone) =>
             {
@@ -213,12 +213,12 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    async Task<CombatState> ProcessEnemyWonState(CombatV2Manager.CombatContext combatContext)
+    async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
-        async Task KillPlayerCard(CombatV2Manager.CombatContext combatContext)
+        async Task KillPlayerCard(CombatManager.CombatContext combatContext)
         {
             CombatCard enemyOnCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             CombatCard playerOnCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
@@ -241,7 +241,7 @@ public class ResolveCombatState : CombatState
             }
         }
 
-        async Task KillPlayerCardsInTieZone(CombatV2Manager.CombatContext combatContext)
+        async Task KillPlayerCardsInTieZone(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetPlayerCardInTieZoneContainers(), async (cardInTieZone) =>
             {
@@ -253,7 +253,7 @@ public class ResolveCombatState : CombatState
             });
         }
 
-        async Task ReturnEnemyCardToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnEnemyCardToDeck(CombatManager.CombatContext combatContext)
         {
             CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
             if (enemyCombatCard != null)
@@ -274,7 +274,7 @@ public class ResolveCombatState : CombatState
             }
         }
 
-        async Task ReturnEnemyCardsInTieZoneToDeck(CombatV2Manager.CombatContext combatContext)
+        async Task ReturnEnemyCardsInTieZoneToDeck(CombatManager.CombatContext combatContext)
         {
             await ForEachCardInTieZone(combatContext.GetEnemyCardInTieZoneContainers(), async (cardInTieZone) =>
             {

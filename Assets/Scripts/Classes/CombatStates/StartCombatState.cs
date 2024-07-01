@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class StartCombatState : CombatState
 {
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         CombatUtils.ProcessNextStateAfterSeconds(
             nextState: new PresentEnemyCardsState(),
-            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPresentEnemyCards
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPresentEnemyCards
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         SetUpPlayerDeck(combatContext);
         SetUpEnemyDeck(combatContext);
         PostProcess(combatContext);
     }
 
-    void SetUpPlayerDeck(CombatV2Manager.CombatContext combatContext)
+    void SetUpPlayerDeck(CombatManager.CombatContext combatContext)
     {
         InventoryManager inventoryManager = GameManager.Instance.ProvideInventoryManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -32,7 +32,7 @@ public class StartCombatState : CombatState
         playerSavedDeck.ForEach((combatCardData) =>
         {
             CombatCard combatCard = CombatSceneManager.Instance
-                .ProvideCombatV2Manager()
+                .ProvideCombatManager()
                 .InstantiateCombatCardGameObject()
                 .GetComponent<CombatCard>();
             if (combatCard != null)
@@ -48,7 +48,7 @@ public class StartCombatState : CombatState
         });
     }
 
-    void SetUpEnemyDeck(CombatV2Manager.CombatContext combatContext)
+    void SetUpEnemyDeck(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         
@@ -56,7 +56,7 @@ public class StartCombatState : CombatState
         enemyDeck.ForEach((combatCardData) =>
         {
             CombatCard combatCard = CombatSceneManager.Instance
-                .ProvideCombatV2Manager()
+                .ProvideCombatManager()
                 .InstantiateCombatCardGameObject()
                 .GetComponent<CombatCard>();
             if (combatCard != null)

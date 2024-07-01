@@ -38,7 +38,7 @@ public static class CombatUtils
     {
         GameUtils.CreateTemporizer(() =>
         {
-            CombatSceneManager.Instance.ProvideCombatV2Manager().ProcessCombat(nextState);
+            CombatSceneManager.Instance.ProvideCombatManager().ProcessCombat(nextState);
         }, seconds, CombatSceneManager.Instance);
     }
 }

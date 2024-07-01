@@ -9,29 +9,29 @@ public class PresentEnemyCardsState : CombatState
 {
     private const int NUMBER_OF_ENEMY_CARDS_TYPE_HINTS_ROWS = 2;
 
-    public override void PostProcess(CombatV2Manager.CombatContext combatContext)
+    public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         combatContext.enemyCardsHintRow0.SetActive(false);
         combatContext.enemyCardsHintRow1.SetActive(false);
 
         CombatUtils.ProcessNextStateAfterSeconds(
             nextState: new PresentPlayerCardsState(),
-            seconds: CombatSceneManager.Instance.ProvideCombatV2Manager().timeForPresentPlayerCards
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPresentPlayerCards
         );
     }
 
-    public override void Preprocess(CombatV2Manager.CombatContext combatContext)
+    public override void Preprocess(CombatManager.CombatContext combatContext)
     {
     }
 
-    public async override void ProcessImplementation(CombatV2Manager.CombatContext combatContext)
+    public async override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         SetEnemyCardsCombatTypeHints(combatContext);
         await ShowEnemyCardsCombatTypeHints(combatContext);
         PostProcess(combatContext);
     }
 
-    void SetEnemyCardsCombatTypeHints(CombatV2Manager.CombatContext combatContext)
+    void SetEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 
@@ -41,7 +41,7 @@ public class PresentEnemyCardsState : CombatState
                 .Select((combatCardTemplate) => 
                 {
                     GameObject combatTypeHint =
-                        CombatSceneManager.Instance.ProvideCombatV2Manager().InstantiateCombatTypeHintGameObject();
+                        CombatSceneManager.Instance.ProvideCombatManager().InstantiateCombatTypeHintGameObject();
                     CombatTypeHintComponent combatTypeHintComponent = combatTypeHint.GetComponent<CombatTypeHintComponent>();
                     if (combatTypeHintComponent != null)
                     {
@@ -52,7 +52,7 @@ public class PresentEnemyCardsState : CombatState
                 })
                 .ToList();
 
-        int maxAllowedEnemyCards = CombatSceneManager.Instance.ProvideCombatV2Manager().GetMaxAllowedEnemyCards();
+        int maxAllowedEnemyCards = CombatSceneManager.Instance.ProvideCombatManager().GetMaxAllowedEnemyCards();
         int maxCardsPerRow = maxAllowedEnemyCards / NUMBER_OF_ENEMY_CARDS_TYPE_HINTS_ROWS;
 
         int cardsLeftToFill = 0;
@@ -69,7 +69,7 @@ public class PresentEnemyCardsState : CombatState
         // (a workaround for the default HorizontalLayout component behaviour)
         for (int i = 0; i < cardsLeftToFill; i++)
         {
-            GameObject emptyCardDummy = CombatSceneManager.Instance.ProvideCombatV2Manager().InstantiateEmptyCardDummyGameObject();
+            GameObject emptyCardDummy = CombatSceneManager.Instance.ProvideCombatManager().InstantiateEmptyCardDummyGameObject();
             enemyCardTypesHints.Add(emptyCardDummy);
         }
 
@@ -111,7 +111,7 @@ public class PresentEnemyCardsState : CombatState
         }
     }
 
-    async Task ShowEnemyCardsCombatTypeHints(CombatV2Manager.CombatContext combatContext)
+    async Task ShowEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
     {
         float showHintsTime = CombatSceneManager.Instance.ProvideEnemyData().ShowHintsTimeInSeconds;
 
