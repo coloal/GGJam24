@@ -55,15 +55,15 @@ public class PresentPlayerCardsState : CombatState
         
         List<Transform> playerCardInHandContainers = combatContext.GetPlayerCardInHandContainers();
 
-        for (int i = playerDeckManager.GetMaxAllowedCardsInHand() - 1; i > 0; i--)
+        for (int i = 0; i < playerDeckManager.GetMaxAllowedCardsInHand() - 1; i++)
         {
             // Is there a card in the current hand position?
-            if (HasACard(playerCardInHandContainers[i]) 
-                && !HasACard(playerCardInHandContainers[i - 1]))
+            if (!HasACard(playerCardInHandContainers[i]) 
+                && HasACard(playerCardInHandContainers[i + 1]))
             {
-                GameObject cardToMove = playerCardInHandContainers[i].GetChild(0).gameObject;
+                GameObject cardToMove = playerCardInHandContainers[i + 1].GetChild(0).gameObject;
 
-                cardToMove.transform.SetParent(playerCardInHandContainers[i - 1]);
+                cardToMove.transform.SetParent(playerCardInHandContainers[i]);
 
                 CombatCard combatCardToMove = cardToMove.GetComponent<CombatCard>();
                 if (combatCardToMove != null)
@@ -71,7 +71,7 @@ public class PresentPlayerCardsState : CombatState
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                         .PlayMoveCardPositionInHand(
                             cardToMove: combatCardToMove,
-                            playerCardInHandContainers[i - 1]
+                            playerCardInHandContainers[i]
                         );
                 }
             }
