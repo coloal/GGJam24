@@ -257,6 +257,12 @@ public class CombatFeedbacksManager : MonoBehaviour
             deckTransform.SetAsLastSibling();
             await MoveCardToTransformPlayer.PlayFeedbacksTask();
 
+            // After completing the animation, reset the card to the deck's original scale to prevent image flipped bugs
+            cardToReturn.transform.localScale = new Vector2(
+                deckTransform.localScale.x,
+                cardToReturn.transform.localScale.y
+            );
+
             DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
             if (deckBehaviourComponent != null)
             {
