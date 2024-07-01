@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
-  m_Name: CG_Aha
+  m_Name: CG_Dreams1
   m_EditorClassIdentifier: 
   nodes:
   - rid: 8580623337150218298
@@ -22,7 +22,6 @@ MonoBehaviour:
   - rid: 3107022144919568393
   - rid: 3107022144919568394
   - rid: 3107022144919568395
-  - rid: 3107022144919568396
   - rid: 3107022144919568397
   - rid: 3107022144919568398
   - rid: 3107022144919568399
@@ -35,17 +34,11 @@ MonoBehaviour:
   - rid: 3107022144919568412
   - rid: 3107022144919568413
   - rid: 3107022144919568414
-  - rid: 3107022144919568415
   - rid: 3107022144919568416
-  - rid: 3107022144919568418
-  - rid: 3107022144919568419
-  - rid: 3107022144919568420
-  - rid: 3107022144919568421
   - rid: 3107022144919568422
   - rid: 3107022144919568423
   - rid: 3107022144919568424
   - rid: 3107022144919568425
-  - rid: 3107022144919568426
   - rid: 3107022144919568427
   - rid: 3107022144919568428
   - rid: 3107022144919568429
@@ -59,6 +52,22 @@ MonoBehaviour:
   - rid: 3107022160606265345
   - rid: 3107022160606265346
   - rid: 3107022160606265347
+  - rid: 3107022160606265353
+  - rid: 3107022160606265354
+  - rid: 3107022160606265357
+  - rid: 3107022160606265359
+  - rid: 3107022160606265360
+  - rid: 3107022160606265361
+  - rid: 3107022160606265362
+  - rid: 3107022160606265364
+  - rid: 3107022160606265365
+  - rid: 3107022160606265367
+  - rid: 3107022160606265368
+  - rid: 3107022160606265369
+  - rid: 3107022160606265370
+  - rid: 3107022160606265371
+  - rid: 3107022160606265372
+  - rid: 3107022160606265373
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -67,42 +76,6 @@ MonoBehaviour:
       nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
       portIndex: 2
   - outputPort:
-      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
-      portIndex: 0
-    inputPort:
-      nodeId: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
-      portIndex: 2
-  - outputPort:
-      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
-      portIndex: 1
-    inputPort:
-      nodeId: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
-      portIndex: 2
-  - outputPort:
-      nodeId: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
-      portIndex: 1
-    inputPort:
-      nodeId: 8923b70e-87c0-4607-af8c-e1b48c03386b
-      portIndex: 2
-  - outputPort:
-      nodeId: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
-      portIndex: 1
-    inputPort:
-      nodeId: 8923b70e-87c0-4607-af8c-e1b48c03386b
-      portIndex: 2
-  - outputPort:
-      nodeId: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
-      portIndex: 0
-    inputPort:
-      nodeId: 40534e5a-6f44-459d-bb53-1ad7b95fdf28
-      portIndex: 2
-  - outputPort:
-      nodeId: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
-      portIndex: 0
-    inputPort:
-      nodeId: 40534e5a-6f44-459d-bb53-1ad7b95fdf28
-      portIndex: 2
-  - outputPort:
       nodeId: 40534e5a-6f44-459d-bb53-1ad7b95fdf28
       portIndex: 1
     inputPort:
@@ -241,54 +214,12 @@ MonoBehaviour:
       nodeId: ae975976-c272-4257-a36e-dd15a78e8439
       portIndex: 2
   - outputPort:
-      nodeId: a512f0cb-0686-4405-87f1-52f532e5e001
-      portIndex: 0
-    inputPort:
-      nodeId: db8b58d3-b348-413d-bd48-1597520ce990
-      portIndex: 1
-  - outputPort:
       nodeId: ed802d6d-d1dd-4f75-b926-a7531a51e9c9
       portIndex: 1
     inputPort:
       nodeId: 816107a5-04fa-4611-b0e2-bcbe70194ab0
       portIndex: 2
   - outputPort:
-      nodeId: 816107a5-04fa-4611-b0e2-bcbe70194ab0
-      portIndex: 0
-    inputPort:
-      nodeId: 0eb7f72f-9fc5-44bf-a3d8-c86bb81ceb2a
-      portIndex: 1
-  - outputPort:
-      nodeId: 0eb7f72f-9fc5-44bf-a3d8-c86bb81ceb2a
-      portIndex: 0
-    inputPort:
-      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
-      portIndex: 0
-  - outputPort:
-      nodeId: 816107a5-04fa-4611-b0e2-bcbe70194ab0
-      portIndex: 1
-    inputPort:
-      nodeId: 32a36645-04d7-4de3-9fdf-601fa43e641c
-      portIndex: 1
-  - outputPort:
-      nodeId: 32a36645-04d7-4de3-9fdf-601fa43e641c
-      portIndex: 0
-    inputPort:
-      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
-      portIndex: 0
-  - outputPort:
-      nodeId: ae975976-c272-4257-a36e-dd15a78e8439
-      portIndex: 0
-    inputPort:
-      nodeId: 9d4634af-55df-4d8b-85e7-a5e15af21174
-      portIndex: 1
-  - outputPort:
-      nodeId: ae975976-c272-4257-a36e-dd15a78e8439
-      portIndex: 1
-    inputPort:
-      nodeId: 04563e19-e193-4340-8ef8-6207e498ea68
-      portIndex: 1
-  - outputPort:
       nodeId: 8923b70e-87c0-4607-af8c-e1b48c03386b
       portIndex: 1
     inputPort:
@@ -314,28 +245,10 @@ MonoBehaviour:
       portIndex: 2
   - outputPort:
       nodeId: 275cdc8d-6bff-4955-bf74-1cb3394e8767
-      portIndex: 0
-    inputPort:
-      nodeId: 7e675b7b-dbe1-440a-ade6-09d0a644f0b7
-      portIndex: 1
-  - outputPort:
-      nodeId: 275cdc8d-6bff-4955-bf74-1cb3394e8767
       portIndex: 1
     inputPort:
       nodeId: 4afe0a97-61ec-43f2-9b89-601b1efea34c
       portIndex: 2
-  - outputPort:
-      nodeId: 4afe0a97-61ec-43f2-9b89-601b1efea34c
-      portIndex: 0
-    inputPort:
-      nodeId: 73a2e0ec-8576-403e-8262-42f6ee481cda
-      portIndex: 1
-  - outputPort:
-      nodeId: 4afe0a97-61ec-43f2-9b89-601b1efea34c
-      portIndex: 1
-    inputPort:
-      nodeId: edfe9eda-a095-4f01-808c-f9f735692eb9
-      portIndex: 1
   - outputPort:
       nodeId: ccf59bd2-0154-4198-8745-fb3c5f0922a3
       portIndex: 0
@@ -361,46 +274,298 @@ MonoBehaviour:
       nodeId: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
       portIndex: 2
   - outputPort:
-      nodeId: c8ac2311-0cf7-4765-b8fc-78ee0202c295
-      portIndex: 0
-    inputPort:
-      nodeId: 41b7899c-cea6-4d04-9430-c6d3903e07d2
-      portIndex: 1
-  - outputPort:
-      nodeId: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
-      portIndex: 0
-    inputPort:
-      nodeId: e2c633fd-3014-479b-822a-3e5fe096c863
-      portIndex: 1
-  - outputPort:
-      nodeId: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
-      portIndex: 1
-    inputPort:
-      nodeId: a1e21976-d314-4aba-8624-f4f9bbff775b
-      portIndex: 1
-  - outputPort:
       nodeId: 1428572b-5737-413f-886a-91ce84d6b98b
       portIndex: 1
     inputPort:
       nodeId: 51d3a3bd-22be-4f67-baf2-51f23528e83c
       portIndex: 2
   - outputPort:
+      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
+      portIndex: 0
+    inputPort:
+      nodeId: 57fbdcd1-33bf-4299-b072-300c33fa6780
+      portIndex: 1
+  - outputPort:
+      nodeId: 57fbdcd1-33bf-4299-b072-300c33fa6780
+      portIndex: 0
+    inputPort:
+      nodeId: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
+      portIndex: 2
+  - outputPort:
+      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
+      portIndex: 1
+    inputPort:
+      nodeId: 66012ff0-654b-464a-93cb-5fba45f42fbc
+      portIndex: 1
+  - outputPort:
+      nodeId: 66012ff0-654b-464a-93cb-5fba45f42fbc
+      portIndex: 0
+    inputPort:
+      nodeId: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
+      portIndex: 2
+  - outputPort:
+      nodeId: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
+      portIndex: 1
+    inputPort:
+      nodeId: 40534e5a-6f44-459d-bb53-1ad7b95fdf28
+      portIndex: 2
+  - outputPort:
+      nodeId: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
+      portIndex: 0
+    inputPort:
+      nodeId: 8923b70e-87c0-4607-af8c-e1b48c03386b
+      portIndex: 2
+  - outputPort:
+      nodeId: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
+      portIndex: 1
+    inputPort:
+      nodeId: 40534e5a-6f44-459d-bb53-1ad7b95fdf28
+      portIndex: 2
+  - outputPort:
+      nodeId: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
+      portIndex: 0
+    inputPort:
+      nodeId: 8923b70e-87c0-4607-af8c-e1b48c03386b
+      portIndex: 2
+  - outputPort:
+      nodeId: 816107a5-04fa-4611-b0e2-bcbe70194ab0
+      portIndex: 0
+    inputPort:
+      nodeId: 294667a3-d2b3-46d6-9b8e-e7212e1b7f24
+      portIndex: 2
+  - outputPort:
+      nodeId: 294667a3-d2b3-46d6-9b8e-e7212e1b7f24
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 294667a3-d2b3-46d6-9b8e-e7212e1b7f24
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: 816107a5-04fa-4611-b0e2-bcbe70194ab0
+      portIndex: 1
+    inputPort:
+      nodeId: 1f5fec34-31cf-40eb-a683-d6d762b01e69
+      portIndex: 2
+  - outputPort:
+      nodeId: 1f5fec34-31cf-40eb-a683-d6d762b01e69
+      portIndex: 0
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: a512f0cb-0686-4405-87f1-52f532e5e001
+      portIndex: 0
+    inputPort:
+      nodeId: bf44a154-40f3-4f01-8385-8f8938d147ac
+      portIndex: 2
+  - outputPort:
+      nodeId: bf44a154-40f3-4f01-8385-8f8938d147ac
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: bf44a154-40f3-4f01-8385-8f8938d147ac
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: ae975976-c272-4257-a36e-dd15a78e8439
+      portIndex: 0
+    inputPort:
+      nodeId: bc6ce3a0-a47a-4cde-b883-8bf25ae153e5
+      portIndex: 2
+  - outputPort:
+      nodeId: ae975976-c272-4257-a36e-dd15a78e8439
+      portIndex: 1
+    inputPort:
+      nodeId: a41470ab-01b3-4a72-aa7f-c1a5aa900cf3
+      portIndex: 2
+  - outputPort:
+      nodeId: bc6ce3a0-a47a-4cde-b883-8bf25ae153e5
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: a41470ab-01b3-4a72-aa7f-c1a5aa900cf3
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: bc6ce3a0-a47a-4cde-b883-8bf25ae153e5
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: a41470ab-01b3-4a72-aa7f-c1a5aa900cf3
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: 275cdc8d-6bff-4955-bf74-1cb3394e8767
+      portIndex: 0
+    inputPort:
+      nodeId: 755aa035-11e3-4903-94ac-2b578a9802d8
+      portIndex: 2
+  - outputPort:
+      nodeId: 755aa035-11e3-4903-94ac-2b578a9802d8
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 4afe0a97-61ec-43f2-9b89-601b1efea34c
+      portIndex: 0
+    inputPort:
+      nodeId: cec84eee-62ae-40a1-af0c-8941ae874987
+      portIndex: 2
+  - outputPort:
+      nodeId: 4afe0a97-61ec-43f2-9b89-601b1efea34c
+      portIndex: 1
+    inputPort:
+      nodeId: bfa9ee54-f7ff-4bb4-a2be-ba2a057f9b3d
+      portIndex: 2
+  - outputPort:
+      nodeId: cec84eee-62ae-40a1-af0c-8941ae874987
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: cec84eee-62ae-40a1-af0c-8941ae874987
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: bfa9ee54-f7ff-4bb4-a2be-ba2a057f9b3d
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: bfa9ee54-f7ff-4bb4-a2be-ba2a057f9b3d
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
       nodeId: 1428572b-5737-413f-886a-91ce84d6b98b
       portIndex: 0
     inputPort:
-      nodeId: 2a88bc38-ef8a-4732-9800-63d1069c6bed
+      nodeId: 95fad44d-db0f-415b-9146-a39620caad50
+      portIndex: 2
+  - outputPort:
+      nodeId: 95fad44d-db0f-415b-9146-a39620caad50
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 95fad44d-db0f-415b-9146-a39620caad50
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
       portIndex: 1
   - outputPort:
       nodeId: 51d3a3bd-22be-4f67-baf2-51f23528e83c
       portIndex: 0
     inputPort:
-      nodeId: 4287a2d1-3e18-418b-97af-814352bcc15a
+      nodeId: 8efb1253-0b5d-41c3-80b9-2280c014885d
+      portIndex: 2
+  - outputPort:
+      nodeId: 8efb1253-0b5d-41c3-80b9-2280c014885d
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 8efb1253-0b5d-41c3-80b9-2280c014885d
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
       portIndex: 1
   - outputPort:
       nodeId: 51d3a3bd-22be-4f67-baf2-51f23528e83c
       portIndex: 1
     inputPort:
-      nodeId: a804dc46-3070-4629-b197-a446c3931798
+      nodeId: 1c01add8-968f-4377-8944-ac64c72f7623
+      portIndex: 2
+  - outputPort:
+      nodeId: 1c01add8-968f-4377-8944-ac64c72f7623
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 1c01add8-968f-4377-8944-ac64c72f7623
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: c8ac2311-0cf7-4765-b8fc-78ee0202c295
+      portIndex: 0
+    inputPort:
+      nodeId: a8fc7b77-f374-4da0-9a36-af402497b28e
+      portIndex: 2
+  - outputPort:
+      nodeId: a8fc7b77-f374-4da0-9a36-af402497b28e
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: a8fc7b77-f374-4da0-9a36-af402497b28e
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
+      portIndex: 0
+    inputPort:
+      nodeId: 61c10552-fe0a-4201-a62f-728e5a291fab
+      portIndex: 2
+  - outputPort:
+      nodeId: 61c10552-fe0a-4201-a62f-728e5a291fab
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 61c10552-fe0a-4201-a62f-728e5a291fab
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
+      portIndex: 1
+  - outputPort:
+      nodeId: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
+      portIndex: 1
+    inputPort:
+      nodeId: 1c16b03d-d42d-42ae-a9e3-127d3621f314
+      portIndex: 2
+  - outputPort:
+      nodeId: 1c16b03d-d42d-42ae-a9e3-127d3621f314
+      portIndex: 0
+    inputPort:
+      nodeId: e1b8234d-6220-4854-bf9c-f2d466f64001
+      portIndex: 1
+  - outputPort:
+      nodeId: 1c16b03d-d42d-42ae-a9e3-127d3621f314
+      portIndex: 1
+    inputPort:
+      nodeId: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
       portIndex: 1
   references:
     version: 2
@@ -411,18 +576,18 @@ MonoBehaviour:
         guid: f58f4ca9-c008-4e8d-85ea-beebefdd7854
         position:
           serializedVersion: 2
-          x: -953
+          x: -1111
           y: 291
-          width: 494
+          width: 359
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: sadf
-        LeftText: Turn off alarm and keep sleeping
-        RightText: Face reality and keep sleeping
+        CardText: It's 5 minutes until the beginning of your coming of age day.
+        LeftText: Turn off alarm
+        RightText: Leave alarm set at 8:00
         card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 3107022144919568389
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -430,8 +595,8 @@ MonoBehaviour:
         guid: 11bbc8db-9eac-447d-a24b-f3d226c2cd32
         position:
           serializedVersion: 2
-          x: -296
-          y: -86
+          x: -374
+          y: 2
           width: 737
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -439,11 +604,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "Wow, that was impresive, never seen anyone before turn their alarm
-          off unconciously (without waking up). And I am an experienced DM... \nAs
-          this will probably be your last dream until \nyou face a pretty full of
-          responsabilities day, I'll let you pick between two flavours for your next
-          dream"
+        CardText: "Wow, I've never seen anyone turn their alarm off unconsciously.
+          And I am an experienced DM... As this will probably be your last dream
+          until you face a day full of responsibilities, \nI'll let you pick between
+          two flavors for your last dream."
         LeftText: Nightmare
         RightText: Pleasant dream
         card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
@@ -453,8 +617,8 @@ MonoBehaviour:
         guid: eb0975f4-dbdf-4587-b9d2-98c637e0dcab
         position:
           serializedVersion: 2
-          x: -276
-          y: 475
+          x: -374
+          y: 460
           width: 552
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -462,9 +626,9 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "Hmmm, interesting, very unusual decision, I must admit. As this
-          will probably be your last dream until \nyou face a pretty full of responsabilities
-          day, I'll let you pick between two flavours for your next dream"
+        CardText: "Hmmm, interesting, very unusual decision, I must admit.\nAs this
+          will probably be your last dream until you face a day full of responsibilities,\n
+          I'll let you pick between two flavors for your next dream"
         LeftText: Nightmare
         RightText: Pleasant dream
         card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
@@ -503,8 +667,8 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: You find yourself in the confines of the universe having some beers
-          with The Passage of Time.
+        CardText: On your next dream, I propose you find yourself in the confines
+          of the universe having some beers with The Passage of Time.
         LeftText: Sounds lovely
         RightText: I don't drink
         card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
@@ -555,39 +719,21 @@ MonoBehaviour:
         guid: 72e38a54-6bff-4a23-acc2-056d32f2974e
         position:
           serializedVersion: 2
-          x: 2970
-          y: -880
-          width: 849
+          x: 2948
+          y: -1008
+          width: 827
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: "If you were looking for the limit of dialogues, here it is! This
-          is a handmade game, my friend, with no natural language generation AI involved.
-          \nSo you must be content with this: You find yourself at the edge of the
-          universe, having a cigarette with the Passage of Time at the entrance of
-          a night pub.\nMoreover, you can not find a complain to this scenario..."
+        CardText: "Ok, then here it's an unrejecatble scenario: You find yourself
+          at the edge of the universe, having a cigarette with the Passage of Time
+          \nat the entrance of a night pub."
         LeftText: You're right, it's the perfect scenario for contemplation
         RightText: I prefer a previous option
         card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
-    - rid: 3107022144919568396
-      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 26fcdd68-cfdd-41bb-91c3-d5ef10811120
-        position:
-          serializedVersion: 2
-          x: -388
-          y: 274
-          width: 224
-          height: 122
-        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - True
-        - False
-        Condition: 0
     - rid: 3107022144919568397
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -615,18 +761,18 @@ MonoBehaviour:
         guid: ed802d6d-d1dd-4f75-b926-a7531a51e9c9
         position:
           serializedVersion: 2
-          x: 2676
-          y: 234
-          width: 759
+          x: 6077
+          y: 206
+          width: 825
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'I see, your world is quite a cruent one. I mean, violance it''s
-          just percieved as a card game that''s the level of familiarity you have
-          with violence. '
+        CardText: I see, your world is quite a cruel one. I mean, violence is just
+          perceived as a card game. That's the level of familiarity you, in your
+          world, have with violence.
         LeftText: But I feel comfortable with violence, Passage
         RightText: Yes, I really do not like violence, Passage
         card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
@@ -636,8 +782,8 @@ MonoBehaviour:
         guid: 332b5965-a657-4b02-bd42-e689d12d4994
         position:
           serializedVersion: 2
-          x: 3587
-          y: -46
+          x: 6988
+          y: -74
           width: 423
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -656,8 +802,8 @@ MonoBehaviour:
         guid: e1b8234d-6220-4854-bf9c-f2d466f64001
         position:
           serializedVersion: 2
-          x: 4142
-          y: -207
+          x: 8347
+          y: -235
           width: 504
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -676,15 +822,15 @@ MonoBehaviour:
         guid: 19e1eb32-23e8-46ec-9fc3-8ecaac3e0d25
         position:
           serializedVersion: 2
-          x: 4142
-          y: 99
+          x: 8347
+          y: 71
           width: 618
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Well, you have other options as well, my friend, so perhaps you
+        CardText: Well, you had other options as well, my friend, so perhaps you
           should consider different approaches in the future.
         LeftText: I understand, Passage
         RightText: Nothing to consider, Passy :P
@@ -695,8 +841,8 @@ MonoBehaviour:
         guid: 8c373f08-e17b-404f-b714-f29a8ae8f611
         position:
           serializedVersion: 2
-          x: 5167
-          y: 519
+          x: 9243
+          y: -190
           width: 383
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
@@ -730,9 +876,9 @@ MonoBehaviour:
         guid: fb98dde2-295d-46c4-b162-9697b14024d7
         position:
           serializedVersion: 2
-          x: 2931
-          y: -528
-          width: 1389
+          x: 2961
+          y: -532
+          width: 775
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -751,18 +897,20 @@ MonoBehaviour:
         guid: f1845635-efd7-4798-b170-1b13c784b2bd
         position:
           serializedVersion: 2
-          x: 3934
+          x: 3771
           y: -907
-          width: 321
+          width: 958
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Lend me your lighter please, mate. '
-        LeftText: The lighter is from huelva
-        RightText: I didn't I just don't feel prepared
+        CardText: Lend me your lighter, please, mate. So you were telling me you're
+          feeling nervous about today, right? Did you really think you could live
+          forever with freedom and no responsibilities?
+        LeftText: You can borrow it, but I want it back.
+        RightText: I didn't, I just don't feel prepared
         card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
     - rid: 3107022144919568412
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -770,9 +918,9 @@ MonoBehaviour:
         guid: 09b08a4e-c0ad-48a8-ae9e-a3ea6fc7d2e1
         position:
           serializedVersion: 2
-          x: 4479
+          x: 4899
           y: -907
-          width: 321
+          width: 665
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -799,7 +947,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Hey, you have lost all the games until now, last chance to survive.
+        CardText: Hey, you've lost all the games until now. Last chance to survive.
           All or nothing. What are you betting on in the next round of the gambling
           game?
         LeftText: '[Try to physically harm him]'
@@ -824,33 +972,14 @@ MonoBehaviour:
         LeftText: I bet money
         RightText: I bet power of influence
         card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
-    - rid: 3107022144919568415
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: db8b58d3-b348-413d-bd48-1597520ce990
-        position:
-          serializedVersion: 2
-          x: 2548
-          y: 1508
-          width: 423
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Info card: Your last decisions has made you get a violence card
-          to your deck!'
-        LeftText: '**** I thought this was inconsequential'
-        RightText: Nice, I like being violent
-        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 3107022144919568416
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 816107a5-04fa-4611-b0e2-bcbe70194ab0
         position:
           serializedVersion: 2
-          x: 3558
-          y: 670
+          x: 6959
+          y: 642
           width: 616
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -863,82 +992,6 @@ MonoBehaviour:
         LeftText: Yes, I think my strong point is being a people person
         RightText: I prefer getting my goals by money
         card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
-    - rid: 3107022144919568418
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 0eb7f72f-9fc5-44bf-a3d8-c86bb81ceb2a
-        position:
-          serializedVersion: 2
-          x: 4343
-          y: 519
-          width: 427
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Info card: Your last decisions has made you get a influence card
-          to your deck!'
-        LeftText: Damn, I thought this was inconsequential
-        RightText: Nice, I like being influent
-        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
-    - rid: 3107022144919568419
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 32a36645-04d7-4de3-9fdf-601fa43e641c
-        position:
-          serializedVersion: 2
-          x: 4368
-          y: 825
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Info card: Your last decisions has made you get a money card to
-          your deck!'
-        LeftText: Wow, I thought this was inconsequential
-        RightText: Nice, money first
-        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
-    - rid: 3107022144919568420
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 9d4634af-55df-4d8b-85e7-a5e15af21174
-        position:
-          serializedVersion: 2
-          x: 3144
-          y: 1789
-          width: 414
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Info card: Your last decisions has made you get a money card to
-          your deck!'
-        LeftText: Wow, I thought this was inconsequential
-        RightText: Nice, money first
-        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
-    - rid: 3107022144919568421
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 04563e19-e193-4340-8ef8-6207e498ea68
-        position:
-          serializedVersion: 2
-          x: 3144
-          y: 2138
-          width: 427
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Info card: Your last decisions has made you get a influence card
-          to your deck!'
-        LeftText: Damn, I thought this was inconsequential
-        RightText: Nice, I like being influent
-        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 3107022144919568422
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -965,9 +1018,9 @@ MonoBehaviour:
         guid: ccf59bd2-0154-4198-8745-fb3c5f0922a3
         position:
           serializedVersion: 2
-          x: 2213
-          y: 3894
-          width: 587
+          x: 2104
+          y: 5301
+          width: 610
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -985,9 +1038,9 @@ MonoBehaviour:
         guid: f62b3f53-62a3-4f9a-a77b-db8145a01a33
         position:
           serializedVersion: 2
-          x: 3119
-          y: 4920
-          width: 610
+          x: 3010
+          y: 6327
+          width: 400
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1022,34 +1075,15 @@ MonoBehaviour:
         LeftText: "Cut him with a Scalpel (bistur\xED) and run"
         RightText: MmmMyyY Whhaat??
         card: {fileID: 11400000, guid: e53598c12d7c86d46baee87c341d8939, type: 2}
-    - rid: 3107022144919568426
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 7e675b7b-dbe1-440a-ade6-09d0a644f0b7
-        position:
-          serializedVersion: 2
-          x: 2860
-          y: 2611
-          width: 423
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Info card: Your last decisions has made you get a violence card
-          to your deck!'
-        LeftText: '**** I thought this was inconsequential'
-        RightText: Nice, I like being violent
-        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 3107022144919568427
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 4afe0a97-61ec-43f2-9b89-601b1efea34c
         position:
           serializedVersion: 2
-          x: 2860
-          y: 3021
-          width: 321
+          x: 2956
+          y: 3567
+          width: 377
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1066,9 +1100,9 @@ MonoBehaviour:
         guid: 73a2e0ec-8576-403e-8262-42f6ee481cda
         position:
           serializedVersion: 2
-          x: 3423
-          y: 2900
-          width: 321
+          x: 3366
+          y: 4029
+          width: 414
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1085,10 +1119,10 @@ MonoBehaviour:
         guid: edfe9eda-a095-4f01-808c-f9f735692eb9
         position:
           serializedVersion: 2
-          x: 3423
-          y: 3166
-          width: 321
-          height: 242
+          x: 3379
+          y: 3945
+          width: 177
+          height: 44
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1104,9 +1138,9 @@ MonoBehaviour:
         guid: 1428572b-5737-413f-886a-91ce84d6b98b
         position:
           serializedVersion: 2
-          x: 3123
-          y: 3894
-          width: 321
+          x: 3014
+          y: 5301
+          width: 401
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1125,8 +1159,8 @@ MonoBehaviour:
         guid: c8ac2311-0cf7-4765-b8fc-78ee0202c295
         position:
           serializedVersion: 2
-          x: 3885
-          y: 4920
+          x: 3776
+          y: 6327
           width: 571
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1145,8 +1179,8 @@ MonoBehaviour:
         guid: 097fbf14-eb0e-4ed7-9501-d0cb32e993cc
         position:
           serializedVersion: 2
-          x: 4849
-          y: 5340
+          x: 4740
+          y: 6747
           width: 498
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1165,8 +1199,8 @@ MonoBehaviour:
         guid: 41b7899c-cea6-4d04-9430-c6d3903e07d2
         position:
           serializedVersion: 2
-          x: 4619
-          y: 4633
+          x: 4219
+          y: 5969
           width: 423
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1184,8 +1218,8 @@ MonoBehaviour:
         guid: e2c633fd-3014-479b-822a-3e5fe096c863
         position:
           serializedVersion: 2
-          x: 5472
-          y: 4993
+          x: 5363
+          y: 6400
           width: 414
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1203,8 +1237,8 @@ MonoBehaviour:
         guid: a1e21976-d314-4aba-8624-f4f9bbff775b
         position:
           serializedVersion: 2
-          x: 5487
-          y: 5627
+          x: 5402
+          y: 7203
           width: 427
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1222,9 +1256,9 @@ MonoBehaviour:
         guid: 51d3a3bd-22be-4f67-baf2-51f23528e83c
         position:
           serializedVersion: 2
-          x: 3717
-          y: 4058
-          width: 321
+          x: 3608
+          y: 5465
+          width: 377
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1241,9 +1275,9 @@ MonoBehaviour:
         guid: 2a88bc38-ef8a-4732-9800-63d1069c6bed
         position:
           serializedVersion: 2
-          x: 3748
-          y: 3583
-          width: 314
+          x: 3639
+          y: 4990
+          width: 423
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1261,9 +1295,9 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: 4315
-          y: 3882
-          width: 321
-          height: 242
+          y: 5271
+          width: 177
+          height: 44
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1279,8 +1313,8 @@ MonoBehaviour:
         guid: a804dc46-3070-4629-b197-a446c3931798
         position:
           serializedVersion: 2
-          x: 4315
-          y: 4253
+          x: 5413
+          y: 5465
           width: 427
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1292,13 +1326,337 @@ MonoBehaviour:
         LeftText: Damn, I thought this was inconsequential
         RightText: Nice, I like being influent
         card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265353
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 57fbdcd1-33bf-4299-b072-300c33fa6780
+        position:
+          serializedVersion: 2
+          x: -687
+          y: 2
+          width: 221
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 0
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
+    - rid: 3107022160606265354
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 66012ff0-654b-464a-93cb-5fba45f42fbc
+        position:
+          serializedVersion: 2
+          x: -687
+          y: 460
+          width: 221
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
+    - rid: 3107022160606265357
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 294667a3-d2b3-46d6-9b8e-e7212e1b7f24
+        position:
+          serializedVersion: 2
+          x: 7769
+          y: 348
+          width: 427
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a influence card
+          to your deck!'
+        LeftText: Damn, I thought this was inconsequential
+        RightText: Nice, I like being influent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265359
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1f5fec34-31cf-40eb-a683-d6d762b01e69
+        position:
+          serializedVersion: 2
+          x: 7861
+          y: 796
+          width: 414
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a money card to
+          your deck!'
+        LeftText: Wow, I thought this was inconsequential
+        RightText: Nice, money first
+        card: {fileID: 0}
+    - rid: 3107022160606265360
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: bf44a154-40f3-4f01-8385-8f8938d147ac
+        position:
+          serializedVersion: 2
+          x: 2651
+          y: 1178
+          width: 423
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a violence card
+          to your deck!'
+        LeftText: '**** I thought this was inconsequential'
+        RightText: Nice, I like being violent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265361
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: bc6ce3a0-a47a-4cde-b883-8bf25ae153e5
+        position:
+          serializedVersion: 2
+          x: 3209
+          y: 1654
+          width: 414
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a money card to
+          your deck!'
+        LeftText: Wow, I thought this was inconsequential
+        RightText: Nice, money first
+        card: {fileID: 0}
+    - rid: 3107022160606265362
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a41470ab-01b3-4a72-aa7f-c1a5aa900cf3
+        position:
+          serializedVersion: 2
+          x: 3167
+          y: 2103
+          width: 427
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a influence card
+          to your deck!'
+        LeftText: Damn, I thought this was inconsequential
+        RightText: Nice, I like being influent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265364
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 755aa035-11e3-4903-94ac-2b578a9802d8
+        position:
+          serializedVersion: 2
+          x: 2935
+          y: 2706
+          width: 423
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a violence card
+          to your deck!'
+        LeftText: '**** I thought this was inconsequential'
+        RightText: Nice, I like being violent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265365
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cec84eee-62ae-40a1-af0c-8941ae874987
+        position:
+          serializedVersion: 2
+          x: 3533
+          y: 3180
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a money card to
+          your deck!'
+        LeftText: Wow, I thought this was inconsequential
+        RightText: Nice, money first
+        card: {fileID: 0}
+    - rid: 3107022160606265367
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: bfa9ee54-f7ff-4bb4-a2be-ba2a057f9b3d
+        position:
+          serializedVersion: 2
+          x: 3534
+          y: 3579
+          width: 427
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a influence card
+          to your deck!'
+        LeftText: Damn, I thought this was inconsequential
+        RightText: Nice, I like being influent
+        card: {fileID: 0}
+    - rid: 3107022160606265368
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 95fad44d-db0f-415b-9146-a39620caad50
+        position:
+          serializedVersion: 2
+          x: 3617
+          y: 4679
+          width: 423
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a violence card
+          to your deck!'
+        LeftText: '**** I thought this was inconsequential'
+        RightText: Nice, I like being violent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265369
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8efb1253-0b5d-41c3-80b9-2280c014885d
+        position:
+          serializedVersion: 2
+          x: 4245
+          y: 5005
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a money card to
+          your deck!'
+        LeftText: Wow, I thought this was inconsequential
+        RightText: Nice, money first
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265370
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1c01add8-968f-4377-8944-ac64c72f7623
+        position:
+          serializedVersion: 2
+          x: 4754
+          y: 5420
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a influence card
+          to your deck!'
+        LeftText: Damn, I thought this was inconsequential
+        RightText: Nice, I like being influent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265371
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a8fc7b77-f374-4da0-9a36-af402497b28e
+        position:
+          serializedVersion: 2
+          x: 4605
+          y: 5912
+          width: 423
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a violence card
+          to your deck!'
+        LeftText: '**** I thought this was inconsequential'
+        RightText: Nice, I like being violent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265372
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 61c10552-fe0a-4201-a62f-728e5a291fab
+        position:
+          serializedVersion: 2
+          x: 5363
+          y: 6070
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a money card to
+          your deck!'
+        LeftText: Finally, a good new
+        RightText: Yes, money first!
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 3107022160606265373
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1c16b03d-d42d-42ae-a9e3-127d3621f314
+        position:
+          serializedVersion: 2
+          x: 5392
+          y: 6747
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Info card: Your last decisions has made you get a influence card
+          to your deck!'
+        LeftText: Influence is a very positive way of describing it
+        RightText: Nice, I like being influent
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
         position:
           serializedVersion: 2
-          x: -1119
+          x: -1277
           y: 291
           width: 81
           height: 77

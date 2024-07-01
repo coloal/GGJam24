@@ -82,6 +82,9 @@ MonoBehaviour:
   - rid: 8807612156763701252
   - rid: 8807612156763701253
   - rid: 2901445201500307456
+  - rid: 3107022160606265349
+  - rid: 3107022160606265350
+  - rid: 3107022160606265356
   connections:
   - outputPort:
       nodeId: 58fb11c8-5ff4-492e-86c4-769d15d22fbe
@@ -687,8 +690,38 @@ MonoBehaviour:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
       portIndex: 0
     inputPort:
+      nodeId: 168b2577-c34c-4828-b9c1-3d10f94d52d9
+      portIndex: 2
+  - outputPort:
+      nodeId: e326e004-0ef6-4614-ab2e-dcc4eabbb7f0
+      portIndex: 0
+    inputPort:
       nodeId: a4ce6780-8f9b-449d-a43f-dd0df4a513d4
       portIndex: 2
+  - outputPort:
+      nodeId: 413b0301-6e10-4d09-b5f2-5c5562df3e74
+      portIndex: 0
+    inputPort:
+      nodeId: 7f7bb316-deeb-4804-a5d9-f6fcd531387f
+      portIndex: 1
+  - outputPort:
+      nodeId: 413b0301-6e10-4d09-b5f2-5c5562df3e74
+      portIndex: 1
+    inputPort:
+      nodeId: a8157610-1a3f-4f2f-b237-f2064aa8841b
+      portIndex: 1
+  - outputPort:
+      nodeId: 168b2577-c34c-4828-b9c1-3d10f94d52d9
+      portIndex: 0
+    inputPort:
+      nodeId: 413b0301-6e10-4d09-b5f2-5c5562df3e74
+      portIndex: 2
+  - outputPort:
+      nodeId: 168b2577-c34c-4828-b9c1-3d10f94d52d9
+      portIndex: 1
+    inputPort:
+      nodeId: e326e004-0ef6-4614-ab2e-dcc4eabbb7f0
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -709,13 +742,71 @@ MonoBehaviour:
         Parameters:
           SoundTag: Ness
           NewValue: 1
+    - rid: 3107022160606265349
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 168b2577-c34c-4828-b9c1-3d10f94d52d9
+        position:
+          serializedVersion: 2
+          x: -1669
+          y: -1
+          width: 224
+          height: 122
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 0
+    - rid: 3107022160606265350
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e326e004-0ef6-4614-ab2e-dcc4eabbb7f0
+        position:
+          serializedVersion: 2
+          x: -1311
+          y: 0
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: '[Alarm buzzing] You wake up from your dreams. It''s time for Coming
+          ofAge'
+        LeftText: "Face the day\t"
+        RightText: Face the day
+        card: {fileID: 11400000, guid: 5b951168933dc2146a8aa77aa3897114, type: 2}
+    - rid: 3107022160606265356
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 413b0301-6e10-4d09-b5f2-5c5562df3e74
+        position:
+          serializedVersion: 2
+          x: -1326
+          y: 362
+          width: 506
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Hey, hey, Wake up! did you not set your alarm yesterday? You know
+          this is a big day, darling.
+
+          Everyone''s buzzing with excitement
+          today, aren''t you?!'
+        LeftText: Have you said big day?
+        RightText: I am overexcited too!!
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
         position:
           serializedVersion: 2
-          x: -1009
+          x: -2018
           y: -1
           width: 81
           height: 77
