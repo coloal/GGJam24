@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -125,9 +126,22 @@ public class BrainSoundManager : MonoBehaviour
             foreach (EventIdentifier FMODevent in SoundEvents.EventsNames)
             {
                 string path = FMOD_PATH + Enum.GetName(typeof(EventFolders), FMODevent.FoldersName) + "/" + FMODevent.EventName;
+                
+                try
+                {
+                    FMOD.Studio.EventInstance FmodEventInstance = new EventInstance();
+                    FmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(path);
+                    EventMap.Add(FMODevent.EventName, FmodEventInstance);
+                }
+                catch (EventNotFoundException)
+                {
+                    Debug.LogError("No se ha cargado correctamente el evento: " + path);
+                    if (EventMap.ContainsKey(FMODevent.EventName))
+                    {
+                        EventMap.Remove(FMODevent.EventName);
+                    }
+                }
 
-                FMOD.Studio.EventInstance FmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(path);
-                EventMap.Add(FMODevent.EventName, FmodEventInstance);
             }
         }
         else
