@@ -10,10 +10,8 @@ public class CombatManager : MonoBehaviour
 {
     public struct CombatContext
     {
-        public GameObject enemyCardsHintRow0;
-        public GameObject enemyCardsHintRow1;
-        public GameObject enemyCardsPickUpRow0;
-        public GameObject enemyCardsPickUpRow1;
+        public GameObject enemyCardsRow0;
+        public GameObject enemyCardsRow1;
         public Transform playerHandContainer;
         public DeckBehaviourComponent playerDeck;
         public GameObject playerOnCombatCard;
@@ -25,10 +23,8 @@ public class CombatManager : MonoBehaviour
         public Transform playerTieZone;
         public Transform enemyTieZone; 
 
-        public CombatContext(GameObject enemyCardsHintRow0,
-            GameObject enemyCardsHintRow1,
-            GameObject enemyCardsPickUpRow0,
-            GameObject enemyCardsPickUpRow1,
+        public CombatContext(GameObject enemyCardsRow0,
+            GameObject enemyCardsRow1,
             Transform playerHandContainer,
             DeckBehaviourComponent playerDeck,
             Transform playerOnCombatCardTransform,
@@ -38,10 +34,8 @@ public class CombatManager : MonoBehaviour
             Transform playerTieZone,
             Transform enemyTieZone)
         {
-            this.enemyCardsHintRow0 = enemyCardsHintRow0;
-            this.enemyCardsHintRow1 = enemyCardsHintRow1;
-            this.enemyCardsPickUpRow0 = enemyCardsPickUpRow0;
-            this.enemyCardsPickUpRow1 = enemyCardsPickUpRow1;
+            this.enemyCardsRow0 = enemyCardsRow0;
+            this.enemyCardsRow1 = enemyCardsRow1;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
             this.playerOnCombatCardTransform = playerOnCombatCardTransform;
@@ -80,14 +74,51 @@ public class CombatManager : MonoBehaviour
 
             return cardContainers;
         }
+
+        public List<Transform> GetEnemyCards()
+        {
+            List<Transform> enemyCards = new List<Transform>();
+            foreach (Transform enemyCard in enemyCardsRow0.transform)
+            {
+                enemyCards.Add(enemyCard);
+            }
+            foreach (Transform enemyCard in enemyCardsRow1.transform)
+            {
+                enemyCards.Add(enemyCard);
+            }
+
+            return enemyCards;
+        }
+
+        public void ActivateEnemyCardsContainer()
+        {
+            enemyCardsRow0.SetActive(true);
+            enemyCardsRow1.SetActive(true);
+        }
+
+        public void DeactivateEnemyCardsContainer()
+        {
+            enemyCardsRow0.SetActive(false);
+            enemyCardsRow1.SetActive(false);
+        }
+
+        public void CleanEnemyCardsContainer()
+        {
+            foreach (Transform enemyCard in enemyCardsRow0.transform)
+            {
+                Destroy(enemyCard.gameObject);
+            }
+            foreach (Transform enemyCard in enemyCardsRow1.transform)
+            {
+                Destroy(enemyCard.gameObject);
+            }
+        }
     }
 
     [Header("Board configurations")]
     [SerializeField] private Image enemyCharacterImage;
-    [SerializeField] private GameObject enemyCardsHintRow0;
-    [SerializeField] private GameObject enemyCardsHintRow1;
-    [SerializeField] private GameObject enemyCardsPickUpRow0;
-    [SerializeField] private GameObject enemyCardsPickUpRow1;
+    [SerializeField] private GameObject enemyCardsRow0;
+    [SerializeField] private GameObject enemyCardsRow1;
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private GameObject combatCardPrefab;
     [SerializeField] private GameObject emptyCardDummy;
@@ -140,10 +171,8 @@ public class CombatManager : MonoBehaviour
     void InitCombatContext()
     {
         combatContext = new CombatContext(
-            enemyCardsHintRow0,
-            enemyCardsHintRow1,
-            enemyCardsPickUpRow0,
-            enemyCardsPickUpRow1,
+            enemyCardsRow0,
+            enemyCardsRow1,
             playerHandContainer,
             playerDeck,
             playerOnCombatCardTransform,

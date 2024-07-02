@@ -20,6 +20,8 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player MoveCardToTieZonePlayer;
     [SerializeField] public MMF_Player KillACardInTieZonePlayer;
     [SerializeField] public MMF_Player AttackCardsOnTiePlayer;
+    [SerializeField] public MMF_Player ShowEnemyCardsToChooseFromPlayer;
+    [SerializeField] public MMF_Player HideEnemyCardsToChooseFromPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -400,5 +402,15 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             await AttackCardsOnTiePlayer.PlayFeedbacksTask();
         }
+    }
+
+    public async Task PlayShowEnemyCardsToChooseFrom()
+    {
+        await ShowEnemyCardsToChooseFromPlayer.PlayFeedbacksTask();
+    }
+
+    public async Task PlayHideEnemyCardsToChooseFrom()
+    {
+        await HideEnemyCardsToChooseFromPlayer.PlayFeedbacksTask();
     }
 }

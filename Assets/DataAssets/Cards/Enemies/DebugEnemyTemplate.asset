@@ -15,6 +15,4 @@ MonoBehaviour:
   characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   ShowHintsTimeInSeconds: 1

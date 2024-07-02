@@ -8,6 +8,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public static class CombatUtils
 {
+    public const int NUMBER_OF_ENEMY_CARDS_TYPE_HINTS_ROWS = 2;
+
     public static void ForEachCardInCardsContainer(List<Transform> cardsContainers, Action<GameObject> withCardInContainer)
     {
         foreach (Transform cardContainer in cardsContainers)
