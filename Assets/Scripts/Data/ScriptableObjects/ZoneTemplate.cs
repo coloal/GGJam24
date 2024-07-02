@@ -16,6 +16,7 @@ public class ZoneTemplate : ScriptableObject
 
     //Combat Information
     [Header("Combat information")]
+    [SerializeField]
     Animator combatTransition;
 
     public Sprite StoryBackgroundSprite => storyBackgroundSprite;
