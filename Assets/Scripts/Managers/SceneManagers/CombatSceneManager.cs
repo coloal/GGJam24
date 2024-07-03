@@ -12,9 +12,6 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] EnemyDeckManager enemyDeckManager;
     [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
 
-    [Header("GameObjects")]
-    [SerializeField] private GameObject CoinCardGO;
-
     [Header("Debug configurations")]
     [SerializeField] private bool isDebugging = false;
     [SerializeField] private EnemyTemplate debugEnemyTemplate;
@@ -67,10 +64,5 @@ public class CombatSceneManager : BaseSceneManager
         {
             return GameManager.Instance.ActualEnemy;
         }
-    }
-
-    public GameObject ProvideCoinCardGO() 
-    {
-        return CoinCardGO;
     }
 }

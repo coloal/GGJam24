@@ -6,57 +6,105 @@ using UnityEngine;
 
 public class TossCoinState : CombatState
 {
-
-    private GameObject CoinCard;
-    private int PlayerCoinChoice;
-    private CombatManager.CombatContext CombatContext;
-    
-    public override async void PostProcess(CombatManager.CombatContext combatContext)
+    private enum CoinResult
     {
-        /* Cara = 0 / Cruz = 1 */
-        int CoinResult = UnityEngine.Random.Range(0, 2);
-        Debug.Log("Ha salido: "+CoinResult);
+        Heads,
+        Tails
+    }
+    
+    CoinResult playerCoinChoice;
+    CombatState nextCombatState;
+    GameObject coinCardGameObject = null;
+    
+    public override void PostProcess(CombatManager.CombatContext combatContext)
+    {
+        if (nextCombatState != null)
+        {
+            CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
 
-        CoinCard.GetComponent<CoinCard>().ShowCoinResult(CoinResult);
+            float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
+            if (nextCombatState is PresentPlayerCardsState)
+            {
+                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
+            }
+            else if (nextCombatState is ResultWinState || nextCombatState is ResultLoseState)
+            {
+                secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForCombatResultsRound;
+            }
 
-        
-        GameUtils.CreateTemporizer(() => {
-            CoinCard.GetComponent<CoinCard>().EnableCard(false);
-        }, 3, CombatSceneManager.Instance);/**/
+            CombatUtils.ProcessNextStateAfterSeconds(
+                nextState: nextCombatState,
+                seconds: secondsForNextProcessState
+            );   
+        }
+    }
 
+    public override void Preprocess(CombatManager.CombatContext combatContext)
+    {
+        async void onSwipeLeft()
+        {
+            playerCoinChoice = CoinResult.Heads;
+            nextCombatState = await ProcessTossCoinResult(combatContext);
+            PostProcess(combatContext);
+        }
+
+        async void onSwipeRight()
+        {
+            playerCoinChoice = CoinResult.Tails;
+            nextCombatState = await ProcessTossCoinResult(combatContext);
+            PostProcess(combatContext);
+        }
+
+        coinCardGameObject = CombatSceneManager.Instance.ProvideCombatManager()
+            .InstantiateCoinCardGameObject();
+        CoinCard coinCard = coinCardGameObject.GetComponent<CoinCard>();
+        if (coinCard != null)
+        {
+            coinCard.SetUpCard(onSwipeLeft, onSwipeRight);
+        }
+    }
+
+    public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
+    {
+        Preprocess(combatContext);
+        if (coinCardGameObject != null)
+        {
+            CoinCard coinCard = coinCardGameObject.GetComponent<CoinCard>();
+            if (coinCard != null)
+            {
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayShowCoinCard(coinCard);
+            }
+        }
+    }
+
+    async Task<CombatState> ProcessTossCoinResult(CombatManager.CombatContext combatContext)
+    {
+        CoinResult[] coinResults = { CoinResult.Heads, CoinResult.Tails };
+        CoinResult coinResult = coinResults[UnityEngine.Random.Range(0, coinResults.Length)];
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
-        CombatState nextCombatState = null;
-        float secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
-        
+
         //Game Over
-        if (CoinResult != PlayerCoinChoice && playerTotalCards <= 0)
+        if (coinResult != playerCoinChoice && playerTotalCards <= 0)
         {
-            Debug.Log("El player ha perdido");
-
             await ProcessEnemyWonState(combatContext);
-
-            nextCombatState = new ResultLoseState();
-            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForCombatResultsRound;
+            return new ResultLoseState();
         }
 
         //Victory
-        else if (CoinResult == PlayerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
+        else if (coinResult == playerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
         {
-            Debug.Log("El player ha ganado");
-
             await ProcessPlayerWonState(combatContext);
-
-            nextCombatState = new ResultWinState();
-            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForCombatResultsRound;
+            return new ResultWinState();
         }
 
         //Next Round
         else
         {
-            //El player gana
-            if (CoinResult == PlayerCoinChoice)
+            // The player wins
+            if (coinResult == playerCoinChoice)
             {
                 await ProcessPlayerWonState(combatContext);
             }
@@ -64,49 +112,8 @@ public class TossCoinState : CombatState
             {
                 await ProcessEnemyWonState(combatContext);
             }
-            Debug.Log("Next round");
-            nextCombatState = new PresentPlayerCardsState();
-            secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
+            return new PresentPlayerCardsState();
         }
-
-        CombatUtils.ProcessNextStateAfterSeconds(
-            nextState: nextCombatState,
-            seconds: secondsForNextProcessState
-        );
-    }
-
-    public override void Preprocess(CombatManager.CombatContext combatContext)
-    {
-    }
-
-    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
-    {
-        //Spawnea Moneda
-        CoinCard = CombatSceneManager.Instance.ProvideCoinCardGO();
-
-        CoinCard.GetComponent<CoinCard>().SetActions(this);
-        CoinCard.GetComponent<CoinCard>().EnableCard(true);
-
-        CombatContext = combatContext;
-
-    }
-
-    //Elige Cara 0
-    public void OnSwipeLeft() 
-    {
-        Debug.Log("Se ha elegido Cara");
-
-        PlayerCoinChoice = 0;
-        PostProcess(CombatContext);
-    }
-
-    //Elige Cruz 1
-    public void OnSwipeRight()
-    {
-        Debug.Log("Se ha elegido Cruz");
-
-        PlayerCoinChoice = 1;
-        PostProcess(CombatContext);
     }
 
     async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)

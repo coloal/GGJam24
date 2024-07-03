@@ -60,4 +60,9 @@ public class StoryCard : MonoBehaviour
         overlayTextContainer.SetActive(false);
         cardIsActive = false;        
     }
+
+    public void SetCardDescription(string text)
+    {
+        descriptionText.text = text;
+    }
 }

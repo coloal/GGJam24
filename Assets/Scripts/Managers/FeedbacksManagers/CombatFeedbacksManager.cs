@@ -22,6 +22,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player AttackCardsOnTiePlayer;
     [SerializeField] public MMF_Player ShowEnemyCardsToChooseFromPlayer;
     [SerializeField] public MMF_Player HideEnemyCardsToChooseFromPlayer;
+    [SerializeField] public MMF_Player ShowCoinCardPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -412,5 +413,18 @@ public class CombatFeedbacksManager : MonoBehaviour
     public async Task PlayHideEnemyCardsToChooseFrom()
     {
         await HideEnemyCardsToChooseFromPlayer.PlayFeedbacksTask();
+    }
+
+    public async Task PlayShowCoinCard(CoinCard coinCard)
+    {
+        MMF_DestinationTransform moveCoinCardFeedback =
+            ShowCoinCardPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Coin Card"));
+        
+        if (moveCoinCardFeedback != null)
+        {
+            moveCoinCardFeedback.TargetTransform = coinCard.transform;
+
+            await ShowCoinCardPlayer.PlayFeedbacksTask();
+        }
     }
 }
