@@ -125,6 +125,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private GameObject coinCardPrefab;
     [SerializeField] private Transform coinCardOriginTransform;
     [SerializeField] private Transform coinCardContainerTransform;
+    [SerializeField] private CoinComponent coin;
 
     [Header("Combat zone")]
     [SerializeField] private GameObject combatContainer;
@@ -230,5 +231,10 @@ public class CombatManager : MonoBehaviour
         coinCard.transform.position = coinCardOriginTransform.position;
 
         return coinCard;
+    }
+
+    public CoinComponent GetCombatCoin()
+    {
+        return coin;
     }
 }

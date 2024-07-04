@@ -6,13 +6,8 @@ using UnityEngine;
 
 public class TossCoinState : CombatState
 {
-    private enum CoinResult
-    {
-        Heads,
-        Tails
-    }
     
-    CoinResult playerCoinChoice;
+    CoinFlipResult playerCoinChoice;
     CombatState nextCombatState;
     GameObject coinCardGameObject = null;
     
@@ -43,14 +38,14 @@ public class TossCoinState : CombatState
     {
         async void onSwipeLeft()
         {
-            playerCoinChoice = CoinResult.Heads;
+            playerCoinChoice = CoinFlipResult.Heads;
             nextCombatState = await ProcessTossCoinResult(combatContext);
             PostProcess(combatContext);
         }
 
         async void onSwipeRight()
         {
-            playerCoinChoice = CoinResult.Tails;
+            playerCoinChoice = CoinFlipResult.Tails;
             nextCombatState = await ProcessTossCoinResult(combatContext);
             PostProcess(combatContext);
         }
@@ -80,11 +75,17 @@ public class TossCoinState : CombatState
 
     async Task<CombatState> ProcessTossCoinResult(CombatManager.CombatContext combatContext)
     {
-        CoinResult[] coinResults = { CoinResult.Heads, CoinResult.Tails };
-        CoinResult coinResult = coinResults[UnityEngine.Random.Range(0, coinResults.Length)];
+        CoinFlipResult[] coinResults = { CoinFlipResult.Heads, CoinFlipResult.Tails };
+        CoinFlipResult coinResult = coinResults[UnityEngine.Random.Range(0, coinResults.Length)];
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
+
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayTossCoin(
+                CombatSceneManager.Instance.ProvideCombatManager().GetCombatCoin(),
+                coinResult
+            );
 
         //Game Over
         if (coinResult != playerCoinChoice && playerTotalCards <= 0)
