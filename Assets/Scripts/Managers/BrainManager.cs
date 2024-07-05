@@ -22,6 +22,8 @@ public class BrainManager : MonoBehaviour
 
     private ZoneTemplate defaultZoneInfo;
 
+    private CombatTypes LastWinnerCardType;
+
     /***** INITIALIZE *****/
 
     private void Awake()
@@ -183,5 +185,15 @@ public class BrainManager : MonoBehaviour
         string ActualState = BrainStateMap[TagState];
 
         return ActualState.Equals(StateInfo.info[iTagState].Item2[iState]);
+    }
+
+    public CombatTypes GetTypeLasWinnerCard() 
+    {
+        return LastWinnerCardType;
+    }
+
+    public void SetTypeLasWinnerCard(CombatTypes WinnerType) 
+    {
+        LastWinnerCardType = WinnerType;
     }
 }
