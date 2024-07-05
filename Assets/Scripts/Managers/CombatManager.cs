@@ -21,7 +21,7 @@ public class CombatManager : MonoBehaviour
         public Transform enemyOnCombatCardFinalPosition;
         public GameObject combatContainer;
         public Transform playerTieZone;
-        public Transform enemyTieZone; 
+        public Transform enemyTieZone;
 
         public CombatContext(GameObject enemyCardsRow0,
             GameObject enemyCardsRow1,
@@ -122,6 +122,10 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private CombatTypeHintComponent combatTypeHintPrefab;
     [SerializeField] private GameObject combatCardPrefab;
     [SerializeField] private GameObject emptyCardDummy;
+    [SerializeField] private GameObject coinCardPrefab;
+    [SerializeField] private Transform coinCardOriginTransform;
+    [SerializeField] private Transform coinCardContainerTransform;
+    [SerializeField] private CoinComponent coin;
 
     [Header("Combat zone")]
     [SerializeField] private GameObject combatContainer;
@@ -218,5 +222,19 @@ public class CombatManager : MonoBehaviour
     public int GetMaxAllowedEnemyCards()
     {
         return maxAllowedEnemyCards;
+    }
+
+    public GameObject InstantiateCoinCardGameObject()
+    {
+        GameObject coinCard = Instantiate(coinCardPrefab);
+        coinCard.transform.SetParent(coinCardContainerTransform, worldPositionStays: false);
+        coinCard.transform.position = coinCardOriginTransform.position;
+
+        return coinCard;
+    }
+
+    public CoinComponent GetCombatCoin()
+    {
+        return coin;
     }
 }

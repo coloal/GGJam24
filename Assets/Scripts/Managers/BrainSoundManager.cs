@@ -180,6 +180,11 @@ public class BrainSoundManager : MonoBehaviour
         }
     }
 
+    public void SetMood(int newMood) 
+    {
+        StoryEventInstance.setParameterByName("Mood", newMood);
+    }
+
     public void StartGame(MusicZones zone = MusicZones.Settlement)
     {
         /*ActualZone = zone;

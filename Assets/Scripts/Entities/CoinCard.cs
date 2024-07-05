@@ -1,68 +1,89 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinCard : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject Container;
+    const int DESTROY_COIN_CARD_DELAY_SECONDS = 1;
+    const string COIN_CARD_TEXT_SEPARATOR = "|";
 
-    [SerializeField]
-    private GameObject UIText;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private StoryCardTemplate coinCardInformation;
+
+    public void SetUpCard(Action onSwipeLeft, Action onSwipeRight)
     {
-
+        SetUpStoryCard();
+        SetUpOnSwipeLeftActions(onSwipeLeft);
+        SetUpOnSwipeRightActions(onSwipeRight);
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetUpStoryCard()
     {
-        
-    }
-
-    public void SetActions(TossCoinState tossCoinState) 
-    {
-        HorizontalDraggableComponent HorizontalDragable = gameObject.GetComponent<HorizontalDraggableComponent>();
-
-        if (HorizontalDragable != null)
+        StoryCard storyCardComponent = GetComponent<StoryCard>();
+        if (storyCardComponent != null)
         {
-            //Limpiamos posibles referencias a estados antiguos
-            HorizontalDragable.LeftSwipeActions.Clear();
-            HorizontalDragable.RightSwipeActions.Clear();
+            storyCardComponent.SetDataCard(coinCardInformation);
+            string[] coinCardDescriptions = coinCardInformation.Text.Split(COIN_CARD_TEXT_SEPARATOR);
+            storyCardComponent.SetCardDescription(
+                coinCardDescriptions[UnityEngine.Random.Range(0, coinCardDescriptions.Length)]
+            );
+            storyCardComponent.HideText();
+        }
+    }
 
-            //Asignamos las acciones izq y drcha al nuevo CoinState
-            HorizontalDragable.LeftSwipeActions.Add(() =>
+    void SetUpOnSwipeLeftActions(Action onSwipeLeft)
+    {
+        InteractiveStoryCardComponent interactiveStoryCardComponent = GetComponent<InteractiveStoryCardComponent>();
+        StoryCard storyCardComponent = GetComponent<StoryCard>();
+        HorizontalEscapeMovementComponent horizontalEscapeComponent = GetComponent<HorizontalEscapeMovementComponent>();
+        HorizontalDraggableComponent horizontalDraggableComponent = GetComponent<HorizontalDraggableComponent>();
+
+        if (interactiveStoryCardComponent != null && storyCardComponent != null
+            && horizontalEscapeComponent != null && horizontalDraggableComponent != null)
+        {
+            interactiveStoryCardComponent.SetOnSwipeLeftAction(() =>
             {
-                tossCoinState.OnSwipeLeft();
+                onSwipeLeft();
+                horizontalEscapeComponent.StartLeftEscapeMovement(
+                    horizontalDraggableComponent.GetCurrentSpeed()
+                );
+                DestroyCard();
             });
 
-            HorizontalDragable.RightSwipeActions.Add(() =>
+            interactiveStoryCardComponent.SetOnSwipeLeftEscapeZoneActions(
+                () => { storyCardComponent.ShowText(isLeftText: true); },
+                () => { storyCardComponent.HideText(); }
+            );
+        }
+    }
+
+    void SetUpOnSwipeRightActions(Action onSwipeRight)
+    {
+        InteractiveStoryCardComponent interactiveStoryCardComponent = GetComponent<InteractiveStoryCardComponent>();
+        StoryCard storyCardComponent = GetComponent<StoryCard>();
+        HorizontalEscapeMovementComponent horizontalEscapeComponent = GetComponent<HorizontalEscapeMovementComponent>();
+        HorizontalDraggableComponent horizontalDraggableComponent = GetComponent<HorizontalDraggableComponent>();
+
+        if (interactiveStoryCardComponent != null && storyCardComponent != null
+            && horizontalEscapeComponent != null && horizontalDraggableComponent != null)
+        {
+            interactiveStoryCardComponent.SetOnSwipeRightAction(() =>
             {
-                tossCoinState.OnSwipeRight();
+                onSwipeRight();
+                horizontalEscapeComponent.StartRightEscapeMovement(
+                    horizontalDraggableComponent.GetCurrentSpeed()
+                );
+                DestroyCard();
             });
+
+            interactiveStoryCardComponent.SetOnSwipeRightEscapeZoneActions(
+                () => { storyCardComponent.ShowText(isLeftText: false); },
+                () => { storyCardComponent.HideText(); }
+            );
         }
     }
 
-    public void EnableCard(bool result) 
+    void DestroyCard()
     {
-        //Oculta resultado
-        UIText.GetComponent<TextMeshProUGUI>().enabled = false;
-
-        Container.SetActive(result);
-    }
-
-    public void ShowCoinResult(int result) 
-    {
-        UIText.GetComponent<TextMeshProUGUI>().enabled = true;
-        if (result == 0)
-        {
-            UIText.GetComponent<TextMeshProUGUI>().text = "HEADS";
-        }
-        else 
-        {
-            UIText.GetComponent<TextMeshProUGUI>().text = "TAILS";
-        }
+        GameUtils.CreateTemporizer(() => { Destroy(gameObject); }, DESTROY_COIN_CARD_DELAY_SECONDS, this);      
     }
 }

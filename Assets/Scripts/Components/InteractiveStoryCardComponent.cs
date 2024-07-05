@@ -23,6 +23,7 @@ public class InteractiveStoryCardComponent : MonoBehaviour
     public void SetOnSwipeLeftAction(Action onSwipeLeftAction)
     {
         DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.LeftSwipeActions.Clear();
             horizontalDraggableComponent.LeftSwipeActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
@@ -36,12 +37,14 @@ public class InteractiveStoryCardComponent : MonoBehaviour
         Action onSwipeLeftEscapeZoneEnterAction, Action onSwipeLeftEscapeZoneExitAction)
     {
         DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.LeftSwipeEscapeZoneEnterActions.Clear();
             horizontalDraggableComponent.LeftSwipeEscapeZoneEnterActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
                     onSwipeLeftEscapeZoneEnterAction();
                 }
             });
+            horizontalDraggableComponent.LeftSwipeEscapeZoneExitActions.Clear();
             horizontalDraggableComponent.LeftSwipeEscapeZoneExitActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
@@ -54,6 +57,7 @@ public class InteractiveStoryCardComponent : MonoBehaviour
     public void SetOnSwipeRightAction(Action onSwipeRightAction)
     {
         DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.RightSwipeActions.Clear();
             horizontalDraggableComponent.RightSwipeActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
@@ -67,12 +71,14 @@ public class InteractiveStoryCardComponent : MonoBehaviour
         Action onSwipeRightEscapeZoneEnterAction, Action onSwipeRightEscapeZoneExitAction)
     {
         DoOnValidDraggableComponents(() => {
+            horizontalDraggableComponent.RightSwipeEscapeZoneEnterActions.Clear();
             horizontalDraggableComponent.RightSwipeEscapeZoneEnterActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {
                     onSwipeRightEscapeZoneEnterAction();
                 }
             });
+            horizontalDraggableComponent.RightSwipeEscapeZoneExitActions.Clear();
             horizontalDraggableComponent.RightSwipeEscapeZoneExitActions.Add(() => {
                 if (horizontalDraggableComponent.enabled)
                 {

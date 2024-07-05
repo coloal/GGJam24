@@ -15,13 +15,17 @@ public enum BrainTag
 //Toma valores int, por defecto es 0, no se puede decrementar por debajo de 0
 public enum NumericTags
 {
+    testViolence,
+    testMoney,
+    testInfluence,
     Keys,
     Bombs,
     Potion,
     Maldad, 
     ConverBabyBoy,
     ConverSmokieGirl,
-    ConverWheelchaired
+    ConverWheelchaired,
+    MOOD
 }
 
 

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatFeedbacksManager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player AttackCardsOnTiePlayer;
     [SerializeField] public MMF_Player ShowEnemyCardsToChooseFromPlayer;
     [SerializeField] public MMF_Player HideEnemyCardsToChooseFromPlayer;
+    [SerializeField] public MMF_Player ShowCoinCardPlayer;
+    [SerializeField] public MMF_Player TossCoinPlayer;
+    [SerializeField] public MMF_Player ShowCoinResultPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -37,6 +41,10 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public AnimCombatExplosionsManagerComponent animCombatExplosionsManager;
     [Header("Attack Cards On Tie")]
     [SerializeField] public float AttackCardsOnTieScaleFactor = 0.25f;
+    [Header("Toss Coin")]
+    [SerializeField] public float SecondsBeforeShowingCoinResult = 1.0f;
+    [SerializeField] private Transform enemyTossCoinPosition;
+    [SerializeField] private Transform playerTossCoinPosition;
     
 
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -412,5 +420,59 @@ public class CombatFeedbacksManager : MonoBehaviour
     public async Task PlayHideEnemyCardsToChooseFrom()
     {
         await HideEnemyCardsToChooseFromPlayer.PlayFeedbacksTask();
+    }
+
+    public async Task PlayShowCoinCard(CoinCard coinCard)
+    {
+        MMF_DestinationTransform moveCoinCardFeedback =
+            ShowCoinCardPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Coin Card"));
+        
+        if (moveCoinCardFeedback != null)
+        {
+            moveCoinCardFeedback.TargetTransform = coinCard.transform;
+
+            await ShowCoinCardPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayTossCoin(CoinComponent coin, CoinFlipResult coinFlipResult)
+    {
+        Transform coinTossPosition = null;
+        switch (UnityEngine.Random.Range(0,2))
+        {
+            case 0:
+                coinTossPosition = playerTossCoinPosition;
+                break;
+            case 1:
+                coinTossPosition = enemyTossCoinPosition;
+                break;
+            default:
+                coinTossPosition = enemyTossCoinPosition;
+                break;
+        }
+
+        MMF_DestinationTransform moveCoinToBoardFeedback =
+            TossCoinPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Coin to Board"));
+        MMF_ImageAlpha resetCoinHeadsAlphaFeedback =
+            TossCoinPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Reset Coin heads alpha"));
+        MMF_ImageAlpha showCoinResultFaceFeedback =
+            ShowCoinResultPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Show Coin Result Face"));
+        MMF_ImageAlpha hideCoinFeedback =
+            ShowCoinResultPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Hide Coin"));
+        
+        if (moveCoinToBoardFeedback != null && resetCoinHeadsAlphaFeedback != null
+            && showCoinResultFaceFeedback != null && hideCoinFeedback != null)
+        {
+            moveCoinToBoardFeedback.Origin = coinTossPosition;
+
+            resetCoinHeadsAlphaFeedback.BoundImage = coin.GetCoinFace(CoinFlipResult.Heads);
+
+            Image coinResultFace = coin.GetCoinFace(coinFlipResult);
+            showCoinResultFaceFeedback.BoundImage = coinResultFace;
+            hideCoinFeedback.BoundImage = coinResultFace;
+        }
+
+        await TossCoinPlayer.PlayFeedbacksTask();
+        await ShowCoinResultPlayer.PlayFeedbacksTask();
     }
 }
