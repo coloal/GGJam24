@@ -67,6 +67,8 @@ public class BrainManager : MonoBehaviour
         {
             BrainStateMap.Add(StateInfo.info[i].Item1, StateInfo.info[i].Item2[0]);
         }
+
+        InitializeMood();
     }
 
     /***** ACTIONS *****/
@@ -111,6 +113,11 @@ public class BrainManager : MonoBehaviour
         return false;
     }
 
+    public void InitializeMood()
+    {
+        BrainNumericMap[NumericTags.MOOD] = 50;
+    }
+
     public void SetNumericTag(NumericTags tag, int value)
     {
         BrainNumericMap[tag] = value;
@@ -121,6 +128,17 @@ public class BrainManager : MonoBehaviour
         if (BrainNumericMap[tag] < 0)
         {
             BrainNumericMap[tag] = 0;
+        }
+
+        //Tiene en cuenta el MOOD para modificarlo en el BrainSoundManager
+        if (tag == NumericTags.MOOD)
+        {
+            if (BrainNumericMap[tag] > 100)
+            {
+                BrainNumericMap[tag] = 100;
+            }
+            GameManager.Instance.ProvideBrainSoundManager().SetMood(value);
+            Debug.Log("Mood actual: " + BrainNumericMap[tag]);
         }
     }
 

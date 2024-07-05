@@ -24,7 +24,8 @@ public enum NumericTags
     Maldad, 
     ConverBabyBoy,
     ConverSmokieGirl,
-    ConverWheelchaired
+    ConverWheelchaired,
+    MOOD
 }
 
 
