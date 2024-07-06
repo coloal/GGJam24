@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform canvas;
 
-    private bool hasToResetGame = false;
+    private bool hasAStoryStarted = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();
 
@@ -55,18 +55,8 @@ public class GameManager : MonoBehaviour
 
     void Start() 
     {
-        StartGame();
+        
     }
-
-    void StartGame()
-    {
-        brainSoundManager.StartGame();
-        if(currentSceneManager != null && currentSceneManager is MainGameSceneManager mainGameSceneManager)
-        {
-            mainGameSceneManager.StartGame();
-        }
-    }
-
 
     public void StartCombat(EnemyTemplate enemy, bool isBossFigth)
     {
@@ -221,17 +211,18 @@ public class GameManager : MonoBehaviour
         brainSoundManager.ChangeZone(brainManager.ZoneInfo.StoryMusicZone);
         brainSoundManager.ResetNess();
         partyManager.ClearParty();
-        SetHasToResetGame(true);
+        inventoryManager.RestInventory();
+        SetHasAStoryStarted(false);
     }
 
-    public bool HasToResetGame()
+    public bool HasAStoryStarted()
     {
-        return hasToResetGame;
+        return hasAStoryStarted;
     }
 
-    public void SetHasToResetGame(bool hasToResetGame)
+    public void SetHasAStoryStarted(bool hasAStoryStarted)
     {
-        this.hasToResetGame = hasToResetGame;
+        this.hasAStoryStarted = hasAStoryStarted;
     }
 
 }

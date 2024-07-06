@@ -27,18 +27,18 @@ public class MainGameSceneManager : BaseSceneManager
     private void Start()
     {
         Init();
-        turnManager.SetZoneSprites();
 
-        if (GameManager.Instance.HasToResetGame())
+        if (!GameManager.Instance.HasAStoryStarted())
         {
-            turnManager.StartTurn();
-            GameManager.Instance.SetHasToResetGame(false);
+            StartStory();
         }
     }
 
-
-    public void StartGame()
+    public void StartStory()
     {
+        GameManager.Instance.SetHasAStoryStarted(true);
+        GameManager.Instance.ProvideBrainSoundManager().StartGame();
+        turnManager.SetZoneSprites();
         turnManager.StartTurn();
     }
 
