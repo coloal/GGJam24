@@ -22,6 +22,10 @@ public class ResultLoseState : CombatState
     {
         // This method should never do something, as the combat design implies
         await ReturnPlayerCardsFromHandToDeck(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         
         PostProcess(combatContext);
     }
@@ -45,6 +49,11 @@ public class ResultLoseState : CombatState
                             cardToReturn: combatCard,
                             combatContext.playerDeck.transform
                         );
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
+
                     combatCard.gameObject.SetActive(false);
                 }
             }

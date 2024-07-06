@@ -26,6 +26,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player ShowCoinCardPlayer;
     [SerializeField] public MMF_Player TossCoinPlayer;
     [SerializeField] public MMF_Player ShowCoinResultPlayer;
+    [SerializeField] public MMF_Player FlipCoinPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -45,8 +46,29 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public float SecondsBeforeShowingCoinResult = 1.0f;
     [SerializeField] private Transform enemyTossCoinPosition;
     [SerializeField] private Transform playerTossCoinPosition;
-    
 
+    void Start()
+    {
+        ShowEnemyCardsTypesHintsFeedbackPlayer.StopFeedbacksOnDisable = true;
+        PlayerDrawCardFromDeckFeedbackPlayer.StopFeedbacksOnDisable = true;
+        DeckFeedbackPlayer.StopFeedbacksOnDisable = true;
+        PlaceCardOnCombatPlayer.StopFeedbacksOnDisable = true;
+        HideCardFromPlayerHandPlayer.StopFeedbacksOnDisable = true;
+        RevealCardPlayer.StopFeedbacksOnDisable = true;
+        AttackCardPlayer.StopFeedbacksOnDisable = true;
+        KillACardPlayer.StopFeedbacksOnDisable = true;
+        MoveCardToTransformPlayer.StopFeedbacksOnDisable = true;
+        MoveCardToTieZonePlayer.StopFeedbacksOnDisable = true;
+        KillACardInTieZonePlayer.StopFeedbacksOnDisable = true;
+        AttackCardsOnTiePlayer.StopFeedbacksOnDisable = true;
+        ShowEnemyCardsToChooseFromPlayer.StopFeedbacksOnDisable = true;
+        HideEnemyCardsToChooseFromPlayer.StopFeedbacksOnDisable = true;
+        ShowCoinCardPlayer.StopFeedbacksOnDisable = true;
+        TossCoinPlayer.StopFeedbacksOnDisable = true;
+        ShowCoinResultPlayer.StopFeedbacksOnDisable = true;
+        FlipCoinPlayer.StopFeedbacksOnDisable = true;
+    }
+    
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
     {
         MMF_DestinationTransform moveCardFromDeckToHandFeedback =
@@ -143,7 +165,10 @@ public class CombatFeedbacksManager : MonoBehaviour
             horizontalFlipFeedback.RemapCurveOne = - cardToPlaceOnCombat.transform.localScale.x * CardOnCombatScaleFactor;
 
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
-            await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
+            if (this != null && !destroyCancellationToken.IsCancellationRequested)
+            {
+                await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
+            }
         }
     }
 
@@ -287,10 +312,13 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
             deckTransform.SetAsLastSibling();
-            await MoveCardToTransformPlayer.PlayFeedbacksTask();
+            if (this != null && !destroyCancellationToken.IsCancellationRequested)
+            {
+                await MoveCardToTransformPlayer.PlayFeedbacksTask();
+            }
 
             DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
-            if (deckBehaviourComponent != null)
+            if (this != null && deckBehaviourComponent != null && !destroyCancellationToken.IsCancellationRequested)
             {
                 deckBehaviourComponent.AddCardToDeck();
                 await DeckFeedbackPlayer.PlayFeedbacksTask();
@@ -473,6 +501,9 @@ public class CombatFeedbacksManager : MonoBehaviour
         }
 
         await TossCoinPlayer.PlayFeedbacksTask();
-        await ShowCoinResultPlayer.PlayFeedbacksTask();
+        if (this != null && !destroyCancellationToken.IsCancellationRequested)
+        {
+            await ShowCoinResultPlayer.PlayFeedbacksTask();
+        }
     }
 }

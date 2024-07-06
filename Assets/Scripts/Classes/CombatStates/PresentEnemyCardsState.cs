@@ -27,6 +27,10 @@ public class PresentEnemyCardsState : CombatState
     {
         SetEnemyCardsCombatTypeHints(combatContext);
         await ShowEnemyCardsCombatTypeHints(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         PostProcess(combatContext);
     }
 

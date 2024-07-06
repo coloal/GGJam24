@@ -11,6 +11,11 @@ public class SplashFeedbacksManager : MonoBehaviour
     [SerializeField] private MMF_Player imageFadeInFadeOutPlayer;
     [SerializeField] private List<Image> imagesToShow;
 
+    void Start()
+    {
+        imageFadeInFadeOutPlayer.StopFeedbacksOnDisable = true;
+    }
+
     public async Task PlayFadeImages()
     {
         MMF_ImageAlpha imageFadeInFadeOutFeedbacks = imageFadeInFadeOutPlayer.GetFeedbackOfType<MMF_ImageAlpha>();
@@ -20,6 +25,10 @@ public class SplashFeedbacksManager : MonoBehaviour
             {
                 imageFadeInFadeOutFeedbacks.BoundImage = imageToShow;
                 await imageFadeInFadeOutPlayer.PlayFeedbacksTask();
+                if (this == null || destroyCancellationToken.IsCancellationRequested)
+                {
+                    return;
+                }
             }
         }
     }

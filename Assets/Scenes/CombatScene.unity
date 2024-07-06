@@ -17409,6 +17409,7 @@ MonoBehaviour:
   ShowCoinCardPlayer: {fileID: 1509066308}
   TossCoinPlayer: {fileID: 1622052580}
   ShowCoinResultPlayer: {fileID: 1318288008}
+  FlipCoinPlayer: {fileID: 316239799}
   CardOnCombatScaleFactor: 1.5
   CardOnTieZoneScaleFactor: 0.65
   PlaceCardOnCombatScaleFactor: 2
