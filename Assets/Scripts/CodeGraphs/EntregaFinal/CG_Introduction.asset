@@ -248,6 +248,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
       portIndex: 2
+  - outputPort:
+      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
+      portIndex: 0
+    inputPort:
+      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -394,8 +400,8 @@ MonoBehaviour:
 
           ///
 
-          I''ll let you
-          handle the confrontation situations though haha'
+          I''ll let you handle
+          the confrontation situations though haha'
         LeftText: Nice, I'm more of an action person
         RightText: Perfect, I'd like you to come with me
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -704,7 +710,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 0}
+        enemy: {fileID: 11400000, guid: bfd9ff4ed417e97429a22337d8bb4e6f, type: 2}
         IsBossFight: 0
     - rid: 3107022144919568403
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
