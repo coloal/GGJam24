@@ -74,6 +74,10 @@ public class PickPlayerCardState : CombatState
                 cardToPlaceOnCombat: cardInHand,
                 onCombatTransform: combatContext.playerOnCombatCardTransform
             );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
 
         PostProcess(combatContext);
     }

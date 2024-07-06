@@ -156,8 +156,10 @@ public class CombatManager : MonoBehaviour
     [SerializeField] public float timeForTossCoin = 0.5f;
     [SerializeField] public float timeForCombatResultsRound = 0.5f;
 
-
     private CombatContext combatContext;
+
+    [HideInInspector] 
+    public bool IsTaskCancellationRequested => destroyCancellationToken.IsCancellationRequested;
 
     void Start()
     {

@@ -38,8 +38,20 @@ public class ResultDrawState : CombatState
     public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         await AttackCards(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         await SendPlayerCombatCardToTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         await SendEnemyCombatCardToTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         PostProcess(combatContext);
     }
 

@@ -24,7 +24,15 @@ public class ShowCardsState : CombatState
         if (enemyCombatCard != null && playerCombatCard != null)
         {
             await RevealCard(enemyCombatCard);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             await RevealCard(playerCombatCard);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
         }
 
         PostProcess(combatContext);
