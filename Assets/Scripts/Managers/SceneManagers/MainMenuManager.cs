@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenuManager : BaseSceneManager
 {
     public void GoToMainGame() {
         SceneManager.LoadScene(ScenesNames.MainGameScene);
