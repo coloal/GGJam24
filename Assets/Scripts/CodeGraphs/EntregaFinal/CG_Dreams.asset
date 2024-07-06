@@ -47,6 +47,14 @@ MonoBehaviour:
   - rid: 1812450422340714520
   - rid: 1812450422340714521
   - rid: 1812450422340714522
+  - rid: 1812450465009893376
+  - rid: 1812450465009893377
+  - rid: 1812450465009893378
+  - rid: 1812450465009893380
+  - rid: 1812450465009893381
+  - rid: 1812450465009893382
+  - rid: 1812450504952774656
+  - rid: 1812450504952774657
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -229,24 +237,6 @@ MonoBehaviour:
       nodeId: 9097b867-6f43-418d-9327-5800529dee61
       portIndex: 1
   - outputPort:
-      nodeId: 9097b867-6f43-418d-9327-5800529dee61
-      portIndex: 0
-    inputPort:
-      nodeId: fa1929b1-78f1-4b8c-9e27-f571358bbcbb
-      portIndex: 2
-  - outputPort:
-      nodeId: 70957ddf-0044-4ff5-9939-20a2aa821478
-      portIndex: 0
-    inputPort:
-      nodeId: fa1929b1-78f1-4b8c-9e27-f571358bbcbb
-      portIndex: 2
-  - outputPort:
-      nodeId: fa1929b1-78f1-4b8c-9e27-f571358bbcbb
-      portIndex: 0
-    inputPort:
-      nodeId: 57f88570-5fbc-4f1f-921b-6e19d6fb5819
-      portIndex: 2
-  - outputPort:
       nodeId: 57f88570-5fbc-4f1f-921b-6e19d6fb5819
       portIndex: 0
     inputPort:
@@ -276,6 +266,96 @@ MonoBehaviour:
     inputPort:
       nodeId: 20752acd-493d-4935-9041-879f1fc84dfb
       portIndex: 1
+  - outputPort:
+      nodeId: 57462b0c-c849-4f71-b1fd-8b522d3d59b1
+      portIndex: 0
+    inputPort:
+      nodeId: 7d32db5f-762a-47a3-873a-24ffb26e656e
+      portIndex: 1
+  - outputPort:
+      nodeId: 20752acd-493d-4935-9041-879f1fc84dfb
+      portIndex: 0
+    inputPort:
+      nodeId: 500659e2-9314-43ab-8b67-2ddd723745a3
+      portIndex: 1
+  - outputPort:
+      nodeId: 4c862ce2-ad1a-4386-9419-a506b67f6b43
+      portIndex: 0
+    inputPort:
+      nodeId: 9f1fd4af-485d-440d-bd2e-4da92e4cbaa7
+      portIndex: 1
+  - outputPort:
+      nodeId: fa1929b1-78f1-4b8c-9e27-f571358bbcbb
+      portIndex: 0
+    inputPort:
+      nodeId: 57f88570-5fbc-4f1f-921b-6e19d6fb5819
+      portIndex: 2
+  - outputPort:
+      nodeId: 9097b867-6f43-418d-9327-5800529dee61
+      portIndex: 0
+    inputPort:
+      nodeId: fa1929b1-78f1-4b8c-9e27-f571358bbcbb
+      portIndex: 2
+  - outputPort:
+      nodeId: 70957ddf-0044-4ff5-9939-20a2aa821478
+      portIndex: 0
+    inputPort:
+      nodeId: fa1929b1-78f1-4b8c-9e27-f571358bbcbb
+      portIndex: 2
+  - outputPort:
+      nodeId: 9f1fd4af-485d-440d-bd2e-4da92e4cbaa7
+      portIndex: 0
+    inputPort:
+      nodeId: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
+      portIndex: 1
+  - outputPort:
+      nodeId: 7d32db5f-762a-47a3-873a-24ffb26e656e
+      portIndex: 0
+    inputPort:
+      nodeId: 24357d97-669d-4ba8-9de7-27504d7b734a
+      portIndex: 1
+  - outputPort:
+      nodeId: 500659e2-9314-43ab-8b67-2ddd723745a3
+      portIndex: 0
+    inputPort:
+      nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
+      portIndex: 1
+  - outputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 0
+    inputPort:
+      nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
+      portIndex: 1
+  - outputPort:
+      nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: 24357d97-669d-4ba8-9de7-27504d7b734a
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
+      portIndex: 0
+    inputPort:
+      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
+      portIndex: 0
+  - outputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 1
+    inputPort:
+      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -297,7 +377,7 @@ MonoBehaviour:
           TagType: 0
           BoolTag: 0
           NewValue: 0
-          NumericTag: 0
+          NumericTag: 4
           Increment: 0
           TagState: 0
           NewState: 0
@@ -319,7 +399,7 @@ MonoBehaviour:
           TagType: 0
           BoolTag: 0
           NewValue: 1
-          NumericTag: 0
+          NumericTag: 4
           Increment: 0
           TagState: 0
           NewState: 0
@@ -648,7 +728,7 @@ MonoBehaviour:
         - Next
         Action:
           TagType: 0
-          BoolTag: 0
+          BoolTag: 4
           NewValue: 0
           NumericTag: 0
           Increment: 1
@@ -670,7 +750,7 @@ MonoBehaviour:
         - Next
         Action:
           TagType: 0
-          BoolTag: 0
+          BoolTag: 4
           NewValue: 0
           NumericTag: 2
           Increment: 1
@@ -716,7 +796,7 @@ MonoBehaviour:
         - Next
         Action:
           TagType: 0
-          BoolTag: 0
+          BoolTag: 4
           NewValue: 0
           NumericTag: 0
           Increment: 1
@@ -738,7 +818,7 @@ MonoBehaviour:
         - Next
         Action:
           TagType: 0
-          BoolTag: 0
+          BoolTag: 4
           NewValue: 0
           NumericTag: 2
           Increment: 1
@@ -786,7 +866,7 @@ MonoBehaviour:
         - Next
         Action:
           TagType: 0
-          BoolTag: 0
+          BoolTag: 4
           NewValue: 0
           NumericTag: 1
           Increment: 1
@@ -808,10 +888,10 @@ MonoBehaviour:
         - Next
         Action:
           TagType: 0
-          BoolTag: 0
+          BoolTag: 4
           NewValue: 0
           NumericTag: 1
-          Increment: 1
+          Increment: 0
           TagState: 0
           NewState: 0
     - rid: 1812450422340714514
@@ -874,18 +954,23 @@ MonoBehaviour:
         guid: 4c862ce2-ad1a-4386-9419-a506b67f6b43
         position:
           serializedVersion: 2
-          x: 8798
-          y: 283
-          width: 321
+          x: 8758
+          y: 282
+          width: 314
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Got money
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+        CardText: 'Ok, buddie. I have your personality test results which conludes
+          that your soul essence in Violence, Money and Power game of cards is of
+          Money type: People born under the essence of Money are inherently drawn
+          to wealth and luxury. They have a natural knack for financial matters,
+          often finding innovative ways to accumulate and manage resources. So as
+          I told you before I have here a reward for you!'
+        LeftText: You can't classify me
+        RightText: Yesss, a reward
+        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
     - rid: 1812450422340714520
       type: {class: NumericConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -918,28 +1003,186 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Got influence
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+        CardText: 'Ok, buddie. I have your personality test results which conludes
+          that your soul essence in Violence, Money and Power game of cards is of
+          Influence type: Individuals born under the essence of Power are natural
+          leaders, exuding confidence. They are driven by a desire to control their
+          surroundings, often rising to positions of great responsibility. So as
+          I told you before I have here a reward for you!'
+        LeftText: You can't classify me
+        RightText: Yesss, a reward
+        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
     - rid: 1812450422340714522
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 20752acd-493d-4935-9041-879f1fc84dfb
         position:
           serializedVersion: 2
-          x: 8525
-          y: 1136
+          x: 8330
+          y: 1234
+          width: 1876
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Ok, buddie. I have your personality test results which conludes
+          that your soul essence in Violence, Money and Power game of cards is of
+          Violence type: Those born under the essence of Violence are intense and
+          passionate, often possessing a fiery temper and a strong will. They are
+          natural warriors, unafraid of conflict and adept at navigating chaotic
+          situations. So as I told you before I have here a reward for you!'
+        LeftText: You can't classify me
+        RightText: Yesss, a reward
+        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
+    - rid: 1812450465009893376
+      type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: 7d32db5f-762a-47a3-873a-24ffb26e656e
+        position:
+          serializedVersion: 2
+          x: 11101
+          y: 823
+          width: 483
+          height: 98
+        typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        combatCard: {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
+    - rid: 1812450465009893377
+      type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: 500659e2-9314-43ab-8b67-2ddd723745a3
+        position:
+          serializedVersion: 2
+          x: 10660
+          y: 1234
+          width: 479
+          height: 98
+        typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        combatCard: {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
+    - rid: 1812450465009893378
+      type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: 9f1fd4af-485d-440d-bd2e-4da92e4cbaa7
+        position:
+          serializedVersion: 2
+          x: 11073
+          y: 282
+          width: 431
+          height: 98
+        typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        combatCard: {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
+    - rid: 1812450465009893380
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
+        position:
+          serializedVersion: 2
+          x: 11841
+          y: 282
+          width: 1991
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: You received a Money card in the Violence, Money, and Power game.
+          This game is used in The Wells to resolve any conflicts among its inhabitants.
+          The more cards of the game you have, the better! This game resembles one
+          that an ancient civilization used to play called Rock, Paper, Scissors,
+          but with cards instead of player's hands and some other rule changes!
+        LeftText: Got it
+        RightText: Useful in the future I guess
+        card: {fileID: 11400000, guid: 7c6e6ff168dafc7429325b4a884f5ec9, type: 2}
+    - rid: 1812450465009893381
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 24357d97-669d-4ba8-9de7-27504d7b734a
+        position:
+          serializedVersion: 2
+          x: 11748
+          y: 823
           width: 321
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Got violence
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+        CardText: You received a Influence card in the Violence, Money, and Power
+          game. This game is used in The Wells to resolve any conflicts among its
+          inhabitants. The more cards of the game you have, the better! This game
+          resembles one that an ancient civilization used to play called Rock, Paper,
+          Scissors, but with cards instead of player's hands and some other rule
+          changes!
+        LeftText: Got it
+        RightText: Useful in the future I guess
+        card: {fileID: 11400000, guid: abad7000132574942bc5fce4c61ff27e, type: 2}
+    - rid: 1812450465009893382
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
+        position:
+          serializedVersion: 2
+          x: 11401
+          y: 1234
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: You received a Violence card in the Violence, Money, and Power
+          game. This game is used in The Wells to resolve any conflicts among its
+          inhabitants. The more cards of the game you have, the better! This game
+          resembles one that an ancient civilization used to play called Rock, Paper,
+          Scissors, but with cards instead of player's hands and some other rule
+          changes!
+        LeftText: Got it
+        RightText: Useful in the future I guess
+        card: {fileID: 11400000, guid: 6556185a37999b347a54c86ba765e139, type: 2}
+    - rid: 1812450504952774656
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d35b761c-29ab-4db6-9b46-4fafabd8f99d
+        position:
+          serializedVersion: 2
+          x: 14376
+          y: 463
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Alarm rings!!! It's time to wake up from your dreams and face your
+          summer!
+        LeftText: Let's go
+        RightText: Can't I sleep 5 minutes more?
+        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
+    - rid: 1812450504952774657
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+        position:
+          serializedVersion: 2
+          x: 14001
+          y: 819
+          width: 191
+          height: 122
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 0
     - rid: 3107022144919568384
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -955,7 +1198,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: It is 7:55 AM on June 22, 2001.  You just finished high school,
+        CardText: It is 7:55 AM on June 22, 5001.  You just finished high school,
           your summer is starting today and you are still in bed, but you have strangely
           set your alarm for 8:00AM. Did you forget turning it off before going to
           sleep?
@@ -968,8 +1211,8 @@ MonoBehaviour:
         guid: 8c373f08-e17b-404f-b714-f29a8ae8f611
         position:
           serializedVersion: 2
-          x: 9308
-          y: 525
+          x: 15209
+          y: 844
           width: 383
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,

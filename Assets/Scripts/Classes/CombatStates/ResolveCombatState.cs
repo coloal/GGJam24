@@ -109,10 +109,21 @@ public class ResolveCombatState : CombatState
         switch (combatResult)
         {
             case CombatResult.PlayerWon:
+                CombatTypes PlayerType = combatContext.playerOnCombatCard.GetComponent<CombatCard>().GetCombatType();
+                GameManager.Instance.ProvideBrainManager().SetTypeLasWinnerCard(PlayerType);
+                
                 return await ProcessPlayerWonState(combatContext);
+
             case CombatResult.EnemyWon:
+                CombatTypes EnemyType = combatContext.enemyOnCombatCard.GetComponent<CombatCard>().GetCombatType();
+                GameManager.Instance.ProvideBrainManager().SetTypeLasWinnerCard(EnemyType);
+
                 return await ProcessEnemyWonState(combatContext);
+
             case CombatResult.Draw:
+                CombatTypes DrawType = combatContext.enemyOnCombatCard.GetComponent<CombatCard>().GetCombatType();
+                GameManager.Instance.ProvideBrainManager().SetTypeLasWinnerCard(DrawType);
+
                 return new ResultDrawState();
             default:
                 break;

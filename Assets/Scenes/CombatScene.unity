@@ -6460,8 +6460,8 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 667495227}
               m_TargetAssemblyTypeName: BrainSoundManager, Assembly-CSharp
-              m_MethodName: PlaySFX
-              m_Mode: 5
+              m_MethodName: PlayCombatSFX
+              m_Mode: 1
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
                 m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8622,7 +8622,7 @@ MonoBehaviour:
   debugDeck:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
 --- !u!1 &956305255
 GameObject:
   m_ObjectHideFlags: 0
@@ -13038,8 +13038,8 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 667495227}
               m_TargetAssemblyTypeName: BrainSoundManager, Assembly-CSharp
-              m_MethodName: PlaySFX
-              m_Mode: 5
+              m_MethodName: PlayCombatSFX
+              m_Mode: 1
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
                 m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
