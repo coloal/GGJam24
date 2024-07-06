@@ -47,7 +47,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] private Transform enemyTossCoinPosition;
     [SerializeField] private Transform playerTossCoinPosition;
 
-    void OnEnable()
+    void Start()
     {
         ShowEnemyCardsTypesHintsFeedbackPlayer.StopFeedbacksOnDisable = true;
         PlayerDrawCardFromDeckFeedbackPlayer.StopFeedbacksOnDisable = true;

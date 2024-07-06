@@ -13,6 +13,10 @@ public class SplashScreenManager : BaseSceneManager
     {
         Init();
         await splashFeedbacksManager.PlayFadeImages();
+        if (this == null || destroyCancellationToken.IsCancellationRequested)
+        {
+            return;
+        }
 
         GameUtils.CreateTemporizer(() => 
         { 
