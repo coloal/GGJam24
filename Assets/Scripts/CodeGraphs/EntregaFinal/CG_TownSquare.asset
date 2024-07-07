@@ -43,6 +43,7 @@ MonoBehaviour:
   - rid: 1812450529966030888
   - rid: 1812450529966030889
   - rid: 1812450529966030890
+  - rid: 1812450529966030891
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -195,12 +196,6 @@ MonoBehaviour:
       nodeId: ee21e241-57f8-4684-90cf-64079bdcf6ae
       portIndex: 2
   - outputPort:
-      nodeId: b816a757-4e1a-4047-9468-2117a9fbd7df
-      portIndex: 0
-    inputPort:
-      nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
-      portIndex: 2
-  - outputPort:
       nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
       portIndex: 1
     inputPort:
@@ -266,6 +261,24 @@ MonoBehaviour:
     inputPort:
       nodeId: b31b38e9-581c-4ab0-8d23-4b71dd22568e
       portIndex: 2
+  - outputPort:
+      nodeId: f5278139-e216-420f-89c5-5d1c2c3f56be
+      portIndex: 0
+    inputPort:
+      nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
+      portIndex: 2
+  - outputPort:
+      nodeId: b816a757-4e1a-4047-9468-2117a9fbd7df
+      portIndex: 0
+    inputPort:
+      nodeId: f7ef3157-61aa-4553-8677-e79fcae4d355
+      portIndex: 1
+  - outputPort:
+      nodeId: f7ef3157-61aa-4553-8677-e79fcae4d355
+      portIndex: 0
+    inputPort:
+      nodeId: f5278139-e216-420f-89c5-5d1c2c3f56be
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -275,10 +288,10 @@ MonoBehaviour:
         guid: b816a757-4e1a-4047-9468-2117a9fbd7df
         position:
           serializedVersion: 2
-          x: 248
-          y: 456
-          width: 0
-          height: 0
+          x: -686
+          y: 401
+          width: 81
+          height: 77
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -289,8 +302,8 @@ MonoBehaviour:
         guid: f5278139-e216-420f-89c5-5d1c2c3f56be
         position:
           serializedVersion: 2
-          x: -568
-          y: 669
+          x: 95
+          y: 401
           width: 314
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -299,8 +312,8 @@ MonoBehaviour:
         - Left
         - Right
         CardText: "Aqu\xED va una bool condition"
-        LeftText: "Primera vez que paso por aqu\xED"
-        RightText: "Segunda vez que paso por aqu\xED"
+        LeftText: No he pasado por Gas Station
+        RightText: Ya he pasado Gas Station
         card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
     - rid: 1812450529966030852
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -868,3 +881,25 @@ MonoBehaviour:
         LeftText: Nah, let's go talk to the truck driver
         RightText: Yes, let's see who else we can play against
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450529966030891
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f7ef3157-61aa-4553-8677-e79fcae4d355
+        position:
+          serializedVersion: 2
+          x: -514
+          y: 401
+          width: 356
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 3
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
