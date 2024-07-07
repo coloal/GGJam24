@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartCombatState : CombatState
+public class StartTutorial : CombatState
 {
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
@@ -23,7 +23,7 @@ public class StartCombatState : CombatState
         PostProcess(combatContext);
     }
 
-    protected virtual void SetUpPlayerDeck(CombatManager.CombatContext combatContext)
+    void SetUpPlayerDeck(CombatManager.CombatContext combatContext)
     {
         InventoryManager inventoryManager = GameManager.Instance.ProvideInventoryManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -48,7 +48,7 @@ public class StartCombatState : CombatState
         });
     }
 
-    virtual protected void SetUpEnemyDeck(CombatManager.CombatContext combatContext)
+    void SetUpEnemyDeck(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         

@@ -16,6 +16,9 @@ public class BrainManager : MonoBehaviour
 
     public static BrainManager Instance;
 
+    private bool isTutorial = true;
+    public bool IsTutorial => isTutorial;
+        
     public ZoneTemplate ZoneInfo => zoneInfo;
 
     [HideInInspector]public bool bIsBossFight;

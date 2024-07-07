@@ -78,7 +78,7 @@ public class PresentPlayerCardsState : CombatState
         }
     }
 
-    async Task DrawCardFromDeckToHand(CombatManager.CombatContext combatContext, int cardsToDraw)
+    protected async Task DrawCardFromDeckToHand(CombatManager.CombatContext combatContext, int cardsToDraw)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         CombatFeedbacksManager combatFeedbacksManager = CombatSceneManager.Instance.ProvideCombatFeedbacksManager();

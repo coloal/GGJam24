@@ -30,7 +30,7 @@ public class PresentEnemyCardsState : CombatState
         PostProcess(combatContext);
     }
 
-    void SetEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
+    protected void SetEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
 

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f503774cf0d894180438e6811eb43d, type: 3}
+  m_Name: TutorialInfoTemplate
+  m_EditorClassIdentifier: 
+  tutorialDeck:
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
+  - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
+  tutorialEnemy: {fileID: 11400000, guid: f1b05c1469b62ce4aa2b734f2fb0a4bd, type: 2}
+  initialConversation:
+  - Bienvenido al combate!
+  - "Aqui tendr\xE1s que combatir contra tus enemigos que te ir\xE1s encontrando
+    a lo largo de tu aventura"
+  - Este combate se realizara por turnos, y tendras que utiolizar cartas para vencer
+    al rival
+  - Primero veamos las cartas que vas a poder usar para desintegrar a tus enemigos
+  cardExplanation:
+  - "Aqui tenemos los tres tipos de cartas que te podr\xE1s encontrar durante tu
+    viaje"
+  - 'Los tipos se diferencian por colores, y hay tres: Azul, Verde y Rojo'
+  - Esto hay que hacerlo en ingles
+  enemyCardExplanationPreShow:
+  - Explicacion cartas pre
+  - Explicacion cartas pre_1
+  enemyCardExplanationWhileShow:
+  - Explicacion cartas while_
+  - AAAAAAAAAAAAAAAA
+  enemyPlaysCardExplanationViolenceWin:
+  - First the enemy (me) has to play a card. You wont be able to see what card the
+    enemies pick
+  - But this is the tutorial....
+  - ok... im telling you what cards im picking
+  - Im gonna play a violence card
+  playerPlaysCardExplanationInfluenceWin:
+  - Ok so now its your turn!
+  - You will have to pick one of your cards to figth with mine
+  - Remember, you normally wouldnt know which card i picked
+  - Now pick your Influence card to win the exchange
+  enemyPlaysCardExplanationViolenceLose:
+  - Im gonna play a Violence card
+  playerPlaysCardExplanationMoneyLose:
+  - Now pick your wealth card to lose the exchange
+  enemyPlaysCardExplanationMoneyDraw:
+  - Im gonna play a Wealth card
+  playerPlaysCardExplanationMoneyDraw:
+  - Now pick your wealth card to draw the exchange
+  enemyPlaysCardExplanationInfluenceDraw:
+  - Im gonna play an Influence card
+  playerPlaysCardExplanationInfluenceDraw:
+  - Now pick your influence card to draw again the exchange
+  enemyPlaysCardExplanationViolenceDraw:
+  - Im gonna play a Violence card
+  playerPlaysCardExplanationViolenceDraw:
+  - Now pick your violence card to draw again the exchange
+  winExplanation:
+  - You have won the exchange, as an influence card beats my Violence Card
+  - Now your card will return to your deck, and my card will be destroyed
+  loseExplanation:
+  - You have lost thje exchange
+  - Your card will now be destroyed and mine will return to my hand
+  drawExplanationFirst:
+  - Our cards have tied the exchange as the typoe of both are the same
+  - Both cards will be put apart until someone wins the exchange
+  drawExplanationSecond: []
+  drawExplanationThird: []
+  coinExplanation: []

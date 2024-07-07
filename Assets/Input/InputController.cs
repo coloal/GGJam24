@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class InputController : MonoBehaviour
 {
     private Vector2 MousePosition;
-
     [SerializeField]
     private Camera gameCamera;
     public void OnLeftClickRay() 

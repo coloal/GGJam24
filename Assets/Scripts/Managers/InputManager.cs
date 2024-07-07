@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
-
+    public static InputManager GameInputManager => GameManager.Instance.ProvideInputManager();
     public delegate void OnClickEvent();
     public event OnClickEvent onClickEvent;
 

@@ -1,0 +1,49 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using UnityEngine;
+
+public class PresentEnemyCardsTutorialState : PresentEnemyCardsState
+{
+    public override void PostProcess(CombatManager.CombatContext combatContext)
+    {
+        combatContext.CleanEnemyCardsContainer();
+        combatContext.DeactivateEnemyCardsContainer();
+
+        CombatUtils.ProcessNextStateAfterSeconds(
+            nextState: new PickEnemyCardTutorialState(),
+            seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPresentPlayerCards
+        );
+    }
+
+    public override void Preprocess(CombatManager.CombatContext combatContext)
+    {
+        combatContext.ActivateEnemyCardsContainer();
+    }
+
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
+    {
+        TutorialManager.SceneTutorial.StartEnemyCardExplanationPreShow(async () =>
+        {
+            SetEnemyCardsCombatTypeHints(combatContext);
+            await ShowEnemyCardsCombatTypeHints(combatContext);
+            TutorialManager.SceneTutorial.StartEnemyCardExplanationWhileShow(() =>
+            {
+                PostProcess(combatContext);
+            });
+        });   
+    }
+
+  
+    async Task ShowEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
+    {
+        float showHintsTime = CombatSceneManager.Instance.ProvideEnemyData().ShowHintsTimeInSeconds;
+
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayShowEnemyCardsTypesHints(
+                pauseTime: showHintsTime
+            );
+    }
+}

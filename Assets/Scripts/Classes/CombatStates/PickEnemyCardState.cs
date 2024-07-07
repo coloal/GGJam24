@@ -25,7 +25,7 @@ public class PickEnemyCardState : CombatState
         await PickAnEnemyCard(combatContext);
     }
 
-    async Task PickAnEnemyCard(CombatManager.CombatContext combatContext)
+    async protected Task PickAnEnemyCard(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         

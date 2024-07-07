@@ -163,7 +163,7 @@ public class CombatManager : MonoBehaviour
         SetUpManagers();
         InitEnemyInfo();
         InitCombatContext();
-        ProcessCombat(new StartCombatState());
+        ProcessCombat(GameManager.Instance.ProvideBrainManager().IsTutorial ? new StartTutorialState() : new StartCombatState());
     }
 
     void InitEnemyInfo()

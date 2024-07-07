@@ -11,6 +11,7 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] PlayerDeckManager playerDeckManager;
     [SerializeField] EnemyDeckManager enemyDeckManager;
     [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
+    [SerializeField] TutorialManager tutorialManager;
 
     [Header("Debug configurations")]
     [SerializeField] private bool isDebugging = false;
@@ -37,6 +38,11 @@ public class CombatSceneManager : BaseSceneManager
     public CombatManager ProvideCombatManager()
     {
         return combatManager;
+    }
+
+    public TutorialManager ProvideTutorialManager()
+    {
+        return tutorialManager;
     }
 
     public PlayerDeckManager ProvidePlayerDeckManager()
