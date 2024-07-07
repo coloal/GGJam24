@@ -139,7 +139,7 @@ public class BrainManager : MonoBehaviour
             {
                 BrainNumericMap[tag] = 100;
             }
-            GameManager.Instance.ProvideBrainSoundManager().SetMood(value);
+            GameManager.Instance.ProvideSoundManager().SetMood(value);
             Debug.Log("Mood actual: " + BrainNumericMap[tag]);
         }
     }

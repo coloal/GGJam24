@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 12272434}
   - component: {fileID: 12272433}
+  - component: {fileID: 12272435}
   m_Layer: 0
-  m_Name: BrainSoundManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +160,7 @@ MonoBehaviour:
   CombatSoundsEventPath: event:/SFX/CombatSounds
   CardSoundsEventPath: event:/SFX/SwitchCard
   StepsEventPath: event:/SFX/Steps
+  SoundEvents: {fileID: 0}
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
 --- !u!4 &12272434
@@ -176,6 +178,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12272435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12272432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ef040e7b655c245802ca7832f279bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &187560162
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,17 +313,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
---- !u!114 &686396485 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
-  m_PrefabInstance: {fileID: 686396484}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d3a0d3303e3cd84e9317b7aba19c59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &738218457
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyCardPrefab: {fileID: 2960121501592178493, guid: 0ac5ec62a8279fc46bd169a75078a7e7, type: 3}
+  cardsContainerTransform: {fileID: 0}
   cardsSpawnerOrigin: {fileID: 187560163}
   cardsFinalPosition: {fileID: 1682112886}
 --- !u!4 &1085958633
@@ -833,11 +837,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9e19440bdb741d19a8ac3f7f6459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioManager: {fileID: 0}
-  BrainManager: {fileID: 686396485}
-  BrainSoundManager: {fileID: 12272433}
-  StoryManager: {fileID: 979989386}
-  PartyManager: {fileID: 738218458}
+  inputManager: {fileID: 0}
+  brainManager: {fileID: 0}
+  soundManager: {fileID: 0}
+  storyManager: {fileID: 0}
+  partyManager: {fileID: 0}
+  inventoryManager: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!4 &1987585452
 Transform:
   m_ObjectHideFlags: 0
@@ -919,7 +925,7 @@ SpriteRenderer:
   m_Size: {x: 18, y: 10.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2025265671

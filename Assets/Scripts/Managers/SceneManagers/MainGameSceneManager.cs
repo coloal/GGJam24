@@ -37,7 +37,7 @@ public class MainGameSceneManager : BaseSceneManager
     public void StartStory()
     {
         GameManager.Instance.SetHasAStoryStarted(true);
-        GameManager.Instance.ProvideBrainSoundManager().StartGame();
+        GameManager.Instance.ProvideSoundManager().StartGame();
         turnManager.SetZoneSprites();
         turnManager.StartTurn();
     }

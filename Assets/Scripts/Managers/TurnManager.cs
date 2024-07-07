@@ -91,7 +91,7 @@ public class TurnManager : MonoBehaviour
             else
             {
                 GameManager.Instance.ProvideBrainManager().ChangeZone(zoneStep.Zone);
-                GameManager.Instance.ProvideBrainSoundManager().ChangeZone(zoneStep.Zone.StoryMusicZone);
+                GameManager.Instance.ProvideSoundManager().ChangeZone(zoneStep.Zone.StoryMusicZone);
 
                 TransitionToZone(zoneStep.Zone);
             }
@@ -123,7 +123,7 @@ public class TurnManager : MonoBehaviour
         }, 1 + waitTimeBetweenTransition, this);
         GameUtils.CreateTemporizer(() =>
         {
-            GameManager.Instance.ProvideBrainSoundManager().ChangeZone(zoneInfo.StoryMusicZone);
+            GameManager.Instance.ProvideSoundManager().ChangeZone(zoneInfo.StoryMusicZone);
             StartTurn();
             Destroy(instantedAnimator.gameObject);
         }, 2 + waitTimeBetweenTransition, this);
@@ -141,7 +141,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
-        GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Left);
+        GameManager.Instance.ProvideSoundManager().PlayCardSound(CardSounds.Left);
         StoryManager.SwipeLeft();
     }
 
@@ -152,7 +152,7 @@ public class TurnManager : MonoBehaviour
             DestroyCard();
         }
         GameUtils.CreateTemporizer(() => StartTurn(), 0.5f, this);
-        GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Right);
+        GameManager.Instance.ProvideSoundManager().PlayCardSound(CardSounds.Right);
         StoryManager.SwipeRight();
     }
 

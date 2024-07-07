@@ -105,11 +105,11 @@ public class CardsManager : MonoBehaviour
 
             if (!nextCard.NameOfCard.Equals("Mobile Phone"))
             {
-                GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Center);
+                GameManager.Instance.ProvideSoundManager().PlayCardSound(CardSounds.Center);
             }
             else
             {
-                GameManager.Instance.ProvideBrainSoundManager().PlayCardSound(CardSounds.Phone);
+                GameManager.Instance.ProvideSoundManager().PlayCardSound(CardSounds.Phone);
             }
 
         }

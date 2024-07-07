@@ -16,7 +16,7 @@ namespace CodeGraph
 
         public override string OnNextNode(CodeGraphAsset graphAsset, TurnResult turnResult)
         {
-            GameManager.Instance.ProvideBrainSoundManager().ExecuteSoundAction(Parameters);
+            GameManager.Instance.ProvideSoundManager().ExecuteSoundAction(Parameters);
 
 
             //Avanza al siguiente nodo

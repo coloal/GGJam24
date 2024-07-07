@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class BrainSoundManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
     /***** CONST *****/
 
@@ -50,7 +50,7 @@ public class BrainSoundManager : MonoBehaviour
     private FMOD.Studio.EventInstance StepsInstance;
 
 
-    public static BrainSoundManager Instance;
+    public static SoundManager Instance;
 
     /***** INITIALIZE *****/
     void Awake()
