@@ -1218,7 +1218,7 @@ MonoBehaviour:
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs: []
-        newStory: {fileID: 11400000, guid: bc2488a36df7f3f4bb3ea433b89afb7c, type: 2}
+        newStory: {fileID: 11400000, guid: 3599129ab758a294baf7756b997d9fa7, type: 2}
         restartNewStory: 0
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
