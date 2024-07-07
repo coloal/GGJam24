@@ -32,10 +32,18 @@ public class PresentPlayerCardsState : CombatState
         int cardsToDraw = Mathf.Min(availableCardsToDraw, cardsLeftToFillHand);
     
         await MakeSpaceInHandForNewCards(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         
         if (cardsToDraw > 0)
         {
             await DrawCardFromDeckToHand(combatContext, cardsToDraw);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             PostProcess(combatContext);
         }
         else if (playerDeckManager.GetNumberOfCardsInHand() > 0)
@@ -73,6 +81,10 @@ public class PresentPlayerCardsState : CombatState
                             cardToMove: combatCardToMove,
                             playerCardInHandContainers[i]
                         );
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
                 }
             }
         }
@@ -101,6 +113,10 @@ public class PresentPlayerCardsState : CombatState
                 playerDeck: combatContext.playerDeck,
                 cardInHandPosition: firstAvailbalePositionInHand
             );
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
         }
     }
 }

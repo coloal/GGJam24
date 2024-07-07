@@ -88,4 +88,10 @@ public class InventoryManager : MonoBehaviour
         // return deck.Count;
         return debugDeck.Count;
     }
+
+    public void RestInventory()
+    {
+        cardsVault.Clear();
+        deck.Clear();
+    }
 }

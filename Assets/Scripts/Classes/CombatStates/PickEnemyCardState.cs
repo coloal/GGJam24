@@ -45,6 +45,10 @@ public class PickEnemyCardState : CombatState
                 cardToPlaceOnCombat: enemyCombatCard,
                 onCombatTransform: combatContext.enemyOnCombatCardFinalPosition
             );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
 
         PostProcess(combatContext);
     }

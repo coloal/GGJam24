@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
+  m_Name: CreditsGraph
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 8580623337150218298
+  - rid: 4179187765362819073
+  - rid: 4179187765362819075
+  - rid: 4179187765362819076
+  - rid: 4179187765362819077
+  - rid: 4179187765362819079
+  - rid: 4179187765362819080
+  - rid: 4179187765362819081
+  - rid: 4179187765362819082
+  - rid: 4179187765362819083
+  - rid: 4179187765362819084
+  connections:
+  - outputPort:
+      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+      portIndex: 0
+    inputPort:
+      nodeId: 1d744f80-0b66-43b9-8083-acab6ba1c207
+      portIndex: 1
+  - outputPort:
+      nodeId: 1d744f80-0b66-43b9-8083-acab6ba1c207
+      portIndex: 0
+    inputPort:
+      nodeId: ad4fae1f-879b-439d-8452-12980e4c176f
+      portIndex: 1
+  - outputPort:
+      nodeId: ad4fae1f-879b-439d-8452-12980e4c176f
+      portIndex: 0
+    inputPort:
+      nodeId: e7a41628-1d41-4657-a5c0-d9ec92422672
+      portIndex: 1
+  - outputPort:
+      nodeId: e7a41628-1d41-4657-a5c0-d9ec92422672
+      portIndex: 0
+    inputPort:
+      nodeId: 93b39a96-c7eb-4f35-bfe1-591266d785dd
+      portIndex: 1
+  - outputPort:
+      nodeId: 93b39a96-c7eb-4f35-bfe1-591266d785dd
+      portIndex: 0
+    inputPort:
+      nodeId: 3c040294-e7f6-450a-a5c0-e663f8ea9608
+      portIndex: 1
+  - outputPort:
+      nodeId: 3c040294-e7f6-450a-a5c0-e663f8ea9608
+      portIndex: 0
+    inputPort:
+      nodeId: 01124e46-a380-4014-b928-faecbe4255c8
+      portIndex: 1
+  - outputPort:
+      nodeId: 01124e46-a380-4014-b928-faecbe4255c8
+      portIndex: 0
+    inputPort:
+      nodeId: 335387dd-133d-4811-9346-17fd83f892dd
+      portIndex: 1
+  - outputPort:
+      nodeId: 335387dd-133d-4811-9346-17fd83f892dd
+      portIndex: 0
+    inputPort:
+      nodeId: 12ce954c-057e-413b-8d86-8f23aad35e71
+      portIndex: 1
+  - outputPort:
+      nodeId: 12ce954c-057e-413b-8d86-8f23aad35e71
+      portIndex: 0
+    inputPort:
+      nodeId: 3475e163-5746-4825-9adc-b421dd21cc44
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 4179187765362819073
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3475e163-5746-4825-9adc-b421dd21cc44
+        position:
+          serializedVersion: 2
+          x: 3024.8
+          y: -66.4
+          width: 74.3999
+          height: 76.8
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 4179187765362819075
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1d744f80-0b66-43b9-8083-acab6ba1c207
+        position:
+          serializedVersion: 2
+          x: -217.6
+          y: -67.2
+          width: 330.4
+          height: 240.8
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Alberto - Narrative Design
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
+    - rid: 4179187765362819076
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ad4fae1f-879b-439d-8452-12980e4c176f
+        position:
+          serializedVersion: 2
+          x: 173.59999
+          y: -66.4
+          width: 322.4
+          height: 240.8
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Alvaro - Combat Design & Art
+
+          Quien quiere un perro
+          /gato pudiendo tener un Mudkip'
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187765362819077
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e7a41628-1d41-4657-a5c0-d9ec92422672
+        position:
+          serializedVersion: 2
+          x: 563.2
+          y: -64
+          width: 322.40002
+          height: 240.8
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Lucia - Combat Design & Art
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187765362819079
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 754e45ba-0f97-44e4-b23c-00353dd2311f
+        position:
+          serializedVersion: 2
+          x: -452
+          y: -173.59999
+          width: 292.80002
+          height: 97.59999
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 0}
+    - rid: 4179187765362819080
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 93b39a96-c7eb-4f35-bfe1-591266d785dd
+        position:
+          serializedVersion: 2
+          x: 989.60004
+          y: -69.600006
+          width: 322.40002
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Aquaxtic - Art
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187765362819081
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3c040294-e7f6-450a-a5c0-e663f8ea9608
+        position:
+          serializedVersion: 2
+          x: 1413.6
+          y: -65.600006
+          width: 322.40002
+          height: 240.79999
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187765362819082
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 01124e46-a380-4014-b928-faecbe4255c8
+        position:
+          serializedVersion: 2
+          x: 1834.3999
+          y: -67.2
+          width: 322.40015
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187765362819083
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 335387dd-133d-4811-9346-17fd83f892dd
+        position:
+          serializedVersion: 2
+          x: 2220.8
+          y: -68
+          width: 322.3999
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187765362819084
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 12ce954c-057e-413b-8d86-8f23aad35e71
+        position:
+          serializedVersion: 2
+          x: 2611.2
+          y: -65.600006
+          width: 322.3999
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 8580623337150218298
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+        position:
+          serializedVersion: 2
+          x: -531
+          y: -64
+          width: 81
+          height: 77
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next

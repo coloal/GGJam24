@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
+  m_Name: CG_GasStation
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 1812450529966030856
+  - rid: 1812450529966030857
+  - rid: 1812450529966030858
+  - rid: 1812450529966030859
+  - rid: 1812450529966030860
+  connections: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1812450529966030856
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 651e9266-4ec7-4de2-aa4a-624037d6faa2
+        position:
+          serializedVersion: 2
+          x: -219
+          y: 280
+          width: 81
+          height: 77
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+    - rid: 1812450529966030857
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9b259aaf-550d-49bf-a24f-01e39c0912e9
+        position:
+          serializedVersion: 2
+          x: 528
+          y: 280
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: b878eace77736a7408efaf06d20d9398, type: 2}
+    - rid: 1812450529966030858
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f2310677-5de3-41b8-8c91-e2d9b67a8b30
+        position:
+          serializedVersion: 2
+          x: 1104
+          y: 280
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
+    - rid: 1812450529966030859
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9467c85e-b8e9-452c-be3c-ea2aa8f5560a
+        position:
+          serializedVersion: 2
+          x: 1752
+          y: 290
+          width: 383
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 9ae16110b6c520f43ba4deeae2035cad, type: 2}
+    - rid: 1812450529966030860
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 972ec847-9120-43e9-9438-8934890ec443
+        position:
+          serializedVersion: 2
+          x: 11
+          y: 280
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 3a354c5dac29897459c6e9578e344325, type: 2}

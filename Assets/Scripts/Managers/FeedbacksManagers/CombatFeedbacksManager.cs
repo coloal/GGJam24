@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MoreMountains.Feedbacks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatFeedbacksManager : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player ShowEnemyCardsToChooseFromPlayer;
     [SerializeField] public MMF_Player HideEnemyCardsToChooseFromPlayer;
     [SerializeField] public MMF_Player ShowCoinCardPlayer;
+    [SerializeField] public MMF_Player TossCoinPlayer;
+    [SerializeField] public MMF_Player ShowCoinResultPlayer;
+    [SerializeField] public MMF_Player FlipCoinPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -38,8 +42,33 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public AnimCombatExplosionsManagerComponent animCombatExplosionsManager;
     [Header("Attack Cards On Tie")]
     [SerializeField] public float AttackCardsOnTieScaleFactor = 0.25f;
-    
+    [Header("Toss Coin")]
+    [SerializeField] public float SecondsBeforeShowingCoinResult = 1.0f;
+    [SerializeField] private Transform enemyTossCoinPosition;
+    [SerializeField] private Transform playerTossCoinPosition;
 
+    void Start()
+    {
+        ShowEnemyCardsTypesHintsFeedbackPlayer.StopFeedbacksOnDisable = true;
+        PlayerDrawCardFromDeckFeedbackPlayer.StopFeedbacksOnDisable = true;
+        DeckFeedbackPlayer.StopFeedbacksOnDisable = true;
+        PlaceCardOnCombatPlayer.StopFeedbacksOnDisable = true;
+        HideCardFromPlayerHandPlayer.StopFeedbacksOnDisable = true;
+        RevealCardPlayer.StopFeedbacksOnDisable = true;
+        AttackCardPlayer.StopFeedbacksOnDisable = true;
+        KillACardPlayer.StopFeedbacksOnDisable = true;
+        MoveCardToTransformPlayer.StopFeedbacksOnDisable = true;
+        MoveCardToTieZonePlayer.StopFeedbacksOnDisable = true;
+        KillACardInTieZonePlayer.StopFeedbacksOnDisable = true;
+        AttackCardsOnTiePlayer.StopFeedbacksOnDisable = true;
+        ShowEnemyCardsToChooseFromPlayer.StopFeedbacksOnDisable = true;
+        HideEnemyCardsToChooseFromPlayer.StopFeedbacksOnDisable = true;
+        ShowCoinCardPlayer.StopFeedbacksOnDisable = true;
+        TossCoinPlayer.StopFeedbacksOnDisable = true;
+        ShowCoinResultPlayer.StopFeedbacksOnDisable = true;
+        FlipCoinPlayer.StopFeedbacksOnDisable = true;
+    }
+    
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
     {
         MMF_DestinationTransform moveCardFromDeckToHandFeedback =
@@ -136,7 +165,10 @@ public class CombatFeedbacksManager : MonoBehaviour
             horizontalFlipFeedback.RemapCurveOne = - cardToPlaceOnCombat.transform.localScale.x * CardOnCombatScaleFactor;
 
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
-            await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
+            if (this != null && !destroyCancellationToken.IsCancellationRequested)
+            {
+                await PlayPlaceCardOnCombat(cardToPlaceOnCombat, onCombatTransform);
+            }
         }
     }
 
@@ -280,10 +312,13 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             await HideCardFromPlayerHandPlayer.PlayFeedbacksTask();
             deckTransform.SetAsLastSibling();
-            await MoveCardToTransformPlayer.PlayFeedbacksTask();
+            if (this != null && !destroyCancellationToken.IsCancellationRequested)
+            {
+                await MoveCardToTransformPlayer.PlayFeedbacksTask();
+            }
 
             DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
-            if (deckBehaviourComponent != null)
+            if (this != null && deckBehaviourComponent != null && !destroyCancellationToken.IsCancellationRequested)
             {
                 deckBehaviourComponent.AddCardToDeck();
                 await DeckFeedbackPlayer.PlayFeedbacksTask();
@@ -425,6 +460,50 @@ public class CombatFeedbacksManager : MonoBehaviour
             moveCoinCardFeedback.TargetTransform = coinCard.transform;
 
             await ShowCoinCardPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayTossCoin(CoinComponent coin, CoinFlipResult coinFlipResult)
+    {
+        Transform coinTossPosition = null;
+        switch (UnityEngine.Random.Range(0,2))
+        {
+            case 0:
+                coinTossPosition = playerTossCoinPosition;
+                break;
+            case 1:
+                coinTossPosition = enemyTossCoinPosition;
+                break;
+            default:
+                coinTossPosition = enemyTossCoinPosition;
+                break;
+        }
+
+        MMF_DestinationTransform moveCoinToBoardFeedback =
+            TossCoinPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move Coin to Board"));
+        MMF_ImageAlpha resetCoinHeadsAlphaFeedback =
+            TossCoinPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Reset Coin heads alpha"));
+        MMF_ImageAlpha showCoinResultFaceFeedback =
+            ShowCoinResultPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Show Coin Result Face"));
+        MMF_ImageAlpha hideCoinFeedback =
+            ShowCoinResultPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Hide Coin"));
+        
+        if (moveCoinToBoardFeedback != null && resetCoinHeadsAlphaFeedback != null
+            && showCoinResultFaceFeedback != null && hideCoinFeedback != null)
+        {
+            moveCoinToBoardFeedback.Origin = coinTossPosition;
+
+            resetCoinHeadsAlphaFeedback.BoundImage = coin.GetCoinFace(CoinFlipResult.Heads);
+
+            Image coinResultFace = coin.GetCoinFace(coinFlipResult);
+            showCoinResultFaceFeedback.BoundImage = coinResultFace;
+            hideCoinFeedback.BoundImage = coinResultFace;
+        }
+
+        await TossCoinPlayer.PlayFeedbacksTask();
+        if (this != null && !destroyCancellationToken.IsCancellationRequested)
+        {
+            await ShowCoinResultPlayer.PlayFeedbacksTask();
         }
     }
 }

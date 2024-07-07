@@ -26,6 +26,10 @@ public class ResultWinState : CombatState
     public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         await ReturnPlayerCardsFromHandToDeck(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         SetEnemyCardsToChooseFrom(combatContext);
         await ShowEnemyCardsToChooseFrom();
     }
@@ -49,6 +53,11 @@ public class ResultWinState : CombatState
                             cardToReturn: combatCard,
                             combatContext.playerDeck.transform
                         );
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
+
                     combatCard.gameObject.SetActive(false);
                 }
             }
@@ -180,6 +189,10 @@ public class ResultWinState : CombatState
                 cardToReturn: pickedCombatCard,
                 deckTransform: combatContext.playerDeck.transform
             );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         pickedCombatCard.gameObject.SetActive(false);
 
         // Hide all other cards
@@ -187,6 +200,10 @@ public class ResultWinState : CombatState
         {
             await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayHideEnemyCardsToChooseFrom();
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
         }
 
         PostProcess(combatContext);

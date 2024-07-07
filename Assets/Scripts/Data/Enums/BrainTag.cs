@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public enum BrainTag
 {
     Alarm,
+    HasPlayedAgainstPunkieBoy,
+    TruckDriverFavor,
     Mobilephone,
     Bendecido,
     Maldito,
@@ -24,7 +26,8 @@ public enum NumericTags
     Maldad, 
     ConverBabyBoy,
     ConverSmokieGirl,
-    ConverWheelchaired
+    ConverWheelchaired,
+    MOOD
 }
 
 

@@ -6,13 +6,8 @@ using UnityEngine;
 
 public class TossCoinState : CombatState
 {
-    private enum CoinResult
-    {
-        Heads,
-        Tails
-    }
     
-    CoinResult playerCoinChoice;
+    CoinFlipResult playerCoinChoice;
     CombatState nextCombatState;
     GameObject coinCardGameObject = null;
     
@@ -43,15 +38,23 @@ public class TossCoinState : CombatState
     {
         async void onSwipeLeft()
         {
-            playerCoinChoice = CoinResult.Heads;
+            playerCoinChoice = CoinFlipResult.Heads;
             nextCombatState = await ProcessTossCoinResult(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             PostProcess(combatContext);
         }
 
         async void onSwipeRight()
         {
-            playerCoinChoice = CoinResult.Tails;
+            playerCoinChoice = CoinFlipResult.Tails;
             nextCombatState = await ProcessTossCoinResult(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             PostProcess(combatContext);
         }
 
@@ -80,16 +83,30 @@ public class TossCoinState : CombatState
 
     async Task<CombatState> ProcessTossCoinResult(CombatManager.CombatContext combatContext)
     {
-        CoinResult[] coinResults = { CoinResult.Heads, CoinResult.Tails };
-        CoinResult coinResult = coinResults[UnityEngine.Random.Range(0, coinResults.Length)];
+        CoinFlipResult[] coinResults = { CoinFlipResult.Heads, CoinFlipResult.Tails };
+        CoinFlipResult coinResult = coinResults[UnityEngine.Random.Range(0, coinResults.Length)];
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
+
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayTossCoin(
+                CombatSceneManager.Instance.ProvideCombatManager().GetCombatCoin(),
+                coinResult
+            );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
 
         //Game Over
         if (coinResult != playerCoinChoice && playerTotalCards <= 0)
         {
             await ProcessEnemyWonState(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return null;
+            }
             return new ResultLoseState();
         }
 
@@ -97,6 +114,10 @@ public class TossCoinState : CombatState
         else if (coinResult == playerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
         {
             await ProcessPlayerWonState(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return null;
+            }
             return new ResultWinState();
         }
 
@@ -112,6 +133,12 @@ public class TossCoinState : CombatState
             {
                 await ProcessEnemyWonState(combatContext);
             }
+            
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return null;
+            }
+
             return new PresentPlayerCardsState();
         }
     }
@@ -127,6 +154,10 @@ public class TossCoinState : CombatState
             {
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayKillACardInTieZone(cardInTieZone);
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
 
                 enemyDeckManager.DestroyCard(cardInTieZone);
                 GameObject.Destroy(cardInTieZone.gameObject);
@@ -142,6 +173,10 @@ public class TossCoinState : CombatState
                 {
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                         .PlayReturnCardToDeck(playerCombatCard, combatContext.playerDeck.transform);
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
 
                     playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
                     playerCombatCard.gameObject.SetActive(false);
@@ -150,11 +185,17 @@ public class TossCoinState : CombatState
         }
 
         await KillEnemyCardsInTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
         await ReturnPlayerCardsInTieZoneToDeck(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
         
         return new PresentPlayerCardsState();
-
-
     }
 
     async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
@@ -168,6 +209,10 @@ public class TossCoinState : CombatState
             {
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayKillACardInTieZone(cardInTieZone);
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
 
                 playerDeckManager.DestroyCard(cardInTieZone);
                 GameObject.Destroy(cardInTieZone.gameObject);
@@ -183,6 +228,10 @@ public class TossCoinState : CombatState
                 {
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                         .PlayReturnCardToDeck(enemyCombatCard, combatContext.enemyOnCombatCardOriginalPosition);
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
 
                     enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
                     enemyCombatCard.gameObject.SetActive(false);
@@ -191,7 +240,15 @@ public class TossCoinState : CombatState
         }
 
         await KillPlayerCardsInTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
         await ReturnEnemyCardsInTieZoneToDeck(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
         
         return new PresentPlayerCardsState();
     }
@@ -207,6 +264,10 @@ public class TossCoinState : CombatState
         {
             CombatCard combatCard = cardInTieZone.GetComponent<CombatCard>();
             await withCardInTieZone(combatCard);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
         });
     }
 }

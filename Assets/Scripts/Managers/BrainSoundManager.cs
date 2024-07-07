@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class BrainSoundManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
     /***** CONST *****/
 
@@ -50,7 +50,7 @@ public class BrainSoundManager : MonoBehaviour
     private FMOD.Studio.EventInstance StepsInstance;
 
 
-    public static BrainSoundManager Instance;
+    public static SoundManager Instance;
 
     /***** INITIALIZE *****/
     void Awake()
@@ -72,9 +72,9 @@ public class BrainSoundManager : MonoBehaviour
         //CampfireInstance = FMODUnity.RuntimeManager.CreateInstance(CampfireEventPath);
         GameOverInstance = FMODUnity.RuntimeManager.CreateInstance(GameOverEventPath);
         CardSoundsInstance = FMODUnity.RuntimeManager.CreateInstance(CardSoundsEventPath);
-        StepsInstance =  FMODUnity.RuntimeManager.CreateInstance(StepsEventPath);
-        
-        
+        StepsInstance = FMODUnity.RuntimeManager.CreateInstance(StepsEventPath);
+
+
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
     }
 
@@ -118,7 +118,7 @@ public class BrainSoundManager : MonoBehaviour
 
     }
 
-    void InitializeEventMap() 
+    void InitializeEventMap()
     {
         if (SoundEvents != null)
         {
@@ -126,7 +126,7 @@ public class BrainSoundManager : MonoBehaviour
             foreach (EventIdentifier FMODevent in SoundEvents.EventsNames)
             {
                 string path = FMOD_PATH + Enum.GetName(typeof(EventFolders), FMODevent.FoldersName) + "/" + FMODevent.EventName;
-                
+
                 try
                 {
                     FMOD.Studio.EventInstance FmodEventInstance = new EventInstance();
@@ -168,16 +168,43 @@ public class BrainSoundManager : MonoBehaviour
     }
 
     /***** ACTIONS *****/
-    public void PlaySFX(string EventName) 
+    public void PlaySFX(string EventName)
     {
         if (EventMap.ContainsKey(EventName))
         {
             EventMap[EventName].start();
         }
-        else 
+        else
         {
             Debug.LogError("No esta registrado el evento de FMOD: " + EventName);
         }
+    }
+
+    public void PlayCombatSFX()
+    {
+
+        CombatTypes type = GameManager.Instance.ProvideBrainManager().GetTypeLasWinnerCard();
+        string AttackType = "";
+
+        if (type == CombatTypes.Violence)
+        {
+            AttackType = "HitViolence";
+        }
+        else if (type == CombatTypes.Influence)
+        {
+            AttackType = "HitInfluence";
+        }
+        else
+        {
+            AttackType = "HitMoney";
+        }
+
+        PlaySFX(AttackType);
+    }
+
+    public void SetMood(int newMood) 
+    {
+        StoryEventInstance.setParameterByName("Mood", newMood);
     }
 
     public void StartGame(MusicZones zone = MusicZones.Settlement)

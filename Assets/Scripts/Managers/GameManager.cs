@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour
     [Header("Managers")]
     [SerializeField] InputManager inputManager;
     [SerializeField] BrainManager brainManager;
-    [SerializeField] BrainSoundManager brainSoundManager;
+    [SerializeField] SoundManager soundManager;
     [SerializeField] StoryManager storyManager;
     [SerializeField] PartyManager partyManager;
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform canvas;
 
-    private bool hasToResetGame = false;
+    private bool hasAStoryStarted = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();
 
@@ -55,18 +55,8 @@ public class GameManager : MonoBehaviour
 
     void Start() 
     {
-        StartGame();
+        
     }
-
-    void StartGame()
-    {
-        brainSoundManager.StartGame();
-        if(currentSceneManager != null && currentSceneManager is MainGameSceneManager mainGameSceneManager)
-        {
-            mainGameSceneManager.StartGame();
-        }
-    }
-
 
     public void StartCombat(EnemyTemplate enemy, bool isBossFigth)
     {
@@ -94,7 +84,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (currentSceneManager is MainGameSceneManager mainGameSceneManager)
                     {
-                        ProvideBrainSoundManager().StartGameOver();
+                        ProvideSoundManager().StartGameOver();
                         mainGameSceneManager.ProvideTurnManager().LoseCombat();
                     }
                 };
@@ -125,9 +115,9 @@ public class GameManager : MonoBehaviour
         return brainManager;
     }
 
-    public BrainSoundManager ProvideBrainSoundManager()
+    public SoundManager ProvideSoundManager()
     {
-        return brainSoundManager;
+        return soundManager;
     }
 
     public StoryManager ProvideStoryManager()
@@ -157,7 +147,7 @@ public class GameManager : MonoBehaviour
     public void EnterBattleScene(bool isBoss)
     {
         List<CombatCardTemplate> members = ProvidePartyManager().GetPartyMembers();
-        ProvideBrainSoundManager().StartCombat(members, isBoss);
+        ProvideSoundManager().StartCombat(members, isBoss);
         ProvideBrainManager().bIsBossFight = isBoss;
 
         Animator transition = brainManager.ZoneInfo.CombatTransition;
@@ -186,8 +176,8 @@ public class GameManager : MonoBehaviour
 
     public void ExitBattleScene(Action nextAction)
     {
-        ProvideBrainSoundManager().EndCombat();
-        ProvideBrainSoundManager().RestartMusicFromCombat();
+        ProvideSoundManager().EndCombat();
+        ProvideSoundManager().RestartMusicFromCombat();
 
         Animator transition = brainManager.ZoneInfo.CombatTransition;
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
@@ -218,20 +208,21 @@ public class GameManager : MonoBehaviour
     {
         storyManager.ResetStory();
         brainManager.ResetMemories();
-        brainSoundManager.ChangeZone(brainManager.ZoneInfo.StoryMusicZone);
-        brainSoundManager.ResetNess();
+        soundManager.ChangeZone(brainManager.ZoneInfo.StoryMusicZone);
+        soundManager.ResetNess();
         partyManager.ClearParty();
-        SetHasToResetGame(true);
+        inventoryManager.RestInventory();
+        SetHasAStoryStarted(false);
     }
 
-    public bool HasToResetGame()
+    public bool HasAStoryStarted()
     {
-        return hasToResetGame;
+        return hasAStoryStarted;
     }
 
-    public void SetHasToResetGame(bool hasToResetGame)
+    public void SetHasAStoryStarted(bool hasAStoryStarted)
     {
-        this.hasToResetGame = hasToResetGame;
+        this.hasAStoryStarted = hasAStoryStarted;
     }
 
 }

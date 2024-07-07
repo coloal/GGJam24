@@ -46,6 +46,8 @@ public class StartCombatState : CombatState
                 playerDeckManager.AddCardToDeck(combatCard);
             }
         });
+
+        playerDeckManager.ShuffleDeck();
     }
 
     virtual protected void SetUpEnemyDeck(CombatManager.CombatContext combatContext)

@@ -1,0 +1,870 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
+  m_Name: CG_TownSquare
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 1812450529966030848
+  - rid: 1812450529966030851
+  - rid: 1812450529966030852
+  - rid: 1812450529966030853
+  - rid: 1812450529966030854
+  - rid: 1812450529966030855
+  - rid: 1812450529966030861
+  - rid: 1812450529966030862
+  - rid: 1812450529966030863
+  - rid: 1812450529966030864
+  - rid: 1812450529966030865
+  - rid: 1812450529966030866
+  - rid: 1812450529966030867
+  - rid: 1812450529966030868
+  - rid: 1812450529966030869
+  - rid: 1812450529966030870
+  - rid: 1812450529966030874
+  - rid: 1812450529966030875
+  - rid: 1812450529966030876
+  - rid: 1812450529966030877
+  - rid: 1812450529966030878
+  - rid: 1812450529966030879
+  - rid: 1812450529966030880
+  - rid: 1812450529966030881
+  - rid: 1812450529966030882
+  - rid: 1812450529966030883
+  - rid: 1812450529966030885
+  - rid: 1812450529966030888
+  - rid: 1812450529966030889
+  - rid: 1812450529966030890
+  connections:
+  - outputPort:
+      nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
+      portIndex: 0
+    inputPort:
+      nodeId: df8ea4b7-e96e-4994-98fb-9024fd076366
+      portIndex: 2
+  - outputPort:
+      nodeId: adf57749-b437-45e2-b245-bc369afd8081
+      portIndex: 1
+    inputPort:
+      nodeId: 8b8fcd67-4258-4d43-ad7a-239dbe88e56b
+      portIndex: 2
+  - outputPort:
+      nodeId: 8b8fcd67-4258-4d43-ad7a-239dbe88e56b
+      portIndex: 0
+    inputPort:
+      nodeId: 919db49b-b185-4134-be33-76b87fcba538
+      portIndex: 1
+  - outputPort:
+      nodeId: ee21e241-57f8-4684-90cf-64079bdcf6ae
+      portIndex: 0
+    inputPort:
+      nodeId: e846f7b5-117f-4c15-bea1-25153fd237c8
+      portIndex: 2
+  - outputPort:
+      nodeId: e846f7b5-117f-4c15-bea1-25153fd237c8
+      portIndex: 0
+    inputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 2
+  - outputPort:
+      nodeId: e846f7b5-117f-4c15-bea1-25153fd237c8
+      portIndex: 1
+    inputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 2
+  - outputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 0
+    inputPort:
+      nodeId: 94c86a3d-6040-4b1c-a0ac-3e6bce381958
+      portIndex: 2
+  - outputPort:
+      nodeId: 94c86a3d-6040-4b1c-a0ac-3e6bce381958
+      portIndex: 0
+    inputPort:
+      nodeId: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
+      portIndex: 2
+  - outputPort:
+      nodeId: 94c86a3d-6040-4b1c-a0ac-3e6bce381958
+      portIndex: 1
+    inputPort:
+      nodeId: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
+      portIndex: 2
+  - outputPort:
+      nodeId: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
+      portIndex: 0
+    inputPort:
+      nodeId: cb69a253-c32e-40d3-adf8-13c06ce0fefb
+      portIndex: 1
+  - outputPort:
+      nodeId: cb69a253-c32e-40d3-adf8-13c06ce0fefb
+      portIndex: 0
+    inputPort:
+      nodeId: 4e344685-8be4-4c45-ac3f-f9d599e7bbbd
+      portIndex: 0
+  - outputPort:
+      nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
+      portIndex: 1
+    inputPort:
+      nodeId: 919db49b-b185-4134-be33-76b87fcba538
+      portIndex: 1
+  - outputPort:
+      nodeId: 14f8d66f-588f-4362-b5c1-f4990a3c1e38
+      portIndex: 1
+    inputPort:
+      nodeId: b31b38e9-581c-4ab0-8d23-4b71dd22568e
+      portIndex: 2
+  - outputPort:
+      nodeId: b31b38e9-581c-4ab0-8d23-4b71dd22568e
+      portIndex: 0
+    inputPort:
+      nodeId: c41ec532-bbbd-49ab-ac2c-3a8c52c99992
+      portIndex: 2
+  - outputPort:
+      nodeId: b31b38e9-581c-4ab0-8d23-4b71dd22568e
+      portIndex: 1
+    inputPort:
+      nodeId: b8d91ee5-3d9d-4265-a227-02a494a8ef34
+      portIndex: 1
+  - outputPort:
+      nodeId: b8d91ee5-3d9d-4265-a227-02a494a8ef34
+      portIndex: 0
+    inputPort:
+      nodeId: 93740899-08c6-41ec-8249-bb4af73b0891
+      portIndex: 2
+  - outputPort:
+      nodeId: adf57749-b437-45e2-b245-bc369afd8081
+      portIndex: 0
+    inputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 2
+  - outputPort:
+      nodeId: 8b8fcd67-4258-4d43-ad7a-239dbe88e56b
+      portIndex: 1
+    inputPort:
+      nodeId: b31b38e9-581c-4ab0-8d23-4b71dd22568e
+      portIndex: 2
+  - outputPort:
+      nodeId: 14f8d66f-588f-4362-b5c1-f4990a3c1e38
+      portIndex: 0
+    inputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 2
+  - outputPort:
+      nodeId: 93740899-08c6-41ec-8249-bb4af73b0891
+      portIndex: 0
+    inputPort:
+      nodeId: e846f7b5-117f-4c15-bea1-25153fd237c8
+      portIndex: 2
+  - outputPort:
+      nodeId: df8ea4b7-e96e-4994-98fb-9024fd076366
+      portIndex: 0
+    inputPort:
+      nodeId: fc3ff6df-4969-4f6b-ad8b-c55c3c98d0f7
+      portIndex: 2
+  - outputPort:
+      nodeId: df8ea4b7-e96e-4994-98fb-9024fd076366
+      portIndex: 1
+    inputPort:
+      nodeId: fc3ff6df-4969-4f6b-ad8b-c55c3c98d0f7
+      portIndex: 2
+  - outputPort:
+      nodeId: 919db49b-b185-4134-be33-76b87fcba538
+      portIndex: 0
+    inputPort:
+      nodeId: e5ae3163-8105-43d3-8641-c67d1b3c2885
+      portIndex: 2
+  - outputPort:
+      nodeId: c41ec532-bbbd-49ab-ac2c-3a8c52c99992
+      portIndex: 0
+    inputPort:
+      nodeId: ee21e241-57f8-4684-90cf-64079bdcf6ae
+      portIndex: 2
+  - outputPort:
+      nodeId: c41ec532-bbbd-49ab-ac2c-3a8c52c99992
+      portIndex: 1
+    inputPort:
+      nodeId: ee21e241-57f8-4684-90cf-64079bdcf6ae
+      portIndex: 2
+  - outputPort:
+      nodeId: b816a757-4e1a-4047-9468-2117a9fbd7df
+      portIndex: 0
+    inputPort:
+      nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
+      portIndex: 2
+  - outputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 1
+    inputPort:
+      nodeId: 557f3ff4-4228-47c2-b21b-d68ab10fde03
+      portIndex: 1
+  - outputPort:
+      nodeId: 557f3ff4-4228-47c2-b21b-d68ab10fde03
+      portIndex: 0
+    inputPort:
+      nodeId: c7278d40-edcb-4333-be77-539918ec4c25
+      portIndex: 1
+  - outputPort:
+      nodeId: c7278d40-edcb-4333-be77-539918ec4c25
+      portIndex: 0
+    inputPort:
+      nodeId: e0fd1bcf-53e0-4aad-99af-64a0c3d7e148
+      portIndex: 1
+  - outputPort:
+      nodeId: e0fd1bcf-53e0-4aad-99af-64a0c3d7e148
+      portIndex: 0
+    inputPort:
+      nodeId: 4e344685-8be4-4c45-ac3f-f9d599e7bbbd
+      portIndex: 0
+  - outputPort:
+      nodeId: fc3ff6df-4969-4f6b-ad8b-c55c3c98d0f7
+      portIndex: 0
+    inputPort:
+      nodeId: f7522fc0-9cdf-4e7c-9295-2df6ff76eb47
+      portIndex: 1
+  - outputPort:
+      nodeId: f7522fc0-9cdf-4e7c-9295-2df6ff76eb47
+      portIndex: 0
+    inputPort:
+      nodeId: adf57749-b437-45e2-b245-bc369afd8081
+      portIndex: 2
+  - outputPort:
+      nodeId: e5ae3163-8105-43d3-8641-c67d1b3c2885
+      portIndex: 0
+    inputPort:
+      nodeId: 75407367-1fc0-4a7b-9ba6-f380e5cc5790
+      portIndex: 2
+  - outputPort:
+      nodeId: 75407367-1fc0-4a7b-9ba6-f380e5cc5790
+      portIndex: 0
+    inputPort:
+      nodeId: 14f8d66f-588f-4362-b5c1-f4990a3c1e38
+      portIndex: 2
+  - outputPort:
+      nodeId: 75407367-1fc0-4a7b-9ba6-f380e5cc5790
+      portIndex: 1
+    inputPort:
+      nodeId: e9203ac2-8eea-480d-adc8-0d88fce3d111
+      portIndex: 2
+  - outputPort:
+      nodeId: e9203ac2-8eea-480d-adc8-0d88fce3d111
+      portIndex: 0
+    inputPort:
+      nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 2
+  - outputPort:
+      nodeId: e9203ac2-8eea-480d-adc8-0d88fce3d111
+      portIndex: 1
+    inputPort:
+      nodeId: b31b38e9-581c-4ab0-8d23-4b71dd22568e
+      portIndex: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 1812450529966030848
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b816a757-4e1a-4047-9468-2117a9fbd7df
+        position:
+          serializedVersion: 2
+          x: 248
+          y: 456
+          width: 0
+          height: 0
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+    - rid: 1812450529966030851
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f5278139-e216-420f-89c5-5d1c2c3f56be
+        position:
+          serializedVersion: 2
+          x: -568
+          y: 669
+          width: 314
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: "Aqu\xED va una bool condition"
+        LeftText: "Primera vez que paso por aqu\xED"
+        RightText: "Segunda vez que paso por aqu\xED"
+        card: {fileID: 11400000, guid: e34a210a5be6929408b9c1bb844274ff, type: 2}
+    - rid: 1812450529966030852
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3f2660b8-8d43-4c6e-8798-948a8724b75a
+        position:
+          serializedVersion: 2
+          x: 658
+          y: 264
+          width: 462
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Admired Town Square, not a ver special place, except for being
+          where people
+
+          from this town are used to spend their spare time.
+          Today seems it has some activity.'
+        LeftText: Go talk to a class mate
+        RightText: Go talk to a mysterious girl
+        card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
+    - rid: 1812450529966030853
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: df8ea4b7-e96e-4994-98fb-9024fd076366
+        position:
+          serializedVersion: 2
+          x: 1383
+          y: -100
+          width: 1420
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Hey, look who''s here, it''s my dear classmate and his gang of
+          pathetic friends. Oh, and you finally have a deck of cards, huh? Come here,
+          I''ll show you how to play Violence, Money and Power. And I am betting
+          some money on this, playing agains you losers it''s a safe bet '
+        LeftText: You'll finally learn a lesson
+        RightText: Nice, we need the money
+        card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
+    - rid: 1812450529966030854
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ac57dfb9-9618-4271-816b-8206ff37207d
+        position:
+          serializedVersion: 2
+          x: 2265
+          y: -1155
+          width: 349
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
+    - rid: 1812450529966030855
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3a19f5af-aef0-46d1-a70e-5e9c74a39845
+        position:
+          serializedVersion: 2
+          x: 2844
+          y: -1058
+          width: 345
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
+    - rid: 1812450529966030861
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: fc3ff6df-4969-4f6b-ad8b-c55c3c98d0f7
+        position:
+          serializedVersion: 2
+          x: 2923
+          y: -100
+          width: 327
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 704b20bc185af094ca82f3d6a1fd97f5, type: 2}
+        IsBossFight: 0
+    - rid: 1812450529966030862
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: adf57749-b437-45e2-b245-bc369afd8081
+        position:
+          serializedVersion: 2
+          x: 3729
+          y: -84
+          width: 854
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Great that''s our first real win! As a result we have gained some
+          money that bring us closer to our goals, buddie. it''s still very little
+          money, but it''s a start.
+
+          ///
+
+          Moreover, I have seen
+          a big guy around the square''s fountain which looked like a truck driver,
+          we could approach him and try make him bet he''s driver''s license.'
+        LeftText: Let's challenge him
+        RightText: Go find other rival first
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450529966030863
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8b8fcd67-4258-4d43-ad7a-239dbe88e56b
+        position:
+          serializedVersion: 2
+          x: 4897
+          y: 49
+          width: 1928
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Wise decision, buddy. The more battles we win, the more cards we'll
+          have in our deck, which will increase our chances of victory in the game.
+          I  recomend you to go play against the misterious girl that is always at
+          the east corner of the square. I've seen her playing several times and
+          she only has violence cards in her deck, except for one card which is of
+          type Money.
+        LeftText: Go play against her
+        RightText: Keep walking around the square
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450529966030864
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 919db49b-b185-4134-be33-76b87fcba538
+        position:
+          serializedVersion: 2
+          x: 6910
+          y: -433
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: I thought the day when you could play against me would never come,
+          but here we are. How time flies! I only play for fun, youngsters, so the
+          only thing you can get out of this is a new card for your deck.
+        LeftText: Fair enough
+        RightText: I play for the beauty of it
+        card: {fileID: 11400000, guid: bbe31f1b87a93044b9cc09e24bd99209, type: 2}
+    - rid: 1812450529966030865
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e5ae3163-8105-43d3-8641-c67d1b3c2885
+        position:
+          serializedVersion: 2
+          x: 8070
+          y: -446
+          width: 348
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 5e1a0f081faf006498e156782995777d, type: 2}
+        IsBossFight: 0
+    - rid: 1812450529966030866
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 14f8d66f-588f-4362-b5c1-f4990a3c1e38
+        position:
+          serializedVersion: 2
+          x: 8883
+          y: -429
+          width: 1429
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Nice game, buddie. I can see you are starting to collect a good
+          number of cards. I would say you are already well armored to play against
+          the truck driver that Mary told you before. But we can look for another
+          contender before if you want to get more cards for that game.
+        LeftText: Go for the truck driver
+        RightText: Go for another player
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450529966030867
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4b36e75a-dda4-432f-955f-98a2a4b12d06
+        position:
+          serializedVersion: 2
+          x: 10728
+          y: -683
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 1812450529966030868
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c41ec532-bbbd-49ab-ac2c-3a8c52c99992
+        position:
+          serializedVersion: 2
+          x: 10918
+          y: 87
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: "You're not going to get away with beating my boyfriend. He left
+          me a couple of cards that, combined with mine, will leave you with no chance
+          in this game, idiot. I\u2019m going to bet twice as much as he did, so
+          I\u2019ll get his money back from your dirty hands\n\n\n\n\n\n"
+        LeftText: Wow, you are so rude
+        RightText: I like games with something in play
+        card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
+    - rid: 1812450529966030869
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ee21e241-57f8-4684-90cf-64079bdcf6ae
+        position:
+          serializedVersion: 2
+          x: 12461
+          y: 87
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 05682426b40d9504ab5e36744b1d3ce1, type: 2}
+        IsBossFight: 0
+    - rid: 1812450529966030870
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e846f7b5-117f-4c15-bea1-25153fd237c8
+        position:
+          serializedVersion: 2
+          x: 12965
+          y: 87
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: "Well, you\u2019re starting to make a name for yourself as a card
+          player in town. You can\u2019t avoid the game against our truck driver
+          any longer, haha."
+        LeftText: Let's go for it
+        RightText: Let's go for it
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450529966030874
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+        position:
+          serializedVersion: 2
+          x: 14279
+          y: 1
+          width: 358
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: "I heard you wanted to get hold of my driver's license, youngsters.
+          I don\u2019t know what made you think I would risk my livelihood for a
+          simple card game."
+        LeftText: But we need it for our trip
+        RightText: And do you know anyone that can fix a van?
+        card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
+    - rid: 1812450529966030875
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 94c86a3d-6040-4b1c-a0ac-3e6bce381958
+        position:
+          serializedVersion: 2
+          x: 15295
+          y: -198
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: So, you want to go on a end-of-school trip that you'll remember
+          for the rest of your lives, huh? I find it an honorable and fair mission
+          on your part. As a good truck driver, I've got a few tricks up my sleeve.
+          I won't risk my real driver's license (which wouldn't work for you anyway,
+          with my photo on it). Instead, I'll bet my old license from when I was
+          younger, which I've modified with an updated expiration date to use when
+          I get stopped by the police at a checkpoint. HAHAHA!
+        LeftText: Wow, that's exactly what we need
+        RightText: Yesss, let's play
+        card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
+    - rid: 1812450529966030876
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
+        position:
+          serializedVersion: 2
+          x: 18033
+          y: -198
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 2e3ad887c9fb17a4e92918319cb8e6c7, type: 2}
+        IsBossFight: 0
+    - rid: 1812450529966030877
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cb69a253-c32e-40d3-adf8-13c06ce0fefb
+        position:
+          serializedVersion: 2
+          x: 18699
+          y: -198
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Perfect, now we have a valid driver's license and enough money
+          to pay our trip, so we don't have to worry about this anymore. Now we just
+          need to fix the caravan. There's nothing left for us here, let's head to
+          the gas station and see if we can find someone who can fix it for us.
+        LeftText: To Gas Station
+        RightText: To Gas Station
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450529966030878
+      type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4e344685-8be4-4c45-ac3f-f9d599e7bbbd
+        position:
+          serializedVersion: 2
+          x: 20507
+          y: -198
+          width: 359
+          height: 116
+        typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs: []
+        newStory: {fileID: 11400000, guid: 983fe6b009b0ba64e9b952ea2d95e410, type: 2}
+        restartNewStory: 0
+    - rid: 1812450529966030879
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b31b38e9-581c-4ab0-8d23-4b71dd22568e
+        position:
+          serializedVersion: 2
+          x: 10301
+          y: 218
+          width: 318
+          height: 122
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 1
+    - rid: 1812450529966030880
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b8d91ee5-3d9d-4265-a227-02a494a8ef34
+        position:
+          serializedVersion: 2
+          x: 10918
+          y: 577
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Hello there, my dear classmates. I'm tired of seeing you at school,
+          and now you're bothering us here too? Let's see what you're capable of
+          with those cards you have. I am betting some money on this game, as you
+          are going to lose there's no risk in it.
+        LeftText: Nice, I need the money
+        RightText: Perfect, altough you're a bit full of yourself
+        card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
+    - rid: 1812450529966030881
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 93740899-08c6-41ec-8249-bb4af73b0891
+        position:
+          serializedVersion: 2
+          x: 12426
+          y: 577
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 05682426b40d9504ab5e36744b1d3ce1, type: 2}
+        IsBossFight: 0
+    - rid: 1812450529966030882
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 557f3ff4-4228-47c2-b21b-d68ab10fde03
+        position:
+          serializedVersion: 2
+          x: 15353
+          y: 280
+          width: 0
+          height: 0
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Yes, I can help you with that. I know a guy at the town gas station
+          who is a mechanic and can surely fix your van. As I could not help you
+          with driver license thing, tell him you are coming by my recomendation
+          this way he will do it for free so you won't have to play against him in
+          order to get your vechicle fixed
+        LeftText: Thanks, we go to the gas station then
+        RightText: Very nice of you, driver
+        card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
+    - rid: 1812450529966030883
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c7278d40-edcb-4333-be77-539918ec4c25
+        position:
+          serializedVersion: 2
+          x: 17216
+          y: 280
+          width: 257
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 2
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
+    - rid: 1812450529966030885
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e0fd1bcf-53e0-4aad-99af-64a0c3d7e148
+        position:
+          serializedVersion: 2
+          x: 17805
+          y: 280
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Well, we didn't get a driver's license and our caravan is still
+          broken, but at least now we have a way to fix one of the two things. Also,
+          I'm sure we'll find a way to be able to drive the caravan at the gas station.
+        LeftText: Let's head to the gas station then
+        RightText: Gas station it is
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450529966030888
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f7522fc0-9cdf-4e7c-9295-2df6ff76eb47
+        position:
+          serializedVersion: 2
+          x: 3307
+          y: -100
+          width: 348
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 1
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
+    - rid: 1812450529966030889
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 75407367-1fc0-4a7b-9ba6-f380e5cc5790
+        position:
+          serializedVersion: 2
+          x: 8429
+          y: -465
+          width: 318
+          height: 122
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 1
+    - rid: 1812450529966030890
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e9203ac2-8eea-480d-adc8-0d88fce3d111
+        position:
+          serializedVersion: 2
+          x: 8932
+          y: -946
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Great, you've defeated the mysterious girl, although to be honest,
+          this was an easy battle. Why don't you try facing someone else before talking
+          to the truck driver? If we play with just these cards, he'll probably beat
+          us.
+        LeftText: Nah, let's go talk to the truck driver
+        RightText: Yes, let's see who else we can play against
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}

@@ -39,3 +39,11 @@ MonoBehaviour:
     EventName: HitViolence
   - FoldersName: 0
     EventName: ShowHideCards
+  - FoldersName: 0
+    EventName: Coin
+  - FoldersName: 0
+    EventName: Ring
+  - FoldersName: 0
+    EventName: BreakCard
+  - FoldersName: 0
+    EventName: JustInCase
