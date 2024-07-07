@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
+  m_Name: PunkieBoy
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 1569568018, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
+  CombatCards:
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  ShowHintsTimeInSeconds: 1

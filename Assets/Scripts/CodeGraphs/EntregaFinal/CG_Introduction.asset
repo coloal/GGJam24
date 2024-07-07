@@ -37,6 +37,8 @@ MonoBehaviour:
   - rid: 1812450504952774686
   - rid: 1812450504952774687
   - rid: 1812450504952774690
+  - rid: 1812450528744177667
+  - rid: 1812450528744177668
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -252,7 +254,19 @@ MonoBehaviour:
       nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
       portIndex: 0
     inputPort:
+      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
+      portIndex: 2
+  - outputPort:
+      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
+      portIndex: 0
+    inputPort:
       nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
+      portIndex: 0
+  - outputPort:
+      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
+      portIndex: 1
+    inputPort:
+      nodeId: 8e212095-1c22-4d02-bfc9-f6a721efe036
       portIndex: 0
   references:
     version: 2
@@ -641,7 +655,7 @@ MonoBehaviour:
           as you can see because of its green color.
         LeftText: I like money
         RightText: I wan't to play!!!
-        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+        card: {fileID: 11400000, guid: b26f6b2af84c3694ebb949efdd215190, type: 2}
     - rid: 1812450504952774685
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -660,7 +674,7 @@ MonoBehaviour:
           as you can see because of its blue color.
         LeftText: I like power
         RightText: I wan't to play!!!
-        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+        card: {fileID: 11400000, guid: defee03326fc1be4ca26ea87e22928cb, type: 2}
     - rid: 1812450504952774686
       type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
       data:
@@ -694,7 +708,7 @@ MonoBehaviour:
           identify it by its blue color.
         LeftText: Blue is power
         RightText: I'll finally get to play!!
-        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+        card: {fileID: 11400000, guid: 841a029ea585eca498ed9290a0d4186e, type: 2}
     - rid: 1812450504952774690
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -712,20 +726,56 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: bfd9ff4ed417e97429a22337d8bb4e6f, type: 2}
         IsBossFight: 0
+    - rid: 1812450528744177667
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2385d617-b442-4ef7-9449-fef481a5c346
+        position:
+          serializedVersion: 2
+          x: 16117
+          y: 217
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Well, it seems you got that pretty quick. We are now prepared to
+          go out of our camp and go if we get all that we need for our trip, where
+          would you like to go first?
+        LeftText: To the town square
+        RightText: To the gas station
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450528744177668
+      type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8e212095-1c22-4d02-bfc9-f6a721efe036
+        position:
+          serializedVersion: 2
+          x: 17224.213
+          y: 372.5383
+          width: 0
+          height: 0
+        typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs: []
+        newStory: {fileID: 11400000, guid: 2a55102d91b2c7543a41887a87b41b77, type: 2}
+        restartNewStory: 0
     - rid: 3107022144919568403
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 8c373f08-e17b-404f-b714-f29a8ae8f611
         position:
           serializedVersion: 2
-          x: 15867
-          y: 210
+          x: 17189
+          y: -91
           width: 383
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs: []
-        newStory: {fileID: 11400000, guid: bc2488a36df7f3f4bb3ea433b89afb7c, type: 2}
+        newStory: {fileID: 11400000, guid: 2a55102d91b2c7543a41887a87b41b77, type: 2}
         restartNewStory: 0
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
