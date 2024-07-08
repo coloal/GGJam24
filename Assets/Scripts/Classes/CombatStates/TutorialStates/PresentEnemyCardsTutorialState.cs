@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class PresentEnemyCardsTutorialState : PresentEnemyCardsState
 {
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         combatContext.CleanEnemyCardsContainer();

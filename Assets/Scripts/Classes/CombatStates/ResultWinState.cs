@@ -66,7 +66,7 @@ public class ResultWinState : CombatState
 
     void SetEnemyCardsToChooseFrom(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
 
         List<CombatCardTemplate> enemyCombatCards = CombatSceneManager.Instance.ProvideEnemyData().CombatCards;
         List<GameObject> combatCards = new List<GameObject>();

@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class TossCoinTutorialState : TossCoinState
 {
-    
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         if (nextCombatState != null)
@@ -120,7 +123,7 @@ public class TossCoinTutorialState : TossCoinState
         }
 
         //Victory
-        else if (coinResult == playerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
+        else if (coinResult == playerCoinChoice && GetEnemyDeck().GetNumberOfCardsInDeck() <= 0)
         {
             await ProcessPlayerWonState(combatContext);
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
@@ -153,7 +156,7 @@ public class TossCoinTutorialState : TossCoinState
 
     protected override async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
         async Task KillEnemyCardsInTieZone(CombatManager.CombatContext combatContext)
@@ -209,7 +212,7 @@ public class TossCoinTutorialState : TossCoinState
     protected override async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
 
         async Task KillPlayerCardsInTieZone(CombatManager.CombatContext combatContext)
         {

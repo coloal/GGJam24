@@ -18,4 +18,9 @@ public abstract class CombatState
 
         ProcessImplementation(combatContext);
     }
+
+    virtual protected EnemyDeckManager GetEnemyDeck()
+    {
+        return CombatSceneManager.Instance.ProvideEnemyDeckManager();
+    }
 }

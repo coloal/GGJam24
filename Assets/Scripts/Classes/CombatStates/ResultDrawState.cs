@@ -13,7 +13,7 @@ public class ResultDrawState : CombatState
         CombatState nextCombatState = null;
 
         //Al enemigo o al Player le quedan cartas
-        if (CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() > 0
+        if (GetEnemyDeck().GetNumberOfCardsInDeck() > 0
             && CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand() > 0 )
         {
             secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;
@@ -96,7 +96,7 @@ public class ResultDrawState : CombatState
 
     protected async Task SendEnemyCombatCardToTieZone(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
 
         if (enemyCombatCard != null)

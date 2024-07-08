@@ -38,7 +38,20 @@ public class TutorialInfoTemplate : ScriptableObject
 
     [SerializeField] private List<string> pickWinCardExplanation;
     [SerializeField] private List<string> endExplanation;
-    
+
+    [SerializeField] private List<string> playerTrippingViolence;
+    [SerializeField] private List<string> playerTrippingViolence_1;
+    [SerializeField] private List<string> playerTrippingViolence_2;
+    [SerializeField] private List<string> playerTrippingMoney;
+    [SerializeField] private List<string> playerTrippingMoney_1;
+    [SerializeField] private List<string> playerTrippingMoney_2;
+    [SerializeField] private List<string> playerTrippingInfluence;
+    [SerializeField] private List<string> playerTrippingInfluence_1;
+    [SerializeField] private List<string> playerTrippingInfluence_2;
+
+   
+
+
     public List<string> InitialConversation => initialConversation;
 
     public List<string> CardExplanation => cardExplanation;
@@ -72,6 +85,15 @@ public class TutorialInfoTemplate : ScriptableObject
 
     public List<CombatCardTemplate> TutorialDeck => tutorialDeck;
     public EnemyTemplate TutorialEnemy => tutorialEnemy;
-    
+
+    public List<string> PlayerTrippingViolence => playerTrippingViolence;
+    public List<string> PlayerTrippingViolence_1 => playerTrippingViolence_1;
+    public List<string> PlayerTrippingViolence_2 => playerTrippingViolence_2;
+    public List<string> PlayerTrippingMoney => playerTrippingMoney;
+    public List<string> PlayerTrippingMoney_1 => playerTrippingMoney_1;
+    public List<string> PlayerTrippingMoney_2 => playerTrippingMoney_2;
+    public List<string> PlayerTrippingInfluence => playerTrippingInfluence;
+    public List<string> PlayerTrippingInfluence_1 => playerTrippingInfluence_1;
+    public List<string> PlayerTrippingInfluence_2 => playerTrippingInfluence_2;
 
 }

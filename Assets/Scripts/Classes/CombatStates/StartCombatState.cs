@@ -52,7 +52,7 @@ public class StartCombatState : CombatState
 
     virtual protected void SetUpEnemyDeck(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         
         List<CombatCardTemplate> enemyDeck = CombatSceneManager.Instance.ProvideEnemyData().CombatCards;
         enemyDeck.ForEach((combatCardData) =>

@@ -36,7 +36,7 @@ public class PresentEnemyCardsState : CombatState
 
     protected void SetEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
 
         List<GameObject> enemyCardTypesHints =
             enemyDeckManager

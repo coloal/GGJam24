@@ -6,7 +6,10 @@ using static CombatManager;
 
 public class ResultWinTutorialState : ResultWinState
 {
-
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         TutorialManager.SceneTutorial.StartEndExplanation(() =>
@@ -56,7 +59,7 @@ public class ResultWinTutorialState : ResultWinState
 
     void SetEnemyCardsToChooseFrom(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
 
         List<CombatCardTemplate> enemyCombatCards = CombatSceneManager.Instance.ProvideEnemyData().CombatCards;
         List<GameObject> combatCards = new List<GameObject>();

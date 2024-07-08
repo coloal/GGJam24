@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class ResultDrawTutorialState : ResultDrawState
 {
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
@@ -13,7 +17,7 @@ public class ResultDrawTutorialState : ResultDrawState
         CombatState nextCombatState = null;
 
         //Al enemigo o al Player le quedan cartas
-        if (CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() > 0
+        if (GetEnemyDeck().GetNumberOfCardsInDeck() > 0
             && CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand() > 0 )
         {
             secondsForNextProcessState = CombatSceneManager.Instance.ProvideCombatManager().timeForNextCombatRound;

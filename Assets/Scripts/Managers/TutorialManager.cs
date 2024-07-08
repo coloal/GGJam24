@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
@@ -18,7 +19,11 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private RectTransform secondCardMask;
     [SerializeField] private RectTransform thirdCardMask;
     [SerializeField] private RectTransform combatResultMask;
+    [SerializeField] private RectTransform drawResultMask;
     [SerializeField] private float MaskVelocity = 30;
+
+    [SerializeField] private TutorialEnemyDeckManager enemyDeck;
+    public TutorialEnemyDeckManager EnemyDeck => enemyDeck;
 
     [Header("Show enemy cards types hints animation configuration")]
     [SerializeField] private Transform enemyCardsTypesHintsOriginPosition;
@@ -26,7 +31,9 @@ public class TutorialManager : MonoBehaviour
 
     [HideInInspector]
     public int TutorialCombatTurn = 0;
+    public int trippingCount = 0;
     private int draws = 0;
+    
 
     private bool isMasking = false;
     private bool isDemaskig = false;
@@ -34,6 +41,7 @@ public class TutorialManager : MonoBehaviour
     private float maxMaskScale;
     private Action onMask = ()=> { };
     private Action onDemask = ()=> { };
+
 
     
     public static TutorialManager SceneTutorial => CombatSceneManager.Instance.ProvideTutorialManager();
@@ -73,7 +81,7 @@ public class TutorialManager : MonoBehaviour
     public void StartDrawExplanation(Action onFinishExplanation)
     {
         List<string> text = draws == 0 ? tutorialInfo.DrawExplanationFirst : draws == 1 ? tutorialInfo.DrawExplanationSecond : tutorialInfo.DrawExplanationThird;
-        StartConversationWithBlock(combatResultMask, text, onFinishExplanation);
+        StartConversationWithBlock(drawResultMask, text, onFinishExplanation);
         draws++;
         TutorialCombatTurn++;
     }
@@ -173,6 +181,60 @@ public class TutorialManager : MonoBehaviour
         BlockScreen(enemyCardsMask, () => { });
     }
 
+    public void PlayerTripping(Action onFinishConversation)
+    {
+        List<string> text = new List<string>();
+        switch (TutorialCombatTurn * 3 + trippingCount)
+        {
+            case 0:
+                text = tutorialInfo.PlayerTrippingInfluence;
+                break;
+            case 1:
+                text = tutorialInfo.PlayerTrippingInfluence_1;
+                break;
+            case 2:
+                text = tutorialInfo.PlayerTrippingInfluence_2;
+                break;
+            case 3:
+                text = tutorialInfo.PlayerTrippingMoney;
+                break;
+            case 4:
+                text = tutorialInfo.PlayerTrippingMoney_1;
+                break;
+            case 5:
+                text = tutorialInfo.PlayerTrippingMoney_2;
+                break;
+            case 6:
+                text = tutorialInfo.PlayerTrippingMoney;
+                break;
+            case 7:
+                text = tutorialInfo.PlayerTrippingMoney_1;
+                break;
+            case 8:
+                text = tutorialInfo.PlayerTrippingMoney_2;
+                break;
+            case 9:
+                text = tutorialInfo.PlayerTrippingInfluence;
+                break;
+            case 10:
+                text = tutorialInfo.PlayerTrippingInfluence_1;
+                break;
+            case 11:
+                text = tutorialInfo.PlayerTrippingInfluence_2;
+                break;
+            case 12:
+                text = tutorialInfo.PlayerTrippingViolence;
+                break;
+            case 13:
+                text = tutorialInfo.PlayerTrippingViolence_1;
+                break;
+            case 14:
+                text = tutorialInfo.PlayerTrippingViolence_2;
+                break;
+        }
+        tutorialConversationController.StartConversation(text, onFinishConversation);
+        trippingCount = Math.Min(trippingCount + 1, 2);
+    }
     public void StartEndExplanation(Action onFinishExplanation)
     {
         tutorialConversationController.StartConversation(tutorialInfo.EndExplanation, onFinishExplanation);
@@ -194,7 +256,7 @@ public class TutorialManager : MonoBehaviour
     {
         if(isMasking)
         {
-            currentMask.localScale -= new Vector3(Time.deltaTime * MaskVelocity, Time.deltaTime * MaskVelocity, 0);
+            currentMask.localScale -= new Vector3(Time.deltaTime * MaskVelocity * maxMaskScale/10, Time.deltaTime * MaskVelocity * maxMaskScale / 10, 0);
             if(currentMask.localScale.x <= 1)
             {
                 currentMask.localScale = new Vector3(1, 1, 1);
@@ -204,7 +266,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if(isDemaskig)
         {
-            currentMask.localScale += new Vector3(Time.deltaTime * MaskVelocity, Time.deltaTime * MaskVelocity, 0);
+            currentMask.localScale += new Vector3(Time.deltaTime * MaskVelocity * maxMaskScale / 10, Time.deltaTime * MaskVelocity * maxMaskScale / 10, 0);
             if(currentMask.localScale.x >= maxMaskScale)
             {
                 currentMask.localScale = new Vector3(maxMaskScale, maxMaskScale, 1);

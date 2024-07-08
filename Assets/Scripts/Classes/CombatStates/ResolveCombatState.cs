@@ -138,7 +138,7 @@ public class ResolveCombatState : CombatState
 
     virtual protected async Task<CombatState> ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
         async Task KillEnemyCard(CombatManager.CombatContext combatContext)
@@ -268,7 +268,7 @@ public class ResolveCombatState : CombatState
     virtual protected async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
 
         async Task KillPlayerCard(CombatManager.CombatContext combatContext)
         {

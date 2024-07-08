@@ -4,9 +4,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using static CombatManager;
 
 public class PickPlayerCardTutorialState : PickPlayerCardState
 {
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {   
         CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
@@ -31,28 +36,63 @@ public class PickPlayerCardTutorialState : PickPlayerCardState
     {
         TutorialManager.SceneTutorial.StartPlayerPickConversation(() =>
         {
-            int i = 0;
-            CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
+            EnableCards(combatContext);
+        });
+    }
+
+    private void BlockCards(CombatManager.CombatContext combatContext)
+    {
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardInHand.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
+
+            if (interactiveCombatCardComponent != null && playerCombatCard != null)
             {
-                InteractiveCombatCardComponent interactiveCombatCardComponent =
-                    cardInHand.GetComponent<InteractiveCombatCardComponent>();
-                CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
-                
-                if (interactiveCombatCardComponent != null && playerCombatCard != null && TutorialManager.SceneTutorial.shouldCardBeActive(i))
+                interactiveCombatCardComponent.DisableInteractiveComponent();
+            }
+        });
+    }
+
+    private void EnableCards(CombatManager.CombatContext combatContext)
+    {
+        int i = 0;
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardInHand.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
+
+            if (interactiveCombatCardComponent != null && playerCombatCard != null)
+            {
+                if(TutorialManager.SceneTutorial.shouldCardBeActive(i))
                 {
                     interactiveCombatCardComponent.SetOnClickAction(() =>
                     {
+                        BlockCards(combatContext);
+                        TutorialManager.SceneTutorial.trippingCount = 0;
                         TutorialManager.SceneTutorial.UnBlockScreen(async () =>
                         {
                             await PickAPlayerCard(combatContext, playerCombatCard);
                         });
                     });
-                    interactiveCombatCardComponent.EnableInteractiveComponent();
                 }
-                i++;
-            });
+                else
+                {
+                    interactiveCombatCardComponent.SetOnClickAction(() =>
+                    {
+                        BlockCards(combatContext);
+                        TutorialManager.SceneTutorial.PlayerTripping(() =>
+                        {
+                            EnableCards(combatContext);
+                        });
+                    });
+                }
+                interactiveCombatCardComponent.EnableInteractiveComponent();
+            }
+            i++;
         });
-        
     }
 
 }

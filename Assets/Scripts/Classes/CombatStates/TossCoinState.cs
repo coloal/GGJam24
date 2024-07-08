@@ -117,7 +117,7 @@ public class TossCoinState : CombatState
         }
 
         //Victory
-        else if (coinResult == playerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
+        else if (coinResult == playerCoinChoice && GetEnemyDeck().GetNumberOfCardsInDeck() <= 0)
         {
             GameManager.Instance.ProvideBrainManager().PlayerWonCoin(true);
             await ProcessPlayerWonState(combatContext);
@@ -154,7 +154,7 @@ public class TossCoinState : CombatState
 
     virtual protected async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
         async Task KillEnemyCardsInTieZone(CombatManager.CombatContext combatContext)
@@ -210,7 +210,7 @@ public class TossCoinState : CombatState
     virtual protected async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
+        EnemyDeckManager enemyDeckManager = GetEnemyDeck();
 
         async Task KillPlayerCardsInTieZone(CombatManager.CombatContext combatContext)
         {

@@ -91,3 +91,22 @@ MonoBehaviour:
     as you can only pick once
   endExplanation:
   - The combat has reached its end. Good luck destroying the rest of your oponents
+  playerTrippingViolence:
+  - I think you made a mistake, you have to play your violence card
+  playerTrippingViolence_1:
+  - I SAID PLAY YOUR VOILENCE CARD!!!
+  playerTrippingViolence_2:
+  - IF YOU DONT PLAY YOUR VOLENCE CARD I WILL SHOW YOU REAL VIOLENCE!!!!!!
+  playerTrippingMoney:
+  - I think you wanted to play your wealth card
+  playerTrippingMoney_1:
+  - YOU REALLY SHOULD JUST PLAY YOUR WEALTH CARD
+  playerTrippingMoney_2:
+  - ARE YOU SO POOR YOU CANT PLAY A CARD THAT HAS MONEY IN IT!!!??
+  playerTrippingInfluence:
+  - Thats not the rigth card. Try again
+  playerTrippingInfluence_1:
+  - 'PLEASE DO ME A FAVOR AND USE THE TWO REMAINING NEURONS YOU HAVE LEFT TO PLAY
+    THE INFLUENCE CARD. '
+  playerTrippingInfluence_2:
+  - OK, I GOT IT..... YOU HAVE NO FRIENDS

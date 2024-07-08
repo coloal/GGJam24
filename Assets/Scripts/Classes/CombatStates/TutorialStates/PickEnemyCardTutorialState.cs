@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class PickEnemyCardTutorialState : PickEnemyCardState
 {
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);

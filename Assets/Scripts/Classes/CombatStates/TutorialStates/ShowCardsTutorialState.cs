@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class ShowCardsTutorialState : ShowCardsState
 {
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
         CombatUtils.ProcessNextStateAfterSeconds(

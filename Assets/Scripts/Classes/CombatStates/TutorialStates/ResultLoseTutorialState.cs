@@ -5,5 +5,8 @@ using UnityEngine;
 
 public class ResultLoseTutorialState : ResultLoseState
 {
-    
+    protected override EnemyDeckManager GetEnemyDeck()
+    {
+        return TutorialManager.SceneTutorial.EnemyDeck;
+    }
 }
