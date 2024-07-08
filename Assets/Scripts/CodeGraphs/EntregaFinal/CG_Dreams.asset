@@ -386,9 +386,9 @@ MonoBehaviour:
         guid: 1001474b-0822-4fe2-8d84-7d0bc47fae5a
         position:
           serializedVersion: 2
-          x: 250
-          y: -107
-          width: 221
+          x: 327
+          y: -108
+          width: 222
           height: 232
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -408,9 +408,9 @@ MonoBehaviour:
         guid: 7497d511-d1c8-4b2a-b0b1-4077929a0537
         position:
           serializedVersion: 2
-          x: 250
-          y: 557
-          width: 221
+          x: 311
+          y: 555
+          width: 222
           height: 232
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
