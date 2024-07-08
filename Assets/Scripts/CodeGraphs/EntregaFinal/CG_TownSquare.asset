@@ -83,6 +83,10 @@ MonoBehaviour:
   - rid: 1812450555419689018
   - rid: 1812450555419689020
   - rid: 1812450555419689021
+  - rid: 1812450555419689024
+  - rid: 1812450555419689026
+  - rid: 1812450555419689027
+  - rid: 1812450555419689028
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -481,12 +485,6 @@ MonoBehaviour:
       nodeId: b036d93f-d2f8-4050-8542-77190f72ab88
       portIndex: 1
   - outputPort:
-      nodeId: b036d93f-d2f8-4050-8542-77190f72ab88
-      portIndex: 0
-    inputPort:
-      nodeId: 62d43d87-10ef-4d3c-965a-b548772a9df5
-      portIndex: 2
-  - outputPort:
       nodeId: b8d91ee5-3d9d-4265-a227-02a494a8ef34
       portIndex: 0
     inputPort:
@@ -587,6 +585,48 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: e9203ac2-8eea-480d-adc8-0d88fce3d111
+      portIndex: 2
+  - outputPort:
+      nodeId: b036d93f-d2f8-4050-8542-77190f72ab88
+      portIndex: 0
+    inputPort:
+      nodeId: b0cdf263-d18d-4f83-9790-e12d2e641d93
+      portIndex: 2
+  - outputPort:
+      nodeId: b0cdf263-d18d-4f83-9790-e12d2e641d93
+      portIndex: 0
+    inputPort:
+      nodeId: 61ef7789-dc50-4bbe-a72c-fe16cf073033
+      portIndex: 2
+  - outputPort:
+      nodeId: 61ef7789-dc50-4bbe-a72c-fe16cf073033
+      portIndex: 0
+    inputPort:
+      nodeId: 59ec7848-115e-4d76-933d-f9304f677bce
+      portIndex: 2
+  - outputPort:
+      nodeId: 61ef7789-dc50-4bbe-a72c-fe16cf073033
+      portIndex: 1
+    inputPort:
+      nodeId: 59ec7848-115e-4d76-933d-f9304f677bce
+      portIndex: 2
+  - outputPort:
+      nodeId: 59ec7848-115e-4d76-933d-f9304f677bce
+      portIndex: 0
+    inputPort:
+      nodeId: 7029efb5-4d24-49a0-b281-1299eb7ae0cd
+      portIndex: 1
+  - outputPort:
+      nodeId: 7029efb5-4d24-49a0-b281-1299eb7ae0cd
+      portIndex: 0
+    inputPort:
+      nodeId: 62d43d87-10ef-4d3c-965a-b548772a9df5
+      portIndex: 2
+  - outputPort:
+      nodeId: b0cdf263-d18d-4f83-9790-e12d2e641d93
+      portIndex: 1
+    inputPort:
+      nodeId: ebdd137d-545b-4224-a747-be3286209526
       portIndex: 2
   references:
     version: 2
@@ -1934,3 +1974,87 @@ MonoBehaviour:
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+    - rid: 1812450555419689024
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b0cdf263-d18d-4f83-9790-e12d2e641d93
+        position:
+          serializedVersion: 2
+          x: 842
+          y: 685
+          width: 462
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Admired Town Square, not a ver special place, except for being
+          where people
+
+          from this town are used to spend their spare time.
+          Today seems it has some activity.'
+        LeftText: Go talk to a class mate
+        RightText: Go talk to a mysterious girl
+        card: {fileID: 0}
+    - rid: 1812450555419689026
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 61ef7789-dc50-4bbe-a72c-fe16cf073033
+        position:
+          serializedVersion: 2
+          x: 1740
+          y: 437
+          width: 1420
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Hey, look who''s here, it''s my dear classmate and his gang of
+          pathetic friends. Oh, and you finally have a deck of cards, huh? Come here,
+          I''ll show you how to play Violence, Money and Power. And I am betting
+          some money on this, playing agains you losers it''s a safe bet '
+        LeftText: You'll finally learn a lesson
+        RightText: Nice, we need the money
+        card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
+    - rid: 1812450555419689027
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 59ec7848-115e-4d76-933d-f9304f677bce
+        position:
+          serializedVersion: 2
+          x: 3330
+          y: 437
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 704b20bc185af094ca82f3d6a1fd97f5, type: 2}
+        IsBossFight: 0
+    - rid: 1812450555419689028
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7029efb5-4d24-49a0-b281-1299eb7ae0cd
+        position:
+          serializedVersion: 2
+          x: 3778
+          y: 437
+          width: 127
+          height: 97
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 1
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
