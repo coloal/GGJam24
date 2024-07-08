@@ -222,7 +222,13 @@ public class SoundManager : MonoBehaviour
         StoryEventInstance.setParameterByName("Mood", newMood);
     }
 
-    public void StartGame(MusicZones zone = MusicZones.Settlement)
+    public void SetAlarmTime(int alarmValue) 
+    {
+        StoryEventInstance.setParameterByName("AlarmTime", alarmValue);
+    }
+
+
+    public void StartGame(MusicZones zone = MusicZones.Dream)
     {
         /*ActualZone = zone;
         ActualEvent = ZoneSoundsMap[zone].FMODEvent;
