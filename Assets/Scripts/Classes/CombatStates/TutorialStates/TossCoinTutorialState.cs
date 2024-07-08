@@ -64,7 +64,12 @@ public class TossCoinTutorialState : TossCoinState
         CoinCard coinCard = coinCardGameObject.GetComponent<CoinCard>();
         if (coinCard != null)
         {
-            coinCard.SetUpCard(onSwipeLeft, onSwipeRight);
+            coinCard.SetUpCard(
+                onSwipeLeft,
+                onSwipeLeftEscapeZone: (coinCard) => { coinCard.SetImageAsCoinHeads(); },
+                onSwipeRight,
+                onSwipeRightEscapeZone: (coinCard) => { coinCard.SetImageAsCoinTails(); }
+            );
         }
     }
 
