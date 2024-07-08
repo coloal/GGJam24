@@ -1079,7 +1079,7 @@ MonoBehaviour:
           to talk to here.
         LeftText: Nice, let's go to the town square
         RightText: We are beating everyone at town square
-        card: {fileID: 11400000, guid: 9ae16110b6c520f43ba4deeae2035cad, type: 2}
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 1812450529966030920
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
