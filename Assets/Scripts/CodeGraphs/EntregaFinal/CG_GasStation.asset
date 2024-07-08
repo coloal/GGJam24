@@ -46,19 +46,18 @@ MonoBehaviour:
   - rid: 1812450529966030918
   - rid: 1812450529966030919
   - rid: 1812450529966030920
-  - rid: 1812450529966030921
   - rid: 1812450529966030922
   - rid: 1812450529966030923
   - rid: 1812450529966030925
   - rid: 1812450529966030926
   - rid: 1812450529966030927
+  - rid: 1812450555419688960
+  - rid: 1812450555419688961
+  - rid: 1812450555419688962
+  - rid: 1812450555419688963
+  - rid: 1812450555419688967
+  - rid: 1812450555419688968
   connections:
-  - outputPort:
-      nodeId: 651e9266-4ec7-4de2-aa4a-624037d6faa2
-      portIndex: 0
-    inputPort:
-      nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
-      portIndex: 2
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
       portIndex: 0
@@ -144,12 +143,6 @@ MonoBehaviour:
       nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
       portIndex: 2
   - outputPort:
-      nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
-      portIndex: 0
-    inputPort:
-      nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
-      portIndex: 2
-  - outputPort:
       nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
       portIndex: 0
     inputPort:
@@ -270,18 +263,6 @@ MonoBehaviour:
       nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
       portIndex: 2
   - outputPort:
-      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
-      portIndex: 0
-    inputPort:
-      nodeId: 9df00825-f235-405b-b320-0ddc8766b1da
-      portIndex: 1
-  - outputPort:
-      nodeId: 9df00825-f235-405b-b320-0ddc8766b1da
-      portIndex: 0
-    inputPort:
-      nodeId: e5bdeafa-5b87-4df7-acc8-eae29c675e35
-      portIndex: 2
-  - outputPort:
       nodeId: 53432e45-d511-4de5-83a9-203476aadb3b
       portIndex: 1
     inputPort:
@@ -389,6 +370,78 @@ MonoBehaviour:
     inputPort:
       nodeId: 42d77715-f9ff-4233-b858-cc149d830586
       portIndex: 2
+  - outputPort:
+      nodeId: b0117379-5054-47bc-be9b-254a468102d8
+      portIndex: 0
+    inputPort:
+      nodeId: 236ebc7e-fc4c-4d86-9cd1-c95655c10884
+      portIndex: 2
+  - outputPort:
+      nodeId: 236ebc7e-fc4c-4d86-9cd1-c95655c10884
+      portIndex: 1
+    inputPort:
+      nodeId: ed460ecc-671e-418b-913a-79ea46515966
+      portIndex: 2
+  - outputPort:
+      nodeId: ed460ecc-671e-418b-913a-79ea46515966
+      portIndex: 0
+    inputPort:
+      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+      portIndex: 2
+  - outputPort:
+      nodeId: 236ebc7e-fc4c-4d86-9cd1-c95655c10884
+      portIndex: 0
+    inputPort:
+      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+      portIndex: 2
+  - outputPort:
+      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+      portIndex: 0
+    inputPort:
+      nodeId: 2652dd1b-2cfb-401b-9f9a-962fb2e34276
+      portIndex: 2
+  - outputPort:
+      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
+      portIndex: 0
+    inputPort:
+      nodeId: 69378f07-5a55-4201-8115-30f78f046dee
+      portIndex: 2
+  - outputPort:
+      nodeId: 69378f07-5a55-4201-8115-30f78f046dee
+      portIndex: 0
+    inputPort:
+      nodeId: e5bdeafa-5b87-4df7-acc8-eae29c675e35
+      portIndex: 2
+  - outputPort:
+      nodeId: 69378f07-5a55-4201-8115-30f78f046dee
+      portIndex: 1
+    inputPort:
+      nodeId: bfe3df3a-bd7b-4753-a674-0ae881c365b8
+      portIndex: 2
+  - outputPort:
+      nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
+      portIndex: 0
+    inputPort:
+      nodeId: 55f2cee5-ea75-4a09-aad5-0c5c7395f0a5
+      portIndex: 1
+  - outputPort:
+      nodeId: 55f2cee5-ea75-4a09-aad5-0c5c7395f0a5
+      portIndex: 0
+    inputPort:
+      nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
+      portIndex: 2
+  - outputPort:
+      nodeId: 651e9266-4ec7-4de2-aa4a-624037d6faa2
+      portIndex: 0
+    inputPort:
+      nodeId: 8004be56-7575-4689-aa1c-aa407f9f4324
+      portIndex: 1
+  - outputPort:
+      nodeId: 8004be56-7575-4689-aa1c-aa407f9f4324
+      portIndex: 0
+    inputPort:
+      nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -398,7 +451,7 @@ MonoBehaviour:
         guid: 651e9266-4ec7-4de2-aa4a-624037d6faa2
         position:
           serializedVersion: 2
-          x: -648
+          x: -1059
           y: 546
           width: 81
           height: 77
@@ -454,8 +507,8 @@ MonoBehaviour:
         guid: 9467c85e-b8e9-452c-be3c-ea2aa8f5560a
         position:
           serializedVersion: 2
-          x: 733
-          y: 1881
+          x: 585
+          y: 2147
           width: 1446
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -838,8 +891,8 @@ MonoBehaviour:
         guid: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
         position:
           serializedVersion: 2
-          x: 3717
-          y: 1263
+          x: 3569
+          y: 1529
           width: 319
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -855,8 +908,8 @@ MonoBehaviour:
         guid: 17b0d9f7-b75a-4ea3-880d-ce0a0a535605
         position:
           serializedVersion: 2
-          x: 2633
-          y: 2079
+          x: 2475
+          y: 2499
           width: 964
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -967,8 +1020,8 @@ MonoBehaviour:
         guid: 82184e4f-687b-4576-ae95-e0c5d9a450ad
         position:
           serializedVersion: 2
-          x: 9381
-          y: 2456
+          x: 9498
+          y: 2219
           width: 956
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -988,8 +1041,8 @@ MonoBehaviour:
         guid: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
         position:
           serializedVersion: 2
-          x: 10454
-          y: 1629
+          x: 10682
+          y: 2228
           width: 323
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1005,8 +1058,8 @@ MonoBehaviour:
         guid: 2e0512e4-8a54-4ce7-90f7-6f06cafde7f2
         position:
           serializedVersion: 2
-          x: 11719
-          y: 1691
+          x: 11947
+          y: 2290
           width: 777
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1039,26 +1092,6 @@ MonoBehaviour:
         LeftText: I guess I've chosen this
         RightText: I really like this game indeed
         card: {fileID: 11400000, guid: 2817ae8a520b26345824a70c5c69df99, type: 2}
-    - rid: 1812450529966030921
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 9df00825-f235-405b-b320-0ddc8766b1da
-        position:
-          serializedVersion: 2
-          x: 7218
-          y: 2098
-          width: 962
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: Nice, buddie, another card to our deck. You're starting to make
-          a name for yourself in the town as a card player. We shoul now go talk
-          to the mechanic, he has no chance against us.
-        LeftText: Yasss, this summer is going to be great
-        RightText: C'mon we are unbeatble!!
-        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 1812450529966030922
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1075,8 +1108,8 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Nicely done, buddie. Now we have a really well built deck in our
-          hands, we should go talk to that mechanic so we can get our van fixed,
-          mate.
+          hands, we should go talk to the gas station mechanic so we can get our
+          van fixed, mate.
         LeftText: Nice, let's go talk to them
         RightText: We are going on a trip!!!
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1086,8 +1119,8 @@ MonoBehaviour:
         guid: 372511c3-69f5-40c2-acf8-9e33af1e2e0c
         position:
           serializedVersion: 2
-          x: 10870
-          y: 1629
+          x: 11098
+          y: 2228
           width: 260
           height: 232
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1108,9 +1141,9 @@ MonoBehaviour:
         guid: 19c5323f-1c68-46f7-9f4c-09165bf5d314
         position:
           serializedVersion: 2
-          x: 11322
-          y: 1629
-          width: 191
+          x: 11550
+          y: 2228
+          width: 258
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1124,9 +1157,9 @@ MonoBehaviour:
         guid: 05c23909-814e-4e8e-bc27-f612f7a0d841
         position:
           serializedVersion: 2
-          x: 12771
-          y: 1691
-          width: 308
+          x: 12999
+          y: 2290
+          width: 368
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1149,3 +1182,132 @@ MonoBehaviour:
         - True
         - False
         Condition: 6
+    - rid: 1812450555419688960
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 236ebc7e-fc4c-4d86-9cd1-c95655c10884
+        position:
+          serializedVersion: 2
+          x: 803
+          y: 747
+          width: 1446
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Hey, my parents just stopped to get gas at this filthy gas station.
+          Want to play a quick game of Violence, Power, Money? You don't stand a
+          chance against my deck, but if by some luck you win, good for you. This
+          game is always fun and it's more if we bet a little bit of money.
+        LeftText: Yes, more cards it's always better
+        RightText: Nah I have a van to fix
+        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+    - rid: 1812450555419688961
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ed460ecc-671e-418b-913a-79ea46515966
+        position:
+          serializedVersion: 2
+          x: 2458
+          y: 1151
+          width: 964
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Risky decision, mate. Every combat is a change to get one more
+          card to your deck, and the more cards you get the more chances you have
+          to win games of Violence, Money, Power.
+
+          Do you want to challenge
+          that boy again?'
+        LeftText: Yes, let's fight against him
+        RightText: Nah, I don't need more cards
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450555419688962
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+        position:
+          serializedVersion: 2
+          x: 3607
+          y: 747
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: dd4880c940d1b2745836dc576d530caf, type: 2}
+        IsBossFight: 0
+    - rid: 1812450555419688963
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 69378f07-5a55-4201-8115-30f78f046dee
+        position:
+          serializedVersion: 2
+          x: 7218
+          y: 2423
+          width: 1148
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Nice, buddie, another card to our deck. You're starting to make
+          a name for yourself in the town as a card player. Do you want to go talk
+          to the mechanic now or should we look for another contender at the gas
+          station?
+        LeftText: Go for the mechanic
+        RightText: Look for another rival
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450555419688967
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 55f2cee5-ea75-4a09-aad5-0c5c7395f0a5
+        position:
+          serializedVersion: 2
+          x: 10245
+          y: -827
+          width: 288
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 5
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
+    - rid: 1812450555419688968
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8004be56-7575-4689-aa1c-aa407f9f4324
+        position:
+          serializedVersion: 2
+          x: -924
+          y: 546
+          width: 347
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 4
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
