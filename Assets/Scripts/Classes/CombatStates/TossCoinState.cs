@@ -63,7 +63,12 @@ public class TossCoinState : CombatState
         CoinCard coinCard = coinCardGameObject.GetComponent<CoinCard>();
         if (coinCard != null)
         {
-            coinCard.SetUpCard(onSwipeLeft, onSwipeRight);
+            coinCard.SetUpCard(
+                onSwipeLeft,
+                onSwipeLeftEscapeZone: (coinCard) => { coinCard.SetImageAsCoinHeads(); },
+                onSwipeRight,
+                onSwipeRightEscapeZone: (coinCard) => { coinCard.SetImageAsCoinTails(); }
+            );
         }
     }
 
@@ -102,6 +107,7 @@ public class TossCoinState : CombatState
         //Game Over
         if (coinResult != playerCoinChoice && playerTotalCards <= 0)
         {
+            GameManager.Instance.ProvideBrainManager().PlayerWonCoin(false);
             await ProcessEnemyWonState(combatContext);
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
             {
@@ -113,6 +119,7 @@ public class TossCoinState : CombatState
         //Victory
         else if (coinResult == playerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
         {
+            GameManager.Instance.ProvideBrainManager().PlayerWonCoin(true);
             await ProcessPlayerWonState(combatContext);
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
             {
@@ -127,10 +134,12 @@ public class TossCoinState : CombatState
             // The player wins
             if (coinResult == playerCoinChoice)
             {
+                GameManager.Instance.ProvideBrainManager().PlayerWonCoin(true);
                 await ProcessPlayerWonState(combatContext);
             }
             else
             {
+                GameManager.Instance.ProvideBrainManager().PlayerWonCoin(false);
                 await ProcessEnemyWonState(combatContext);
             }
             

@@ -24,6 +24,8 @@ public class BrainManager : MonoBehaviour
 
     private CombatTypes LastWinnerCardType;
 
+    private float HasPlayerWonCoin;
+
     /***** INITIALIZE *****/
 
     private void Awake()
@@ -139,8 +141,14 @@ public class BrainManager : MonoBehaviour
             {
                 BrainNumericMap[tag] = 100;
             }
-            GameManager.Instance.ProvideSoundManager().SetMood(value);
+            GameManager.Instance.ProvideSoundManager().SetMood(BrainNumericMap[tag]);
             Debug.Log("Mood actual: " + BrainNumericMap[tag]);
+        }
+
+        if (tag == NumericTags.AlarmTime)
+        {
+            GameManager.Instance.ProvideSoundManager().SetAlarmTime(BrainNumericMap[tag]);
+            Debug.Log("Alarma actual: " + BrainNumericMap[tag]);
         }
     }
 
@@ -195,5 +203,23 @@ public class BrainManager : MonoBehaviour
     public void SetTypeLasWinnerCard(CombatTypes WinnerType) 
     {
         LastWinnerCardType = WinnerType;
+    }
+
+    public void PlayerWonCoin(bool result)
+    {
+        if (result)
+        {
+            HasPlayerWonCoin = 0.0f;
+        }
+        else
+        {
+            HasPlayerWonCoin = 1.0f;
+        }
+    }
+
+    /* 0 - Player won / 1 - Player Loose  */
+    public float GetCoinResult() 
+    {
+        return HasPlayerWonCoin;
     }
 }
