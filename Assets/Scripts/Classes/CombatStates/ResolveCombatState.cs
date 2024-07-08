@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class ResolveCombatState : CombatState
 {
-    private enum CombatResult
+    protected enum CombatResult
     {
         PlayerWon,
         EnemyWon,
         Draw,
     }
 
-    CombatState nextCombatState;
+    protected CombatState nextCombatState;
 
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
@@ -61,7 +61,7 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    CombatResult ResolveCombat(CombatCard playerCombatCard, CombatCard enemyCombatCard)
+    virtual protected CombatResult ResolveCombat(CombatCard playerCombatCard, CombatCard enemyCombatCard)
     {
         CombatTypes playerCombatCardType = playerCombatCard.GetCombatType();
         CombatTypes enemyCombatCardType = enemyCombatCard.GetCombatType();
@@ -108,7 +108,7 @@ public class ResolveCombatState : CombatState
         return CombatResult.Draw;
     }
 
-    async Task<CombatState> ProcessCombatResult(CombatResult combatResult, CombatManager.CombatContext combatContext)
+    virtual protected async Task<CombatState> ProcessCombatResult(CombatResult combatResult, CombatManager.CombatContext combatContext)
     {
         switch (combatResult)
         {
@@ -136,7 +136,7 @@ public class ResolveCombatState : CombatState
         return null;
     }
 
-    async Task<CombatState> ProcessPlayerWonState(CombatManager.CombatContext combatContext)
+    virtual protected async Task<CombatState> ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -265,7 +265,7 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
+    virtual protected async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
@@ -394,7 +394,7 @@ public class ResolveCombatState : CombatState
         }
     }
 
-    async Task ForEachCardInTieZone(List<Transform> cardInTieZoneContainers, Func<CombatCard, Task> withCardInTieZone)
+    protected async Task ForEachCardInTieZone(List<Transform> cardInTieZoneContainers, Func<CombatCard, Task> withCardInTieZone)
     {
         // Reverses the cards in tie zone containers to start killing from the latest added to the oldest one
         List<Transform> reversedCardInTieZoneContainers = new List<Transform>(cardInTieZoneContainers);

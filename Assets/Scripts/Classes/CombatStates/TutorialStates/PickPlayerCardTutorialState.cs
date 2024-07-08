@@ -27,10 +27,6 @@ public class PickPlayerCardTutorialState : PickPlayerCardState
         );
     }
 
-    public override void Preprocess(CombatManager.CombatContext combatContext)
-    {
-    }
-
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         TutorialManager.SceneTutorial.StartPlayerPickConversation(() =>
@@ -59,32 +55,4 @@ public class PickPlayerCardTutorialState : PickPlayerCardState
         
     }
 
-    async Task PickAPlayerCard(CombatManager.CombatContext combatContext, CombatCard cardInHand)
-    {
-        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-
-        playerDeckManager.PutCardFromHandToCombatZone(cardInHand);
-        combatContext.playerOnCombatCard = cardInHand.gameObject;
-
-        // Sets the selected card to live as a combatContext.combatContainer child transform
-        cardInHand.gameObject.transform.SetParent(
-            combatContext.combatContainer.transform.parent,
-            worldPositionStays: true
-        );
-        // Disables all interaction with the selected card
-        InteractiveCombatCardComponent interactiveCombatCardComponent =
-                cardInHand.GetComponent<InteractiveCombatCardComponent>();
-        if (interactiveCombatCardComponent != null)
-        {
-            interactiveCombatCardComponent.DisableInteractiveComponent();
-        }
-
-        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayPlacePlayerCardOnCombat(
-                cardToPlaceOnCombat: cardInHand,
-                onCombatTransform: combatContext.playerOnCombatCardTransform
-            );
-
-        PostProcess(combatContext);
-    }
 }

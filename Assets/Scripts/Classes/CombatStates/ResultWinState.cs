@@ -34,7 +34,7 @@ public class ResultWinState : CombatState
         await ShowEnemyCardsToChooseFrom();
     }
 
-    async Task ReturnPlayerCardsFromHandToDeck(CombatManager.CombatContext combatContext)
+    protected async Task ReturnPlayerCardsFromHandToDeck(CombatManager.CombatContext combatContext)
     {
         List<Transform> cardInHandContainers = combatContext.GetPlayerCardInHandContainers();
         for (int i = cardInHandContainers.Count - 1; i >= 0; i--)
@@ -161,7 +161,7 @@ public class ResultWinState : CombatState
         }
     }
 
-    private async void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCard pickedCombatCard) 
+    protected async void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCard pickedCombatCard) 
     {
         //Add choosen enemy card to the player's deck
         GameManager.Instance.ProvideInventoryManager().AddCombatCardToVault(pickedCombatCard.GetCardData());
@@ -209,7 +209,7 @@ public class ResultWinState : CombatState
         PostProcess(combatContext);
     }
 
-    async Task ShowEnemyCardsToChooseFrom()
+    protected async Task ShowEnemyCardsToChooseFrom()
     {
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayShowEnemyCardsToChooseFrom();

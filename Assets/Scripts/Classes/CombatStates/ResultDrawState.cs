@@ -55,7 +55,7 @@ public class ResultDrawState : CombatState
         PostProcess(combatContext);
     }
 
-    async Task AttackCards(CombatManager.CombatContext combatContext)
+    protected async Task AttackCards(CombatManager.CombatContext combatContext)
     {
         CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
@@ -67,7 +67,7 @@ public class ResultDrawState : CombatState
         }
     }
 
-    async Task SendPlayerCombatCardToTieZone(CombatManager.CombatContext combatContext)
+    protected async Task SendPlayerCombatCardToTieZone(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
@@ -94,7 +94,7 @@ public class ResultDrawState : CombatState
         }
     }
 
-    async Task SendEnemyCombatCardToTieZone(CombatManager.CombatContext combatContext)
+    protected async Task SendEnemyCombatCardToTieZone(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();

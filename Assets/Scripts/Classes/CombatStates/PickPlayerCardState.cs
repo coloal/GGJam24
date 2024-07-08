@@ -49,7 +49,7 @@ public class PickPlayerCardState : CombatState
         });
     }
 
-    async Task PickAPlayerCard(CombatManager.CombatContext combatContext, CombatCard cardInHand)
+    protected async Task PickAPlayerCard(CombatManager.CombatContext combatContext, CombatCard cardInHand)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 

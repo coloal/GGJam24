@@ -6,15 +6,6 @@ using UnityEngine;
 
 public class TossCoinTutorialState : TossCoinState
 {
-    private enum CoinResult
-    {
-        Heads,
-        Tails
-    }
-    
-    CoinResult playerCoinChoice;
-    CombatState nextCombatState;
-    GameObject coinCardGameObject = null;
     
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
@@ -45,8 +36,12 @@ public class TossCoinTutorialState : TossCoinState
         {
             TutorialManager.SceneTutorial.StartCoinExplanation(async () =>
             {
-                playerCoinChoice = CoinResult.Heads;
+                playerCoinChoice = CoinFlipResult.Heads;
                 nextCombatState = await ProcessTossCoinResult(combatContext);
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
                 PostProcess(combatContext);
             });
            
@@ -55,8 +50,12 @@ public class TossCoinTutorialState : TossCoinState
         {
             TutorialManager.SceneTutorial.StartCoinExplanation(async () =>
             {
-                playerCoinChoice = CoinResult.Tails;
+                playerCoinChoice = CoinFlipResult.Tails;
                 nextCombatState = await ProcessTossCoinResult(combatContext);
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
                 PostProcess(combatContext);
             });
         }
@@ -89,16 +88,29 @@ public class TossCoinTutorialState : TossCoinState
 
     async Task<CombatState> ProcessTossCoinResult(CombatManager.CombatContext combatContext)
     {
-        CoinResult[] coinResults = { CoinResult.Heads, CoinResult.Tails };
-        CoinResult coinResult = playerCoinChoice;
+        CoinFlipResult coinResult = playerCoinChoice;
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
+
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayTossCoin(
+                CombatSceneManager.Instance.ProvideCombatManager().GetCombatCoin(),
+                coinResult
+            );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
 
         //Game Over
         if (coinResult != playerCoinChoice && playerTotalCards <= 0)
         {
             await ProcessEnemyWonState(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return null;
+            }
             return new ResultLoseTutorialState();
         }
 
@@ -106,6 +118,10 @@ public class TossCoinTutorialState : TossCoinState
         else if (coinResult == playerCoinChoice && CombatSceneManager.Instance.ProvideEnemyDeckManager().GetNumberOfCardsInDeck() <= 0)
         {
             await ProcessPlayerWonState(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return null;
+            }
             return new ResultWinTutorialState();
         }
 
@@ -121,11 +137,16 @@ public class TossCoinTutorialState : TossCoinState
             {
                 await ProcessEnemyWonState(combatContext);
             }
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return null;
+            }
+
             return new PresentPlayerCardsState();
         }
     }
 
-    async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
+    protected override async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -136,7 +157,10 @@ public class TossCoinTutorialState : TossCoinState
             {
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayKillACardInTieZone(cardInTieZone);
-
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
                 enemyDeckManager.DestroyCard(cardInTieZone);
                 GameObject.Destroy(cardInTieZone.gameObject);
             });
@@ -151,7 +175,10 @@ public class TossCoinTutorialState : TossCoinState
                 {
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                         .PlayReturnCardToDeck(playerCombatCard, combatContext.playerDeck.transform);
-
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
                     playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
                     playerCombatCard.gameObject.SetActive(false);
                 }
@@ -159,14 +186,22 @@ public class TossCoinTutorialState : TossCoinState
         }
 
         await KillEnemyCardsInTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
         await ReturnPlayerCardsInTieZoneToDeck(combatContext);
-        
-        return new PresentPlayerCardsState();
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return null;
+        }
+
+        return new PresentPlayerCardsTutorialState();
 
 
     }
 
-    async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
+    protected override async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
@@ -203,19 +238,5 @@ public class TossCoinTutorialState : TossCoinState
         await ReturnEnemyCardsInTieZoneToDeck(combatContext);
         
         return new PresentPlayerCardsState();
-    }
-
-
-    async Task ForEachCardInTieZone(List<Transform> cardInTieZoneContainers, Func<CombatCard, Task> withCardInTieZone)
-    {
-        // Reverses the cards in tie zone containers to start killing from the latest added to the oldest one
-        List<Transform> reversedCardInTieZoneContainers = new List<Transform>(cardInTieZoneContainers);
-        reversedCardInTieZoneContainers.Reverse();
-
-        await CombatUtils.ForEachCardInCardsContainerTask(reversedCardInTieZoneContainers, async (cardInTieZone) =>
-        {
-            CombatCard combatCard = cardInTieZone.GetComponent<CombatCard>();
-            await withCardInTieZone(combatCard);
-        });
     }
 }

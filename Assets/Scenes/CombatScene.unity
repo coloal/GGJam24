@@ -280,6 +280,7 @@ MonoBehaviour:
   playerDeckManager: {fileID: 83053011}
   enemyDeckManager: {fileID: 1197101116}
   combatFeedbacksManager: {fileID: 1617373844}
+  canvas: {fileID: 1506965356}
   isDebugging: 1
   debugEnemyTemplate: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
 --- !u!4 &126443635

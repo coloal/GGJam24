@@ -21,55 +21,38 @@ public class ResultWinTutorialState : ResultWinState
         });
     }
 
-    public override void Preprocess(CombatManager.CombatContext combatContext)
-    {
-        combatContext.ActivateEnemyCardsContainer();
-    }
 
     public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         await ReturnPlayerCardsFromHandToDeck(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         Task wait = new Task(() => { });
         TutorialManager.SceneTutorial.StartBattleResultExplanation(() =>
         {
             wait.Start();
         });
         await wait;
-        
-        
-        
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
+
         TutorialManager.SceneTutorial.StartPickWinCardExplanation(async () =>
         {
             SetEnemyCardsToChooseFrom(combatContext);
             await ShowEnemyCardsToChooseFrom();
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             TutorialManager.SceneTutorial.PickWinCard();
         });
     }
 
-    async Task ReturnPlayerCardsFromHandToDeck(CombatManager.CombatContext combatContext)
-    {
-        List<Transform> cardInHandContainers = combatContext.GetPlayerCardInHandContainers();
-        for (int i = cardInHandContainers.Count - 1; i >= 0; i--)
-        {
-            if (cardInHandContainers[i].childCount > 0)
-            {
-                CombatCard combatCard = cardInHandContainers[i].GetChild(0).GetComponent<CombatCard>();
-                if (combatCard != null)
-                {
-                    combatCard.transform.SetParent(
-                        combatContext.playerDeck.transform.parent,
-                        worldPositionStays: true
-                    );
-                    await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                        .PlayReturnCardToDeck(
-                            cardToReturn: combatCard,
-                            combatContext.playerDeck.transform
-                        );
-                    combatCard.gameObject.SetActive(false);
-                }
-            }
-        }
-    }
+    
 
     void SetEnemyCardsToChooseFrom(CombatManager.CombatContext combatContext)
     {
@@ -170,49 +153,5 @@ public class ResultWinTutorialState : ResultWinState
         }
     }
 
-    private async void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCard pickedCombatCard) 
-    {
-        //Add choosen enemy card to the player's deck
-        GameManager.Instance.ProvideInventoryManager().AddCombatCardToVault(pickedCombatCard.GetCardData());
-
-        foreach (Transform enemyCard in combatContext.GetEnemyCards())
-        {
-            if (enemyCard.gameObject == pickedCombatCard.gameObject)
-            {
-                GameObject emptyCardDummy = CombatSceneManager.Instance.ProvideCombatManager().InstantiateEmptyCardDummyGameObject();
-                emptyCardDummy.transform.SetParent(enemyCard.transform.parent);
-                emptyCardDummy.transform.SetSiblingIndex(
-                    pickedCombatCard.transform.GetSiblingIndex()
-                );
-            }
-        }
-        CombatSceneManager.Instance.ProvidePlayerDeckManager()
-            .AddCardToDeck(pickedCombatCard);
-        pickedCombatCard.transform.SetParent(
-            combatContext.playerDeck.transform.parent,
-            worldPositionStays: true
-        );
-
-        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayReturnCardToDeck(
-                cardToReturn: pickedCombatCard,
-                deckTransform: combatContext.playerDeck.transform
-            );
-        pickedCombatCard.gameObject.SetActive(false);
-
-        // Hide all other cards
-        if (combatContext.enemyCardsRow0.transform.childCount > 0)
-        {
-            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayHideEnemyCardsToChooseFrom();
-        }
-
-        PostProcess(combatContext);
-    }
-
-    async Task ShowEnemyCardsToChooseFrom()
-    {
-        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayShowEnemyCardsToChooseFrom();
-    }
+    
 }

@@ -18,17 +18,16 @@ public class PresentEnemyCardsTutorialState : PresentEnemyCardsState
         );
     }
 
-    public override void Preprocess(CombatManager.CombatContext combatContext)
-    {
-        combatContext.ActivateEnemyCardsContainer();
-    }
-
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         TutorialManager.SceneTutorial.StartEnemyCardExplanationPreShow(async () =>
         {
             SetEnemyCardsCombatTypeHints(combatContext);
             await ShowEnemyCardsCombatTypeHints(combatContext);
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             TutorialManager.SceneTutorial.StartEnemyCardExplanationWhileShow(() =>
             {
                 PostProcess(combatContext);

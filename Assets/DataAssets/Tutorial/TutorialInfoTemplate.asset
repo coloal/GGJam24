@@ -73,6 +73,21 @@ MonoBehaviour:
   drawExplanationFirst:
   - Our cards have tied the exchange as the typoe of both are the same
   - Both cards will be put apart until someone wins the exchange
-  drawExplanationSecond: []
-  drawExplanationThird: []
-  coinExplanation: []
+  drawExplanationSecond:
+  - 'Our cards have tied again '
+  - Both cards will be put on the previous ones
+  drawExplanationThird:
+  - Again! Our cards have tied for a third time
+  - Both cards will be put on the previous ones
+  coinCardExplanation:
+  - Now a coin wil be thrown to decide the winner as no more cards can be played
+  - You will have to pick either heads or tails
+  coinExplanation:
+  - Now the coin will be thrown. Good luck
+  battleResultExplanation:
+  - Congrats! You have won the combat!
+  pickWinCardExplanation:
+  - As the winner you have gained the rigth to keep one of my cards. Choose wisely
+    as you can only pick once
+  endExplanation:
+  - The combat has reached its end. Good luck destroying the rest of your oponents

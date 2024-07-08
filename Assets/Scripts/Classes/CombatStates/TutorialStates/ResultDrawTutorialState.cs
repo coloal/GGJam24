@@ -31,87 +31,34 @@ public class ResultDrawTutorialState : ResultDrawState
         );
     }
 
-    public override void Preprocess(CombatManager.CombatContext combatContext)
-    {
-    }
 
     public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         await AttackCards(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         Task WaitForConversation = new Task(() => { });
         TutorialManager.SceneTutorial.StartDrawExplanation(() =>
         {
             WaitForConversation.Start();
         });
         await WaitForConversation;
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         await SendPlayerCombatCardToTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         await SendEnemyCombatCardToTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         PostProcess(combatContext);
-    }
-
-    async Task AttackCards(CombatManager.CombatContext combatContext)
-    {
-        CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
-        CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
-
-        if (playerCombatCard != null && enemyCombatCard != null)
-        {
-            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayAttackCardsOnTie(playerCombatCard, enemyCombatCard);
-        }
-    }
-
-    async Task SendPlayerCombatCardToTieZone(CombatManager.CombatContext combatContext)
-    {
-        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
-        CombatCard playerCombatCard = combatContext.playerOnCombatCard.GetComponent<CombatCard>();
-
-        if (playerCombatCard != null)
-        {
-            Transform firstAvailablePositionInTieZone = combatContext
-                .GetPlayerCardInTieZoneContainers()
-                .Find((cardInTieZoneContainer) => cardInTieZoneContainer.childCount == 0);
-
-            playerDeckManager.AddCardToTieZone(playerCombatCard);
-            playerCombatCard.gameObject.transform.SetParent(
-                firstAvailablePositionInTieZone,
-                worldPositionStays: true
-            );
-
-            combatContext.playerOnCombatCard = null;
-            
-            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayMoveCardToTieZone(
-                    cardToMove: playerCombatCard,
-                    firstAvailablePositionInTieZone
-                );
-        }
-    }
-
-    async Task SendEnemyCombatCardToTieZone(CombatManager.CombatContext combatContext)
-    {
-        EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
-        CombatCard enemyCombatCard = combatContext.enemyOnCombatCard.GetComponent<CombatCard>();
-
-        if (enemyCombatCard != null)
-        {
-            Transform firstAvailablePositionInTieZone = combatContext
-                .GetEnemyCardInTieZoneContainers()
-                .Find((cardInTieZoneContainer) => cardInTieZoneContainer.childCount == 0);
-
-            enemyDeckManager.AddCardToTieZone(enemyCombatCard);
-            enemyCombatCard.gameObject.transform.SetParent(
-                firstAvailablePositionInTieZone,
-                worldPositionStays: true
-            );
-
-            combatContext.enemyOnCombatCard = null;
-
-            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayMoveCardToTieZone(
-                    cardToMove: enemyCombatCard,
-                    firstAvailablePositionInTieZone
-                );
-        }
     }
 }

@@ -7,9 +7,9 @@ using UnityEngine;
 public class TossCoinState : CombatState
 {
     
-    CoinFlipResult playerCoinChoice;
-    CombatState nextCombatState;
-    GameObject coinCardGameObject = null;
+    protected CoinFlipResult playerCoinChoice;
+    protected CombatState nextCombatState;
+    protected GameObject coinCardGameObject = null;
     
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
@@ -143,7 +143,7 @@ public class TossCoinState : CombatState
         }
     }
 
-    async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
+    virtual protected async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -198,7 +198,7 @@ public class TossCoinState : CombatState
         return new PresentPlayerCardsState();
     }
 
-    async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
+    virtual protected async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = CombatSceneManager.Instance.ProvideEnemyDeckManager();
@@ -254,7 +254,7 @@ public class TossCoinState : CombatState
     }
 
 
-    async Task ForEachCardInTieZone(List<Transform> cardInTieZoneContainers, Func<CombatCard, Task> withCardInTieZone)
+    protected async Task ForEachCardInTieZone(List<Transform> cardInTieZoneContainers, Func<CombatCard, Task> withCardInTieZone)
     {
         // Reverses the cards in tie zone containers to start killing from the latest added to the oldest one
         List<Transform> reversedCardInTieZoneContainers = new List<Transform>(cardInTieZoneContainers);

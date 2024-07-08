@@ -15,11 +15,6 @@ public class PickEnemyCardTutorialState : PickEnemyCardState
         );
     }
 
-    public override void Preprocess(CombatManager.CombatContext combatContext)
-    {
-
-    }
-
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         TutorialManager.SceneTutorial.StartEnemyPickCardConversation(async () =>
