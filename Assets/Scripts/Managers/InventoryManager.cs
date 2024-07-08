@@ -11,7 +11,6 @@ public class InventoryManager : MonoBehaviour
     private int deckSize = 8;
     private List<CombatCardTemplate> cardsVault;
     private List<CombatCardTemplate> deck;
-    private List<CombatCardTemplate> oldDeck;
 
 
 
@@ -45,7 +44,7 @@ public class InventoryManager : MonoBehaviour
     {
         List<CombatCardTemplate> clonedDeck = new List<CombatCardTemplate>();
         
-        //*
+        /*
          deck.ForEach((combatCardData) => 
          {
              clonedDeck.Add(combatCardData);
@@ -61,16 +60,6 @@ public class InventoryManager : MonoBehaviour
         return clonedDeck;
     }
 
-    public void SetTutorialDeck(List<CombatCardTemplate> tutorialDeck)
-    {
-        oldDeck = deck;
-        deck = new List<CombatCardTemplate>(tutorialDeck);
-    }
-
-    public void RemoveTutorialDeck()
-    {
-        deck = oldDeck;
-    }
 
     public void AddCombatCardToVault(CombatCardTemplate combatCard)
     {

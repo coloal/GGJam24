@@ -10,7 +10,7 @@ public class EnemyDeckManager : BaseDeckManager
 
     CombatCard SelectARandomCardFromDeck()
     {
-        CombatCard selectedCard = deck[Random.Range(0, hand.Count)];
+        CombatCard selectedCard = deck[Random.Range(0, deck.Count)];
 
         return selectedCard;
     }
