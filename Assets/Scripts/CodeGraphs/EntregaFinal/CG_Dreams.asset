@@ -55,6 +55,9 @@ MonoBehaviour:
   - rid: 1812450465009893382
   - rid: 1812450504952774656
   - rid: 1812450504952774657
+  - rid: 4179187816465956864
+  - rid: 4179187816465956865
+  - rid: 4179187816465956866
   connections:
   - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
@@ -63,18 +66,6 @@ MonoBehaviour:
       nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
       portIndex: 2
   - outputPort:
-      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
-      portIndex: 0
-    inputPort:
-      nodeId: 1001474b-0822-4fe2-8d84-7d0bc47fae5a
-      portIndex: 1
-  - outputPort:
-      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
-      portIndex: 1
-    inputPort:
-      nodeId: 7497d511-d1c8-4b2a-b0b1-4077929a0537
-      portIndex: 1
-  - outputPort:
       nodeId: 1001474b-0822-4fe2-8d84-7d0bc47fae5a
       portIndex: 0
     inputPort:
@@ -327,24 +318,6 @@ MonoBehaviour:
       nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
       portIndex: 1
   - outputPort:
-      nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
-      portIndex: 0
-    inputPort:
-      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
-      portIndex: 2
-  - outputPort:
-      nodeId: 24357d97-669d-4ba8-9de7-27504d7b734a
-      portIndex: 0
-    inputPort:
-      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
-      portIndex: 2
-  - outputPort:
-      nodeId: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
-      portIndex: 0
-    inputPort:
-      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
-      portIndex: 2
-  - outputPort:
       nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
       portIndex: 0
     inputPort:
@@ -356,6 +329,54 @@ MonoBehaviour:
     inputPort:
       nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
       portIndex: 0
+  - outputPort:
+      nodeId: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
+      portIndex: 0
+    inputPort:
+      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
+      portIndex: 1
+  - outputPort:
+      nodeId: 24357d97-669d-4ba8-9de7-27504d7b734a
+      portIndex: 0
+    inputPort:
+      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
+      portIndex: 1
+  - outputPort:
+      nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
+      portIndex: 0
+    inputPort:
+      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
+      portIndex: 1
+  - outputPort:
+      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
+      portIndex: 0
+    inputPort:
+      nodeId: dd33c4ca-9d84-4947-b431-21f14739b6e1
+      portIndex: 1
+  - outputPort:
+      nodeId: dd33c4ca-9d84-4947-b431-21f14739b6e1
+      portIndex: 0
+    inputPort:
+      nodeId: 1001474b-0822-4fe2-8d84-7d0bc47fae5a
+      portIndex: 1
+  - outputPort:
+      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
+      portIndex: 1
+    inputPort:
+      nodeId: 4da5a443-bf5d-452e-93e8-0dd8a6238211
+      portIndex: 1
+  - outputPort:
+      nodeId: 4da5a443-bf5d-452e-93e8-0dd8a6238211
+      portIndex: 0
+    inputPort:
+      nodeId: 7497d511-d1c8-4b2a-b0b1-4077929a0537
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -1173,8 +1194,8 @@ MonoBehaviour:
         guid: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
         position:
           serializedVersion: 2
-          x: 14001
-          y: 819
+          x: 14053
+          y: 810
           width: 191
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1220,6 +1241,72 @@ MonoBehaviour:
         outputs: []
         newStory: {fileID: 11400000, guid: 3599129ab758a294baf7756b997d9fa7, type: 2}
         restartNewStory: 0
+    - rid: 4179187816465956864
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e8850464-2f20-456d-b0d8-edc8c70cf160
+        position:
+          serializedVersion: 2
+          x: 13768
+          y: 812
+          width: 245
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 11
+          Increment: 1
+          TagState: 0
+          NewState: 0
+    - rid: 4179187816465956865
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: dd33c4ca-9d84-4947-b431-21f14739b6e1
+        position:
+          serializedVersion: 2
+          x: 37
+          y: -108
+          width: 127
+          height: 97
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 11
+          Increment: 1
+          TagState: 0
+          NewState: 0
+    - rid: 4179187816465956866
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4da5a443-bf5d-452e-93e8-0dd8a6238211
+        position:
+          serializedVersion: 2
+          x: 39
+          y: 555
+          width: 127
+          height: 97
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 11
+          Increment: 1
+          TagState: 0
+          NewState: 0
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
