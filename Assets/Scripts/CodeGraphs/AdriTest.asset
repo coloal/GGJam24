@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
-  m_Name: CombatTest
+  m_Name: AdriTest
   m_EditorClassIdentifier: 
   nodes:
   - rid: 8580623337150218298
@@ -23,14 +23,10 @@ MonoBehaviour:
   - rid: 1306970353074176006
   - rid: 1306970353074176007
   - rid: 4179187814026969088
+  - rid: 4179187814026969089
+  - rid: 4179187814026969090
   connections:
   - outputPort:
-      nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
-      portIndex: 0
-    inputPort:
-      nodeId: 8082f5d2-352f-45ec-b954-fbbeab892b48
-      portIndex: 2
-  - outputPort:
       nodeId: 8082f5d2-352f-45ec-b954-fbbeab892b48
       portIndex: 0
     inputPort:
@@ -42,12 +38,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 03c0639c-a8f7-4912-b6d3-d08e35b9b9a5
       portIndex: 1
-  - outputPort:
-      nodeId: 03c0639c-a8f7-4912-b6d3-d08e35b9b9a5
-      portIndex: 0
-    inputPort:
-      nodeId: 1f04fa80-eaad-4a61-b45a-2cfd37c0b995
-      portIndex: 2
   - outputPort:
       nodeId: 1f04fa80-eaad-4a61-b45a-2cfd37c0b995
       portIndex: 0
@@ -96,6 +86,30 @@ MonoBehaviour:
     inputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
       portIndex: 1
+  - outputPort:
+      nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
+      portIndex: 0
+    inputPort:
+      nodeId: 0473d2a2-c853-4c66-bbbd-235b3b86fb44
+      portIndex: 1
+  - outputPort:
+      nodeId: 0473d2a2-c853-4c66-bbbd-235b3b86fb44
+      portIndex: 0
+    inputPort:
+      nodeId: 03c0639c-a8f7-4912-b6d3-d08e35b9b9a5
+      portIndex: 1
+  - outputPort:
+      nodeId: 03c0639c-a8f7-4912-b6d3-d08e35b9b9a5
+      portIndex: 0
+    inputPort:
+      nodeId: d8f1dc74-2a0a-4402-bdbe-c032bbfd6c5f
+      portIndex: 1
+  - outputPort:
+      nodeId: d8f1dc74-2a0a-4402-bdbe-c032bbfd6c5f
+      portIndex: 0
+    inputPort:
+      nodeId: 89b61aec-df69-42f1-aee1-4c26b1da31be
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -105,9 +119,9 @@ MonoBehaviour:
         guid: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
         position:
           serializedVersion: 2
-          x: -423
-          y: -64
-          width: 330
+          x: -157
+          y: -82
+          width: 348
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -123,9 +137,9 @@ MonoBehaviour:
         guid: 8082f5d2-352f-45ec-b954-fbbeab892b48
         position:
           serializedVersion: 2
-          x: -68
-          y: -63
-          width: 300
+          x: -2
+          y: -383
+          width: 316
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -140,9 +154,9 @@ MonoBehaviour:
         guid: 1f04fa80-eaad-4a61-b45a-2cfd37c0b995
         position:
           serializedVersion: 2
-          x: 751
-          y: -41
-          width: 300
+          x: 733
+          y: -335
+          width: 318
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -191,8 +205,8 @@ MonoBehaviour:
         guid: 03c0639c-a8f7-4912-b6d3-d08e35b9b9a5
         position:
           serializedVersion: 2
-          x: 332
-          y: -57
+          x: 517
+          y: -69
           width: 341
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -209,8 +223,8 @@ MonoBehaviour:
         guid: 89b61aec-df69-42f1-aee1-4c26b1da31be
         position:
           serializedVersion: 2
-          x: 1107
-          y: -49
+          x: 1159
+          y: -44
           width: 373
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -254,6 +268,50 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
+    - rid: 4179187814026969089
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 0473d2a2-c853-4c66-bbbd-235b3b86fb44
+        position:
+          serializedVersion: 2
+          x: 234
+          y: -67
+          width: 245
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 11
+          Increment: 1
+          TagState: 0
+          NewState: 0
+    - rid: 4179187814026969090
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d8f1dc74-2a0a-4402-bdbe-c032bbfd6c5f
+        position:
+          serializedVersion: 2
+          x: 877
+          y: -64
+          width: 245
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 11
+          Increment: 1
+          TagState: 0
+          NewState: 0
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
