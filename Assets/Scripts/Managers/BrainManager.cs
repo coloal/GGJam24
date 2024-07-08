@@ -24,6 +24,8 @@ public class BrainManager : MonoBehaviour
 
     private CombatTypes LastWinnerCardType;
 
+    private float HasPlayerWonCoin;
+
     /***** INITIALIZE *****/
 
     private void Awake()
@@ -195,5 +197,23 @@ public class BrainManager : MonoBehaviour
     public void SetTypeLasWinnerCard(CombatTypes WinnerType) 
     {
         LastWinnerCardType = WinnerType;
+    }
+
+    public void PlayerWonCoin(bool result)
+    {
+        if (result)
+        {
+            HasPlayerWonCoin = 0.0f;
+        }
+        else
+        {
+            HasPlayerWonCoin = 1.0f;
+        }
+    }
+
+    /* 0 - Player won / 1 - Player Loose  */
+    public float GetCoinResult() 
+    {
+        return HasPlayerWonCoin;
     }
 }
