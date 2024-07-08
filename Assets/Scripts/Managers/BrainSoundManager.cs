@@ -227,6 +227,15 @@ public class SoundManager : MonoBehaviour
         StoryEventInstance.setParameterByName("AlarmTime", alarmValue);
     }
 
+    public void PlayMenuMusic() 
+    {
+        EventMap["Menu"].start();
+    }
+
+    public void StopMenuMusic()
+    {
+        EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 
     public void StartGame(MusicZones zone = MusicZones.Dream)
     {

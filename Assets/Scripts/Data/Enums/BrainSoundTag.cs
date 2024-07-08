@@ -36,6 +36,7 @@ public enum EventFolders
 {
     Combat = 0,
     SFX = 1,
+    Music = 2,
     
 }
 
