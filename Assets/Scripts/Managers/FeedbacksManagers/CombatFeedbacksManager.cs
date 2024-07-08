@@ -27,6 +27,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player TossCoinPlayer;
     [SerializeField] public MMF_Player ShowCoinResultPlayer;
     [SerializeField] public MMF_Player FlipCoinPlayer;
+    [SerializeField] public MMF_Player MoveEnemyCardsTypesHintsPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -67,6 +68,7 @@ public class CombatFeedbacksManager : MonoBehaviour
         TossCoinPlayer.StopFeedbacksOnDisable = true;
         ShowCoinResultPlayer.StopFeedbacksOnDisable = true;
         FlipCoinPlayer.StopFeedbacksOnDisable = true;
+        MoveEnemyCardsTypesHintsPlayer.StopFeedbacksOnDisable = true;
     }
     
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -506,6 +508,21 @@ public class CombatFeedbacksManager : MonoBehaviour
         {
             coin.FlipTailsImageBackToNormal();
             await ShowCoinResultPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayMoveEnemyCardsTypesHints(Transform origin, Transform destination)
+    {
+        MMF_DestinationTransform moveEnemyCardsHintsFeedback = 
+            MoveEnemyCardsTypesHintsPlayer.GetFeedbacksOfType<MMF_DestinationTransform>()
+                .Find((feedback) => feedback.Label.Equals("Move enemy cards hints"));
+
+        if (moveEnemyCardsHintsFeedback != null)
+        {
+            moveEnemyCardsHintsFeedback.Origin = origin;
+            moveEnemyCardsHintsFeedback.Destination = destination;
+
+            await MoveEnemyCardsTypesHintsPlayer.PlayFeedbacksTask();
         }
     }
 }

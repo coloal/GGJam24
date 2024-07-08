@@ -10,15 +10,21 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private TutorialInfoTemplate tutorialInfo;
     [SerializeField] private ConversationController tutorialConversationController;
+    
+    [Header("Canvas masks")]
     [SerializeField] private RectTransform playerCardsMask;
     [SerializeField] private RectTransform enemyCardsMask;
     [SerializeField] private RectTransform firstCardMask;
     [SerializeField] private RectTransform secondCardMask;
     [SerializeField] private RectTransform thirdCardMask;
     [SerializeField] private RectTransform combatResultMask;
-
     [SerializeField] private float MaskVelocity = 30;
 
+    [Header("Show enemy cards types hints animation configuration")]
+    [SerializeField] private Transform enemyCardsTypesHintsOriginPosition;
+    [SerializeField] private Transform enemyCardsTypesHintsDestinationPosition;
+
+    [HideInInspector]
     public int TutorialCombatTurn = 0;
     private int draws = 0;
 
@@ -223,5 +229,15 @@ public class TutorialManager : MonoBehaviour
         onDemask = onUnblock;
         isMasking = false;
         isDemaskig = true;
+    }
+
+    public Transform GetEnemyCardsTypesHintOriginPosition()
+    {
+        return enemyCardsTypesHintsOriginPosition;
+    }
+
+    public Transform GetEnemyCardsTypesHintDestinationPosition()
+    {
+        return enemyCardsTypesHintsDestinationPosition;
     }
 }

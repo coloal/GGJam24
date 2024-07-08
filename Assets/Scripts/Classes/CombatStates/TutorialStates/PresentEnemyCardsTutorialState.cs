@@ -23,26 +23,30 @@ public class PresentEnemyCardsTutorialState : PresentEnemyCardsState
         TutorialManager.SceneTutorial.StartEnemyCardExplanationPreShow(async () =>
         {
             SetEnemyCardsCombatTypeHints(combatContext);
-            await ShowEnemyCardsCombatTypeHints(combatContext);
+
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayMoveEnemyCardsTypesHints(
+                    origin: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintOriginPosition(),
+                    destination: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintDestinationPosition()
+                );
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
             {
                 return;
             }
-            TutorialManager.SceneTutorial.StartEnemyCardExplanationWhileShow(() =>
+            TutorialManager.SceneTutorial.StartEnemyCardExplanationWhileShow(async () =>
             {
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayMoveEnemyCardsTypesHints(
+                        origin: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintDestinationPosition(),
+                        destination: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintOriginPosition()
+                    );
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
+
                 PostProcess(combatContext);
             });
         });   
-    }
-
-  
-    async Task ShowEnemyCardsCombatTypeHints(CombatManager.CombatContext combatContext)
-    {
-        float showHintsTime = CombatSceneManager.Instance.ProvideEnemyData().ShowHintsTimeInSeconds;
-
-        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayShowEnemyCardsTypesHints(
-                pauseTime: showHintsTime
-            );
     }
 }
