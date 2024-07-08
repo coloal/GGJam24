@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a38bdde6b555245aa5008ae777d0b3, type: 3}
   m_Name: Homeless
   m_EditorClassIdentifier: 
-  NameOfCard: Homeless Woman
+  NameOfCard: Misterious Woman
   Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar
-  CardSprite: {fileID: 816943111, guid: 846aeee414cc089479e555cca6e6af51, type: 3}
+  CharacterSprite: {fileID: 816943111, guid: 846aeee414cc089479e555cca6e6af51, type: 3}
