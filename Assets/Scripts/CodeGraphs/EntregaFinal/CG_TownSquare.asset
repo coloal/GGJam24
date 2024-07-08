@@ -80,6 +80,7 @@ MonoBehaviour:
   - rid: 1812450555419689015
   - rid: 1812450555419689016
   - rid: 1812450555419689017
+  - rid: 1812450555419689018
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -556,12 +557,6 @@ MonoBehaviour:
       nodeId: 3b45d271-d11d-484d-81ad-89ff1d88380e
       portIndex: 1
   - outputPort:
-      nodeId: 3b45d271-d11d-484d-81ad-89ff1d88380e
-      portIndex: 0
-    inputPort:
-      nodeId: 0091f89d-27fb-4556-bcd0-a15b6db357fd
-      portIndex: 2
-  - outputPort:
       nodeId: 0091f89d-27fb-4556-bcd0-a15b6db357fd
       portIndex: 1
     inputPort:
@@ -572,6 +567,12 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
+      portIndex: 2
+  - outputPort:
+      nodeId: 3b45d271-d11d-484d-81ad-89ff1d88380e
+      portIndex: 0
+    inputPort:
+      nodeId: 75569be8-327e-410f-b08d-2445a120e5bf
       portIndex: 2
   references:
     version: 2
@@ -1159,8 +1160,8 @@ MonoBehaviour:
         guid: e9203ac2-8eea-480d-adc8-0d88fce3d111
         position:
           serializedVersion: 2
-          x: 9038
-          y: -1028
+          x: 9160
+          y: -1025
           width: 1157
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1711,7 +1712,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        debugLog: "Me toca historia y est\xE1 to negroooo"
+        debugLog: Post Punkie Girl Battle
     - rid: 1812450555419689009
       type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1756,7 +1757,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        debugLog: Batallita
+        debugLog: Pre Punkie Girl Battle
     - rid: 1812450555419689012
       type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1771,7 +1772,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        debugLog: De dnd vengooooo
+        debugLog: Antes de misterious girl
     - rid: 1812450555419689013
       type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1808,7 +1809,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        debugLog: "Y pet\xF3"
+        debugLog: Entre battle y bool
     - rid: 1812450555419689015
       type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1823,7 +1824,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        debugLog: Pero peta o no
+        debugLog: Post True
     - rid: 1812450555419689016
       type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1838,7 +1839,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        debugLog: FalsePete
+        debugLog: Post false
     - rid: 1812450555419689017
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1848,6 +1849,28 @@ MonoBehaviour:
           x: 9222
           y: -1462
           width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Great, you've defeated the mysterious girl, although to be honest,
+          this was an easy battle. Why don't you try facing someone else before talking
+          to the truck driver? If we play with just these cards, he'll probably beat
+          us.
+        LeftText: Nah, let's go talk to the truck driver
+        RightText: Yes, let's see who else we can play against
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450555419689018
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 75569be8-327e-410f-b08d-2445a120e5bf
+        position:
+          serializedVersion: 2
+          x: 9272
+          y: -1750
+          width: 1157
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
