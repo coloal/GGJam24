@@ -21,7 +21,7 @@ public class PresentPlayerCardsState : CombatState
 
     public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
-        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
 
         // Calculate how much cards needs to draw to fill the hand
         int availableCardsToDraw = Mathf.Min(

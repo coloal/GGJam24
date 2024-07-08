@@ -54,7 +54,7 @@ public abstract class BaseDeckManager : MonoBehaviour
         deck.Clear();
         while (auxList.Any())
         {
-            int idx = Random.Range(0, auxList.Count - 1);
+            int idx = Random.Range(0, auxList.Count);
             deck.Add(auxList[idx]);
             auxList.RemoveAt(idx);
         }
