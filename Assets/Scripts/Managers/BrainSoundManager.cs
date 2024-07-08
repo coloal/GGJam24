@@ -202,6 +202,21 @@ public class SoundManager : MonoBehaviour
         PlaySFX(AttackType);
     }
 
+    public void PlayCoinSFX() 
+    {
+        string eventName = "Coin";
+        float coinResult = GameManager.Instance.ProvideBrainManager().GetCoinResult();
+        if (EventMap.ContainsKey(eventName))
+        {
+            EventMap[eventName].setParameterByName("SideWin", coinResult);
+            EventMap[eventName].start();
+        }
+        else
+        {
+            Debug.LogError("No esta registrado el evento de FMOD: " + eventName);
+        }
+    }
+
     public void SetMood(int newMood) 
     {
         StoryEventInstance.setParameterByName("Mood", newMood);

@@ -25,4 +25,9 @@ public class SoundRequesterComponent : MonoBehaviour
     {
         GameManager.Instance.ProvideSoundManager().PlayCombatSFX();
     }
+
+    public void PlayCoinSFX() 
+    {
+        GameManager.Instance.ProvideSoundManager().PlayCoinSFX();
+    }
 }
