@@ -500,9 +500,11 @@ public class CombatFeedbacksManager : MonoBehaviour
             hideCoinFeedback.BoundImage = coinResultFace;
         }
 
+        coin.FlipTailsImage();
         await TossCoinPlayer.PlayFeedbacksTask();
         if (this != null && !destroyCancellationToken.IsCancellationRequested)
         {
+            coin.FlipTailsImageBackToNormal();
             await ShowCoinResultPlayer.PlayFeedbacksTask();
         }
     }

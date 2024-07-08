@@ -10,6 +10,9 @@ public class CoinComponent : MonoBehaviour
     // Tails equals -> Scale == -1
     [SerializeField] private Image tailsImage;
 
+    [SerializeField] private Sprite tailsSpriteFlipped;
+    [SerializeField] private Sprite tailsSpriteOriginal;
+
     public void FlipHeads()
     {
         transform.localScale = new Vector2(
@@ -41,5 +44,15 @@ public class CoinComponent : MonoBehaviour
     public Image GetCoinFace(CoinFlipResult coinFlipResult)
     {
         return coinFlipResult == CoinFlipResult.Heads ? headsImage : tailsImage;
+    }
+
+    public void FlipTailsImage()
+    {
+        tailsImage.sprite = tailsSpriteFlipped;
+    }
+
+    public void FlipTailsImageBackToNormal()
+    {
+        tailsImage.sprite = tailsSpriteOriginal;
     }
 }
