@@ -59,6 +59,8 @@ MonoBehaviour:
   - rid: 4179187816465956865
   - rid: 4179187816465956866
   - rid: 1812450555419689003
+  - rid: 1812450555419689022
+  - rid: 1812450555419689023
   connections:
   - outputPort:
       nodeId: 1001474b-0822-4fe2-8d84-7d0bc47fae5a
@@ -384,6 +386,18 @@ MonoBehaviour:
     inputPort:
       nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
       portIndex: 2
+  - outputPort:
+      nodeId: 57f88570-5fbc-4f1f-921b-6e19d6fb5819
+      portIndex: 1
+    inputPort:
+      nodeId: 2333f1ec-53c8-4af3-8efa-d2e12c88728e
+      portIndex: 1
+  - outputPort:
+      nodeId: 2d598215-062b-4154-941d-cc04fceef266
+      portIndex: 1
+    inputPort:
+      nodeId: 135d9455-22fc-41b3-8050-b295deb77017
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -755,7 +769,7 @@ MonoBehaviour:
         outputs:
         - Next
         Action:
-          TagType: 0
+          TagType: 1
           BoolTag: 4
           NewValue: 0
           NumericTag: 0
@@ -777,7 +791,7 @@ MonoBehaviour:
         outputs:
         - Next
         Action:
-          TagType: 0
+          TagType: 1
           BoolTag: 4
           NewValue: 0
           NumericTag: 2
@@ -823,7 +837,7 @@ MonoBehaviour:
         outputs:
         - Next
         Action:
-          TagType: 0
+          TagType: 1
           BoolTag: 4
           NewValue: 0
           NumericTag: 0
@@ -845,7 +859,7 @@ MonoBehaviour:
         outputs:
         - Next
         Action:
-          TagType: 0
+          TagType: 1
           BoolTag: 4
           NewValue: 0
           NumericTag: 2
@@ -893,7 +907,7 @@ MonoBehaviour:
         outputs:
         - Next
         Action:
-          TagType: 0
+          TagType: 1
           BoolTag: 4
           NewValue: 0
           NumericTag: 1
@@ -915,11 +929,11 @@ MonoBehaviour:
         outputs:
         - Next
         Action:
-          TagType: 0
+          TagType: 1
           BoolTag: 4
           NewValue: 0
           NumericTag: 1
-          Increment: 0
+          Increment: 1
           TagState: 0
           NewState: 0
     - rid: 1812450422340714514
@@ -1226,6 +1240,36 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
+    - rid: 1812450555419689022
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2333f1ec-53c8-4af3-8efa-d2e12c88728e
+        position:
+          serializedVersion: 2
+          x: 8213
+          y: 633
+          width: 234
+          height: 97
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        debugLog: Money is not one
+    - rid: 1812450555419689023
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 135d9455-22fc-41b3-8050-b295deb77017
+        position:
+          serializedVersion: 2
+          x: 8666
+          y: 633
+          width: 232
+          height: 97
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        debugLog: Power is not one
     - rid: 3107022144919568384
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
