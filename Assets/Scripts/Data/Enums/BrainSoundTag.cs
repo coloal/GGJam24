@@ -18,10 +18,12 @@ public static class BrainSoundTag
     public const string ApagarHoguera = "ApagarHogera";
     public const string Golpes = "Golpes";
     public const string Cards = "Cards";
+    //public const string AlarmTime = "AlarmTime";
 }
 
 public enum MusicZones
 {
+    Dream = 0,
     Settlement = 1,
     SquareTown = 2,
     GasStation = 3,

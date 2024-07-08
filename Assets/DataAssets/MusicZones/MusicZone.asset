@@ -15,6 +15,18 @@ MonoBehaviour:
   Zones:
   - FMODEvent: 0
     zone: 0
+    Acordeonista: 0.6
+    Bajista: 0.6
+    Cavaquinhista: 0.6
+    Flautista: 0
+    Percusionista: 0
+    Epic: 0
+    Fight: 0
+    Zapato: 0
+    VolumenHoguera: 0
+    ApagarHoguera: 0
+  - FMODEvent: 0
+    zone: 1
     Acordeonista: 0
     Bajista: 0.8
     Cavaquinhista: 0.8
@@ -26,7 +38,7 @@ MonoBehaviour:
     VolumenHoguera: 0
     ApagarHoguera: 0
   - FMODEvent: 0
-    zone: 4
+    zone: 2
     Acordeonista: 0
     Bajista: 0
     Cavaquinhista: 0

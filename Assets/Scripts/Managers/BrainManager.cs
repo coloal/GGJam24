@@ -144,8 +144,14 @@ public class BrainManager : MonoBehaviour
             {
                 BrainNumericMap[tag] = 100;
             }
-            GameManager.Instance.ProvideSoundManager().SetMood(value);
+            GameManager.Instance.ProvideSoundManager().SetMood(BrainNumericMap[tag]);
             Debug.Log("Mood actual: " + BrainNumericMap[tag]);
+        }
+
+        if (tag == NumericTags.AlarmTime)
+        {
+            GameManager.Instance.ProvideSoundManager().SetAlarmTime(BrainNumericMap[tag]);
+            Debug.Log("Alarma actual: " + BrainNumericMap[tag]);
         }
     }
 
