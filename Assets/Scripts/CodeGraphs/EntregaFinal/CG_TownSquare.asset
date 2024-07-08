@@ -81,6 +81,8 @@ MonoBehaviour:
   - rid: 1812450555419689016
   - rid: 1812450555419689017
   - rid: 1812450555419689018
+  - rid: 1812450555419689020
+  - rid: 1812450555419689021
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -569,10 +571,22 @@ MonoBehaviour:
       nodeId: db501a60-edad-48d5-a13a-6ffdc2b84c9f
       portIndex: 2
   - outputPort:
+      nodeId: fc3ff6df-4969-4f6b-ad8b-c55c3c98d0f7
+      portIndex: 1
+    inputPort:
+      nodeId: 2bd97847-3172-42e1-b31a-562fe73a0e10
+      portIndex: 1
+  - outputPort:
+      nodeId: e5ae3163-8105-43d3-8641-c67d1b3c2885
+      portIndex: 1
+    inputPort:
+      nodeId: b78784d1-68d7-4fe8-8d49-1def618ac5e0
+      portIndex: 1
+  - outputPort:
       nodeId: 3b45d271-d11d-484d-81ad-89ff1d88380e
       portIndex: 0
     inputPort:
-      nodeId: 75569be8-327e-410f-b08d-2445a120e5bf
+      nodeId: e9203ac2-8eea-480d-adc8-0d88fce3d111
       portIndex: 2
   references:
     version: 2
@@ -1884,3 +1898,39 @@ MonoBehaviour:
         LeftText: Nah, let's go talk to the truck driver
         RightText: Yes, let's see who else we can play against
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450555419689020
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2bd97847-3172-42e1-b31a-562fe73a0e10
+        position:
+          serializedVersion: 2
+          x: 3334
+          y: -517
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Perdiste la batall
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+    - rid: 1812450555419689021
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b78784d1-68d7-4fe8-8d49-1def618ac5e0
+        position:
+          serializedVersion: 2
+          x: 8176
+          y: -1149
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Perdiste la batalla
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
