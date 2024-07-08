@@ -1,19 +1,27 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoinCard : MonoBehaviour
 {
     const int DESTROY_COIN_CARD_DELAY_SECONDS = 1;
     const string COIN_CARD_TEXT_SEPARATOR = "|";
 
+    [Header("Card information")]
     [SerializeField] private StoryCardTemplate coinCardInformation;
 
-    public void SetUpCard(Action onSwipeLeft, Action onSwipeRight)
+    [Header("Card coin images")]
+    [SerializeField] private Image coinImage;
+    [SerializeField] private Sprite coinHeadsImage;
+    [SerializeField] private Sprite coinTailsImage;
+
+    public void SetUpCard(Action onSwipeLeft, Action<CoinCard> onSwipeLeftEscapeZone,
+        Action onSwipeRight, Action<CoinCard> onSwipeRightEscapeZone)
     {
         SetUpStoryCard();
-        SetUpOnSwipeLeftActions(onSwipeLeft);
-        SetUpOnSwipeRightActions(onSwipeRight);
+        SetUpOnSwipeLeftActions(onSwipeLeft, onSwipeLeftEscapeZone);
+        SetUpOnSwipeRightActions(onSwipeRight, onSwipeRightEscapeZone);
     }
 
     void SetUpStoryCard()
@@ -27,10 +35,11 @@ public class CoinCard : MonoBehaviour
                 coinCardDescriptions[UnityEngine.Random.Range(0, coinCardDescriptions.Length)]
             );
             storyCardComponent.HideText();
+            coinImage.sprite = coinTailsImage;
         }
     }
 
-    void SetUpOnSwipeLeftActions(Action onSwipeLeft)
+    void SetUpOnSwipeLeftActions(Action onSwipeLeft, Action<CoinCard> onSwipeLeftEscapeZone)
     {
         InteractiveStoryCardComponent interactiveStoryCardComponent = GetComponent<InteractiveStoryCardComponent>();
         StoryCard storyCardComponent = GetComponent<StoryCard>();
@@ -50,13 +59,17 @@ public class CoinCard : MonoBehaviour
             });
 
             interactiveStoryCardComponent.SetOnSwipeLeftEscapeZoneActions(
-                () => { storyCardComponent.ShowText(isLeftText: true); },
+                () => 
+                { 
+                    storyCardComponent.ShowText(isLeftText: true);
+                    onSwipeLeftEscapeZone(this);
+                },
                 () => { storyCardComponent.HideText(); }
             );
         }
     }
 
-    void SetUpOnSwipeRightActions(Action onSwipeRight)
+    void SetUpOnSwipeRightActions(Action onSwipeRight, Action<CoinCard> onSwipeRightEscapeZone)
     {
         InteractiveStoryCardComponent interactiveStoryCardComponent = GetComponent<InteractiveStoryCardComponent>();
         StoryCard storyCardComponent = GetComponent<StoryCard>();
@@ -76,7 +89,11 @@ public class CoinCard : MonoBehaviour
             });
 
             interactiveStoryCardComponent.SetOnSwipeRightEscapeZoneActions(
-                () => { storyCardComponent.ShowText(isLeftText: false); },
+                () => 
+                {
+                    onSwipeRightEscapeZone(this); 
+                    storyCardComponent.ShowText(isLeftText: false); 
+                },
                 () => { storyCardComponent.HideText(); }
             );
         }
@@ -85,5 +102,15 @@ public class CoinCard : MonoBehaviour
     void DestroyCard()
     {
         GameUtils.CreateTemporizer(() => { Destroy(gameObject); }, DESTROY_COIN_CARD_DELAY_SECONDS, this);      
+    }
+
+    public void SetImageAsCoinHeads()
+    {
+        coinImage.sprite = coinHeadsImage;
+    }
+
+    public void SetImageAsCoinTails()
+    {
+        coinImage.sprite = coinTailsImage;
     }
 }
