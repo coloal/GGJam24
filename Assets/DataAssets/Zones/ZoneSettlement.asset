@@ -15,17 +15,4 @@ MonoBehaviour:
   storyBackgroundSprite: {fileID: 21300000, guid: 15beac87184fa794da7bc4362bdf26d7, type: 3}
   storyMusicZone: 1
   zoneTransition: {fileID: 2504118667978227075, guid: 6f3b74162e1c22646a5846aaa13b6270, type: 3}
-  combatBackgroundSprite: {fileID: 21300000, guid: c5c0550b04bd549068bcb15afba5e4a8, type: 3}
-  combatTurnsContainerSprite: {fileID: 21300000, guid: fa913aefab3b84fceaa744bb40cc466e, type: 3}
-  combatTurnSprites:
-  - {fileID: -1855501833, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: -1780727845, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: 333934306, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: -1392395697, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: -293427321, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: -1443141181, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: 1058370926, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: 1920412394, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: 1441507578, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  - {fileID: 2071546707, guid: 47092b993e1444f75981e7c9a1c06473, type: 3}
-  combatTransition: {fileID: 2504118667978227075, guid: b15b89575fe9f514d8b8b4e5b9bef9f6, type: 3}
+  combatTransition: {fileID: 2882176000549395747, guid: a129cdbd2d109427eaaa8390ea3e6088, type: 3}
