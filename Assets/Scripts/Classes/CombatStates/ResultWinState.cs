@@ -198,8 +198,7 @@ public class ResultWinState : CombatState
         // Hide all other cards
         if (combatContext.enemyCardsRow0.transform.childCount > 0)
         {
-            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayHideEnemyCardsToChooseFrom();
+            await HideEnemyCardsToChooseFrom();
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
             {
                 return;
@@ -209,9 +208,15 @@ public class ResultWinState : CombatState
         PostProcess(combatContext);
     }
 
-    protected async Task ShowEnemyCardsToChooseFrom()
+    virtual protected async Task ShowEnemyCardsToChooseFrom()
     {
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayShowEnemyCardsToChooseFrom();
+    }
+
+    virtual protected async Task HideEnemyCardsToChooseFrom()
+    {
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayHideEnemyCardsToChooseFrom();
     }
 }

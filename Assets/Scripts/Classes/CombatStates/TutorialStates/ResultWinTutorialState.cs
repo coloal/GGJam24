@@ -55,8 +55,6 @@ public class ResultWinTutorialState : ResultWinState
         });
     }
 
-    
-
     void SetEnemyCardsToChooseFrom(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = GetEnemyDeck();
@@ -156,5 +154,21 @@ public class ResultWinTutorialState : ResultWinState
         }
     }
 
-    
+    protected override async Task ShowEnemyCardsToChooseFrom()
+    {
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayMoveEnemyCardsTypesHints(
+                origin: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintOriginPosition(),
+                destination: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintDestinationPosition()
+            );
+    }
+
+    protected async override Task HideEnemyCardsToChooseFrom()
+    {
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayMoveEnemyCardsTypesHints(
+                origin: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintDestinationPosition(),
+                destination: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintOriginPosition()
+            );
+    }
 }
