@@ -1107,9 +1107,9 @@ MonoBehaviour:
         guid: 93740899-08c6-41ec-8249-bb4af73b0891
         position:
           serializedVersion: 2
-          x: 12526
-          y: 578
-          width: 325
+          x: 12471.2
+          y: 553.6
+          width: 326.4004
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1879,10 +1879,10 @@ MonoBehaviour:
         guid: 3b45d271-d11d-484d-81ad-89ff1d88380e
         position:
           serializedVersion: 2
-          x: 8819
-          y: -591
-          width: 196
-          height: 97
+          x: 8923.2
+          y: -591.2
+          width: 197.59961
+          height: 95.20001
         typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:

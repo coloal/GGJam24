@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: MysteriousGirl
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 624485579, guid: bb2b04146d0ec034f8bd145537e30be7, type: 3}
+  characterSprite: {fileID: 816943111, guid: 846aeee414cc089479e555cca6e6af51, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
-  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
-  ShowHintsTimeInSeconds: 1
+  ShowHintsTimeInSeconds: 2
