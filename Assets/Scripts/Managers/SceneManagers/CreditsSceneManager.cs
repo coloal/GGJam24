@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainGameSceneManager : BaseSceneManager
+public class CreditsSceneManager : BaseSceneManager
 {
-    public static MainGameSceneManager Instance;
+    public static CreditsSceneManager Instance;
     
     [SerializeField] 
     private TurnManager turnManager;
@@ -16,7 +16,7 @@ public class MainGameSceneManager : BaseSceneManager
     [SerializeField]
     private CodeGraphAsset defaultGraph;
 
-    private GraphTypes graphType = GraphTypes.Story;
+    private GraphTypes graphType = GraphTypes.Credits;
 
     void Awake()
     {

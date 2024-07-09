@@ -133,7 +133,7 @@ MonoBehaviour:
           /gato pudiendo tener un Mudkip'
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
     - rid: 4179187765362819077
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -151,7 +151,7 @@ MonoBehaviour:
         CardText: Lucia - Combat Design & Art
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
     - rid: 4179187765362819079
       type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -184,7 +184,7 @@ MonoBehaviour:
         CardText: Aquaxtic - Art
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
     - rid: 4179187765362819081
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -202,7 +202,7 @@ MonoBehaviour:
         CardText: 
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
     - rid: 4179187765362819082
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -220,7 +220,7 @@ MonoBehaviour:
         CardText: 
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
     - rid: 4179187765362819083
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -238,17 +238,17 @@ MonoBehaviour:
         CardText: 
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
     - rid: 4179187765362819084
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 12ce954c-057e-413b-8d86-8f23aad35e71
         position:
           serializedVersion: 2
-          x: 2611.2
-          y: -65.600006
-          width: 322.3999
-          height: 240
+          x: 2610
+          y: -66
+          width: 321
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -256,7 +256,7 @@ MonoBehaviour:
         CardText: 
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

@@ -25,6 +25,7 @@ MonoBehaviour:
   - rid: 4179187814026969088
   - rid: 4179187814026969089
   - rid: 4179187814026969090
+  - rid: 4179187843365863424
   connections:
   - outputPort:
       nodeId: 8082f5d2-352f-45ec-b954-fbbeab892b48
@@ -75,22 +76,10 @@ MonoBehaviour:
       nodeId: 865e37bb-5f23-476c-8da2-1b4882577154
       portIndex: 2
   - outputPort:
-      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
-      portIndex: 0
-    inputPort:
-      nodeId: 39e9b1d4-50fe-4160-b6ed-d6d2d088e6b8
-      portIndex: 1
-  - outputPort:
       nodeId: 39e9b1d4-50fe-4160-b6ed-d6d2d088e6b8
       portIndex: 0
     inputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
-      portIndex: 1
-  - outputPort:
-      nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
-      portIndex: 0
-    inputPort:
-      nodeId: 0473d2a2-c853-4c66-bbbd-235b3b86fb44
       portIndex: 1
   - outputPort:
       nodeId: 0473d2a2-c853-4c66-bbbd-235b3b86fb44
@@ -110,6 +99,18 @@ MonoBehaviour:
     inputPort:
       nodeId: 89b61aec-df69-42f1-aee1-4c26b1da31be
       portIndex: 1
+  - outputPort:
+      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+      portIndex: 0
+    inputPort:
+      nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
+      portIndex: 1
+  - outputPort:
+      nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
+      portIndex: 0
+    inputPort:
+      nodeId: 26a67dae-3bef-48dd-af92-fe859d95382c
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -119,8 +120,8 @@ MonoBehaviour:
         guid: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
         position:
           serializedVersion: 2
-          x: -157
-          y: -82
+          x: -335
+          y: 66
           width: 348
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -312,6 +313,19 @@ MonoBehaviour:
           Increment: 1
           TagState: 0
           NewState: 0
+    - rid: 4179187843365863424
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 26a67dae-3bef-48dd-af92-fe859d95382c
+        position:
+          serializedVersion: 2
+          x: 111.023865
+          y: 325.46725
+          width: 0
+          height: 0
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

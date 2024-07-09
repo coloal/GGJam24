@@ -1355,6 +1355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnManager: {fileID: 1029993838}
   cardsManager: {fileID: 1958423316}
+  zoneTemplate: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
+  defaultGraph: {fileID: 11400000, guid: b73c75238d7416f4cb69a482facad9b6, type: 2}
 --- !u!4 &2026473451
 Transform:
   m_ObjectHideFlags: 0

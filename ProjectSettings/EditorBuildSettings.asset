@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatSceneTutorialLogic.unity
     guid: a015ab26796674fb7a307ab151b98367
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 511274bac055a5e4384b80c78181cab8
   m_configObjects: {}

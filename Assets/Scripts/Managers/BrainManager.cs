@@ -29,6 +29,8 @@ public class BrainManager : MonoBehaviour
 
     private float HasPlayerWonCoin;
 
+    private GraphTypes ActualGraphType;
+
     /***** INITIALIZE *****/
 
     private void Awake()
@@ -224,5 +226,14 @@ public class BrainManager : MonoBehaviour
     public float GetCoinResult() 
     {
         return HasPlayerWonCoin;
+    }
+
+    public GraphTypes GetActualGraphType() 
+    {
+        return ActualGraphType;
+    }
+    public void SetActualGraphType(GraphTypes newType)
+    {
+        ActualGraphType = newType;
     }
 }
