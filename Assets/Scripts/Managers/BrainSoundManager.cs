@@ -217,9 +217,36 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayDialogSFX(float value) 
+    {
+        string eventName = "IndexDIalogue";
+        if (EventMap.ContainsKey(eventName))
+        {
+            EventMap[eventName].setParameterByName("DialogueStyle", value);
+            EventMap[eventName].start();
+        }
+        else
+        {
+            Debug.LogError("No esta registrado el evento de FMOD: " + eventName);
+        }
+
+    }
+
+
+    float dialogIndex = 0.0f;
+    private void TestDialog() 
+    {
+        PlayDialogSFX(dialogIndex);
+        Debug.Log("Indice actual dialogo: " + dialogIndex);
+        dialogIndex += 0.2f;
+    }
+
     public void SetMood(int newMood) 
     {
         StoryEventInstance.setParameterByName("Mood", newMood);
+        
+        //TODO IMPORTANTE ELIMINAR ESTO unicamente es para DEBUG
+        //TestDialog();
     }
 
     public void SetAlarmTime(int alarmValue) 

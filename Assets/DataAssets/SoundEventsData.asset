@@ -47,5 +47,9 @@ MonoBehaviour:
     EventName: BreakCard
   - FoldersName: 0
     EventName: JustInCase
+  - FoldersName: 1
+    EventName: IndexDIalogue
   - FoldersName: 2
     EventName: Menu
+  - FoldersName: 2
+    EventName: SplashAudio
