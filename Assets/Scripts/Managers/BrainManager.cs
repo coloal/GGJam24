@@ -15,7 +15,7 @@ public class BrainManager : MonoBehaviour
     private Dictionary<string, string> BrainStateMap;
 
     public static BrainManager Instance;
-
+    [SerializeField]
     private bool isTutorial = true;
     public bool IsTutorial => isTutorial;
         
