@@ -88,7 +88,11 @@ public class CombatFeedbacksManager : MonoBehaviour
         MMF_Scale horizontalFlipFeedback =
             PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_Scale>();
 
-        if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null)
+        MMF_ScaleShake shakeDeckFeedback =
+            DeckFeedbackPlayer.GetFeedbacksOfType<MMF_ScaleShake>().Find((feedback) => feedback.Label.Equals("Shake Deck"));
+
+        if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null
+            && shakeDeckFeedback != null)
         {
             playerCard.FlipCardUpsideDown();
 
@@ -102,7 +106,13 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             // Shake the deck
             playerDeck.DrawCardFromDeck();
-            DeckFeedbackPlayer.PlayFeedbacks();
+            MMScaleShaker deckScaleShakerComponent = playerDeck.gameObject.GetComponent<MMScaleShaker>();
+            if (deckScaleShakerComponent != null)
+            {
+                shakeDeckFeedback.TargetShaker = deckScaleShakerComponent;
+                DeckFeedbackPlayer.PlayFeedbacks();
+            }
+            
             // Draw a card
             await PlayerDrawCardFromDeckFeedbackPlayer.PlayFeedbacksTask();
         }
@@ -307,9 +317,12 @@ public class CombatFeedbacksManager : MonoBehaviour
 
         MMF_DestinationTransform moveRotateAndScaleCardFeedback =
             MoveCardToTransformPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move and Rotate Card"));
+
+        MMF_ScaleShake shakeDeckFeedback =
+            DeckFeedbackPlayer.GetFeedbacksOfType<MMF_ScaleShake>().Find((feedback) => feedback.Label.Equals("Shake Deck"));
         
         if (scaleCardOnYFeedback != null && horizontalFlipFeedback != null
-            && moveRotateAndScaleCardFeedback != null)
+            && moveRotateAndScaleCardFeedback != null && shakeDeckFeedback != null)
         {
             scaleCardOnYFeedback.AnimateScaleTarget = cardToReturn.transform;
             scaleCardOnYFeedback.RemapCurveZero = cardToReturn.transform.localScale.y;
@@ -330,9 +343,12 @@ public class CombatFeedbacksManager : MonoBehaviour
             }
 
             DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
-            if (this != null && deckBehaviourComponent != null && !destroyCancellationToken.IsCancellationRequested)
+            MMScaleShaker deckScaleShakerComponent = deckTransform.gameObject.GetComponent<MMScaleShaker>();
+            if (this != null && !destroyCancellationToken.IsCancellationRequested
+                && deckBehaviourComponent != null && deckScaleShakerComponent != null)
             {
                 deckBehaviourComponent.AddCardToDeck();
+                shakeDeckFeedback.TargetShaker = deckScaleShakerComponent;
                 await DeckFeedbackPlayer.PlayFeedbacksTask();
             }
         }
