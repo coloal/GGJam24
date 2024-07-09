@@ -58,6 +58,11 @@ MonoBehaviour:
   - rid: 1812450555419688967
   - rid: 1812450555419688968
   - rid: 1812450555419689006
+  - rid: 1812450578821021696
+  - rid: 1812450578821021699
+  - rid: 1812450578821021700
+  - rid: 1812450578821021701
+  - rid: 1812450578821021702
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -174,12 +179,6 @@ MonoBehaviour:
       nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
       portIndex: 2
   - outputPort:
-      nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
-      portIndex: 1
-    inputPort:
-      nodeId: b0117379-5054-47bc-be9b-254a468102d8
-      portIndex: 2
-  - outputPort:
       nodeId: b0117379-5054-47bc-be9b-254a468102d8
       portIndex: 1
     inputPort:
@@ -262,12 +261,6 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
-      portIndex: 2
-  - outputPort:
-      nodeId: 53432e45-d511-4de5-83a9-203476aadb3b
-      portIndex: 1
-    inputPort:
-      nodeId: b0117379-5054-47bc-be9b-254a468102d8
       portIndex: 2
   - outputPort:
       nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
@@ -352,12 +345,6 @@ MonoBehaviour:
       portIndex: 1
     inputPort:
       nodeId: bfe3df3a-bd7b-4753-a674-0ae881c365b8
-      portIndex: 2
-  - outputPort:
-      nodeId: 4ad770cc-9fc3-4cb4-b0dc-7948a5c5dfa7
-      portIndex: 1
-    inputPort:
-      nodeId: 2741ebb0-cf1a-478d-86ed-b2765d6038be
       portIndex: 2
   - outputPort:
       nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
@@ -449,6 +436,60 @@ MonoBehaviour:
     inputPort:
       nodeId: 8004be56-7575-4689-aa1c-aa407f9f4324
       portIndex: 1
+  - outputPort:
+      nodeId: 53432e45-d511-4de5-83a9-203476aadb3b
+      portIndex: 1
+    inputPort:
+      nodeId: f254a711-3603-47e5-862c-a56df75eb434
+      portIndex: 1
+  - outputPort:
+      nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
+      portIndex: 1
+    inputPort:
+      nodeId: f254a711-3603-47e5-862c-a56df75eb434
+      portIndex: 1
+  - outputPort:
+      nodeId: f254a711-3603-47e5-862c-a56df75eb434
+      portIndex: 0
+    inputPort:
+      nodeId: b0117379-5054-47bc-be9b-254a468102d8
+      portIndex: 2
+  - outputPort:
+      nodeId: 4ad770cc-9fc3-4cb4-b0dc-7948a5c5dfa7
+      portIndex: 1
+    inputPort:
+      nodeId: 713e17a2-041b-4d86-a1d0-dc05fe65e4f4
+      portIndex: 2
+  - outputPort:
+      nodeId: 713e17a2-041b-4d86-a1d0-dc05fe65e4f4
+      portIndex: 0
+    inputPort:
+      nodeId: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
+      portIndex: 2
+  - outputPort:
+      nodeId: 713e17a2-041b-4d86-a1d0-dc05fe65e4f4
+      portIndex: 1
+    inputPort:
+      nodeId: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
+      portIndex: 2
+  - outputPort:
+      nodeId: 3b421fee-1f3f-4a84-ad28-76eabf44e391
+      portIndex: 0
+    inputPort:
+      nodeId: 7875a564-ddd8-427c-aa75-96e72b8c02af
+      portIndex: 1
+  - outputPort:
+      nodeId: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
+      portIndex: 0
+    inputPort:
+      nodeId: 72e33429-4e42-4813-be59-28db69abe7c9
+      portIndex: 1
+  - outputPort:
+      nodeId: 72e33429-4e42-4813-be59-28db69abe7c9
+      portIndex: 0
+    inputPort:
+      nodeId: 2741ebb0-cf1a-478d-86ed-b2765d6038be
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -712,12 +753,12 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: You managed to fix your caravan! But you still need something that
-          allows you to drive it, otherwise you'll never be able to leave Admired
-          Town. See if someone can help you with that.
+        CardText: 'You managed to fix our caravan! But we still need something that
+          allows you to drive it, otherwise we''ll never be able to leave Admired
+          Town. '
         LeftText: I'll go talk to Mary she is wise
         RightText: I'll walk around the gas station
-        card: {fileID: 11400000, guid: 9bffe0c73eb4de84391e1be647b181fd, type: 2}
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 1812450529966030901
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -755,7 +796,8 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: As a member of a mafia gang, I can't give you anything without
+        CardText: Hey, your friend, Mary, told me you were looking for a driving's
+          license... As a member of a mafia gang, I can't give you anything without
           asking for something in return, no matter how good a friend you are of
           Mary's. So, we'll settle this with a game of cards. If I win, I'll keep
           the caravan, and if you win, you'll get your driver's license. Let's play.
@@ -1333,3 +1375,97 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
+    - rid: 1812450578821021696
+      type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f254a711-3603-47e5-862c-a56df75eb434
+        position:
+          serializedVersion: 2
+          x: -128
+          y: 824
+          width: 257
+          height: 97
+        typeName: CodeGraph.DebugLogNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        debugLog: Paso por abajo, crack
+    - rid: 1812450578821021699
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 713e17a2-041b-4d86-a1d0-dc05fe65e4f4
+        position:
+          serializedVersion: 2
+          x: 5996
+          y: 416
+          width: 0
+          height: 0
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: What's that look on your face? Haven't you ever seen a humanoid
+          dog before? I didn't think you were one of those who discriminate against
+          furries for what they are. Come here, I'm going to pluck you clean in a
+          game of Money, Violence, Power.
+        LeftText: Guau, you are sensible about this
+        RightText: All bark and no bite, you are?
+        card: {fileID: 11400000, guid: b878eace77736a7408efaf06d20d9398, type: 2}
+    - rid: 1812450578821021700
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
+        position:
+          serializedVersion: 2
+          x: 7565
+          y: 416
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: bba87904d6aeb8b41b55db01aec9c888, type: 2}
+        IsBossFight: 0
+    - rid: 1812450578821021701
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7875a564-ddd8-427c-aa75-96e72b8c02af
+        position:
+          serializedVersion: 2
+          x: 14399
+          y: 114
+          width: 314
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Esta carta no deber\xEDa aparecer nunca"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
+    - rid: 1812450578821021702
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 72e33429-4e42-4813-be59-28db69abe7c9
+        position:
+          serializedVersion: 2
+          x: 8091
+          y: 416
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: ' Wow, it seems like win is the only verb you can conjugate, buddie,
+          what a game. We still are in need of a driving license, but I found someone
+          that may help us with it. He''s a guy who belongs to a punk mafia gang
+          called the ''GGJ24''. I told him about our problem, and he mentioned that
+          he has a bunch of fake driver''s licenses and could give us one.'
+        LeftText: Let's go talk to him
+        RightText: It's time to go on a trip!!!
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
