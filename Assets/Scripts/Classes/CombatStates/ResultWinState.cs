@@ -36,12 +36,24 @@ public class ResultWinState : CombatState
             DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation, async () =>
             {
                 SetEnemyCardsToChooseFrom(combatContext);
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayKillEnemyDeck();
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
                 await ShowEnemyCardsToChooseFrom();
             });
         }
         else
         {
             SetEnemyCardsToChooseFrom(combatContext);
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayKillEnemyDeck();
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             await ShowEnemyCardsToChooseFrom();
         }
         
