@@ -19537,6 +19537,8 @@ MonoBehaviour:
   MoveNotebookPlayer: {fileID: 142222259}
   ShowNotebookButtonPlayer: {fileID: 1939569302}
   HideNotebookButtonPlayer: {fileID: 361675678}
+  EnemyDrawCardFromDeckPlayer: {fileID: 0}
+  PlaceEnemyDeckOnBoardPlayer: {fileID: 0}
   CardOnCombatScaleFactor: 1.5
   CardOnTieZoneScaleFactor: 0.65
   PlaceCardOnCombatScaleFactor: 2
@@ -22529,7 +22531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 3
-  m_AspectRatio: 1.4105414
+  m_AspectRatio: 1.2941177
 --- !u!1001 &1931824878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22758,6 +22760,7 @@ MonoBehaviour:
   enemyTieZone: {fileID: 1503166249}
   playerDeck: {fileID: 1519592541}
   playerHandContainer: {fileID: 217401232}
+  enemyDeck: {fileID: 0}
   maxAllowedEnemyCards: 8
   timeForPresentEnemyCards: 0.5
   timeForPresentPlayerCards: 0.5
