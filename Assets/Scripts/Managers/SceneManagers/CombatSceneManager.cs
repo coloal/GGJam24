@@ -58,6 +58,7 @@ public class CombatSceneManager : BaseSceneManager
                 if (tutorialElements != null)
                 {
                     tutorialElements.SetParent(canvas.transform);
+                    dialogManager.ConversationController.gameObject.transform.SetAsLastSibling();
                 }
                 Destroy(tutorialCanvas);
             }

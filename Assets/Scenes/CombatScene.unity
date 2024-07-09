@@ -12866,7 +12866,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
     - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
       propertyPath: isTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20985,8 +20985,8 @@ RectTransform:
   - {fileID: 1412928021}
   - {fileID: 180106258}
   - {fileID: 2141584000}
-  - {fileID: 1383213369}
   - {fileID: 1078310419}
+  - {fileID: 1383213369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -24774,7 +24774,7 @@ MonoBehaviour:
   TextSound: 0.4
   SlowerTextSound: 1.8
   AngryTextSound: 2
-  ConversationController: {fileID: 1383213371}
+  conversationController: {fileID: 1383213371}
 --- !u!4 &1662651338
 Transform:
   m_ObjectHideFlags: 0

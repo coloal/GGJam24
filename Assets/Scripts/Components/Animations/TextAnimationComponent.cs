@@ -56,9 +56,19 @@ public class TextAnimationComponent : MonoBehaviour
         textMesh.text = "";
         bool slower = false;
         bool angry = false;
+        bool tag = false;
         float slowerTime = 0f;
+        string tagText = "";
         foreach (char letter in text)
         {
+            if(letter == '<')
+            {
+                tag = true;
+            }
+            if (letter == '>')
+            {
+                tag = false;
+            }
             if (letter == '*')
             {
                 slower = !slower;
@@ -69,20 +79,31 @@ public class TextAnimationComponent : MonoBehaviour
                 angry = !angry;
                 continue;
             }
-            if (!skippedText)
+            if (!skippedText && !tag)
             {
-                
                 yield return new WaitForSeconds(delaySeconds + slowerTime);
                 if (!slower && !angry) slowerTime = 0f;
                 else if (slower) slowerTime = 0.1f;
                 else if (angry) slowerTime = 0.03f;
             }
-            if(!skippedText && letter != ' ')
+            if(!skippedText && letter != ' ' && !tag)
             {
                 GameManager.Instance.ProvideSoundManager().PlayDialogSFX(slower ? DialogManager.SceneDialog.SlowerTextSound : angry ? DialogManager.SceneDialog.AngryTextSound : DialogManager.SceneDialog.TextSound);
             }
+            if(tag)
+            {
+                tagText += letter;
+            }
+            else
+            {
+                if(tagText != "")
+                {
+                    textMesh.text += tagText;
+                    tagText = "";
+                }
+                textMesh.text += letter;
+            }
             
-            textMesh.text += letter;
         }
         onAnimationEnded();
     }
