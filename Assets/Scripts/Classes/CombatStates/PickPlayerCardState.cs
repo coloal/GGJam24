@@ -29,9 +29,13 @@ public class PickPlayerCardState : CombatState
 
     public override void Preprocess(CombatManager.CombatContext combatContext)
     {
-        CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
-        CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayShowNotebookButton();
+        // Only execute the Notebook-related logic when not in a combat tutorial
+        if (!GameManager.Instance.ProvideBrainManager().IsTutorial)
+        {
+            CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
+            CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayShowNotebookButton();    
+        }
     }
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
@@ -74,9 +78,13 @@ public class PickPlayerCardState : CombatState
             interactiveCombatCardComponent.DisableInteractiveComponent();
         }
 
-        CombatSceneManager.Instance.ProvideCombatManager().DisableNotebookButton();
-        CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayHideNotebookButton();
+        // Only execute the Notebook-related logic when not in a combat tutorial
+        if (!GameManager.Instance.ProvideBrainManager().IsTutorial)
+        {
+            CombatSceneManager.Instance.ProvideCombatManager().DisableNotebookButton();
+            CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayHideNotebookButton();    
+        }
 
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayPlacePlayerCardOnCombat(
