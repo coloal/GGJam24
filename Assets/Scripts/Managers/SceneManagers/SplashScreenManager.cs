@@ -12,6 +12,9 @@ public class SplashScreenManager : BaseSceneManager
     async void Start()
     {
         Init();
+
+        GameManager.Instance.ProvideSoundManager().PlaySFX("SplashAudio");
+
         await splashFeedbacksManager.PlayFadeImages();
         if (this == null || destroyCancellationToken.IsCancellationRequested)
         {
