@@ -14,6 +14,7 @@ public class CombatManager : MonoBehaviour
         public GameObject enemyCardsRow1;
         public Transform playerHandContainer;
         public DeckBehaviourComponent playerDeck;
+        public DeckBehaviourComponent enemyDeck;
         public GameObject playerOnCombatCard;
         public Transform playerOnCombatCardTransform;
         public GameObject enemyOnCombatCard;
@@ -27,6 +28,7 @@ public class CombatManager : MonoBehaviour
             GameObject enemyCardsRow1,
             Transform playerHandContainer,
             DeckBehaviourComponent playerDeck,
+            DeckBehaviourComponent enemyDeck,
             Transform playerOnCombatCardTransform,
             Transform enemyOnCombatCardOriginalPosition,
             Transform enemyOnCombatCardFinalPosition,
@@ -38,6 +40,7 @@ public class CombatManager : MonoBehaviour
             this.enemyCardsRow1 = enemyCardsRow1;
             this.playerHandContainer = playerHandContainer;
             this.playerDeck = playerDeck;
+            this.enemyDeck = enemyDeck;
             this.playerOnCombatCardTransform = playerOnCombatCardTransform;
             this.enemyOnCombatCardOriginalPosition = enemyOnCombatCardOriginalPosition;
             this.enemyOnCombatCardFinalPosition = enemyOnCombatCardFinalPosition;
@@ -143,6 +146,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private Transform playerHandContainer;
 
     [Header("Enemy deck")]
+    [SerializeField] private DeckBehaviourComponent enemyDeck;
     [SerializeField] private int maxAllowedEnemyCards = 8;
 
     [Header("Time for next state configurations")]
@@ -191,6 +195,7 @@ public class CombatManager : MonoBehaviour
             enemyCardsRow1,
             playerHandContainer,
             playerDeck,
+            enemyDeck,
             playerOnCombatCardTransform,
             enemyOnCombatCardOriginalPosition,
             enemyOnCombatCardFinalPosition,

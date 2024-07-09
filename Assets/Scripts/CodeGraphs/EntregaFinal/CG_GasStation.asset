@@ -63,6 +63,9 @@ MonoBehaviour:
   - rid: 1812450578821021700
   - rid: 1812450578821021701
   - rid: 1812450578821021702
+  - rid: 1812450578821021704
+  - rid: 1812450578821021706
+  - rid: 1812450578821021707
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -114,12 +117,6 @@ MonoBehaviour:
       portIndex: 2
   - outputPort:
       nodeId: 60976ab3-86c5-4992-9856-8b491d0b8de7
-      portIndex: 0
-    inputPort:
-      nodeId: bcb399df-4e70-4a7e-8e28-0fe888bcf5b6
-      portIndex: 1
-  - outputPort:
-      nodeId: 60976ab3-86c5-4992-9856-8b491d0b8de7
       portIndex: 1
     inputPort:
       nodeId: 4ad770cc-9fc3-4cb4-b0dc-7948a5c5dfa7
@@ -148,12 +145,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
       portIndex: 2
-  - outputPort:
-      nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
-      portIndex: 0
-    inputPort:
-      nodeId: bcb399df-4e70-4a7e-8e28-0fe888bcf5b6
-      portIndex: 1
   - outputPort:
       nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
       portIndex: 1
@@ -322,12 +313,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 2e0512e4-8a54-4ce7-90f7-6f06cafde7f2
       portIndex: 2
-  - outputPort:
-      nodeId: 19c5323f-1c68-46f7-9f4c-09165bf5d314
-      portIndex: 0
-    inputPort:
-      nodeId: bcb399df-4e70-4a7e-8e28-0fe888bcf5b6
-      portIndex: 1
   - outputPort:
       nodeId: 2e0512e4-8a54-4ce7-90f7-6f06cafde7f2
       portIndex: 0
@@ -490,6 +475,42 @@ MonoBehaviour:
     inputPort:
       nodeId: 2741ebb0-cf1a-478d-86ed-b2765d6038be
       portIndex: 2
+  - outputPort:
+      nodeId: 321fa459-deb7-4cb2-bece-f68496b502cd
+      portIndex: 0
+    inputPort:
+      nodeId: f1df2c20-6ce3-4333-bddd-14d607537059
+      portIndex: 2
+  - outputPort:
+      nodeId: f1df2c20-6ce3-4333-bddd-14d607537059
+      portIndex: 0
+    inputPort:
+      nodeId: 249fcce5-f39d-45a4-b83a-0bb7ed3139fb
+      portIndex: 1
+  - outputPort:
+      nodeId: f1df2c20-6ce3-4333-bddd-14d607537059
+      portIndex: 1
+    inputPort:
+      nodeId: 249fcce5-f39d-45a4-b83a-0bb7ed3139fb
+      portIndex: 1
+  - outputPort:
+      nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
+      portIndex: 0
+    inputPort:
+      nodeId: 321fa459-deb7-4cb2-bece-f68496b502cd
+      portIndex: 1
+  - outputPort:
+      nodeId: 60976ab3-86c5-4992-9856-8b491d0b8de7
+      portIndex: 0
+    inputPort:
+      nodeId: 321fa459-deb7-4cb2-bece-f68496b502cd
+      portIndex: 1
+  - outputPort:
+      nodeId: 19c5323f-1c68-46f7-9f4c-09165bf5d314
+      portIndex: 0
+    inputPort:
+      nodeId: 321fa459-deb7-4cb2-bece-f68496b502cd
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -686,8 +707,8 @@ MonoBehaviour:
         guid: bcb399df-4e70-4a7e-8e28-0fe888bcf5b6
         position:
           serializedVersion: 2
-          x: 11802
-          y: -1803
+          x: 11656
+          y: -1998
           width: 881
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1469,3 +1490,63 @@ MonoBehaviour:
         LeftText: Let's go talk to him
         RightText: It's time to go on a trip!!!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450578821021704
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 321fa459-deb7-4cb2-bece-f68496b502cd
+        position:
+          serializedVersion: 2
+          x: 12853
+          y: -1707
+          width: 603
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Great, we did it! I told you it wasn't such a big deal. Now we'll
+          just have to see who can drive a caravan like that.
+        LeftText: Of course I know how to drive
+        RightText: I thought biggie knew
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450578821021706
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 249fcce5-f39d-45a4-b83a-0bb7ed3139fb
+        position:
+          serializedVersion: 2
+          x: 14430
+          y: -1707
+          width: 883
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'I see you''ve got all the preparations done for your road trip,
+          now it''s time to enjoy the summer and make it memorable! The Passage of
+          Time is proud of you, buddie!! '
+        LeftText: We beat the clock
+        RightText: The eternal summer is here!
+        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
+    - rid: 1812450578821021707
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f1df2c20-6ce3-4333-bddd-14d607537059
+        position:
+          serializedVersion: 2
+          x: 13488
+          y: -1706
+          width: 804
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Of course I know, my brother teached me when I was 12 and I am
+          always driving my mum's truck around the town, I can handle a van without
+          struggle!
+        LeftText: See
+        RightText: I want you to teach me too!
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}

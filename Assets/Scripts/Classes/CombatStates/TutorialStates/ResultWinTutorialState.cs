@@ -46,6 +46,12 @@ public class ResultWinTutorialState : ResultWinState
         TutorialManager.SceneTutorial.StartPickWinCardExplanation(async () =>
         {
             SetEnemyCardsToChooseFrom(combatContext);
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayKillEnemyDeck();
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             await ShowEnemyCardsToChooseFrom();
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
             {
