@@ -28,6 +28,7 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player ShowCoinResultPlayer;
     [SerializeField] public MMF_Player FlipCoinPlayer;
     [SerializeField] public MMF_Player MoveEnemyCardsTypesHintsPlayer;
+    [SerializeField] public MMF_Player MoveNotebookPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -69,6 +70,7 @@ public class CombatFeedbacksManager : MonoBehaviour
         ShowCoinResultPlayer.StopFeedbacksOnDisable = true;
         FlipCoinPlayer.StopFeedbacksOnDisable = true;
         MoveEnemyCardsTypesHintsPlayer.StopFeedbacksOnDisable = true;
+        MoveNotebookPlayer.StopFeedbacksOnDisable = true;
     }
     
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -523,6 +525,47 @@ public class CombatFeedbacksManager : MonoBehaviour
             moveEnemyCardsHintsFeedback.Destination = destination;
 
             await MoveEnemyCardsTypesHintsPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayShowNotebook(Transform origin, Transform destination, float backgroundAplha)
+    {
+        MMF_DestinationTransform moveNotebookFeedback = 
+            MoveNotebookPlayer.GetFeedbacksOfType<MMF_DestinationTransform>()
+                .Find((feedback) => feedback.Label.Equals("Move Notebook"));
+        MMF_ImageAlpha notebookBackgroundAlphaFeedback =
+            MoveNotebookPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Notebook background alpha"));
+
+        if (moveNotebookFeedback != null && notebookBackgroundAlphaFeedback != null)
+        {
+            moveNotebookFeedback.Origin = origin;
+            moveNotebookFeedback.Destination = destination;
+
+            notebookBackgroundAlphaFeedback.CurveRemapZero = 0.0f;
+            notebookBackgroundAlphaFeedback.CurveRemapOne = backgroundAplha;
+
+            await MoveNotebookPlayer.PlayFeedbacksTask();
+        }
+    }
+
+    public async Task PlayHideNotebook(Transform origin, Transform destination, float backgroundAplha)
+    {
+        MMF_DestinationTransform moveNotebookFeedback = 
+            MoveNotebookPlayer.GetFeedbacksOfType<MMF_DestinationTransform>()
+                .Find((feedback) => feedback.Label.Equals("Move Notebook"));
+
+        MMF_ImageAlpha notebookBackgroundAlphaFeedback =
+            MoveNotebookPlayer.GetFeedbacksOfType<MMF_ImageAlpha>().Find((feedback) => feedback.Label.Equals("Notebook background alpha"));
+
+        if (moveNotebookFeedback != null && notebookBackgroundAlphaFeedback != null)
+        {
+            moveNotebookFeedback.Origin = origin;
+            moveNotebookFeedback.Destination = destination;
+
+            notebookBackgroundAlphaFeedback.CurveRemapZero = backgroundAplha;
+            notebookBackgroundAlphaFeedback.CurveRemapOne = 0.0f;
+
+            await MoveNotebookPlayer.PlayFeedbacksTask();
         }
     }
 }

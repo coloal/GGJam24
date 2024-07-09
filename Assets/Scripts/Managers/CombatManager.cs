@@ -163,7 +163,7 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.Instance.ProvideBrainManager().IsTutorial) return;
+        //if (GameManager.Instance.ProvideBrainManager().IsTutorial) return;
         SetUpManagers();
         InitEnemyInfo();
         InitCombatContext();
