@@ -20,93 +20,125 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   tutorialEnemy: {fileID: 11400000, guid: f1b05c1469b62ce4aa2b734f2fb0a4bd, type: 2}
   initialConversation:
-  - Bienvenido al combate!
-  - "Aqui tendr\xE1s que combatir contra tus enemigos que te ir\xE1s encontrando
-    a lo largo de tu aventura"
-  - Este combate se realizara por turnos, y tendras que utiolizar cartas para vencer
-    al rival
-  - Primero veamos las cartas que vas a poder usar para desintegrar a tus enemigos
+  - Welcome to the combat!
+  - Here you will have to battle against your enemies
+  - In a CARD GAME!
+  - As it is your first time here, i will be guiding you through the combat
+  - First we are gonna take a look at the cards present in this universe
   cardExplanation:
-  - "Aqui tenemos los tres tipos de cartas que te podr\xE1s encontrar durante tu
-    viaje"
-  - 'Los tipos se diferencian por colores, y hay tres: Azul, Verde y Rojo'
-  - Esto hay que hacerlo en ingles
+  - This are the cards you will encounter during your adventure
+  - There are three types of cards. Each one respresented by a different color. (The
+    card objects dont affect the gameplay)
+  - The RED card stands for VIOLENCE
+  - The GREEN card stands for WEALTH
+  - And finally the BLUE card stands for POWER
+  - So now. How do you win? (or lose probably...)
+  - This three cards will interact differently between each other
+  - The VIOLENCE card (red) will beat the WEALTH (green) card but will lose to the
+    POWER (blue) card
+  - The WEALTH (green) card will beat the POWER (blue) card but will lose to the
+    VIOLENCE (red) card
+  - The POWER (blue) card will beat the VIOLENCE (red) card but will lose to the
+    WEALTH (green) card
+  - Now that we know all of the cards lets start with the combat!
   enemyCardExplanationPreShow:
-  - Explicacion cartas pre
-  - Explicacion cartas pre_1
+  - Rigth at the very start of each combat the enemy will show you its cards
   enemyCardExplanationWhileShow:
-  - Explicacion cartas while_
-  - AAAAAAAAAAAAAAAA
+  - These are the cards I will be able to use in this combat.
+  - You would be doing a great thing in trying to remember them (or else you will
+    probably lose...)
+  - But be careful as the cards that the enemy is gonna be playing are not in the
+    same order as you are seeing them here
   enemyPlaysCardExplanationViolenceWin:
-  - First the enemy (me) has to play a card. You wont be able to see what card the
-    enemies pick
-  - But this is the tutorial....
-  - ok... im telling you what cards im picking
-  - Im gonna play a violence card
+  - I will now play one of my cards. And you will not be able to see what card i
+    picked so be prepared to LOSE!
+  - What? You wanna know what cards i picked only because this is the tutorial?!?!?!
+  - ....................
+  - .......
+  - 'Okay okay, you win, im gonna tell you the cards that im picking :( '
+  - The card im gonna pick first is a VIOLENCE card
   playerPlaysCardExplanationInfluenceWin:
   - Ok so now its your turn!
   - You will have to pick one of your cards to figth with mine
-  - Remember, you normally wouldnt know which card i picked
-  - Now pick your Influence card to win the exchange
+  - Remember, you normally wouldnt know which card i just picked
+  - So if you wanna win you should maybe play an INFLUENCE card
   enemyPlaysCardExplanationViolenceLose:
-  - Im gonna play a Violence card
+  - I will play my violence card again, maybe this time i will have more luck
   playerPlaysCardExplanationMoneyLose:
-  - Now pick your wealth card to lose the exchange
+  - I would highly recomend you to use your WEALTH card (Its not like you are gonna
+    lose or anything...)
   enemyPlaysCardExplanationMoneyDraw:
-  - Im gonna play a Wealth card
+  - I will change things up a little bit and play a WEALTH card
   playerPlaysCardExplanationMoneyDraw:
-  - Now pick your wealth card to draw the exchange
+  - 'I think you should also play a WEALTH card. '
   enemyPlaysCardExplanationInfluenceDraw:
-  - Im gonna play an Influence card
+  - Next I will play a POWER card
   playerPlaysCardExplanationInfluenceDraw:
-  - Now pick your influence card to draw again the exchange
+  - 'And you will also have to pick you POWER card '
   enemyPlaysCardExplanationViolenceDraw:
-  - Im gonna play a Violence card
+  - I only have one card left. Do you know which it is?
+  - If you dont, that means that you havent been playing this game properly
+  - It can be really usefull to keep track of the cards the enemy has to be able
+    to face them in a more accurate way.
+  - So if you didnt already know my last card is a VIOLENCE card
   playerPlaysCardExplanationViolenceDraw:
-  - Now pick your violence card to draw again the exchange
+  - You only have a card left so there is nothing you can do other than playing your
+    VIOLENCE card
   winExplanation:
-  - You have won the exchange, as an influence card beats my Violence Card
-  - Now your card will return to your deck, and my card will be destroyed
+  - THAT HURTS!!, bro you just killed my card  >:(
+  - So yeah, you have won the exchange, as an influence card beats a Violence Card
+  - 'Now your card will return to your deck, and my card will be destroyed '
   loseExplanation:
-  - You have lost thje exchange
+  - Yes, I have won!!
+  - And you have lost the exchange
   - Your card will now be destroyed and mine will return to my hand
   drawExplanationFirst:
-  - Our cards have tied the exchange as the typoe of both are the same
+  - Our cards have tied the exchange as the types of both are the same
   - Both cards will be put apart until someone wins the exchange
+  - You will not draw any new card from your deck until the draw is resolved
   drawExplanationSecond:
   - 'Our cards have tied again '
-  - Both cards will be put on the previous ones
+  - Both cards will be put on top of  the previous ones
   drawExplanationThird:
   - Again! Our cards have tied for a third time
   - Both cards will be put on the previous ones
   coinCardExplanation:
-  - Now a coin wil be thrown to decide the winner as no more cards can be played
-  - You will have to pick either heads or tails
+  - Wait, what do we do now?
+  - I dont have any cards left in my deck...
+  - And you dont have any in your hand
+  - ...... Yeah i know what we could do!!!
+  - We just throw a coin to solve the tie situation
+  - I mean who doesnt like a bit of gambling i mean luck in the game
+  - ... So we will have to throw a coin whenever the player or the enemy run out
+    of cards
+  - Ok, make you choice then. HEADS or TAILS?
   coinExplanation:
-  - Now the coin will be thrown. Good luck
+  - Now the coin will be thrown. Good luck (to me)
   battleResultExplanation:
-  - Congrats! You have won the combat!
+  - Congrats!! You have won the combat!!! (If only this wasnt scripted...)
   pickWinCardExplanation:
-  - As the winner you have gained the rigth to keep one of my cards. Choose wisely
-    as you can only pick once
+  - As the winner you have gained the rigth to keep one of my precious cards. Choose
+    wisely as you can only pick once
   endExplanation:
   - The combat has reached its end. Good luck destroying the rest of your oponents
+    (or being destoyed by them)
   playerTrippingViolence:
-  - I think you made a mistake, you have to play your violence card
+  - I think you made a mistake, you have to play your WEALTH card to figth against
+    my VIOLENCE card
   playerTrippingViolence_1:
-  - I SAID PLAY YOUR VOILENCE CARD!!!
+  - I SAID PLAY YOUR WEALTH CARD!!!
   playerTrippingViolence_2:
-  - IF YOU DONT PLAY YOUR VOLENCE CARD I WILL SHOW YOU REAL VIOLENCE!!!!!!
+  - IF YOU DONT PLAY YOUR WEALTH CARD I WILL SHOW YOU REAL VIOLENCE!!!!!!
   playerTrippingMoney:
-  - I think you wanted to play your wealth card
+  - Wrong choice. Try again
   playerTrippingMoney_1:
   - YOU REALLY SHOULD JUST PLAY YOUR WEALTH CARD
   playerTrippingMoney_2:
-  - ARE YOU SO POOR YOU CANT PLAY A CARD THAT HAS MONEY IN IT!!!??
+  - ARE YOU SO POOR YOU CANT EVEN PLAY A CARD THAT HAS MONEY IN IT!!!??
   playerTrippingInfluence:
-  - Thats not the rigth card. Try again
+  - I think you made a slight mistake. Playing your POWER card is the way to go here
   playerTrippingInfluence_1:
   - 'PLEASE DO ME A FAVOR AND USE THE TWO REMAINING NEURONS YOU HAVE LEFT TO PLAY
-    THE INFLUENCE CARD. '
+    THE POWER CARD. '
   playerTrippingInfluence_2:
-  - OK, I GOT IT..... YOU HAVE NO FRIENDS
+  - OK, I GOT IT..... YOU ARE POWERLESS AND HAVE NO FRIENDS
