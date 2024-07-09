@@ -35,11 +35,11 @@ public class CombatSceneManager : BaseSceneManager
     void Start()
     { 
         Init();
-        // if(GameManager.Instance.ProvideBrainManager().IsTutorial)
-        // {
-        //     SceneManager.sceneLoaded += onTutorialLoaded;
-        //     SceneManager.LoadScene("CombatSceneTutorialLogic", LoadSceneMode.Additive);
-        // }
+        if(GameManager.Instance.ProvideBrainManager().IsTutorial)
+        {
+            SceneManager.sceneLoaded += onTutorialLoaded;
+            SceneManager.LoadScene("CombatSceneTutorialLogic", LoadSceneMode.Additive);
+        }
     }
 
     void onTutorialLoaded(Scene scene, LoadSceneMode sceneMode)
