@@ -196,13 +196,13 @@ public class TutorialManager : MonoBehaviour
                 text = tutorialInfo.PlayerTrippingInfluence_2;
                 break;
             case 3:
-                text = tutorialInfo.PlayerTrippingMoney;
+                text = tutorialInfo.PlayerTrippingViolence;
                 break;
             case 4:
-                text = tutorialInfo.PlayerTrippingMoney_1;
+                text = tutorialInfo.PlayerTrippingViolence_1;
                 break;
             case 5:
-                text = tutorialInfo.PlayerTrippingMoney_2;
+                text = tutorialInfo.PlayerTrippingViolence_2;
                 break;
             case 6:
                 text = tutorialInfo.PlayerTrippingMoney;
