@@ -20,7 +20,10 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private RectTransform thirdCardMask;
     [SerializeField] private RectTransform combatResultMask;
     [SerializeField] private RectTransform drawResultMask;
-    [SerializeField] private float MaskVelocity = 30;
+    [SerializeField] public float MaskVelocity = 30;
+    [SerializeField] public float TextSound = 0.4f;
+    [SerializeField] public float SlowerTextSound = 1.8f;
+    [SerializeField] public float AngryTextSound = 2f;
 
     [SerializeField] private TutorialEnemyDeckManager enemyDeck;
     public TutorialEnemyDeckManager EnemyDeck => enemyDeck;

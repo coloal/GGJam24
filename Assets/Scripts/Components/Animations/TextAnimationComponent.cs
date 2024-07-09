@@ -54,12 +54,34 @@ public class TextAnimationComponent : MonoBehaviour
     {
         skippedText = false;
         textMesh.text = "";
+        bool slower = false;
+        bool angry = false;
+        float slowerTime = 0f;
         foreach (char letter in text)
         {
-            if(!skippedText)
+            if (letter == '*')
             {
-                yield return new WaitForSeconds(delaySeconds);
+                slower = !slower;
+                continue;
             }
+            if(letter == '%')
+            {
+                angry = !angry;
+                continue;
+            }
+            if (!skippedText)
+            {
+                
+                yield return new WaitForSeconds(delaySeconds + slowerTime);
+                if (!slower && !angry) slowerTime = 0f;
+                else if (slower) slowerTime = 0.1f;
+                else if (angry) slowerTime = 0.03f;
+            }
+            if(!skippedText && letter != ' ')
+            {
+                GameManager.Instance.ProvideSoundManager().PlayDialogSFX(slower ? TutorialManager.SceneTutorial.SlowerTextSound : angry ? TutorialManager.SceneTutorial.AngryTextSound : TutorialManager.SceneTutorial.TextSound);
+            }
+            
             textMesh.text += letter;
         }
         onAnimationEnded();

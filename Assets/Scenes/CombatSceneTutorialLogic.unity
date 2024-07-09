@@ -1264,6 +1264,8 @@ MonoBehaviour:
   combatResultMask: {fileID: 353506192}
   drawResultMask: {fileID: 781327095}
   MaskVelocity: 20
+  TextSound: 0.4
+  soundEveryLetters: 1
   enemyDeck: {fileID: 1945752710}
   enemyCardsTypesHintsOriginPosition: {fileID: 1967675995}
   enemyCardsTypesHintsDestinationPosition: {fileID: 451419007}
