@@ -45,6 +45,7 @@ public class CreditsSceneManager : BaseSceneManager
     {
         GameManager.Instance.SetHasAStoryStarted(true);
 
+        GameManager.Instance.ProvideStoryManager().ResetStory();
         GameManager.Instance.ProvideStoryManager().ChangeStory(defaultGraph, true);
         GameManager.Instance.ProvideBrainManager().ChangeZone(zoneTemplate);
         GameManager.Instance.ProvideBrainManager().SetActualGraphType(graphType);

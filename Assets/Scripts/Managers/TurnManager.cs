@@ -126,11 +126,13 @@ public class TurnManager : MonoBehaviour
             if (graphType == GraphTypes.Story)
             {
                 GameManager.Instance.ProvideSoundManager().StopLevelMusic();
+                GameManager.Instance.SetHasAStoryStarted(false);
                 SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
             }
             else
             {
                 GameManager.Instance.ProvideSoundManager().StopCreditsMusic();
+                GameManager.Instance.SetHasAStoryStarted(false);
                 SceneManager.LoadScene(ScenesNames.MainMenuScene);
             }
             //SceneManager.LoadScene(ScenesNames.GameOverScene);
