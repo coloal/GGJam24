@@ -10,7 +10,6 @@ public class TutorialManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private TutorialInfoTemplate tutorialInfo;
-    [SerializeField] private ConversationController tutorialConversationController;
     
     [Header("Canvas masks")]
     [SerializeField] private RectTransform playerCardsMask;
@@ -21,9 +20,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private RectTransform combatResultMask;
     [SerializeField] private RectTransform drawResultMask;
     [SerializeField] public float MaskVelocity = 30;
-    [SerializeField] public float TextSound = 0.4f;
-    [SerializeField] public float SlowerTextSound = 1.8f;
-    [SerializeField] public float AngryTextSound = 2f;
+    
 
     [SerializeField] private TutorialEnemyDeckManager enemyDeck;
     public TutorialEnemyDeckManager EnemyDeck => enemyDeck;
@@ -54,7 +51,7 @@ public class TutorialManager : MonoBehaviour
 
     public void StartInitialConversation(Action onFinishConversation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.InitialConversation, onFinishConversation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.InitialConversation, onFinishConversation);
     }
 
     public void StartCardExplanation(Action onFinishExplanation)
@@ -64,7 +61,7 @@ public class TutorialManager : MonoBehaviour
     }
     public void StartEnemyCardExplanationPreShow(Action onFinishExplanation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.EnemyCardExplanationPreShow, onFinishExplanation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.EnemyCardExplanationPreShow, onFinishExplanation);
     }
     public void StartEnemyCardExplanationWhileShow(Action onFinishExplanation)
     {
@@ -109,7 +106,7 @@ public class TutorialManager : MonoBehaviour
                 text = tutorialInfo.EnemyPlaysCardExplanationViolenceDraw;
                 break;
         }
-        tutorialConversationController.StartConversation(text, onFinishConversation);
+        DialogManager.SceneDialog.CreateDialog(text, onFinishConversation);
     }
 
     public void StartPlayerPickConversation(Action onFinishConversation)
@@ -139,7 +136,7 @@ public class TutorialManager : MonoBehaviour
                 text = tutorialInfo.PlayerPlaysCardExplanationViolenceDraw;
                 break;
         }
-        if (mask != null) tutorialConversationController.StartConversation(text, () => BlockScreen(mask, onFinishConversation));
+        if (mask != null) DialogManager.SceneDialog.CreateDialog(text, () => BlockScreen(mask, onFinishConversation));
     }
 
     public bool shouldCardBeActive(int cardPosition)
@@ -161,22 +158,22 @@ public class TutorialManager : MonoBehaviour
     }
     public void StartCoinCardExplanation(Action onFinishExplanation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.CoinCardExplanation, onFinishExplanation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.CoinCardExplanation, onFinishExplanation);
     }
 
     public void StartCoinExplanation(Action onFinishExplanation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.CoinExplanation, onFinishExplanation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.CoinExplanation, onFinishExplanation);
     }
     public void StartBattleResultExplanation(Action onFinishExplanation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.BattleResultExplanation, onFinishExplanation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.BattleResultExplanation, onFinishExplanation);
 
     }
 
     public void StartPickWinCardExplanation(Action onFinishExplanation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.PickWinCardExplanation, onFinishExplanation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.PickWinCardExplanation, onFinishExplanation);
     }
 
     public void PickWinCard()
@@ -235,17 +232,17 @@ public class TutorialManager : MonoBehaviour
                 text = tutorialInfo.PlayerTrippingViolence_2;
                 break;
         }
-        tutorialConversationController.StartConversation(text, onFinishConversation);
+        DialogManager.SceneDialog.CreateDialog(text, onFinishConversation);
         trippingCount = Math.Min(trippingCount + 1, 2);
     }
     public void StartEndExplanation(Action onFinishExplanation)
     {
-        tutorialConversationController.StartConversation(tutorialInfo.EndExplanation, onFinishExplanation);
+        DialogManager.SceneDialog.CreateDialog(tutorialInfo.EndExplanation, onFinishExplanation);
     }
 
     void StartConversationWithBlock(RectTransform mask, List<string> text, Action onFinishConversation)
     {
-        BlockScreen(mask, () => tutorialConversationController.StartConversation(text, () => UnBlockScreen(() => onFinishConversation())));
+        BlockScreen(mask, () => DialogManager.SceneDialog.CreateDialog(text, () => UnBlockScreen(() => onFinishConversation())));
 
     }
 

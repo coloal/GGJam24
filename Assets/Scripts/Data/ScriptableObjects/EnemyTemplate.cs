@@ -7,6 +7,9 @@ public class EnemyTemplate : ScriptableObject
 {
     public Sprite characterSprite;
     public List<CombatCardTemplate> CombatCards;
+    public List<string> OnStartConversation;
+    public List<string> OnWinConversation;
+    public List<string> OnLoseConversation;
     public float ShowHintsTimeInSeconds;
 
     

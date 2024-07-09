@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using static CombatManager;
@@ -30,8 +31,20 @@ public class ResultWinState : CombatState
         {
             return;
         }
-        SetEnemyCardsToChooseFrom(combatContext);
-        await ShowEnemyCardsToChooseFrom();
+        if(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation.Any())
+        {
+            DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation, async () =>
+            {
+                SetEnemyCardsToChooseFrom(combatContext);
+                await ShowEnemyCardsToChooseFrom();
+            });
+        }
+        else
+        {
+            SetEnemyCardsToChooseFrom(combatContext);
+            await ShowEnemyCardsToChooseFrom();
+        }
+        
     }
 
     protected async Task ReturnPlayerCardsFromHandToDeck(CombatManager.CombatContext combatContext)
