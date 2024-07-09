@@ -39,13 +39,8 @@ MonoBehaviour:
   - rid: 1812450504952774690
   - rid: 1812450528744177667
   - rid: 1812450528744177668
+  - rid: 1812450555419689004
   connections:
-  - outputPort:
-      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
-      portIndex: 0
-    inputPort:
-      nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
-      portIndex: 2
   - outputPort:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
       portIndex: 1
@@ -268,6 +263,18 @@ MonoBehaviour:
     inputPort:
       nodeId: 8e212095-1c22-4d02-bfc9-f6a721efe036
       portIndex: 0
+  - outputPort:
+      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+      portIndex: 0
+    inputPort:
+      nodeId: 3f534e16-3fc9-497c-a59e-23ab28f9eed7
+      portIndex: 1
+  - outputPort:
+      nodeId: 3f534e16-3fc9-497c-a59e-23ab28f9eed7
+      portIndex: 0
+    inputPort:
+      nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -760,8 +767,23 @@ MonoBehaviour:
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs: []
-        newStory: {fileID: 11400000, guid: 2a55102d91b2c7543a41887a87b41b77, type: 2}
+        newStory: {fileID: 11400000, guid: 983fe6b009b0ba64e9b952ea2d95e410, type: 2}
         restartNewStory: 0
+    - rid: 1812450555419689004
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3f534e16-3fc9-497c-a59e-23ab28f9eed7
+        position:
+          serializedVersion: 2
+          x: -2145
+          y: 291
+          width: 347
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: a9f24948fadb04e47b15259cebc03b00, type: 2}
     - rid: 3107022144919568403
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -783,7 +805,7 @@ MonoBehaviour:
         guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
         position:
           serializedVersion: 2
-          x: -1906
+          x: -2321
           y: 291
           width: 81
           height: 77

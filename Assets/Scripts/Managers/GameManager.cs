@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
                     GameUtils.CreateTemporizer(() =>
                     {
                         nextAction();
-                        Destroy(instantedAnimator_1);
+                        Destroy(instantedAnimator_1.gameObject);
                     }, 1.0f, this);
                 }
             });

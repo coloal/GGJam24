@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
+  m_Name: WheelChaired
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 0}
+  CombatCards:
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  ShowHintsTimeInSeconds: 1

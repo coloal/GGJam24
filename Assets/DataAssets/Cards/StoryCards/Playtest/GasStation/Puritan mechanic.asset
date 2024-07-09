@@ -16,4 +16,4 @@ MonoBehaviour:
   Text: lorem ipsum
   LeftText: "No me hagas re\xEDr"
   RightText: Ayudar
-  CardSprite: {fileID: 605515098, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CharacterSprite: {fileID: 605515098, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
