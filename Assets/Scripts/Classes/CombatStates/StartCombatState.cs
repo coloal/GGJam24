@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class StartCombatState : CombatState
@@ -18,9 +19,22 @@ public class StartCombatState : CombatState
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
-        SetUpPlayerDeck(combatContext);
-        SetUpEnemyDeck(combatContext);
-        PostProcess(combatContext);
+        if(CombatSceneManager.Instance.ProvideEnemyData().OnStartConversation.Any())
+        {
+            DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnStartConversation, () =>
+            {
+                SetUpPlayerDeck(combatContext);
+                SetUpEnemyDeck(combatContext);
+                PostProcess(combatContext);
+            });
+        }
+        else
+        {
+            SetUpPlayerDeck(combatContext);
+            SetUpEnemyDeck(combatContext);
+            PostProcess(combatContext);
+        }
+        
     }
 
     protected virtual void SetUpPlayerDeck(CombatManager.CombatContext combatContext)
