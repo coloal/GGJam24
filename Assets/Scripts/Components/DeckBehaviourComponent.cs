@@ -9,15 +9,10 @@ public class DeckBehaviourComponent : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textCardsLeft;
 
     int numberOfCardsLeft;
-
-    void Start()
+    
+    public void InitDeck(BaseDeckManager deckManager)
     {
-        InitDeck();
-    }
-
-    public void InitDeck()
-    {
-        numberOfCardsLeft = GameManager.Instance.ProvideInventoryManager().GetNumberOfCardsInDeck();
+        numberOfCardsLeft = deckManager.GetNumberOfCardsInDeck();
         textCardsLeft.text = numberOfCardsLeft.ToString();
     }
 

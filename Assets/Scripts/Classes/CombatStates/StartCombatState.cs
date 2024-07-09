@@ -48,6 +48,7 @@ public class StartCombatState : CombatState
         });
 
         playerDeckManager.ShuffleDeck();
+        combatContext.playerDeck.InitDeck(playerDeckManager);
     }
 
     virtual protected void SetUpEnemyDeck(CombatManager.CombatContext combatContext)
@@ -72,6 +73,8 @@ public class StartCombatState : CombatState
                 enemyDeckManager.AddCardToDeck(combatCard);
             }
         });
+
+        combatContext.enemyDeck.InitDeck(enemyDeckManager);
     }
     
 }
