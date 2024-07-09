@@ -126,6 +126,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private Transform coinCardOriginTransform;
     [SerializeField] private Transform coinCardContainerTransform;
     [SerializeField] private CoinComponent coin;
+    [SerializeField] private ButtonComponent notebookButtonComponent;
 
     [Header("Combat zone")]
     [SerializeField] private GameObject combatContainer;
@@ -247,5 +248,41 @@ public class CombatManager : MonoBehaviour
     public CoinComponent GetCombatCoin()
     {
         return coin;
+    }
+
+    public void EnablePlayerCardsInHandInteractiveComponent()
+    {
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardInHand.GetComponent<InteractiveCombatCardComponent>();
+            if (interactiveCombatCardComponent != null)
+            {
+                interactiveCombatCardComponent.EnableInteractiveComponent();
+            }
+        });
+    }
+
+    public void DisablePlayerCardsInHandInteractiveComponent()
+    {
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardInHand.GetComponent<InteractiveCombatCardComponent>();
+            if (interactiveCombatCardComponent != null)
+            {
+                interactiveCombatCardComponent.DisableInteractiveComponent();
+            }
+        });
+    }
+
+    public void EnableNotebookButton()
+    {
+        notebookButtonComponent.enabled = true;
+    }
+
+    public void DisableNotebookButton()
+    {
+        notebookButtonComponent.enabled = false;
     }
 }

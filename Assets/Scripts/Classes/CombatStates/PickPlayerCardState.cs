@@ -29,10 +29,15 @@ public class PickPlayerCardState : CombatState
 
     public override void Preprocess(CombatManager.CombatContext combatContext)
     {
+        CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
+        CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayShowNotebookButton();
     }
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
+        Preprocess(combatContext);
+
         CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
         {
             InteractiveCombatCardComponent interactiveCombatCardComponent =
@@ -68,6 +73,10 @@ public class PickPlayerCardState : CombatState
         {
             interactiveCombatCardComponent.DisableInteractiveComponent();
         }
+
+        CombatSceneManager.Instance.ProvideCombatManager().DisableNotebookButton();
+        CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayHideNotebookButton();
 
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayPlacePlayerCardOnCombat(

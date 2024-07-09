@@ -34,6 +34,8 @@ public class NotebookComponent : MonoBehaviour
         if (!isNotebookShown)
         {
             notebook.SetActive(true);
+            CombatSceneManager.Instance.ProvideCombatManager().DisablePlayerCardsInHandInteractiveComponent();
+
             await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayShowNotebook(
                     origin: notebookOriginPosition,
@@ -61,6 +63,7 @@ public class NotebookComponent : MonoBehaviour
             {
                 isNotebookShown = false;
                 notebook.SetActive(false);
+                CombatSceneManager.Instance.ProvideCombatManager().EnablePlayerCardsInHandInteractiveComponent();
             }
         }
     }
