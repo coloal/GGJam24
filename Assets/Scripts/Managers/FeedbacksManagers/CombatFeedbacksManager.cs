@@ -31,6 +31,8 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player MoveNotebookPlayer;
     [SerializeField] public MMF_Player ShowNotebookButtonPlayer;
     [SerializeField] public MMF_Player HideNotebookButtonPlayer;
+    [SerializeField] public MMF_Player EnemyDrawCardFromDeckPlayer;
+    [SerializeField] public MMF_Player PlaceEnemyDeckOnBoardPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -75,6 +77,8 @@ public class CombatFeedbacksManager : MonoBehaviour
         MoveNotebookPlayer.StopFeedbacksOnDisable = true;
         ShowNotebookButtonPlayer.StopFeedbacksOnDisable = true;
         HideNotebookButtonPlayer.StopFeedbacksOnDisable = true;
+        EnemyDrawCardFromDeckPlayer.StopFeedbacksOnDisable = true;
+        PlaceEnemyDeckOnBoardPlayer.StopFeedbacksOnDisable = true;
     }
     
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -581,5 +585,11 @@ public class CombatFeedbacksManager : MonoBehaviour
     public void PlayHideNotebookButton()
     {
         HideNotebookButtonPlayer.PlayFeedbacks();
+    }
+
+    public async Task PlayEnemyDrawCardFromDeck(DeckBehaviourComponent enemyDeck)
+    {
+        enemyDeck.DrawCardFromDeck();
+        await EnemyDrawCardFromDeckPlayer.PlayFeedbacksTask();
     }
 }
