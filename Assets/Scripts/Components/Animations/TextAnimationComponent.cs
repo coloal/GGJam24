@@ -79,7 +79,7 @@ public class TextAnimationComponent : MonoBehaviour
             }
             if(!skippedText && letter != ' ')
             {
-                GameManager.Instance.ProvideSoundManager().PlayDialogSFX(slower ? TutorialManager.SceneTutorial.SlowerTextSound : angry ? TutorialManager.SceneTutorial.AngryTextSound : TutorialManager.SceneTutorial.TextSound);
+                GameManager.Instance.ProvideSoundManager().PlayDialogSFX(slower ? DialogManager.SceneDialog.SlowerTextSound : angry ? DialogManager.SceneDialog.AngryTextSound : DialogManager.SceneDialog.TextSound);
             }
             
             textMesh.text += letter;

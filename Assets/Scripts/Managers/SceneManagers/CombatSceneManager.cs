@@ -12,13 +12,15 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] PlayerDeckManager playerDeckManager;
     [SerializeField] EnemyDeckManager enemyDeckManager;
     [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
-    [SerializeField] Canvas canvas;
+    [SerializeField] private DialogManager dialogManager;
     TutorialManager tutorialManager;
+    [SerializeField] Canvas canvas;
 
     [Header("Debug configurations")]
     [SerializeField] private bool isDebugging = false;
     [SerializeField] private EnemyTemplate debugEnemyTemplate;
-
+    
+    
     void Awake()
     {
         if (Instance == null)
@@ -71,6 +73,10 @@ public class CombatSceneManager : BaseSceneManager
     public TutorialManager ProvideTutorialManager()
     {
         return tutorialManager;
+    }
+    public DialogManager ProvideDialogManager()
+    {
+        return dialogManager;
     }
 
     public PlayerDeckManager ProvidePlayerDeckManager()

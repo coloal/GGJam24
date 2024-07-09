@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using static CombatManager;
 
 public class ResultLoseState : CombatState
 {
@@ -26,7 +28,14 @@ public class ResultLoseState : CombatState
         {
             return;
         }
-        
+    
+        if(CombatSceneManager.Instance.ProvideEnemyData().OnLoseConversation.Any())
+        {
+            DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnLoseConversation, () =>
+            {
+                PostProcess(combatContext);
+            });
+        }
         PostProcess(combatContext);
     }
 
