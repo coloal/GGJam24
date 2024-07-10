@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardInfluenceCamera
   m_EditorClassIdentifier: 
   NameOfCard: Camera
-  cardSprite: {fileID: 21300000, guid: e505ec04f33a7499aa679ad1006275fc, type: 3}
+  cardSprite: {fileID: 21300000, guid: 52f66222cd1cbea47b6c04df40ca4113, type: 3}
   CombatType: 1
   Instrument: 
