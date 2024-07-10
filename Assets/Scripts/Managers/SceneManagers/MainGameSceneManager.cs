@@ -39,6 +39,10 @@ public class MainGameSceneManager : BaseSceneManager
         {
             StartStory();
         }
+        else
+        {
+            turnManager.SetZoneSprites();
+        }
     }
 
     public void StartStory()
