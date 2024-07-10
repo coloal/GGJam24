@@ -17,7 +17,10 @@ public class BrainManager : MonoBehaviour
     public static BrainManager Instance;
     [SerializeField]
     private bool isTutorial = true;
-    public bool IsTutorial => isTutorial;
+    public bool IsTutorial {
+        get { return isTutorial; }
+        set { isTutorial = value; }
+    }
         
     public ZoneTemplate ZoneInfo => zoneInfo;
 

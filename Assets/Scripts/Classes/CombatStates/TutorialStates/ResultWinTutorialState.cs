@@ -18,7 +18,7 @@ public class ResultWinTutorialState : ResultWinState
             combatContext.DeactivateEnemyCardsContainer();
 
             CombatSceneManager.Instance.ProvideCombatManager().OverwriteCombatContext(combatContext);
-
+            GameManager.Instance.ProvideBrainManager().IsTutorial = false;
             //TODO: return to history
             GameManager.Instance.EndCombat(TurnResult.COMBAT_WON_CAPTURE);
         });
