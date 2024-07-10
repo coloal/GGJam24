@@ -19,6 +19,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private RectTransform thirdCardMask;
     [SerializeField] private RectTransform combatResultMask;
     [SerializeField] private RectTransform drawResultMask;
+    [SerializeField] private RectTransform noteBookMask;
     [SerializeField] public float MaskVelocity = 30;
     
 
@@ -59,6 +60,12 @@ public class TutorialManager : MonoBehaviour
         if (TutorialCombatTurn == 0) StartConversationWithBlock(playerCardsMask, tutorialInfo.CardExplanation, onFinishExplanation);
         else onFinishExplanation();
     }
+
+    public void StartNoteBookExplanation(Action onFinishExplanation)
+    {
+        StartConversationWithBlock(noteBookMask, tutorialInfo.BookExplanation, onFinishExplanation);
+    }
+
     public void StartEnemyCardExplanationPreShow(Action onFinishExplanation)
     {
         DialogManager.SceneDialog.CreateDialog(tutorialInfo.EnemyCardExplanationPreShow, onFinishExplanation);
@@ -243,7 +250,6 @@ public class TutorialManager : MonoBehaviour
     void StartConversationWithBlock(RectTransform mask, List<string> text, Action onFinishConversation)
     {
         BlockScreen(mask, () => DialogManager.SceneDialog.CreateDialog(text, () => UnBlockScreen(() => onFinishConversation())));
-
     }
 
     void Start()
@@ -271,19 +277,20 @@ public class TutorialManager : MonoBehaviour
             {
                 currentMask.localScale = new Vector3(maxMaskScale, maxMaskScale, 1);
                 isDemaskig = false;
-                onDemask();
                 currentMask.gameObject.SetActive(false);
+                onDemask();
+                
             }
         }
     }
 
     public void BlockScreen(RectTransform mask, Action onBlock)
-    {
+    {   
+        currentMask = mask;
         onMask = onBlock;
         maxMaskScale = mask.localScale.x;
         isMasking = true;
         isDemaskig = false;
-        currentMask = mask;
         mask.gameObject.SetActive(true);
     }
     public void UnBlockScreen(Action onUnblock)

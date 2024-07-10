@@ -12,6 +12,10 @@ public class PickPlayerCardTutorialState : PickPlayerCardState
     {
         return TutorialManager.SceneTutorial.EnemyDeck;
     }
+
+    public override void Preprocess(CombatContext combatContext)
+    {
+    }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {   
         CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>

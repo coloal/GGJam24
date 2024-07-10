@@ -12,10 +12,10 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] PlayerDeckManager playerDeckManager;
     [SerializeField] EnemyDeckManager enemyDeckManager;
     [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
-    [SerializeField] private DialogManager dialogManager;
+    [SerializeField] DialogManager dialogManager;
     TutorialManager tutorialManager;
     [SerializeField] Canvas canvas;
-
+    [SerializeField] public NotebookComponent NotebookComponent;
     [Header("Debug configurations")]
     [SerializeField] private bool isDebugging = false;
     [SerializeField] private EnemyTemplate debugEnemyTemplate;

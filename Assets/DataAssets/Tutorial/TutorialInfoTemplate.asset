@@ -22,16 +22,13 @@ MonoBehaviour:
   initialConversation:
   - "Let\xB4s fight! No physical touch though"
   - Here you will have to battle against your opponents
-  - In a *CARD GAME!*
+  - In a *<b>CARD GAME!</b>*
   - As it is your first time here, i will be guiding you through the combat
   - First we are gonna take a look at the cards present in this universe
   cardExplanation:
   - This are the cards you will encounter during your adventure
   - There are three types of cards. Each one respresented by a different color. (Card
     objects do not affect gameplay)
-  - The RED card stands for VIOLENCE
-  - The GREEN card stands for WEALTH
-  - And finally the BLUE card stands for POWER
   - So now. How do you win? (*or lose probably...*)
   - This three cards will interact differently between each other
   - The <color="red">VIOLENCE <color="black">card will beat the <color="green">WEALTH
@@ -41,6 +38,8 @@ MonoBehaviour:
   - The <color="blue">POWER <color="black">card will beat the <color="red">VIOLENCE 
     <color="black">card but will lose to the <color="green">WEALTH <color="black">card
   - "Now that we know all of the cards let\xB4s start with the combat!"
+  bookExplanation:
+  - You can always see which card wins or loses trades in the notebook over here
   enemyCardExplanationPreShow:
   - "Rigth at the very start of each combat the enemy will show you it\xB4s cards"
   enemyCardExplanationWhileShow:

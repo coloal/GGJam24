@@ -10,6 +10,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] public float AngryTextSound = 2f;
 
     [SerializeField] private ConversationController conversationController;
+    
     public ConversationController ConversationController => conversationController;
     public static DialogManager SceneDialog => CombatSceneManager.Instance.ProvideDialogManager();
   
@@ -17,4 +18,14 @@ public class DialogManager : MonoBehaviour
     {
         conversationController.StartConversation(text, onDialogFinished);
     }
+    public void BlockInput()
+    {
+        conversationController.InputIsBlocked = true;
+    }
+
+    public void UnblockInput()
+    {
+        conversationController.InputIsBlocked = false;
+    }
+
 }

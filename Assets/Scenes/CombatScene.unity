@@ -1461,6 +1461,7 @@ MonoBehaviour:
   combatFeedbacksManager: {fileID: 1617373844}
   dialogManager: {fileID: 1662651337}
   canvas: {fileID: 1506965356}
+  NotebookComponent: {fileID: 180106261}
   isDebugging: 1
   debugEnemyTemplate: {fileID: 11400000, guid: a047d8e7774b544a19cb13b5b9018121, type: 2}
 --- !u!4 &126443635
@@ -6951,7 +6952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 408.66025, y: -306.96228}
+  m_AnchoredPosition: {x: 326.50665, y: -261.27686}
   m_SizeDelta: {x: 363, y: 330}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &505842706
@@ -7218,7 +7219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 408.66025, y: -680.88684}
+  m_AnchoredPosition: {x: 326.50665, y: -543.83057}
   m_SizeDelta: {x: 335, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562557270
@@ -15142,7 +15143,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20.309448, y: 0}
+  m_SizeDelta: {x: -399.64795, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164458275
 MonoBehaviour:
