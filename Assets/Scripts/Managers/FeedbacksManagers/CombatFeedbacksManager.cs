@@ -615,4 +615,9 @@ public class CombatFeedbacksManager : MonoBehaviour
     {
         await KillEnemyDeckPlayer.PlayFeedbacksTask();
     }
+
+    public async Task PlayPlaceEnemyDeckOnBoard()
+    {
+        await PlaceEnemyDeckOnBoardPlayer.PlayFeedbacksTask();
+    }
 }

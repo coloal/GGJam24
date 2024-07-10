@@ -48,6 +48,12 @@ public class PresentEnemyCardsTutorialState : PresentEnemyCardsState
                 {
                     return;
                 }
+                await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                    .PlayPlaceEnemyDeckOnBoard();
+                if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                {
+                    return;
+                }
 
                 PostProcess(combatContext);
             });

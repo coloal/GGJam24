@@ -23,6 +23,15 @@ public class PickEnemyCardTutorialState : PickEnemyCardState
     {
         TutorialManager.SceneTutorial.StartEnemyPickCardConversation(async () =>
         {
+            // Play draw a card from enemy deck
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayEnemyDrawCardFromDeck(
+                    enemyDeck: combatContext.enemyDeck
+                );
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
             await PickAnEnemyCard(combatContext);
         });
         
