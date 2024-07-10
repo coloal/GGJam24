@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardViolenceAmericanFist
   m_EditorClassIdentifier: 
   NameOfCard: American Fist
-  cardSprite: {fileID: 21300000, guid: 009daf3dac2dd2b4aa0816e5054d0dd3, type: 3}
+  cardSprite: {fileID: 21300000, guid: f51e5f5c9f03a4725b1b02b446538d64, type: 3}
   CombatType: 2
   Instrument: 
