@@ -17,7 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
   ShowHintsTimeInSeconds: 1
