@@ -185,9 +185,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckSize: 8
   debugDeck:
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
 --- !u!4 &163239570
 Transform:
   m_ObjectHideFlags: 0
@@ -1355,6 +1358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnManager: {fileID: 1029993838}
   cardsManager: {fileID: 1958423316}
+  zoneTemplate: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
+  defaultGraph: {fileID: 11400000, guid: 31656cc3e78afff4eaef33f0d2a3c7b0, type: 2}
 --- !u!4 &2026473451
 Transform:
   m_ObjectHideFlags: 0
@@ -1426,6 +1431,10 @@ PrefabInstance:
       propertyPath: zoneInfo
       value: 
       objectReference: {fileID: 11400000, guid: a9f24948fadb04e47b15259cebc03b00, type: 2}
+    - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
+      propertyPath: isTutorial
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

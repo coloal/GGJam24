@@ -22,7 +22,6 @@ MonoBehaviour:
   - rid: 1306970353074176005
   - rid: 1306970353074176006
   - rid: 1306970353074176007
-  - rid: 4179187814026969088
   connections:
   - outputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
@@ -88,12 +87,6 @@ MonoBehaviour:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
       portIndex: 0
     inputPort:
-      nodeId: 39e9b1d4-50fe-4160-b6ed-d6d2d088e6b8
-      portIndex: 1
-  - outputPort:
-      nodeId: 39e9b1d4-50fe-4160-b6ed-d6d2d088e6b8
-      portIndex: 0
-    inputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
       portIndex: 1
   references:
@@ -132,7 +125,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: f1b05c1469b62ce4aa2b734f2fb0a4bd, type: 2}
+        enemy: {fileID: 11400000, guid: ad78eabb164c2bc41a89bb289ef148b2, type: 2}
         IsBossFight: 0
     - rid: 1306970353074176002
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -239,21 +232,6 @@ MonoBehaviour:
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: 09b02eb0adc60854aa9e663d35aa42bf, type: 2}
-    - rid: 4179187814026969088
-      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 39e9b1d4-50fe-4160-b6ed-d6d2d088e6b8
-        position:
-          serializedVersion: 2
-          x: -471
-          y: -192
-          width: 292
-          height: 98
-        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Next
-        NewZone: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
