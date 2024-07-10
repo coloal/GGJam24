@@ -52,6 +52,8 @@ public class ResultWinTutorialState : ResultWinState
             {
                 return;
             }
+
+            GameManager.Instance.ProvideSoundManager().EndCombat();
             await ShowEnemyCardsToChooseFrom();
             if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
             {

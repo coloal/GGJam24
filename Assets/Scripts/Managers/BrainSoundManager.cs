@@ -263,8 +263,8 @@ public class SoundManager : MonoBehaviour
 
     public void StopMenuMusic()
     {
-        //EventMap["Menu"].setParameterByName("ExitMenu", 1);
-        EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EventMap["Menu"].setParameterByName("ExitMenu", 1);
+        //EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void StartGame(MusicZones zone = MusicZones.Dream)
@@ -342,41 +342,15 @@ public class SoundManager : MonoBehaviour
     {
         //Valor por defecto para que comience el combate
         int CombatValue = 1;
-        if (bIsBossFight)
+        if (bIsBossFight || GameManager.Instance.ProvideBrainManager().bIsBossFight)
         {
             CombatValue = 2;
         }
-
-        SetStorySound(BrainSoundTag.Acordeon, 0.0f);
-        SetStorySound(BrainSoundTag.Clavicordio, 0.0f);
-        SetStorySound(BrainSoundTag.Guitar, 0.0f);
-
-
-        foreach (CombatCardTemplate member in members)
+        else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
         {
-            if (member.Instrument != "")
-            {
-                SetStorySound(member.Instrument, 1.0f);
-            }
-
-            /*
-            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Acordeon)
-            {
-                SetStorySound(BrainSoundTag.Acordeon, 1.0f);
-            }
-            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Clavicordio)
-            {
-                SetStorySound(BrainSoundTag.Clavicordio, 1.0f);
-            }
-            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Ness)
-            {
-                SetStorySound(BrainSoundTag.Ness, 1.0f);
-            }
-            if (member.CombatCardTemplate.Instrument == BrainSoundTag.Guitar)
-            {
-                SetStorySound(BrainSoundTag.Guitar, 1.0f);
-            }*/
+            CombatValue = 3;
         }
+
 
         SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
         SetStorySound(BrainSoundTag.LetsFight, CombatValue);
@@ -387,10 +361,15 @@ public class SoundManager : MonoBehaviour
     {
         //Valor por defecto para que comience el combate
         int CombatValue = 1;
-        if (bIsBossFight)
+        if (GameManager.Instance.ProvideBrainManager().bIsBossFight)
         {
             CombatValue = 2;
         }
+        else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
+        {
+            CombatValue = 3;
+        }
+
         SetStorySound(BrainSoundTag.FinBatalla, CombatValue);
 
     }

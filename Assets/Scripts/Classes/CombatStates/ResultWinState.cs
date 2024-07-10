@@ -42,6 +42,8 @@ public class ResultWinState : CombatState
                 {
                     return;
                 }
+
+                GameManager.Instance.ProvideSoundManager().EndCombat();
                 await ShowEnemyCardsToChooseFrom();
             });
         }
@@ -54,6 +56,8 @@ public class ResultWinState : CombatState
             {
                 return;
             }
+
+            GameManager.Instance.ProvideSoundManager().EndCombat();
             await ShowEnemyCardsToChooseFrom();
         }
         

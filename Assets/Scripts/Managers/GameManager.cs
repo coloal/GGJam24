@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitBattleScene(Action nextAction)
     {
-        ProvideSoundManager().EndCombat();
+        //ProvideSoundManager().EndCombat();
         ProvideSoundManager().RestartMusicFromCombat();
 
         Animator transition = brainManager.ZoneInfo.CombatTransition;
