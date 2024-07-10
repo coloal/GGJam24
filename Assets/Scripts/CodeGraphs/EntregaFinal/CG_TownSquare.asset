@@ -87,10 +87,6 @@ MonoBehaviour:
   - rid: 1812450555419689027
   - rid: 1812450555419689028
   - rid: 1812450578821021698
-  - rid: 1812450600359821312
-  - rid: 1812450600359821313
-  - rid: 1812450600359821314
-  - rid: 1812450600359821315
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -140,6 +136,12 @@ MonoBehaviour:
     inputPort:
       nodeId: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
       portIndex: 2
+  - outputPort:
+      nodeId: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
+      portIndex: 0
+    inputPort:
+      nodeId: cb69a253-c32e-40d3-adf8-13c06ce0fefb
+      portIndex: 1
   - outputPort:
       nodeId: cb69a253-c32e-40d3-adf8-13c06ce0fefb
       portIndex: 0
@@ -320,6 +322,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 2a66b026-2e66-43f7-8ce4-bec81d8284d4
       portIndex: 1
+  - outputPort:
+      nodeId: 55785143-e414-46c3-8fb4-e07de28cc349
+      portIndex: 0
+    inputPort:
+      nodeId: 6c9832d8-50d6-4d88-abb4-afb30c5be9dc
+      portIndex: 2
   - outputPort:
       nodeId: 9ac09a4f-5bc6-436e-9ba5-f760e24def9f
       portIndex: 1
@@ -632,48 +640,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 9a84ae06-0a22-4783-b706-58a8fe7b953f
       portIndex: 2
-  - outputPort:
-      nodeId: 55785143-e414-46c3-8fb4-e07de28cc349
-      portIndex: 0
-    inputPort:
-      nodeId: b599142b-ae8d-44e8-af9f-94f7cc804a51
-      portIndex: 2
-  - outputPort:
-      nodeId: b599142b-ae8d-44e8-af9f-94f7cc804a51
-      portIndex: 0
-    inputPort:
-      nodeId: 9c9a2f05-1d86-405e-bc2b-0c3c0c406726
-      portIndex: 2
-  - outputPort:
-      nodeId: b599142b-ae8d-44e8-af9f-94f7cc804a51
-      portIndex: 1
-    inputPort:
-      nodeId: 9c9a2f05-1d86-405e-bc2b-0c3c0c406726
-      portIndex: 2
-  - outputPort:
-      nodeId: 9c9a2f05-1d86-405e-bc2b-0c3c0c406726
-      portIndex: 0
-    inputPort:
-      nodeId: 63492e41-8bb5-4315-8a3b-64c260350985
-      portIndex: 2
-  - outputPort:
-      nodeId: 9c9a2f05-1d86-405e-bc2b-0c3c0c406726
-      portIndex: 1
-    inputPort:
-      nodeId: 63492e41-8bb5-4315-8a3b-64c260350985
-      portIndex: 2
-  - outputPort:
-      nodeId: a03ff485-1652-4ee2-8f34-8f65cf02b6fa
-      portIndex: 0
-    inputPort:
-      nodeId: b2a0ad3b-e19c-412a-bdd1-f47b8d4309cd
-      portIndex: 1
-  - outputPort:
-      nodeId: b2a0ad3b-e19c-412a-bdd1-f47b8d4309cd
-      portIndex: 0
-    inputPort:
-      nodeId: cb69a253-c32e-40d3-adf8-13c06ce0fefb
-      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -1068,9 +1034,9 @@ MonoBehaviour:
         guid: cb69a253-c32e-40d3-adf8-13c06ce0fefb
         position:
           serializedVersion: 2
-          x: 18797
+          x: 18699
           y: -198
-          width: 1463
+          width: 321
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -2108,87 +2074,3 @@ MonoBehaviour:
         LeftText: Nice, I need the money
         RightText: Perfect, altough you're a bit full of yourself
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
-    - rid: 1812450600359821312
-      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: b599142b-ae8d-44e8-af9f-94f7cc804a51
-        position:
-          serializedVersion: 2
-          x: 21298
-          y: 419
-          width: 321
-          height: 266
-        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Left
-        - Right
-        CardText: Great, we did it! I told you it wasn't such a big deal. Now we'll
-          just have to see who can drive a caravan like that.
-        LeftText: Of course I know how to drive
-        RightText: I thought biggie knew
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450600359821313
-      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 9c9a2f05-1d86-405e-bc2b-0c3c0c406726
-        position:
-          serializedVersion: 2
-          x: 21992
-          y: 419
-          width: 804
-          height: 266
-        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Left
-        - Right
-        CardText: Of course I know, my brother teached me when I was 12 and I am
-          always driving my mum's truck around the town, I can handle a van without
-          struggle!
-        LeftText: See
-        RightText: I want you to teach me too!
-        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
-    - rid: 1812450600359821314
-      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 63492e41-8bb5-4315-8a3b-64c260350985
-        position:
-          serializedVersion: 2
-          x: 22917
-          y: 419
-          width: 883
-          height: 266
-        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Left
-        - Right
-        CardText: 'I see you''ve got all the preparations done for your road trip,
-          now it''s time to enjoy the summer and make it memorable! The Passage of
-          Time is proud of you, buddie!! '
-        LeftText: We beat the clock
-        RightText: The eternal summer is here!
-        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
-    - rid: 1812450600359821315
-      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: b2a0ad3b-e19c-412a-bdd1-f47b8d4309cd
-        position:
-          serializedVersion: 2
-          x: 18423
-          y: -198
-          width: 127
-          height: 97
-        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        Action:
-          TagType: 0
-          BoolTag: 5
-          NewValue: 1
-          NumericTag: 0
-          Increment: 0
-          TagState: 0
-          NewState: 0

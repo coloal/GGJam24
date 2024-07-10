@@ -1128,8 +1128,8 @@ MonoBehaviour:
         guid: 2e0512e4-8a54-4ce7-90f7-6f06cafde7f2
         position:
           serializedVersion: 2
-          x: 11964
-          y: 2273
+          x: 11947
+          y: 2290
           width: 777
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
