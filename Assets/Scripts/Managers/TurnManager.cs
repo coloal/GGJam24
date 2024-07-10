@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
@@ -116,11 +117,14 @@ public class TurnManager : MonoBehaviour
                 TransitionToZone(zoneStep.Zone);
             }
         }
+        else if (nextStepInfo is WaitStep waitStep)
+        {
+            GameUtils.CreateTemporizer(() => StartTurn(), waitStep.Seconds, this);
+        }
         //Nodo de carta de final
         else if (nextStepInfo is EndStep endStep)
         {
-            //Debug.LogWarning("Your deck is empty!");
-
+            
             GraphTypes graphType = GameManager.Instance.ProvideBrainManager().GetActualGraphType();
 
             if (graphType == GraphTypes.Story)

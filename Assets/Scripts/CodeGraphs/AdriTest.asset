@@ -26,6 +26,9 @@ MonoBehaviour:
   - rid: 4179187814026969089
   - rid: 4179187814026969090
   - rid: 4179187843365863424
+  - rid: 4881958298288914432
+  - rid: 4881958298288914433
+  - rid: 4881958298288914434
   connections:
   - outputPort:
       nodeId: 8082f5d2-352f-45ec-b954-fbbeab892b48
@@ -109,8 +112,26 @@ MonoBehaviour:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
       portIndex: 0
     inputPort:
-      nodeId: 26a67dae-3bef-48dd-af92-fe859d95382c
+      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
+      portIndex: 1
+  - outputPort:
+      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
       portIndex: 0
+    inputPort:
+      nodeId: a0a1c159-57de-4380-a105-1787f8047728
+      portIndex: 1
+  - outputPort:
+      nodeId: a0a1c159-57de-4380-a105-1787f8047728
+      portIndex: 0
+    inputPort:
+      nodeId: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
+      portIndex: 1
+  - outputPort:
+      nodeId: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
+      portIndex: 0
+    inputPort:
+      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -120,8 +141,8 @@ MonoBehaviour:
         guid: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
         position:
           serializedVersion: 2
-          x: -335
-          y: 66
+          x: -394
+          y: 22
           width: 348
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -319,13 +340,61 @@ MonoBehaviour:
         guid: 26a67dae-3bef-48dd-af92-fe859d95382c
         position:
           serializedVersion: 2
-          x: 111.023865
-          y: 325.46725
-          width: 0
-          height: 0
+          x: 505
+          y: 268
+          width: 74
+          height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
+    - rid: 4881958298288914432
+      type: {class: WaitNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
+        position:
+          serializedVersion: 2
+          x: -31
+          y: 59
+          width: 151
+          height: 97
+        typeName: CodeGraph.WaitNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        Seconds: 5
+    - rid: 4881958298288914433
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a0a1c159-57de-4380-a105-1787f8047728
+        position:
+          serializedVersion: 2
+          x: 78
+          y: 260
+          width: 349
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 2 round
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 5b951168933dc2146a8aa77aa3897114, type: 2}
+    - rid: 4881958298288914434
+      type: {class: WaitNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
+        position:
+          serializedVersion: 2
+          x: 510
+          y: 369
+          width: 151
+          height: 97
+        typeName: CodeGraph.WaitNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        Seconds: 10
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
