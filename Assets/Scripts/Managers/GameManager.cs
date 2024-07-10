@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform canvas;
 
+    [Header("Scene transitions")]
+    [SerializeField] private float secondsForSceneTransition = 0.5f;
+    [SerializeField] private float secondsForCombatTransition = 1.0f;
+
     private bool hasAStoryStarted = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();
@@ -152,7 +156,7 @@ public class GameManager : MonoBehaviour
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
                 SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
-            }, 1.0f, this);
+            }, secondsForSceneTransition, this);
             disposableOnSceneChangeActions.Add(() =>
             {
                 Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
@@ -182,7 +186,7 @@ public class GameManager : MonoBehaviour
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
                 SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
-            }, 1.0f, this);
+            }, secondsForCombatTransition, this);
             disposableOnSceneChangeActions.Add(() =>
             {
                 Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
@@ -211,7 +215,7 @@ public class GameManager : MonoBehaviour
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
                 SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
-            }, 1.0f, this);
+            }, secondsForCombatTransition, this);
             disposableOnSceneChangeActions.Add(() =>
             {
                 Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
