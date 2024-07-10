@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : BaseSceneManager
 {
+
+    [SerializeField]
+    Animator animator;
+
     private void Start()
     {
         Init();
@@ -10,10 +14,14 @@ public class MainMenuManager : BaseSceneManager
     }
     public void GoToMainGame() {
         GameManager.Instance.ProvideSoundManager().StopMenuMusic();
-        SceneManager.LoadScene(ScenesNames.MainGameScene);
+        GameManager.Instance.ChangeSceneWithAnimation(animator, ScenesNames.MainGameScene);
+
+        //SceneManager.LoadScene(ScenesNames.MainGameScene);
     }
     public void GoToCreditsMenu() {
         GameManager.Instance.ProvideSoundManager().StopMenuMusic();
-        SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
+        GameManager.Instance.ChangeSceneWithAnimation(animator, ScenesNames.CreditsMenuScene);
+        
+        //SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
     }
 }

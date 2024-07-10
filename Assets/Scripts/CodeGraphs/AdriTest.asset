@@ -109,29 +109,29 @@ MonoBehaviour:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
       portIndex: 1
   - outputPort:
+      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
+      portIndex: 0
+    inputPort:
+      nodeId: a0a1c159-57de-4380-a105-1787f8047728
+      portIndex: 1
+  - outputPort:
+      nodeId: a0a1c159-57de-4380-a105-1787f8047728
+      portIndex: 0
+    inputPort:
+      nodeId: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
+      portIndex: 1
+  - outputPort:
+      nodeId: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
+      portIndex: 0
+    inputPort:
+      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
+      portIndex: 1
+  - outputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
       portIndex: 0
     inputPort:
-      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
-      portIndex: 1
-  - outputPort:
-      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
+      nodeId: 26a67dae-3bef-48dd-af92-fe859d95382c
       portIndex: 0
-    inputPort:
-      nodeId: a0a1c159-57de-4380-a105-1787f8047728
-      portIndex: 1
-  - outputPort:
-      nodeId: a0a1c159-57de-4380-a105-1787f8047728
-      portIndex: 0
-    inputPort:
-      nodeId: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
-      portIndex: 1
-  - outputPort:
-      nodeId: 4cb1edc6-57ec-467c-9551-6d22bdfdedc3
-      portIndex: 0
-    inputPort:
-      nodeId: 4aea875c-f908-49fd-8dd5-2f36f039fbc8
-      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -340,8 +340,8 @@ MonoBehaviour:
         guid: 26a67dae-3bef-48dd-af92-fe859d95382c
         position:
           serializedVersion: 2
-          x: 505
-          y: 268
+          x: -84
+          y: 330
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
