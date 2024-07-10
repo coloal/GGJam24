@@ -1055,9 +1055,9 @@ MonoBehaviour:
         guid: cb69a253-c32e-40d3-adf8-13c06ce0fefb
         position:
           serializedVersion: 2
-          x: 18699
+          x: 18822
           y: -198
-          width: 321
+          width: 1463
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
