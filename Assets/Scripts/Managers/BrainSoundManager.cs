@@ -218,11 +218,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayDialogSFX(float value) 
+    public void PlayDialogSFX(float value, float pitch = 0.5f) 
     {
         string eventName = "IndexDIalogue";
         if (EventMap.ContainsKey(eventName))
         {
+            EventMap[eventName].setParameterByName("DialoguePitch", pitch);
             EventMap[eventName].setParameterByName("DialogueStyle", value);
             EventMap[eventName].start();
         }
@@ -237,7 +238,7 @@ public class SoundManager : MonoBehaviour
     float dialogIndex = 0.0f;
     private void TestDialog() 
     {
-        PlayDialogSFX(dialogIndex);
+        PlayDialogSFX(0, dialogIndex);
         Debug.Log("Indice actual dialogo: " + dialogIndex);
         dialogIndex += 0.2f;
     }
