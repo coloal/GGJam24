@@ -66,6 +66,12 @@ MonoBehaviour:
   - rid: 1812450578821021704
   - rid: 1812450578821021706
   - rid: 1812450578821021707
+  - rid: 1812450601040609284
+  - rid: 1812450601040609285
+  - rid: 1812450601040609286
+  - rid: 1812450601841983488
+  - rid: 1812450601841983489
+  - rid: 1812450601841983490
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -91,12 +97,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
       portIndex: 2
-  - outputPort:
-      nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
-      portIndex: 0
-    inputPort:
-      nodeId: fa1875f2-be84-4c12-9897-a5fcc4e05594
-      portIndex: 1
   - outputPort:
       nodeId: f2310677-5de3-41b8-8c91-e2d9b67a8b30
       portIndex: 0
@@ -511,6 +511,48 @@ MonoBehaviour:
     inputPort:
       nodeId: 321fa459-deb7-4cb2-bece-f68496b502cd
       portIndex: 1
+  - outputPort:
+      nodeId: c3fa920d-89cd-4002-8177-4ee4b2691312
+      portIndex: 0
+    inputPort:
+      nodeId: 8f66a41f-3371-4adb-91d5-63601d0ec363
+      portIndex: 1
+  - outputPort:
+      nodeId: 8f66a41f-3371-4adb-91d5-63601d0ec363
+      portIndex: 0
+    inputPort:
+      nodeId: 9194b843-a6ad-44ac-a1f1-04cbcfc408d2
+      portIndex: 1
+  - outputPort:
+      nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
+      portIndex: 0
+    inputPort:
+      nodeId: c3fa920d-89cd-4002-8177-4ee4b2691312
+      portIndex: 1
+  - outputPort:
+      nodeId: 9194b843-a6ad-44ac-a1f1-04cbcfc408d2
+      portIndex: 0
+    inputPort:
+      nodeId: fa1875f2-be84-4c12-9897-a5fcc4e05594
+      portIndex: 1
+  - outputPort:
+      nodeId: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
+      portIndex: 1
+    inputPort:
+      nodeId: b88523a9-bb18-4d7a-9f54-3aa9733a38c3
+      portIndex: 1
+  - outputPort:
+      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+      portIndex: 1
+    inputPort:
+      nodeId: ed0b1558-2d33-4ceb-a67c-9c7189612697
+      portIndex: 1
+  - outputPort:
+      nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
+      portIndex: 1
+    inputPort:
+      nodeId: 7f29b718-66c5-4042-bffa-e704377cb9b4
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -689,17 +731,17 @@ MonoBehaviour:
         guid: fa1875f2-be84-4c12-9897-a5fcc4e05594
         position:
           serializedVersion: 2
-          x: 2212
-          y: -1072
-          width: 321
+          x: 4121
+          y: -1535
+          width: 374
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: YOU LOSE
-        LeftText: 
-        RightText: 
+        CardText: "YOU LOSE (Quitar aqu\xED va el game over)"
+        LeftText: We will beat the clock
+        RightText: The will get to the eternal summer!
         card: {fileID: 11400000, guid: 03d6a62e2b0a14222b43399e89117e7e, type: 2}
     - rid: 1812450529966030897
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1168,10 +1210,10 @@ MonoBehaviour:
         guid: 42d77715-f9ff-4233-b858-cc149d830586
         position:
           serializedVersion: 2
-          x: 14147.886
-          y: 581.28217
-          width: 0
-          height: 0
+          x: 14399
+          y: 562
+          width: 815
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1456,8 +1498,8 @@ MonoBehaviour:
         guid: 7875a564-ddd8-427c-aa75-96e72b8c02af
         position:
           serializedVersion: 2
-          x: 14399
-          y: 114
+          x: 14418
+          y: 54
           width: 314
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1549,4 +1591,116 @@ MonoBehaviour:
           struggle!
         LeftText: See
         RightText: I want you to teach me too!
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450601040609284
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c3fa920d-89cd-4002-8177-4ee4b2691312
+        position:
+          serializedVersion: 2
+          x: 2273
+          y: -1535
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: How?! We ended up staying in the village after all?! That's terrible,
+          what a disappointment, buddie...
+        LeftText: I'm sorry, the challenge was too much for me
+        RightText: We'll try again bud
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450601040609285
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8f66a41f-3371-4adb-91d5-63601d0ec363
+        position:
+          serializedVersion: 2
+          x: 2868
+          y: -1535
+          width: 352
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: I didn't really understand this last decision; I hope we try again
+          next summer...
+        LeftText: I want to stay here
+        RightText: We will try again
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450601040609286
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9194b843-a6ad-44ac-a1f1-04cbcfc408d2
+        position:
+          serializedVersion: 2
+          x: 3401
+          y: -1535
+          width: 377
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Time always gives a second chance. Just make sure to keep trying
+          if you still want to achieve your goal!
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
+    - rid: 1812450601841983488
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: b88523a9-bb18-4d7a-9f54-3aa9733a38c3
+        position:
+          serializedVersion: 2
+          x: 7901
+          y: 886
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Wow, we lost, but we shouldn't give up, we can try again.
+        LeftText: Let's try again
+        RightText: I let myself lose
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450601841983489
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ed0b1558-2d33-4ceb-a67c-9c7189612697
+        position:
+          serializedVersion: 2
+          x: 4229
+          y: 766
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: We lost, but never mind we can try again as much as we want!
+        LeftText: Pf, such a bad luck
+        RightText: I will win next time
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450601841983490
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7f29b718-66c5-4042-bffa-e704377cb9b4
+        position:
+          serializedVersion: 2
+          x: 3993.8176
+          y: 1715.547
+          width: 0
+          height: 0
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Wow, we didn't achieve what we set out to do, but I'm sure we'll
+          do better next time.
+        LeftText: Sure, we will
+        RightText: Maybe this is the last one.
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
