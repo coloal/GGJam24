@@ -37,6 +37,21 @@ public class PickPlayerCardState : CombatState
         
     }
 
+    private void BlockCards(CombatManager.CombatContext combatContext)
+    {
+        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardInHand.GetComponent<InteractiveCombatCardComponent>();
+            CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
+
+            if (interactiveCombatCardComponent != null && playerCombatCard != null)
+            {
+                interactiveCombatCardComponent.DisableInteractiveComponent();
+            }
+        });
+    }
+
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
         Preprocess(combatContext);
@@ -50,6 +65,7 @@ public class PickPlayerCardState : CombatState
             if (interactiveCombatCardComponent != null && playerCombatCard != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(async () => {
+                    BlockCards(combatContext);
                     await PickAPlayerCard(combatContext, playerCombatCard);
                 });
                 interactiveCombatCardComponent.EnableInteractiveComponent();
