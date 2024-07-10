@@ -58,7 +58,6 @@ MonoBehaviour:
   - rid: 4179187816465956864
   - rid: 4179187816465956865
   - rid: 4179187816465956866
-  - rid: 1812450555419689003
   - rid: 1812450555419689022
   - rid: 1812450555419689023
   connections:
@@ -375,18 +374,6 @@ MonoBehaviour:
       nodeId: 7497d511-d1c8-4b2a-b0b1-4077929a0537
       portIndex: 1
   - outputPort:
-      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
-      portIndex: 0
-    inputPort:
-      nodeId: da237581-5351-4bfe-9d1b-4fc7eaaabc5e
-      portIndex: 1
-  - outputPort:
-      nodeId: da237581-5351-4bfe-9d1b-4fc7eaaabc5e
-      portIndex: 0
-    inputPort:
-      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
-      portIndex: 2
-  - outputPort:
       nodeId: 57f88570-5fbc-4f1f-921b-6e19d6fb5819
       portIndex: 1
     inputPort:
@@ -398,6 +385,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 135d9455-22fc-41b3-8050-b295deb77017
       portIndex: 1
+  - outputPort:
+      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+      portIndex: 0
+    inputPort:
+      nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -1225,21 +1218,6 @@ MonoBehaviour:
         - True
         - False
         Condition: 0
-    - rid: 1812450555419689003
-      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: da237581-5351-4bfe-9d1b-4fc7eaaabc5e
-        position:
-          serializedVersion: 2
-          x: -1684
-          y: 291
-          width: 292
-          height: 98
-        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Next
-        NewZone: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
     - rid: 1812450555419689022
       type: {class: DebugLogNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
