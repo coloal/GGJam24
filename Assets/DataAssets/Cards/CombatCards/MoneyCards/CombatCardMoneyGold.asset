@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardMoneyGold
   m_EditorClassIdentifier: 
   NameOfCard: Gold
-  cardSprite: {fileID: 21300000, guid: 946cf216fdc044a2ea4153e91686155e, type: 3}
+  cardSprite: {fileID: 21300000, guid: 3b3378e249553524aac611d0192fff9c, type: 3}
   CombatType: 0
   Instrument: 

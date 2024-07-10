@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardMoneyWine
   m_EditorClassIdentifier: 
   NameOfCard: Wine
-  cardSprite: {fileID: 21300000, guid: 46e2535f0ccc043a9b20c289600dfde6, type: 3}
+  cardSprite: {fileID: 21300000, guid: 66923c42485554c44b04b273d91cc2d3, type: 3}
   CombatType: 0
   Instrument: 

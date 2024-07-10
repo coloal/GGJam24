@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardInfluenceGlobe
   m_EditorClassIdentifier: 
   NameOfCard: Globe
-  cardSprite: {fileID: 21300000, guid: 6a6f8bceca49840f0b9805f522a038bf, type: 3}
+  cardSprite: {fileID: 21300000, guid: 798ba1e84077f4241bd71880944de223, type: 3}
   CombatType: 1
   Instrument: 

@@ -68,13 +68,6 @@ MonoBehaviour:
   - rid: 1812450603089526786
   - rid: 1812450603089526787
   - rid: 1812450603089526791
-  - rid: 1812450603565842434
-  - rid: 1812450603565842435
-  - rid: 1812450603565842436
-  - rid: 1812450603565842437
-  - rid: 1812450603565842438
-  - rid: 1812450603565842439
-  - rid: 1812450603565842440
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -544,48 +537,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 249fcce5-f39d-45a4-b83a-0bb7ed3139fb
       portIndex: 1
-  - outputPort:
-      nodeId: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
-      portIndex: 1
-    inputPort:
-      nodeId: b29867e6-f8d3-4401-ad84-a0aa9d56fe2a
-      portIndex: 1
-  - outputPort:
-      nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
-      portIndex: 1
-    inputPort:
-      nodeId: baa4b24c-c340-489d-9942-04e779af6d55
-      portIndex: 1
-  - outputPort:
-      nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
-      portIndex: 1
-    inputPort:
-      nodeId: d2b78162-4f36-42f0-ade2-ccfe6f57a5d0
-      portIndex: 1
-  - outputPort:
-      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
-      portIndex: 1
-    inputPort:
-      nodeId: 8405c04a-7849-4500-9420-385018c35193
-      portIndex: 1
-  - outputPort:
-      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
-      portIndex: 1
-    inputPort:
-      nodeId: 43e2feb0-cf12-48f7-960d-2b08e8f542ea
-      portIndex: 1
-  - outputPort:
-      nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
-      portIndex: 1
-    inputPort:
-      nodeId: 0a4fa50e-6e84-47c6-a9a3-d41339cb9f3b
-      portIndex: 1
-  - outputPort:
-      nodeId: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
-      portIndex: 1
-    inputPort:
-      nodeId: 4e33ae7c-43f5-440d-845c-280ce4b2e653
-      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -764,8 +715,8 @@ MonoBehaviour:
         guid: bcb399df-4e70-4a7e-8e28-0fe888bcf5b6
         position:
           serializedVersion: 2
-          x: 12896
-          y: -3197
+          x: 11656
+          y: -1998
           width: 881
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -865,9 +816,9 @@ MonoBehaviour:
         guid: 2741ebb0-cf1a-478d-86ed-b2765d6038be
         position:
           serializedVersion: 2
-          x: 7960
+          x: 8203
           y: -827
-          width: 1796
+          width: 379
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -888,10 +839,10 @@ MonoBehaviour:
         guid: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
         position:
           serializedVersion: 2
-          x: 9774
-          y: -827
-          width: 358
-          height: 140
+          x: 10066.4
+          y: -676
+          width: 359.2002
+          height: 139.20001
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1225,10 +1176,10 @@ MonoBehaviour:
         guid: 42d77715-f9ff-4233-b858-cc149d830586
         position:
           serializedVersion: 2
-          x: 14792
-          y: 562
-          width: 815
-          height: 266
+          x: 14147.886
+          y: 581.28217
+          width: 0
+          height: 0
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1299,9 +1250,9 @@ MonoBehaviour:
         guid: 3b421fee-1f3f-4a84-ad28-76eabf44e391
         position:
           serializedVersion: 2
-          x: 14441
-          y: 296
-          width: 230
+          x: 14053
+          y: 343
+          width: 191
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1513,8 +1464,8 @@ MonoBehaviour:
         guid: 7875a564-ddd8-427c-aa75-96e72b8c02af
         position:
           serializedVersion: 2
-          x: 14702
-          y: -50
+          x: 14399
+          y: 114
           width: 314
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1667,135 +1618,4 @@ MonoBehaviour:
           just have to see who can drive a caravan like that.
         LeftText: Of course I can drive
         RightText: I thought biggie could
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450603565842434
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: b29867e6-f8d3-4401-ad84-a0aa9d56fe2a
-        position:
-          serializedVersion: 2
-          x: 7919.5
-          y: 752.07263
-          width: 0
-          height: 0
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: We lost, but never mind we can try again as much as we want!
-        LeftText: Pf, such a bad luck
-        RightText: I will win next time
-        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
-    - rid: 1812450603565842435
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: baa4b24c-c340-489d-9942-04e779af6d55
-        position:
-          serializedVersion: 2
-          x: 10223.321
-          y: -471.47122
-          width: 0
-          height: 0
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: Wow, we didn't achieve what we set out to do, but I'm sure we'll
-          do better next time.
-        LeftText: Sure, we will
-        RightText: Maybe this is the last one
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450603565842436
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: d2b78162-4f36-42f0-ade2-ccfe6f57a5d0
-        position:
-          serializedVersion: 2
-          x: 14057
-          y: 418
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: We lost the game, we have to start over.
-        LeftText: I'll play different this time
-        RightText: I am on the correct path
-        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
-    - rid: 1812450603565842437
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 8405c04a-7849-4500-9420-385018c35193
-        position:
-          serializedVersion: 2
-          x: 7269
-          y: 2028
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: They played like never before, lost like always... Maybe next time
-          we will reach our goals.
-        LeftText: I did not played that well...
-        RightText: Yes, next one is the good one
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450603565842438
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 43e2feb0-cf12-48f7-960d-2b08e8f542ea
-        position:
-          serializedVersion: 2
-          x: 4198
-          y: 615
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: Sometimes you win and sometimes you lose, the important thing is
-          that we will keep trying!
-        LeftText: Of course we will keep trying
-        RightText: Unlucky this time
-        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
-    - rid: 1812450603565842439
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 0a4fa50e-6e84-47c6-a9a3-d41339cb9f3b
-        position:
-          serializedVersion: 2
-          x: 4055
-          y: 1669
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: I really thought we were going on vacations this summer... I guess
-          we don't :/
-        LeftText: Not everything is lost, we will try again
-        RightText: We will, it's just a matter of time ;)
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450603565842440
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 4e33ae7c-43f5-440d-845c-280ce4b2e653
-        position:
-          serializedVersion: 2
-          x: 11030
-          y: 2485
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: Well, we were near to get our van fixed this time at least. We
-          will do better next time, I'm sure of it!
-        LeftText: Retry is our strategy
-        RightText: I have other concept of near...
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}

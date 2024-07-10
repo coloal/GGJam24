@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardMoneyDiamond
   m_EditorClassIdentifier: 
   NameOfCard: Diamond
-  cardSprite: {fileID: 21300000, guid: cd8aa29f916234ebe8f471340db73204, type: 3}
+  cardSprite: {fileID: 21300000, guid: 9d4d5a536f08ec04a980c7390b967987, type: 3}
   CombatType: 0
   Instrument: 
