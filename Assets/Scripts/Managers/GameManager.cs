@@ -144,6 +144,31 @@ public class GameManager : MonoBehaviour
         disposableOnSceneChangeActions.Clear();
     }
 
+    public void ChangeSceneWithAnimation(Animator transition, string SceneName)
+    {
+        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
+        if (instantedAnimator != null)
+        {
+            instantedAnimator.SetTrigger("ExitAnimation");
+            GameUtils.CreateTemporizer(() => {
+                SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+            }, 1.0f, this);
+            disposableOnSceneChangeActions.Add(() =>
+            {
+                Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
+                Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
+                if (instantedAnimator_1 != null)
+                {
+                    instantedAnimator_1.SetTrigger("EnterAnimation");
+                    GameUtils.CreateTemporizer(() =>
+                    {
+                        Destroy(instantedAnimator_1.gameObject);
+                    }, 1.0f, this);
+                }
+            });
+        }
+    }
+
     public void EnterBattleScene(bool isBoss)
     {
         List<CombatCardTemplate> members = ProvidePartyManager().GetPartyMembers();
