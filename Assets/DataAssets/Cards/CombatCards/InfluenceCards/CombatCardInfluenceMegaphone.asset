@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardInfluenceMegaphone
   m_EditorClassIdentifier: 
   NameOfCard: Megaphone
-  cardSprite: {fileID: 21300000, guid: 16c0dfee7142e4ac0aed4a98212520f8, type: 3}
+  cardSprite: {fileID: 21300000, guid: 5c8b0fc76e7b9444c8289450c2a1cc3d, type: 3}
   CombatType: 1
   Instrument: 
