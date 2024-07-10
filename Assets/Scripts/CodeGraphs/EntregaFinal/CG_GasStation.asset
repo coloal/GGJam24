@@ -839,10 +839,10 @@ MonoBehaviour:
         guid: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
         position:
           serializedVersion: 2
-          x: 9867
-          y: -827
-          width: 300
-          height: 140
+          x: 10066.4
+          y: -676
+          width: 359.2002
+          height: 139.20001
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:

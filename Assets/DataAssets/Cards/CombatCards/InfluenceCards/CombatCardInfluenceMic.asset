@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardInfluenceMic
   m_EditorClassIdentifier: 
   NameOfCard: Mic
-  cardSprite: {fileID: 21300000, guid: 110d895ee2fa94a5f8dd713b4252f1e2, type: 3}
+  cardSprite: {fileID: 21300000, guid: 1366700b1983a714cbd7862b5e509169, type: 3}
   CombatType: 1
   Instrument: 

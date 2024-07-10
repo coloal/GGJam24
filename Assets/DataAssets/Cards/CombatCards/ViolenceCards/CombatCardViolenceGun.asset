@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardViolenceGun
   m_EditorClassIdentifier: 
   NameOfCard: Gun
-  cardSprite: {fileID: 21300000, guid: 768e03b96b02346f09828cee6e48a616, type: 3}
+  cardSprite: {fileID: 21300000, guid: 8ef2f48a39286724b8df9fb69dfe7559, type: 3}
   CombatType: 2
   Instrument: 

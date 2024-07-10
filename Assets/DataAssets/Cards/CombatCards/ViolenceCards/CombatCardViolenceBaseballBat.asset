@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CombatCardViolenceBaseballBat
   m_EditorClassIdentifier: 
   NameOfCard: Baseball Bat
-  cardSprite: {fileID: 21300000, guid: 668d6250c04694860af36de7b6506975, type: 3}
+  cardSprite: {fileID: 21300000, guid: 6367c6fc92422574eb55b49b1c5a64af, type: 3}
   CombatType: 2
   Instrument: 
