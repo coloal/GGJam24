@@ -308,12 +308,6 @@ MonoBehaviour:
       nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
       portIndex: 1
   - outputPort:
-      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
-      portIndex: 0
-    inputPort:
-      nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
-      portIndex: 1
-  - outputPort:
       nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
       portIndex: 0
     inputPort:
@@ -325,30 +319,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
       portIndex: 0
-  - outputPort:
-      nodeId: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
-      portIndex: 0
-    inputPort:
-      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
-      portIndex: 1
-  - outputPort:
-      nodeId: 24357d97-669d-4ba8-9de7-27504d7b734a
-      portIndex: 0
-    inputPort:
-      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
-      portIndex: 1
-  - outputPort:
-      nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
-      portIndex: 0
-    inputPort:
-      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
-      portIndex: 1
-  - outputPort:
-      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
-      portIndex: 0
-    inputPort:
-      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
-      portIndex: 2
   - outputPort:
       nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
       portIndex: 0
@@ -391,6 +361,36 @@ MonoBehaviour:
     inputPort:
       nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
       portIndex: 2
+  - outputPort:
+      nodeId: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: 24357d97-669d-4ba8-9de7-27504d7b734a
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
+      portIndex: 0
+    inputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 2
+  - outputPort:
+      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
+      portIndex: 0
+    inputPort:
+      nodeId: d35b761c-29ab-4db6-9b46-4fafabd8f99d
+      portIndex: 1
+  - outputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 0
+    inputPort:
+      nodeId: e8850464-2f20-456d-b0d8-edc8c70cf160
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -1189,9 +1189,9 @@ MonoBehaviour:
         guid: d35b761c-29ab-4db6-9b46-4fafabd8f99d
         position:
           serializedVersion: 2
-          x: 14376
-          y: 463
-          width: 321
+          x: 14572
+          y: 472
+          width: 413
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1291,8 +1291,8 @@ MonoBehaviour:
         guid: e8850464-2f20-456d-b0d8-edc8c70cf160
         position:
           serializedVersion: 2
-          x: 13768
-          y: 812
+          x: 14317
+          y: 472
           width: 245
           height: 232
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
