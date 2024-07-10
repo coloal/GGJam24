@@ -40,6 +40,7 @@ MonoBehaviour:
   - rid: 1812450528744177667
   - rid: 1812450528744177668
   - rid: 1812450555419689004
+  - rid: 1812450603565842448
   connections:
   - outputPort:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
@@ -275,6 +276,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
       portIndex: 2
+  - outputPort:
+      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
+      portIndex: 1
+    inputPort:
+      nodeId: 7506c289-0b8a-4b0b-9b1e-15d305be4744
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -784,6 +791,25 @@ MonoBehaviour:
         outputs:
         - Next
         NewZone: {fileID: 11400000, guid: a9f24948fadb04e47b15259cebc03b00, type: 2}
+    - rid: 1812450603565842448
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7506c289-0b8a-4b0b-9b1e-15d305be4744
+        position:
+          serializedVersion: 2
+          x: 15808
+          y: 695
+          width: 617
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: Well, we lost in the tutorial? This developers may have done something
+          wrong with this, let's give them another try
+        LeftText: Yes, we will pass the tutorial
+        RightText: Not my fault definitely
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
     - rid: 3107022144919568403
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
