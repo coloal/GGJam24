@@ -504,7 +504,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "I am here to warn you about your future, not to guide you. \nThis
+        CardText: "I am here to warn you about your future, not to guide you.\nThis
           would not be fun if I literally told you what and how you have to live
           your life, mate. \nYou will have to find by yourself a way to save your
           summer.\n///\nBut I am going to help you in other way; I will give you
@@ -728,9 +728,9 @@ MonoBehaviour:
         - Right
         CardText: "I am glad you like it! I won't give you more details about how
           you should save your summer as only \nyou must decide over your life, my
-          friend.\n///\nBut I am going to help you in other way; I will give you
-          a custom reward  which will help you overcome difficulties in your world 
-          after giving you a personality test"
+          friend.///But\nI am going to help you in other way; I will give you a custom
+          reward  which will help you overcome difficulties in your world  after
+          giving you a personality test"
         LeftText: Criptic, typical of time travelers...
         RightText: Rewards is all I play for
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1005,7 +1005,7 @@ MonoBehaviour:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
           that your soul essence in Violence, Money and Power game of cards is of
-          Money type: People born under the essence of Money are inherently drawn
+          Wealth type: People born under the essence of Wealth are inherently drawn
           to wealth and luxury. They have a natural knack for financial matters,
           often finding innovative ways to accumulate and manage resources. So as
           I told you before I have here a reward for you!'

@@ -360,25 +360,11 @@ MonoBehaviour:
         - Right
         CardText: 'So, we have a broken caravan here in our camp. I have thought
           we could plan an all summer long road trip to close the high scool life
-          chapter. All we will need to this is:
+          chapter.
 
-          ///
-
-          - Fix the
-          van
-
-          ///
-
-          - Find someone to drive it
-
-          ///
-
-          -
-          And money to finance the trip
-
-          ///Nothing we can''t find here
-          at our home town :)'
-        LeftText: That seems like a lot.
+          All we will need to this is:///- Fix our van///- Find
+          someone to drive it///Nothing we can''t find here at our home town :)'
+        LeftText: That seems like a lot
         RightText: I think I'll need help
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 1812450504952774668
@@ -398,12 +384,10 @@ MonoBehaviour:
         - Right
         CardText: 'Well, it is not really that much. Just let me organize it, we
           will go one thing  at a time so it does not overwelms you, you know I like
-          doing this kind of jobs.
+          doing this kind of
 
-          ///
-
-          I''ll let you handle
-          the confrontation situations though haha'
+          jobs.///I''ll let you handle the confrontation
+          situations though haha'
         LeftText: Nice, I'm more of an action person
         RightText: Perfect, I'd like you to come with me
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -424,12 +408,10 @@ MonoBehaviour:
         - Right
         CardText: 'Well, I can go with you. I mean... I''m the one with the idea
           so I''d love to support you so we can make this roadtrip happen. Let all
-          the organization part to me.
+          the organization part to
 
-          ///
-
-          I''ll let you handle
-          the confrontation situations though haha'
+          me.///I''ll let you handle the confrontation
+          situations though haha'
         LeftText: Nice, I'm more of an action person
         RightText: Perfect, I'd like you to come with me
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -473,8 +455,8 @@ MonoBehaviour:
         - Right
         CardText: Good morning, mate! You know what? I was talking this morning with
           the rest of our group of friends we all had a super strange dream last
-          night. We all have recieved a Money, Violence, Power card  at the end of
-          it and I was wondering if you have had a similar dream too?
+          night. We all have recieved a Wealth, Violence, Power card  at the end
+          of it and I was wondering if you have had a similar dream too?
         LeftText: I have indeed
         RightText: Yes, I got a card too
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -495,9 +477,9 @@ MonoBehaviour:
         - Right
         CardText: Really? Well this opens now a lot of possibilities to get new resources
           for our summer road trip, mate. As you know everyone at our loved home,
-          Admired town, plays and bets to Violence, Money, Power game so we can take
-          advantage of  these to fix our van, make some money and find a driver for
-          it.
+          Admired town, plays and bets to Violence, Wealth, Power game so we can
+          take advantage of  these to fix our van, make some money and find a driver
+          for it.
         LeftText: Perfect, I'll go talk to the rest
         RightText: Let's see which other cards they have
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -548,7 +530,7 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Hey, mate. I am so excited that I finally got my first Power, Violence,
-          Money card, you know how of a freak I am of the game... Now that we will
+          Wealth card, you know how of a freak I am of the game... Now that we will
           be able to play it with our new cards, I recomend you to memorize your
           rival's cards when they show their hand to you at the start of the game.
           This way you will be able to guess, based on odds, what card they can play
@@ -572,7 +554,7 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Hey, mate. I am so excited that I finally got my first Power, Violence,
-          Money card, you know how of a freak I am of the game... Now that we will
+          Wealth card, you know how of a freak I am of the game... Now that we will
           be able to play it with our new cards, I recomend you to memorize your
           rival's cards when they show their hand to you at the start of the game.
           This way you will be able to guess, based on odds, what card they can play
@@ -594,7 +576,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You now have two cards on you Influence, Money, Violence deck!
+        CardText: You now have two cards on you Influence, Wealth, Violence deck!
           The violence card belonging to Biggie is added to your deck and will be
           availabe to you on all your future games.
         LeftText: Can't wait to play my first game
@@ -718,7 +700,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You got your fourth card of your deck of power type, as you can
+        CardText: You got your fourth card of your deck of Power type, as you can
           identify it by its blue color.
         LeftText: Blue is power
         RightText: I'll finally get to play!!

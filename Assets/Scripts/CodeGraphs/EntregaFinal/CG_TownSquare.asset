@@ -775,8 +775,8 @@ MonoBehaviour:
         guid: df8ea4b7-e96e-4994-98fb-9024fd076366
         position:
           serializedVersion: 2
-          x: 1383
-          y: -100
+          x: 1384
+          y: -179
           width: 1420
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -784,10 +784,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Hey, look who''s here, it''s my dear classmate and his gang of
-          pathetic friends. Oh, and you finally have a deck of cards, huh? Come here,
-          I''ll show you how to play Violence, Money and Power. And I am betting
-          some money on this, playing agains you losers it''s a safe bet '
+        CardText: Hey, look who's here, it's my dear classmate and his gang of pathetic
+          friends. Oh, and you finally have a deck of cards, huh? Come here, I'll
+          show you how to play Violence, Wealth and Power. And I am betting some
+          money on this, playing agains you losers it's a safe bet.
         LeftText: You'll finally learn a lesson
         RightText: Nice, we need the money
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
@@ -862,14 +862,12 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Great that''s our first real win! As a result we have gained some
-          money that bring us closer to our goals, buddie. it''s still very little
-          money, but it''s a start.
+          money that surely will be useful for our trip, buddie. it''s still very
+          little money, but it''s a start.///Moreover,
 
-          ///
-
-          Moreover, I have seen
-          a big guy around the square''s fountain which looked like a truck driver,
-          we could approach him and try make him bet he''s driver''s license.'
+          I have seen a big
+          guy around the square''s fountain which looked like a truck driver, we
+          could approach him and try make him bet he''s driver''s license.'
         LeftText: Let's challenge him
         RightText: Go find other rival first
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -879,21 +877,27 @@ MonoBehaviour:
         guid: 8b8fcd67-4258-4d43-ad7a-239dbe88e56b
         position:
           serializedVersion: 2
-          x: 4897
-          y: 49
-          width: 1928
+          x: 4952
+          y: 44
+          width: 679
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: Wise decision, buddy. The more battles we win, the more cards we'll
-          have in our deck, which will increase our chances of victory in the game.
-          I  recomend you to go play against the misterious girl that is always at
-          the east corner of the square. I've seen her playing several times and
-          she only has violence cards in her deck, except for one card which is of
-          type Money.
+        CardText: 'Wise decision, buddy. The more battles we win, the more cards
+          we''ll have in our deck,
+
+          which will increase our chances of
+          victory in the game.
+
+          I  recomend you to go play against the
+          misterious girl that is always at the east corner of the square.
+
+          I''ve
+          seen her playing several times and she only has violence cards in her deck,
+          except for one card which is of type Wealth.'
         LeftText: Go play against her
         RightText: Keep walking around the square
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1385,7 +1389,7 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Great that''s our first real win at the town square! I always
-          wanted to beat that guy at Money, VIolence, Power. But don''t lose our
+          wanted to beat that guy at Wealth, VIolence, Power. But don''t lose our
           focus! I have good news to tell you,
 
           I have seen a big guy around
@@ -1413,10 +1417,10 @@ MonoBehaviour:
           we''ll have in our deck, which will increase our chances of victory in
           the game.
 
-          I  recomend you to go play against the misterious
+          I  recomend you to go play against the mysterious
           girl that is always at the east corner of the square. I''ve seen her playing
-          several times and she only has violence cards in her deck, except for one
-          card which is of type Money.'
+          several times and she only has Violence cards in her deck, except for one
+          card which is of type Wealth.'
         LeftText: Go play against her
         RightText: Keep walking around the square
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1439,7 +1443,7 @@ MonoBehaviour:
           I don\u2019t know what made you think I would risk my livelihood for a
           simple card game."
         LeftText: But we need it for our trip
-        RightText: "Aqu\xED falta una referencia que se dice en gas station"
+        RightText: Your friend the mechanic told us you make false driver's licenses
         card: {fileID: 11400000, guid: 9ae16110b6c520f43ba4deeae2035cad, type: 2}
     - rid: 1812450555419688981
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1629,7 +1633,7 @@ MonoBehaviour:
           me in a game of Violence, Money, and Power, I'll give you a valid driver's
           license so you can go on vacations.
         LeftText: Wow, that's exactly what we need
-        RightText: Yesss, let's play
+        RightText: He did not mention any Business
         card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 1812450555419688992
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1693,7 +1697,7 @@ MonoBehaviour:
           serializedVersion: 2
           x: 9473
           y: 1964
-          width: 321
+          width: 739
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1703,7 +1707,7 @@ MonoBehaviour:
         CardText: "You're not going to get away with beating my boyfriend. He left
           me a couple of cards that, combined with mine,\nwill leave you with no
           chance in this game, idiot. I\u2019m going to bet twice as much as he did,
-          so I\u2019ll get his money back from your dirty hands"
+          so I\u2019ll get his money back from your dirty hands."
         LeftText: Wow, you are so rude
         RightText: I like games with something in play
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
@@ -2055,10 +2059,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Hey, look who''s here, it''s my dear classmate and his gang of
-          pathetic friends. Oh, and you finally have a deck of cards, huh? Come here,
-          I''ll show you how to play Violence, Money and Power. And I am betting
-          some money on this, playing agains you losers it''s a safe bet '
+        CardText: Hey, look who's here, it's my dear classmate and his gang of pathetic
+          friends. Oh, and you finally have a deck of cards, huh? Come here, I'll
+          show you how to play Violence, Wealth and Power. And I am betting some
+          money on this, playing against you losers it's a safe bet.
         LeftText: You'll finally learn a lesson
         RightText: Nice, we need the money
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
