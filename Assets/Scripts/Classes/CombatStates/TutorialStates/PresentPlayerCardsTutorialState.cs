@@ -22,7 +22,8 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
             
             TutorialManager.SceneTutorial.StartNoteBookExplanation(() =>
             {
-                CombatSceneManager.Instance.NotebookComponent.ToggleNotebook();
+                CombatSceneManager.Instance.NotebookComponent.ToggleNotebookTutorial();
+                //CombatSceneManager.Instance.NotebookComponent
                 GameManager.Instance.ProvideInputManager().onClickEvent += NoteBookHell; 
             });
             
@@ -32,7 +33,9 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
     public void NoteBookHell()
     {
         GameManager.Instance.ProvideInputManager().onClickEvent -= NoteBookHell;
-        CombatSceneManager.Instance.NotebookComponent.ToggleNotebook();
+        CombatSceneManager.Instance.NotebookComponent.ToggleNotebookTutorial();
+        CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayHideNotebookButton();
         GameUtils.CreateTemporizer(() =>
         {
             CombatUtils.ProcessNextStateAfterSeconds(

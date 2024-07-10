@@ -262,7 +262,8 @@ public class TutorialManager : MonoBehaviour
     {
         if(isMasking)
         {
-            currentMask.localScale -= new Vector3(Time.deltaTime * MaskVelocity * maxMaskScale/10, Time.deltaTime * MaskVelocity * maxMaskScale / 10, 0);
+
+            currentMask.localScale -= new Vector3(Time.deltaTime * MaskVelocity, Time.deltaTime * MaskVelocity, 0);
             if(currentMask.localScale.x <= 1)
             {
                 currentMask.localScale = new Vector3(1, 1, 1);
@@ -272,7 +273,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if(isDemaskig)
         {
-            currentMask.localScale += new Vector3(Time.deltaTime * MaskVelocity * maxMaskScale / 10, Time.deltaTime * MaskVelocity * maxMaskScale / 10, 0);
+            currentMask.localScale += new Vector3(Time.deltaTime * MaskVelocity, Time.deltaTime * MaskVelocity, 0);
             if(currentMask.localScale.x >= maxMaskScale)
             {
                 currentMask.localScale = new Vector3(maxMaskScale, maxMaskScale, 1);
