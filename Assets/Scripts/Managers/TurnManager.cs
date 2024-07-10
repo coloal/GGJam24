@@ -4,7 +4,6 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
@@ -22,14 +21,7 @@ public class TurnManager : MonoBehaviour
     }
     CardsManager CardsManager {
         get {
-            if (GameManager.Instance.ProvideBrainManager().GetActualGraphType() == GraphTypes.Story)
-            {
-                return MainGameSceneManager.Instance.ProvideCardsManager();
-            }
-            else
-            {
-                return CreditsSceneManager.Instance.ProvideCardsManager();
-            }
+            return MainGameSceneManager.Instance.ProvideCardsManager();
         }
     }
 
@@ -42,24 +34,11 @@ public class TurnManager : MonoBehaviour
 
     void GetNewCard(StoryCardTemplate nextCard)
     {
-        GameObject SpawnedCard;
-        if (GameManager.Instance.ProvideBrainManager().GetActualGraphType() == GraphTypes.Story)
-        {
-            SpawnedCard = CardsManager.SpawnNextCard(
+        GameObject SpawnedCard = CardsManager.SpawnNextCard(
             nextCard,
             onSwipeLeft: () => { MainGameSceneManager.Instance.ProvideTurnManager().SwipeLeft(); },
             onSwipeRight: () => { MainGameSceneManager.Instance.ProvideTurnManager().SwipeRight(); });
-            CurrentCard = SpawnedCard.GetComponent<StoryCard>();
-        }
-        else
-        {
-            SpawnedCard = CardsManager.SpawnNextCard(
-            nextCard,
-            onSwipeLeft: () => { CreditsSceneManager.Instance.ProvideTurnManager().SwipeLeft(); },
-            onSwipeRight: () => { CreditsSceneManager.Instance.ProvideTurnManager().SwipeRight(); });
-            CurrentCard = SpawnedCard.GetComponent<StoryCard>();
-        }
-        
+        CurrentCard = SpawnedCard.GetComponent<StoryCard>();
     }
 
     public void StartTurn() 
@@ -117,34 +96,11 @@ public class TurnManager : MonoBehaviour
                 TransitionToZone(zoneStep.Zone);
             }
         }
-        else if (nextStepInfo is WaitStep waitStep)
-        {
-            GameUtils.CreateTemporizer(() => StartTurn(), waitStep.Seconds, this);
-        }
         //Nodo de carta de final
         else if (nextStepInfo is EndStep endStep)
         {
-            
-            GraphTypes graphType = GameManager.Instance.ProvideBrainManager().GetActualGraphType();
-
-            if (graphType == GraphTypes.Story)
-            {
-                GameManager.Instance.ProvideSoundManager().StopLevelMusic();
-                GameManager.Instance.SetHasAStoryStarted(false);
-
-                GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.CreditsMenuScene);
-                //SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
-            }
-            else
-            {
-                GameManager.Instance.ProvideSoundManager().StopCreditsMusic();
-                GameManager.Instance.SetHasAStoryStarted(false);
-
-                GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.MainMenuScene);
-
-                //SceneManager.LoadScene(ScenesNames.MainMenuScene);
-            }
-            //SceneManager.LoadScene(ScenesNames.GameOverScene);
+            Debug.LogWarning("Your deck is empty!");
+            SceneManager.LoadScene(ScenesNames.GameOverScene);
         }
         else
         {

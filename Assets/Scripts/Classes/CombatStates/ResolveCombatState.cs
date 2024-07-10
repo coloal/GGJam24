@@ -331,7 +331,7 @@ public class ResolveCombatState : CombatState
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayReturnCardToDeck(
                         cardToReturn: enemyCombatCard,
-                        deckTransform: combatContext.enemyDeck.transform
+                        deckTransform: combatContext.enemyOnCombatCardOriginalPosition
                     );
                 if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
                 {
@@ -351,10 +351,7 @@ public class ResolveCombatState : CombatState
                 if (enemyCombatCard != null)
                 {
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                        .PlayReturnCardToDeck(
-                            cardToReturn: enemyCombatCard,
-                            deckTransform: combatContext.enemyDeck.transform
-                        );
+                        .PlayReturnCardToDeck(enemyCombatCard, combatContext.enemyOnCombatCardOriginalPosition);
                     if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
                     {
                         return;

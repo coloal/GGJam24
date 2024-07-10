@@ -13,9 +13,12 @@ public class PresentOnlyPlayerCardsTutorialState : PresentPlayerCardsState
     }
     public override void PostProcess(CombatManager.CombatContext combatContext)
     {
-        CombatUtils.ProcessNextStateAfterSeconds(
+        TutorialManager.SceneTutorial.StartCardExplanation(() =>
+        {
+            CombatUtils.ProcessNextStateAfterSeconds(
                 nextState: new PickEnemyCardTutorialState(),
                 seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPickEnemyCard
-        );
+            );
+        });
     }
 }

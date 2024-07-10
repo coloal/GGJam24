@@ -19,7 +19,6 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private RectTransform thirdCardMask;
     [SerializeField] private RectTransform combatResultMask;
     [SerializeField] private RectTransform drawResultMask;
-    [SerializeField] private RectTransform noteBookMask;
     [SerializeField] public float MaskVelocity = 30;
     
 
@@ -60,12 +59,6 @@ public class TutorialManager : MonoBehaviour
         if (TutorialCombatTurn == 0) StartConversationWithBlock(playerCardsMask, tutorialInfo.CardExplanation, onFinishExplanation);
         else onFinishExplanation();
     }
-
-    public void StartNoteBookExplanation(Action onFinishExplanation)
-    {
-        StartConversationWithBlock(noteBookMask, tutorialInfo.BookExplanation, onFinishExplanation);
-    }
-
     public void StartEnemyCardExplanationPreShow(Action onFinishExplanation)
     {
         DialogManager.SceneDialog.CreateDialog(tutorialInfo.EnemyCardExplanationPreShow, onFinishExplanation);
@@ -250,6 +243,7 @@ public class TutorialManager : MonoBehaviour
     void StartConversationWithBlock(RectTransform mask, List<string> text, Action onFinishConversation)
     {
         BlockScreen(mask, () => DialogManager.SceneDialog.CreateDialog(text, () => UnBlockScreen(() => onFinishConversation())));
+
     }
 
     void Start()
@@ -262,8 +256,7 @@ public class TutorialManager : MonoBehaviour
     {
         if(isMasking)
         {
-
-            currentMask.localScale -= new Vector3(Time.deltaTime * MaskVelocity, Time.deltaTime * MaskVelocity, 0);
+            currentMask.localScale -= new Vector3(Time.deltaTime * MaskVelocity * maxMaskScale/10, Time.deltaTime * MaskVelocity * maxMaskScale / 10, 0);
             if(currentMask.localScale.x <= 1)
             {
                 currentMask.localScale = new Vector3(1, 1, 1);
@@ -273,25 +266,24 @@ public class TutorialManager : MonoBehaviour
         }
         else if(isDemaskig)
         {
-            currentMask.localScale += new Vector3(Time.deltaTime * MaskVelocity, Time.deltaTime * MaskVelocity, 0);
+            currentMask.localScale += new Vector3(Time.deltaTime * MaskVelocity * maxMaskScale / 10, Time.deltaTime * MaskVelocity * maxMaskScale / 10, 0);
             if(currentMask.localScale.x >= maxMaskScale)
             {
                 currentMask.localScale = new Vector3(maxMaskScale, maxMaskScale, 1);
                 isDemaskig = false;
-                currentMask.gameObject.SetActive(false);
                 onDemask();
-                
+                currentMask.gameObject.SetActive(false);
             }
         }
     }
 
     public void BlockScreen(RectTransform mask, Action onBlock)
-    {   
-        currentMask = mask;
+    {
         onMask = onBlock;
         maxMaskScale = mask.localScale.x;
         isMasking = true;
         isDemaskig = false;
+        currentMask = mask;
         mask.gameObject.SetActive(true);
     }
     public void UnBlockScreen(Action onUnblock)

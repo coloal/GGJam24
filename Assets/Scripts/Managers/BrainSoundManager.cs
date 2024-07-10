@@ -6,7 +6,6 @@ using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-using static UnityEngine.Rendering.DebugUI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -218,11 +217,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayDialogSFX(float value) 
+    public void PlayDialogSFX(float value, float pitch = 0.5f) 
     {
         string eventName = "IndexDIalogue";
         if (EventMap.ContainsKey(eventName))
         {
+            EventMap[eventName].setParameterByName("DialoguePitch", pitch);
             EventMap[eventName].setParameterByName("DialogueStyle", value);
             EventMap[eventName].start();
         }
@@ -237,7 +237,7 @@ public class SoundManager : MonoBehaviour
     float dialogIndex = 0.0f;
     private void TestDialog() 
     {
-        PlayDialogSFX(dialogIndex);
+        PlayDialogSFX(0, dialogIndex);
         Debug.Log("Indice actual dialogo: " + dialogIndex);
         dialogIndex += 0.2f;
     }
@@ -262,7 +262,6 @@ public class SoundManager : MonoBehaviour
 
     public void StopMenuMusic()
     {
-        //EventMap["Menu"].setParameterByName("ExitMenu", 1);
         EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
@@ -275,11 +274,7 @@ public class SoundManager : MonoBehaviour
         */
 
         ChangeZone(zone);
-        if (zone != MusicZones.Credits)
-        {
-            GetActualEventInstance().start();        
-        }
-
+        GetActualEventInstance().start();
     }
 
     public void ExecuteSoundAction(SoundAction Action)
@@ -292,44 +287,66 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeZone(MusicZones zone)
     {
-        if (zone != MusicZones.Credits)
+        StepsInstance.start();
+        SetStorySound(BrainSoundTag.Zone, (int)zone);
+
+        if (zone == MusicZones.Settlement)
         {
-            if (zone != MusicZones.Dream)
-            {
-                StepsInstance.start();
-            }
-            
-            SetStorySound(BrainSoundTag.Zone, (int)zone);
-
-            if (zone == MusicZones.Settlement)
-            {
-                SetStorySound(BrainSoundTag.ApagarHoguera, 0.0f);
-            }
-            else if (SoundsMap[BrainSoundTag.ApagarHoguera] != 1.0f)
-            {
-                SetStorySound(BrainSoundTag.ApagarHoguera, 1.0f);
-            }
+            SetStorySound(BrainSoundTag.ApagarHoguera, 0.0f);
         }
-        else
+        else if (SoundsMap[BrainSoundTag.ApagarHoguera] != 1.0f)
         {
-            //Paramos la musica normal
-            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-            EventMap["Credits"].setParameterByName("ExitCredits", 0.0f);
-            PlaySFX("Credits");
-
+            SetStorySound(BrainSoundTag.ApagarHoguera, 1.0f);
         }
-        
-    }
 
-    public void StopLevelMusic() 
-    {
-        StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-    }
+        //SUCIO
+        /*
+        if (ActualZone != zone)
+        {
+            if (ActualEvent != ZoneSoundsMap[zone].FMODEvent)
+            {
+                /*
+                 GetActualEventInstance().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                 ActualZone = zone;
+                 ActualEvent = ZoneSoundsMap[zone].FMODEvent;
 
-    public void StopCreditsMusic()
-    {
-        EventMap["Credits"].setParameterByName("ExitCredits", 1.0f);
+                 SetZoneParameters(ActualEvent, ActualZone);
+                 GetActualEventInstance().start();
+
+            }
+            else
+            {
+                //GetActualEventInstance().stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                
+                if (zone == MusicZones.Campfire)
+                {
+                    TurnOnCampfire();
+
+
+                }
+                else if (ActualZone == MusicZones.Campfire)
+                {
+                    TurnOffCampfire();
+                } /*
+
+                //*
+                /*if (zone == MusicZones.Prueba)
+                {
+                    StartCombat();
+                }
+                else if (ActualZone == MusicZones.Prueba)
+                {
+                    EndCombat();
+                } /*
+
+
+                ActualZone = zone;
+                SetZoneParameters(ActualEvent, ActualZone);
+
+                //GetActualEventInstance().start();
+            }
+
+        }*/
     }
 
     public void ResetNess()

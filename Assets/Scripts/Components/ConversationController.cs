@@ -14,11 +14,6 @@ public class ConversationController : MonoBehaviour
     bool TalkHasFinished => talkHasFinished;
     Action OnConversationEnd = null;
     List<string> currentConversation = new List<string>();
-    bool inputIsBlocked = false;
-    public bool InputIsBlocked {
-        get { return inputIsBlocked; }
-        set { inputIsBlocked = value; }
-    }
     public void EndConversation()
     {
         InputManager.GameInputManager.onClickEvent -= NextText;
@@ -42,7 +37,7 @@ public class ConversationController : MonoBehaviour
     }
     public void NextText()
     {
-        if (!talkHasFinished || inputIsBlocked) return;
+        if (!talkHasFinished) return;
         if(!currentConversation.Any())
         {
             EndConversation();

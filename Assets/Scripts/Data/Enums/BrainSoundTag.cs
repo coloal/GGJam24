@@ -27,8 +27,6 @@ public enum MusicZones
     Settlement = 1,
     SquareTown = 2,
     GasStation = 3,
-    Credits = 4,
-
     //Campfire,
     //Prueba
 

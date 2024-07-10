@@ -18,10 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform canvas;
 
-    [Header("Scene transitions")]
-    [SerializeField] private float secondsForSceneTransition = 0.5f;
-    [SerializeField] private float secondsForCombatTransition = 1.0f;
-
     private bool hasAStoryStarted = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();
@@ -148,31 +144,6 @@ public class GameManager : MonoBehaviour
         disposableOnSceneChangeActions.Clear();
     }
 
-    public void ChangeSceneWithAnimation(Animator transition, string SceneName)
-    {
-        Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
-        if (instantedAnimator != null)
-        {
-            instantedAnimator.SetTrigger("ExitAnimation");
-            GameUtils.CreateTemporizer(() => {
-                SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
-            }, secondsForSceneTransition, this);
-            disposableOnSceneChangeActions.Add(() =>
-            {
-                Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
-                Animator instantedAnimator_1 = Instantiate(transition.gameObject).GetComponent<Animator>();
-                if (instantedAnimator_1 != null)
-                {
-                    instantedAnimator_1.SetTrigger("EnterAnimation");
-                    GameUtils.CreateTemporizer(() =>
-                    {
-                        Destroy(instantedAnimator_1.gameObject);
-                    }, 1.0f, this);
-                }
-            });
-        }
-    }
-
     public void EnterBattleScene(bool isBoss)
     {
         List<CombatCardTemplate> members = ProvidePartyManager().GetPartyMembers();
@@ -186,7 +157,7 @@ public class GameManager : MonoBehaviour
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
                 SceneManager.LoadScene("CombatScene", LoadSceneMode.Single);
-            }, secondsForCombatTransition, this);
+            }, 1.0f, this);
             disposableOnSceneChangeActions.Add(() =>
             {
                 Animator transition_1 = brainManager.ZoneInfo.CombatTransition;
@@ -215,7 +186,7 @@ public class GameManager : MonoBehaviour
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
                 SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
-            }, secondsForCombatTransition, this);
+            }, 1.0f, this);
             disposableOnSceneChangeActions.Add(() =>
             {
                 Animator transition_1 = brainManager.ZoneInfo.CombatTransition;

@@ -9,23 +9,11 @@ public class DialogManager : MonoBehaviour
     [SerializeField] public float SlowerTextSound = 1.8f;
     [SerializeField] public float AngryTextSound = 2f;
 
-    [SerializeField] private ConversationController conversationController;
-    
-    public ConversationController ConversationController => conversationController;
+    [SerializeField] private ConversationController ConversationController;
     public static DialogManager SceneDialog => CombatSceneManager.Instance.ProvideDialogManager();
   
     public void CreateDialog(List<string> text, Action onDialogFinished)
     {
-        conversationController.StartConversation(text, onDialogFinished);
+        ConversationController.StartConversation(text, onDialogFinished);
     }
-    public void BlockInput()
-    {
-        conversationController.InputIsBlocked = true;
-    }
-
-    public void UnblockInput()
-    {
-        conversationController.InputIsBlocked = false;
-    }
-
 }
