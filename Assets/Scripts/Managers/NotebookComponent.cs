@@ -19,6 +19,10 @@ public class NotebookComponent : MonoBehaviour
 
     public void ToggleNotebook()
     {
+        if(GameManager.Instance.ProvideBrainManager().IsTutorial)
+        {
+            return;
+        }
         if (!isNotebookShown)
         {
             ShowNotebook();
@@ -67,4 +71,53 @@ public class NotebookComponent : MonoBehaviour
             }
         }
     }
+
+    public void ToggleNotebookTutorial()
+    {
+        if (!isNotebookShown)
+        {
+            ShowNotebookTutorial();
+        }
+        else
+        {
+            HideNotebookTutorial();
+        }
+    }
+
+    public async void ShowNotebookTutorial()
+    {
+        if (!isNotebookShown)
+        {
+            notebook.SetActive(true);
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayShowNotebook(
+                    origin: notebookOriginPosition,
+                    destination: notebookDestinationPosition,
+                    backgroundAplha: notebookActiveBackgroungAlpha
+                );
+            if (this != null && !destroyCancellationToken.IsCancellationRequested)
+            {
+                isNotebookShown = true;
+            }
+        }
+    }
+
+    public async void HideNotebookTutorial()
+    {
+        if (isNotebookShown)
+        {
+            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+                .PlayHideNotebook(
+                    origin: notebookDestinationPosition,
+                    destination: notebookOriginPosition,
+                    backgroundAplha: notebookActiveBackgroungAlpha
+                );
+            if (this != null && !destroyCancellationToken.IsCancellationRequested)
+            {
+                isNotebookShown = false;
+                notebook.SetActive(false);
+            }
+        }
+    }
+
 }
