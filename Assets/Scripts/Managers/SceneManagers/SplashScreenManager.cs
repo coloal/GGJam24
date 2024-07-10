@@ -8,6 +8,7 @@ public class SplashScreenManager : BaseSceneManager
     [Header("Scene configurations")]
     [SerializeField] private SplashFeedbacksManager splashFeedbacksManager;
     [SerializeField] private float secondsBeforeStartingMainMenuScene = 1.0f;
+    [SerializeField] private Animator mainMenuAnimation;
 
     async void Start()
     {
@@ -29,6 +30,6 @@ public class SplashScreenManager : BaseSceneManager
 
     void GoToMainMenu()
     {
-        SceneManager.LoadScene(ScenesNames.MainMenuScene);
+        GameManager.Instance.ChangeSceneWithAnimation(mainMenuAnimation, ScenesNames.MainMenuScene);
     }
 }
