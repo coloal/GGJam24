@@ -12,10 +12,10 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] PlayerDeckManager playerDeckManager;
     [SerializeField] EnemyDeckManager enemyDeckManager;
     [SerializeField] CombatFeedbacksManager combatFeedbacksManager;
-    [SerializeField] DialogManager dialogManager;
+    [SerializeField] private DialogManager dialogManager;
     TutorialManager tutorialManager;
     [SerializeField] Canvas canvas;
-    [SerializeField] public NotebookComponent NotebookComponent;
+
     [Header("Debug configurations")]
     [SerializeField] private bool isDebugging = false;
     [SerializeField] private EnemyTemplate debugEnemyTemplate;
@@ -58,7 +58,6 @@ public class CombatSceneManager : BaseSceneManager
                 if (tutorialElements != null)
                 {
                     tutorialElements.SetParent(canvas.transform);
-                    dialogManager.ConversationController.gameObject.transform.SetAsLastSibling();
                 }
                 Destroy(tutorialCanvas);
             }

@@ -26,17 +26,6 @@ public class CombatStep:StepInfo
 
 }
 
-public class WaitStep : StepInfo
-{
-    float seconds;
-    public float Seconds => seconds;
-    
-    public WaitStep(float seconds)
-    {
-        this.seconds = seconds;
-    }
-}
-
 public class StoryStep:StepInfo
 {
     StoryCardTemplate storyCard;

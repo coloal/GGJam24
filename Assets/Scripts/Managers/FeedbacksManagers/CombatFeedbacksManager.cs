@@ -33,7 +33,6 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player HideNotebookButtonPlayer;
     [SerializeField] public MMF_Player EnemyDrawCardFromDeckPlayer;
     [SerializeField] public MMF_Player PlaceEnemyDeckOnBoardPlayer;
-    [SerializeField] public MMF_Player KillEnemyDeckPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -80,7 +79,6 @@ public class CombatFeedbacksManager : MonoBehaviour
         HideNotebookButtonPlayer.StopFeedbacksOnDisable = true;
         EnemyDrawCardFromDeckPlayer.StopFeedbacksOnDisable = true;
         PlaceEnemyDeckOnBoardPlayer.StopFeedbacksOnDisable = true;
-        KillEnemyDeckPlayer.StopFeedbacksOnDisable = true;
     }
     
     public async Task PlayPlayerDrawCardFromDeck(CombatCard playerCard, DeckBehaviourComponent playerDeck, Transform cardInHandPosition)
@@ -90,11 +88,7 @@ public class CombatFeedbacksManager : MonoBehaviour
         MMF_Scale horizontalFlipFeedback =
             PlayerDrawCardFromDeckFeedbackPlayer.GetFeedbackOfType<MMF_Scale>();
 
-        MMF_ScaleShake shakeDeckFeedback =
-            DeckFeedbackPlayer.GetFeedbacksOfType<MMF_ScaleShake>().Find((feedback) => feedback.Label.Equals("Shake Deck"));
-
-        if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null
-            && shakeDeckFeedback != null)
+        if (moveCardFromDeckToHandFeedback != null && horizontalFlipFeedback != null)
         {
             playerCard.FlipCardUpsideDown();
 
@@ -108,13 +102,7 @@ public class CombatFeedbacksManager : MonoBehaviour
 
             // Shake the deck
             playerDeck.DrawCardFromDeck();
-            MMScaleShaker deckScaleShakerComponent = playerDeck.gameObject.GetComponent<MMScaleShaker>();
-            if (deckScaleShakerComponent != null)
-            {
-                shakeDeckFeedback.TargetShaker = deckScaleShakerComponent;
-                DeckFeedbackPlayer.PlayFeedbacks();
-            }
-            
+            DeckFeedbackPlayer.PlayFeedbacks();
             // Draw a card
             await PlayerDrawCardFromDeckFeedbackPlayer.PlayFeedbacksTask();
         }
@@ -319,12 +307,9 @@ public class CombatFeedbacksManager : MonoBehaviour
 
         MMF_DestinationTransform moveRotateAndScaleCardFeedback =
             MoveCardToTransformPlayer.GetFeedbacksOfType<MMF_DestinationTransform>().Find((feedback) => feedback.Label.Equals("Move and Rotate Card"));
-
-        MMF_ScaleShake shakeDeckFeedback =
-            DeckFeedbackPlayer.GetFeedbacksOfType<MMF_ScaleShake>().Find((feedback) => feedback.Label.Equals("Shake Deck"));
         
         if (scaleCardOnYFeedback != null && horizontalFlipFeedback != null
-            && moveRotateAndScaleCardFeedback != null && shakeDeckFeedback != null)
+            && moveRotateAndScaleCardFeedback != null)
         {
             scaleCardOnYFeedback.AnimateScaleTarget = cardToReturn.transform;
             scaleCardOnYFeedback.RemapCurveZero = cardToReturn.transform.localScale.y;
@@ -345,12 +330,9 @@ public class CombatFeedbacksManager : MonoBehaviour
             }
 
             DeckBehaviourComponent deckBehaviourComponent = deckTransform.gameObject.GetComponent<DeckBehaviourComponent>();
-            MMScaleShaker deckScaleShakerComponent = deckTransform.gameObject.GetComponent<MMScaleShaker>();
-            if (this != null && !destroyCancellationToken.IsCancellationRequested
-                && deckBehaviourComponent != null && deckScaleShakerComponent != null)
+            if (this != null && deckBehaviourComponent != null && !destroyCancellationToken.IsCancellationRequested)
             {
                 deckBehaviourComponent.AddCardToDeck();
-                shakeDeckFeedback.TargetShaker = deckScaleShakerComponent;
                 await DeckFeedbackPlayer.PlayFeedbacksTask();
             }
         }
@@ -609,10 +591,5 @@ public class CombatFeedbacksManager : MonoBehaviour
     {
         enemyDeck.DrawCardFromDeck();
         await EnemyDrawCardFromDeckPlayer.PlayFeedbacksTask();
-    }
-
-    public async Task PlayKillEnemyDeck()
-    {
-        await KillEnemyDeckPlayer.PlayFeedbacksTask();
     }
 }

@@ -30,26 +30,12 @@ public class PickPlayerCardState : CombatState
     public override void Preprocess(CombatManager.CombatContext combatContext)
     {
         // Only execute the Notebook-related logic when not in a combat tutorial
-        
+        if (!GameManager.Instance.ProvideBrainManager().IsTutorial)
+        {
             CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
             CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayShowNotebookButton();    
-        
-    }
-
-    private void BlockCards(CombatManager.CombatContext combatContext)
-    {
-        CombatUtils.ForEachCardInCardsContainer(combatContext.GetPlayerCardInHandContainers(), (cardInHand) =>
-        {
-            InteractiveCombatCardComponent interactiveCombatCardComponent =
-                cardInHand.GetComponent<InteractiveCombatCardComponent>();
-            CombatCard playerCombatCard = cardInHand.GetComponent<CombatCard>();
-
-            if (interactiveCombatCardComponent != null && playerCombatCard != null)
-            {
-                interactiveCombatCardComponent.DisableInteractiveComponent();
-            }
-        });
+        }
     }
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
@@ -65,7 +51,6 @@ public class PickPlayerCardState : CombatState
             if (interactiveCombatCardComponent != null && playerCombatCard != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(async () => {
-                    BlockCards(combatContext);
                     await PickAPlayerCard(combatContext, playerCombatCard);
                 });
                 interactiveCombatCardComponent.EnableInteractiveComponent();

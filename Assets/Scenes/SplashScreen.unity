@@ -902,8 +902,6 @@ MonoBehaviour:
   partyManager: {fileID: 2050394938}
   inventoryManager: {fileID: 690265274}
   canvas: {fileID: 0}
-  secondsForSceneTransition: 0.5
-  secondsForCombatTransition: 1
 --- !u!4 &406575390
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.08235294, g: 0.08235294, b: 0.08235294, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1224,7 +1222,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splashFeedbacksManager: {fileID: 1906005782}
   secondsBeforeStartingMainMenuScene: 1
-  mainMenuAnimation: {fileID: 2504118667978227075, guid: fadcce78b15ce8e40a7cc1e6758b2a73, type: 3}
 --- !u!1 &889437079
 GameObject:
   m_ObjectHideFlags: 0

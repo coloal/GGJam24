@@ -1,4 +1,3 @@
-using CodeGraph;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +7,10 @@ public class MainGameSceneManager : BaseSceneManager
     public static MainGameSceneManager Instance;
     
     [SerializeField] 
-    private TurnManager turnManager;
+    TurnManager turnManager;
     [SerializeField]
-    private CardsManager cardsManager;
-    [SerializeField]
-    private ZoneTemplate zoneTemplate;
-    [SerializeField]
-    private CodeGraphAsset defaultGraph;
-
-    private GraphTypes graphType = GraphTypes.Story;
-
+    CardsManager cardsManager;
+    
     void Awake()
     {
         if (Instance == null)
@@ -48,12 +41,7 @@ public class MainGameSceneManager : BaseSceneManager
     public void StartStory()
     {
         GameManager.Instance.SetHasAStoryStarted(true);
-
-        GameManager.Instance.ProvideStoryManager().ResetStory();
-        GameManager.Instance.ProvideStoryManager().ChangeStory(defaultGraph, true);
-        GameManager.Instance.ProvideBrainManager().ChangeZone(zoneTemplate);
-        GameManager.Instance.ProvideBrainManager().SetActualGraphType(graphType);
-        GameManager.Instance.ProvideSoundManager().StartGame(GameManager.Instance.ProvideBrainManager().ZoneInfo.StoryMusicZone);
+        GameManager.Instance.ProvideSoundManager().StartGame();
         turnManager.SetZoneSprites();
         turnManager.StartTurn();
     }
