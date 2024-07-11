@@ -295,7 +295,7 @@ public class SoundManager : MonoBehaviour
     {
         if (zone != MusicZones.Credits)
         {
-            if (zone != MusicZones.Dream || zone != MusicZones.Settlement)
+            if (zone != MusicZones.Dream && zone != MusicZones.Settlement)
             {
                 StepsInstance.start();
             }
