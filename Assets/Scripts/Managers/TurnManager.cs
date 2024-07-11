@@ -146,6 +146,22 @@ public class TurnManager : MonoBehaviour
             }
             //SceneManager.LoadScene(ScenesNames.GameOverScene);
         }
+        else if (nextStepInfo is MenuStep menuStep)
+        {
+            GameManager.Instance.ProvideSoundManager().StopLevelMusic();
+            //GameManager.Instance.SetHasAStoryStarted(false);
+            GameManager.Instance.ResetGame();
+
+            GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.CombatTransition, ScenesNames.MainMenuScene);
+        }
+        else if (nextStepInfo is RestartStep restartStep)
+        {
+            GameManager.Instance.ProvideSoundManager().StopLevelMusic();
+            //GameManager.Instance.SetHasAStoryStarted(false);
+            GameManager.Instance.ResetGame();
+
+            GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.CombatTransition, ScenesNames.MainGameScene);
+        }
         else
         {
             Debug.LogError("Something went wrong");

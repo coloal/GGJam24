@@ -313,7 +313,7 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeZone(MusicZones zone)
     {
-        if (zone != MusicZones.Credits)
+        if (zone != MusicZones.Credits && zone != MusicZones.GameOver)
         {
             if (zone != MusicZones.Dream && zone != MusicZones.Settlement)
             {
@@ -336,8 +336,16 @@ public class SoundManager : MonoBehaviour
             //Paramos la musica normal
             StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-            EventMap["Credits"].setParameterByName("ExitCredits", 0.0f);
-            PlaySFX("Credits");
+            if (zone == MusicZones.Credits) 
+            {
+                EventMap["Credits"].setParameterByName("ExitCredits", 0.0f);
+                PlaySFX("Credits");
+            }
+            else if (zone == MusicZones.GameOver)
+            {
+                PlaySFX("GameOver");
+            }
+
 
         }
         
