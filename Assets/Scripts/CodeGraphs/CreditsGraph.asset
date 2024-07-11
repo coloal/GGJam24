@@ -145,7 +145,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: aka. Murki//Combat designer and Pixel artist
+        CardText: aka. Murki///Combat designer and Pixel artist
         LeftText: '"Esto sale por lo civil o lo criminal"'
         RightText: "\"\xBFSabes como se soluciona eso? \xA1Epabila, macho!\""
         card: {fileID: 11400000, guid: f9c66a3d25fda4af29e239c79e7a730a, type: 2}
