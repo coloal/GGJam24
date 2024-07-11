@@ -166,7 +166,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void CreateEventFMOD(string EventName) 
+    public void CreateEventFMOD(string EventName) 
     {
         if (SoundEvents != null)
         {

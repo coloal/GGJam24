@@ -258,7 +258,7 @@ public class ResolveCombatTutorialState : ResolveCombatState
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                     .PlayReturnCardToDeck(
                         cardToReturn: enemyCombatCard,
-                        deckTransform: combatContext.enemyOnCombatCardOriginalPosition
+                        deckTransform: combatContext.enemyDeck.transform
                     );
                 if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
                 {
