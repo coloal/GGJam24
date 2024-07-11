@@ -52,7 +52,7 @@ public class SplashScreenManager : BaseSceneManager
 
         void GoToMainMenu()
     {
-        GameManager.Instance.ChangeSceneWithAnimation(mainMenuAnimation, "CombatScene");
+        GameManager.Instance.ChangeSceneWithAnimation(mainMenuAnimation, ScenesNames.MainMenuScene);
     }
 
     async void Initializate() 
