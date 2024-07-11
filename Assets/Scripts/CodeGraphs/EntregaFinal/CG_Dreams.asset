@@ -1286,10 +1286,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: It is 7:55 AM on June 22, 5001.  You just finished high school,
-          your summer is starting today and you are still in bed, but you have strangely
-          set your alarm for 8:00AM. Did you forget turning it off before going to
-          sleep?
+        CardText: <color=red>It</color> is 7:55 AM on June 22, 5001.  You just finished
+          high school, your summer is starting today and you are still in bed, but
+          you have strangely set your alarm for 8:00AM. Did you forget turning it
+          off before going to sleep?
         LeftText: Turn off alarm
         RightText: Leave alarm set at 8:00
         card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}

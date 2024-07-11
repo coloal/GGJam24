@@ -454,9 +454,9 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Good morning, mate! You know what? I was talking this morning with
-          the rest of our group of friends we all had a super strange dream last
-          night. We all have recieved a Wealth, Violence, Power card  at the end
-          of it and I was wondering if you have had a similar dream too?
+          the rest of our group of friends, and we all had a super strange dream
+          last night. At the end of it, each of us received a Wealth, Violence, Power
+          card. I was wondering if you had a similar dream too?
         LeftText: I have indeed
         RightText: Yes, I got a card too
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -666,7 +666,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You got your third card of your deck! This one is of power type
+        CardText: You got your third card of your deck! This one is of Power type
           as you can see because of its blue color.
         LeftText: I like power
         RightText: I wan't to play!!!
