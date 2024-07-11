@@ -1024,10 +1024,11 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in Violence, Wealth and Power game of cards is of
-          Wealth type: People born under the essence of Wealth are inherently drawn
-          to wealth and luxury. They have a natural knack for financial matters,
-          often finding innovative ways to accumulate and manage resources.'
+          that your soul essence in <b><color=#2c7aab>Power</color>, <color=#438c1d>Wealth</color>,
+          <color=#bc3047>Violence</color></b> game of cards is of Wealth type: People
+          born under the essence of Wealth are inherently drawn to wealth and luxury.
+          They have a natural knack for financial matters, often finding innovative
+          ways to accumulate and manage resources.'
         LeftText: You can't classify me
         RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1064,10 +1065,11 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in Violence, Wealth and Power game of cards is of
-          Power type: Individuals born under the essence of Power are natural leaders,
-          exuding confidence. They are driven by a desire to control their surroundings,
-          often rising to positions of great responsibility.'
+          that your soul essence in <b><color=#2c7aab>Power</color>, <color=#438c1d>Wealth</color>,
+          <color=#bc3047>Violence</color></b> game of cards is of Power type: Individuals
+          born under the essence of Power are natural leaders, exuding confidence.
+          They are driven by a desire to control their surroundings, often rising
+          to positions of great responsibility.'
         LeftText: You can't classify me
         RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1086,11 +1088,11 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in Violence, Wealth and Power game of cards is of
-          Violence type: Those born under the essence of Violence are intense and
-          passionate, often possessing a fiery temper and a strong will. They are
-          natural warriors, unafraid of conflict and adept at navigating chaotic
-          situations.'
+          that your soul essence in <b><color=#2c7aab>Power</color>, <color=#438c1d>Wealth</color>,
+          <color=#bc3047>Violence</color></b> game of cards is of Violence type:
+          Those born under the essence of Violence are intense and passionate, often
+          possessing a fiery temper and a strong will. They are natural warriors,
+          unafraid of conflict and adept at navigating chaotic situations.'
         LeftText: You can't classify me
         RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
