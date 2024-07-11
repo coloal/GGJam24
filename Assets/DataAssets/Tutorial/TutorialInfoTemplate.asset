@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   tutorialEnemy: {fileID: 11400000, guid: f1b05c1469b62ce4aa2b734f2fb0a4bd, type: 2}
   initialConversation:
-  - "Let\xB4s fight! No physical touch though."
+  - Let's fight! No physical touch though.
   - Here you will have to battle against your opponents.
   - In a *<b>CARD GAME!</b>*
   - As it is your first time here, i will be guiding you through the combat.
@@ -32,16 +32,16 @@ MonoBehaviour:
   - So now. How do you win? (*or lose probably...*)
   - This three cards will interact differently between each other.
   - The <color=#bc3047>VIOLENCE</color> card will beat the  <color=#438c1d>WEALTH</color>
-    card but will lose to the <color=#2c7aab>POWER</color> card.
-  - The <color=#438c1d>WEALTH</color> card will beat the <color=#2c7aab>POWER</color>
+    card but will lose to the <color=#2c7aab>INFLUENCE</color> card.
+  - The <color=#438c1d>WEALTH</color> card will beat the <color=#2c7aab>INFLUENCE</color>
     card but will lose to the <color=#bc3047>VIOLENCE</color> card.
-  - The <color=#2c7aab>POWER</color> card will beat the <color=#bc3047>VIOLENCE</color>
+  - The <color=#2c7aab>INFLUENCE</color> card will beat the <color=#bc3047>VIOLENCE</color>
     card but will lose to the <color=#438c1d>WEALTH</color> card.
-  - "Now that we know all of the cards let\xB4s start with the combat!"
+  - Now that we know all of the cards let's start with the combat!
   bookExplanation:
   - You can always see which card wins or loses trades in the notebook over here.
   enemyCardExplanationPreShow:
-  - "Right at the very start of each combat the enemy will show you it\xB4s cards."
+  - Right at the very start of each combat the enemy will show you it's cards.
   enemyCardExplanationWhileShow:
   - These are the cards I will use in this combat.
   - It would be nice if you try to remember them (or else you will probably *lose*...)
@@ -56,10 +56,11 @@ MonoBehaviour:
   - 'Okay, okay, you win... I''m gonna tell you the cards that I''m picking *:(* '
   - The card I'm gonna pick first is a *<color=#bc3047>VIOLENCE</color>* card.
   playerPlaysCardExplanationInfluenceWin:
-  - "Ok so now it\xB4s your turn!"
+  - Ok so now it's your turn!
   - You will have to pick one of your cards to fight with mine.
-  - "Remember, you normally wouldn\xB4t know which card I just picked."
-  - So if you wanna win you should maybe play a <color=#2c7aab>POWER</color> card.
+  - Remember, you normally wouldn't know which card I just picked.
+  - So if you wanna win you should maybe play a <color=#2c7aab>INFLUENCE</color>
+    card.
   enemyPlaysCardExplanationViolenceLose:
   - I will play my <color=#bc3047>VIOLENCE</color> card again, maybe this time I
     will have more luck.
@@ -71,23 +72,23 @@ MonoBehaviour:
   playerPlaysCardExplanationMoneyDraw:
   - 'I think you should also play a <color=#438c1d>WEALTH</color> card. '
   enemyPlaysCardExplanationInfluenceDraw:
-  - Next I will play a <color=#2c7aab>POWER</color> card.
+  - Next I will play a <color=#2c7aab>INFLUENCE</color> card.
   playerPlaysCardExplanationInfluenceDraw:
-  - And you will also have to pick you <color=#2c7aab>POWER</color> card.
+  - And you will also have to pick you <color=#2c7aab>INFLUENCE</color> card.
   enemyPlaysCardExplanationViolenceDraw:
   - I only have one card left. Do you know which type is it?
-  - "If you don\xB4t, that means that you *haven't been playing this game properly.*"
+  - If you don't, that means that you *haven't been playing this game properly.*
   - It is really important to keep track of the cards the enemy has to be able to
     face them in a more accurate way.
-  - "So if you didn\xB4t already know, my last card is a <color=#bc3047>VIOLENCE</color>
-    card."
+  - So if you didn't already know, my last card is a <color=#bc3047>VIOLENCE</color>
+    card.
   playerPlaysCardExplanationViolenceDraw:
   - You only have one card left so there is nothing you can do other than playing
     your <color=#bc3047>VIOLENCE</color> card.
   winExplanation:
   - '*NOOOO!* Bro you just *killed* my card >:('
-  - So yeah, you have won the exchange, as a <color=#2c7aab>POWER</color> card beats
-    a <color=#bc3047>VIOLENCE</color> card.
+  - So yeah, you have won the exchange, as a <color=#2c7aab>INFLUENCE</color> card
+    beats a <color=#bc3047>VIOLENCE</color> card.
   - Now your card will return to your deck, and my card will be destroyed.
   loseExplanation:
   - '*Yes*, I have won!!'
@@ -106,8 +107,8 @@ MonoBehaviour:
   - Both cards will be put on the previous ones.
   coinCardExplanation:
   - Wait, what do we do now?
-  - "I don\xB4t have any cards left in my deck..."
-  - "And you don\xB4t have any in your hand."
+  - I don't have any cards left in my deck...
+  - And you don't have any in your hand.
   - ...... Yeah, I know what we could do!!!
   - We just throw a coin to solve the tie situation.
   - I mean, who doesn't like a bit of *gambling*-I mean... Luck in the game!
@@ -139,13 +140,13 @@ MonoBehaviour:
   playerTrippingMoney_2:
   - '%ARE YOU SO POOR YOU CANT EVEN PLAY A CARD THAT HAS MONEY IN IT!!!??%'
   playerTrippingInfluence:
-  - I think you made a slight *mistake*. Playing your *<color=#2c7aab>POWER</color>*
+  - I think you made a slight *mistake*. Playing your *<color=#2c7aab>INFLUENCE</color>*
     card is the way to go here.
   playerTrippingInfluence_1:
   - '%PLEASE, DO ME A FAVOR AND USE THE TWO REMAINING NEURONS YOU HAVE LEFT TO PLAY
-    THE <color=#2c7aab>POWER</color> CARD.%'
+    THE <color=#2c7aab>INFLUENCE</color> CARD.%'
   playerTrippingInfluence_2:
-  - '%OK, I GOT IT..... YOU ARE POWERLESS AND HAVE NO FRIENDS.%'
+  - '%OK, I GOT IT..... YOU ARE INFLUENCELESS AND HAVE NO FRIENDS.%'
   playerTrippingFinal:
   - '*NO*, this is not the card i said.'
   playerTrippingFinal_1:
