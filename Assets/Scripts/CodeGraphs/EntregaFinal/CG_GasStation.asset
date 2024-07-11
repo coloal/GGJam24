@@ -607,6 +607,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 372511c3-69f5-40c2-acf8-9e33af1e2e0c
       portIndex: 1
+  - outputPort:
+      nodeId: de8761c5-ef0b-4c62-b0ac-eae5cc318eac
+      portIndex: 0
+    inputPort:
+      nodeId: 3b421fee-1f3f-4a84-ad28-76eabf44e391
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -774,7 +780,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 9afdccc3ac98a37499230ca00e98343c, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030856
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1084,7 +1090,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 4c4c6035edaaf2d4bb955298330a5011, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030904
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1364,7 +1370,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 76586a0dfa29abc40a1b525e7fd1b96b, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030919
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

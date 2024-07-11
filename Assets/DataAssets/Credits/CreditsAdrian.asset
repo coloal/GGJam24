@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CreditsAdrian
   m_EditorClassIdentifier: 
   NameOfCard: "Adri\xE1n Herrera"
-  Text: 
-  LeftText: 
-  RightText: 
+  Text: Sound system programmer
+  LeftText: Mas horas al Slay the Spire que al master
+  RightText: '"Nooo, Omar, que hiciste con el FMod"'
   CharacterSprite: {fileID: 21300000, guid: 01df9cf936e0c44ffbcb67db0685079b, type: 3}

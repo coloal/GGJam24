@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
-  m_Name: Mechanic_RamaB
+  m_Name: 07_TS_PunkieGirl_PunkyBoyDefeated
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 832523203, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  characterSprite: {fileID: -1734718243, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
-  - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
-  ShowHintsTimeInSeconds: 0
+  OnStartConversation: []
+  OnWinConversation: []
+  OnLoseConversation: []
+  ShowHintsTimeInSeconds: 1

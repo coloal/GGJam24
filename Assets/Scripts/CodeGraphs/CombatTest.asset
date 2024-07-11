@@ -444,10 +444,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 
+        CardText: "8\xBA (LAST) ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: b878eace77736a7408efaf06d20d9398, type: 2}
+        card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
     - rid: 1623451173791727619
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -463,8 +463,8 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: 356770667cb447347aad43418601b656, type: 2}
-        IsBossFight: 0
+        enemy: {fileID: 11400000, guid: 904fe4365ec17424ebc951013327acf9, type: 2}
+        IsBossFight: 1
     - rid: 1623451173791727620
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -564,7 +564,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: ebb6b57cd989aee4b8240339c1d62a30, type: 2}
+        enemy: {fileID: 11400000, guid: 50a9cb419e9d71547a24b4cde70e35d6, type: 2}
         IsBossFight: 0
     - rid: 4179187880975925254
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -581,7 +581,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 0}
+        enemy: {fileID: 11400000, guid: 4e9501d2204b4bd4297246665a63bfa5, type: 2}
         IsBossFight: 0
     - rid: 4179187880975925255
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -598,7 +598,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 0}
+        enemy: {fileID: 11400000, guid: 67b82582019741b4cb5a6c77f8e9e57f, type: 2}
         IsBossFight: 0
     - rid: 4179187880975925256
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -615,8 +615,8 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 0}
-        IsBossFight: 0
+        enemy: {fileID: 11400000, guid: 76586a0dfa29abc40a1b525e7fd1b96b, type: 2}
+        IsBossFight: 1
     - rid: 4179187880975925257
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -668,7 +668,7 @@ MonoBehaviour:
         CardText: "1\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 4179187880975925260
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -686,7 +686,7 @@ MonoBehaviour:
         CardText: "2\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 4179187880975925261
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -704,7 +704,7 @@ MonoBehaviour:
         CardText: "3\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 4179187880975925262
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -722,7 +722,7 @@ MonoBehaviour:
         CardText: "4\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 4179187880975925263
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -738,7 +738,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 0}
+        enemy: {fileID: 11400000, guid: 47f9c49af174ed54f8164244cb1346c1, type: 2}
         IsBossFight: 0
     - rid: 4179187880975925264
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -755,7 +755,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 0}
+        enemy: {fileID: 11400000, guid: 6f47fd07cb9601e41b9563aff5fd0d20, type: 2}
         IsBossFight: 0
     - rid: 4179187880975925265
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -810,7 +810,7 @@ MonoBehaviour:
         CardText: "5\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 4179187880975925268
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -828,7 +828,7 @@ MonoBehaviour:
         CardText: "6\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
