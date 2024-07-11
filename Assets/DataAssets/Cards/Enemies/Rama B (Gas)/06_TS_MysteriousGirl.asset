@@ -19,7 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - I lost some cards a long time ago... Life takes many turns.
+  OnWinConversation:
+  - You have done well. I hope to see you again...
+  OnLoseConversation:
+  - Wow, you need to practice a little more. Next time it won't be so easy...
   ShowHintsTimeInSeconds: 1.5

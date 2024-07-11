@@ -21,7 +21,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - What a thrill. This feels like when I gave it my all when I was young!
+  - (Okay, calm down, Bob, calm down... You're playing your ass off in front of these
+    young men. Try to make it hard for them.)
+  - Kids, you'd better hold on to something, because there are curves coming!!!!
+  OnWinConversation:
+  - It was a formidable fight, kids. You earned it. Have the best vacation of your
+    life!
+  - (Of course, if any accident happens, I don't want to know anything about it...)
+  OnLoseConversation:
+  - You lack determination, kids! Train harder and come back stronger to challenge
+    me!
   ShowHintsTimeInSeconds: 0.7

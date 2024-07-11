@@ -48,8 +48,8 @@ MonoBehaviour:
   - But be careful as the cards that your opponent is gonna use are not in the same
     order as you are seeing them here.
   enemyPlaysCardExplanationViolenceWin:
-  - I will now play one of my cards. And you will not be able to see what card i
-    picked so be prepared to *LOSE!*
+  - I'll now play one of my cards. And you will not be able to see what card I picked
+    so be prepared to *LOSE!*
   - What? You wanna know what cards I picked only because this is the tutorial?!?!?!
   - ....................
   - '*.......*'
@@ -64,8 +64,8 @@ MonoBehaviour:
   - I will play my <color=#bc3047>VIOLENCE</color> card again, maybe this time I
     will have more luck.
   playerPlaysCardExplanationMoneyLose:
-  - I would highly recommend you to use your <color=#438c1d>WEALTH</color> card (It's
-    not like you are gonna *LOSE* or anything...)
+  - I would highly recommend you to use your <color=#438c1d>WEALTH</color> card.
+    (It's not like you are gonna *LOSE* or anything...)
   enemyPlaysCardExplanationMoneyDraw:
   - I will spice things up and play a  <color=#438c1d>WEALTH</color> card.
   playerPlaysCardExplanationMoneyDraw:
@@ -122,7 +122,7 @@ MonoBehaviour:
   - As the winner you have gained the right to keep one of my precious cards. Choose
     wisely as you can only pick once.
   endExplanation:
-  - The combat has reached its end. Good luck destroying the rest of your oponents
+  - The combat has reached its end. Good luck destroying the rest of your opponents
     (or being destoyed by them).
   playerTrippingViolence:
   - I think you made a mistake, you have to play your <color=#438c1d>*WEALTH*</color>

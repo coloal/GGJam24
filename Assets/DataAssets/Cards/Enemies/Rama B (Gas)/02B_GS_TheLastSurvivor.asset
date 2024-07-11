@@ -17,7 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - My style may be a little outdated but don't underestimate me, kid!
+  OnWinConversation:
+  - It was good but I certainly need to train a bit more!
+  OnLoseConversation:
+  - Even an old glory can come back from time to time....
   ShowHintsTimeInSeconds: 2

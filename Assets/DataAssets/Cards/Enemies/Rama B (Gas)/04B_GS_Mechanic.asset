@@ -18,7 +18,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - In this world everything is settled with a battle of Wealth, Violence and Power,
+    you should know that.
+  OnWinConversation:
+  - The mechanic's word is debt. Let's take a look at that caravan!
+  OnLoseConversation:
+  - Come on, kiddo, you have to train some more if you want to survive in this world!
   ShowHintsTimeInSeconds: 1
