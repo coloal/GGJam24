@@ -55,15 +55,6 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Position"",
-                    ""type"": ""Value"",
-                    ""id"": ""b07dc78d-65be-4747-98fd-718554b3d942"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -165,28 +156,6 @@ namespace UnityEngine.InputSystem
                     ""action"": ""Release"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""79a8ca84-5f12-4e4a-8d54-dbf31b945e91"",
-                    ""path"": ""<Touchscreen>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""139ff6d6-8246-4da2-87da-65e5e269b4cc"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Position"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -259,7 +228,6 @@ namespace UnityEngine.InputSystem
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
             m_Player_Release = m_Player.FindAction("Release", throwIfNotFound: true);
-            m_Player_Position = m_Player.FindAction("Position", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -324,7 +292,6 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Click;
         private readonly InputAction m_Player_Release;
-        private readonly InputAction m_Player_Position;
         public struct PlayerActions
         {
             private @NewInputActions m_Wrapper;
@@ -332,7 +299,6 @@ namespace UnityEngine.InputSystem
             public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Click => m_Wrapper.m_Player_Click;
             public InputAction @Release => m_Wrapper.m_Player_Release;
-            public InputAction @Position => m_Wrapper.m_Player_Position;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -351,9 +317,6 @@ namespace UnityEngine.InputSystem
                 @Release.started += instance.OnRelease;
                 @Release.performed += instance.OnRelease;
                 @Release.canceled += instance.OnRelease;
-                @Position.started += instance.OnPosition;
-                @Position.performed += instance.OnPosition;
-                @Position.canceled += instance.OnPosition;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -367,9 +330,6 @@ namespace UnityEngine.InputSystem
                 @Release.started -= instance.OnRelease;
                 @Release.performed -= instance.OnRelease;
                 @Release.canceled -= instance.OnRelease;
-                @Position.started -= instance.OnPosition;
-                @Position.performed -= instance.OnPosition;
-                @Position.canceled -= instance.OnPosition;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -437,7 +397,6 @@ namespace UnityEngine.InputSystem
             void OnMove(InputAction.CallbackContext context);
             void OnClick(InputAction.CallbackContext context);
             void OnRelease(InputAction.CallbackContext context);
-            void OnPosition(InputAction.CallbackContext context);
         }
     }
 }
