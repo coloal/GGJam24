@@ -1653,7 +1653,7 @@ MonoBehaviour:
           simple card game."
         LeftText: But we need it for our trip
         RightText: Your friend the mechanic told us you make false driver's licenses
-        card: {fileID: 11400000, guid: 9ae16110b6c520f43ba4deeae2035cad, type: 2}
+        card: {fileID: 11400000, guid: 1d6bd4324603d9f44b37d13b4d6a30ba, type: 2}
     - rid: 1812450555419688981
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
