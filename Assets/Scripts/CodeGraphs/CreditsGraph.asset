@@ -26,31 +26,19 @@ MonoBehaviour:
   - rid: 4179187765362819084
   connections:
   - outputPort:
+      nodeId: ad4fae1f-879b-439d-8452-12980e4c176f
+      portIndex: 0
+    inputPort:
+      nodeId: e7a41628-1d41-4657-a5c0-d9ec92422672
+      portIndex: 1
+  - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
       portIndex: 0
     inputPort:
-      nodeId: 1d744f80-0b66-43b9-8083-acab6ba1c207
-      portIndex: 1
-  - outputPort:
-      nodeId: 1d744f80-0b66-43b9-8083-acab6ba1c207
-      portIndex: 0
-    inputPort:
       nodeId: ad4fae1f-879b-439d-8452-12980e4c176f
       portIndex: 1
   - outputPort:
-      nodeId: ad4fae1f-879b-439d-8452-12980e4c176f
-      portIndex: 0
-    inputPort:
       nodeId: e7a41628-1d41-4657-a5c0-d9ec92422672
-      portIndex: 1
-  - outputPort:
-      nodeId: e7a41628-1d41-4657-a5c0-d9ec92422672
-      portIndex: 0
-    inputPort:
-      nodeId: 93b39a96-c7eb-4f35-bfe1-591266d785dd
-      portIndex: 1
-  - outputPort:
-      nodeId: 93b39a96-c7eb-4f35-bfe1-591266d785dd
       portIndex: 0
     inputPort:
       nodeId: 3c040294-e7f6-450a-a5c0-e663f8ea9608
@@ -59,10 +47,10 @@ MonoBehaviour:
       nodeId: 3c040294-e7f6-450a-a5c0-e663f8ea9608
       portIndex: 0
     inputPort:
-      nodeId: 01124e46-a380-4014-b928-faecbe4255c8
+      nodeId: 12ce954c-057e-413b-8d86-8f23aad35e71
       portIndex: 1
   - outputPort:
-      nodeId: 01124e46-a380-4014-b928-faecbe4255c8
+      nodeId: 12ce954c-057e-413b-8d86-8f23aad35e71
       portIndex: 0
     inputPort:
       nodeId: 335387dd-133d-4811-9346-17fd83f892dd
@@ -71,10 +59,22 @@ MonoBehaviour:
       nodeId: 335387dd-133d-4811-9346-17fd83f892dd
       portIndex: 0
     inputPort:
-      nodeId: 12ce954c-057e-413b-8d86-8f23aad35e71
+      nodeId: 1d744f80-0b66-43b9-8083-acab6ba1c207
       portIndex: 1
   - outputPort:
-      nodeId: 12ce954c-057e-413b-8d86-8f23aad35e71
+      nodeId: 01124e46-a380-4014-b928-faecbe4255c8
+      portIndex: 0
+    inputPort:
+      nodeId: 93b39a96-c7eb-4f35-bfe1-591266d785dd
+      portIndex: 1
+  - outputPort:
+      nodeId: 1d744f80-0b66-43b9-8083-acab6ba1c207
+      portIndex: 0
+    inputPort:
+      nodeId: 01124e46-a380-4014-b928-faecbe4255c8
+      portIndex: 1
+  - outputPort:
+      nodeId: 93b39a96-c7eb-4f35-bfe1-591266d785dd
       portIndex: 0
     inputPort:
       nodeId: 3475e163-5746-4825-9adc-b421dd21cc44
@@ -101,7 +101,7 @@ MonoBehaviour:
         guid: 1d744f80-0b66-43b9-8083-acab6ba1c207
         position:
           serializedVersion: 2
-          x: -341
+          x: 1667
           y: -64
           width: 365
           height: 242
@@ -109,7 +109,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Sound and system programmer
+        CardText: Sound programmer///System programmer
         LeftText: Mas horas al Slay the Spire que al master
         RightText: '"Nooo, Omar, que hiciste con el FMod"'
         card: {fileID: 11400000, guid: dc178df2d8a3f4d638ba2b1c825d0c44, type: 2}
@@ -119,7 +119,7 @@ MonoBehaviour:
         guid: ad4fae1f-879b-439d-8452-12980e4c176f
         position:
           serializedVersion: 2
-          x: 96
+          x: -341
           y: -64
           width: 369
           height: 242
@@ -129,7 +129,7 @@ MonoBehaviour:
         - Next
         CardText: Narrative designer
         LeftText: "\"Tu lo que ere eh\_un\_indocumentao\""
-        RightText: "En un cumplea\xF1os, probablemente"
+        RightText: '"Somo lo mas gilis de los gilis"'
         card: {fileID: 11400000, guid: 499f1a98fab004a08bbc072e22eadde7, type: 2}
     - rid: 4179187765362819077
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -137,15 +137,15 @@ MonoBehaviour:
         guid: e7a41628-1d41-4657-a5c0-d9ec92422672
         position:
           serializedVersion: 2
-          x: 563.2
+          x: 65
           y: -64
-          width: 322.40002
-          height: 240.8
+          width: 364
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: aka. Murki///Combat designer and Pixel artist
+        CardText: aka. Murki///Combat designer///Pixel artist
         LeftText: '"Esto sale por lo civil o lo criminal"'
         RightText: '"Sabes como se soluciona eso? Epabila, macho!"'
         card: {fileID: 11400000, guid: f9c66a3d25fda4af29e239c79e7a730a, type: 2}
@@ -170,10 +170,10 @@ MonoBehaviour:
         guid: 93b39a96-c7eb-4f35-bfe1-591266d785dd
         position:
           serializedVersion: 2
-          x: 989.60004
-          y: -69.600006
-          width: 322.40002
-          height: 240
+          x: 2481
+          y: -64
+          width: 355
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -188,15 +188,15 @@ MonoBehaviour:
         guid: 3c040294-e7f6-450a-a5c0-e663f8ea9608
         position:
           serializedVersion: 2
-          x: 1413.5
-          y: -67
-          width: 358.5
+          x: 462
+          y: -64
+          width: 359
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Combat designer and Pixel artist
+        CardText: Combat designer///Pixel artist
         LeftText: '"Que bueno, no?"'
         RightText: "\"Pero la hay\_con\_alcohol?\""
         card: {fileID: 11400000, guid: 71c7b6b6c699b476883fabea0c86a56d, type: 2}
@@ -206,10 +206,10 @@ MonoBehaviour:
         guid: 01124e46-a380-4014-b928-faecbe4255c8
         position:
           serializedVersion: 2
-          x: 1834.3999
-          y: -67.2
-          width: 322.40015
-          height: 240
+          x: 2073
+          y: -64
+          width: 372
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -224,10 +224,10 @@ MonoBehaviour:
         guid: 335387dd-133d-4811-9346-17fd83f892dd
         position:
           serializedVersion: 2
-          x: 2220.8
-          y: -68
-          width: 322.3999
-          height: 240
+          x: 1269
+          y: -64
+          width: 360
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -242,9 +242,9 @@ MonoBehaviour:
         guid: 12ce954c-057e-413b-8d86-8f23aad35e71
         position:
           serializedVersion: 2
-          x: 2610
-          y: -66
-          width: 321
+          x: 859
+          y: -64
+          width: 366
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

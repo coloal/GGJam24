@@ -15,5 +15,5 @@ MonoBehaviour:
   NameOfCard: Alberto Coello
   Text: Story designer
   LeftText: "\"Tu lo que ere eh\_un\_indocumentao\""
-  RightText: "En un cumplea\xF1os, probablemente"
+  RightText: '"Somo lo mas gilis de los gilis"'
   CharacterSprite: {fileID: 21300000, guid: a101fc0ded774445d907778fa03cf9ec, type: 3}
