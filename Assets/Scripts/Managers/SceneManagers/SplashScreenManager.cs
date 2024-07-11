@@ -14,27 +14,12 @@ public class SplashScreenManager : BaseSceneManager
 
     async void Start()
     {
-        /*
-        Init();
-
-        GameManager.Instance.ProvideSoundManager().PlaySFX("SplashAudio");
-
-        await splashFeedbacksManager.PlayFadeImages();
-        if (this == null || destroyCancellationToken.IsCancellationRequested)
-        {
-            return;
-        }
-
-        GameUtils.CreateTemporizer(() => 
-        { 
-            GoToMainMenu(); 
-        }, secondsBeforeStartingMainMenuScene, this);
-        */
+        StartCoroutine(LoadSplash());
     }
 
     private void Update()
     {
-        if (!HasInitialize)
+        /*if (!HasInitialize)
         {
             if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
             {
@@ -45,10 +30,27 @@ public class SplashScreenManager : BaseSceneManager
                 Initializate();
             }
 
+        }*/
+    }
+
+    IEnumerator LoadSplash()
+    {
+        yield return new WaitForSeconds(1);
+
+        if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
+        {
+            Initializate();
+            Debug.Log("Master bank cargado");
+
+        }
+        else
+        {
+            Debug.Log("Master bank not loaded looping");
+            StartCoroutine(LoadSplash());
         }
     }
 
-    void GoToMainMenu()
+        void GoToMainMenu()
     {
         GameManager.Instance.ChangeSceneWithAnimation(mainMenuAnimation, ScenesNames.MainMenuScene);
     }
@@ -57,6 +59,7 @@ public class SplashScreenManager : BaseSceneManager
     {
         Init();
 
+        GameManager.Instance.ProvideSoundManager().Initialize();
         GameManager.Instance.ProvideSoundManager().PlaySFX("SplashAudio");
 
         await splashFeedbacksManager.PlayFadeImages();
