@@ -179,4 +179,49 @@ public class ResultWinTutorialState : ResultWinState
                 destination: TutorialManager.SceneTutorial.GetEnemyCardsTypesHintOriginPosition()
             );
     }
+
+    protected override async void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCard pickedCombatCard)
+    {
+
+        foreach (Transform enemyCard in combatContext.GetEnemyCards())
+        {
+            if (enemyCard.gameObject == pickedCombatCard.gameObject)
+            {
+                GameObject emptyCardDummy = CombatSceneManager.Instance.ProvideCombatManager().InstantiateEmptyCardDummyGameObject();
+                emptyCardDummy.transform.SetParent(enemyCard.transform.parent);
+                emptyCardDummy.transform.SetSiblingIndex(
+                    pickedCombatCard.transform.GetSiblingIndex()
+                );
+            }
+        }
+        CombatSceneManager.Instance.ProvidePlayerDeckManager()
+            .AddCardToDeck(pickedCombatCard);
+        pickedCombatCard.transform.SetParent(
+            combatContext.playerDeck.transform.parent,
+            worldPositionStays: true
+        );
+
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayReturnCardToDeck(
+                cardToReturn: pickedCombatCard,
+                deckTransform: combatContext.playerDeck.transform
+            );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
+        pickedCombatCard.gameObject.SetActive(false);
+
+        // Hide all other cards
+        if (combatContext.enemyCardsRow0.transform.childCount > 0)
+        {
+            await HideEnemyCardsToChooseFrom();
+            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+            {
+                return;
+            }
+        }
+
+        PostProcess(combatContext);
+    }
 }
