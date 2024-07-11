@@ -94,7 +94,7 @@ MonoBehaviour:
   - '*Yes*, I have won!!'
   - And you have lost the exchange.
   - Your card will now be destroyed and mine will return to my hand.
-  - "But don\xB4t worry, your card will become avaliable in the next combat."
+  - But don't worry, your card will become avaliable in the next combat.
   drawExplanationFirst:
   - Our cards have tied the exchange as the types of both are the same.
   - Both cards will be put apart until someone wins the exchange.
