@@ -1595,12 +1595,15 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Great that''s our first real win at the town square! I always
-          wanted to beat that guy at Wealth, VIolence, Power. But don''t lose our
-          focus! I have good news to tell you,
+          wanted to beat that guy at
 
-          I have seen a big guy around
-          the square''s fountain which looked like a truck driver, we could approach
-          him and try make him bet he''s driver''s license.'
+          <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>. But
+          don''t lose our focus! I have good news to tell you,
+
+          I have
+          seen a big guy around the square''s fountain which looked like a truck
+          driver, we could approach him and try make him bet he''s driver''s license.'
         LeftText: Let's challenge him
         RightText: Go find other rival first
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
