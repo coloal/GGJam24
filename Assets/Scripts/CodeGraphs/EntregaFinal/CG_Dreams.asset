@@ -1068,7 +1068,7 @@ MonoBehaviour:
         CardText: 'Ok, buddie. I have your personality test results which conludes
           that your soul essence in <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
           <color=#438c1d>Wealth</color></b> game of cards is of <b><color=#2c7aab>Influence</color></b>
-          type: Individuals born under the essence of <b><color=#2c7aab>Power</color></b>
+          type: Individuals born under the essence of <b><color=#2c7aab>Influence</color></b>
           are natural leaders, exuding confidence. They are driven by a desire to
           control their surroundings, often rising to positions of great responsibility.'
         LeftText: You can't classify me
@@ -1181,12 +1181,13 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a <b><color=#2c7aab>Influence</b> card in the <b><color=#2c7aab>Influence</color>,
-          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> game.
-          This game is used in The Wells to resolve any conflicts among its inhabitants.
-          The more cards of the game you have, the better! This game resembles one
-          that an ancient civilization used to play called Rock, Paper, Scissors,
-          but with cards instead of player's hands and some other rule changes!
+        CardText: You received a <b><color=#2c7aab>Influence</color></b> card in
+          the <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b> game. This game is used in The Wells
+          to resolve any conflicts among its inhabitants. The more cards of the game
+          you have, the better! This game resembles one that an ancient civilization
+          used to play called Rock, Paper, Scissors, but with cards instead of player's
+          hands and some other rule changes!
         LeftText: Got it
         RightText: Useful in the future I guess
         card: {fileID: 11400000, guid: abad7000132574942bc5fce4c61ff27e, type: 2}
