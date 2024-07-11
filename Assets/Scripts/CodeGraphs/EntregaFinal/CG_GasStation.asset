@@ -1041,9 +1041,10 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Hey, my parents just stopped to get gas at this filthy gas station.
-          Want to play a quick game of Violence, Wealth, Money? You don't stand a
-          chance against my deck, but if by some luck you win, good for you. This
-          game is always fun and it's more if we bet a little bit of money.
+          Want to play a quick game of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>? You don't stand a chance against my
+          deck, but if by some luck you win, good for you. This game is always fun
+          and it's more if we bet a little bit of money.
         LeftText: Yes, more cards it's always better
         RightText: Nah I have a van to fix
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
@@ -1331,10 +1332,13 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: What's that look on your face? Haven't you ever seen a humanoid
-          dog before? I didn't think you were one of those who discriminate against
-          furries for what they are. Come here, I'm going to pluck you clean in a
-          game of Wealth, Violence, Power.
+        CardText: 'What''s that look on your face? Haven''t you ever seen a humanoid
+          dog before? I didn''t think you were one of those who discriminate against
+          furries for what they are.
+
+          Come here, I''m going to pluck you
+          clean in a game of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>.'
         LeftText: Guau, you are sensible about this
         RightText: All bark and no bite, you are?
         card: {fileID: 11400000, guid: b878eace77736a7408efaf06d20d9398, type: 2}
@@ -1425,8 +1429,11 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Risky decision, mate. Every combat is a change to get one more
-          card to your deck, and the more cards you get the more chances you have
-          to win games of Violence, Wealth, Power.
+          card to your deck, and the more cards you
+
+          get the more chances
+          you have to win games of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>.
 
           Do you want to challenge
           that boy again?'
@@ -1448,9 +1455,14 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Hey, you shouldn't pass up the opportunities life gives you to
-          get Violence, Wealth, and Power cards. Anyway, I'm not going to let you
-          off the hook, so you better start shuffling your deck, loser.
+        CardText: 'Hey, you shouldn''t pass up the opportunities life gives you to
+          get
+
+          <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+
+          <color=#438c1d>Wealth</color></b>
+          cards. Anyway, I''m not going to let you off the hook, so you better start
+          shuffling your deck, loser.'
         LeftText: Let's play then
         RightText: Ok, lesson learned
         card: {fileID: 11400000, guid: 2817ae8a520b26345824a70c5c69df99, type: 2}
@@ -1487,9 +1499,14 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Great, we have some more money for our trip and a new card in
-          our deck. This brings us closer to our dream summer.///I''ve heard there''s
-          a mechanic at this gas station. Do you want to go talk to him now, or should
-          we face someone else first to win another card?
+          our deck.
+
+          This brings us closer to our dream summer.///I''ve
+          heard there''s a mechanic
+
+          at this gas station. Do you want to
+          go talk to him now, or should we face someone else first to win another
+          card?
 
 
 
@@ -1527,18 +1544,21 @@ MonoBehaviour:
         guid: 82184e4f-687b-4576-ae95-e0c5d9a450ad
         position:
           serializedVersion: 2
-          x: 11062.4
-          y: 2216.8
-          width: 958.3994
-          height: 264
+          x: 11064
+          y: 2074
+          width: 867
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: Well, as you might have guessed, if you want me to fix your caravan,
-          you'll have to beat me in a game of Wealth, Violence, and Power. So, there's
-          no time to waste, let's get started.
+        CardText: 'Well, as you might have guessed, if you want me to fix your caravan,
+          you''ll have to beat me in a game of
+
+          <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>. So,
+          there''s no time to waste, let''s get started.'
         LeftText: We are getting our van fixed
         RightText: I can already see as sun bathing
         card: {fileID: 11400000, guid: 9ae16110b6c520f43ba4deeae2035cad, type: 2}
@@ -1594,8 +1614,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Well, look who we have here, a youngster eager to gift me one of
-          their cards. Let's play a quick round of Wealth, Violence, and Power, mate
+        CardText: 'Well, look who we have here, a youngster eager to gift me one
+          of their cards. Let''s play a quick round of
+
+          <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>, mate'
         LeftText: I guess I've chosen this
         RightText: I really like this game indeed
         card: {fileID: 11400000, guid: 2817ae8a520b26345824a70c5c69df99, type: 2}
@@ -1705,9 +1728,10 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Hey, my parents just stopped to get gas at this filthy gas station.
-          Want to play a quick game of Violence, Power, Wealth? You don't stand a
-          chance against my deck, but if by some luck you win, good for you. This
-          game is always fun and it's more if we bet a little bit of money.
+          Want to play a quick game of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>? You don't stand a chance against my
+          deck, but if by some luck you win, good for you. This game is always fun
+          and it's more if we bet a little bit of money.
         LeftText: Yes, more cards it's always better
         RightText: Nah I have a van to fix
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -1727,8 +1751,11 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Risky decision, mate. Every combat is a change to get one more
-          card to your deck, and the more cards you get the more chances you have
-          to win games of Violence, Money, Power.
+          card to your deck,
+
+          and the more cards you get the more chances
+          you have to win games of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>.
 
           Do you want to challenge
           that boy again?'
@@ -2224,7 +2251,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Well, we lost agains a... dog?! They were a cool one though
+        CardText: Well, we lost against a... dog?! They were a cool one though
         LeftText: '[Restart] Reguau!'
         RightText: '[Back to menu] Menughrrrr'
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}

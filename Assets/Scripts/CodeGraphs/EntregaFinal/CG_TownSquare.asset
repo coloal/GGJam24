@@ -121,10 +121,6 @@ MonoBehaviour:
   - rid: 1812450626248638502
   - rid: 1812450626248638503
   - rid: 1812450626248638504
-  - rid: 1812450626248638505
-  - rid: 1812450626248638507
-  - rid: 1812450626248638508
-  - rid: 1812450626248638509
   - rid: 1812450628146823169
   connections:
   - outputPort:
@@ -890,35 +886,17 @@ MonoBehaviour:
       nodeId: d51dfe2f-eb31-47ee-a09d-f26f7f0a9e3c
       portIndex: 1
   - outputPort:
-      nodeId: 73c0e577-21f0-4f06-8ab3-daa9632e6651
-      portIndex: 1
-    inputPort:
-      nodeId: 6fddc453-995a-4124-8b85-c1c0be9c9f5b
-      portIndex: 1
-  - outputPort:
-      nodeId: 6fddc453-995a-4124-8b85-c1c0be9c9f5b
-      portIndex: 0
-    inputPort:
-      nodeId: 89d16ec6-220b-4e34-8f64-7cf340c8e377
-      portIndex: 2
-  - outputPort:
-      nodeId: 89d16ec6-220b-4e34-8f64-7cf340c8e377
-      portIndex: 0
-    inputPort:
-      nodeId: 8fd7899f-aa7a-4eaf-a205-f809e69b6c3e
-      portIndex: 0
-  - outputPort:
-      nodeId: 89d16ec6-220b-4e34-8f64-7cf340c8e377
-      portIndex: 1
-    inputPort:
-      nodeId: 2e881b84-1363-477f-89d4-81c4d6b81a6d
-      portIndex: 0
-  - outputPort:
       nodeId: 37f4b945-28c5-4a2b-bf2f-98f8454277a3
       portIndex: 0
     inputPort:
       nodeId: 7c1e807f-3be9-429e-ae1b-0b0e3d0b2cc4
       portIndex: 0
+  - outputPort:
+      nodeId: 73c0e577-21f0-4f06-8ab3-daa9632e6651
+      portIndex: 1
+    inputPort:
+      nodeId: 2ea55696-6e82-4281-b274-ba806fe6d423
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -1010,10 +988,13 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Hey, look who's here, it's my dear classmate and his gang of pathetic
-          friends. Oh, and you finally have a deck of cards, huh? Come here, I'll
-          show you how to play Violence, Wealth and Power. And I am betting some
-          money on this, playing agains you losers it's a safe bet.
+        CardText: 'Hey, look who''s here, it''s my dear classmate and his gang of
+          pathetic friends. Oh, and you finally have a deck of cards, huh? Come here,
+
+          I''ll
+          show you how to play <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>. And I am betting some money on this,
+          playing agains you losers it''s a safe bet.'
         LeftText: You'll finally learn a lesson
         RightText: Nice, we need the money
         card: {fileID: 11400000, guid: 5c963dc7908d1a0438f60fa799f32be3, type: 2}
@@ -1122,8 +1103,7 @@ MonoBehaviour:
           misterious girl that is always at the east corner of the square.
 
           I''ve
-          seen her playing several times and she only has violence cards in her deck,
-          except for one card which is of type Wealth.'
+          seen her playing several times and she is a good match.'
         LeftText: Go play against her
         RightText: Keep walking around the square
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -1220,10 +1200,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "You're not going to get away with beating my boyfriend. He left
-          me a couple of cards that, combined with mine, will leave you with no chance
-          in this game, idiot. I\u2019m going to bet twice as much as he did, so
-          I\u2019ll get his money back from your dirty hands\n\n\n\n\n\n"
+        CardText: "You're not going to get away with beating my boyfriend. Don't
+          think my deck is as weak as his, you have no chance in this game, idiot.
+          I\u2019m going to bet twice as much as he did, so I\u2019ll get his money
+          back from your dirty hands\n\n\n\n\n\n"
         LeftText: Wow, you are so rude
         RightText: I like games with something in play
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
@@ -1615,12 +1595,15 @@ MonoBehaviour:
         - Left
         - Right
         CardText: 'Great that''s our first real win at the town square! I always
-          wanted to beat that guy at Wealth, VIolence, Power. But don''t lose our
-          focus! I have good news to tell you,
+          wanted to beat that guy at
 
-          I have seen a big guy around
-          the square''s fountain which looked like a truck driver, we could approach
-          him and try make him bet he''s driver''s license.'
+          <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>. But
+          don''t lose our focus! I have good news to tell you,
+
+          I have
+          seen a big guy around the square''s fountain which looked like a truck
+          driver, we could approach him and try make him bet he''s driver''s license.'
         LeftText: Let's challenge him
         RightText: Go find other rival first
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -1930,10 +1913,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "You're not going to get away with beating my boyfriend. He left
-          me a couple of cards that, combined with mine,\nwill leave you with no
-          chance in this game, idiot. I\u2019m going to bet twice as much as he did,
-          so I\u2019ll get his money back from your dirty hands."
+        CardText: "You're not going to get away with beating my boyfriend. Don't
+          think my deck is as weak as his, you have no chance\nin this game, idiot.
+          I\u2019m going to bet twice as much as he did, so I\u2019ll get his money
+          back from your dirty hands."
         LeftText: Wow, you are so rude
         RightText: I like games with something in play
         card: {fileID: 11400000, guid: 87fb003a8377cef44adeaa255949cca0, type: 2}
@@ -2872,66 +2855,6 @@ MonoBehaviour:
           serializedVersion: 2
           x: 11967
           y: 1666
-          width: 86
-          height: 77
-        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs: []
-    - rid: 1812450626248638505
-      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 6fddc453-995a-4124-8b85-c1c0be9c9f5b
-        position:
-          serializedVersion: 2
-          x: 18621
-          y: 1617
-          width: 346
-          height: 98
-        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Next
-        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
-    - rid: 1812450626248638507
-      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 89d16ec6-220b-4e34-8f64-7cf340c8e377
-        position:
-          serializedVersion: 2
-          x: 19037
-          y: 1617
-          width: 358
-          height: 266
-        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Left
-        - Right
-        CardText: 
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
-    - rid: 1812450626248638508
-      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 8fd7899f-aa7a-4eaf-a205-f809e69b6c3e
-        position:
-          serializedVersion: 2
-          x: 19617
-          y: 1617
-          width: 98
-          height: 77
-        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs: []
-    - rid: 1812450626248638509
-      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 2e881b84-1363-477f-89d4-81c4d6b81a6d
-        position:
-          serializedVersion: 2
-          x: 19617
-          y: 1715
           width: 86
           height: 77
         typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
