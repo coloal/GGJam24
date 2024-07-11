@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SplashScreenManager : BaseSceneManager
 {
@@ -9,8 +10,20 @@ public class SplashScreenManager : BaseSceneManager
     [SerializeField] private SplashFeedbacksManager splashFeedbacksManager;
     [SerializeField] private float secondsBeforeStartingMainMenuScene = 1.0f;
     [SerializeField] private Animator mainMenuAnimation;
+    [SerializeField] private Image gameLogo;
 
+    private bool hasFinishedLoading = false;
+    private bool hasFinishedLastCicle = false;
     private bool HasInitialize = false;
+    private bool hasFinishedTemporizer = false;
+    private bool faseOneHasFinished = false;
+    private float faseOneTime = 2;
+    private bool faseTwoHasFinished = false;
+    private float faseTwoTime = 4;
+    private float lastCicleSign = 0;
+
+    private float temporizer = 0;
+    private float waitTime = 5;
 
     async void Start()
     {
@@ -31,7 +44,49 @@ public class SplashScreenManager : BaseSceneManager
             }
 
         }*/
+
+        if (hasFinishedLoading && !hasFinishedTemporizer)
+        {
+            temporizer += Time.deltaTime;
+            if (!faseOneHasFinished && temporizer > faseOneTime)
+            {
+                faseOneHasFinished=true;
+                GameManager.Instance.ProvideSoundManager().CreateEventFMOD("Menu");
+            } 
+            else if (!faseTwoHasFinished && temporizer > faseTwoTime)
+            {
+                faseTwoHasFinished=true;
+                GameManager.Instance.ProvideSoundManager().CreateEventFMOD("Credits");
+            }
+            else if (temporizer > waitTime)
+            {
+                hasFinishedTemporizer = true;
+                lastCicleSign = Mathf.Sign(Mathf.Sin(Time.time));
+            }
+        }
+
+        if(!hasFinishedLastCicle)
+        {
+            if (hasFinishedTemporizer)
+            {
+                if(Mathf.Sign(Mathf.Sin(Time.time*3)) != lastCicleSign)
+                {
+                    hasFinishedLastCicle=true;
+                }
+            }
+            gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, Mathf.Abs(Mathf.Sin(Time.time*3)));
+        }
+        else if(!HasInitialize)
+        {
+            HasInitialize = true;
+            gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, 0);
+            Initializate();
+        }
+
     }
+
+
+    
 
     IEnumerator LoadSplash()
     {
@@ -39,7 +94,9 @@ public class SplashScreenManager : BaseSceneManager
 
         if (FMODUnity.RuntimeManager.HasBankLoaded("Master"))
         {
-            Initializate();
+            hasFinishedLoading = true;
+            GameManager.Instance.ProvideSoundManager().Initialize();
+            GameManager.Instance.ProvideSoundManager().CreateEventFMOD("SplashAudio");
             Debug.Log("Master bank cargado");
 
         }
@@ -50,7 +107,7 @@ public class SplashScreenManager : BaseSceneManager
         }
     }
 
-        void GoToMainMenu()
+    void GoToMainMenu()
     {
         GameManager.Instance.ChangeSceneWithAnimation(mainMenuAnimation, ScenesNames.MainMenuScene);
     }
@@ -59,14 +116,14 @@ public class SplashScreenManager : BaseSceneManager
     {
         Init();
 
-        GameManager.Instance.ProvideSoundManager().Initialize();
-        GameManager.Instance.ProvideSoundManager().CreateEventFMOD("SplashAudio");
-        new WaitForSeconds(1);
-        GameManager.Instance.ProvideSoundManager().CreateEventFMOD("Credits");
-        GameManager.Instance.ProvideSoundManager().CreateEventFMOD("Menu");
-        new WaitForSeconds(1);
-        GameManager.Instance.ProvideSoundManager().PlaySFX("SplashAudio");
 
+        
+        
+        
+
+        
+
+        GameManager.Instance.ProvideSoundManager().PlaySFX("SplashAudio");
         await splashFeedbacksManager.PlayFadeImages();
         if (this == null || destroyCancellationToken.IsCancellationRequested)
         {
