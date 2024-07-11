@@ -57,3 +57,5 @@ MonoBehaviour:
     EventName: SplashAudio
   - FoldersName: 2
     EventName: Credits
+  - FoldersName: 3
+    EventName: Pause

@@ -126,7 +126,15 @@ public class SoundManager : MonoBehaviour
             EventMap = new Dictionary<string, EventInstance>();
             foreach (EventIdentifier FMODevent in SoundEvents.EventsNames)
             {
-                string path = FMOD_PATH + Enum.GetName(typeof(EventFolders), FMODevent.FoldersName) + "/" + FMODevent.EventName;
+                string path;
+                if (FMODevent.FoldersName != EventFolders.snapshot)
+                {
+                    path = FMOD_PATH + Enum.GetName(typeof(EventFolders), FMODevent.FoldersName) + "/" + FMODevent.EventName;
+                }
+                else
+                {
+                    path = "snapshot:/" + FMODevent.EventName;
+                }
 
                 try
                 {
@@ -174,6 +182,18 @@ public class SoundManager : MonoBehaviour
         if (EventMap.ContainsKey(EventName))
         {
             EventMap[EventName].start();
+        }
+        else
+        {
+            Debug.LogError("No esta registrado el evento de FMOD: " + EventName);
+        }
+    }
+
+    public void StopSFX(string EventName)
+    {
+        if (EventMap.ContainsKey(EventName))
+        {
+            EventMap[EventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
         else
         {

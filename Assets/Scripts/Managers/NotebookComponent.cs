@@ -40,6 +40,9 @@ public class NotebookComponent : MonoBehaviour
             notebook.SetActive(true);
             CombatSceneManager.Instance.ProvideCombatManager().DisablePlayerCardsInHandInteractiveComponent();
 
+            //SFX
+            GameManager.Instance.ProvideSoundManager().PlaySFX("Pause");
+
             await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayShowNotebook(
                     origin: notebookOriginPosition,
@@ -57,6 +60,9 @@ public class NotebookComponent : MonoBehaviour
     {
         if (isNotebookShown)
         {
+            //SFX
+            GameManager.Instance.ProvideSoundManager().StopSFX("Pause");
+
             await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayHideNotebook(
                     origin: notebookDestinationPosition,
