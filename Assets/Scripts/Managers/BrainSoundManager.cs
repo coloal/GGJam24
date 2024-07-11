@@ -66,6 +66,13 @@ public class SoundManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+
+        //Initialize();
+
+    }
+
+    public void Initialize() 
+    {
         InitializeData();
         InitializeEventMap();
 
@@ -78,7 +85,6 @@ public class SoundManager : MonoBehaviour
 
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
     }
-
     void InitializeData()
     {
         if (SoundsMap == null)
@@ -278,12 +284,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic() 
     {
-        EventMap["Menu"].start();
+        if (EventMap.ContainsKey("Menu"))
+        {
+            EventMap["Menu"].start();
+        }
     }
 
     public void StopMenuMusic()
     {
-        EventMap["Menu"].setParameterByName("ExitMenu", 1);
+        if (EventMap.ContainsKey("Menu"))
+        {
+            EventMap["Menu"].setParameterByName("ExitMenu", 1);
+        }
+        
         //EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
