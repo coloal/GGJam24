@@ -68,6 +68,16 @@ MonoBehaviour:
   - rid: 1812450603089526786
   - rid: 1812450603089526787
   - rid: 1812450603089526791
+  - rid: 1623451171958292480
+  - rid: 1623451171958292481
+  - rid: 1623451171958292482
+  - rid: 1623451171958292483
+  - rid: 1623451171958292484
+  - rid: 1623451171958292485
+  - rid: 1623451171958292486
+  - rid: 1623451171958292487
+  - rid: 1623451171958292489
+  - rid: 1623451171958292490
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -142,18 +152,6 @@ MonoBehaviour:
       nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
       portIndex: 2
   - outputPort:
-      nodeId: bfe3df3a-bd7b-4753-a674-0ae881c365b8
-      portIndex: 0
-    inputPort:
-      nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
-      portIndex: 2
-  - outputPort:
-      nodeId: bfe3df3a-bd7b-4753-a674-0ae881c365b8
-      portIndex: 1
-    inputPort:
-      nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
-      portIndex: 2
-  - outputPort:
       nodeId: b0117379-5054-47bc-be9b-254a468102d8
       portIndex: 1
     inputPort:
@@ -161,39 +159,15 @@ MonoBehaviour:
       portIndex: 2
   - outputPort:
       nodeId: 9467c85e-b8e9-452c-be3c-ea2aa8f5560a
-      portIndex: 0
-    inputPort:
-      nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
-      portIndex: 2
-  - outputPort:
-      nodeId: 9467c85e-b8e9-452c-be3c-ea2aa8f5560a
       portIndex: 1
     inputPort:
       nodeId: 17b0d9f7-b75a-4ea3-880d-ce0a0a535605
       portIndex: 2
   - outputPort:
       nodeId: 17b0d9f7-b75a-4ea3-880d-ce0a0a535605
-      portIndex: 0
-    inputPort:
-      nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
-      portIndex: 2
-  - outputPort:
-      nodeId: 17b0d9f7-b75a-4ea3-880d-ce0a0a535605
       portIndex: 1
     inputPort:
       nodeId: 596ce7e9-8299-4f71-b2fa-c13732ca9081
-      portIndex: 2
-  - outputPort:
-      nodeId: 596ce7e9-8299-4f71-b2fa-c13732ca9081
-      portIndex: 0
-    inputPort:
-      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
-      portIndex: 2
-  - outputPort:
-      nodeId: 596ce7e9-8299-4f71-b2fa-c13732ca9081
-      portIndex: 1
-    inputPort:
-      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
       portIndex: 2
   - outputPort:
       nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
@@ -214,29 +188,11 @@ MonoBehaviour:
       nodeId: 82184e4f-687b-4576-ae95-e0c5d9a450ad
       portIndex: 2
   - outputPort:
-      nodeId: 82184e4f-687b-4576-ae95-e0c5d9a450ad
-      portIndex: 0
-    inputPort:
-      nodeId: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
-      portIndex: 2
-  - outputPort:
-      nodeId: 82184e4f-687b-4576-ae95-e0c5d9a450ad
-      portIndex: 1
-    inputPort:
-      nodeId: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
-      portIndex: 2
-  - outputPort:
       nodeId: 2652dd1b-2cfb-401b-9f9a-962fb2e34276
       portIndex: 1
     inputPort:
       nodeId: ecfad6c2-0456-48c3-b181-14c98d3bcac8
       portIndex: 1
-  - outputPort:
-      nodeId: ecfad6c2-0456-48c3-b181-14c98d3bcac8
-      portIndex: 0
-    inputPort:
-      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
-      portIndex: 2
   - outputPort:
       nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
       portIndex: 1
@@ -314,18 +270,6 @@ MonoBehaviour:
       portIndex: 1
     inputPort:
       nodeId: ed460ecc-671e-418b-913a-79ea46515966
-      portIndex: 2
-  - outputPort:
-      nodeId: ed460ecc-671e-418b-913a-79ea46515966
-      portIndex: 0
-    inputPort:
-      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
-      portIndex: 2
-  - outputPort:
-      nodeId: 236ebc7e-fc4c-4d86-9cd1-c95655c10884
-      portIndex: 0
-    inputPort:
-      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
       portIndex: 2
   - outputPort:
       nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
@@ -513,9 +457,324 @@ MonoBehaviour:
     inputPort:
       nodeId: 2e0512e4-8a54-4ce7-90f7-6f06cafde7f2
       portIndex: 2
+  - outputPort:
+      nodeId: 17b0d9f7-b75a-4ea3-880d-ce0a0a535605
+      portIndex: 0
+    inputPort:
+      nodeId: 8e34e2f3-37ad-4a98-a61b-eeb9ba8001fb
+      portIndex: 2
+  - outputPort:
+      nodeId: 9467c85e-b8e9-452c-be3c-ea2aa8f5560a
+      portIndex: 0
+    inputPort:
+      nodeId: 8e34e2f3-37ad-4a98-a61b-eeb9ba8001fb
+      portIndex: 2
+  - outputPort:
+      nodeId: 8e34e2f3-37ad-4a98-a61b-eeb9ba8001fb
+      portIndex: 0
+    inputPort:
+      nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
+      portIndex: 2
+  - outputPort:
+      nodeId: 8e34e2f3-37ad-4a98-a61b-eeb9ba8001fb
+      portIndex: 1
+    inputPort:
+      nodeId: 0c920cf7-65ee-4e72-b390-2fdbc579634f
+      portIndex: 2
+  - outputPort:
+      nodeId: 0c920cf7-65ee-4e72-b390-2fdbc579634f
+      portIndex: 0
+    inputPort:
+      nodeId: 2652dd1b-2cfb-401b-9f9a-962fb2e34276
+      portIndex: 2
+  - outputPort:
+      nodeId: 3f079707-7446-4b87-8a20-02785ff78172
+      portIndex: 0
+    inputPort:
+      nodeId: d3ab4ce5-0bfa-4f60-9615-06b126197d4e
+      portIndex: 2
+  - outputPort:
+      nodeId: 3f079707-7446-4b87-8a20-02785ff78172
+      portIndex: 1
+    inputPort:
+      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+      portIndex: 2
+  - outputPort:
+      nodeId: ed460ecc-671e-418b-913a-79ea46515966
+      portIndex: 0
+    inputPort:
+      nodeId: 3f079707-7446-4b87-8a20-02785ff78172
+      portIndex: 2
+  - outputPort:
+      nodeId: 236ebc7e-fc4c-4d86-9cd1-c95655c10884
+      portIndex: 0
+    inputPort:
+      nodeId: 3f079707-7446-4b87-8a20-02785ff78172
+      portIndex: 2
+  - outputPort:
+      nodeId: d3ab4ce5-0bfa-4f60-9615-06b126197d4e
+      portIndex: 0
+    inputPort:
+      nodeId: 2652dd1b-2cfb-401b-9f9a-962fb2e34276
+      portIndex: 2
+  - outputPort:
+      nodeId: ecfad6c2-0456-48c3-b181-14c98d3bcac8
+      portIndex: 0
+    inputPort:
+      nodeId: 2a1223b2-0576-487a-97da-796cae26902e
+      portIndex: 2
+  - outputPort:
+      nodeId: 596ce7e9-8299-4f71-b2fa-c13732ca9081
+      portIndex: 0
+    inputPort:
+      nodeId: 2a1223b2-0576-487a-97da-796cae26902e
+      portIndex: 2
+  - outputPort:
+      nodeId: 596ce7e9-8299-4f71-b2fa-c13732ca9081
+      portIndex: 1
+    inputPort:
+      nodeId: 2a1223b2-0576-487a-97da-796cae26902e
+      portIndex: 2
+  - outputPort:
+      nodeId: 2a1223b2-0576-487a-97da-796cae26902e
+      portIndex: 0
+    inputPort:
+      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
+      portIndex: 2
+  - outputPort:
+      nodeId: 2a1223b2-0576-487a-97da-796cae26902e
+      portIndex: 1
+    inputPort:
+      nodeId: da2a3d89-dda1-4b73-9faa-81e47e33d671
+      portIndex: 2
+  - outputPort:
+      nodeId: da2a3d89-dda1-4b73-9faa-81e47e33d671
+      portIndex: 0
+    inputPort:
+      nodeId: 69378f07-5a55-4201-8115-30f78f046dee
+      portIndex: 2
+  - outputPort:
+      nodeId: bfe3df3a-bd7b-4753-a674-0ae881c365b8
+      portIndex: 0
+    inputPort:
+      nodeId: 5c189ed6-9528-4f8e-b362-f338ab94ce15
+      portIndex: 2
+  - outputPort:
+      nodeId: bfe3df3a-bd7b-4753-a674-0ae881c365b8
+      portIndex: 1
+    inputPort:
+      nodeId: 5c189ed6-9528-4f8e-b362-f338ab94ce15
+      portIndex: 2
+  - outputPort:
+      nodeId: 5c189ed6-9528-4f8e-b362-f338ab94ce15
+      portIndex: 0
+    inputPort:
+      nodeId: de8761c5-ef0b-4c62-b0ac-eae5cc318eac
+      portIndex: 2
+  - outputPort:
+      nodeId: 5c189ed6-9528-4f8e-b362-f338ab94ce15
+      portIndex: 1
+    inputPort:
+      nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
+      portIndex: 2
+  - outputPort:
+      nodeId: 82184e4f-687b-4576-ae95-e0c5d9a450ad
+      portIndex: 0
+    inputPort:
+      nodeId: 6d9828c1-fdb3-457c-9133-0e9225b503b2
+      portIndex: 2
+  - outputPort:
+      nodeId: 82184e4f-687b-4576-ae95-e0c5d9a450ad
+      portIndex: 1
+    inputPort:
+      nodeId: 6d9828c1-fdb3-457c-9133-0e9225b503b2
+      portIndex: 2
+  - outputPort:
+      nodeId: 6d9828c1-fdb3-457c-9133-0e9225b503b2
+      portIndex: 0
+    inputPort:
+      nodeId: e570ff67-590b-4204-bc55-11b7b88bd179
+      portIndex: 2
+  - outputPort:
+      nodeId: 6d9828c1-fdb3-457c-9133-0e9225b503b2
+      portIndex: 1
+    inputPort:
+      nodeId: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
+      portIndex: 2
+  - outputPort:
+      nodeId: e570ff67-590b-4204-bc55-11b7b88bd179
+      portIndex: 0
+    inputPort:
+      nodeId: 372511c3-69f5-40c2-acf8-9e33af1e2e0c
+      portIndex: 1
   references:
     version: 2
     RefIds:
+    - rid: 1623451171958292480
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 8e34e2f3-37ad-4a98-a61b-eeb9ba8001fb
+        position:
+          serializedVersion: 2
+          x: 3037.5999
+          y: 1684.8
+          width: 327.2002
+          height: 120
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 3
+    - rid: 1623451171958292481
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 0c920cf7-65ee-4e72-b390-2fdbc579634f
+        position:
+          serializedVersion: 2
+          x: 3520.8
+          y: 1764
+          width: 301.59985
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 50a9cb419e9d71547a24b4cde70e35d6, type: 2}
+        IsBossFight: 0
+    - rid: 1623451171958292482
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 3f079707-7446-4b87-8a20-02785ff78172
+        position:
+          serializedVersion: 2
+          x: 3171.2
+          y: 636.8
+          width: 327.19995
+          height: 120
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 3
+    - rid: 1623451171958292483
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d3ab4ce5-0bfa-4f60-9615-06b126197d4e
+        position:
+          serializedVersion: 2
+          x: 3620.8
+          y: 544
+          width: 301.59985
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 1fdabed2cb0f2f647835a2ee5f38eeb5, type: 2}
+        IsBossFight: 0
+    - rid: 1623451171958292484
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2a1223b2-0576-487a-97da-796cae26902e
+        position:
+          serializedVersion: 2
+          x: 5972.8003
+          y: 2156.8
+          width: 327.1997
+          height: 120
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 3
+    - rid: 1623451171958292485
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: da2a3d89-dda1-4b73-9faa-81e47e33d671
+        position:
+          serializedVersion: 2
+          x: 6409.6
+          y: 2276.8
+          width: 400
+          height: 139.19995
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 4e9501d2204b4bd4297246665a63bfa5, type: 2}
+        IsBossFight: 0
+    - rid: 1623451171958292486
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5c189ed6-9528-4f8e-b362-f338ab94ce15
+        position:
+          serializedVersion: 2
+          x: 9100
+          y: 2711.2
+          width: 327.2002
+          height: 120
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 3
+    - rid: 1623451171958292487
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: de8761c5-ef0b-4c62-b0ac-eae5cc318eac
+        position:
+          serializedVersion: 2
+          x: 9466.4
+          y: 2596
+          width: 301.5996
+          height: 139.19995
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 356770667cb447347aad43418601b656, type: 2}
+        IsBossFight: 0
+    - rid: 1623451171958292489
+      type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6d9828c1-fdb3-457c-9133-0e9225b503b2
+        position:
+          serializedVersion: 2
+          x: 11988.8
+          y: 2074.4001
+          width: 192
+          height: 120
+        typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Condition: 3
+    - rid: 1623451171958292490
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e570ff67-590b-4204-bc55-11b7b88bd179
+        position:
+          serializedVersion: 2
+          x: 12265.601
+          y: 1925.6001
+          width: 301.5996
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 9afdccc3ac98a37499230ca00e98343c, type: 2}
+        IsBossFight: 0
     - rid: 1812450529966030856
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -824,7 +1083,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: b29cc81adeb35bf45a80936f0d21e0b4, type: 2}
+        enemy: {fileID: 11400000, guid: 4c4c6035edaaf2d4bb955298330a5011, type: 2}
         IsBossFight: 0
     - rid: 1812450529966030904
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -869,10 +1128,10 @@ MonoBehaviour:
         guid: bfe3df3a-bd7b-4753-a674-0ae881c365b8
         position:
           serializedVersion: 2
-          x: 8101
-          y: 2912
-          width: 1289
-          height: 266
+          x: 7876.8003
+          y: 2919.2
+          width: 1291.1997
+          height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -891,16 +1150,16 @@ MonoBehaviour:
         guid: 4036c8f3-c7eb-4274-a9d0-5e1564635326
         position:
           serializedVersion: 2
-          x: 9474
-          y: 2912
-          width: 302
-          height: 140
+          x: 9464.8
+          y: 2800
+          width: 303.2002
+          height: 139.19995
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: bba87904d6aeb8b41b55db01aec9c888, type: 2}
+        enemy: {fileID: 11400000, guid: 67b82582019741b4cb5a6c77f8e9e57f, type: 2}
         IsBossFight: 0
     - rid: 1812450529966030909
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -954,7 +1213,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: 8e9bc8cd5099a794497aabadf0a94bfb, type: 2}
+        enemy: {fileID: 11400000, guid: 5a072dd49da0ad64a83f657d62f73a2b, type: 2}
         IsBossFight: 0
     - rid: 1812450529966030912
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1007,16 +1266,16 @@ MonoBehaviour:
         guid: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
         position:
           serializedVersion: 2
-          x: 6515
-          y: 2077
-          width: 358
+          x: 6409.6
+          y: 2041.6001
+          width: 400
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: b29cc81adeb35bf45a80936f0d21e0b4, type: 2}
+        enemy: {fileID: 11400000, guid: 4c4c6035edaaf2d4bb955298330a5011, type: 2}
         IsBossFight: 0
     - rid: 1812450529966030915
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1074,10 +1333,10 @@ MonoBehaviour:
         guid: 82184e4f-687b-4576-ae95-e0c5d9a450ad
         position:
           serializedVersion: 2
-          x: 11241
-          y: 2217
-          width: 956
-          height: 266
+          x: 11062.4
+          y: 2216.8
+          width: 958.3994
+          height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1095,16 +1354,16 @@ MonoBehaviour:
         guid: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
         position:
           serializedVersion: 2
-          x: 12265
-          y: 2226
-          width: 323
-          height: 140
+          x: 12238.4
+          y: 2216.8
+          width: 364.7998
+          height: 139.19995
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: d3322dd233e9c7c41b2a792ac58197af, type: 2}
+        enemy: {fileID: 11400000, guid: 76586a0dfa29abc40a1b525e7fd1b96b, type: 2}
         IsBossFight: 0
     - rid: 1812450529966030919
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1133,10 +1392,10 @@ MonoBehaviour:
         guid: ecfad6c2-0456-48c3-b181-14c98d3bcac8
         position:
           serializedVersion: 2
-          x: 5715
-          y: 1697
-          width: 746
-          height: 242
+          x: 5480
+          y: 1710.4
+          width: 748
+          height: 240.80005
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1173,10 +1432,10 @@ MonoBehaviour:
         guid: 372511c3-69f5-40c2-acf8-9e33af1e2e0c
         position:
           serializedVersion: 2
-          x: 12617
-          y: 2217
-          width: 260
-          height: 232
+          x: 12688.8
+          y: 2216.8
+          width: 128
+          height: 96
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1288,16 +1547,16 @@ MonoBehaviour:
         guid: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
         position:
           serializedVersion: 2
-          x: 3607
-          y: 747
-          width: 300
+          x: 3620.8
+          y: 780.8
+          width: 347.19995
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: dd4880c940d1b2745836dc576d530caf, type: 2}
+        enemy: {fileID: 11400000, guid: 04cda3a49d0dada44b8d57bf9c0bf75c, type: 2}
         IsBossFight: 0
     - rid: 1812450555419688963
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1327,10 +1586,10 @@ MonoBehaviour:
         guid: 55f2cee5-ea75-4a09-aad5-0c5c7395f0a5
         position:
           serializedVersion: 2
-          x: 11650
+          x: 11712
           y: -772
-          width: 288
-          height: 232
+          width: 128
+          height: 96
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1432,7 +1691,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: bba87904d6aeb8b41b55db01aec9c888, type: 2}
+        enemy: {fileID: 11400000, guid: 356770667cb447347aad43418601b656, type: 2}
         IsBossFight: 0
     - rid: 1812450578821021701
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
