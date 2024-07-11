@@ -15,4 +15,5 @@ MonoBehaviour:
   storyBackgroundSprite: {fileID: 21300000, guid: 4fdab1ce6a4fd4a43aa17223dfcc4980, type: 3}
   storyMusicZone: 0
   zoneTransition: {fileID: 2504118667978227075, guid: 6f3b74162e1c22646a5846aaa13b6270, type: 3}
+  zoneMaterial: {fileID: 2100000, guid: 6ccde98fba919334bac6fec94c46954b, type: 2}
   combatTransition: {fileID: 2882176000549395747, guid: a129cdbd2d109427eaaa8390ea3e6088, type: 3}
