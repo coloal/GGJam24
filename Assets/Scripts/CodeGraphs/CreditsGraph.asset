@@ -127,7 +127,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Story designer
+        CardText: Narrative designer
         LeftText: "\"Tu lo que ere eh\_un\_indocumentao\""
         RightText: "En un cumplea\xF1os, probablemente"
         card: {fileID: 11400000, guid: 499f1a98fab004a08bbc072e22eadde7, type: 2}
@@ -147,7 +147,7 @@ MonoBehaviour:
         - Next
         CardText: aka. Murki///Combat designer and Pixel artist
         LeftText: '"Esto sale por lo civil o lo criminal"'
-        RightText: "\"\xBFSabes como se soluciona eso? \xA1Epabila, macho!\""
+        RightText: '"Sabes como se soluciona eso? Epabila, macho!"'
         card: {fileID: 11400000, guid: f9c66a3d25fda4af29e239c79e7a730a, type: 2}
     - rid: 4179187765362819079
       type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -179,7 +179,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: System programmer
-        LeftText: "\"\xBFPero se puede llevar el coche?\""
+        LeftText: '"Pero se puede llevar el coche?"'
         RightText: Puede carrilearse proyectos solo
         card: {fileID: 11400000, guid: f9df099a26c034a99a199500c7a72dd6, type: 2}
     - rid: 4179187765362819081
@@ -197,8 +197,8 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Combat designer and Pixel artist
-        LeftText: "\"Que bueno, \xBFno?\""
-        RightText: "\"\xBFPero la hay\_con\_alcohol?\""
+        LeftText: '"Que bueno, no?"'
+        RightText: "\"Pero la hay\_con\_alcohol?\""
         card: {fileID: 11400000, guid: 71c7b6b6c699b476883fabea0c86a56d, type: 2}
     - rid: 4179187765362819082
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -234,7 +234,7 @@ MonoBehaviour:
         - Next
         CardText: Musician Sound designer
         LeftText: Adicto a componer siempre un tema mas
-        RightText: "\"\xA1Que pasa, tron!\""
+        RightText: '"Que pasa, tron!"'
         card: {fileID: 11400000, guid: 5546946e8bdeb4d62a69d17b932769db, type: 2}
     - rid: 4179187765362819084
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
