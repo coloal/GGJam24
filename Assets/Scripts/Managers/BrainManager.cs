@@ -158,6 +158,11 @@ public class BrainManager : MonoBehaviour
             GameManager.Instance.ProvideSoundManager().SetAlarmTime(BrainNumericMap[tag]);
             Debug.Log("Alarma actual: " + BrainNumericMap[tag]);
         }
+
+        if (tag == NumericTags.WakeUP)
+        {
+            GameManager.Instance.ProvideSoundManager().PlaySFX("Hey");
+        }
     }
 
     public int GetNumericTag(NumericTags tag)

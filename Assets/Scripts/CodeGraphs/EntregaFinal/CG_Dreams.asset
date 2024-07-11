@@ -60,6 +60,8 @@ MonoBehaviour:
   - rid: 4179187816465956866
   - rid: 1812450555419689022
   - rid: 1812450555419689023
+  - rid: 4179187880975925248
+  - rid: 4179187880975925249
   connections:
   - outputPort:
       nodeId: 1001474b-0822-4fe2-8d84-7d0bc47fae5a
@@ -314,12 +316,6 @@ MonoBehaviour:
       nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
       portIndex: 0
   - outputPort:
-      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
-      portIndex: 1
-    inputPort:
-      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
-      portIndex: 0
-  - outputPort:
       nodeId: f58f4ca9-c008-4e8d-85ea-beebefdd7854
       portIndex: 0
     inputPort:
@@ -397,6 +393,24 @@ MonoBehaviour:
     inputPort:
       nodeId: 9088e17e-eb5f-443a-8f21-39be84b22592
       portIndex: 2
+  - outputPort:
+      nodeId: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
+      portIndex: 1
+    inputPort:
+      nodeId: 5a61c5e7-23d1-4fc0-9edc-3703ba70e5d1
+      portIndex: 1
+  - outputPort:
+      nodeId: 5a61c5e7-23d1-4fc0-9edc-3703ba70e5d1
+      portIndex: 0
+    inputPort:
+      nodeId: 4750639a-7576-442e-ac2d-0a37a906989a
+      portIndex: 1
+  - outputPort:
+      nodeId: 4750639a-7576-442e-ac2d-0a37a906989a
+      portIndex: 0
+    inputPort:
+      nodeId: 8c373f08-e17b-404f-b714-f29a8ae8f611
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -1357,6 +1371,43 @@ MonoBehaviour:
           Increment: 1
           TagState: 0
           NewState: 0
+    - rid: 4179187880975925248
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5a61c5e7-23d1-4fc0-9edc-3703ba70e5d1
+        position:
+          serializedVersion: 2
+          x: 14366
+          y: 950
+          width: 257
+          height: 232
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 1
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 12
+          Increment: 1
+          TagState: 0
+          NewState: 0
+    - rid: 4179187880975925249
+      type: {class: WaitNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4750639a-7576-442e-ac2d-0a37a906989a
+        position:
+          serializedVersion: 2
+          x: 14701
+          y: 950
+          width: 151
+          height: 97
+        typeName: CodeGraph.WaitNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        Seconds: 0.6
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

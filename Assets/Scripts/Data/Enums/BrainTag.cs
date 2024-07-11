@@ -33,7 +33,8 @@ public enum NumericTags
     ConverSmokieGirl,
     ConverWheelchaired,
     MOOD,
-    AlarmTime
+    AlarmTime,
+    WakeUP
 }
 
 
