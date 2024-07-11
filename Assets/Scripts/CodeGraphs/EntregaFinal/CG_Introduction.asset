@@ -720,7 +720,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: bfd9ff4ed417e97429a22337d8bb4e6f, type: 2}
+        enemy: {fileID: 11400000, guid: e5e38af2ece62474097fb13e693038c1, type: 2}
         IsBossFight: 0
     - rid: 1812450528744177667
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
