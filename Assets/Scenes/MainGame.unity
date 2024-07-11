@@ -183,11 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600646bfe132e45f39df0f864145b589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckSize: 8
-  debugDeck:
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  deckSize: 50
 --- !u!4 &163239570
 Transform:
   m_ObjectHideFlags: 0

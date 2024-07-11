@@ -14,8 +14,8 @@ public class InventoryManager : MonoBehaviour
 
 
 
-    [Header("Debug")]
-    [SerializeField] List<CombatCardTemplate> debugDeck;
+    // [Header("Debug")]
+    // [SerializeField] List<CombatCardTemplate> debugDeck;
 
     void Awake()
     {
@@ -44,7 +44,6 @@ public class InventoryManager : MonoBehaviour
     {
         List<CombatCardTemplate> clonedDeck = new List<CombatCardTemplate>();
         
-        /*
          deck.ForEach((combatCardData) => 
          {
              clonedDeck.Add(combatCardData);
@@ -68,14 +67,14 @@ public class InventoryManager : MonoBehaviour
             deck.Add(combatCard);
 
             //DEBUG PURPOSES ONLY
-            debugDeck.Add(combatCard);
+            // debugDeck.Add(combatCard);
         }
     }
 
     public int GetNumberOfCardsInDeck()
     {
-        // return deck.Count;
-        return debugDeck.Count;
+        return deck.Count;
+        // return debugDeck.Count;
     }
 
     public void RestInventory()
