@@ -53,4 +53,11 @@ public class InputManager : MonoBehaviour
     {
         onReleaseEvent?.Invoke();
     }
+
+    public void ClearEvents()
+    {
+        onClickEvent = null;
+        onReleaseEvent = null;
+        onMoveEvent = null;
+    }
 }
