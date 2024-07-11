@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI debugText;
     public static InputManager Instance;
     public static InputManager GameInputManager => GameManager.Instance.ProvideInputManager();
     public delegate void OnClickEvent();
@@ -39,18 +41,24 @@ public class InputManager : MonoBehaviour
 
     void OnClick()
     {
+        debugText.gameObject.SetActive(true);
+        debugText.text += "Clicked";
         clickedPosition = mousePosition;
         onClickEvent?.Invoke();
     }
 
     void OnMove(InputValue inputValue)
     {
+        debugText.gameObject.SetActive(true);
+        debugText.text += "Moved";
         mousePosition = inputValue.Get<Vector2>();
         onMoveEvent?.Invoke(inputValue.Get<Vector2>());
     }
     
     void OnRelease()
     {
+        debugText.gameObject.SetActive(true);
+        debugText.text += "Released";
         onReleaseEvent?.Invoke();
     }
 
@@ -60,4 +68,7 @@ public class InputManager : MonoBehaviour
         onReleaseEvent = null;
         onMoveEvent = null;
     }
+
+
+
 }
