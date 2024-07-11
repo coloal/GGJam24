@@ -145,3 +145,9 @@ MonoBehaviour:
     THE POWER CARD. %'
   playerTrippingInfluence_2:
   - '%OK, I GOT IT..... YOU ARE POWERLESS AND HAVE NO FRIENDS%'
+  playerTrippingFinal:
+  - '*NO*, this is not the card i said'
+  playerTrippingFinal_1:
+  - Are you *TRIPPING BRO*?
+  playerTrippingFinal_2:
+  - '%Lorem ipsu bla bla bla%'
