@@ -96,7 +96,7 @@ public class TossCoinTutorialState : TossCoinState
 
     async Task<CombatState> ProcessTossCoinResult(CombatManager.CombatContext combatContext)
     {
-        CoinFlipResult coinResult = playerCoinChoice;
+        CoinFlipResult coinResult = GetCoinFlipResult(playerCoinChoice);
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
@@ -246,5 +246,10 @@ public class TossCoinTutorialState : TossCoinState
         await ReturnEnemyCardsInTieZoneToDeck(combatContext);
         
         return new PresentPlayerCardsState();
+    }
+
+    protected override CoinFlipResult GetCoinFlipResult(CoinFlipResult playerCoinChoice)
+    {
+        return playerCoinChoice;
     }
 }

@@ -88,8 +88,7 @@ public class TossCoinState : CombatState
 
     async Task<CombatState> ProcessTossCoinResult(CombatManager.CombatContext combatContext)
     {
-        CoinFlipResult[] coinResults = { CoinFlipResult.Heads, CoinFlipResult.Tails };
-        CoinFlipResult coinResult = coinResults[UnityEngine.Random.Range(0, coinResults.Length)];
+        CoinFlipResult coinResult = GetCoinFlipResult(playerCoinChoice);
 
         int playerTotalCards = CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInDeck()
             + CombatSceneManager.Instance.ProvidePlayerDeckManager().GetNumberOfCardsInHand();
@@ -278,5 +277,20 @@ public class TossCoinState : CombatState
                 return;
             }
         });
+    }
+
+    virtual protected CoinFlipResult GetCoinFlipResult(CoinFlipResult playerCoinChoice)
+    {
+        float randomChanceToGetPlayerSelectedCoinFace = UnityEngine.Random.Range(0f, 1f);
+
+        if (randomChanceToGetPlayerSelectedCoinFace 
+            < CombatSceneManager.Instance.ProvideCombatManager().GetChanceToGetPlayerCoinSelectedFace())
+        {
+            return playerCoinChoice;
+        }
+        else
+        {
+            return playerCoinChoice == CoinFlipResult.Heads ? CoinFlipResult.Tails : CoinFlipResult.Heads;
+        }
     }
 }

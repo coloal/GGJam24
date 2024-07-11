@@ -118,6 +118,11 @@ public class CombatManager : MonoBehaviour
         }
     }
 
+    [Header("Combat configurations")]
+    [Tooltip("Normalized percentage chance to get the player coin selected face when flipping a coin")]
+    [Range(0.0f, 1.0f)]
+    [SerializeField] private float chanceToGetCoinSelectedFace = 0.5f;
+
     [Header("Board configurations")]
     [SerializeField] private Image enemyCharacterImage;
     [SerializeField] private GameObject enemyCardsRow0;
@@ -289,5 +294,10 @@ public class CombatManager : MonoBehaviour
     public void DisableNotebookButton()
     {
         notebookButtonComponent.enabled = false;
+    }
+
+    public float GetChanceToGetPlayerCoinSelectedFace()
+    {
+        return chanceToGetCoinSelectedFace;
     }
 }

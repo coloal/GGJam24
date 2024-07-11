@@ -19789,7 +19789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.55}
   m_AnchorMax: {x: 0.95, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: 0.00018310547}
+  m_AnchoredPosition: {x: 0, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.65, y: 1}
 --- !u!114 &1383213370
@@ -26154,6 +26154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8b17f49e51143ac959a667989aebf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chanceToGetCoinSelectedFace: 0.7
   enemyCharacterImage: {fileID: 1917235568}
   enemyCardsRow0: {fileID: 779438734}
   enemyCardsRow1: {fileID: 739045742}
