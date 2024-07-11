@@ -302,8 +302,8 @@ MonoBehaviour:
       nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
       portIndex: 0
     inputPort:
-      nodeId: 64042664-a690-410f-9ecc-8d0fb4421561
-      portIndex: 1
+      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -886,8 +886,8 @@ MonoBehaviour:
         - Right
         CardText: Well, we lost in the tutorial? This developers may have done something
           wrong with this, let's give them another try
-        LeftText: I am not playing again!
-        RightText: I swear I'll pass tutorial
+        LeftText: '[Restart] I swear I''ll pass tutorial'
+        RightText: '[Back to menu] I am not playing again!'
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 1812450626248638471
       type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
