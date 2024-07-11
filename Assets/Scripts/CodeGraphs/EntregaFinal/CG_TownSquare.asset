@@ -125,6 +125,7 @@ MonoBehaviour:
   - rid: 1812450626248638507
   - rid: 1812450626248638508
   - rid: 1812450626248638509
+  - rid: 1812450628146823169
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -911,6 +912,12 @@ MonoBehaviour:
       portIndex: 1
     inputPort:
       nodeId: 2e881b84-1363-477f-89d4-81c4d6b81a6d
+      portIndex: 0
+  - outputPort:
+      nodeId: 37f4b945-28c5-4a2b-bf2f-98f8454277a3
+      portIndex: 0
+    inputPort:
+      nodeId: 7c1e807f-3be9-429e-ae1b-0b0e3d0b2cc4
       portIndex: 0
   references:
     version: 2
@@ -2928,5 +2935,18 @@ MonoBehaviour:
           width: 86
           height: 77
         typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823169
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7c1e807f-3be9-429e-ae1b-0b0e3d0b2cc4
+        position:
+          serializedVersion: 2
+          x: 23618
+          y: 938
+          width: 74
+          height: 77
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
