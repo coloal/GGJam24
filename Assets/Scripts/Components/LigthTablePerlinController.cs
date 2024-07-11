@@ -7,13 +7,11 @@ public class LigthTablePerlinController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Image ligthObject;
-
+    [SerializeField] float ligthFlickerCheckTime = 5f;
     bool isFlickering = false;
     float currentTime = 0;
     float totalTime = 0;
     
-    
-
     void Start()
     {
         RecursiveFlickering();
@@ -40,7 +38,7 @@ public class LigthTablePerlinController : MonoBehaviour
                 StartFlickering();
             }
             RecursiveFlickering();
-        }, 5f, this);
+        }, ligthFlickerCheckTime, this);
     }
 
     public void StartFlickering()
