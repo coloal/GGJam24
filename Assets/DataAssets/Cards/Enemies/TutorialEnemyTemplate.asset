@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: TutorialEnemyTemplate
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  characterSprite: {fileID: 1712325361, guid: 36182f627d679ea4d92cfaa8e54b7986, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  OnStartConversation: []
+  OnWinConversation: []
+  OnLoseConversation: []
   ShowHintsTimeInSeconds: 1

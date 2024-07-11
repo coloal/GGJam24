@@ -190,7 +190,7 @@ public class ResultWinState : CombatState
         }
     }
 
-    protected async void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCard pickedCombatCard) 
+    virtual protected async void PickAEnemyCard(CombatManager.CombatContext combatContext, CombatCard pickedCombatCard) 
     {
         //Add choosen enemy card to the player's deck
         GameManager.Instance.ProvideInventoryManager().AddCombatCardToVault(pickedCombatCard.GetCardData());

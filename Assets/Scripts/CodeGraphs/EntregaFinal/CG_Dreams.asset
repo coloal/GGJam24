@@ -518,12 +518,18 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "I am here to warn you about your future, not to guide you.\nThis
+        CardText: 'I am here to warn you about your future, not to guide you.
+
+          This
           would not be fun if I literally told you what and how you have to live
-          your life, mate. \nYou will have to find by yourself a way to save your
-          summer.\n///\nBut I am going to help you in other way; I will give you
-          a custom reward that will help you overcome difficulties in your world
-          after giving you a personality test"
+          your life, mate.
+
+          You will have to find by yourself a way to
+          save your summer. But I am going to help you in other way;
+
+          I
+          will give you a custom reward that will help you overcome difficulties
+          in your world after giving you a personality test.'
         LeftText: Criptic, typical of time travelers...
         RightText: Rewards is all I play for
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -732,8 +738,8 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: 2724
-          y: 855
-          width: 582
+          y: 854
+          width: 838
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -744,7 +750,7 @@ MonoBehaviour:
           you should save your summer as only \nyou must decide over your life, my
           friend.///But\nI am going to help you in other way; I will give you a custom
           reward  which will help you overcome difficulties in your world  after
-          giving you a personality test"
+          giving you a personality test."
         LeftText: Criptic, typical of time travelers...
         RightText: Rewards is all I play for
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1018,13 +1024,12 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in Violence, Money and Power game of cards is of
+          that your soul essence in Violence, Wealth and Power game of cards is of
           Wealth type: People born under the essence of Wealth are inherently drawn
           to wealth and luxury. They have a natural knack for financial matters,
-          often finding innovative ways to accumulate and manage resources. So as
-          I told you before I have here a reward for you!'
+          often finding innovative ways to accumulate and manage resources.'
         LeftText: You can't classify me
-        RightText: Yesss, a reward
+        RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
     - rid: 1812450422340714520
       type: {class: NumericConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1059,13 +1064,12 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in Violence, Money and Power game of cards is of
-          Influence type: Individuals born under the essence of Power are natural
-          leaders, exuding confidence. They are driven by a desire to control their
-          surroundings, often rising to positions of great responsibility. So as
-          I told you before I have here a reward for you!'
+          that your soul essence in Violence, Wealth and Power game of cards is of
+          Power type: Individuals born under the essence of Power are natural leaders,
+          exuding confidence. They are driven by a desire to control their surroundings,
+          often rising to positions of great responsibility.'
         LeftText: You can't classify me
-        RightText: Yesss, a reward
+        RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
     - rid: 1812450422340714522
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1082,13 +1086,13 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in Violence, Money and Power game of cards is of
+          that your soul essence in Violence, Wealth and Power game of cards is of
           Violence type: Those born under the essence of Violence are intense and
           passionate, often possessing a fiery temper and a strong will. They are
           natural warriors, unafraid of conflict and adept at navigating chaotic
-          situations. So as I told you before I have here a reward for you!'
+          situations.'
         LeftText: You can't classify me
-        RightText: Yesss, a reward
+        RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
     - rid: 1812450465009893376
       type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
@@ -1149,7 +1153,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a Money card in the Violence, Money, and Power game.
+        CardText: You received a Wealth card in the Violence, Wealth, and Power game.
           This game is used in The Wells to resolve any conflicts among its inhabitants.
           The more cards of the game you have, the better! This game resembles one
           that an ancient civilization used to play called Rock, Paper, Scissors,
@@ -1171,12 +1175,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a Influence card in the Violence, Money, and Power
-          game. This game is used in The Wells to resolve any conflicts among its
-          inhabitants. The more cards of the game you have, the better! This game
-          resembles one that an ancient civilization used to play called Rock, Paper,
-          Scissors, but with cards instead of player's hands and some other rule
-          changes!
+        CardText: You received a Power card in the Violence, Wealth, and Power game.
+          This game is used in The Wells to resolve any conflicts among its inhabitants.
+          The more cards of the game you have, the better! This game resembles one
+          that an ancient civilization used to play called Rock, Paper, Scissors,
+          but with cards instead of player's hands and some other rule changes!
         LeftText: Got it
         RightText: Useful in the future I guess
         card: {fileID: 11400000, guid: abad7000132574942bc5fce4c61ff27e, type: 2}
@@ -1194,7 +1197,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a Violence card in the Violence, Money, and Power
+        CardText: You received a Violence card in the Violence, Wealth, and Power
           game. This game is used in The Wells to resolve any conflicts among its
           inhabitants. The more cards of the game you have, the better! This game
           resembles one that an ancient civilization used to play called Rock, Paper,
@@ -1283,10 +1286,10 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: It is 7:55 AM on June 22, 5001.  You just finished high school,
-          your summer is starting today and you are still in bed, but you have strangely
-          set your alarm for 8:00AM. Did you forget turning it off before going to
-          sleep?
+        CardText: <color=red>It</color> is 7:55 AM on June 22, 5001.  You just finished
+          high school, your summer is starting today and you are still in bed, but
+          you have strangely set your alarm for 8:00AM. Did you forget turning it
+          off before going to sleep?
         LeftText: Turn off alarm
         RightText: Leave alarm set at 8:00
         card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
