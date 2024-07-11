@@ -31,11 +31,11 @@ MonoBehaviour:
     objects do not affect gameplay)
   - So now. How do you win? (*or lose probably...*)
   - This three cards will interact differently between each other
-  - The <color="red">VIOLENCE <color="black">card will beat the <color="green">WEALTH
-    <color="black">card but will lose to the <color="blue">POWER <color="black">card
-  - The <color="green">WEALTH <color="black">card will beat the <color=blue">POWER
+  - The <color=#bc3047>VIOLENCE <color="black">card will beat the  <color=#438c1d>WEALTH<color="black">card
+    but will lose to the <color="blue">POWER <color="black">card
+  - The  <color=#438c1d>WEALTH <color="black">card will beat the <color=#2c7aab>POWER
     <color="black">card but will lose to the <color="red">VIOLENCE  <color="black">card
-  - The <color="blue">POWER <color="black">card will beat the <color="red">VIOLENCE 
+  - The <color=#2c7aab>POWER <color="black">card will beat the <color=#bc3047>VIOLENCE 
     <color="black">card but will lose to the <color="green">WEALTH <color="black">card
   - "Now that we know all of the cards let\xB4s start with the combat!"
   bookExplanation:
@@ -54,40 +54,40 @@ MonoBehaviour:
   - ....................
   - '*.......*'
   - 'Okay okay, you win, im gonna tell you the cards that im picking *:(* '
-  - The card Im gonna pick first is a *<color="red">VIOLENCE* <color="black">card
+  - The card Im gonna pick first is a *<color=#bc3047>VIOLENCE* <color="black">card
   playerPlaysCardExplanationInfluenceWin:
   - "Ok so now it\xB4s your turn!"
   - You will have to pick one of your cards to figth with mine
   - "Remember, you normally wouldn\xB4t know which card I just picked"
-  - So if you wanna win you should maybe play a POWER card
+  - So if you wanna win you should maybe play a <color=#2c7aab>POWER</color> card
   enemyPlaysCardExplanationViolenceLose:
-  - I will play my <color="red">VIOLENCE <color="black">card again, maybe this time
-    I will have more luck
+  - I will play my <color=#bc3047>VIOLENCE <color="black">card again, maybe this
+    time I will have more luck
   playerPlaysCardExplanationMoneyLose:
-  - I would highly recomend you to use your <color="green">WEALTH <color="black">card
+  - I would highly recomend you to use your  <color=#438c1d>WEALTH <color="black">card
     (Its not like you are gonna *LOSE* or anything...)
   enemyPlaysCardExplanationMoneyDraw:
-  - I will spice things up and play a <color="green">WEALTH <color="black">card
+  - I will spice things up and play a  <color=#438c1d>WEALTH <color="black">card
   playerPlaysCardExplanationMoneyDraw:
-  - 'I think you should also play a <color="green">WEALTH <color="black">card. '
+  - 'I think you should also play a  <color=#438c1d>WEALTH <color="black">card. '
   enemyPlaysCardExplanationInfluenceDraw:
-  - Next I will play a <color="blue">POWER <color="black">card
+  - Next I will play a<color=#2c7aab>POWER <color="black">card
   playerPlaysCardExplanationInfluenceDraw:
-  - 'And you will also have to pick you <color="blue">POWER <color="black">card '
+  - 'And you will also have to pick you <color=#2c7aab>POWER <color="black">card '
   enemyPlaysCardExplanationViolenceDraw:
   - I only have one card left. Do you know which type is it?
   - "If you don\xB4t, that means that you *havent been playing this game properly*"
   - It is really important to keep track of the cards the enemy has to be able to
     face them in a more accurate way.
-  - "So if you didn\xB4t already know, my last card is a <color=\"red\">VIOLENCE
+  - "So if you didn\xB4t already know, my last card is a <color=#bc3047>VIOLENCE
     <color=\"black\">card"
   playerPlaysCardExplanationViolenceDraw:
   - You only have one card left so there is nothing you can do other than playing
-    your <color="red">VIOLENCE <color="black">card
+    your <color=#bc3047>VIOLENCE<color="black">card
   winExplanation:
   - '*NOO!*, bro you just *killed* my card  >:('
-  - So yeah, you have won the exchange, as a POWER card beats a <color="red">VIOLENCE
-    <color="black">Card
+  - So yeah, you have won the exchange, as a <color=#2c7aab>POWER</color> card beats
+    a <color=#bc3047>VIOLENCE <color="black">Card
   - 'Now your card will return to your deck, and my card will be destroyed '
   loseExplanation:
   - '*Yes*, I have won!!'
@@ -126,23 +126,24 @@ MonoBehaviour:
     (or being destoyed by them)
   playerTrippingViolence:
   - I think you made a mistake, you have to play your *WEALTH* card to figth against
-    my VIOLENCE card
+    my <color=#bc3047>VIOLENCE</color> card
   playerTrippingViolence_1:
-  - '%I SAID PLAY YOUR <color="green">WEALTH CARD!!!%'
+  - '%I SAID PLAY YOUR  <color=#438c1d>WEALTH</color> CARD!!!%'
   playerTrippingViolence_2:
-  - '%IF YOU DONT PLAY YOUR WEALTH CARD I WILL SHOW YOU REAL <color="red">VIOLENCE!!!!!!%'
+  - '%IF YOU DONT PLAY YOUR <color=#438c1d>WEALTH</color> CARD I WILL SHOW YOU REAL
+    <color=#bc3047>VIOLENCE</color>!!!!!!%'
   playerTrippingMoney:
   - Wrong choice. *Try again*
   playerTrippingMoney_1:
-  - '%YOU REALLY SHOULD JUST PLAY YOUR <color="green">WEALTH CARD%'
+  - '%YOU REALLY SHOULD JUST PLAY YOUR <color=#438c1d>WEALTH</color> CARD%'
   playerTrippingMoney_2:
   - '%ARE YOU SO POOR YOU CANT EVEN PLAY A CARD THAT HAS MONEY IN IT!!!??%'
   playerTrippingInfluence:
-  - I think you made a slight *mistake*. Playing your *POWER* card is the way to
-    go here
+  - I think you made a slight *mistake*. Playing your *<color=#2c7aab>POWER</color>*
+    card is the way to go here
   playerTrippingInfluence_1:
   - '%PLEASE DO ME A FAVOR AND USE THE TWO REMAINING NEURONS YOU HAVE LEFT TO PLAY
-    THE POWER CARD. %'
+    THE <color=#2c7aab>POWER</color> CARD. %'
   playerTrippingInfluence_2:
   - '%OK, I GOT IT..... YOU ARE POWERLESS AND HAVE NO FRIENDS%'
   playerTrippingFinal:

@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
-  ShowHintsTimeInSeconds: 0.5
+  OnStartConversation:
+  - Come on, kids.
+  OnWinConversation:
+  - You have won fair and square, take one.
+  OnLoseConversation:
+  - Sorry kids, your trip is over.
+  ShowHintsTimeInSeconds: 0.6

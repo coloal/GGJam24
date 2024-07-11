@@ -16,4 +16,10 @@ MonoBehaviour:
   CombatCards:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  OnStartConversation:
+  - "I\xB4m so %excited%."
+  OnWinConversation:
+  - Choose a card, you deserve it.
+  OnLoseConversation:
+  - My first win ever!!
   ShowHintsTimeInSeconds: 2

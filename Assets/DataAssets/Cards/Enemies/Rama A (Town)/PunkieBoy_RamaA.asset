@@ -16,7 +16,10 @@ MonoBehaviour:
   CombatCards:
   - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - "I\xB4m going to crush you, dear classmate."
+  OnWinConversation:
+  - "Please don\xB4t take my ring. It\xB4s for her."
+  OnLoseConversation:
+  - I already knew you were a loser.
   ShowHintsTimeInSeconds: 2

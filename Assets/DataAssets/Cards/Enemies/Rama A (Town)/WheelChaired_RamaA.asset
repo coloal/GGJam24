@@ -17,7 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - "Let\xB4s go pals!"
+  OnWinConversation:
+  - I knew you were the best. I saw it in ya.
+  OnLoseConversation:
+  - '%Dads, I won!!%'
   ShowHintsTimeInSeconds: 1
