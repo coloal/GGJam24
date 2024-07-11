@@ -44,6 +44,7 @@ MonoBehaviour:
   - rid: 1812450626248638464
   - rid: 1812450626248638465
   - rid: 1812450626248638466
+  - rid: 1812450626248638471
   connections:
   - outputPort:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
@@ -250,12 +251,6 @@ MonoBehaviour:
       nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
       portIndex: 2
   - outputPort:
-      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
-      portIndex: 0
-    inputPort:
-      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
-      portIndex: 2
-  - outputPort:
       nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
       portIndex: 0
     inputPort:
@@ -280,12 +275,6 @@ MonoBehaviour:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
       portIndex: 2
   - outputPort:
-      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
-      portIndex: 1
-    inputPort:
-      nodeId: bc2389fe-0a50-45a2-bf6d-680800ef369e
-      portIndex: 2
-  - outputPort:
       nodeId: bc2389fe-0a50-45a2-bf6d-680800ef369e
       portIndex: 0
     inputPort:
@@ -297,6 +286,24 @@ MonoBehaviour:
     inputPort:
       nodeId: 53b5ef89-a078-45ba-a485-fafd28d95f26
       portIndex: 0
+  - outputPort:
+      nodeId: 64042664-a690-410f-9ecc-8d0fb4421561
+      portIndex: 0
+    inputPort:
+      nodeId: bc2389fe-0a50-45a2-bf6d-680800ef369e
+      portIndex: 2
+  - outputPort:
+      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
+      portIndex: 1
+    inputPort:
+      nodeId: 64042664-a690-410f-9ecc-8d0fb4421561
+      portIndex: 1
+  - outputPort:
+      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
+      portIndex: 0
+    inputPort:
+      nodeId: 64042664-a690-410f-9ecc-8d0fb4421561
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -842,10 +849,10 @@ MonoBehaviour:
         guid: 21da6242-4612-46db-b172-97590614a18d
         position:
           serializedVersion: 2
-          x: 16715.076
-          y: 863.59247
-          width: 0
-          height: 0
+          x: 16912
+          y: 869
+          width: 86
+          height: 77
         typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
@@ -855,8 +862,8 @@ MonoBehaviour:
         guid: 53b5ef89-a078-45ba-a485-fafd28d95f26
         position:
           serializedVersion: 2
-          x: 16715
-          y: 1049
+          x: 16912
+          y: 1054
           width: 98
           height: 77
         typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -868,9 +875,9 @@ MonoBehaviour:
         guid: bc2389fe-0a50-45a2-bf6d-680800ef369e
         position:
           serializedVersion: 2
-          x: 15916
-          y: 980
-          width: 321
+          x: 16227
+          y: 921
+          width: 617
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -882,6 +889,21 @@ MonoBehaviour:
         LeftText: I am not playing again!
         RightText: I swear I'll pass tutorial
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450626248638471
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 64042664-a690-410f-9ecc-8d0fb4421561
+        position:
+          serializedVersion: 2
+          x: 15881
+          y: 700
+          width: 346
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
     - rid: 3107022144919568403
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
