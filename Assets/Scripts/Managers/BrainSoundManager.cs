@@ -66,8 +66,16 @@ public class SoundManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+
+        //Initialize();
+
+    }
+
+    public void Initialize() 
+    {
         InitializeData();
-        InitializeEventMap();
+        //InitializeEventMap();
+        EventMap = new Dictionary<string, EventInstance>();
 
         StoryEventInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
         //CampfireInstance = FMODUnity.RuntimeManager.CreateInstance(CampfireEventPath);
@@ -78,7 +86,6 @@ public class SoundManager : MonoBehaviour
 
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
     }
-
     void InitializeData()
     {
         if (SoundsMap == null)
@@ -159,32 +166,87 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void Update()
+    void CreateEventFMOD(string EventName) 
     {
-        if (PendingActions.Count > 0)
+        if (SoundEvents != null)
         {
-            for (int i = 0; i < PendingActions.Count; i++)
+            if (EventMap == null)
             {
-                float newValue = Mathf.Lerp(SoundsMap[PendingActions[i].SoundTag], PendingActions[i].NewValue, SpeedFadeIn * Time.deltaTime);
-                SetStorySound(PendingActions[i].SoundTag, newValue);
-                if (SoundsMap[PendingActions[i].SoundTag] >= PendingActions[i].NewValue - 0.02f)
+                EventMap = new Dictionary<string, EventInstance>();
+            }
+            if (!EventMap.ContainsKey(EventName))
+            {
+
+                EventIdentifier FMODevent = GetEvent(EventName);
+
+                if (FMODevent != null) 
                 {
-                    PendingActions.RemoveAt(i);
-                    i--;
+                    string path;
+                    if (FMODevent.FoldersName != EventFolders.snapshot)
+                    {
+                        path = FMOD_PATH + Enum.GetName(typeof(EventFolders), FMODevent.FoldersName) + "/" + FMODevent.EventName;
+                    }
+                    else
+                    {
+                        path = "snapshot:/" + FMODevent.EventName;
+                    }
+
+                    try
+                    {
+                        FMOD.Studio.EventInstance FmodEventInstance = new EventInstance();
+                        FmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(path);
+                        EventMap.Add(FMODevent.EventName, FmodEventInstance);
+                    }
+                    catch (EventNotFoundException)
+                    {
+                        Debug.LogError("No se ha cargado correctamente el evento: " + path);
+                        if (EventMap.ContainsKey(FMODevent.EventName))
+                        {
+                            EventMap.Remove(FMODevent.EventName);
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.LogError("No existe el evento" + EventName);
                 }
             }
         }
+        else
+        {
+            Debug.LogError("No se ha cargado ninguna lista de eventos de FMOD");
+        }
+    }
+
+    private EventIdentifier GetEvent(string eventName) 
+    {
+        EventIdentifier result = null;
+
+        for (int i = 0; i < SoundEvents.EventsNames.Count; i++)
+        {
+            if (SoundEvents.EventsNames[i].EventName == eventName)
+            {
+                result = SoundEvents.EventsNames[i];
+            }
+        }
+
+        return result;
     }
 
     /***** ACTIONS *****/
     public void PlaySFX(string EventName)
     {
+        if (!EventMap.ContainsKey(EventName)) 
+        {
+            CreateEventFMOD(EventName);
+        }
         if (EventMap.ContainsKey(EventName))
         {
             EventMap[EventName].start();
         }
         else
         {
+
             Debug.LogError("No esta registrado el evento de FMOD: " + EventName);
         }
     }
@@ -227,6 +289,10 @@ public class SoundManager : MonoBehaviour
     {
         string eventName = "Coin";
         float coinResult = GameManager.Instance.ProvideBrainManager().GetCoinResult();
+        if (!EventMap.ContainsKey(eventName))
+        {
+            CreateEventFMOD(eventName);
+        }
         if (EventMap.ContainsKey(eventName))
         {
             EventMap[eventName].setParameterByName("SideWin", coinResult);
@@ -241,6 +307,10 @@ public class SoundManager : MonoBehaviour
     public void PlayDialogSFX(float value, float pitch = 0.5f) 
     {
         string eventName = "IndexDIalogue";
+        if (!EventMap.ContainsKey(eventName))
+        {
+            CreateEventFMOD(eventName);
+        }
         if (EventMap.ContainsKey(eventName))
         {
             EventMap[eventName].setParameterByName("DialoguePitch", pitch);
@@ -278,12 +348,24 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic() 
     {
-        EventMap["Menu"].start();
+        string eventName = "Menu";
+        if (!EventMap.ContainsKey(eventName))
+        {
+            CreateEventFMOD(eventName);
+        }
+        if (EventMap.ContainsKey(eventName))
+        {
+            EventMap[eventName].start();
+        }
     }
 
     public void StopMenuMusic()
     {
-        EventMap["Menu"].setParameterByName("ExitMenu", 1);
+        if (EventMap.ContainsKey("Menu"))
+        {
+            EventMap["Menu"].setParameterByName("ExitMenu", 1);
+        }
+        
         //EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
@@ -338,8 +420,16 @@ public class SoundManager : MonoBehaviour
 
             if (zone == MusicZones.Credits) 
             {
-                EventMap["Credits"].setParameterByName("ExitCredits", 0.0f);
-                PlaySFX("Credits");
+                if (!EventMap.ContainsKey("Credits"))
+                {
+                    CreateEventFMOD("Credits");
+                }
+                if (EventMap.ContainsKey("Credits"))
+                {
+                    EventMap["Credits"].setParameterByName("ExitCredits", 0.0f);
+                    PlaySFX("Credits");
+                }
+                
             }
             else if (zone == MusicZones.GameOver)
             {
@@ -358,7 +448,14 @@ public class SoundManager : MonoBehaviour
 
     public void StopCreditsMusic()
     {
-        EventMap["Credits"].setParameterByName("ExitCredits", 1.0f);
+        if (!EventMap.ContainsKey("Credits"))
+        {
+            CreateEventFMOD("Credits");
+        }
+        if (EventMap.ContainsKey("Credits"))
+        {
+            EventMap["Credits"].setParameterByName("ExitCredits", 1.0f);
+        }
     }
 
     public void ResetNess()
