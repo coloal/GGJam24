@@ -19,16 +19,20 @@ public class ConversationController : MonoBehaviour
         get { return inputIsBlocked; }
         set { inputIsBlocked = value; }
     }
+
+    public void ClearText()
+    {
+        textMesh.text = string.Empty;
+    }
+
     public void EndConversation()
     {
         InputManager.GameInputManager.onClickEvent -= NextText;
-        gameObject.SetActive(false);
         OnConversationEnd();
     }
 
     public void StartConversation(List<string> conversation, Action OnConversationEnd)
     {
-        gameObject.SetActive(true);
         currentConversation = new List<string>(conversation);
         InputManager.GameInputManager.onClickEvent += NextText;
         this.OnConversationEnd = OnConversationEnd;

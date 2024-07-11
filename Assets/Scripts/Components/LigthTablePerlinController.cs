@@ -46,7 +46,7 @@ public class LigthTablePerlinController : MonoBehaviour
     public void StartFlickering()
     {
         if (isFlickering) return;
-        totalTime = Random.Range(2f,3.5f);
+        totalTime = Random.Range(0.8f,2f);
         currentTime = 0;
         isFlickering = true;
     }
