@@ -165,22 +165,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (PendingActions.Count > 0)
-        {
-            for (int i = 0; i < PendingActions.Count; i++)
-            {
-                float newValue = Mathf.Lerp(SoundsMap[PendingActions[i].SoundTag], PendingActions[i].NewValue, SpeedFadeIn * Time.deltaTime);
-                SetStorySound(PendingActions[i].SoundTag, newValue);
-                if (SoundsMap[PendingActions[i].SoundTag] >= PendingActions[i].NewValue - 0.02f)
-                {
-                    PendingActions.RemoveAt(i);
-                    i--;
-                }
-            }
-        }
-    }
 
     /***** ACTIONS *****/
     public void PlaySFX(string EventName)
