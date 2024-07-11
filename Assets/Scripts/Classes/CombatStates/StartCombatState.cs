@@ -21,10 +21,10 @@ public class StartCombatState : CombatState
     {
         if(CombatSceneManager.Instance.ProvideEnemyData().OnStartConversation.Any())
         {
+            SetUpPlayerDeck(combatContext);
+            SetUpEnemyDeck(combatContext);
             DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnStartConversation, () =>
             {
-                SetUpPlayerDeck(combatContext);
-                SetUpEnemyDeck(combatContext);
                 PostProcess(combatContext);
             });
         }
