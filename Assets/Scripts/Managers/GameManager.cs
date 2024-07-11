@@ -150,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeSceneWithAnimation(Animator transition, string SceneName)
     {
+        ProvideInputManager().ClearEvents();
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
         if (instantedAnimator != null)
         {
