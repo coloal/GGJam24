@@ -90,7 +90,6 @@ MonoBehaviour:
   - rid: 1812450603089526789
   - rid: 1812450603089526790
   - rid: 1812450603565842432
-  - rid: 1812450603565842441
   - rid: 1812450603565842442
   - rid: 1812450603565842443
   - rid: 1812450603565842444
@@ -98,6 +97,10 @@ MonoBehaviour:
   - rid: 1812450603565842446
   - rid: 1812450603565842447
   - rid: 1623451171958292491
+  - rid: 1812450626248638467
+  - rid: 1812450626248638468
+  - rid: 1812450626248638469
+  - rid: 1812450626248638470
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -658,12 +661,6 @@ MonoBehaviour:
       nodeId: 37f4b945-28c5-4a2b-bf2f-98f8454277a3
       portIndex: 1
   - outputPort:
-      nodeId: 59ec7848-115e-4d76-933d-f9304f677bce
-      portIndex: 1
-    inputPort:
-      nodeId: b79b2d45-2cf5-4f67-97eb-73e384f2d436
-      portIndex: 1
-  - outputPort:
       nodeId: ee21e241-57f8-4684-90cf-64079bdcf6ae
       portIndex: 1
     inputPort:
@@ -723,6 +720,30 @@ MonoBehaviour:
     inputPort:
       nodeId: ea8c4fb9-2174-41b1-a8b1-083d46c2d8cb
       portIndex: 1
+  - outputPort:
+      nodeId: 59ec7848-115e-4d76-933d-f9304f677bce
+      portIndex: 1
+    inputPort:
+      nodeId: 26740d1a-9dfc-4196-8ce3-067eed2d085c
+      portIndex: 1
+  - outputPort:
+      nodeId: 26740d1a-9dfc-4196-8ce3-067eed2d085c
+      portIndex: 0
+    inputPort:
+      nodeId: 4045d51b-ebdd-4e62-90ac-546b57ab52fe
+      portIndex: 2
+  - outputPort:
+      nodeId: 4045d51b-ebdd-4e62-90ac-546b57ab52fe
+      portIndex: 0
+    inputPort:
+      nodeId: 5060a94e-f282-44df-8889-c26fe1ec3e77
+      portIndex: 0
+  - outputPort:
+      nodeId: 4045d51b-ebdd-4e62-90ac-546b57ab52fe
+      portIndex: 1
+    inputPort:
+      nodeId: c54ca48e-6032-49d2-8fc9-38f16f51992c
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -2236,24 +2257,6 @@ MonoBehaviour:
         LeftText: Of course I can drive
         RightText: I thought biggie could
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450603565842441
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: b79b2d45-2cf5-4f67-97eb-73e384f2d436
-        position:
-          serializedVersion: 2
-          x: 4056
-          y: 534
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: Beated, and I hate him so much...
-        LeftText: Revenge is a dish best served cold
-        RightText: Damn it...
-        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 1812450603565842442
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2364,3 +2367,63 @@ MonoBehaviour:
         LeftText: Yes, we will learn from this one
         RightText: We lost an easy one
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450626248638467
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 26740d1a-9dfc-4196-8ce3-067eed2d085c
+        position:
+          serializedVersion: 2
+          x: 4087
+          y: 466
+          width: 346
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
+    - rid: 1812450626248638468
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4045d51b-ebdd-4e62-90ac-546b57ab52fe
+        position:
+          serializedVersion: 2
+          x: 4535
+          y: 466
+          width: 352
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Beated, and I hate him so much...
+        LeftText: Revenge is a dish best served cold
+        RightText: I am quitting for now
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450626248638469
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5060a94e-f282-44df-8889-c26fe1ec3e77
+        position:
+          serializedVersion: 2
+          x: 4994
+          y: 426
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450626248638470
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c54ca48e-6032-49d2-8fc9-38f16f51992c
+        position:
+          serializedVersion: 2
+          x: 4994
+          y: 574
+          width: 86
+          height: 77
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
