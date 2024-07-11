@@ -60,6 +60,11 @@ public class SplashScreenManager : BaseSceneManager
         Init();
 
         GameManager.Instance.ProvideSoundManager().Initialize();
+        GameManager.Instance.ProvideSoundManager().CreateEventFMOD("SplashAudio");
+        new WaitForSeconds(1);
+        GameManager.Instance.ProvideSoundManager().CreateEventFMOD("Credits");
+        GameManager.Instance.ProvideSoundManager().CreateEventFMOD("Menu");
+        new WaitForSeconds(1);
         GameManager.Instance.ProvideSoundManager().PlaySFX("SplashAudio");
 
         await splashFeedbacksManager.PlayFadeImages();
