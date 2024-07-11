@@ -647,10 +647,14 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Hey, I forgot I also dreamed with that strange dude, Passage of
+        CardText: 'Hey, I forgot I also dreamed with that strange dude, Passage of
           Time, and was given a game card too, mine is of <b><color=#2c7aab>Influence</color></b>
           type. We better do a test game, you against me so you understand the rules
           of it.
+
+          In this game, I''ll give you a deck of fake cards so
+          we can see different interesting situations for the game. Don''t think
+          you''ll get to keep them afterwards! '
         LeftText: Let's go
         RightText: So excited to play!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -788,9 +792,13 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Well, it seems you got that pretty quick. We are now prepared to
-          go out of our camp and go if we get all that we need for our trip, where
-          would you like to go first?
+        CardText: 'Well, it seems you got that pretty quick. Remember that the cards
+          used in this combat were only to show how to play from now on you will
+          be using your real deck. So...
+
+          we are now prepared to go out
+          of our camp and see if we get all that we need for our trip, where would
+          you like to go first?'
         LeftText: To the town square
         RightText: To the gas station
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
