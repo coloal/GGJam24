@@ -15,5 +15,5 @@ MonoBehaviour:
   NameOfCard: Alvaro Ajenjo
   Text: aka. Murki Combat designer Pixel artist
   LeftText: '"Esto sale por lo civil o lo criminal"'
-  RightText: '"Solo duermo 4 horas y mirame, lechuga como una fresca"'
+  RightText: "\"\xBFSabes como se soluciona eso? \xA1Epabila, macho!\""
   CharacterSprite: {fileID: 21300000, guid: 348aec1f72b2441cb972a3ecf741a1eb, type: 3}

@@ -20,7 +20,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - Leave my sweetie alone, you raggedy little pieces of shit.
+  OnWinConversation:
+  - I can see why my boy came to me crying. You have been very mean to him.
+  OnLoseConversation:
+  - The power of love always wins! Although if my sweetie buys me more jewelry....
+    Well, I'm not going to complain either.
   ShowHintsTimeInSeconds: 1

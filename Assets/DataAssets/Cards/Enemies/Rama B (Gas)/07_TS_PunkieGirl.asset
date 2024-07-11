@@ -20,7 +20,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - I will erase you from existence as I have already done with so many other hindrances
+    that I disliked in class....
+  OnWinConversation:
+  - How?! What kind of cheating have you done?!
+  OnLoseConversation:
+  - I'm sure you're no match for my sweetie either. He is so sweet... And he buys
+    me everything I ask for! <3
   ShowHintsTimeInSeconds: 1

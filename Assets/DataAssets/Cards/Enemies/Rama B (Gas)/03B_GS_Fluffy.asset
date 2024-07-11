@@ -17,7 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - Woof, woof, you've messed with the wrong humanoid dog, buddy. Grrrrrrrrr!
+  OnWinConversation:
+  - Humiliated by a mere human, what will we come to?
+  OnLoseConversation:
+  - If that was your surprised face you will see when I take you to be castrated....
   ShowHintsTimeInSeconds: 2

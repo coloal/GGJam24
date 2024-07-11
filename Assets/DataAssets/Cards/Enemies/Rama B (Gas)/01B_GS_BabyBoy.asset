@@ -16,7 +16,11 @@ MonoBehaviour:
   CombatCards:
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - Get ready to lose! My parents bought me these cards with all the love in the
+    world (and their Visa Gold).
+  OnWinConversation:
+  - I will tell my parents to work harder to buy more cards!
+  OnLoseConversation:
+  - I told you that you had nothing to do against my (economic) power!
   ShowHintsTimeInSeconds: 3
