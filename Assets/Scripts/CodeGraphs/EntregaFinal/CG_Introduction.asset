@@ -41,6 +41,10 @@ MonoBehaviour:
   - rid: 1812450528744177668
   - rid: 1812450555419689004
   - rid: 1812450603565842448
+  - rid: 1812450626248638464
+  - rid: 1812450626248638465
+  - rid: 1812450626248638466
+  - rid: 1812450626248638471
   connections:
   - outputPort:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
@@ -247,12 +251,6 @@ MonoBehaviour:
       nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
       portIndex: 2
   - outputPort:
-      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
-      portIndex: 0
-    inputPort:
-      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
-      portIndex: 2
-  - outputPort:
       nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
       portIndex: 0
     inputPort:
@@ -277,11 +275,35 @@ MonoBehaviour:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
       portIndex: 2
   - outputPort:
+      nodeId: bc2389fe-0a50-45a2-bf6d-680800ef369e
+      portIndex: 0
+    inputPort:
+      nodeId: 21da6242-4612-46db-b172-97590614a18d
+      portIndex: 0
+  - outputPort:
+      nodeId: bc2389fe-0a50-45a2-bf6d-680800ef369e
+      portIndex: 1
+    inputPort:
+      nodeId: 53b5ef89-a078-45ba-a485-fafd28d95f26
+      portIndex: 0
+  - outputPort:
+      nodeId: 64042664-a690-410f-9ecc-8d0fb4421561
+      portIndex: 0
+    inputPort:
+      nodeId: bc2389fe-0a50-45a2-bf6d-680800ef369e
+      portIndex: 2
+  - outputPort:
       nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
       portIndex: 1
     inputPort:
-      nodeId: 7506c289-0b8a-4b0b-9b1e-15d305be4744
+      nodeId: 64042664-a690-410f-9ecc-8d0fb4421561
       portIndex: 1
+  - outputPort:
+      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
+      portIndex: 0
+    inputPort:
+      nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -444,19 +466,22 @@ MonoBehaviour:
         guid: 9b32b830-af8f-4061-9186-615b05662cd8
         position:
           serializedVersion: 2
-          x: 4022
-          y: 214
-          width: 1433
+          x: 3452
+          y: 227
+          width: 1407
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: Good morning, mate! You know what? I was talking this morning with
-          the rest of our group of friends, and we all had a super strange dream
-          last night. At the end of it, each of us received a Wealth, Violence, Power
-          card. I was wondering if you had a similar dream too?
+        CardText: 'Good morning, mate! You know what? I was talking this morning
+          with the rest of our group of friends, and we all had a super strange dream
+          last night.
+
+          At the end of it, each of us received a <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> card.
+          I was wondering if you had a similar dream too?'
         LeftText: I have indeed
         RightText: Yes, I got a card too
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -466,20 +491,27 @@ MonoBehaviour:
         guid: e4f4a57a-0cc3-4dcf-ad8b-a03700ba12cf
         position:
           serializedVersion: 2
-          x: 5592
-          y: 214
-          width: 321
+          x: 4804
+          y: 227
+          width: 809
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: Really? Well this opens now a lot of possibilities to get new resources
-          for our summer road trip, mate. As you know everyone at our loved home,
-          Admired town, plays and bets to Violence, Wealth, Power game so we can
-          take advantage of  these to fix our van, make some money and find a driver
-          for it.
+        CardText: 'Really? Well this opens now a lot of possibilities to get new
+          resources for
+
+          our summer road trip, mate. As you know everyone
+          at our loved home,
+
+          Admired town, plays and bets to <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>
+
+          game
+          so we can take advantage of  these to fix our van, make some money and
+          find a driver for it.'
         LeftText: Perfect, I'll go talk to the rest
         RightText: Let's see which other cards they have
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
@@ -489,8 +521,8 @@ MonoBehaviour:
         guid: 3a121f1e-eca3-4d8b-854f-36aea4f9e1c7
         position:
           serializedVersion: 2
-          x: 8908
-          y: 214
+          x: 8840
+          y: 227
           width: 213
           height: 124
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -505,9 +537,9 @@ MonoBehaviour:
         guid: 6f03d42f-5ec2-44cd-bf8f-61cb5c294caf
         position:
           serializedVersion: 2
-          x: 7338
-          y: 214
-          width: 335
+          x: 6422
+          y: 227
+          width: 486
           height: 98
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -529,12 +561,21 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Hey, mate. I am so excited that I finally got my first Power, Violence,
-          Wealth card, you know how of a freak I am of the game... Now that we will
-          be able to play it with our new cards, I recomend you to memorize your
-          rival's cards when they show their hand to you at the start of the game.
-          This way you will be able to guess, based on odds, what card they can play
-          on the next turn.///Here see the card I got, isn't it cool?
+        CardText: 'Hey, mate. I am so excited that I finally got my first
+
+          <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>
+
+          card,
+          you know how of a freak I am of the game... Now that we will be able to
+          play it with our new cards,
+
+          I recomend you to memorize your
+          rival''s cards when they show their hand to you at the start of the game.
+
+          This
+          way you will be able to guess, based on odds, what card they can play on
+          the next turn.///Here see the card I got, isn''t it cool?'
         LeftText: Show me
         RightText: I'll jot it down
         card: {fileID: 11400000, guid: 58fb5210bd03c4f48a83ca296949c39f, type: 2}
@@ -553,12 +594,20 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: Hey, mate. I am so excited that I finally got my first Power, Violence,
-          Wealth card, you know how of a freak I am of the game... Now that we will
+        CardText: 'Hey, mate. I am so excited that I finally got my first <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> card,
+          you know how of a freak I am of the game...
+
+          Now that we will
           be able to play it with our new cards, I recomend you to memorize your
-          rival's cards when they show their hand to you at the start of the game.
-          This way you will be able to guess, based on odds, what card they can play
-          on the next turn.///Here see the card I got, isn't it cool?
+          rival''s cards when they show their
+
+          hand to you at the start
+          of the game. This way you will be able to guess, based on odds, what card
+          they can play on the next
+
+          turn.///Here see the card I got, isn''t
+          it cool?'
         LeftText: Show me
         RightText: I'll jot it down
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -568,17 +617,18 @@ MonoBehaviour:
         guid: 92949368-f644-4f96-bdd7-cf2c4da67c19
         position:
           serializedVersion: 2
-          x: 7886
-          y: 214
-          width: 949
+          x: 7082
+          y: 227
+          width: 1403
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You now have two cards on you Influence, Wealth, Violence deck!
-          The violence card belonging to Biggie is added to your deck and will be
-          availabe to you on all your future games.
+        CardText: You now have two cards on your <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> deck!
+          The <b><color=#bc3047>Violence</color></b> card belonging to Biggie is
+          added to your deck and will be availabe to you on all your future games.
         LeftText: Can't wait to play my first game
         RightText: I love cards
         card: {fileID: 11400000, guid: e6a09c9065eb82d4ebbe6ada44f37834, type: 2}
@@ -588,9 +638,9 @@ MonoBehaviour:
         guid: 8eab634c-93c1-4736-a8e4-985109d4804d
         position:
           serializedVersion: 2
-          x: 12816
+          x: 12747
           y: 210
-          width: 1136
+          width: 1266
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -598,8 +648,9 @@ MonoBehaviour:
         - Left
         - Right
         CardText: Hey, I forgot I also dreamed with that strange dude, Passage of
-          Time, and was given a game card too, mine is of power type. We better do
-          a test game, you against me so you understand the rules of it.
+          Time, and was given a game card too, mine is of <b><color=#2c7aab>Influence</color></b>
+          type. We better do a test game, you against me so you understand the rules
+          of it.
         LeftText: Let's go
         RightText: So excited to play!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -647,8 +698,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You got your third card of your deck! This one is of money type
-          as you can see because of its green color.
+        CardText: You got your third card of your deck! This one is of <b><color=#438c1d>Wealth</color></b>
+          type as you can see because of its green color.
         LeftText: I like money
         RightText: I wan't to play!!!
         card: {fileID: 11400000, guid: b26f6b2af84c3694ebb949efdd215190, type: 2}
@@ -666,8 +717,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You got your third card of your deck! This one is of Power type
-          as you can see because of its blue color.
+        CardText: You got your third card of your deck! This one is of <b><color=#2c7aab>Influence</color></b>
+          type as you can see because of its blue color.
         LeftText: I like power
         RightText: I wan't to play!!!
         card: {fileID: 11400000, guid: defee03326fc1be4ca26ea87e22928cb, type: 2}
@@ -700,8 +751,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You got your fourth card of your deck of Power type, as you can
-          identify it by its blue color.
+        CardText: You got your fourth card of your deck of <b><color=#2c7aab>Influence</color></b>
+          type, as you can identify it by its blue color.
         LeftText: Blue is power
         RightText: I'll finally get to play!!
         card: {fileID: 11400000, guid: 841a029ea585eca498ed9290a0d4186e, type: 2}
@@ -711,16 +762,16 @@ MonoBehaviour:
         guid: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
         position:
           serializedVersion: 2
-          x: 15371
+          x: 15457
           y: 210
-          width: 300
+          width: 396
           height: 140
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: bfd9ff4ed417e97429a22337d8bb4e6f, type: 2}
+        enemy: {fileID: 11400000, guid: e5e38af2ece62474097fb13e693038c1, type: 2}
         IsBossFight: 0
     - rid: 1812450528744177667
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -779,8 +830,8 @@ MonoBehaviour:
         guid: 7506c289-0b8a-4b0b-9b1e-15d305be4744
         position:
           serializedVersion: 2
-          x: 15808
-          y: 695
+          x: 15866
+          y: 2411
           width: 617
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -792,6 +843,67 @@ MonoBehaviour:
         LeftText: Yes, we will pass the tutorial
         RightText: Not my fault definitely
         card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450626248638464
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 21da6242-4612-46db-b172-97590614a18d
+        position:
+          serializedVersion: 2
+          x: 16912
+          y: 869
+          width: 86
+          height: 77
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450626248638465
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 53b5ef89-a078-45ba-a485-fafd28d95f26
+        position:
+          serializedVersion: 2
+          x: 16912
+          y: 1054
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450626248638466
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: bc2389fe-0a50-45a2-bf6d-680800ef369e
+        position:
+          serializedVersion: 2
+          x: 16227
+          y: 921
+          width: 617
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Well, we lost in the tutorial? This developers may have done something
+          wrong with this, let's give them another try
+        LeftText: '[Restart] I swear I''ll pass tutorial'
+        RightText: '[Back to menu] I am not playing again!'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450626248638471
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 64042664-a690-410f-9ecc-8d0fb4421561
+        position:
+          serializedVersion: 2
+          x: 15881
+          y: 700
+          width: 346
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
     - rid: 3107022144919568403
       type: {class: EndAndChangeStoryNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

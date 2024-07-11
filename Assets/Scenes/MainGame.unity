@@ -971,6 +971,8 @@ MonoBehaviour:
   partyManager: {fileID: 527357311}
   inventoryManager: {fileID: 163239569}
   canvas: {fileID: 1089200395}
+  secondsForSceneTransition: 0.5
+  secondsForCombatTransition: 1
 --- !u!1 &1327554468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
     - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
       propertyPath: isTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -891,9 +891,9 @@ MonoBehaviour:
         guid: 62292c3b-a88f-4e4c-bf86-18e09c69fb3c
         position:
           serializedVersion: 2
-          x: 6676
-          y: 576
-          width: 826
+          x: 6733
+          y: 573
+          width: 507
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1024,11 +1024,12 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in <b><color=#2c7aab>Power</color>, <color=#438c1d>Wealth</color>,
-          <color=#bc3047>Violence</color></b> game of cards is of Wealth type: People
-          born under the essence of Wealth are inherently drawn to wealth and luxury.
-          They have a natural knack for financial matters, often finding innovative
-          ways to accumulate and manage resources.'
+          that your soul essence in <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b> game of cards is of <b><color=#438c1d>Wealth</color></b>
+          type: People born under the essence of <b><color=#438c1d>Wealth</color></b>
+          are inherently drawn to wealth and luxury. They have a natural knack for
+          financial matters, often finding innovative ways to accumulate and manage
+          resources.'
         LeftText: You can't classify me
         RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1065,11 +1066,11 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in <b><color=#2c7aab>Power</color>, <color=#438c1d>Wealth</color>,
-          <color=#bc3047>Violence</color></b> game of cards is of Power type: Individuals
-          born under the essence of Power are natural leaders, exuding confidence.
-          They are driven by a desire to control their surroundings, often rising
-          to positions of great responsibility.'
+          that your soul essence in <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b> game of cards is of <b><color=#2c7aab>Influence</color></b>
+          type: Individuals born under the essence of <b><color=#2c7aab>Influence</color></b>
+          are natural leaders, exuding confidence. They are driven by a desire to
+          control their surroundings, often rising to positions of great responsibility.'
         LeftText: You can't classify me
         RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1088,11 +1089,12 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: 'Ok, buddie. I have your personality test results which conludes
-          that your soul essence in <b><color=#2c7aab>Power</color>, <color=#438c1d>Wealth</color>,
-          <color=#bc3047>Violence</color></b> game of cards is of Violence type:
-          Those born under the essence of Violence are intense and passionate, often
-          possessing a fiery temper and a strong will. They are natural warriors,
-          unafraid of conflict and adept at navigating chaotic situations.'
+          that your soul essence in <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b> game of cards is of <b><color=#bc3047>Violence</color></b>
+          type: Those born under the essence of <b><color=#bc3047>Violence</color></b>
+          are intense and passionate, often possessing a fiery temper and a strong
+          will. They are natural warriors, unafraid of conflict and adept at navigating
+          chaotic situations.'
         LeftText: You can't classify me
         RightText: And my reward?
         card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
@@ -1102,9 +1104,9 @@ MonoBehaviour:
         guid: 7d32db5f-762a-47a3-873a-24ffb26e656e
         position:
           serializedVersion: 2
-          x: 11101
+          x: 11192
           y: 823
-          width: 483
+          width: 452
           height: 98
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1117,7 +1119,7 @@ MonoBehaviour:
         guid: 500659e2-9314-43ab-8b67-2ddd723745a3
         position:
           serializedVersion: 2
-          x: 10660
+          x: 11074
           y: 1234
           width: 479
           height: 98
@@ -1132,9 +1134,9 @@ MonoBehaviour:
         guid: 9f1fd4af-485d-440d-bd2e-4da92e4cbaa7
         position:
           serializedVersion: 2
-          x: 11073
+          x: 11491
           y: 282
-          width: 431
+          width: 433
           height: 98
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -1147,19 +1149,21 @@ MonoBehaviour:
         guid: 6a5e52b3-9890-4d5c-9fd8-a0ce7581d705
         position:
           serializedVersion: 2
-          x: 11841
-          y: 282
-          width: 1991
+          x: 11962
+          y: 259
+          width: 2536
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a Wealth card in the Violence, Wealth, and Power game.
-          This game is used in The Wells to resolve any conflicts among its inhabitants.
-          The more cards of the game you have, the better! This game resembles one
-          that an ancient civilization used to play called Rock, Paper, Scissors,
-          but with cards instead of player's hands and some other rule changes!
+        CardText: You received a <b><color=#438c1d>Wealth</color></b> card in the
+          <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>
+          game. This game is used in The Wells to resolve any conflicts among its
+          inhabitants. The more cards of the game you have, the better! This game
+          resembles one that an ancient civilization used to play called Rock, Paper,
+          Scissors, but with cards instead of player's hands and some other rule
+          changes!
         LeftText: Got it
         RightText: Useful in the future I guess
         card: {fileID: 11400000, guid: 7c6e6ff168dafc7429325b4a884f5ec9, type: 2}
@@ -1177,11 +1181,13 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a Power card in the Violence, Wealth, and Power game.
-          This game is used in The Wells to resolve any conflicts among its inhabitants.
-          The more cards of the game you have, the better! This game resembles one
-          that an ancient civilization used to play called Rock, Paper, Scissors,
-          but with cards instead of player's hands and some other rule changes!
+        CardText: You received a <b><color=#2c7aab>Influence</color></b> card in
+          the <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b> game. This game is used in The Wells
+          to resolve any conflicts among its inhabitants. The more cards of the game
+          you have, the better! This game resembles one that an ancient civilization
+          used to play called Rock, Paper, Scissors, but with cards instead of player's
+          hands and some other rule changes!
         LeftText: Got it
         RightText: Useful in the future I guess
         card: {fileID: 11400000, guid: abad7000132574942bc5fce4c61ff27e, type: 2}
@@ -1191,15 +1197,16 @@ MonoBehaviour:
         guid: ee61a6e0-f380-471e-b785-5e4ae9e1ea8c
         position:
           serializedVersion: 2
-          x: 11401
+          x: 11841
           y: 1234
-          width: 321
+          width: 2360
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: You received a Violence card in the Violence, Wealth, and Power
+        CardText: You received a <b><color=#bc3047>Violence</color></b> card in the
+          <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>
           game. This game is used in The Wells to resolve any conflicts among its
           inhabitants. The more cards of the game you have, the better! This game
           resembles one that an ancient civilization used to play called Rock, Paper,
@@ -1214,8 +1221,8 @@ MonoBehaviour:
         guid: d35b761c-29ab-4db6-9b46-4fafabd8f99d
         position:
           serializedVersion: 2
-          x: 14572
-          y: 472
+          x: 14902
+          y: 482
           width: 413
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1233,8 +1240,8 @@ MonoBehaviour:
         guid: 2d55735c-2f80-4e57-a5dd-d02d8b1ee8e0
         position:
           serializedVersion: 2
-          x: 14053
-          y: 810
+          x: 14388
+          y: 823
           width: 191
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1301,9 +1308,9 @@ MonoBehaviour:
         guid: 8c373f08-e17b-404f-b714-f29a8ae8f611
         position:
           serializedVersion: 2
-          x: 15209
-          y: 844
-          width: 383
+          x: 15539
+          y: 854
+          width: 365
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1316,8 +1323,8 @@ MonoBehaviour:
         guid: e8850464-2f20-456d-b0d8-edc8c70cf160
         position:
           serializedVersion: 2
-          x: 14317
-          y: 472
+          x: 14647
+          y: 482
           width: 245
           height: 232
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1382,10 +1389,10 @@ MonoBehaviour:
         guid: 5a61c5e7-23d1-4fc0-9edc-3703ba70e5d1
         position:
           serializedVersion: 2
-          x: 14366
-          y: 950
-          width: 257
-          height: 232
+          x: 14696
+          y: 960
+          width: 127
+          height: 97
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -1404,9 +1411,9 @@ MonoBehaviour:
         guid: 4750639a-7576-442e-ac2d-0a37a906989a
         position:
           serializedVersion: 2
-          x: 14701
-          y: 950
-          width: 151
+          x: 15031
+          y: 960
+          width: 161
           height: 97
         typeName: CodeGraph.WaitNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null

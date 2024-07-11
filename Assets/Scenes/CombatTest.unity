@@ -186,11 +186,9 @@ MonoBehaviour:
   deckSize: 8
   debugDeck:
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
-  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
 --- !u!4 &163239570
 Transform:
   m_ObjectHideFlags: 0
@@ -974,6 +972,8 @@ MonoBehaviour:
   partyManager: {fileID: 527357311}
   inventoryManager: {fileID: 163239569}
   canvas: {fileID: 1089200395}
+  secondsForSceneTransition: 0.5
+  secondsForCombatTransition: 1
 --- !u!1 &1327554468
 GameObject:
   m_ObjectHideFlags: 0

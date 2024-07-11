@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: PunkieGirl_RamaA
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: -1348423698, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  characterSprite: {fileID: -1734718243, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - You failed Maths, you are gonna fail this match.
+  OnWinConversation:
+  - Just choose a card already.
+  OnLoseConversation:
+  - Hahaha, just give me your money, you monkeys.
   ShowHintsTimeInSeconds: 1

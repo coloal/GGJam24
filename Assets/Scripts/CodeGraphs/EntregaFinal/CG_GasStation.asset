@@ -66,7 +66,6 @@ MonoBehaviour:
   - rid: 1812450578821021707
   - rid: 1812450603089526784
   - rid: 1812450603089526786
-  - rid: 1812450603089526787
   - rid: 1812450603089526791
   - rid: 1623451171958292480
   - rid: 1623451171958292481
@@ -78,6 +77,27 @@ MonoBehaviour:
   - rid: 1623451171958292487
   - rid: 1623451171958292489
   - rid: 1623451171958292490
+  - rid: 1812450628146823170
+  - rid: 1812450628146823171
+  - rid: 1812450628146823172
+  - rid: 1812450628146823173
+  - rid: 1812450628146823175
+  - rid: 1812450628146823176
+  - rid: 1812450628146823177
+  - rid: 1812450628146823178
+  - rid: 1812450628146823179
+  - rid: 1812450628146823180
+  - rid: 1812450628146823181
+  - rid: 1812450628146823182
+  - rid: 1812450628146823183
+  - rid: 1812450628146823184
+  - rid: 1812450628146823185
+  - rid: 1812450628146823186
+  - rid: 1812450628146823188
+  - rid: 1812450628146823189
+  - rid: 1812450628146823190
+  - rid: 1812450628146823191
+  - rid: 1812450628146823192
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -398,22 +418,10 @@ MonoBehaviour:
       nodeId: 596ce7e9-8299-4f71-b2fa-c13732ca9081
       portIndex: 2
   - outputPort:
-      nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
-      portIndex: 0
-    inputPort:
-      nodeId: 67ae40e9-e0c5-4521-9fa8-22f55a5edc08
-      portIndex: 1
-  - outputPort:
       nodeId: 67ae40e9-e0c5-4521-9fa8-22f55a5edc08
       portIndex: 0
     inputPort:
       nodeId: c952124f-3092-4ce3-aa61-e5f26b7eb1a7
-      portIndex: 1
-  - outputPort:
-      nodeId: c952124f-3092-4ce3-aa61-e5f26b7eb1a7
-      portIndex: 0
-    inputPort:
-      nodeId: 8bd9157d-1ab3-445d-af66-33f87e02e36a
       portIndex: 1
   - outputPort:
       nodeId: 6096c876-fbba-4222-9f31-e6c8a1a5f6f5
@@ -607,6 +615,192 @@ MonoBehaviour:
     inputPort:
       nodeId: 372511c3-69f5-40c2-acf8-9e33af1e2e0c
       portIndex: 1
+  - outputPort:
+      nodeId: de8761c5-ef0b-4c62-b0ac-eae5cc318eac
+      portIndex: 0
+    inputPort:
+      nodeId: 3b421fee-1f3f-4a84-ad28-76eabf44e391
+      portIndex: 2
+  - outputPort:
+      nodeId: 9bdbe3a4-050e-4afc-ae9c-c51a0ccb76b8
+      portIndex: 0
+    inputPort:
+      nodeId: f6ba359e-500f-4154-80a1-ffa1ad558a52
+      portIndex: 1
+  - outputPort:
+      nodeId: f6ba359e-500f-4154-80a1-ffa1ad558a52
+      portIndex: 0
+    inputPort:
+      nodeId: 67ae40e9-e0c5-4521-9fa8-22f55a5edc08
+      portIndex: 1
+  - outputPort:
+      nodeId: c952124f-3092-4ce3-aa61-e5f26b7eb1a7
+      portIndex: 0
+    inputPort:
+      nodeId: 7b19b20b-d887-47e2-8b62-4bf01525fdf2
+      portIndex: 2
+  - outputPort:
+      nodeId: 7b19b20b-d887-47e2-8b62-4bf01525fdf2
+      portIndex: 1
+    inputPort:
+      nodeId: f2d7af72-bb73-4a2d-8883-81bedf37a4ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 7b19b20b-d887-47e2-8b62-4bf01525fdf2
+      portIndex: 0
+    inputPort:
+      nodeId: 48b77a6a-3319-4b16-be7e-70ae2d1dde91
+      portIndex: 0
+  - outputPort:
+      nodeId: 06365b1b-4589-4492-a741-d248bc3295f4
+      portIndex: 0
+    inputPort:
+      nodeId: df418ec8-466e-4f5c-ba45-96b0874c8cfd
+      portIndex: 2
+  - outputPort:
+      nodeId: df418ec8-466e-4f5c-ba45-96b0874c8cfd
+      portIndex: 0
+    inputPort:
+      nodeId: 633f2dba-b6a7-48df-b5a8-f836812a6610
+      portIndex: 0
+  - outputPort:
+      nodeId: df418ec8-466e-4f5c-ba45-96b0874c8cfd
+      portIndex: 1
+    inputPort:
+      nodeId: addfc080-a04c-4335-a231-820b7346ecac
+      portIndex: 0
+  - outputPort:
+      nodeId: 0c920cf7-65ee-4e72-b390-2fdbc579634f
+      portIndex: 1
+    inputPort:
+      nodeId: 06365b1b-4589-4492-a741-d248bc3295f4
+      portIndex: 1
+  - outputPort:
+      nodeId: 9ba7cd4b-8210-4e05-97f2-fc87c4a982aa
+      portIndex: 1
+    inputPort:
+      nodeId: 06365b1b-4589-4492-a741-d248bc3295f4
+      portIndex: 1
+  - outputPort:
+      nodeId: b76e6ac7-a7f4-46fd-a18a-f48f3c733ea1
+      portIndex: 1
+    inputPort:
+      nodeId: 06365b1b-4589-4492-a741-d248bc3295f4
+      portIndex: 1
+  - outputPort:
+      nodeId: d3ab4ce5-0bfa-4f60-9615-06b126197d4e
+      portIndex: 1
+    inputPort:
+      nodeId: 06365b1b-4589-4492-a741-d248bc3295f4
+      portIndex: 1
+  - outputPort:
+      nodeId: 0c24b4b7-642e-415e-9d74-6f234429c37d
+      portIndex: 0
+    inputPort:
+      nodeId: 38ccd2d2-1c32-4260-b474-08b8f21d7f1f
+      portIndex: 2
+  - outputPort:
+      nodeId: 38ccd2d2-1c32-4260-b474-08b8f21d7f1f
+      portIndex: 0
+    inputPort:
+      nodeId: e86426c0-0204-4ac1-883f-3a2fb1c32de8
+      portIndex: 0
+  - outputPort:
+      nodeId: 38ccd2d2-1c32-4260-b474-08b8f21d7f1f
+      portIndex: 1
+    inputPort:
+      nodeId: f490039e-3ce1-423a-906c-b651774c7975
+      portIndex: 0
+  - outputPort:
+      nodeId: da2a3d89-dda1-4b73-9faa-81e47e33d671
+      portIndex: 1
+    inputPort:
+      nodeId: 0c24b4b7-642e-415e-9d74-6f234429c37d
+      portIndex: 1
+  - outputPort:
+      nodeId: 6e34eb83-0cff-4447-8d5d-0752b7f70fa9
+      portIndex: 1
+    inputPort:
+      nodeId: 0c24b4b7-642e-415e-9d74-6f234429c37d
+      portIndex: 1
+  - outputPort:
+      nodeId: 4036c8f3-c7eb-4274-a9d0-5e1564635326
+      portIndex: 1
+    inputPort:
+      nodeId: a69b7615-facd-46c1-951e-081efc6e413f
+      portIndex: 1
+  - outputPort:
+      nodeId: a69b7615-facd-46c1-951e-081efc6e413f
+      portIndex: 0
+    inputPort:
+      nodeId: 0345a932-8e0c-4c7d-90ef-b8db425d5f9f
+      portIndex: 2
+  - outputPort:
+      nodeId: 0345a932-8e0c-4c7d-90ef-b8db425d5f9f
+      portIndex: 0
+    inputPort:
+      nodeId: 2eb686d0-185c-475f-9514-d39a1d42ffcb
+      portIndex: 0
+  - outputPort:
+      nodeId: 0345a932-8e0c-4c7d-90ef-b8db425d5f9f
+      portIndex: 1
+    inputPort:
+      nodeId: cd0058ab-2391-49f3-b988-a83ad8dbd424
+      portIndex: 0
+  - outputPort:
+      nodeId: de8761c5-ef0b-4c62-b0ac-eae5cc318eac
+      portIndex: 1
+    inputPort:
+      nodeId: a69b7615-facd-46c1-951e-081efc6e413f
+      portIndex: 1
+  - outputPort:
+      nodeId: 16aa728a-38f7-4850-9d5a-7473c667fdad
+      portIndex: 0
+    inputPort:
+      nodeId: 9c88dabd-89f3-4836-85cf-57ca6ad8ca44
+      portIndex: 0
+  - outputPort:
+      nodeId: 16aa728a-38f7-4850-9d5a-7473c667fdad
+      portIndex: 1
+    inputPort:
+      nodeId: adba3a5c-10b3-48e2-9c12-2b928ab3cf22
+      portIndex: 0
+  - outputPort:
+      nodeId: 76543417-32b6-4586-bd5e-4e71d318c418
+      portIndex: 0
+    inputPort:
+      nodeId: 16aa728a-38f7-4850-9d5a-7473c667fdad
+      portIndex: 2
+  - outputPort:
+      nodeId: f18448d9-b4e9-4936-aa16-6d4b1e6cbd54
+      portIndex: 1
+    inputPort:
+      nodeId: 76543417-32b6-4586-bd5e-4e71d318c418
+      portIndex: 1
+  - outputPort:
+      nodeId: e570ff67-590b-4204-bc55-11b7b88bd179
+      portIndex: 1
+    inputPort:
+      nodeId: 76543417-32b6-4586-bd5e-4e71d318c418
+      portIndex: 1
+  - outputPort:
+      nodeId: 5ac05d5e-56a8-4f56-afec-02c38e3b94f2
+      portIndex: 1
+    inputPort:
+      nodeId: a69b7615-facd-46c1-951e-081efc6e413f
+      portIndex: 1
+  - outputPort:
+      nodeId: 7f9b9cca-2da4-4c12-b307-3705e2390dfd
+      portIndex: 1
+    inputPort:
+      nodeId: 0c24b4b7-642e-415e-9d74-6f234429c37d
+      portIndex: 1
+  - outputPort:
+      nodeId: 249fcce5-f39d-45a4-b83a-0bb7ed3139fb
+      portIndex: 0
+    inputPort:
+      nodeId: 85cbc158-60ca-4dd7-81e8-4cdc1a9928af
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -774,7 +968,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 9afdccc3ac98a37499230ca00e98343c, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030856
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1084,7 +1278,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 4c4c6035edaaf2d4bb955298330a5011, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030904
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1364,7 +1558,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 76586a0dfa29abc40a1b525e7fd1b96b, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030919
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1454,8 +1648,8 @@ MonoBehaviour:
         guid: 19c5323f-1c68-46f7-9f4c-09165bf5d314
         position:
           serializedVersion: 2
-          x: 12911
-          y: 2228
+          x: 12984
+          y: 2217
           width: 258
           height: 122
         typeName: CodeGraph.BooleanConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -1779,9 +1973,9 @@ MonoBehaviour:
         guid: 67ae40e9-e0c5-4521-9fa8-22f55a5edc08
         position:
           serializedVersion: 2
-          x: 2245
-          y: -1118
-          width: 321
+          x: 2477
+          y: -1222
+          width: 539
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1800,9 +1994,9 @@ MonoBehaviour:
         guid: c952124f-3092-4ce3-aa61-e5f26b7eb1a7
         position:
           serializedVersion: 2
-          x: 2905
-          y: -1118
-          width: 321
+          x: 3055
+          y: -1222
+          width: 426
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -1813,27 +2007,6 @@ MonoBehaviour:
         LeftText: I want to stay here
         RightText: We will try again
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
-    - rid: 1812450603089526787
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 8bd9157d-1ab3-445d-af66-33f87e02e36a
-        position:
-          serializedVersion: 2
-          x: 3493
-          y: -1118
-          width: 321
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: 'Time always gives a second chance. Just make sure to keep trying
-          if you still want to achieve your goal!
-
-'
-        LeftText: "We will beat the clock\r"
-        RightText: "We will get to the eternal summer!\r"
-        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
     - rid: 1812450603089526791
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1854,3 +2027,319 @@ MonoBehaviour:
         LeftText: Of course I can drive
         RightText: I thought biggie could
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450628146823170
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f6ba359e-500f-4154-80a1-ffa1ad558a52
+        position:
+          serializedVersion: 2
+          x: 2052
+          y: -1134
+          width: 292
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
+    - rid: 1812450628146823171
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7b19b20b-d887-47e2-8b62-4bf01525fdf2
+        position:
+          serializedVersion: 2
+          x: 3594
+          y: -1222
+          width: 563
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Time always gives a second chance. Just make sure to keep trying
+          if you still want to achieve your goal!
+        LeftText: '[Restart] We will beat the clock'
+        RightText: '[Back to menu] We will eventually get to the eternal summer!'
+        card: {fileID: 11400000, guid: 6940c74feec6342488ee116dfb8b81b1, type: 2}
+    - rid: 1812450628146823172
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f2d7af72-bb73-4a2d-8883-81bedf37a4ac
+        position:
+          serializedVersion: 2
+          x: 4251.8374
+          y: -1042.13
+          width: 0
+          height: 0
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823173
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 48b77a6a-3319-4b16-be7e-70ae2d1dde91
+        position:
+          serializedVersion: 2
+          x: 4240
+          y: -1222
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823175
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 06365b1b-4589-4492-a741-d248bc3295f4
+        position:
+          serializedVersion: 2
+          x: 4308
+          y: 2952
+          width: 0
+          height: 0
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
+    - rid: 1812450628146823176
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: df418ec8-466e-4f5c-ba45-96b0874c8cfd
+        position:
+          serializedVersion: 2
+          x: 4756
+          y: 2952
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Fuck, we can't have lost to this guy.
+        LeftText: '[Restart] We are coming after him'
+        RightText: '[Back to menu] I wasn''t motivated enough'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450628146823177
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 633f2dba-b6a7-48df-b5a8-f836812a6610
+        position:
+          serializedVersion: 2
+          x: 5267
+          y: 2931
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823178
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: addfc080-a04c-4335-a231-820b7346ecac
+        position:
+          serializedVersion: 2
+          x: 5275.452
+          y: 3080.1025
+          width: 0
+          height: 0
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823179
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 0c24b4b7-642e-415e-9d74-6f234429c37d
+        position:
+          serializedVersion: 2
+          x: 6188.4033
+          y: 3046.7869
+          width: 0
+          height: 0
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
+    - rid: 1812450628146823180
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 38ccd2d2-1c32-4260-b474-08b8f21d7f1f
+        position:
+          serializedVersion: 2
+          x: 6636
+          y: 3047
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: We better try to play as many games as possible, this way we will
+          have more cards to play with!
+        LeftText: '[Restart] Ok, I''m trying now'
+        RightText: '[Back to menu] Ok, maybe next time'
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450628146823181
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e86426c0-0204-4ac1-883f-3a2fb1c32de8
+        position:
+          serializedVersion: 2
+          x: 7305
+          y: 3047
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823182
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f490039e-3ce1-423a-906c-b651774c7975
+        position:
+          serializedVersion: 2
+          x: 7324.8374
+          y: 3274.1394
+          width: 0
+          height: 0
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823183
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 0345a932-8e0c-4c7d-90ef-b8db425d5f9f
+        position:
+          serializedVersion: 2
+          x: 10098
+          y: 3601
+          width: 358
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Well, we lost agains a... dog?! They were a cool one though
+        LeftText: '[Restart] Reguau!'
+        RightText: '[Back to menu] Menughrrrr'
+        card: {fileID: 11400000, guid: 84fb4433ef5173440a7e836a8da5dab0, type: 2}
+    - rid: 1812450628146823184
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a69b7615-facd-46c1-951e-081efc6e413f
+        position:
+          serializedVersion: 2
+          x: 9670
+          y: 3601
+          width: 292
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
+    - rid: 1812450628146823185
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2eb686d0-185c-475f-9514-d39a1d42ffcb
+        position:
+          serializedVersion: 2
+          x: 10600
+          y: 3588
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823186
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cd0058ab-2391-49f3-b988-a83ad8dbd424
+        position:
+          serializedVersion: 2
+          x: 10607.772
+          y: 3777.06
+          width: 0
+          height: 0
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823188
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 16aa728a-38f7-4850-9d5a-7473c667fdad
+        position:
+          serializedVersion: 2
+          x: 12876
+          y: 2831
+          width: 321
+          height: 266
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: Well, this was a tough one and we were so close to get to fix our
+          van!
+        LeftText: '[Restart] Let''s come back'
+        RightText: '[Back to menu] I need time to reflect'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 1812450628146823189
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9c88dabd-89f3-4836-85cf-57ca6ad8ca44
+        position:
+          serializedVersion: 2
+          x: 13358
+          y: 2831
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823190
+      type: {class: MenuNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: adba3a5c-10b3-48e2-9c12-2b928ab3cf22
+        position:
+          serializedVersion: 2
+          x: 13358
+          y: 2947
+          width: 86
+          height: 77
+        typeName: CodeGraph.MenuNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450628146823191
+      type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 76543417-32b6-4586-bd5e-4e71d318c418
+        position:
+          serializedVersion: 2
+          x: 12461
+          y: 2810
+          width: 346
+          height: 98
+        typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        NewZone: {fileID: 11400000, guid: 9750a3bf361024a46b1ded3435a08f23, type: 2}
+    - rid: 1812450628146823192
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 85cbc158-60ca-4dd7-81e8-4cdc1a9928af
+        position:
+          serializedVersion: 2
+          x: 15455
+          y: -2022
+          width: 74
+          height: 77
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
