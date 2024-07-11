@@ -48,7 +48,7 @@ MonoBehaviour:
   - FoldersName: 1
     EventName: CombatSounds
   - FoldersName: 0
-    EventName: Extra1
+    EventName: Light
   - FoldersName: 1
     EventName: IndexDIalogue
   - FoldersName: 1
