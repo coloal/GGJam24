@@ -49,8 +49,10 @@ public class TutorialInfoTemplate : ScriptableObject
     [SerializeField] private List<string> playerTrippingInfluence;
     [SerializeField] private List<string> playerTrippingInfluence_1;
     [SerializeField] private List<string> playerTrippingInfluence_2;
+    [SerializeField] private List<string> playerTrippingFinal;
+    [SerializeField] private List<string> playerTrippingFinal_1;
+    [SerializeField] private List<string> playerTrippingFinal_2;
 
-   
 
 
     public List<string> InitialConversation => initialConversation;
@@ -97,5 +99,10 @@ public class TutorialInfoTemplate : ScriptableObject
     public List<string> PlayerTrippingInfluence => playerTrippingInfluence;
     public List<string> PlayerTrippingInfluence_1 => playerTrippingInfluence_1;
     public List<string> PlayerTrippingInfluence_2 => playerTrippingInfluence_2;
+
+    public List<string> PlayerTrippingFinal => playerTrippingFinal;
+    public List<string> PlayerTrippingFinal_1 => playerTrippingFinal_1;
+    public List<string> PlayerTrippingFinal_2 => playerTrippingFinal_2;
+
 
 }

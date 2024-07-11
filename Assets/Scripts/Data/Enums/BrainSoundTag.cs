@@ -28,6 +28,7 @@ public enum MusicZones
     SquareTown = 2,
     GasStation = 3,
     Credits = 4,
+    GameOver = 5,
 
     //Campfire,
     //Prueba

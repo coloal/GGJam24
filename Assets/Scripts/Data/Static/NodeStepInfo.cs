@@ -61,3 +61,12 @@ public class EndStep : StepInfo
 {
  
 }
+
+public class MenuStep : StepInfo
+{
+
+}
+public class RestartStep : StepInfo
+{
+
+}

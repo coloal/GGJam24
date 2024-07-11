@@ -617,7 +617,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        combatCard: {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
+        combatCard: {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
     - rid: 1812450504952774683
       type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
       data:
@@ -632,7 +632,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        combatCard: {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
+        combatCard: {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
     - rid: 1812450504952774684
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -685,7 +685,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        combatCard: {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+        combatCard: {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
     - rid: 1812450504952774687
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
