@@ -235,12 +235,14 @@ public class TossCoinState : CombatState
                 if (enemyCombatCard != null)
                 {
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                        .PlayReturnCardToDeck(enemyCombatCard, combatContext.enemyOnCombatCardOriginalPosition);
+                        .PlayReturnCardToDeck(
+                            cardToReturn: enemyCombatCard,
+                            deckTransform: combatContext.enemyDeck.transform
+                        );
                     if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
                     {
                         return;
                     }
-
                     enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
                     enemyCombatCard.gameObject.SetActive(false);
                 }
