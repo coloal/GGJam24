@@ -15,5 +15,5 @@ MonoBehaviour:
   NameOfCard: Michael Woo
   Text: aka. Maik Combat programmer
   LeftText: El del gorro de productor
-  RightText: '"Muchachos, toca unas cerves"'
+  RightText: '"Muchachos, cuando unas cerves pues"'
   CharacterSprite: {fileID: 21300000, guid: b5753c647451c49cbb37d0fcd29760be, type: 3}
