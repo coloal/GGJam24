@@ -109,10 +109,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Alberto - Narrative Design
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: cfd8ae914a20f6349a3aece35b7e9bac, type: 2}
+        CardText: "Adri\xE1n description"
+        LeftText: "Adri\xE1n Left"
+        RightText: "Adri\xE1n Right"
+        card: {fileID: 11400000, guid: dc178df2d8a3f4d638ba2b1c825d0c44, type: 2}
     - rid: 4179187765362819076
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -127,13 +127,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'Alvaro - Combat Design & Art
-
-          Quien quiere un perro
-          /gato pudiendo tener un Mudkip'
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
+        CardText: Alberto description
+        LeftText: Alberto Left
+        RightText: Alberto Right
+        card: {fileID: 11400000, guid: 499f1a98fab004a08bbc072e22eadde7, type: 2}
     - rid: 4179187765362819077
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -148,10 +145,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Lucia - Combat Design & Art
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
+        CardText: "\xC1lvaro description"
+        LeftText: "\xC1lvaro Left"
+        RightText: "\xC1lvaro Right"
+        card: {fileID: 11400000, guid: f9c66a3d25fda4af29e239c79e7a730a, type: 2}
     - rid: 4179187765362819079
       type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -181,28 +178,28 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Aquaxtic - Art
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
+        CardText: "F\xE9lix description"
+        LeftText: "F\xE9lix Left"
+        RightText: "F\xE9lix Right"
+        card: {fileID: 11400000, guid: f9df099a26c034a99a199500c7a72dd6, type: 2}
     - rid: 4179187765362819081
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 3c040294-e7f6-450a-a5c0-e663f8ea9608
         position:
           serializedVersion: 2
-          x: 1413.6
-          y: -65.600006
-          width: 322.40002
-          height: 240.79999
+          x: 1413.5
+          y: -67
+          width: 358.5
+          height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
+        CardText: "Luc\xEDa description"
+        LeftText: "Luc\xEDa Left"
+        RightText: "Luc\xEDa Right"
+        card: {fileID: 11400000, guid: 71c7b6b6c699b476883fabea0c86a56d, type: 2}
     - rid: 4179187765362819082
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -217,10 +214,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
+        CardText: Michael description
+        LeftText: Michael Left
+        RightText: Michael Right
+        card: {fileID: 11400000, guid: bc3a4a24e14f94e2f8966c77660ed46c, type: 2}
     - rid: 4179187765362819083
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -235,10 +232,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
+        CardText: Omar description
+        LeftText: Omar Left
+        RightText: Omar Right
+        card: {fileID: 11400000, guid: 5546946e8bdeb4d62a69d17b932769db, type: 2}
     - rid: 4179187765362819084
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -253,10 +250,10 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 
-        LeftText: 
-        RightText: 
-        card: {fileID: 11400000, guid: c2fef61067b0e744b9df9ea1f5b4676b, type: 2}
+        CardText: Yamila description
+        LeftText: Yamila Left
+        RightText: Yamila Right
+        card: {fileID: 11400000, guid: cc8f701b6210c4b59b56b58b2f7d82cd, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098e0dbc12585214d9eba18b9b144f9f, type: 3}
   m_Name: ZoneCredits
   m_EditorClassIdentifier: 
-  storyBackgroundSprite: {fileID: 21300000, guid: 2a80f9111a5765c479228843760e4fde, type: 3}
+  storyBackgroundSprite: {fileID: 0}
   storyMusicZone: 4
   zoneTransition: {fileID: 2504118667978227075, guid: 6f3b74162e1c22646a5846aaa13b6270, type: 3}
   combatTransition: {fileID: 2882176000549395747, guid: a129cdbd2d109427eaaa8390ea3e6088, type: 3}

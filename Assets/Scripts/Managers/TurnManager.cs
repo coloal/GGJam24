@@ -175,7 +175,11 @@ public class TurnManager : MonoBehaviour
 
     public void SetZoneSprites()
     {
-        background.sprite = GameManager.Instance.ProvideBrainManager().ZoneInfo.StoryBackgroundSprite;
+        Sprite zoneBackgroundSprite = GameManager.Instance.ProvideBrainManager().ZoneInfo.StoryBackgroundSprite;
+        if (zoneBackgroundSprite != null)
+        {
+            background.sprite = zoneBackgroundSprite;
+        }
     }
 
     public void SwipeLeft()
