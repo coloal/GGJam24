@@ -185,6 +185,10 @@ public class TurnManager : MonoBehaviour
         {
             background.material = GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneMaterial;
         }
+        else
+        {
+            background.material = null;
+        }
     }
 
     public void SwipeLeft()
