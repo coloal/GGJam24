@@ -19,7 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
-  ShowHintsTimeInSeconds: 0.5
+  OnStartConversation:
+  - You know the deal.
+  OnWinConversation:
+  - Choose one, youngster.
+  OnLoseConversation:
+  - That was easy. Heh.
+  ShowHintsTimeInSeconds: 0.7

@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
-  ShowHintsTimeInSeconds: 0.4
+  OnStartConversation:
+  - Woof woof! *wink*
+  OnWinConversation:
+  - You got me baby, take one
+  OnLoseConversation:
+  - '%I AM A SUPERSTAR%'
+  ShowHintsTimeInSeconds: 0.8

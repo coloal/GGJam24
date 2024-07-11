@@ -17,4 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  OnStartConversation:
+  - "Let\xB4s dance"
+  OnWinConversation:
+  - You were good there, here, take one.
+  OnLoseConversation:
+  - '%Dads, I won!!%'
   ShowHintsTimeInSeconds: 1

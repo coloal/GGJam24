@@ -20,7 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
-  ShowHintsTimeInSeconds: 0.4
+  OnStartConversation:
+  - The game is on
+  OnWinConversation:
+  - "Ok, ok. I\xB4ll make my part of the deal."
+  OnLoseConversation:
+  - You are too immature for this, kid.
+  ShowHintsTimeInSeconds: 0.7
