@@ -1320,7 +1320,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 4b9ed45977b21dd44940012f06c909b0, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450529966030877
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1739,7 +1739,7 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 904fe4365ec17424ebc951013327acf9, type: 2}
-        IsBossFight: 0
+        IsBossFight: 1
     - rid: 1812450555419688985
       type: {class: BooleanConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1965,7 +1965,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: 5ee722b1bd2d9c9419ce111a2b2c4430, type: 2}
+        enemy: {fileID: 11400000, guid: 56ff79a8bdf388e4b824e869cbc875e2, type: 2}
         IsBossFight: 0
     - rid: 1812450555419689002
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CreditsOmar
   m_EditorClassIdentifier: 
   NameOfCard: Omar Miranda
-  Text: 
-  LeftText: 
-  RightText: 
+  Text: Musician Sound designer
+  LeftText: Adicto a componer siempre un tema mas
+  RightText: "\"\xA1Que pasa, tron!\""
   CharacterSprite: {fileID: 21300000, guid: 52e85f3e9e77b4af6bb2d38cb00912c8, type: 3}

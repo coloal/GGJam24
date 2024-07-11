@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - I am gonna crush you!
+  OnWinConversation:
+  - '%Where is my sweetie?! Waahh!%'
+  OnLoseConversation:
+  - Sweet revenge.
   ShowHintsTimeInSeconds: 0.7
