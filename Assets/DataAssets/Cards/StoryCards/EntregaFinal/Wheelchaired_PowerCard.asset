@@ -16,4 +16,4 @@ MonoBehaviour:
   Text: 
   LeftText: 
   RightText: 
-  CharacterSprite: {fileID: 21300000, guid: 110d895ee2fa94a5f8dd713b4252f1e2, type: 3}
+  CharacterSprite: {fileID: 21300000, guid: d410270399f4d6d4dacfd5ff16c582c4, type: 3}
