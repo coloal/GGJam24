@@ -230,13 +230,13 @@ public class TutorialManager : MonoBehaviour
                 text = tutorialInfo.PlayerTrippingInfluence_2;
                 break;
             case 12:
-                text = tutorialInfo.PlayerTrippingViolence;
+                text = tutorialInfo.PlayerTrippingFinal;
                 break;
             case 13:
-                text = tutorialInfo.PlayerTrippingViolence_1;
+                text = tutorialInfo.PlayerTrippingFinal_1;
                 break;
             case 14:
-                text = tutorialInfo.PlayerTrippingViolence_2;
+                text = tutorialInfo.PlayerTrippingFinal_2;
                 break;
         }
         DialogManager.SceneDialog.CreateDialog(text, onFinishConversation);
