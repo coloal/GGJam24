@@ -11,6 +11,7 @@ public class SplashScreenManager : BaseSceneManager
     [SerializeField] private float secondsBeforeStartingMainMenuScene = 1.0f;
     [SerializeField] private Animator mainMenuAnimation;
     [SerializeField] private Image gameLogo;
+    [SerializeField] private GameObject button;
 
     private bool hasFinishedLoading = false;
     private bool hasFinishedLastCicle = false;
@@ -19,6 +20,7 @@ public class SplashScreenManager : BaseSceneManager
     private bool faseOneHasFinished = false;
     private float faseOneTime = 2;
     private bool faseTwoHasFinished = false;
+    private bool hasStarted = false;
     private float faseTwoTime = 4;
     private float lastCicleSign = 0;
 
@@ -27,7 +29,7 @@ public class SplashScreenManager : BaseSceneManager
 
     async void Start()
     {
-        StartCoroutine(LoadSplash());
+        gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, 0);
     }
 
     private void Update()
@@ -65,28 +67,37 @@ public class SplashScreenManager : BaseSceneManager
             }
         }
 
-        if(!hasFinishedLastCicle)
+        if (hasStarted) 
         {
-            if (hasFinishedTemporizer)
+            if (!hasFinishedLastCicle)
             {
-                if(Mathf.Sign(Mathf.Sin(Time.time*3)) != lastCicleSign)
+                if (hasFinishedTemporizer)
                 {
-                    hasFinishedLastCicle=true;
+                    if (Mathf.Sign(Mathf.Sin(Time.time * 3)) != lastCicleSign)
+                    {
+                        hasFinishedLastCicle = true;
+                    }
                 }
+                gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, Mathf.Abs(Mathf.Sin(Time.time * 3)));
             }
-            gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, Mathf.Abs(Mathf.Sin(Time.time*3)));
+            else if (!HasInitialize)
+            {
+                HasInitialize = true;
+                gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, 0);
+                Initializate();
+            }
         }
-        else if(!HasInitialize)
-        {
-            HasInitialize = true;
-            gameLogo.color = new Vector4(gameLogo.color.r, gameLogo.color.g, gameLogo.color.b, 0);
-            Initializate();
-        }
+        
 
     }
 
 
-    
+    public void StartGame() 
+    {
+        hasStarted = true;
+        button.SetActive(false);
+        StartCoroutine(LoadSplash());
+    }
 
     IEnumerator LoadSplash()
     {
