@@ -22,15 +22,6 @@ public class PickEnemyCardState : CombatState
 
     public async override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
-        // Play draw a card from enemy deck
-        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-            .PlayEnemyDrawCardFromDeck(
-                enemyDeck: combatContext.enemyDeck
-            );
-        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
-        {
-            return;
-        }
         await PickAnEnemyCard(combatContext);
     }
 
@@ -40,6 +31,17 @@ public class PickEnemyCardState : CombatState
         
         CombatCard enemyCombatCard = enemyDeckManager.DrawCardFromDeckToHand();
         enemyDeckManager.PutCardFromHandToCombatZone(enemyCombatCard);
+
+        // Play draw a card from enemy deck
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayEnemyDrawCardFromDeck(
+                enemyDeck: combatContext.enemyDeck
+            );
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
+        
         combatContext.enemyOnCombatCard = enemyCombatCard.gameObject;
         
         enemyCombatCard.gameObject.SetActive(true);

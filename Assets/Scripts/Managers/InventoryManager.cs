@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
     public static InventoryManager GameInventory => GameManager.Instance.ProvideInventoryManager();
     [SerializeField]
-    private int deckSize = 8;
+    private int deckSize = 50;
     private List<CombatCardTemplate> cardsVault;
     private List<CombatCardTemplate> deck;
 

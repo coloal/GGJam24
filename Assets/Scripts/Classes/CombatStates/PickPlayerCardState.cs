@@ -30,11 +30,9 @@ public class PickPlayerCardState : CombatState
     public override void Preprocess(CombatManager.CombatContext combatContext)
     {
         // Only execute the Notebook-related logic when not in a combat tutorial
-        
-            CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
-            CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayShowNotebookButton();    
-        
+        CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
+        CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayShowNotebookButton();
     }
 
     private void BlockCards(CombatManager.CombatContext combatContext)
