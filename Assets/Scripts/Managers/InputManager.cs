@@ -38,6 +38,11 @@ public class InputManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport.Enable();
+    }
+
     void OnClick()
     {
         clickedPosition = mousePosition;
@@ -62,6 +67,9 @@ public class InputManager : MonoBehaviour
         onMoveEvent = null;
     }
 
-
+    public bool IsASingleTouchEvent()
+    {
+        return UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count == 1;
+    }
 
 }

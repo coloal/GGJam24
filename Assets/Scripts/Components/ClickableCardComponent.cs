@@ -36,7 +36,7 @@ public class ClickableCardComponent : MonoBehaviour
 
     void OnClick()
     {
-        if (!isClicking)
+        if (!isClicking && GameManager.Instance.ProvideInputManager().IsASingleTouchEvent())
         {
             isClicking = true;
         }
@@ -44,7 +44,10 @@ public class ClickableCardComponent : MonoBehaviour
 
     void OnMove(Vector2 cursorPosition)
     {
-        clickPosition = cursorPosition;
+        if (!isClicking && GameManager.Instance.ProvideInputManager().IsASingleTouchEvent())
+        {
+            clickPosition = cursorPosition;
+        }
     }
 
     void OnRelease()
