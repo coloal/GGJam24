@@ -53,6 +53,8 @@ MonoBehaviour:
     EventName: IndexDIalogue
   - FoldersName: 1
     EventName: Hey
+  - FoldersName: 1
+    EventName: Pages
   - FoldersName: 2
     EventName: Menu
   - FoldersName: 2
