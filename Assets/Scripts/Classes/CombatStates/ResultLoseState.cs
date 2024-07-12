@@ -36,7 +36,10 @@ public class ResultLoseState : CombatState
                 PostProcess(combatContext);
             });
         }
-        PostProcess(combatContext);
+        else
+        {
+            PostProcess(combatContext);
+        }
     }
 
     async Task ReturnPlayerCardsFromHandToDeck(CombatManager.CombatContext combatContext)
