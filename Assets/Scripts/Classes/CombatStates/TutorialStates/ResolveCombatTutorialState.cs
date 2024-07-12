@@ -170,7 +170,6 @@ public class ResolveCombatTutorialState : ResolveCombatState
         Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartWinExplanation(() =>
         {
-            
             exited = true;
             Debug.LogError("La cond es " + exited);
         });
@@ -311,12 +310,21 @@ public class ResolveCombatTutorialState : ResolveCombatState
         {
             return null;
         }
-        Task WaitForConversation = new Task(() => { });
+
+        bool exited = false;
+        Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartLoseExplanation(() =>
         {
-            WaitForConversation.Start();
+            exited = true;
+            Debug.LogError("La cond es " + exited);
         });
-        await WaitForConversation;
+
+        while (!exited)
+        {
+            Debug.LogError("Esperando, cond: " + exited);
+            await Task.Yield();
+        }
+        
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
             return null;

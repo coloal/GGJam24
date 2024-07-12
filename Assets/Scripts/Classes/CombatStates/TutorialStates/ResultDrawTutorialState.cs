@@ -43,12 +43,21 @@ public class ResultDrawTutorialState : ResultDrawState
         {
             return;
         }
-        Task WaitForConversation = new Task(() => { });
+
+        bool exited = false;
+        Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartDrawExplanation(() =>
         {
-            WaitForConversation.Start();
+            exited = true;
+            Debug.LogError("La cond es " + exited);
         });
-        await WaitForConversation;
+
+        while (!exited)
+        {
+            Debug.LogError("Esperando, cond: " + exited);
+            await Task.Yield();
+        }
+
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
             return;

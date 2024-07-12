@@ -32,12 +32,21 @@ public class ResultWinTutorialState : ResultWinState
         {
             return;
         }
-        Task wait = new Task(() => { });
+
+        bool exited = false;
+        Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartBattleResultExplanation(() =>
         {
-            wait.Start();
+            exited = true;
+            Debug.LogError("La cond es " + exited);
         });
-        await wait;
+
+        while (!exited)
+        {
+            Debug.LogError("Esperando, cond: " + exited);
+            await Task.Yield();
+        }
+
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
             return;
