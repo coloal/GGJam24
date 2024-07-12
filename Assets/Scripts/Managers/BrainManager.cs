@@ -57,6 +57,7 @@ public class BrainManager : MonoBehaviour
     {
         zoneInfo = defaultZoneInfo;
         InitializeData();
+        isTutorial = true;
     }
 
     public void InitializeData()
