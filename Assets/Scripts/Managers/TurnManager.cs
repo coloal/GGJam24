@@ -131,6 +131,7 @@ public class TurnManager : MonoBehaviour
             {
                 GameManager.Instance.ProvideSoundManager().StopLevelMusic();
                 GameManager.Instance.SetHasAStoryStarted(false);
+                GameManager.Instance.ResetGame();
 
                 GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.CreditsMenuScene);
                 //SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
@@ -139,6 +140,7 @@ public class TurnManager : MonoBehaviour
             {
                 GameManager.Instance.ProvideSoundManager().StopCreditsMusic();
                 GameManager.Instance.SetHasAStoryStarted(false);
+                GameManager.Instance.ResetGame();
 
                 GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.MainMenuScene);
 
