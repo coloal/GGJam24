@@ -40,7 +40,9 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
+#if UNITY_ANDROID
         UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport.Enable();
+#endif
     }
 
     void OnClick()
@@ -69,7 +71,11 @@ public class InputManager : MonoBehaviour
 
     public bool IsASingleTouchEvent()
     {
+#if UNITY_ANDROID
         return UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count == 1;
+#else
+        return true;
+#endif
     }
 
 }
