@@ -96,6 +96,7 @@ public class SplashScreenManager : BaseSceneManager
     {
         hasStarted = true;
         button.SetActive(false);
+        gameLogo.gameObject.SetActive(true);
         StartCoroutine(LoadSplash());
     }
 
