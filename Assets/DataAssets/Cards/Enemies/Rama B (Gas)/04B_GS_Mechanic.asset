@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
   OnStartConversation:
-  - In this world everything is settled with a battle of Wealth, Violence and Power,
-    you should know that.
+  - In this world everything is settled with a battle of <b>Wealth, Violence and
+    Influence</b>, you should know that.
   OnWinConversation:
   - The mechanic's word is debt. Let's take a look at that caravan!
   OnLoseConversation:
