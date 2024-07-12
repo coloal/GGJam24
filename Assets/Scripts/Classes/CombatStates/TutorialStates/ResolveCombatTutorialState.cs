@@ -167,21 +167,18 @@ public class ResolveCombatTutorialState : ResolveCombatState
         }
 
         bool exited = false;
-        Debug.LogError("Llegado al punto critico");
+        
         TutorialManager.SceneTutorial.StartWinExplanation(() =>
         {
             exited = true;
-            Debug.LogError("La cond es " + exited);
         });
 
         while (!exited)
         {
-            Debug.LogError("Esperando, cond: " + exited);
             await Task.Yield();
         }
         
 
-        Debug.LogError("Salido del punto critico");
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         { 
             return null;
@@ -312,16 +309,13 @@ public class ResolveCombatTutorialState : ResolveCombatState
         }
 
         bool exited = false;
-        Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartLoseExplanation(() =>
         {
             exited = true;
-            Debug.LogError("La cond es " + exited);
         });
 
         while (!exited)
         {
-            Debug.LogError("Esperando, cond: " + exited);
             await Task.Yield();
         }
         

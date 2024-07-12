@@ -222,13 +222,13 @@ public class TutorialManager : MonoBehaviour
                 text = tutorialInfo.PlayerTrippingMoney_2;
                 break;
             case 9:
-                text = tutorialInfo.PlayerTrippingInfluence;
+                text = tutorialInfo.PlayerTrippingFinal;
                 break;
             case 10:
-                text = tutorialInfo.PlayerTrippingInfluence_1;
+                text = tutorialInfo.PlayerTrippingFinal_1;
                 break;
             case 11:
-                text = tutorialInfo.PlayerTrippingInfluence_2;
+                text = tutorialInfo.PlayerTrippingFinal_2;
                 break;
             case 12:
                 text = tutorialInfo.PlayerTrippingFinal;
