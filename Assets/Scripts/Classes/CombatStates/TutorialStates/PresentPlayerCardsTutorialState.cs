@@ -8,6 +8,7 @@ using UnityEngine.Assertions;
 
 public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
 {
+    bool hasPressed = false;
     protected override EnemyDeckManager GetEnemyDeck()
     {
         return TutorialManager.SceneTutorial.EnemyDeck;
@@ -32,6 +33,8 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
 
     public void NoteBookHell()
     {
+        if (hasPressed) return;
+        hasPressed = true;
         GameManager.Instance.ProvideInputManager().onClickEvent -= NoteBookHell;
         CombatSceneManager.Instance.NotebookComponent.ToggleNotebookTutorial();
         CombatSceneManager.Instance.ProvideCombatFeedbacksManager()

@@ -94,6 +94,7 @@ public class NotebookComponent : MonoBehaviour
     {
         if (!isNotebookShown)
         {
+            isNotebookShown = true;
             notebook.SetActive(true);
             await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayShowNotebook(
@@ -101,10 +102,7 @@ public class NotebookComponent : MonoBehaviour
                     destination: notebookDestinationPosition,
                     backgroundAplha: notebookActiveBackgroungAlpha
                 );
-            if (this != null && !destroyCancellationToken.IsCancellationRequested)
-            {
-                isNotebookShown = true;
-            }
+            
         }
     }
 
@@ -112,6 +110,7 @@ public class NotebookComponent : MonoBehaviour
     {
         if (isNotebookShown)
         {
+            isNotebookShown = false;
             await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayHideNotebook(
                     origin: notebookDestinationPosition,
@@ -120,7 +119,6 @@ public class NotebookComponent : MonoBehaviour
                 );
             if (this != null && !destroyCancellationToken.IsCancellationRequested)
             {
-                isNotebookShown = false;
                 notebook.SetActive(false);
             }
         }
