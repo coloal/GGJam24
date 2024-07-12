@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ResolveCombatTutorialState : ResolveCombatState
 {
+    
     protected override EnemyDeckManager GetEnemyDeck()
     {
         return TutorialManager.SceneTutorial.EnemyDeck;
@@ -164,14 +165,26 @@ public class ResolveCombatTutorialState : ResolveCombatState
         {
             return null;
         }
-        Task WaitForConversation = new Task(() => {});
+
+        bool exited = false;
+        Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartWinExplanation(() =>
         {
-            WaitForConversation.Start();
+            
+            exited = true;
+            Debug.LogError("La cond es " + exited);
         });
-        await WaitForConversation;
-        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+
+        while (!exited)
         {
+            Debug.LogError("Esperando, cond: " + exited);
+            await Task.Yield();
+        }
+        
+
+        Debug.LogError("Salido del punto critico");
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        { 
             return null;
         }
         await ReturnPlayerCardsInTieZoneToDeck(combatContext);

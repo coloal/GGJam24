@@ -148,8 +148,9 @@ MonoBehaviour:
   playerTrippingInfluence_2:
   - '%OK, I GOT IT..... YOU ARE INFLUENCELESS AND HAVE NO FRIENDS.%'
   playerTrippingFinal:
-  - '*NO*, this is not the card i said.'
+  - Do I really have to be telling you at this point what card to use, man?
   playerTrippingFinal_1:
-  - Are you *TRIPPING BRO*?
+  - Seriously, *ARE YOU KIDDING ME?*
   playerTrippingFinal_2:
-  - '%Lorem ipsu bla bla bla%'
+  - Well, remember what I said at the beginning about this being a card battle?
+  - '%WELL, IT''S NOT GOING TO HAVE THE CARD PART ANYMORE, ASSHOLE%'
