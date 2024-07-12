@@ -110,7 +110,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Sound programmer///System programmer
-        LeftText: Mas horas al Slay the Spire que al master
+        LeftText: Mas horas al Hollow Knight que al master
         RightText: '"Nooo, Omar, que hiciste con el FMod"'
         card: {fileID: 11400000, guid: dc178df2d8a3f4d638ba2b1c825d0c44, type: 2}
     - rid: 4179187765362819076
@@ -232,7 +232,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Musician Sound designer
+        CardText: Musician///Sound designer
         LeftText: Adicto a componer siempre un tema mas
         RightText: '"Que pasa, tron!"'
         card: {fileID: 11400000, guid: 5546946e8bdeb4d62a69d17b932769db, type: 2}

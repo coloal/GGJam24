@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b801ef9b0524ee1b32d207b4512c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyCardPrefab: {fileID: 3094801288635779489, guid: 0715680eb729f474f9d78bc378c7218e, type: 3}
+  storyCardPrefab: {fileID: 3094801288635779489, guid: 8539f6c61a35249b7a1016667e75f4a8, type: 3}
   cardsContainerTransform: {fileID: 1432889389}
   cardsSpawnerOrigin: {fileID: 607893389}
   cardsFinalPosition: {fileID: 1709173067}
