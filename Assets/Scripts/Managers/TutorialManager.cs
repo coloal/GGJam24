@@ -77,13 +77,14 @@ public class TutorialManager : MonoBehaviour
 
     public void StartWinExplanation(Action onFinishExplanation)
     {
-        StartConversationWithBlock(combatResultMask, tutorialInfo.WinExplanation, onFinishExplanation);
         TutorialCombatTurn++;
+        StartConversationWithBlock(combatResultMask, tutorialInfo.WinExplanation, onFinishExplanation);
+        
     }
     public void StartLoseExplanation(Action onFinishExplanation)
     {
-        StartConversationWithBlock(combatResultMask, tutorialInfo.LoseExplanation, onFinishExplanation);
         TutorialCombatTurn++;
+        StartConversationWithBlock(combatResultMask, tutorialInfo.LoseExplanation, onFinishExplanation);
     }
     public void StartDrawExplanation(Action onFinishExplanation)
     {
