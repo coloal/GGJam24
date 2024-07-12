@@ -98,6 +98,8 @@ MonoBehaviour:
   - rid: 1812450628146823190
   - rid: 1812450628146823191
   - rid: 1812450628146823192
+  - rid: 1812450632155267075
+  - rid: 1812450632155267076
   connections:
   - outputPort:
       nodeId: 1e6821a3-0422-4399-9799-ad1bd4598ac6
@@ -800,6 +802,18 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: 85cbc158-60ca-4dd7-81e8-4cdc1a9928af
+      portIndex: 0
+  - outputPort:
+      nodeId: ad631712-dc87-4661-8ccc-b26fdc91b888
+      portIndex: 1
+    inputPort:
+      nodeId: 65e6283e-2961-4ea6-9942-f47d7a47ebbb
+      portIndex: 0
+  - outputPort:
+      nodeId: 7875a564-ddd8-427c-aa75-96e72b8c02af
+      portIndex: 0
+    inputPort:
+      nodeId: f97031a6-e253-481b-ac3a-ee7a14d90427
       portIndex: 0
   references:
     version: 2
@@ -1920,15 +1934,15 @@ MonoBehaviour:
         guid: 7875a564-ddd8-427c-aa75-96e72b8c02af
         position:
           serializedVersion: 2
-          x: 10187
-          y: 2670
+          x: 10100
+          y: 2391
           width: 314
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Esta carta no deber\xEDa aparecer nunca"
+        CardText: 
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
@@ -2368,5 +2382,31 @@ MonoBehaviour:
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450632155267075
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 65e6283e-2961-4ea6-9942-f47d7a47ebbb
+        position:
+          serializedVersion: 2
+          x: 12279.545
+          y: -541.43146
+          width: 0
+          height: 0
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450632155267076
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: f97031a6-e253-481b-ac3a-ee7a14d90427
+        position:
+          serializedVersion: 2
+          x: 10481
+          y: 2391
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []

@@ -122,6 +122,9 @@ MonoBehaviour:
   - rid: 1812450626248638503
   - rid: 1812450626248638504
   - rid: 1812450628146823169
+  - rid: 1812450632155267072
+  - rid: 1812450632155267073
+  - rid: 1812450632155267074
   connections:
   - outputPort:
       nodeId: 3f2660b8-8d43-4c6e-8798-948a8724b75a
@@ -897,6 +900,24 @@ MonoBehaviour:
     inputPort:
       nodeId: 2ea55696-6e82-4281-b274-ba806fe6d423
       portIndex: 1
+  - outputPort:
+      nodeId: 97ba6eda-2574-4829-a5e8-43d34d447761
+      portIndex: 0
+    inputPort:
+      nodeId: 6265a9ca-64fa-499e-a44b-7f20de0a2391
+      portIndex: 0
+  - outputPort:
+      nodeId: 55a3f6ca-a394-40b4-9617-7830d9974bcf
+      portIndex: 0
+    inputPort:
+      nodeId: 95f4786e-bdbe-4446-8f43-8586a88bfb51
+      portIndex: 0
+  - outputPort:
+      nodeId: 2a66b026-2e66-43f7-8ce4-bec81d8284d4
+      portIndex: 0
+    inputPort:
+      nodeId: 5214d782-c3cf-462d-a021-b7160170d449
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -1684,7 +1705,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: No puedes tener el carnet de conducir si ya pasaste por la gasolinera
+        CardText: 
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
@@ -1774,15 +1795,15 @@ MonoBehaviour:
         guid: 55a3f6ca-a394-40b4-9617-7830d9974bcf
         position:
           serializedVersion: 2
-          x: 19411
-          y: 1170
-          width: 372
+          x: 19314
+          y: 1455
+          width: 314
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Imposible haber pasado por Gas Station y no tener la van arreglada
+        CardText: 
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
@@ -1816,8 +1837,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: Es imposible que no tengas el carnet de conducir si te lo aaban
-          de dar
+        CardText: 
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: a87a1596a4a58eb4c97c7bd04c11f815, type: 2}
@@ -2871,5 +2891,44 @@ MonoBehaviour:
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450632155267072
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6265a9ca-64fa-499e-a44b-7f20de0a2391
+        position:
+          serializedVersion: 2
+          x: 14731
+          y: 1563
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450632155267073
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 95f4786e-bdbe-4446-8f43-8586a88bfb51
+        position:
+          serializedVersion: 2
+          x: 19675
+          y: 1455
+          width: 98
+          height: 77
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
+    - rid: 1812450632155267074
+      type: {class: RestartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 5214d782-c3cf-462d-a021-b7160170d449
+        position:
+          serializedVersion: 2
+          x: 20458.502
+          y: 1274.2001
+          width: 0
+          height: 0
+        typeName: CodeGraph.RestartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
