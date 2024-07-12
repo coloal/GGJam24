@@ -355,6 +355,7 @@ public class SoundManager : MonoBehaviour
         }
         if (EventMap.ContainsKey(eventName))
         {
+            EventMap[eventName].setParameterByName("ExitMenu", 0);
             EventMap[eventName].start();
         }
     }
