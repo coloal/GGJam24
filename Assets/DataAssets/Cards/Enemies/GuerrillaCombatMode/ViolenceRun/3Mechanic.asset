@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
+  m_Name: 3Mechanic
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 605515098, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  CombatCards:
+  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  OnStartConversation:
+  - The game is on
+  OnWinConversation:
+  - "Ok, ok. I\xB4ll make my part of the deal."
+  OnLoseConversation:
+  - You are too immature for this, kid.
+  ShowHintsTimeInSeconds: 0.7
