@@ -1,0 +1,650 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94c4f172bfa50d4a882e2a6d421c064, type: 3}
+  m_Name: LuciaCombat
+  m_EditorClassIdentifier: 
+  nodes:
+  - rid: 8580623337150218298
+  - rid: 4179187880975925250
+  - rid: 4179187880975925253
+  - rid: 4179187880975925254
+  - rid: 4179187880975925255
+  - rid: 4179187880975925256
+  - rid: 4179187880975925259
+  - rid: 4179187880975925260
+  - rid: 4179187880975925261
+  - rid: 4179187880975925262
+  - rid: 4179187880975925263
+  - rid: 4179187880975925266
+  - rid: 4179187880975925267
+  - rid: 4179187880975925268
+  - rid: 1623451173791727618
+  - rid: 3266203106832023552
+  - rid: 3266203106832023553
+  - rid: 3266203106832023554
+  - rid: 3266203106832023555
+  - rid: 3266203106832023556
+  - rid: 3266203106832023557
+  - rid: 3266203106832023558
+  - rid: 3266203106832023559
+  - rid: 3266203106832023560
+  connections:
+  - outputPort:
+      nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
+      portIndex: 0
+    inputPort:
+      nodeId: 838b2ea5-c98d-4b7f-a6b5-7045f09f047f
+      portIndex: 2
+  - outputPort:
+      nodeId: 838b2ea5-c98d-4b7f-a6b5-7045f09f047f
+      portIndex: 0
+    inputPort:
+      nodeId: 04cd5c2c-141e-40de-93de-09ace5408ed0
+      portIndex: 1
+  - outputPort:
+      nodeId: 04cd5c2c-141e-40de-93de-09ace5408ed0
+      portIndex: 0
+    inputPort:
+      nodeId: fc5880ca-3207-411d-8c95-adb260654c3b
+      portIndex: 2
+  - outputPort:
+      nodeId: fc5880ca-3207-411d-8c95-adb260654c3b
+      portIndex: 0
+    inputPort:
+      nodeId: 9bcc855f-d6ac-433c-8c48-16c8b57ac466
+      portIndex: 1
+  - outputPort:
+      nodeId: 9bcc855f-d6ac-433c-8c48-16c8b57ac466
+      portIndex: 0
+    inputPort:
+      nodeId: 7c584960-ea2d-423b-9fe5-8ad560e64b14
+      portIndex: 2
+  - outputPort:
+      nodeId: 7c584960-ea2d-423b-9fe5-8ad560e64b14
+      portIndex: 0
+    inputPort:
+      nodeId: d098d382-1fd3-4e55-95bd-7a3d061d3362
+      portIndex: 1
+  - outputPort:
+      nodeId: d098d382-1fd3-4e55-95bd-7a3d061d3362
+      portIndex: 0
+    inputPort:
+      nodeId: db25a7ac-738e-4ef6-b0a1-4db250ec3f03
+      portIndex: 2
+  - outputPort:
+      nodeId: db25a7ac-738e-4ef6-b0a1-4db250ec3f03
+      portIndex: 0
+    inputPort:
+      nodeId: 428f07a7-9b8c-4cc6-9491-29e594f39ec0
+      portIndex: 1
+  - outputPort:
+      nodeId: 428f07a7-9b8c-4cc6-9491-29e594f39ec0
+      portIndex: 0
+    inputPort:
+      nodeId: c4acf234-79fd-4f03-8bc4-cefea2b80ef6
+      portIndex: 2
+  - outputPort:
+      nodeId: c4acf234-79fd-4f03-8bc4-cefea2b80ef6
+      portIndex: 0
+    inputPort:
+      nodeId: c4e2eb98-2e5d-4ce2-9912-8ab9a1638320
+      portIndex: 1
+  - outputPort:
+      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
+      portIndex: 1
+    inputPort:
+      nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
+      portIndex: 1
+  - outputPort:
+      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
+      portIndex: 0
+    inputPort:
+      nodeId: 110f23cd-aed8-42c5-8010-baabac1db26f
+      portIndex: 2
+  - outputPort:
+      nodeId: 110f23cd-aed8-42c5-8010-baabac1db26f
+      portIndex: 0
+    inputPort:
+      nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
+      portIndex: 1
+  - outputPort:
+      nodeId: c4e2eb98-2e5d-4ce2-9912-8ab9a1638320
+      portIndex: 0
+    inputPort:
+      nodeId: 144338c6-106b-453a-870d-fa01e2ddc749
+      portIndex: 2
+  - outputPort:
+      nodeId: 144338c6-106b-453a-870d-fa01e2ddc749
+      portIndex: 0
+    inputPort:
+      nodeId: 2765f3be-cd01-466e-9cf5-437206538c93
+      portIndex: 1
+  - outputPort:
+      nodeId: 9eaf49ad-170b-48e0-98cd-bf00b627053f
+      portIndex: 0
+    inputPort:
+      nodeId: 212ab136-4fcf-465e-a7c5-dc4d9e21f579
+      portIndex: 1
+  - outputPort:
+      nodeId: 212ab136-4fcf-465e-a7c5-dc4d9e21f579
+      portIndex: 0
+    inputPort:
+      nodeId: 437963cd-19cb-4daf-90bf-ea19e6530c1b
+      portIndex: 2
+  - outputPort:
+      nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+      portIndex: 0
+    inputPort:
+      nodeId: 86729678-b4c6-419e-b198-14d2f3a795a9
+      portIndex: 1
+  - outputPort:
+      nodeId: 86729678-b4c6-419e-b198-14d2f3a795a9
+      portIndex: 0
+    inputPort:
+      nodeId: 3d5e6599-d3b4-4c38-9f96-1a544e55a941
+      portIndex: 1
+  - outputPort:
+      nodeId: 3d5e6599-d3b4-4c38-9f96-1a544e55a941
+      portIndex: 0
+    inputPort:
+      nodeId: b94a77db-688e-4834-9d6d-0d5e6129a82c
+      portIndex: 1
+  - outputPort:
+      nodeId: b94a77db-688e-4834-9d6d-0d5e6129a82c
+      portIndex: 0
+    inputPort:
+      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
+      portIndex: 2
+  - outputPort:
+      nodeId: 2765f3be-cd01-466e-9cf5-437206538c93
+      portIndex: 0
+    inputPort:
+      nodeId: 9eaf49ad-170b-48e0-98cd-bf00b627053f
+      portIndex: 2
+  - outputPort:
+      nodeId: 838b2ea5-c98d-4b7f-a6b5-7045f09f047f
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: fc5880ca-3207-411d-8c95-adb260654c3b
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: 7c584960-ea2d-423b-9fe5-8ad560e64b14
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: db25a7ac-738e-4ef6-b0a1-4db250ec3f03
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: c4acf234-79fd-4f03-8bc4-cefea2b80ef6
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: 144338c6-106b-453a-870d-fa01e2ddc749
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: 9eaf49ad-170b-48e0-98cd-bf00b627053f
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: 437963cd-19cb-4daf-90bf-ea19e6530c1b
+      portIndex: 1
+    inputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 1
+  - outputPort:
+      nodeId: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+      portIndex: 0
+    inputPort:
+      nodeId: 86729678-b4c6-419e-b198-14d2f3a795a9
+      portIndex: 1
+  - outputPort:
+      nodeId: 437963cd-19cb-4daf-90bf-ea19e6530c1b
+      portIndex: 0
+    inputPort:
+      nodeId: a0109f1b-aae7-450a-aba0-c5249ba158bd
+      portIndex: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 1623451173791727618
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 212ab136-4fcf-465e-a7c5-dc4d9e21f579
+        position:
+          serializedVersion: 2
+          x: 5982.4004
+          y: 204.8
+          width: 373.5996
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "8 \xBA round"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
+    - rid: 3266203106832023552
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 110f23cd-aed8-42c5-8010-baabac1db26f
+        position:
+          serializedVersion: 2
+          x: 133.59999
+          y: -262.4
+          width: 397.6
+          height: 139.2
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: e5e38af2ece62474097fb13e693038c1, type: 2}
+        IsBossFight: 0
+    - rid: 3266203106832023553
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 144338c6-106b-453a-870d-fa01e2ddc749
+        position:
+          serializedVersion: 2
+          x: 4597.6
+          y: 249.59999
+          width: 333.6001
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
+        IsBossFight: 0
+    - rid: 3266203106832023554
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9eaf49ad-170b-48e0-98cd-bf00b627053f
+        position:
+          serializedVersion: 2
+          x: 5572
+          y: 204.8
+          width: 334.4004
+          height: 139.20001
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
+        IsBossFight: 0
+    - rid: 3266203106832023555
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 437963cd-19cb-4daf-90bf-ea19e6530c1b
+        position:
+          serializedVersion: 2
+          x: 6416.8003
+          y: 196
+          width: 333.6001
+          height: 139.2
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: a7ca7b4318340a84a9bc8eaf209af3de, type: 2}
+        IsBossFight: 0
+    - rid: 3266203106832023556
+      type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: 86729678-b4c6-419e-b198-14d2f3a795a9
+        position:
+          serializedVersion: 2
+          x: -1100.8
+          y: -64
+          width: 444.8
+          height: 97.6
+        typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        combatCard: {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+    - rid: 3266203106832023557
+      type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: 3d5e6599-d3b4-4c38-9f96-1a544e55a941
+        position:
+          serializedVersion: 2
+          x: -840.8
+          y: 56.8
+          width: 336
+          height: 97.600006
+        typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        combatCard: {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
+    - rid: 3266203106832023558
+      type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
+      data:
+        guid: b94a77db-688e-4834-9d6d-0d5e6129a82c
+        position:
+          serializedVersion: 2
+          x: -727.2
+          y: 220.8
+          width: 454.40002
+          height: 97.600006
+        typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
+        combatCard: {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+    - rid: 3266203106832023559
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 1ad074e5-0e16-42a9-acc6-e079bba4b953
+        position:
+          serializedVersion: 2
+          x: 483.2
+          y: 637.6
+          width: 322.40002
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Try again
+
+'
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 3266203106832023560
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: a0109f1b-aae7-450a-aba0-c5249ba158bd
+        position:
+          serializedVersion: 2
+          x: 6832.8003
+          y: 196
+          width: 322.3999
+          height: 240.00002
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: YAY YOU WON
+        LeftText: 
+        RightText: 
+        card: {fileID: 0}
+    - rid: 4179187880975925250
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: aa147df4-7064-493d-90c7-ea2e6d72f205
+        position:
+          serializedVersion: 2
+          x: -272.8
+          y: -64
+          width: 362.4
+          height: 264
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: 'Tutorial??
+
+'
+        LeftText: Yes pls
+        RightText: No pls
+        card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
+    - rid: 4179187880975925253
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 838b2ea5-c98d-4b7f-a6b5-7045f09f047f
+        position:
+          serializedVersion: 2
+          x: 531.2
+          y: 271.19998
+          width: 334.40002
+          height: 139.20001
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
+        IsBossFight: 0
+    - rid: 4179187880975925254
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: fc5880ca-3207-411d-8c95-adb260654c3b
+        position:
+          serializedVersion: 2
+          x: 1327.2
+          y: 211.2
+          width: 332
+          height: 139.20001
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
+        IsBossFight: 0
+    - rid: 4179187880975925255
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7c584960-ea2d-423b-9fe5-8ad560e64b14
+        position:
+          serializedVersion: 2
+          x: 2102.4
+          y: 255.2
+          width: 333.6001
+          height: 139.20001
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
+        IsBossFight: 0
+    - rid: 4179187880975925256
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: db25a7ac-738e-4ef6-b0a1-4db250ec3f03
+        position:
+          serializedVersion: 2
+          x: 2872
+          y: 185.6
+          width: 334.3999
+          height: 139.2
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
+        IsBossFight: 0
+    - rid: 4179187880975925259
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2816cbda-8790-40e0-a58a-7ad2826a7b77
+        position:
+          serializedVersion: 2
+          x: 133.59999
+          y: 198.40001
+          width: 349.6
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "1\xBA ROUND"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 4179187880975925260
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 04cd5c2c-141e-40de-93de-09ace5408ed0
+        position:
+          serializedVersion: 2
+          x: 936
+          y: 211.2
+          width: 349.60004
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "2\xBA round\n"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 4179187880975925261
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 9bcc855f-d6ac-433c-8c48-16c8b57ac466
+        position:
+          serializedVersion: 2
+          x: 1716
+          y: 192
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "3 \xBA round"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 4179187880975925262
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d098d382-1fd3-4e55-95bd-7a3d061d3362
+        position:
+          serializedVersion: 2
+          x: 2473
+          y: 171
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "4 \xBA round"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 4179187880975925263
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c4acf234-79fd-4f03-8bc4-cefea2b80ef6
+        position:
+          serializedVersion: 2
+          x: 3701
+          y: 247
+          width: 300
+          height: 140
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
+        IsBossFight: 0
+    - rid: 4179187880975925266
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 2765f3be-cd01-466e-9cf5-437206538c93
+        position:
+          serializedVersion: 2
+          x: 5068
+          y: 204.8
+          width: 380
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "7 \xBA round"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: 2817ae8a520b26345824a70c5c69df99, type: 2}
+    - rid: 4179187880975925267
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 428f07a7-9b8c-4cc6-9491-29e594f39ec0
+        position:
+          serializedVersion: 2
+          x: 3292
+          y: 204
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "5 \xBA round"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 4179187880975925268
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c4e2eb98-2e5d-4ce2-9912-8ab9a1638320
+        position:
+          serializedVersion: 2
+          x: 4100.8003
+          y: 225.6
+          width: 373.6001
+          height: 239.99998
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "6 \xBA round"
+        LeftText: 
+        RightText: 
+        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+    - rid: 8580623337150218298
+      type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
+        position:
+          serializedVersion: 2
+          x: -1211.2001
+          y: -64
+          width: 82.400024
+          height: 76.8
+        typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Next
