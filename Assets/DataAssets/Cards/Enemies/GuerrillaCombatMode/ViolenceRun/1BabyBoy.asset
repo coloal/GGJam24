@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
+  m_Name: 1BabyBoy
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
+  CombatCards:
+  - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  OnStartConversation:
+  - "Let\xB4s dance"
+  OnWinConversation:
+  - You were good there, here, take one.
+  OnLoseConversation:
+  - '%Dads, I won!!%'
+  ShowHintsTimeInSeconds: 1
