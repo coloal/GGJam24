@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
-  m_Name: 4MysteriousGirl
+  m_Name: 4PunkieBoy
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 816943111, guid: 846aeee414cc089479e555cca6e6af51, type: 3}
+  characterSprite: {fileID: 2096799782, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
+  - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
   OnStartConversation:
-  - "I\xB4m so %excited%."
+  - "I\xB4m going to crush you, dear classmate."
   OnWinConversation:
-  - Choose a card, you deserve it.
+  - "Please don\xB4t take my ring. It\xB4s for her."
   OnLoseConversation:
-  - My first win ever!!
+  - I already knew you were a loser.
   ShowHintsTimeInSeconds: 2

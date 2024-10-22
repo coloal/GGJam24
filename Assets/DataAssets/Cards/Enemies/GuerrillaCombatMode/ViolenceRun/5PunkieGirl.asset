@@ -10,17 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
-  m_Name: 3Mechanic
+  m_Name: 5PunkieGirl
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 605515098, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
+  characterSprite: {fileID: -1734718243, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
   OnStartConversation:
-  - The game is on
+  - You failed Maths, you are gonna fail this match.
   OnWinConversation:
-  - "Ok, ok. I\xB4ll make my part of the deal."
+  - Just choose a card already.
   OnLoseConversation:
-  - You are too immature for this, kid.
-  ShowHintsTimeInSeconds: 0.7
+  - Hahaha, just give me your money, you monkeys.
+  ShowHintsTimeInSeconds: 1

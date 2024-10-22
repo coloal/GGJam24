@@ -487,7 +487,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: 28d1a7145dcdd4d4f9dba3ec1c6c454b, type: 2}
+        enemy: {fileID: 11400000, guid: 2e62e0acf3eb9a94eadff9cb31876199, type: 2}
         IsBossFight: 0
     - rid: 4541241877312307217
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -522,7 +522,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: 2e62e0acf3eb9a94eadff9cb31876199, type: 2}
+        enemy: {fileID: 11400000, guid: a59b01730b6ee3349836f1af1f921266, type: 2}
         IsBossFight: 0
     - rid: 4541241877312307220
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -559,7 +559,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: a59b01730b6ee3349836f1af1f921266, type: 2}
+        enemy: {fileID: 11400000, guid: d2bed87b3d10c81458664fafad431291, type: 2}
         IsBossFight: 0
     - rid: 4541241877312307222
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -596,7 +596,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: d2bed87b3d10c81458664fafad431291, type: 2}
+        enemy: {fileID: 11400000, guid: fa47ed3f5edb74a4c91ec2c58eaa7284, type: 2}
         IsBossFight: 0
     - rid: 4541241877312307224
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -631,7 +631,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: fa47ed3f5edb74a4c91ec2c58eaa7284, type: 2}
+        enemy: {fileID: 11400000, guid: 08833bfe68180244bb7ab3fdcf07587d, type: 2}
         IsBossFight: 0
     - rid: 4541241877312307226
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -666,7 +666,7 @@ MonoBehaviour:
         outputs:
         - Win Capture
         - Game Over
-        enemy: {fileID: 11400000, guid: 08833bfe68180244bb7ab3fdcf07587d, type: 2}
+        enemy: {fileID: 11400000, guid: 3fdfb6f36774eb44fbfd5fb83350c58f, type: 2}
         IsBossFight: 0
     - rid: 4541241877312307228
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
