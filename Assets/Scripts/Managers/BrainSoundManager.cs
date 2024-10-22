@@ -10,11 +10,25 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class SoundManager : MonoBehaviour
 {
+    [Header("Start Options")]
+    [Space]
+    [SerializeField]
+    [Tooltip("Initialize FMOD banks on awake")]
+    private bool DebugMode = true;
+
+    [Space]
+    [SerializeField]
+    [Tooltip("False: charge all fmod events on awake")]
+    private bool LazyLoad = true;
+
+
     /***** CONST *****/
 
     public const string FMOD_PATH = "event:/";
 
     /***** PARAMETERS *****/
+    [Space]
+    [Header("Parameters")]
     [SerializeField] private string StoryEventPath = "event:/Level1";
     [SerializeField] private string CampfireEventPath;
     [SerializeField] private string CombatEventPath;
@@ -67,14 +81,16 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        //Initialize();
 
+        if (DebugMode)
+        {
+            Initialize();
+        }
     }
 
     public void Initialize() 
     {
         InitializeData();
-        //InitializeEventMap();
         EventMap = new Dictionary<string, EventInstance>();
 
         StoryEventInstance = FMODUnity.RuntimeManager.CreateInstance(StoryEventPath);
@@ -85,6 +101,11 @@ public class SoundManager : MonoBehaviour
 
 
         CombatSoundInstance = FMODUnity.RuntimeManager.CreateInstance(CombatSoundsEventPath);
+
+        if (!LazyLoad)
+        {
+            InitializeEventMap();    
+        }
     }
     void InitializeData()
     {
