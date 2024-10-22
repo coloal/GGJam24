@@ -1097,6 +1097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edce3b5e237254d82a608357a88791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugMode: 0
+  LazyLoad: 1
   StoryEventPath: event:/Level1
   CampfireEventPath: event:/Ambient/Settlement
   CombatEventPath: 

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
+  m_Name: 08_Combat
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: -745873571, guid: bb2b04146d0ec034f8bd145537e30be7, type: 3}
+  CombatCards:
+  - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
+  - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
+  - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
+  - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
+  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  OnStartConversation:
+  - What a thrill. This feels like when I gave it my all when I was young!
+  - (Okay, calm down, Bob, calm down... You're playing your ass off in front of these
+    young men. Try to make it hard for them.)
+  - Kids, you'd better hold on to something, because there are curves coming!!!!
+  OnWinConversation:
+  - It was a formidable fight, kids. You earned it. Have the best vacation of your
+    life!
+  - (Of course, if any accident happens, I don't want to know anything about it...)
+  OnLoseConversation:
+  - You lack determination, kids! Train harder and come back stronger to challenge
+    me!
+  ShowHintsTimeInSeconds: 0.7
