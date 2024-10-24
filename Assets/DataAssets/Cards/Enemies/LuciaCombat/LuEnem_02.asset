@@ -15,8 +15,8 @@ MonoBehaviour:
   characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
-  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
   OnStartConversation: []
   OnWinConversation: []

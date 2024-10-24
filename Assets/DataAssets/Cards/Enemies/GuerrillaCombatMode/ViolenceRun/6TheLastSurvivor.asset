@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
-  m_Name: 6PunkieGirl
+  m_Name: 6TheLastSurvivor
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: -1734718243, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  characterSprite: {fileID: 243997701, guid: 62dd98ed12963974694582a64f0061a9, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
-  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
-  - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   OnStartConversation:
-  - You failed Maths, you are gonna fail this match.
+  - You know the deal.
   OnWinConversation:
-  - Just choose a card already.
+  - Choose one, youngster.
   OnLoseConversation:
-  - Hahaha, just give me your money, you monkeys.
-  ShowHintsTimeInSeconds: 1
+  - That was easy. Heh.
+  ShowHintsTimeInSeconds: 0.7
