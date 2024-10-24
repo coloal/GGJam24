@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +18,10 @@ public class CombatSceneManager : BaseSceneManager
     [SerializeField] Canvas canvas;
     [SerializeField] public NotebookComponent NotebookComponent;
     [Header("Debug configurations")]
-    [SerializeField] private bool isDebugging = false;
+    [Header("Scene debug configurations")]
+    [SerializeField] private bool isDebbugingScene = false;
+    [Header("Enemy debug comfigurations")]
+    [SerializeField] private bool isDebuggingEnemy = false;
     [SerializeField] private EnemyTemplate debugEnemyTemplate;
     
     
@@ -41,6 +45,15 @@ public class CombatSceneManager : BaseSceneManager
         {
             SceneManager.sceneLoaded += onTutorialLoaded;
             SceneManager.LoadScene("CombatSceneTutorialLogic", LoadSceneMode.Additive);
+        }
+    }
+
+    override protected void Init()
+    {
+        base.Init();
+        if (isDebbugingScene)
+        {
+            SceneManager.LoadScene(ScenesNames.CombatDebugScene, LoadSceneMode.Additive);
         }
     }
 
@@ -97,7 +110,7 @@ public class CombatSceneManager : BaseSceneManager
 
     public EnemyTemplate ProvideEnemyData()
     {
-        if (isDebugging)
+        if (isDebuggingEnemy)
         {
             return debugEnemyTemplate;
         }

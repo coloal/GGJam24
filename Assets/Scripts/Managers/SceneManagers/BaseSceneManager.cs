@@ -9,7 +9,7 @@ public class BaseSceneManager : MonoBehaviour
         Init();
     }
 
-    protected void Init()
+    virtual protected void Init()
     {
          GameManager.Instance.CurrentSceneManager = this;
     }

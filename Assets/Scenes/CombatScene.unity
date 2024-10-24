@@ -1462,7 +1462,8 @@ MonoBehaviour:
   dialogManager: {fileID: 1662651337}
   canvas: {fileID: 1506965356}
   NotebookComponent: {fileID: 180106261}
-  isDebugging: 0
+  isDebbugingScene: 0
+  isDebuggingEnemy: 0
   debugEnemyTemplate: {fileID: 11400000, guid: ebb6b57cd989aee4b8240339c1d62a30, type: 2}
 --- !u!4 &126443635
 Transform:
@@ -7697,6 +7698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edce3b5e237254d82a608357a88791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugMode: 1
+  LazyLoad: 1
   StoryEventPath: event:/Level1
   CampfireEventPath: event:/Ambient/Settlement
   CombatEventPath: 

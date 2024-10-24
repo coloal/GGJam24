@@ -1430,7 +1430,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
     - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
       propertyPath: isTutorial
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -171,6 +171,11 @@ public class CombatManager : MonoBehaviour
     [HideInInspector] 
     public bool IsTaskCancellationRequested => destroyCancellationToken.IsCancellationRequested;
 
+    [HideInInspector]
+    public delegate void OnCombatStateProcess(CombatState combatState);
+    [HideInInspector]
+    public event OnCombatStateProcess onCombatStateProcess;
+
     void Start()
     {
         if (GameManager.Instance.ProvideBrainManager().IsTutorial) return;
@@ -213,6 +218,7 @@ public class CombatManager : MonoBehaviour
     public void ProcessCombat(CombatState combatState)
     {
         combatState.Process(combatContext);
+        onCombatStateProcess?.Invoke(combatState);
     }
 
     void SetUpManagers()

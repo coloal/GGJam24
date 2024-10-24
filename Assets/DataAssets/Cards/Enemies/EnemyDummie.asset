@@ -15,6 +15,10 @@ MonoBehaviour:
   characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   OnStartConversation:
   - Hola me llamo Escunk
   - Vas a perder
