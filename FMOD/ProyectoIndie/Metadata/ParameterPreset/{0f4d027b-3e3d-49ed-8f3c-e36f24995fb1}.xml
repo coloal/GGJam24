@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0f4d027b-3e3d-49ed-8f3c-e36f24995fb1}">
+		<property name="name">
+			<value>FinBatalla</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c6294789-a1b2-4bc3-a5b3-b72630fc8c3b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d8aed6fd-a50a-48dc-98c2-b0ff9583e641}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d8aed6fd-a50a-48dc-98c2-b0ff9583e641}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

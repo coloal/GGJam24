@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{bb43c39e-a3f4-4898-ac40-42d5e3ce527b}">
+		<property name="name">
+			<value>ApagarHogera</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c6294789-a1b2-4bc3-a5b3-b72630fc8c3b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{04a33d50-04fd-4a51-80fb-d5fbb5f0a676}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{04a33d50-04fd-4a51-80fb-d5fbb5f0a676}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a630ba1a-76e5-42ce-87b7-cd47b6d3b173}">
+		<property name="name">
+			<value>ExitCredits</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c6294789-a1b2-4bc3-a5b3-b72630fc8c3b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{08c2b140-3021-4dd8-94c6-cc7476b6c295}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{08c2b140-3021-4dd8-94c6-cc7476b6c295}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

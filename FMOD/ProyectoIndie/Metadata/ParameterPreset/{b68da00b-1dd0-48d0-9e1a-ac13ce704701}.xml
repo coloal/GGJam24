@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{b68da00b-1dd0-48d0-9e1a-ac13ce704701}">
+		<property name="name">
+			<value>SideWin</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c6294789-a1b2-4bc3-a5b3-b72630fc8c3b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{cb2e9754-4a7f-43f4-bfc0-b606d8d390de}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{cb2e9754-4a7f-43f4-bfc0-b606d8d390de}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
