@@ -10,6 +10,7 @@ public class TutorialInfoTemplate : ScriptableObject
     [SerializeField] private List<string> initialConversation;
     [SerializeField] private List<string> cardExplanation;
     [SerializeField] private List<string> bookExplanation;
+    [SerializeField] private List<string> deckExplanation;
     [SerializeField] private List<string> enemyCardExplanationPreShow;
     [SerializeField] private List<string> enemyCardExplanationWhileShow;
 
@@ -59,6 +60,7 @@ public class TutorialInfoTemplate : ScriptableObject
 
     public List<string> CardExplanation => cardExplanation;
     public List<string> BookExplanation => bookExplanation;
+    public List<string> DeckExplanation => deckExplanation;
     public List<string> EnemyCardExplanationPreShow => enemyCardExplanationPreShow;
     public List<string> EnemyCardExplanationWhileShow => enemyCardExplanationWhileShow;
 

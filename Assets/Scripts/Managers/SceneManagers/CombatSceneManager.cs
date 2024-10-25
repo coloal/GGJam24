@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CombatSceneManager : BaseSceneManager
 {
@@ -23,6 +24,8 @@ public class CombatSceneManager : BaseSceneManager
     [Header("Enemy debug comfigurations")]
     [SerializeField] private bool isDebuggingEnemy = false;
     [SerializeField] private EnemyTemplate debugEnemyTemplate;
+    [SerializeField] private Image backgroundTable;
+    [SerializeField] private Image backgroundMat;
     
     
     void Awake()
@@ -46,6 +49,8 @@ public class CombatSceneManager : BaseSceneManager
             SceneManager.sceneLoaded += onTutorialLoaded;
             SceneManager.LoadScene("CombatSceneTutorialLogic", LoadSceneMode.Additive);
         }
+        backgroundTable.sprite = BrainManager.Instance.ZoneInfo.CombatBackgroundTableSprite;
+        backgroundMat.sprite = BrainManager.Instance.ZoneInfo.CombatBackgroundMatSprite;
     }
 
     override protected void Init()

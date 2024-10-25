@@ -199,7 +199,10 @@ public class TurnManager : MonoBehaviour
         {
             background.sprite = zoneBackgroundSprite;
         }
-        if(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneMaterial != null)
+
+#if !UNITY_WEBGL
+
+        if (GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneMaterial != null)
         {
             background.material = GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneMaterial;
         }
@@ -207,6 +210,9 @@ public class TurnManager : MonoBehaviour
         {
             background.material = null;
         }
+
+#endif
+
     }
 
     public void SwipeLeft()

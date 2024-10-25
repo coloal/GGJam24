@@ -1465,6 +1465,8 @@ MonoBehaviour:
   isDebbugingScene: 0
   isDebuggingEnemy: 0
   debugEnemyTemplate: {fileID: 11400000, guid: ebb6b57cd989aee4b8240339c1d62a30, type: 2}
+  backgroundTable: {fileID: 198940018}
+  backgroundMat: {fileID: 2014470246}
 --- !u!4 &126443635
 Transform:
   m_ObjectHideFlags: 0

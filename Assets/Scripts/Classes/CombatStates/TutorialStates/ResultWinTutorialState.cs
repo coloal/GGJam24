@@ -34,16 +34,13 @@ public class ResultWinTutorialState : ResultWinState
         }
 
         bool exited = false;
-        Debug.LogError("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartBattleResultExplanation(() =>
         {
             exited = true;
-            Debug.LogError("La cond es " + exited);
         });
 
         while (!exited)
         {
-            Debug.LogError("Esperando, cond: " + exited);
             await Task.Yield();
         }
 

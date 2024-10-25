@@ -24,4 +24,13 @@ public class MainMenuManager : BaseSceneManager
         
         //SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
     }
+    public void GoToBattleRush()
+    {
+        GameManager.Instance.ProvideSoundManager().StopMenuMusic();
+        GameManager.Instance.ChangeSceneWithAnimation(animator, ScenesNames.BattleRushScene);
+
+        //SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
+    }
+
+
 }

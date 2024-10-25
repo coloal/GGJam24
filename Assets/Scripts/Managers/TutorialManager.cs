@@ -20,6 +20,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private RectTransform combatResultMask;
     [SerializeField] private RectTransform drawResultMask;
     [SerializeField] private RectTransform noteBookMask;
+    [SerializeField] private RectTransform deckMask;
     [SerializeField] public float MaskVelocity = 30;
     
 
@@ -64,6 +65,11 @@ public class TutorialManager : MonoBehaviour
     public void StartNoteBookExplanation(Action onFinishExplanation)
     {
         StartConversationWithBlock(noteBookMask, tutorialInfo.BookExplanation, onFinishExplanation);
+    }
+
+    public void StartDeckExplanation(Action onFinishExplanation)
+    {
+        StartConversationWithBlock(deckMask, tutorialInfo.DeckExplanation, onFinishExplanation);
     }
 
     public void StartEnemyCardExplanationPreShow(Action onFinishExplanation)
