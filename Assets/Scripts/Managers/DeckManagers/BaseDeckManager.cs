@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,10 @@ public abstract class BaseDeckManager : MonoBehaviour
     protected List<CombatCard> hand;
     protected List<CombatCard> deck;
     protected List<CombatCard> tieZone;
+
+    public delegate void OnCardsContainerStateUpdate(List<CombatCard> deck);
+    public event OnCardsContainerStateUpdate onDeckStateUpdate;
+    public event OnCardsContainerStateUpdate onHandStateUpdate;
 
     protected BaseDeckManager()
     {
@@ -21,8 +26,12 @@ public abstract class BaseDeckManager : MonoBehaviour
     public CombatCard DrawCardFromDeckToHand()
     {
         CombatCard cardToDraw = GetCardFromDeck();
+        
         deck.Remove(cardToDraw);
+        onDeckStateUpdate?.Invoke(deck);
+        
         hand.Add(cardToDraw);
+        onHandStateUpdate?.Invoke(hand);
 
         return cardToDraw;
     }
@@ -30,17 +39,20 @@ public abstract class BaseDeckManager : MonoBehaviour
     public void PutCardFromHandToCombatZone(CombatCard combatCard)
     {
         hand.Remove(combatCard);
+        onHandStateUpdate?.Invoke(hand);
     }
 
     public void ReturnCardFromTieZoneToDeck(CombatCard combatCard)
     {
         tieZone.Remove(combatCard);
         deck.Add(combatCard);
+        onDeckStateUpdate?.Invoke(deck);
     }
 
     public void AddCardToDeck(CombatCard combatCard)
     {
         deck.Add(combatCard);
+        onDeckStateUpdate?.Invoke(deck);
     }
 
     public void AddCardToTieZone(CombatCard combatCard)
@@ -54,16 +66,22 @@ public abstract class BaseDeckManager : MonoBehaviour
         deck.Clear();
         while (auxList.Any())
         {
-            int idx = Random.Range(0, auxList.Count);
+            int idx = UnityEngine.Random.Range(0, auxList.Count);
             deck.Add(auxList[idx]);
             auxList.RemoveAt(idx);
         }
+
+        onDeckStateUpdate?.Invoke(deck);
     }
 
     public void DestroyCard(CombatCard combatCard)
     {
         hand.Remove(combatCard);
+        onHandStateUpdate?.Invoke(hand);
+
         deck.Remove(combatCard);
+        onDeckStateUpdate?.Invoke(deck);
+
         tieZone.Remove(combatCard);
     }
 
