@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3b401987-cd10-4929-a0c6-d353093ef731}">
+		<property name="name">
+			<value>Golpes</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c6294789-a1b2-4bc3-a5b3-b72630fc8c3b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8e990ad1-cb86-40e3-832a-e334a6d397f4}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8e990ad1-cb86-40e3-832a-e334a6d397f4}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Flojo</value>
+			<value>Medio</value>
+			<value>Fuerte</value>
+			<value>Acept</value>
+			<value>Refuse</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

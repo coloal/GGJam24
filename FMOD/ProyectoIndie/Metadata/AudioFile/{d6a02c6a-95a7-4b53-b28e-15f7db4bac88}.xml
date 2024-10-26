@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d6a02c6a-95a7-4b53-b28e-15f7db4bac88}">
+		<property name="assetPath">
+			<value>BassNotes/E.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.63158730158730159</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8eee49d-4d73-4f48-a779-b2162ace75b7}</destination>
+		</relationship>
+	</object>
+</objects>

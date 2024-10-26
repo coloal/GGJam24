@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c87052a1-08f2-4f1f-9ea5-5e0b48ee1a22}">
+		<property name="name">
+			<value>StopTalking</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c6294789-a1b2-4bc3-a5b3-b72630fc8c3b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fae81013-78de-43d0-99ef-cfef488902bd}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fae81013-78de-43d0-99ef-cfef488902bd}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

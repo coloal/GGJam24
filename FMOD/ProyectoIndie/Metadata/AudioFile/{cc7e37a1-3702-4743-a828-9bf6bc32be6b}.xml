@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cc7e37a1-3702-4743-a828-9bf6bc32be6b}">
+		<property name="assetPath">
+			<value>Synth/Lead2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8eee49d-4d73-4f48-a779-b2162ace75b7}</destination>
+		</relationship>
+	</object>
+</objects>

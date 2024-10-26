@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4145c988-0fc1-4e9f-b0ca-3edc5e839897}">
+		<property name="assetPath">
+			<value>Music/Boss1/Boss1_ - 0011 - Instrumento - Clave.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>46</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8eee49d-4d73-4f48-a779-b2162ace75b7}</destination>
+		</relationship>
+	</object>
+</objects>

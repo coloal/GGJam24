@@ -8,7 +8,8 @@ using UnityEngine.Assertions;
 
 public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
 {
-    bool hasPressed = false;
+    bool hasPressedNoteBook = false;
+    bool hasPressedDeck = false;
     protected override EnemyDeckManager GetEnemyDeck()
     {
         return TutorialManager.SceneTutorial.EnemyDeck;
@@ -33,12 +34,28 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
 
     public void NoteBookHell()
     {
-        if (hasPressed) return;
-        hasPressed = true;
+        if (hasPressedNoteBook) return;
+        hasPressedNoteBook = true;
         GameManager.Instance.ProvideInputManager().onClickEvent -= NoteBookHell;
         CombatSceneManager.Instance.NotebookComponent.ToggleNotebookTutorial();
         CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayHideNotebookButton();
+        GameUtils.CreateTemporizer(() =>
+        {
+            TutorialManager.SceneTutorial.StartDeckExplanation(() =>
+            {
+                //TODO Mostrar animacion del deck
+                GameManager.Instance.ProvideInputManager().onClickEvent += DeckCardsHell;
+            });
+        }, 1, CombatSceneManager.Instance);
+    }
+
+    public void DeckCardsHell()
+    {
+        if (hasPressedDeck) return;
+        hasPressedDeck = true;
+        GameManager.Instance.ProvideInputManager().onClickEvent -= DeckCardsHell;
+        //TODO Llamar animacion para ocultar deck
         GameUtils.CreateTemporizer(() =>
         {
             CombatUtils.ProcessNextStateAfterSeconds(
@@ -47,4 +64,5 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
             );
         }, 1, CombatSceneManager.Instance);
     }
+
 }

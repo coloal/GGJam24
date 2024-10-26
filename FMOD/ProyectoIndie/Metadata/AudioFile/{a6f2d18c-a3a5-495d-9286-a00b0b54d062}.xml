@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a6f2d18c-a3a5-495d-9286-a00b0b54d062}">
+		<property name="assetPath">
+			<value>Music/Battle1/TransicionPrueba.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8eee49d-4d73-4f48-a779-b2162ace75b7}</destination>
+		</relationship>
+	</object>
+</objects>

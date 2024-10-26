@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{10a10065-da0f-40d8-97f8-8a937b938ede}">
+		<property name="overridingInputFormat">
+			<value>1</value>
+		</property>
+		<property name="name">
+			<value>Music</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{83b478ab-05b6-44dd-899d-c4a9a9dabf3e}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{ed74d0ad-0563-4fe5-ba44-2d657e5f6a51}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6f0d15be-8847-4476-bb61-6f779a55304e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{83b478ab-05b6-44dd-899d-c4a9a9dabf3e}">
+		<relationship name="effects">
+			<destination>{c907c869-48ff-44c8-805b-9ec4cfc66ea7}</destination>
+			<destination>{2df8e604-c747-4c54-9a34-2d66c24a8593}</destination>
+			<destination>{3ec141b0-8221-493d-8989-570062619a17}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{ed74d0ad-0563-4fe5-ba44-2d657e5f6a51}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="MixerSend" id="{c907c869-48ff-44c8-805b-9ec4cfc66ea7}">
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{80fa9c28-0892-4201-b4b2-357447410aba}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusFader" id="{2df8e604-c747-4c54-9a34-2d66c24a8593}" />
+	<object class="CompressorEffect" id="{3ec141b0-8221-493d-8989-570062619a17}">
+		<property name="threshold">
+			<value>-33</value>
+		</property>
+		<property name="ratio">
+			<value>3.20000005</value>
+		</property>
+		<property name="attackTime">
+			<value>4.80000019</value>
+		</property>
+		<property name="releaseTime">
+			<value>260</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{49cec34f-cc5e-48a3-92f6-f3e1996e3934}</destination>
+		</relationship>
+	</object>
+</objects>

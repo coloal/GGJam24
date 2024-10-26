@@ -40,6 +40,9 @@ MonoBehaviour:
   - Now that we know all of the cards let's start with the combat!
   bookExplanation:
   - You can always see which card wins or loses trades in the notebook over here.
+  deckExplanation:
+  - You can also check the cards in your deck pressing here. They are not shown in
+    order though
   enemyCardExplanationPreShow:
   - Right at the very start of each combat the enemy will show you it's cards.
   enemyCardExplanationWhileShow:

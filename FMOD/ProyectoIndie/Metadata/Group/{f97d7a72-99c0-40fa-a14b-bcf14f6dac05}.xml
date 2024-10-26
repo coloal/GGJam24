@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{f97d7a72-99c0-40fa-a14b-bcf14f6dac05}">
+		<property name="volume">
+			<value>1.5</value>
+		</property>
+		<property name="name">
+			<value>CombatSound</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{62db4076-711f-48ca-a00b-9383ef70cb3a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{28cd0825-3e0c-4bc5-add2-80508786af22}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{0fd3e717-3b85-44e9-9bff-8e11fa787082}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{62db4076-711f-48ca-a00b-9383ef70cb3a}">
+		<relationship name="effects">
+			<destination>{49cec34f-cc5e-48a3-92f6-f3e1996e3934}</destination>
+			<destination>{6ffcef5d-8a70-4fd3-b157-075c59d41483}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{28cd0825-3e0c-4bc5-add2-80508786af22}" />
+	<object class="Sidechain" id="{49cec34f-cc5e-48a3-92f6-f3e1996e3934}">
+		<property name="level">
+			<value>-2</value>
+		</property>
+	</object>
+	<object class="MixerBusFader" id="{6ffcef5d-8a70-4fd3-b157-075c59d41483}" />
+</objects>
