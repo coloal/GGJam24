@@ -17,6 +17,7 @@ public class CombatDebugSceneManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI influenceCardsText;
     [SerializeField] private TextMeshProUGUI moneyCardsText;
     [SerializeField] private TextMeshProUGUI deckCardsText;
+    [SerializeField] private TextMeshProUGUI tieZoneCardsText;
     [SerializeField] private Image pickedCardImage;
 
     private CombatSceneManager combatSceneManager;
@@ -31,6 +32,7 @@ public class CombatDebugSceneManager : MonoBehaviour
             {
                 combatSceneManager.ProvideEnemyDeckManager().onDeckStateUpdate += OnEnemyDeckUpdate;
                 combatSceneManager.ProvideEnemyDeckManager().onHandStateUpdate += OnEnemyCardPicked;
+                combatSceneManager.ProvideEnemyDeckManager().onTieZoneStateUpdate += OnEnemyTieZoneUpdate;
             }
         }
     }
@@ -41,6 +43,7 @@ public class CombatDebugSceneManager : MonoBehaviour
         {
             combatSceneManager.ProvideEnemyDeckManager().onDeckStateUpdate -= OnEnemyDeckUpdate;
             combatSceneManager.ProvideEnemyDeckManager().onHandStateUpdate -= OnEnemyCardPicked;
+            combatSceneManager.ProvideEnemyDeckManager().onTieZoneStateUpdate -= OnEnemyTieZoneUpdate;
         }
     }
 
@@ -77,5 +80,10 @@ public class CombatDebugSceneManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    void OnEnemyTieZoneUpdate(List<CombatCard> updatedTieZone)
+    {
+        tieZoneCardsText.text = updatedTieZone.Count.ToString();
     }
 }

@@ -13,6 +13,7 @@ public abstract class BaseDeckManager : MonoBehaviour
     public delegate void OnCardsContainerStateUpdate(List<CombatCard> deck);
     public event OnCardsContainerStateUpdate onDeckStateUpdate;
     public event OnCardsContainerStateUpdate onHandStateUpdate;
+    public event OnCardsContainerStateUpdate onTieZoneStateUpdate;
 
     protected BaseDeckManager()
     {
@@ -45,6 +46,7 @@ public abstract class BaseDeckManager : MonoBehaviour
     public void ReturnCardFromTieZoneToDeck(CombatCard combatCard)
     {
         tieZone.Remove(combatCard);
+        onTieZoneStateUpdate?.Invoke(tieZone);
         deck.Add(combatCard);
         onDeckStateUpdate?.Invoke(deck);
     }
@@ -58,6 +60,7 @@ public abstract class BaseDeckManager : MonoBehaviour
     public void AddCardToTieZone(CombatCard combatCard)
     {
         tieZone.Add(combatCard);
+        onTieZoneStateUpdate?.Invoke(tieZone);
     }
 
     public void ShuffleDeck()
@@ -83,6 +86,7 @@ public abstract class BaseDeckManager : MonoBehaviour
         onDeckStateUpdate?.Invoke(deck);
 
         tieZone.Remove(combatCard);
+        onTieZoneStateUpdate?.Invoke(tieZone);
     }
 
     public List<CombatCard> GetCardsInHand()
