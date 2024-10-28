@@ -11,6 +11,8 @@ namespace CodeGraph
         [ExposedProperty()]
         public bool IsBossFight;
 
+        [ExposedProperty()]
+        public MusicTracks music = MusicTracks.Normal;
 
         public BattleNode()
         {
@@ -22,7 +24,7 @@ namespace CodeGraph
 
         public override bool GetStepInfo(out StepInfo stepInfo)
         {
-            stepInfo = new CombatStep(enemy, IsBossFight);
+            stepInfo = new CombatStep(enemy, IsBossFight, music);
             return true;
         }
 

@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
     private bool LazyLoad = true;
 
     [HideInInspector]
-    public bool IsStoryMode;
+    private MusicTracks lastMusicTrack;
 
 
     /***** CONST *****/
@@ -488,27 +488,29 @@ public class SoundManager : MonoBehaviour
         SetStorySound(BrainSoundTag.Ness, 0.0f);
     }
 
-    public void StartCombat(List<CombatCardTemplate> members, bool bIsBossFight = false)
+    public void StartCombat(MusicTracks musicTrack, bool bIsBossFight = false)
     {
-        if (IsStoryMode)
+        lastMusicTrack = musicTrack;
+
+        if (musicTrack == MusicTracks.Normal)
         {
-            //Valor por defecto para que comience el combate
-            int CombatValue = 1;
-            if (bIsBossFight || GameManager.Instance.ProvideBrainManager().bIsBossFight)
-            {
-                CombatValue = 2;
-            }
-            else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
-            {
-                CombatValue = 3;
-            }
-
-
             SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
-            SetStorySound(BrainSoundTag.LetsFight, CombatValue);
+            SetStorySound(BrainSoundTag.LetsFight, 1);
         }
-        else
+        else if(musicTrack == MusicTracks.Tutorial)
         {
+            SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
+            SetStorySound(BrainSoundTag.LetsFight, 3);
+        }
+        else if (musicTrack == MusicTracks.Boss)
+        {
+            SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
+            SetStorySound(BrainSoundTag.LetsFight, 2);
+        }
+        else if (musicTrack == MusicTracks.Generative)
+        {
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
             string eventName = "LetsFight";
             if (!EventMap.ContainsKey(eventName))
             {
@@ -520,28 +522,23 @@ public class SoundManager : MonoBehaviour
                 EventMap[eventName].start();
             }
         }
-
-
     }
 
     public void EndCombat(bool bIsBossFight = false)
     {
-        if (IsStoryMode) 
+        if (lastMusicTrack == MusicTracks.Normal)
         {
-            //Valor por defecto para que comience el combate
-            int CombatValue = 1;
-            if (GameManager.Instance.ProvideBrainManager().bIsBossFight)
-            {
-                CombatValue = 2;
-            }
-            else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
-            {
-                CombatValue = 3;
-            }
-
-            SetStorySound(BrainSoundTag.FinBatalla, CombatValue);
+            SetStorySound(BrainSoundTag.FinBatalla, 1);
         }
-        else
+        else if (lastMusicTrack == MusicTracks.Boss)
+        {
+            SetStorySound(BrainSoundTag.FinBatalla, 2);
+        }
+        else if (lastMusicTrack == MusicTracks.Tutorial)
+        {
+            SetStorySound(BrainSoundTag.FinBatalla, 3);
+        }
+        else if (lastMusicTrack == MusicTracks.Generative)
         {
             string eventName = "LetsFight";
             if (!EventMap.ContainsKey(eventName))
@@ -555,6 +552,8 @@ public class SoundManager : MonoBehaviour
                 EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
+
+        
     }
 
     public void SetStopTalking() 
@@ -571,7 +570,14 @@ public class SoundManager : MonoBehaviour
 
     public void RestartMusicFromCombat()
     {
-        SetStorySound(BrainSoundTag.LetsFight, 0.0f);
+        if (lastMusicTrack != MusicTracks.Generative)
+        {
+            SetStorySound(BrainSoundTag.LetsFight, 0.0f);
+        }
+        else
+        {
+            StoryEventInstance.start();
+        }
     }
 
 
@@ -618,23 +624,6 @@ public class SoundManager : MonoBehaviour
     {
         CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, type.ToString());
 
-        /*
-        switch (type)
-        {
-            case CardSounds.Center:
-                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Center.ToString());
-                break;
-            case CardSounds.Left:
-                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Left.ToString());
-                break;
-            case CardSounds.Right:
-                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Right.ToString());
-                break;
-            case CardSounds.Phone:
-                CardSoundsInstance.setParameterByNameWithLabel(BrainSoundTag.Cards, CardSounds.Phone.ToString());
-                break;
-        }
-        */
         CardSoundsInstance.start();
 
 
@@ -661,37 +650,6 @@ public class SoundManager : MonoBehaviour
         return SoundsMap[tag];
     }
 
-    private void SetZoneParameters(SoundEvent Event, MusicZones zone)
-    {
-        //Importante coger el eventInstance que corresponda a cada parametro
-        // Ejemplo: StoryEventInstance.setParameterByName(BrainSoundTag.Acordeonista, ZoneSoundsMap[zone].Acordeonista);
-
-
-
-        /*
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Acordeonista);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Bajista);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Cavaquinhista);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Flautista);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Percusionista);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].ApagarHoguera);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].VolumenHoguera);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Epic);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Fight);
-        GetActualEventInstance().setParameterByName(BrainSoundTag., ZoneSoundsMap[zone].Zapato);
-        */
-
-        /*  importante
-        Para parametros que sean sound Actions:
-
-        if(SoundsMap[BrainSoundTag.Zapato] != 0)
-        {
-            GetActualEventInstance().setParameterByName(BrainSoundTag.Zapato, SoundsMap[BrainSoundTag.Zapato]);    
-        }
-
-         */
-
-    }
 
     //Aviso de adri del pasado: De momento coger el evento manualmente y luego ya veremos para automatizarlo
     private FMOD.Studio.EventInstance GetActualEventInstance()

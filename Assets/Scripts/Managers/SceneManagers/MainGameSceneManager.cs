@@ -16,11 +16,6 @@ public class MainGameSceneManager : BaseSceneManager
     [SerializeField]
     private CodeGraphAsset defaultGraph;
 
-    [Space]
-    [Tooltip(" Marcar solo si se esta en el Story Mode")]
-    [SerializeField]
-    private bool isStoryMode = true;
-
     private GraphTypes graphType = GraphTypes.Story;
 
     void Awake()
@@ -48,8 +43,6 @@ public class MainGameSceneManager : BaseSceneManager
         {
             turnManager.SetZoneSprites();
         }
-
-        GameManager.Instance.ProvideSoundManager().IsStoryMode = isStoryMode;
     }
 
     public void StartStory()

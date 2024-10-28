@@ -99,7 +99,7 @@ public class TurnManager : MonoBehaviour
                 
                 //Call start combat
                 
-                GameManager.Instance.StartCombat(combatStep.Enemy, combatStep.IsBossFigth);
+                GameManager.Instance.StartCombat(combatStep.Enemy, combatStep.IsBossFigth, combatStep.Music);
             }
         }
         else if (nextStepInfo is ChangeZoneStep zoneStep)

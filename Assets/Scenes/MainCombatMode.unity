@@ -1357,7 +1357,6 @@ MonoBehaviour:
   cardsManager: {fileID: 1958423316}
   zoneTemplate: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
   defaultGraph: {fileID: 11400000, guid: 2de1ea9569e9068439e83907a2e24f13, type: 2}
-  isStoryMode: 0
 --- !u!4 &2026473451
 Transform:
   m_ObjectHideFlags: 0

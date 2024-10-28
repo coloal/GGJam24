@@ -62,10 +62,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void StartCombat(EnemyTemplate enemy, bool isBossFigth)
+    public void StartCombat(EnemyTemplate enemy, bool isBossFigth, MusicTracks music)
     {
         actualEnemy = enemy;
-        EnterBattleScene(isBossFigth);
+        EnterBattleScene(isBossFigth, music);
     }
 
     public void EndCombat(TurnResult combatResult)
@@ -174,10 +174,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnterBattleScene(bool isBoss)
+    public void EnterBattleScene(bool isBoss, MusicTracks music)
     {
         List<CombatCardTemplate> members = ProvidePartyManager().GetPartyMembers();
-        ProvideSoundManager().StartCombat(members, isBoss);
+        ProvideSoundManager().StartCombat(music);
         ProvideBrainManager().bIsBossFight = isBoss;
 
         Animator transition = brainManager.ZoneInfo.CombatTransition;

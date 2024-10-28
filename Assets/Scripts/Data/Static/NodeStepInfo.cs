@@ -11,17 +11,22 @@ public class CombatStep:StepInfo
 {
     EnemyTemplate enemy;
     bool isBossFigth;
+    MusicTracks musicTrack;
+
     public EnemyTemplate Enemy => enemy;
     public bool IsBossFigth => isBossFigth;
+    public MusicTracks Music => musicTrack;
+
     public CombatStep(EnemyTemplate enemy)
     {
         this.enemy = enemy;
         isBossFigth = false; 
     }
-    public CombatStep(EnemyTemplate enemy, bool isBossFigth)
+    public CombatStep(EnemyTemplate enemy, bool isBossFigth, MusicTracks musicTrack)
     {
         this.enemy = enemy;
         this.isBossFigth = isBossFigth;
+        this.musicTrack = musicTrack;
     }
 
 }
