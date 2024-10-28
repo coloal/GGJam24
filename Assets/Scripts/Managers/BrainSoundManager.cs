@@ -21,6 +21,9 @@ public class SoundManager : MonoBehaviour
     [Tooltip("False: charge all fmod events on awake")]
     private bool LazyLoad = true;
 
+    [HideInInspector]
+    public bool IsStoryMode;
+
 
     /***** CONST *****/
 
@@ -487,37 +490,82 @@ public class SoundManager : MonoBehaviour
 
     public void StartCombat(List<CombatCardTemplate> members, bool bIsBossFight = false)
     {
-        //Valor por defecto para que comience el combate
-        int CombatValue = 1;
-        if (bIsBossFight || GameManager.Instance.ProvideBrainManager().bIsBossFight)
+        if (IsStoryMode)
         {
-            CombatValue = 2;
-        }
-        else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
-        {
-            CombatValue = 3;
-        }
+            //Valor por defecto para que comience el combate
+            int CombatValue = 1;
+            if (bIsBossFight || GameManager.Instance.ProvideBrainManager().bIsBossFight)
+            {
+                CombatValue = 2;
+            }
+            else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
+            {
+                CombatValue = 3;
+            }
 
 
-        SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
-        SetStorySound(BrainSoundTag.LetsFight, CombatValue);
+            SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
+            SetStorySound(BrainSoundTag.LetsFight, CombatValue);
+        }
+        else
+        {
+            string eventName = "LetsFight";
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                //EventMap[eventName].setParameterByName("ExitMenu", 0);
+                EventMap[eventName].start();
+            }
+        }
+
 
     }
 
     public void EndCombat(bool bIsBossFight = false)
     {
-        //Valor por defecto para que comience el combate
-        int CombatValue = 1;
-        if (GameManager.Instance.ProvideBrainManager().bIsBossFight)
+        if (IsStoryMode) 
         {
-            CombatValue = 2;
-        }
-        else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
-        {
-            CombatValue = 3;
-        }
+            //Valor por defecto para que comience el combate
+            int CombatValue = 1;
+            if (GameManager.Instance.ProvideBrainManager().bIsBossFight)
+            {
+                CombatValue = 2;
+            }
+            else if (GameManager.Instance.ProvideBrainManager().IsTutorial)
+            {
+                CombatValue = 3;
+            }
 
-        SetStorySound(BrainSoundTag.FinBatalla, CombatValue);
+            SetStorySound(BrainSoundTag.FinBatalla, CombatValue);
+        }
+        else
+        {
+            string eventName = "LetsFight";
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                //EventMap[eventName].setParameterByName("ExitMenu", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+    }
+
+    public void SetStopTalking() 
+    {
+        string eventName = "LetsFight";
+
+        if (EventMap.ContainsKey(eventName))
+        {
+            EventMap[eventName].setParameterByName("StopTalking", 1);
+            //EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
 
     }
 

@@ -30,4 +30,9 @@ public class SoundRequesterComponent : MonoBehaviour
     {
         GameManager.Instance.ProvideSoundManager().PlayCoinSFX();
     }
+
+    public void SetStopTalking() 
+    {
+        GameManager.Instance.ProvideSoundManager().SetStopTalking();
+    }
 }

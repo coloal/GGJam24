@@ -65,3 +65,5 @@ MonoBehaviour:
     EventName: GameOver
   - FoldersName: 3
     EventName: Pause
+  - FoldersName: 4
+    EventName: LetsFight

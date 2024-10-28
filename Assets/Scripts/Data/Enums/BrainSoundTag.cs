@@ -41,6 +41,7 @@ public enum EventFolders
     SFX = 1,
     Music = 2,
     snapshot = 3,
+    GenerativMusicTest,
 }
 
 public static class CombatSounds
