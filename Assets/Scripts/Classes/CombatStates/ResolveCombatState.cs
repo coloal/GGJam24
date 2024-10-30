@@ -228,8 +228,13 @@ public class ResolveCombatState : CombatState
                         return;
                     }
 
+                    // Returns the card to the player deck, including is transform
                     playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
                     playerCombatCard.gameObject.SetActive(false);
+                    playerCombatCard.gameObject.transform.SetParent(
+                        combatContext.playerDeck.transform.parent,
+                        worldPositionStays: true
+                    );
                 }
             });
         }
@@ -360,8 +365,13 @@ public class ResolveCombatState : CombatState
                         return;
                     }
 
+                    // Returns the card to the player deck, including is transform
                     enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
                     enemyCombatCard.gameObject.SetActive(false);
+                    enemyCombatCard.gameObject.transform.SetParent(
+                        combatContext.enemyDeck.transform.parent,
+                        worldPositionStays: true
+                    );
                 }
             });
         }
