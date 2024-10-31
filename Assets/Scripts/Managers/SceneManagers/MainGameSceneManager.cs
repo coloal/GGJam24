@@ -16,6 +16,10 @@ public class MainGameSceneManager : BaseSceneManager
     [SerializeField]
     private CodeGraphAsset defaultGraph;
 
+    [Space]
+    [SerializeField]
+    private bool IsMainGame = true;
+
     private GraphTypes graphType = GraphTypes.Story;
 
     void Awake()
@@ -43,6 +47,8 @@ public class MainGameSceneManager : BaseSceneManager
         {
             turnManager.SetZoneSprites();
         }
+
+        GameManager.Instance.IsMainGame = IsMainGame;
     }
 
     public void StartStory()

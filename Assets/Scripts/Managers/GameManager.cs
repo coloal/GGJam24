@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float secondsForSceneTransition = 0.5f;
     [SerializeField] private float secondsForCombatTransition = 1.0f;
 
+    [HideInInspector]
+    public bool IsMainGame;
     private bool hasAStoryStarted = false;
 
     private List<Action> disposableOnSceneChangeActions = new List<Action>();
@@ -213,9 +215,19 @@ public class GameManager : MonoBehaviour
         Animator instantedAnimator = Instantiate(transition.gameObject).GetComponent<Animator>();
         if (instantedAnimator != null)
         {
+            string nextScene;
+            if (IsMainGame)
+            {
+                nextScene = ScenesNames.MainGameScene;
+            }
+            else
+            {
+                nextScene = ScenesNames.MainCombatModeScene;
+            }
+
             instantedAnimator.SetTrigger("ExitAnimation");
             GameUtils.CreateTemporizer(() => {
-                SceneManager.LoadScene(ScenesNames.MainGameScene, LoadSceneMode.Single);
+                SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
             }, secondsForCombatTransition, this);
             disposableOnSceneChangeActions.Add(() =>
             {

@@ -45,16 +45,16 @@ public class ResultDrawTutorialState : ResultDrawState
         }
 
         bool exited = false;
-        Debug.LogError("Llegado al punto critico");
+        Debug.LogWarning("Llegado al punto critico");
         TutorialManager.SceneTutorial.StartDrawExplanation(() =>
         {
             exited = true;
-            Debug.LogError("La cond es " + exited);
+            Debug.LogWarning("La cond es " + exited);
         });
 
         while (!exited)
         {
-            Debug.LogError("Esperando, cond: " + exited);
+            Debug.LogWarning("Esperando, cond: " + exited);
             await Task.Yield();
         }
 
