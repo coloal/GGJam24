@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{5969a346-ff64-4e69-8a7c-7cacb83bbf04}">
+		<property name="assetPath">
+			<value>GenMus/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b8eee49d-4d73-4f48-a779-b2162ace75b7}</destination>
+		</relationship>
+	</object>
+</objects>
