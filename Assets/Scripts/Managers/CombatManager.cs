@@ -306,4 +306,22 @@ public class CombatManager : MonoBehaviour
     {
         return chanceToGetCoinSelectedFace;
     }
+
+    public void EnableDeckStatusInteractions()
+    {
+        DeckStatusComponent playerDeckStatusComponent = playerDeck.GetComponent<DeckStatusComponent>();
+        if (playerDeckStatusComponent != null)
+        {
+            playerDeckStatusComponent.EnableInteractions();
+        }
+    }
+
+    public void DisableDeckStatusInteractions()
+    {
+        DeckStatusComponent playerDeckStatusComponent = playerDeck.GetComponent<DeckStatusComponent>();
+        if (playerDeckStatusComponent != null)
+        {
+            playerDeckStatusComponent.DisableInteractions();
+        }
+    }
 }

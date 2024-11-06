@@ -33,6 +33,8 @@ public class PickPlayerCardState : CombatState
         CombatSceneManager.Instance.ProvideCombatManager().EnableNotebookButton();
         CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayShowNotebookButton();
+
+        CombatSceneManager.Instance.ProvideCombatManager().EnableDeckStatusInteractions();
     }
 
     private void BlockCards(CombatManager.CombatContext combatContext)
@@ -98,6 +100,8 @@ public class PickPlayerCardState : CombatState
             CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayHideNotebookButton();    
         }
+
+        CombatSceneManager.Instance.ProvideCombatManager().DisableDeckStatusInteractions();
 
         await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
             .PlayPlacePlayerCardOnCombat(
