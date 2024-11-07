@@ -133,7 +133,14 @@ public class TurnManager : MonoBehaviour
                 GameManager.Instance.SetHasAStoryStarted(false);
                 GameManager.Instance.ResetGame();
 
-                GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.CreditsMenuScene);
+                if (GameManager.Instance.IsMainGame)
+                {
+                    GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.MainMenuScene);
+                }
+                else
+                {
+                    GameManager.Instance.ChangeSceneWithAnimation(GameManager.Instance.ProvideBrainManager().ZoneInfo.ZoneTransition, ScenesNames.CreditsMenuScene);
+                }
                 //SceneManager.LoadScene(ScenesNames.CreditsMenuScene);
             }
             else
