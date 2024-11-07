@@ -518,7 +518,8 @@ public class SoundManager : MonoBehaviour
             }
             if (EventMap.ContainsKey(eventName))
             {
-                //EventMap[eventName].setParameterByName("ExitMenu", 0);
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
                 EventMap[eventName].start();
             }
         }
@@ -549,7 +550,7 @@ public class SoundManager : MonoBehaviour
             {
                 //EventMap[eventName].setParameterByName("ExitMenu", 0);
                 EventMap[eventName].setParameterByName("StopTalking", 0);
-                EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                //EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
         }
 
@@ -576,6 +577,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
+            EventMap["LetsFight"].setParameterByName("EndCombat", 1);
             StoryEventInstance.start();
         }
     }
