@@ -41,6 +41,11 @@ public class MainGameSceneManager : BaseSceneManager
 
         if (!GameManager.Instance.HasAStoryStarted())
         {
+            if (GameManager.Instance.ProvideBrainManager().bCustomGraphForCombatMode) 
+            {
+                defaultGraph = GameManager.Instance.ProvideBrainManager().nextGraph;
+            }
+
             StartStory();
         }
         else

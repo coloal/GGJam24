@@ -1,3 +1,4 @@
+using CodeGraph;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,6 +34,15 @@ public class BrainManager : MonoBehaviour
     private float HasPlayerWonCoin;
 
     private GraphTypes ActualGraphType;
+
+
+    // Uso temporal para cuando selecionas la rama de combate que quieres
+    [HideInInspector]
+    public CodeGraphAsset nextGraph;
+
+    [HideInInspector]
+    public bool bCustomGraphForCombatMode = false;
+
 
     /***** INITIALIZE *****/
 
