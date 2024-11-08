@@ -1673,7 +1673,7 @@ MonoBehaviour:
   canvas: {fileID: 1506965356}
   NotebookComponent: {fileID: 180106261}
   isDebbugingScene: 0
-  isDebuggingEnemy: 1
+  isDebuggingEnemy: 0
   debugEnemyTemplate: {fileID: 11400000, guid: 2e62e0acf3eb9a94eadff9cb31876199, type: 2}
   backgroundTable: {fileID: 198940018}
   backgroundMat: {fileID: 2014470246}
@@ -13739,13 +13739,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckSize: 50
-  debugDeck:
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
-  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
 --- !u!1 &941242543
 GameObject:
   m_ObjectHideFlags: 0
