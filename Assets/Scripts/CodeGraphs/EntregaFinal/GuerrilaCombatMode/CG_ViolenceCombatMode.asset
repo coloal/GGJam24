@@ -287,8 +287,8 @@ MonoBehaviour:
         guid: 2546a1a2-a06d-4994-bd00-d1d952a4e845
         position:
           serializedVersion: 2
-          x: 1273
-          y: 344
+          x: 1274
+          y: 351
           width: 455
           height: 98
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

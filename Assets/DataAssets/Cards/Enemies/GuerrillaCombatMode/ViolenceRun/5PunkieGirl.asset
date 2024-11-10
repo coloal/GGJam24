@@ -15,10 +15,10 @@ MonoBehaviour:
   characterSprite: {fileID: -1734718243, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
-  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   OnStartConversation:
   - You failed Maths, you are gonna fail this match.
   OnWinConversation:

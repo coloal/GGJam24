@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
+  - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   OnStartConversation:
   - "Let\xB4s dance"
