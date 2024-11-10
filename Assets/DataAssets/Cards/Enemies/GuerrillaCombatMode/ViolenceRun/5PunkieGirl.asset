@@ -25,4 +25,4 @@ MonoBehaviour:
   - Just choose a card already.
   OnLoseConversation:
   - Hahaha, just give me your money, you monkeys.
-  ShowHintsTimeInSeconds: 1
+  ShowHintsTimeInSeconds: 2
