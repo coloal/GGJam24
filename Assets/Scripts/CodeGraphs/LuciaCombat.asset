@@ -250,7 +250,7 @@ MonoBehaviour:
         CardText: "8 \xBA round"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: bf3645bdad51eaf40bdfd2d20e09405a, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 3266203106832023552
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -268,6 +268,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: e5e38af2ece62474097fb13e693038c1, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 3266203106832023553
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -285,6 +286,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 3266203106832023554
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -302,6 +304,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 3266203106832023555
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -319,6 +322,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: a7ca7b4318340a84a9bc8eaf209af3de, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 3266203106832023556
       type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
       data:
@@ -383,7 +387,7 @@ MonoBehaviour:
 '
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 3266203106832023560
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -401,7 +405,7 @@ MonoBehaviour:
         CardText: YAY YOU WON
         LeftText: 
         RightText: 
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925250
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -440,6 +444,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 4179187880975925254
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -457,6 +462,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 4179187880975925255
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -474,6 +480,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 4179187880975925256
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -491,16 +498,17 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 4179187880975925259
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 2816cbda-8790-40e0-a58a-7ad2826a7b77
         position:
           serializedVersion: 2
-          x: 133.59999
-          y: 198.40001
-          width: 349.6
-          height: 240
+          x: 168
+          y: 200
+          width: 349.60004
+          height: 240.00002
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -508,7 +516,7 @@ MonoBehaviour:
         CardText: "1\xBA ROUND"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925260
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -526,7 +534,7 @@ MonoBehaviour:
         CardText: "2\xBA round\n"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925261
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -544,7 +552,7 @@ MonoBehaviour:
         CardText: "3 \xBA round"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925262
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -562,7 +570,7 @@ MonoBehaviour:
         CardText: "4 \xBA round"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925263
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -580,6 +588,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
+        music: 1
     - rid: 4179187880975925266
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -597,7 +606,7 @@ MonoBehaviour:
         CardText: "7 \xBA round"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: 2817ae8a520b26345824a70c5c69df99, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925267
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -615,7 +624,7 @@ MonoBehaviour:
         CardText: "5 \xBA round"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925268
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -633,7 +642,7 @@ MonoBehaviour:
         CardText: "6 \xBA round"
         LeftText: 
         RightText: 
-        card: {fileID: 11400000, guid: d61121cd6be798d429a35b0efebaabfc, type: 2}
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

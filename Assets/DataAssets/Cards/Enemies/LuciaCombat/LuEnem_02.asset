@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: LuEnem_02
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
+  characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - My first combat (or last)
+  OnWinConversation:
+  - I am going to call mom...
+  OnLoseConversation:
+  - I am going to call mom!
   ShowHintsTimeInSeconds: 1

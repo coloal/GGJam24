@@ -20,7 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - It is me again!! You missed me?? (I did)
+  OnWinConversation:
+  - I gues you dont like me...
+  OnLoseConversation:
+  - Marry me
   ShowHintsTimeInSeconds: 0.8

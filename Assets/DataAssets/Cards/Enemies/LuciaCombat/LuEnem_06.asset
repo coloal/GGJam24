@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: LuEnem_06
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
+  characterSprite: {fileID: 21300000, guid: 42ca396de59b9c1439bcdd40d02d497f, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
@@ -20,7 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - Be prepared
+  OnWinConversation:
+  - Next one is way tougher
+  OnLoseConversation:
+  - You are not good enough
   ShowHintsTimeInSeconds: 0.5

@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: LuEnem_04
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
+  characterSprite: {fileID: 243997701, guid: 62dd98ed12963974694582a64f0061a9, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
   - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - Lets go
+  OnWinConversation:
+  - ....
+  OnLoseConversation:
+  - ....
   ShowHintsTimeInSeconds: 1

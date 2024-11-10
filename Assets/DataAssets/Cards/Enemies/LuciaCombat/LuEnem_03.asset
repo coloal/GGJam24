@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: LuEnem_03
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
+  characterSprite: {fileID: 605515098, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
-  OnStartConversation: []
-  OnWinConversation: []
-  OnLoseConversation: []
+  OnStartConversation:
+  - You like my wrench ;)
+  OnWinConversation:
+  - That was hard
+  OnLoseConversation:
+  - I hit you hard with my wrench
   ShowHintsTimeInSeconds: 0.6
