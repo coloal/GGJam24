@@ -23,4 +23,4 @@ MonoBehaviour:
   - Choose a card, you deserve it.
   OnLoseConversation:
   - My first win ever!!
-  ShowHintsTimeInSeconds: 2
+  ShowHintsTimeInSeconds: 3
