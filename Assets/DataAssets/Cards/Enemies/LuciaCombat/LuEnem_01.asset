@@ -15,12 +15,11 @@ MonoBehaviour:
   characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
-  - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
-  - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   OnStartConversation:
   - You are guite good looking darling
   OnWinConversation:
   - Oh I wished it was longer
   OnLoseConversation:
   - I will be waiting fot you
-  ShowHintsTimeInSeconds: 1
+  ShowHintsTimeInSeconds: 2.5

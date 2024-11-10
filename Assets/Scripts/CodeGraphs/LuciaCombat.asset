@@ -37,6 +37,7 @@ MonoBehaviour:
   - rid: 3266203106832023558
   - rid: 3266203106832023559
   - rid: 3266203106832023560
+  - rid: 7048188634624425984
   connections:
   - outputPort:
       nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
@@ -230,6 +231,12 @@ MonoBehaviour:
     inputPort:
       nodeId: a0109f1b-aae7-450a-aba0-c5249ba158bd
       portIndex: 1
+  - outputPort:
+      nodeId: a0109f1b-aae7-450a-aba0-c5249ba158bd
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
   references:
     version: 2
     RefIds:
@@ -367,7 +374,7 @@ MonoBehaviour:
           PublicKeyToken=null
         outputs:
         - Next
-        combatCard: {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+        combatCard: {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
     - rid: 3266203106832023559
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -433,10 +440,10 @@ MonoBehaviour:
         guid: 838b2ea5-c98d-4b7f-a6b5-7045f09f047f
         position:
           serializedVersion: 2
-          x: 531.2
-          y: 271.19998
+          x: 568.8
+          y: 282.4
           width: 334.40002
-          height: 139.20001
+          height: 157.6
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -469,10 +476,10 @@ MonoBehaviour:
         guid: 7c584960-ea2d-423b-9fe5-8ad560e64b14
         position:
           serializedVersion: 2
-          x: 2102.4
-          y: 255.2
-          width: 333.6001
-          height: 139.20001
+          x: 2120.8
+          y: 239.2
+          width: 333.59985
+          height: 157.6
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -643,6 +650,19 @@ MonoBehaviour:
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
+    - rid: 7048188634624425984
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d49fba46-4f2d-4f12-8414-68427ac961ac
+        position:
+          serializedVersion: 2
+          x: 7328.8003
+          y: 196
+          width: 74.3999
+          height: 76.8
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

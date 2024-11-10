@@ -18,13 +18,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
-  - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
+  - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   OnStartConversation:
-  - Its time to battle a developer
+  - Its time to battle a me!
   OnWinConversation:
-  - Hahaha try again bitch
+  - You did it
   OnLoseConversation:
-  - You did it puto
+  - Hahaha try again bitch
   ShowHintsTimeInSeconds: 0.8
