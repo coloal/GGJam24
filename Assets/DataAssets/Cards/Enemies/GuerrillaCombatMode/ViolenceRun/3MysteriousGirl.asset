@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 816943111, guid: 846aeee414cc089479e555cca6e6af51, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
-  - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
+  - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   OnStartConversation:
   - "I\xB4m so %excited%."
   OnWinConversation:
