@@ -25,4 +25,4 @@ MonoBehaviour:
   - The mechanic's word is debt. Let's take a look at that caravan!
   OnLoseConversation:
   - Come on, kiddo, you have to train some more if you want to survive in this world!
-  ShowHintsTimeInSeconds: 1
+  ShowHintsTimeInSeconds: 1.5

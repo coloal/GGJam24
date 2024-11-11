@@ -28,4 +28,4 @@ MonoBehaviour:
   OnLoseConversation:
   - I'm sure you're no match for my sweetie either. He is so sweet... And he buys
     me everything I ask for! <3
-  ShowHintsTimeInSeconds: 1
+  ShowHintsTimeInSeconds: 1.5

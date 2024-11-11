@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 581780725, guid: 0ec09b1ae5db86e42af07d404c4d83c0, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
-  - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   OnStartConversation:
   - Get ready to lose! My parents bought me these cards with all the love in the
     world (and their Visa Gold).

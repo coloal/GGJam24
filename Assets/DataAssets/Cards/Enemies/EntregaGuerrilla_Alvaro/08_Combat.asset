@@ -33,4 +33,4 @@ MonoBehaviour:
   OnLoseConversation:
   - You lack determination, kids! Train harder and come back stronger to challenge
     me!
-  ShowHintsTimeInSeconds: 0.7
+  ShowHintsTimeInSeconds: 1
