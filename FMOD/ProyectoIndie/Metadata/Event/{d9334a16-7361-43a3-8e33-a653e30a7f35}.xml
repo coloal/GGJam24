@@ -2526,7 +2526,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{e06597be-de6f-43ac-99e4-a68db3fff74a}">
 		<property name="volume">
-			<value>-1</value>
+			<value>-2</value>
 		</property>
 		<property name="name">
 			<value>BassClari</value>
@@ -2553,6 +2553,9 @@
 		</property>
 		<property name="length">
 			<value>13.500022675736961</value>
+		</property>
+		<property name="volume">
+			<value>-5</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -2911,7 +2914,6 @@
 	<object class="MixerBusPanner" id="{75438bec-3e91-4c72-b75c-96f2d98fe231}" />
 	<object class="MixerBusEffectChain" id="{bf2b4dee-332d-41bc-8ea5-7edc012b95a3}">
 		<relationship name="effects">
-			<destination>{d4e951ec-ca43-4733-ab94-5e91da0ab50a}</destination>
 			<destination>{ca084ca6-d055-4806-a063-f7a3e8cbdf82}</destination>
 		</relationship>
 	</object>
@@ -5646,9 +5648,6 @@
 	</object>
 	<object class="MixerBusFader" id="{168da605-c617-4883-8246-b4127b6c6c2b}" />
 	<object class="MultibandEqEffect" id="{1a6e2a5c-cbb4-4743-a608-e47644759ef6}">
-		<property name="bypass">
-			<value>true</value>
-		</property>
 		<property name="frequencyA">
 			<value>16805.2832</value>
 		</property>
@@ -5707,26 +5706,6 @@
 		</property>
 		<property name="gain">
 			<value>7</value>
-		</property>
-	</object>
-	<object class="SFXReverbEffect" id="{d4e951ec-ca43-4733-ab94-5e91da0ab50a}">
-		<property name="bypass">
-			<value>true</value>
-		</property>
-		<property name="decayTime">
-			<value>1700</value>
-		</property>
-		<property name="earlyDelay">
-			<value>6</value>
-		</property>
-		<property name="lowShelfGain">
-			<value>-1.5</value>
-		</property>
-		<property name="wetLevel">
-			<value>0</value>
-		</property>
-		<property name="dryLevel">
-			<value>-3</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{ca084ca6-d055-4806-a063-f7a3e8cbdf82}" />
@@ -6057,7 +6036,7 @@
 			<value>0.99011299435028244</value>
 		</property>
 		<property name="value">
-			<value>3</value>
+			<value>-2.5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{1b323154-93b3-480b-a773-1c18533f34c4}">
@@ -6065,7 +6044,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-60</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{d191da8c-96f1-49dd-a883-db28e8d286ea}">
