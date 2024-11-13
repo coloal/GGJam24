@@ -46,6 +46,7 @@ MonoBehaviour:
   - rid: 3580239969634746381
   - rid: 3580239969634746384
   - rid: 3580239969634746385
+  - rid: 3580239969634746386
   connections:
   - outputPort:
       nodeId: 5ce11586-051c-4f8e-aeb9-f303037e9e76
@@ -280,6 +281,18 @@ MonoBehaviour:
       portIndex: 0
     inputPort:
       nodeId: d54874fe-0b96-4681-99b8-9eaa0361bdda
+      portIndex: 2
+  - outputPort:
+      nodeId: c489caf8-42de-4044-b6bc-ec45106e2db4
+      portIndex: 0
+    inputPort:
+      nodeId: cd698e1c-bc13-4902-b0e6-d20bf7c73789
+      portIndex: 1
+  - outputPort:
+      nodeId: cd698e1c-bc13-4902-b0e6-d20bf7c73789
+      portIndex: 0
+    inputPort:
+      nodeId: e5d5c2bc-0992-4167-adc3-54de7e799db5
       portIndex: 2
   references:
     version: 2
@@ -550,6 +563,32 @@ MonoBehaviour:
           champions:///Ruuude the Duuude!'
         LeftText: '[Let''s make myself a name!]'
         RightText: '[Will they have run out of those special cards?]'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 3580239969634746386
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cd698e1c-bc13-4902-b0e6-d20bf7c73789
+        position:
+          serializedVersion: 2
+          x: 7363
+          y: 35
+          width: 633
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Nice, mate. You are doing a really great participation. As you
+          could have already experienced this
+
+          is a game of memory, strategy
+          and probabilities. Remember it and try not to over play your cards,
+
+          keep
+          yourself focused and trust your luck. I want to make a career out of you,
+          don''t dissapoint me!'
+        LeftText: Got it under control
+        RightText: Luck is my second name
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 4541241877312307200
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
