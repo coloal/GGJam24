@@ -525,8 +525,8 @@ MonoBehaviour:
         guid: f6b74094-877b-45b6-bf61-5e6f70fd092b
         position:
           serializedVersion: 2
-          x: 10561
-          y: 267
+          x: 10559
+          y: 257
           width: 591
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -905,8 +905,8 @@ MonoBehaviour:
           it to the finals, and only Grinches get here!\nTwo games, and we\u2019ll
           taste the sweetness of victory and a special card gift from the organization!
           Focus, and let\u2019s beat those mother******!"
-        LeftText: 
-        RightText: 
+        LeftText: I'm a Grinch!!
+        RightText: Can I play Santa, Mary?
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 4541241877312307229
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
