@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
-  m_Name: 4PunkieBoy
+  m_Name: 5PunkieBoy
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 2096799782, guid: d0e48fa8599744647a5f4ed41d14d063, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
-  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
-  - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
-  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
+  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   OnStartConversation:
-  - "I\xB4m going to crush you, dear classmate."
+  - You failed Maths, you are gonna fail this match.
   OnWinConversation:
-  - "Please don\xB4t take my ring. It\xB4s for her."
+  - Just choose a card already.
   OnLoseConversation:
-  - I already knew you were a loser.
-  ShowHintsTimeInSeconds: 1.5
+  - Hahaha, just give me your money, you monkeys.
+  ShowHintsTimeInSeconds: 2
