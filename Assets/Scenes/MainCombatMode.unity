@@ -1356,8 +1356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnManager: {fileID: 1029993838}
   cardsManager: {fileID: 1958423316}
-  zoneTemplate: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
-  defaultGraph: {fileID: 11400000, guid: 2de1ea9569e9068439e83907a2e24f13, type: 2}
+  zoneTemplate: {fileID: 11400000, guid: 0bb4017791386c147a7d4ced72013643, type: 2}
+  defaultGraph: {fileID: 11400000, guid: a43e4f08edbdf2644b1e686042e3c845, type: 2}
   IsMainGame: 0
 --- !u!4 &2026473451
 Transform:
@@ -1429,7 +1429,7 @@ PrefabInstance:
     - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
       propertyPath: zoneInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 252062e2ca989ba419500c0044390a90, type: 2}
+      objectReference: {fileID: 11400000, guid: 0bb4017791386c147a7d4ced72013643, type: 2}
     - target: {fileID: 8125366193122709778, guid: 1aa9fac6e2f9c964fb120791cbb6ec58, type: 3}
       propertyPath: isTutorial
       value: 0
