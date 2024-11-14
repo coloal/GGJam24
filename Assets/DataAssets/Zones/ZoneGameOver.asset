@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: ZoneGameOver
   m_EditorClassIdentifier: 
   storyBackgroundSprite: {fileID: 21300000, guid: 2a80f9111a5765c479228843760e4fde, type: 3}
-  storyMusicZone: 5
+  storyMusicZone: 0
   zoneTransition: {fileID: 2882176000549395747, guid: a129cdbd2d109427eaaa8390ea3e6088, type: 3}
   zoneMaterial: {fileID: 0}
   combatTransition: {fileID: 2882176000549395747, guid: a129cdbd2d109427eaaa8390ea3e6088, type: 3}
+  combatBackgroundTableSprite: {fileID: 21300000, guid: 59e64808f7b5f4d2e819e77977e27e5b, type: 3}
+  combatBackgroundMatSprite: {fileID: 21300000, guid: 7134c05eab2c84ad1b9c1d34efff1e1a, type: 3}

@@ -16,7 +16,8 @@ public enum BrainTag
     Bendecido,
     Maldito,
     Asustado,
-    Combate
+    Combate,
+    IsTutorial,
 };
 
 //Toma valores int, por defecto es 0, no se puede decrementar por debajo de 0

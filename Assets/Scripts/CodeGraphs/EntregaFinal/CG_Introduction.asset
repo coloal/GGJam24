@@ -45,6 +45,7 @@ MonoBehaviour:
   - rid: 1812450626248638465
   - rid: 1812450626248638466
   - rid: 1812450626248638471
+  - rid: 599946647995154434
   connections:
   - outputPort:
       nodeId: 1a1f7a1d-3461-4c25-928f-ae242f701db0
@@ -245,12 +246,6 @@ MonoBehaviour:
       nodeId: bd620d3c-7aa1-444b-a9a3-51c85c8a3951
       portIndex: 1
   - outputPort:
-      nodeId: 294c75c7-20ac-4d48-9f11-f45cafc9738c
-      portIndex: 0
-    inputPort:
-      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
-      portIndex: 2
-  - outputPort:
       nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
       portIndex: 0
     inputPort:
@@ -304,9 +299,43 @@ MonoBehaviour:
     inputPort:
       nodeId: 2385d617-b442-4ef7-9449-fef481a5c346
       portIndex: 2
+  - outputPort:
+      nodeId: 294c75c7-20ac-4d48-9f11-f45cafc9738c
+      portIndex: 0
+    inputPort:
+      nodeId: 7599ac44-0893-4791-a195-f58fb7fd7104
+      portIndex: 1
+  - outputPort:
+      nodeId: 7599ac44-0893-4791-a195-f58fb7fd7104
+      portIndex: 0
+    inputPort:
+      nodeId: 7c910fe3-c9f6-48c5-b183-9e0a042f0665
+      portIndex: 2
   references:
     version: 2
     RefIds:
+    - rid: 599946647995154434
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7599ac44-0893-4791-a195-f58fb7fd7104
+        position:
+          serializedVersion: 2
+          x: 15272
+          y: 212
+          width: 127
+          height: 97
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 13
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 0
+          NewState: 0
     - rid: 1812450504952774658
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -732,9 +761,9 @@ MonoBehaviour:
         guid: bd620d3c-7aa1-444b-a9a3-51c85c8a3951
         position:
           serializedVersion: 2
-          x: 14092
-          y: 210
-          width: 460
+          x: 14057
+          y: 215
+          width: 461
           height: 98
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -747,9 +776,9 @@ MonoBehaviour:
         guid: 294c75c7-20ac-4d48-9f11-f45cafc9738c
         position:
           serializedVersion: 2
-          x: 14697
-          y: 210
-          width: 497
+          x: 14536
+          y: 213
+          width: 696
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -777,6 +806,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: e5e38af2ece62474097fb13e693038c1, type: 2}
         IsBossFight: 0
+        music: 0
     - rid: 1812450528744177667
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:

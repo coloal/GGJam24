@@ -16,11 +16,11 @@ public class BrainManager : MonoBehaviour
     private Dictionary<string, string> BrainStateMap;
 
     public static BrainManager Instance;
-    [SerializeField]
-    private bool isTutorial = true;
+
+    [HideInInspector]
     public bool IsTutorial {
-        get { return isTutorial; }
-        set { isTutorial = value; }
+        get { return GetTag(BrainTag.IsTutorial); }
+        set { SetTag(BrainTag.IsTutorial, value); }
     }
         
     public ZoneTemplate ZoneInfo => zoneInfo;
@@ -67,7 +67,7 @@ public class BrainManager : MonoBehaviour
     {
         zoneInfo = defaultZoneInfo;
         InitializeData();
-        isTutorial = true;
+        IsTutorial = true;
     }
 
     public void InitializeData()
