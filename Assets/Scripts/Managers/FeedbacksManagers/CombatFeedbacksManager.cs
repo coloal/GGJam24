@@ -34,6 +34,8 @@ public class CombatFeedbacksManager : MonoBehaviour
     [SerializeField] public MMF_Player EnemyDrawCardFromDeckPlayer;
     [SerializeField] public MMF_Player PlaceEnemyDeckOnBoardPlayer;
     [SerializeField] public MMF_Player KillEnemyDeckPlayer;
+    [SerializeField] public MMF_Player ShowCardsLeftOnDeckPlayer;
+    [SerializeField] public MMF_Player HideCardsLeftOnDeckPlayer;
 
     [Header("Cards scale configurations")]
     [SerializeField] public float CardOnCombatScaleFactor = 1.5f;
@@ -619,5 +621,15 @@ public class CombatFeedbacksManager : MonoBehaviour
     public async Task PlayPlaceEnemyDeckOnBoard()
     {
         await PlaceEnemyDeckOnBoardPlayer.PlayFeedbacksTask();
+    }
+
+    public async Task PlayShowCardsLeftOnDeck()
+    {
+        await ShowCardsLeftOnDeckPlayer.PlayFeedbacksTask();
+    }
+
+    public async Task PlayHideCardsLeftOnDeck()
+    {
+        await HideCardsLeftOnDeckPlayer.PlayFeedbacksTask();
     }
 }

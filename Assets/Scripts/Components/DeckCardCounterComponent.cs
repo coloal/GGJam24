@@ -15,16 +15,4 @@ public class DeckCardCounterComponent : MonoBehaviour
         this.cardsLeft = cardsLeft;
         textCardLeft.text = this.cardsLeft.ToString();
     }
-
-    public void ShowCardsLeft()
-    {
-        // TODO: Show cards left using the FeedbacksManager
-        gameObject.SetActive(true);
-    }
-
-    public void HideCardsLeft()
-    {
-        // TODO: Hide cards left using the FeedbacksManager
-        gameObject.SetActive(false);
-    }
 }

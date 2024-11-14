@@ -84,22 +84,26 @@ public class DeckStatusComponent : MonoBehaviour
         {
             HideCardsLeft();
         }
-
-        areCardsCurrentlyVisible = !areCardsCurrentlyVisible;
     }
 
-    void ShowCardsLeft()
+    async void ShowCardsLeft()
     {
-        moneyCardsCounter.ShowCardsLeft();
-        influenceCardsCounter.ShowCardsLeft();
-        violenceCardsCounter.ShowCardsLeft();
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager().PlayShowCardsLeftOnDeck();
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
+        areCardsCurrentlyVisible = true;
     }
 
-    void HideCardsLeft()
+    async void HideCardsLeft()
     {
-        violenceCardsCounter.HideCardsLeft();
-        influenceCardsCounter.HideCardsLeft();
-        moneyCardsCounter.HideCardsLeft();
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager().PlayHideCardsLeftOnDeck();
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
+        areCardsCurrentlyVisible = false;
     }
 
     public void EnableInteractions()
