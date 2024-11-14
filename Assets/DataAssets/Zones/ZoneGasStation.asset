@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ZoneGasStation
   m_EditorClassIdentifier: 
   storyBackgroundSprite: {fileID: 21300000, guid: 1277b877507e74a66b98df63c0998674, type: 3}
-  storyMusicZone: 0
+  storyMusicZone: 3
   zoneTransition: {fileID: 2504118667978227075, guid: 6f3b74162e1c22646a5846aaa13b6270, type: 3}
   zoneMaterial: {fileID: 0}
   combatTransition: {fileID: 2882176000549395747, guid: a129cdbd2d109427eaaa8390ea3e6088, type: 3}
