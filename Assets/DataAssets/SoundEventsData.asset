@@ -67,3 +67,5 @@ MonoBehaviour:
     EventName: Pause
   - FoldersName: 4
     EventName: LetsFight
+  - FoldersName: 4
+    EventName: LetsFight 2

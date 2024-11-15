@@ -45,6 +45,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private MusicZonesTemplate MusicZoneData;
     [SerializeField] private float SpeedFadeIn = 0.2f;
 
+    [Space]
+    [Header("Menu music")]
+    [SerializeField] private string MenuMusicEvent = "";
+
     private MusicZones ActualZone;
     private SoundEvent ActualEvent;
 
@@ -372,7 +376,17 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMenuMusic() 
     {
-        string eventName = "Menu";
+        string eventName;
+        if (MenuMusicEvent != "")
+        {
+            eventName = MenuMusicEvent;
+        }
+        else
+        {
+            eventName = "Menu";
+        }
+
+
         if (!EventMap.ContainsKey(eventName))
         {
             CreateEventFMOD(eventName);
@@ -386,12 +400,27 @@ public class SoundManager : MonoBehaviour
 
     public void StopMenuMusic()
     {
-        if (EventMap.ContainsKey("Menu"))
+        string eventName;
+        if (MenuMusicEvent != "")
         {
-            EventMap["Menu"].setParameterByName("ExitMenu", 1);
+            eventName = MenuMusicEvent;
         }
-        
-        //EventMap["Menu"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        else
+        {
+            eventName = "Menu";
+        }
+
+        if (EventMap.ContainsKey(eventName))
+        {
+            if (eventName.Equals("Menu"))
+            {
+                EventMap[eventName].setParameterByName("ExitMenu", 1);
+            }
+            else
+            {
+                EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
     }
 
     public void StartGame(MusicZones zone = MusicZones.Dream)
