@@ -24,4 +24,4 @@ MonoBehaviour:
   - "Please don\xB4t take my ring. It\xB4s for her."
   OnLoseConversation:
   - I already knew you were a loser.
-  ShowHintsTimeInSeconds: 1.5
+  ShowHintsTimeInSeconds: 1

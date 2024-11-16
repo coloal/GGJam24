@@ -47,6 +47,8 @@ MonoBehaviour:
   - rid: 3580239969634746384
   - rid: 3580239969634746385
   - rid: 3580239969634746386
+  - rid: 3580240038325911553
+  - rid: 3580240038325911554
   connections:
   - outputPort:
       nodeId: 5ce11586-051c-4f8e-aeb9-f303037e9e76
@@ -115,34 +117,10 @@ MonoBehaviour:
       nodeId: c6bf0345-298b-4175-a299-f580df74484c
       portIndex: 1
   - outputPort:
-      nodeId: c489caf8-42de-4044-b6bc-ec45106e2db4
-      portIndex: 1
-    inputPort:
-      nodeId: c6bf0345-298b-4175-a299-f580df74484c
-      portIndex: 1
-  - outputPort:
-      nodeId: e5d5c2bc-0992-4167-adc3-54de7e799db5
-      portIndex: 1
-    inputPort:
-      nodeId: c6bf0345-298b-4175-a299-f580df74484c
-      portIndex: 1
-  - outputPort:
-      nodeId: 8b70f495-74ea-4a3f-935c-2ec805819681
-      portIndex: 1
-    inputPort:
-      nodeId: c6bf0345-298b-4175-a299-f580df74484c
-      portIndex: 1
-  - outputPort:
       nodeId: d54874fe-0b96-4681-99b8-9eaa0361bdda
       portIndex: 0
     inputPort:
       nodeId: 1120f35b-837e-4341-85e6-afe94f683dbd
-      portIndex: 1
-  - outputPort:
-      nodeId: d54874fe-0b96-4681-99b8-9eaa0361bdda
-      portIndex: 1
-    inputPort:
-      nodeId: c6bf0345-298b-4175-a299-f580df74484c
       portIndex: 1
   - outputPort:
       nodeId: 8d6a3a19-24df-470a-bb9b-2f09e619ab4d
@@ -223,12 +201,6 @@ MonoBehaviour:
       nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
       portIndex: 2
   - outputPort:
-      nodeId: e59f62c2-0c88-402d-a558-9ad2d4b23f46
-      portIndex: 0
-    inputPort:
-      nodeId: b621585c-48c3-438c-8311-564e2fedcfa2
-      portIndex: 1
-  - outputPort:
       nodeId: b621585c-48c3-438c-8311-564e2fedcfa2
       portIndex: 0
     inputPort:
@@ -245,12 +217,6 @@ MonoBehaviour:
       portIndex: 1
     inputPort:
       nodeId: a28132f5-0b30-40ba-ba09-1fd6c4025dea
-      portIndex: 2
-  - outputPort:
-      nodeId: 2546a1a2-a06d-4994-bd00-d1d952a4e845
-      portIndex: 0
-    inputPort:
-      nodeId: 06de225f-9153-4c46-86d6-1eb3ae620c0b
       portIndex: 2
   - outputPort:
       nodeId: 99ec45b6-fa48-413a-ab35-ab36f3cfe7a8
@@ -294,6 +260,48 @@ MonoBehaviour:
     inputPort:
       nodeId: e5d5c2bc-0992-4167-adc3-54de7e799db5
       portIndex: 2
+  - outputPort:
+      nodeId: e59f62c2-0c88-402d-a558-9ad2d4b23f46
+      portIndex: 0
+    inputPort:
+      nodeId: b621585c-48c3-438c-8311-564e2fedcfa2
+      portIndex: 1
+  - outputPort:
+      nodeId: c489caf8-42de-4044-b6bc-ec45106e2db4
+      portIndex: 1
+    inputPort:
+      nodeId: 162b8cb9-b58b-448e-a4e3-4347971053da
+      portIndex: 1
+  - outputPort:
+      nodeId: 162b8cb9-b58b-448e-a4e3-4347971053da
+      portIndex: 0
+    inputPort:
+      nodeId: 6a964eb3-4a4b-45c0-a4e3-84171fbb420a
+      portIndex: 0
+  - outputPort:
+      nodeId: e5d5c2bc-0992-4167-adc3-54de7e799db5
+      portIndex: 1
+    inputPort:
+      nodeId: 162b8cb9-b58b-448e-a4e3-4347971053da
+      portIndex: 1
+  - outputPort:
+      nodeId: 8b70f495-74ea-4a3f-935c-2ec805819681
+      portIndex: 1
+    inputPort:
+      nodeId: 162b8cb9-b58b-448e-a4e3-4347971053da
+      portIndex: 1
+  - outputPort:
+      nodeId: d54874fe-0b96-4681-99b8-9eaa0361bdda
+      portIndex: 1
+    inputPort:
+      nodeId: 162b8cb9-b58b-448e-a4e3-4347971053da
+      portIndex: 1
+  - outputPort:
+      nodeId: 2546a1a2-a06d-4994-bd00-d1d952a4e845
+      portIndex: 0
+    inputPort:
+      nodeId: 6085a95c-cccb-44ec-b368-93742aaa19ca
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -327,12 +335,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Great, mate, great! Another victory that gets you out of the preliminar
-          phases! You are starting to make a name as\ncard game player in Admired
-          Town, some people is even starting to call you up by a nickname: Smooth
-          slider. Let's \nsee if you are just a shooting star or you make it to The
-          Finals, but first you will have to win your next game against Lily\nour
-          loved town emo girl!"
+        CardText: "Great, mate, great! Another victory that pulls you out of the
+          preliminary phases! You are starting to make a name for yourself as a card
+          game player in Admired Town.\nSome people are even starting to call you
+          by a nickname: <i>Smooth Slider</i>.///Let's see if you are just a shooting
+          star or if you will make it to The Finals.\nBut first, you will have to
+          win your next game against Lily\u2014our beloved town emo girl!"
         LeftText: Left Smooth slide then
         RightText: Right Smooth slide then
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -382,12 +390,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Great, mate, great! Another victory that gets you out of the preliminar
-          phases! You are starting to make a name as\ncard game player in Admired
-          Town, some people is even starting to call you up by a nickname: The lucky
-          foreigner. Let's \nsee if you are just a shooting star or you make it to
-          The Finals, but first you will have to win your next game against Lily\nour
-          loved town emo girl!"
+        CardText: "Great, mate, great! Another victory that pulls you out of the
+          preliminary phases! You are starting to make a name for yourself as a card
+          game player in Admired Town.\nSome people are even starting to call you
+          by a nickname: <i>The lucky foreigner</i>.///Let's see if you are just
+          a shooting star or if you will make it to The Finals.\nBut first, you will
+          have to win your next game against Lily\u2014our beloved town emo girl!"
         LeftText: Let the cards do the talking.
         RightText: They mistake skill for luck.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -405,12 +413,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Great, mate, great! Another victory that gets you out of the preliminar
-          phases! You are starting to make a name as\ncard game player in Admired
-          Town, some people is even starting to call you up by a nickname: The draw
-          expert. Let's \nsee if you are just a shooting star or you make it to The
-          Finals, but first you will have to win your next game against Lily\nour
-          loved town emo girl!"
+        CardText: "Great, mate, great! Another victory that pulls you out of the
+          preliminary phases! You are starting to make a name for yourself as a card
+          game player in Admired Town.\nSome people are even starting to call you
+          by a nickname: <i>The draw expert</i>.///Let's see if you are just a shooting
+          star or if you will make it to The Finals.\nBut first, you will have to
+          win your next game against Lily\u2014our beloved town emo girl!"
         LeftText: I like effective play
         RightText: I never seal a draw!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -428,12 +436,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Great, mate, great! Another victory that gets you out of the preliminar
-          phases! You are starting to make a name as\ncard game player in Admired
-          Town, some people is even starting to call you up by a nickname: Mary's
-          player. Let's \nsee if you are just a shooting star or you make it to The
-          Finals, but first you will have to win your next game against Lily\nour
-          loved town emo girl!"
+        CardText: "Great, mate, great! Another victory that pulls you out of the
+          preliminary phases! You are starting to make a name for yourself as a card
+          game player in Admired Town.\nSome people are even starting to call you
+          by a nickname: <i>Mary's player</i>.///Let's see if you are just a shooting
+          star or if you will make it to The Finals.\nBut first, you will have to
+          win your next game against Lily\u2014our beloved town emo girl!"
         LeftText: Wow, are we in a matriarchy system in this game? Cool.
         RightText: Wait, I want to be called after my skills not after you!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -452,13 +460,11 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: "Oh, I just remembered while you were playing that I forgot to
-          tell you about the rewards! What a game attendant I am, my goddess\u2026///So,\na
-          unique physical and real card from the old retro Vertical Slide game will
-          be given to you if you become the Christmas Tournament\nchampion this year.
-          It\u2019s a highly prized item in the black markets and a symbol of distinction
-          that sets apart our most skilled players\nfrom the crowd that has visited
-          us throughout the history of the championship! But let\u2019s stop fantasizing.\nYou
-          have plenty of games to win before you can earn that!"
+          tell you about the rewards! What a game attendant I am, my goddess\u2026///So,
+          a physical card from the\ngame will be given to you if you become the Christmas
+          Tournament\nchampion this year, a highly prized item that sets apart our
+          most skilled players\nfrom the crowd!///But stop fantasizing. You have
+          plenty of games to win before you can earn that!"
         LeftText: Yes, one step at a time
         RightText: "Uh, I\u2019ve seen one of those at the game stand"
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -468,8 +474,8 @@ MonoBehaviour:
         guid: e3fc501d-8631-4588-a554-2ce633fcabda
         position:
           serializedVersion: 2
-          x: 9774
-          y: 124
+          x: 9818
+          y: 59
           width: 219
           height: 140
         typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
@@ -495,16 +501,20 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: "Greetings, visitor! I'm Mary, your games attendant for the tournament.
-          But you might be wondering:\n'Mary, what tournament?' Well, my dear player,
-          you've arrived in Admired Town at a very special time of year:\nthe Violence,
-          Money, and Influence Christmas Tournament! I've already signed you up\u2014I
-          couldn\u2019t let you miss\nour town\u2019s most iconic event. And I'm
-          giving you a starting deck of cards, don't worry, I\u2019ve got everything
-          set up for you.\nNow that we have all the necessary stuff, do you want
-          me to take you to the training table to go over the basic rules of the
-          game, or should we just jump straight into the first game?"
-        LeftText: After you
+        CardText: 'Greetings, visitor! I''m Mary, your games attendant for the tournament.
+          But you might be wondering:
+
+          ''Mary, what tournament?'' Well,
+          my dear player, you''ve arrived in Admired Town at a very special time
+          of year:
+
+          the <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          <color=#438c1d>Wealth</color></b>
+
+          Christmas Tournament! To which
+          I''ve already signed you up///Do you already know the game or you need
+          assitance? '
+        LeftText: I need the tutorial
         RightText: I have played before
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 3580239969634746384
@@ -538,7 +548,7 @@ MonoBehaviour:
         guid: f6b74094-877b-45b6-bf61-5e6f70fd092b
         position:
           serializedVersion: 2
-          x: 10559
+          x: 10742
           y: 257
           width: 591
           height: 242
@@ -546,21 +556,13 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'Welcome the first finalist of the Tournament of Tournaments: The
-          Admired Town Christmas Championship!
-
-          We have a thrilling game
-          of Wealth, Influence, and Violence ahead of us between two great
-
-          contenders:///Our
-          visitor, the aspirant who has taken all the attention with his beautiful
-          game:
-
-          Maryyyy''s player!!///On the other side of the table,
-          with already 8 championships won in a row,
-
-          the champion of all
-          champions:///Ruuude the Duuude!'
+        CardText: "Welcome to the final of the Tournament of Tournaments: The Admired
+          Town Christmas Championship!\nWe have a thrilling game of <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>,\n<color=#438c1d>Wealth</color></b> ahead
+          between two great contenders.///On\none side, the aspirant who's captured
+          all the attention with his beautiful play: <i>Maryyyy's player!</i>///And\n
+          on the other side, with 8 championships won in a row, the champion of all
+          champions: <i>Ruuude the Duuude!</i>\""
         LeftText: '[Let''s make myself a name!]'
         RightText: '[Will they have run out of those special cards?]'
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -578,18 +580,48 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'Nice, mate. You are doing a really great participation. As you
-          could have already experienced this
-
-          is a game of memory, strategy
-          and probabilities. Remember it and try not to over play your cards,
-
-          keep
-          yourself focused and trust your luck. I want to make a career out of you,
-          don''t dissapoint me!'
-        LeftText: Got it under control
+        CardText: "Nice, mate. You're putting on a great performance. As you may
+          have already noticed, this is a game of memory,\nstrategy, and probabilities.
+          Keep that in mind and try not to overplay your cards. Stay focused and
+          trust your luck.\nI want to make a career out of you\u2014don\u2019t disappoint
+          me!"
+        LeftText: Fourth game and I already have a manager?
         RightText: Luck is my second name
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 3580240038325911553
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 162b8cb9-b58b-448e-a4e3-4347971053da
+        position:
+          serializedVersion: 2
+          x: 7377
+          y: 1083
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Well, we lost, but this has been the best performance of any player
+          I've assisted. You did great for being a novice. I'm sure you'll win the
+          Christmas championship one day\u2014just keep playing <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b>!"
+        LeftText: I will, Mary!
+        RightText: I'm proud of my memory performance!
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 3580240038325911554
+      type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6a964eb3-4a4b-45c0-a4e3-84171fbb420a
+        position:
+          serializedVersion: 2
+          x: 9386
+          y: 1094
+          width: 74
+          height: 77
+        typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs: []
     - rid: 4541241877312307200
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -707,22 +739,19 @@ MonoBehaviour:
         guid: 1120f35b-837e-4341-85e6-afe94f683dbd
         position:
           serializedVersion: 2
-          x: 12608
+          x: 12610
           y: 302
-          width: 485
+          width: 1158
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'I did it! I mean... WE DID IT! What a game and what a tournament
-          have youd done,
-
-          mate!/// I never saw someone play with that
-          mastery of yours. I guess you have a brilliant
-
-          future ahead
-          of yours as a '
+        CardText: "I did it! I mean... WE DID IT! What a game and what a tournament
+          you've had, mate!\nI've never seen anyone play with your mastery. I guess
+          you\u2014I mean, we\u2014have a brilliant future ahead as a <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>,\n<color=#438c1d>Wealth</color></b> player.
+          Enjoy your uniqueness and claim your reward from the stand assistants!"
         LeftText: Where is my card?!!
         RightText: I want my card!!!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -732,17 +761,19 @@ MonoBehaviour:
         guid: c6bf0345-298b-4175-a299-f580df74484c
         position:
           serializedVersion: 2
-          x: 3036
-          y: 1015
-          width: 352
+          x: 2829
+          y: 1030
+          width: 789
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: YOU LOSE
-        LeftText: '***'
-        RightText: '***'
+        CardText: Another year that I don't make it past the fourth game of the tournament,
+          Do you think I'm cursed? My players never have the necessary luck to win
+          and I'm starting to think is my fault :(
+        LeftText: Yeps, totally your fault
+        RightText: Nah, I just need more practice!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 4541241877312307212
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -750,7 +781,7 @@ MonoBehaviour:
         guid: 275c6c7f-7feb-4e31-a045-58c4b592b423
         position:
           serializedVersion: 2
-          x: 13198
+          x: 14017
           y: 302
           width: 74
           height: 77
@@ -763,8 +794,8 @@ MonoBehaviour:
         guid: 9c6e6dae-4227-4df7-b357-d014129b5405
         position:
           serializedVersion: 2
-          x: 3517
-          y: 1015
+          x: 3925
+          y: 1030
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -784,11 +815,14 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Alright, you just beat your first opponent, William the Influential.
-          But you\u2019ll need to prove your skills even further\nif you want to
-          call yourself a champion! Let me give you some old advice about our beloved
-          card\ngame:///Sometimes a draw takes you further than a victory.///Now
-          let me take you to your next playing table!"
+        CardText: 'Alright, you just beat your first opponent, but you''ll need to
+          prove your skills even further
+
+          if you want to call yourself
+          a champion! Now let me guide you to your next game table and
+
+          remember:///Sometimes
+          a draw takes you further than a victory'
         LeftText: After you
         RightText: Ok... I guess?
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -824,14 +858,14 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Hm, another victory, that\u2019s surprising indeed. I have to
-          admit, I didn\u2019t have high expectations for you.\nI\u2019ve been a
-          players' attendant for three years now, and no one I\u2019ve assisted has
-          ever made it past the\nfourth game of the tournament. But\u2026 it seems
-          I picked the right player this year. I have a feeling this is\n going to
-          be my year! I mean, our year to make it to the finals!"
+        CardText: "Hm, another victory. That's surprising, indeed. I have to admit,\nI
+          didn't have high expectations for you. I've been a players'\nattendant
+          for three years now, and no one I've assisted has\never made it past the
+          fourth game of the tournament. But...\nit seems I picked the right player
+          this year. I have a feeling\nthis is going to be my year\u2014I mean, <i>our</i>
+          year\u2014to make it to The Finals!"
         LeftText: Hey don't pressure my game
-        RightText: Fourth game and I already have a manager?
+        RightText: Got it under control
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 4541241877312307219
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -911,7 +945,7 @@ MonoBehaviour:
         guid: 8b70f495-74ea-4a3f-935c-2ec805819681
         position:
           serializedVersion: 2
-          x: 9984
+          x: 10250
           y: 257
           width: 309
           height: 160
@@ -937,15 +971,13 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Nice, mate, aren't we having a great time playing this silly game?
-          Look at all the lights, the decorations, the disappointed faces of your
-          defeated opponents\u2014ahhh, I love this time of year. It's such a time
-          of love and generosity, but no Santa wins championships!\nYou\u2019ve made
-          it to the finals, and only Grinches get here!\nTwo games, and we\u2019ll
-          taste the sweetness of victory and a special card gift from the organization!
-          Focus, and let\u2019s beat those mother******!"
-        LeftText: I'm a Grinch!!
-        RightText: Can I play Santa, Mary?
+        CardText: "Nice, mate! Aren't we having a great time with this silly game?
+          Look at the lights, the decorations, and the disappointed faces of your
+          defeated opponents\u2014ah, I love this time of year. It's all about love
+          and generosity, but no Santa wins championships! Only Grinches do. Two
+          more games, and victory is ours. Focus, and let's crush them!"
+        LeftText: Can I play Santa, Mary?
+        RightText: I'm the Grinch!!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
     - rid: 4541241877312307229
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}

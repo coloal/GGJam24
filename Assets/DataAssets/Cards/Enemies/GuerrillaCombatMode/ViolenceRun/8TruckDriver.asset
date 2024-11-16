@@ -27,4 +27,4 @@ MonoBehaviour:
   - You have won fair and square, take one.
   OnLoseConversation:
   - Sorry kids, your trip is over.
-  ShowHintsTimeInSeconds: 1
+  ShowHintsTimeInSeconds: 0.5

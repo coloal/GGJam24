@@ -22,4 +22,4 @@ MonoBehaviour:
   - You were good there, here, take one.
   OnLoseConversation:
   - '%Dads, I won!!%'
-  ShowHintsTimeInSeconds: 3
+  ShowHintsTimeInSeconds: 2

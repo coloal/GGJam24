@@ -26,4 +26,4 @@ MonoBehaviour:
   - Choose one, youngster.
   OnLoseConversation:
   - That was easy. Heh.
-  ShowHintsTimeInSeconds: 2
+  ShowHintsTimeInSeconds: 1

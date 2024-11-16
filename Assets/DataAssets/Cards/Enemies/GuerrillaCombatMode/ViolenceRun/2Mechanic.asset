@@ -22,4 +22,4 @@ MonoBehaviour:
   - "Ok, ok. I\xB4ll make my part of the deal."
   OnLoseConversation:
   - You are too immature for this, kid.
-  ShowHintsTimeInSeconds: 3
+  ShowHintsTimeInSeconds: 2
