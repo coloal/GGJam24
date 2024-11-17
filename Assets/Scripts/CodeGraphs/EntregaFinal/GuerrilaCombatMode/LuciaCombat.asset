@@ -1970,7 +1970,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -1980,8 +1980,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925253
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2364,7 +2364,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2374,8 +2374,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
     - rid: 7048188725976891440
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2392,7 +2392,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2402,8 +2402,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
     - rid: 7048188725976891441
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2411,16 +2411,16 @@ MonoBehaviour:
         guid: 2d6a88df-b412-4409-84c7-a3168e95ab99
         position:
           serializedVersion: 2
-          x: 595.2
-          y: 99.2
-          width: 843.19995
-          height: 264
+          x: 595
+          y: 99
+          width: 841.5
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2430,8 +2430,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
     - rid: 7048188725976891442
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2448,7 +2448,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2458,8 +2458,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
     - rid: 7048188725976891443
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2476,7 +2476,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2486,8 +2486,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
     - rid: 7048188725976891444
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2495,16 +2495,16 @@ MonoBehaviour:
         guid: 14baa23b-7f14-41d2-b8d7-0c390c198126
         position:
           serializedVersion: 2
-          x: 595.2
-          y: 1208.8
-          width: 843.19995
-          height: 264
+          x: 595
+          y: 1209
+          width: 841.5
+          height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2514,8 +2514,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891445
       type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2532,7 +2532,7 @@ MonoBehaviour:
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I am nos supposed to be here.
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
           This must be a bug. Oh well, now that we are here you have
 
           entered
@@ -2542,8 +2542,8 @@ MonoBehaviour:
           you
           should do the tutorial. Swipe this cad to the left to go to the tutorial,
           or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes pls, I am new
-        RightText: No pls
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891449
       type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
