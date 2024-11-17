@@ -121,7 +121,11 @@ public class DeckStatusComponent : MonoBehaviour
         {
             clickableCardComponent.enabled = false;
             areInteractionsActive = false;
-            HideCardsLeft();
+            
+            if (areCardsCurrentlyVisible)
+            {
+                HideCardsLeft();   
+            }
         }
     }
 
