@@ -41,8 +41,9 @@ MonoBehaviour:
   bookExplanation:
   - You can always see which card wins or loses trades in the notebook over here.
   deckExplanation:
-  - You can also check the cards in your deck pressing here. They are not shown in
-    order though
+  - You can also check how many cards are left in your deck by pressing on it. They
+    are not shown in order though. Don't you dare to think that it'll be *<b>that
+    easy</b>*
   enemyCardExplanationPreShow:
   - Right at the very start of each combat the enemy will show you it's cards.
   enemyCardExplanationWhileShow:
@@ -121,7 +122,7 @@ MonoBehaviour:
   coinExplanation:
   - Now the coin will be thrown. Good luck (to me).
   battleResultExplanation:
-  - Congrats!! You have won the combat!!! (If only this wasnt scripted*...*)
+  - Congrats!! You have won the combat!!! (If only this one wasn't scripted*...*)
   pickWinCardExplanation:
   - As the winner you have gained the right to keep one of my precious cards. Choose
     wisely as you can only pick once.

@@ -69,7 +69,13 @@ public class TutorialManager : MonoBehaviour
 
     public void StartDeckExplanation(Action onFinishExplanation)
     {
-        StartConversationWithBlock(deckMask, tutorialInfo.DeckExplanation, onFinishExplanation);
+        BlockScreen(deckMask, () => 
+        {
+            DialogManager.SceneDialog.CreateDialog(
+                text: tutorialInfo.DeckExplanation, 
+                onDialogFinished: onFinishExplanation
+            );
+        });
     }
 
     public void StartEnemyCardExplanationPreShow(Action onFinishExplanation)

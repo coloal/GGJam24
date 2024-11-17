@@ -18,6 +18,7 @@ public class StartTutorialState : StartCombatState
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
+        Preprocess(combatContext);
         SetUpPlayerDeck(combatContext);
         SetUpEnemyDeck(combatContext);
         TutorialManager.SceneTutorial.StartInitialConversation(()=>PostProcess(combatContext));

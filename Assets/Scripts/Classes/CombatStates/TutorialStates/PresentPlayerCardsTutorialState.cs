@@ -40,11 +40,15 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
         CombatSceneManager.Instance.NotebookComponent.ToggleNotebookTutorial();
         CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                 .PlayHideNotebookButton();
+        
+        // Starts Player's Deck explanation
         GameUtils.CreateTemporizer(() =>
         {
+            // Shows the cards left help
+            CombatSceneManager.Instance.ProvideCombatManager().TogglePlayerCardLeftInDeckVisibility();
+
             TutorialManager.SceneTutorial.StartDeckExplanation(() =>
             {
-                //TODO Mostrar animacion del deck
                 GameManager.Instance.ProvideInputManager().onClickEvent += DeckCardsHell;
             });
         }, 1, CombatSceneManager.Instance);
@@ -55,14 +59,16 @@ public class PresentPlayerCardsTutorialState : PresentPlayerCardsState
         if (hasPressedDeck) return;
         hasPressedDeck = true;
         GameManager.Instance.ProvideInputManager().onClickEvent -= DeckCardsHell;
-        //TODO Llamar animacion para ocultar deck
-        GameUtils.CreateTemporizer(() =>
+
+        // Hides the cards left help
+        CombatSceneManager.Instance.ProvideCombatManager().TogglePlayerCardLeftInDeckVisibility();
+        TutorialManager.SceneTutorial.UnBlockScreen(() =>
         {
             CombatUtils.ProcessNextStateAfterSeconds(
                 nextState: new PresentEnemyCardsTutorialState(),
                 seconds: CombatSceneManager.Instance.ProvideCombatManager().timeForPickEnemyCard
             );
-        }, 1, CombatSceneManager.Instance);
+        });
     }
 
 }

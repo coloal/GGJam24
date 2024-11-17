@@ -15,10 +15,12 @@ public class StartCombatState : CombatState
 
     public override void Preprocess(CombatManager.CombatContext combatContext)
     {
+        CombatSceneManager.Instance.ProvideCombatManager().DisableDeckStatusInteractions();
     }
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
+        Preprocess(combatContext);
         if(CombatSceneManager.Instance.ProvideEnemyData().OnStartConversation.Any())
         {
             SetUpPlayerDeck(combatContext);
