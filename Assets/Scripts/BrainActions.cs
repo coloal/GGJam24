@@ -5,18 +5,26 @@ using UnityEngine;
 [System.Serializable]
 public class BrainAction
 {
+    [Header("Selecciona tipo de tag a modificar")]
     public BrainTagType TagType;
+
     //Bool
+    [Space]
+    [Header("Booleana")]
     public BrainTag BoolTag;
     public bool NewValue;
-    
+
     //Numeric 
+    [Space]
+    [Header("Numerica")]
     public NumericTags NumericTag;
     public int Increment;
-    
+
     //State
-    public int TagState;
-    public int NewState;
+    [Space]
+    [Header("Estado")]
+    public string TagState;
+    public string NewState;
 }
 
 [System.Serializable]

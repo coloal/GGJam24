@@ -39,6 +39,8 @@ MonoBehaviour:
   - rid: 4179187880975925276
   - rid: 346115910127583233
   - rid: 599946490429046784
+  - rid: 599946715867643904
+  - rid: 599946715867643905
   connections:
   - outputPort:
       nodeId: 8082f5d2-352f-45ec-b954-fbbeab892b48
@@ -143,18 +145,6 @@ MonoBehaviour:
       nodeId: d6bd3f07-b161-4823-a4fa-7615e606c4a8
       portIndex: 1
   - outputPort:
-      nodeId: f33f2b2b-4686-4a87-83fb-56cc7c3a4f50
-      portIndex: 0
-    inputPort:
-      nodeId: a7a6bcbb-7302-40c0-b7d3-1ac149294ac5
-      portIndex: 1
-  - outputPort:
-      nodeId: a7a6bcbb-7302-40c0-b7d3-1ac149294ac5
-      portIndex: 0
-    inputPort:
-      nodeId: d631892e-695a-4313-b713-1e4f5de162a0
-      portIndex: 1
-  - outputPort:
       nodeId: d631892e-695a-4313-b713-1e4f5de162a0
       portIndex: 0
     inputPort:
@@ -173,26 +163,38 @@ MonoBehaviour:
       nodeId: 5ef018a3-05a6-4ac6-9fc6-138fbb326725
       portIndex: 0
   - outputPort:
-      nodeId: db506135-6c2b-4479-b0ef-c2e2a1835900
-      portIndex: 0
-    inputPort:
-      nodeId: 150a8175-8c2f-4297-8d4b-f64e78f1da87
-      portIndex: 1
-  - outputPort:
-      nodeId: db506135-6c2b-4479-b0ef-c2e2a1835900
-      portIndex: 1
-    inputPort:
-      nodeId: 150a8175-8c2f-4297-8d4b-f64e78f1da87
-      portIndex: 1
-  - outputPort:
       nodeId: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
       portIndex: 0
     inputPort:
+      nodeId: 4594b187-2033-4d48-ba9c-669040631af8
+      portIndex: 1
+  - outputPort:
+      nodeId: 4594b187-2033-4d48-ba9c-669040631af8
+      portIndex: 0
+    inputPort:
       nodeId: 150a8175-8c2f-4297-8d4b-f64e78f1da87
       portIndex: 1
   - outputPort:
       nodeId: 150a8175-8c2f-4297-8d4b-f64e78f1da87
       portIndex: 0
+    inputPort:
+      nodeId: 22dfb92f-e7bd-40bb-aa56-4b7d428aad19
+      portIndex: 2
+  - outputPort:
+      nodeId: 22dfb92f-e7bd-40bb-aa56-4b7d428aad19
+      portIndex: 0
+    inputPort:
+      nodeId: a7a6bcbb-7302-40c0-b7d3-1ac149294ac5
+      portIndex: 1
+  - outputPort:
+      nodeId: a7a6bcbb-7302-40c0-b7d3-1ac149294ac5
+      portIndex: 0
+    inputPort:
+      nodeId: c20384b4-e351-4c49-b9fe-82f06e858f4c
+      portIndex: 0
+  - outputPort:
+      nodeId: 22dfb92f-e7bd-40bb-aa56-4b7d428aad19
+      portIndex: 1
     inputPort:
       nodeId: c20384b4-e351-4c49-b9fe-82f06e858f4c
       portIndex: 0
@@ -230,6 +232,46 @@ MonoBehaviour:
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
+    - rid: 599946715867643904
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4594b187-2033-4d48-ba9c-669040631af8
+        position:
+          serializedVersion: 2
+          x: -560
+          y: 1387
+          width: 257
+          height: 364
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 2
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 0
+          Increment: 0
+          TagState: Jhon
+          NewState: Herido
+    - rid: 599946715867643905
+      type: {class: BrainTagStateConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 22dfb92f-e7bd-40bb-aa56-4b7d428aad19
+        position:
+          serializedVersion: 2
+          x: 131
+          y: 1347
+          width: 219
+          height: 140
+        typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedTag: 1
+          selectedTagState: 0
     - rid: 1306970353074176000
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -532,9 +574,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'No se reseteo
-
-'
+        CardText: Jhon Herido
         LeftText: 
         RightText: 
         card: {fileID: 11400000, guid: 1a9fd27c441964642998b4767d47a3d3, type: 2}
@@ -544,8 +584,8 @@ MonoBehaviour:
         guid: 150a8175-8c2f-4297-8d4b-f64e78f1da87
         position:
           serializedVersion: 2
-          x: -187
-          y: 1279
+          x: -250
+          y: 1398
           width: 344
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
