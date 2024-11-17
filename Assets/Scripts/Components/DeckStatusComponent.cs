@@ -74,7 +74,7 @@ public class DeckStatusComponent : MonoBehaviour
         });
     }
 
-    void ToggleCardsLeftVisibility()
+    public void ToggleCardsLeftVisibility()
     {
         if (!areCardsCurrentlyVisible)
         {
@@ -126,18 +126,6 @@ public class DeckStatusComponent : MonoBehaviour
             {
                 HideCardsLeft();   
             }
-        }
-    }
-
-    public void ToggleInteractions()
-    {
-        if (!areInteractionsActive)
-        {
-            EnableInteractions();
-        }
-        else
-        {
-            DisableInteractions();
         }
     }
 }

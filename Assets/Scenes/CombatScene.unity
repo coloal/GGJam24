@@ -8676,6 +8676,7 @@ MonoBehaviour:
   SoundEvents: {fileID: 11400000, guid: 3a38acdc2bf149d42b65801318c41ef8, type: 2}
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
+  MenuMusicEvent: 
 --- !u!4 &667495228
 Transform:
   m_ObjectHideFlags: 0
@@ -14134,6 +14135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckSize: 50
+  debugDeck:
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
 --- !u!1 &941242543
 GameObject:
   m_ObjectHideFlags: 0
@@ -16240,6 +16246,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078310418}
   m_CullTransparentMesh: 1
+--- !u!1 &1149975549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149975550}
+  m_Layer: 5
+  m_Name: PlayerCardsLeftToFillDeckOriginPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1149975550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149975549}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1160582998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -500}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1160582997
 GameObject:
   m_ObjectHideFlags: 0
@@ -16272,6 +16313,7 @@ RectTransform:
   m_Children:
   - {fileID: 1519592539}
   - {fileID: 1729471712}
+  - {fileID: 1149975550}
   m_Father: {fileID: 656074510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.745, y: 0.15}
@@ -27980,6 +28022,7 @@ MonoBehaviour:
   playerTieZone: {fileID: 733832925}
   enemyTieZone: {fileID: 1503166249}
   playerDeck: {fileID: 1519592541}
+  playerCardsLeftToFillDeckOriginalPosition: {fileID: 1149975550}
   playerHandContainer: {fileID: 217401232}
   enemyDeck: {fileID: 1559777459}
   maxAllowedEnemyCards: 8

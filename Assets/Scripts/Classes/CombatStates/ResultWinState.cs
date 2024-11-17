@@ -24,47 +24,90 @@ public class ResultWinState : CombatState
         combatContext.ActivateEnemyCardsContainer();
     }
 
-    public override async void ProcessImplementation(CombatManager.CombatContext combatContext)
+    public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
+        if(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation.Any())
+        {
+            DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation, async () =>
+            {
+                DoPostCombatActions(combatContext);
+            });
+        }
+        else
+        {
+            DoPostCombatActions(combatContext);
+        }
+        
+    }
+
+    private async void DoPostCombatActions(CombatContext combatContext)
+    {
+        // Player's deck animations
         await ReturnPlayerCardsFromHandToDeck(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
             return;
         }
-        if(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation.Any())
+        await ResetPlayerDeck(combatContext);
+        CombatSceneManager.Instance.ProvideCombatManager().TogglePlayerCardLeftInDeckVisibility();
+
+        SetEnemyCardsToChooseFrom(combatContext);
+        await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
+            .PlayKillEnemyDeck();
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation, async () =>
+            return;
+        }
+
+        GameManager.Instance.ProvideSoundManager().EndCombat();
+        await ShowEnemyCardsToChooseFrom();
+    }
+
+    private async Task ResetPlayerDeck(CombatContext combatContext)
+    {
+        InventoryManager inventoryManager = GameManager.Instance.ProvideInventoryManager();
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+
+        // Gets the original player deck when staring the combat...
+        List<CombatCardTemplate> cardsLeftToFillDeck = inventoryManager.GetDeckCopy();
+        List<CombatCardTemplate> afterCombatPlayerDeck = playerDeckManager.GetAllDeckCardsData();
+        // ...and removes all cards that were left in it at the end of the combat
+        afterCombatPlayerDeck.ForEach((combatCardTemplate) => cardsLeftToFillDeck.Remove(combatCardTemplate));
+
+        // Returns to deck all cards lost in combat
+        foreach (CombatCardTemplate cardLeftToFill in cardsLeftToFillDeck)
+        {
+            CombatCard combatCard = CombatSceneManager.Instance
+                .ProvideCombatManager()
+                .InstantiateCombatCardGameObject()
+                .GetComponent<CombatCard>();
+            if (combatCard != null)
             {
-                SetEnemyCardsToChooseFrom(combatContext);
+                combatCard.transform.SetParent(
+                    combatContext.playerDeck.transform.parent,
+                    worldPositionStays: true
+                );
+                combatCard.transform.position = combatContext.playerCardsLeftToFillDeckOriginalPosition.position;
+                combatCard.SetDataCard(cardLeftToFill);
+                playerDeckManager.AddCardToDeck(combatCard);
                 await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                    .PlayKillEnemyDeck();
+                    .PlayReturnCardToDeck(
+                        cardToReturn: combatCard,
+                        deckTransform: combatContext.playerDeck.transform
+                    );
                 if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
                 {
                     return;
                 }
-
-                GameManager.Instance.ProvideSoundManager().EndCombat();
-                await ShowEnemyCardsToChooseFrom();
-            });
-        }
-        else
-        {
-            SetEnemyCardsToChooseFrom(combatContext);
-            await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
-                .PlayKillEnemyDeck();
-            if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
-            {
-                return;
+                combatCard.gameObject.SetActive(false);
             }
-
-            GameManager.Instance.ProvideSoundManager().EndCombat();
-            await ShowEnemyCardsToChooseFrom();
         }
-        
     }
 
     protected async Task ReturnPlayerCardsFromHandToDeck(CombatManager.CombatContext combatContext)
     {
+        PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
+
         List<Transform> cardInHandContainers = combatContext.GetPlayerCardInHandContainers();
         for (int i = cardInHandContainers.Count - 1; i >= 0; i--)
         {
@@ -73,6 +116,8 @@ public class ResultWinState : CombatState
                 CombatCard combatCard = cardInHandContainers[i].GetChild(0).GetComponent<CombatCard>();
                 if (combatCard != null)
                 {
+                    playerDeckManager.AddCardToDeck(combatCard);
+
                     combatCard.transform.SetParent(
                         combatContext.playerDeck.transform.parent,
                         worldPositionStays: true
@@ -223,6 +268,7 @@ public class ResultWinState : CombatState
             return;
         }
         pickedCombatCard.gameObject.SetActive(false);
+        CombatSceneManager.Instance.ProvideCombatManager().TogglePlayerCardLeftInDeckVisibility();
 
         // Hide all other cards
         if (combatContext.enemyCardsRow0.transform.childCount > 0)

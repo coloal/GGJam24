@@ -23,6 +23,7 @@ public class CombatManager : MonoBehaviour
         public GameObject combatContainer;
         public Transform playerTieZone;
         public Transform enemyTieZone;
+        public Transform playerCardsLeftToFillDeckOriginalPosition;
 
         public CombatContext(GameObject enemyCardsRow0,
             GameObject enemyCardsRow1,
@@ -34,7 +35,8 @@ public class CombatManager : MonoBehaviour
             Transform enemyOnCombatCardFinalPosition,
             GameObject combatContainer,
             Transform playerTieZone,
-            Transform enemyTieZone)
+            Transform enemyTieZone,
+            Transform playerCardsLeftToFillDeckOriginalPosition)
         {
             this.enemyCardsRow0 = enemyCardsRow0;
             this.enemyCardsRow1 = enemyCardsRow1;
@@ -47,6 +49,7 @@ public class CombatManager : MonoBehaviour
             this.combatContainer = combatContainer;
             this.playerTieZone = playerTieZone;
             this.enemyTieZone = enemyTieZone;
+            this.playerCardsLeftToFillDeckOriginalPosition = playerCardsLeftToFillDeckOriginalPosition;
 
             this.playerOnCombatCard = null;
             this.enemyOnCombatCard = null;
@@ -146,6 +149,7 @@ public class CombatManager : MonoBehaviour
 
     [Header("Player deck")]
     [SerializeField] private DeckBehaviourComponent playerDeck;
+    [SerializeField] private Transform playerCardsLeftToFillDeckOriginalPosition;
     
     [Header("Player hand")]
     [SerializeField] private Transform playerHandContainer;
@@ -211,7 +215,8 @@ public class CombatManager : MonoBehaviour
             enemyOnCombatCardFinalPosition,
             combatContainer,
             playerTieZone,
-            enemyTieZone
+            enemyTieZone,
+            playerCardsLeftToFillDeckOriginalPosition
         );
     }
 
@@ -322,6 +327,15 @@ public class CombatManager : MonoBehaviour
         if (playerDeckStatusComponent != null)
         {
             playerDeckStatusComponent.DisableInteractions();
+        }
+    }
+
+    public void TogglePlayerCardLeftInDeckVisibility()
+    {
+        DeckStatusComponent playerDeckStatusComponent = playerDeck.GetComponent<DeckStatusComponent>();
+        if (playerDeckStatusComponent != null)
+        {
+            playerDeckStatusComponent.ToggleCardsLeftVisibility();
         }
     }
 }
