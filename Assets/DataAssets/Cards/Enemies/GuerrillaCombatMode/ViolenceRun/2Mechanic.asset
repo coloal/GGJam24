@@ -17,9 +17,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   OnStartConversation:
-  - The game is on
+  - Game professionals we are,<br>But <b><color=#438c1d>money</color></b> lies only
+    in our cards.
   OnWinConversation:
-  - "Ok, ok. I\xB4ll make my part of the deal."
+  - Got fired up by your cards and game,<br>Now I'm poor and can't enjoy myslef
   OnLoseConversation:
-  - You are too immature for this, kid.
+  - A win it is,<br>For my game, not me.
   ShowHintsTimeInSeconds: 2

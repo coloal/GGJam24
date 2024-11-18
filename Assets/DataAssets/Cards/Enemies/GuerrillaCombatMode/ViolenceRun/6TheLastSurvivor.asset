@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   OnStartConversation:
-  - You know the deal.
+  - The Finals await their guests,<br>No time to doubt or expect
   OnWinConversation:
   - Choose one, youngster.
   OnLoseConversation:
