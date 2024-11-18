@@ -49,6 +49,17 @@ MonoBehaviour:
   - rid: 3580239969634746386
   - rid: 3580240038325911553
   - rid: 3580240038325911554
+  - rid: 3580240038325911555
+  - rid: 3580240038325911558
+  - rid: 3580240038325911559
+  - rid: 3580240038325911560
+  - rid: 3580240038325911561
+  - rid: 3580240038325911562
+  - rid: 3580240038325911563
+  - rid: 3580240077017055232
+  - rid: 3580240077017055233
+  - rid: 3580240077017055234
+  - rid: 3580240077017055235
   connections:
   - outputPort:
       nodeId: 5ce11586-051c-4f8e-aeb9-f303037e9e76
@@ -129,12 +140,6 @@ MonoBehaviour:
       nodeId: 2546a1a2-a06d-4994-bd00-d1d952a4e845
       portIndex: 1
   - outputPort:
-      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
-      portIndex: 0
-    inputPort:
-      nodeId: 3c0912a0-4d8a-4d6a-8913-3355b53d664a
-      portIndex: 1
-  - outputPort:
       nodeId: 3c0912a0-4d8a-4d6a-8913-3355b53d664a
       portIndex: 0
     inputPort:
@@ -177,30 +182,6 @@ MonoBehaviour:
       nodeId: 6ed3e1f5-a01d-474c-9afc-9325681f5ce0
       portIndex: 1
   - outputPort:
-      nodeId: 6ed3e1f5-a01d-474c-9afc-9325681f5ce0
-      portIndex: 0
-    inputPort:
-      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
-      portIndex: 2
-  - outputPort:
-      nodeId: 53dfaab6-f346-4ca4-b2bf-c1a96bf46291
-      portIndex: 0
-    inputPort:
-      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
-      portIndex: 2
-  - outputPort:
-      nodeId: b957811c-9068-4fcd-b930-23118cd8289a
-      portIndex: 0
-    inputPort:
-      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
-      portIndex: 2
-  - outputPort:
-      nodeId: 8865a7cf-714e-4cd6-b822-ed9761565466
-      portIndex: 0
-    inputPort:
-      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
-      portIndex: 2
-  - outputPort:
       nodeId: b621585c-48c3-438c-8311-564e2fedcfa2
       portIndex: 0
     inputPort:
@@ -236,12 +217,6 @@ MonoBehaviour:
     inputPort:
       nodeId: 8b70f495-74ea-4a3f-935c-2ec805819681
       portIndex: 2
-  - outputPort:
-      nodeId: 8b70f495-74ea-4a3f-935c-2ec805819681
-      portIndex: 0
-    inputPort:
-      nodeId: f6b74094-877b-45b6-bf61-5e6f70fd092b
-      portIndex: 1
   - outputPort:
       nodeId: f6b74094-877b-45b6-bf61-5e6f70fd092b
       portIndex: 0
@@ -297,10 +272,130 @@ MonoBehaviour:
       nodeId: 162b8cb9-b58b-448e-a4e3-4347971053da
       portIndex: 1
   - outputPort:
+      nodeId: 020b3500-f7b1-41f4-9c9c-4575ec22e51d
+      portIndex: 0
+    inputPort:
+      nodeId: f6b74094-877b-45b6-bf61-5e6f70fd092b
+      portIndex: 1
+  - outputPort:
+      nodeId: 8b70f495-74ea-4a3f-935c-2ec805819681
+      portIndex: 0
+    inputPort:
+      nodeId: 020b3500-f7b1-41f4-9c9c-4575ec22e51d
+      portIndex: 2
+  - outputPort:
+      nodeId: 020b3500-f7b1-41f4-9c9c-4575ec22e51d
+      portIndex: 1
+    inputPort:
+      nodeId: 03ba9bf2-737c-43a0-8784-d71cf0f8868e
+      portIndex: 2
+  - outputPort:
+      nodeId: 03ba9bf2-737c-43a0-8784-d71cf0f8868e
+      portIndex: 0
+    inputPort:
+      nodeId: 6909f0b0-5cad-49b9-b3d0-2b683577c908
+      portIndex: 1
+  - outputPort:
+      nodeId: 03ba9bf2-737c-43a0-8784-d71cf0f8868e
+      portIndex: 1
+    inputPort:
+      nodeId: e20ed98f-0f6e-4a7f-9c39-6257eb95bb78
+      portIndex: 2
+  - outputPort:
+      nodeId: 6909f0b0-5cad-49b9-b3d0-2b683577c908
+      portIndex: 0
+    inputPort:
+      nodeId: d54874fe-0b96-4681-99b8-9eaa0361bdda
+      portIndex: 2
+  - outputPort:
+      nodeId: e20ed98f-0f6e-4a7f-9c39-6257eb95bb78
+      portIndex: 0
+    inputPort:
+      nodeId: cd173d48-2f91-4624-aee3-a876bf0a4f00
+      portIndex: 1
+  - outputPort:
+      nodeId: e20ed98f-0f6e-4a7f-9c39-6257eb95bb78
+      portIndex: 1
+    inputPort:
+      nodeId: 91b6e59f-5699-4132-a5cb-59897515cb20
+      portIndex: 2
+  - outputPort:
+      nodeId: 91b6e59f-5699-4132-a5cb-59897515cb20
+      portIndex: 0
+    inputPort:
+      nodeId: af037d2e-694d-4fbd-b744-a9b0008b4756
+      portIndex: 1
+  - outputPort:
+      nodeId: af037d2e-694d-4fbd-b744-a9b0008b4756
+      portIndex: 0
+    inputPort:
+      nodeId: d54874fe-0b96-4681-99b8-9eaa0361bdda
+      portIndex: 2
+  - outputPort:
+      nodeId: 91b6e59f-5699-4132-a5cb-59897515cb20
+      portIndex: 1
+    inputPort:
+      nodeId: af037d2e-694d-4fbd-b744-a9b0008b4756
+      portIndex: 1
+  - outputPort:
+      nodeId: 8865a7cf-714e-4cd6-b822-ed9761565466
+      portIndex: 0
+    inputPort:
+      nodeId: 7811c273-592e-49bb-b7b1-8041e81d5608
+      portIndex: 1
+  - outputPort:
+      nodeId: b957811c-9068-4fcd-b930-23118cd8289a
+      portIndex: 0
+    inputPort:
+      nodeId: 7378e44b-e4e8-4b88-8ae0-539760b68e9d
+      portIndex: 1
+  - outputPort:
+      nodeId: 53dfaab6-f346-4ca4-b2bf-c1a96bf46291
+      portIndex: 0
+    inputPort:
+      nodeId: dcfd3c36-5477-4189-8b2f-f7e9f8b4e135
+      portIndex: 1
+  - outputPort:
+      nodeId: 6ed3e1f5-a01d-474c-9afc-9325681f5ce0
+      portIndex: 0
+    inputPort:
+      nodeId: 98736196-6615-4842-b2e9-382afd9e65fb
+      portIndex: 1
+  - outputPort:
+      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
+      portIndex: 0
+    inputPort:
+      nodeId: 3c0912a0-4d8a-4d6a-8913-3355b53d664a
+      portIndex: 1
+  - outputPort:
+      nodeId: 98736196-6615-4842-b2e9-382afd9e65fb
+      portIndex: 0
+    inputPort:
+      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
+      portIndex: 2
+  - outputPort:
+      nodeId: dcfd3c36-5477-4189-8b2f-f7e9f8b4e135
+      portIndex: 0
+    inputPort:
+      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
+      portIndex: 2
+  - outputPort:
+      nodeId: 7378e44b-e4e8-4b88-8ae0-539760b68e9d
+      portIndex: 0
+    inputPort:
+      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
+      portIndex: 2
+  - outputPort:
+      nodeId: 7811c273-592e-49bb-b7b1-8041e81d5608
+      portIndex: 0
+    inputPort:
+      nodeId: 8581e81a-50e2-4f73-a2ab-3cb82fe6e931
+      portIndex: 2
+  - outputPort:
       nodeId: 2546a1a2-a06d-4994-bd00-d1d952a4e845
       portIndex: 0
     inputPort:
-      nodeId: 6085a95c-cccb-44ec-b368-93742aaa19ca
+      nodeId: 06de225f-9153-4c46-86d6-1eb3ae620c0b
       portIndex: 2
   references:
     version: 2
@@ -327,9 +422,9 @@ MonoBehaviour:
         guid: 8865a7cf-714e-4cd6-b822-ed9761565466
         position:
           serializedVersion: 2
-          x: 5420
-          y: -1393
-          width: 653
+          x: 5446
+          y: -1599
+          width: 881
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -337,10 +432,10 @@ MonoBehaviour:
         - Next
         CardText: "Great, mate, great! Another victory that pulls you out of the
           preliminary phases! You are starting to make a name for yourself as a card
-          game player in Admired Town.\nSome people are even starting to call you
-          by a nickname: <i>Smooth Slider</i>.///Let's see if you are just a shooting
-          star or if you will make it to The Finals.\nBut first, you will have to
-          win your next game against Lily\u2014our beloved town emo girl!"
+          game player in Admired Town.\nPeople are starting to call you: <i>Smooth
+          Slider</i>.///Let's see if you are just a shooting star or if you will
+          make it to The Finals.\nBut first, you will have to win your next game
+          against Lily\u2014our beloved town emo girl!"
         LeftText: Left Smooth slide then
         RightText: Right Smooth slide then
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -383,8 +478,8 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: 5446
-          y: -1004
-          width: 661
+          y: -1146
+          width: 881
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -392,10 +487,10 @@ MonoBehaviour:
         - Next
         CardText: "Great, mate, great! Another victory that pulls you out of the
           preliminary phases! You are starting to make a name for yourself as a card
-          game player in Admired Town.\nSome people are even starting to call you
-          by a nickname: <i>The lucky foreigner</i>.///Let's see if you are just
-          a shooting star or if you will make it to The Finals.\nBut first, you will
-          have to win your next game against Lily\u2014our beloved town emo girl!"
+          game player in Admired Town.\nPeople are starting to call you: <i>The lucky
+          foreigner</i>.///Let's see if you are just a shooting star or if you will
+          make it to The Finals.\nBut first, you will have to win your next game
+          against Lily\u2014our beloved town emo girl!"
         LeftText: Let the cards do the talking.
         RightText: They mistake skill for luck.
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -415,10 +510,10 @@ MonoBehaviour:
         - Next
         CardText: "Great, mate, great! Another victory that pulls you out of the
           preliminary phases! You are starting to make a name for yourself as a card
-          game player in Admired Town.\nSome people are even starting to call you
-          by a nickname: <i>The draw expert</i>.///Let's see if you are just a shooting
-          star or if you will make it to The Finals.\nBut first, you will have to
-          win your next game against Lily\u2014our beloved town emo girl!"
+          game player in Admired Town.\nPeople are starting to call you: <i>The draw
+          expert</i>.///Let's see if you are just a shooting star or if you will
+          make it to The Finals.\nBut first, you will have to win your next game
+          against Lily\u2014our beloved town emo girl!"
         LeftText: I like effective play
         RightText: I never seal a draw!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -438,10 +533,10 @@ MonoBehaviour:
         - Next
         CardText: "Great, mate, great! Another victory that pulls you out of the
           preliminary phases! You are starting to make a name for yourself as a card
-          game player in Admired Town.\nSome people are even starting to call you
-          by a nickname: <i>Mary's player</i>.///Let's see if you are just a shooting
-          star or if you will make it to The Finals.\nBut first, you will have to
-          win your next game against Lily\u2014our beloved town emo girl!"
+          game player in Admired Town.\nPeople are starting to call you: <i>Mary's
+          player</i>.///Let's see if you are just a shooting star or if you will
+          make it to The Finals.\nBut first, you will have to win your next game
+          against Lily\u2014our beloved town emo girl!"
         LeftText: Wow, are we in a matriarchy system in this game? Cool.
         RightText: Wait, I want to be called after my skills not after you!
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -462,9 +557,8 @@ MonoBehaviour:
         CardText: "Oh, I just remembered while you were playing that I forgot to
           tell you about the rewards! What a game attendant I am, my goddess\u2026///So,
           a physical card from the\ngame will be given to you if you become the Christmas
-          Tournament\nchampion this year, a highly prized item that sets apart our
-          most skilled players\nfrom the crowd!///But stop fantasizing. You have
-          plenty of games to win before you can earn that!"
+          Tournament\nchampion this year, a highly prized item!///But stop fantasizing.
+          You have plenty of games to win before you can earn that!"
         LeftText: Yes, one step at a time
         RightText: "Uh, I\u2019ve seen one of those at the game stand"
         card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
@@ -548,9 +642,9 @@ MonoBehaviour:
         guid: f6b74094-877b-45b6-bf61-5e6f70fd092b
         position:
           serializedVersion: 2
-          x: 10742
-          y: 257
-          width: 591
+          x: 11195
+          y: 943
+          width: 635
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -560,7 +654,7 @@ MonoBehaviour:
           Town Christmas Championship!\nWe have a thrilling game of <b><color=#2c7aab>Influence</color>,
           <color=#bc3047>Violence</color>,\n<color=#438c1d>Wealth</color></b> ahead
           between two great contenders.///On\none side, the aspirant who's captured
-          all the attention with his beautiful play: <i>Maryyyy's player!</i>///And\n
+          all the attention with his beautiful play: <i>Maryyyy's player</i>!///And\n
           on the other side, with 8 championships won in a row, the champion of all
           champions: <i>Ruuude the Duuude!</i>\""
         LeftText: '[Let''s make myself a name!]'
@@ -622,6 +716,238 @@ MonoBehaviour:
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs: []
+    - rid: 3580240038325911555
+      type: {class: BrainTagStateConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 91b6e59f-5699-4132-a5cb-59897515cb20
+        position:
+          serializedVersion: 2
+          x: 11969
+          y: -58
+          width: 219
+          height: 140
+        typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedTag: 3
+          selectedTagState: 0
+    - rid: 3580240038325911558
+      type: {class: BrainTagStateConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e20ed98f-0f6e-4a7f-9c39-6257eb95bb78
+        position:
+          serializedVersion: 2
+          x: 11704
+          y: 210
+          width: 219
+          height: 140
+        typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedTag: 3
+          selectedTagState: 3
+    - rid: 3580240038325911559
+      type: {class: BrainTagStateConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 03ba9bf2-737c-43a0-8784-d71cf0f8868e
+        position:
+          serializedVersion: 2
+          x: 10990
+          y: 623
+          width: 219
+          height: 140
+        typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedTag: 3
+          selectedTagState: 2
+    - rid: 3580240038325911560
+      type: {class: BrainTagStateConditionalNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 020b3500-f7b1-41f4-9c9c-4575ec22e51d
+        position:
+          serializedVersion: 2
+          x: 10742
+          y: 943
+          width: 219
+          height: 140
+        typeName: CodeGraph.BrainTagStateConditionalNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - True
+        - False
+        Picker:
+          selectedTag: 3
+          selectedTagState: 1
+    - rid: 3580240038325911561
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6909f0b0-5cad-49b9-b3d0-2b683577c908
+        position:
+          serializedVersion: 2
+          x: 11288
+          y: 623
+          width: 635
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Welcome to the final of the Tournament of Tournaments: The Admired
+          Town Christmas Championship!\nWe have a thrilling game of <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>,\n<color=#438c1d>Wealth</color></b> ahead
+          between two great contenders.///On\none side, the aspirant who's captured
+          all the attention with his beautiful play: <i>The expeeert drawer</i>!///And\n
+          on the other side, with 8 championships won in a row, the champion of all
+          champions: <i>Ruuude the Duuude!</i>\""
+        LeftText: '[Let''s make myself a name!]'
+        RightText: '[Will they have run out of those special cards?]'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 3580240038325911562
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: cd173d48-2f91-4624-aee3-a876bf0a4f00
+        position:
+          serializedVersion: 2
+          x: 12115
+          y: 210
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Welcome to the final of the Tournament of Tournaments: The Admired
+          Town Christmas Championship!\nWe have a thrilling game of <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>,\n<color=#438c1d>Wealth</color></b> ahead
+          between two great contenders.///On\none side, the aspirant who's captured
+          all the attention with his beautiful play: <i>The luckyyy foreignerrr</i>!///And\n
+          on the other side, with 8 championships won in a row, the champion of all
+          champions: <i>Ruuude the Duuude!</i>\""
+        LeftText: '[Let''s make myself a name!]'
+        RightText: '[Will they have run out of those special cards?]'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 3580240038325911563
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: af037d2e-694d-4fbd-b744-a9b0008b4756
+        position:
+          serializedVersion: 2
+          x: 12270
+          y: -212
+          width: 635
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: "Welcome to the final of the Tournament of Tournaments: The Admired
+          Town Christmas Championship!\nWe have a thrilling game of <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>,\n<color=#438c1d>Wealth</color></b> ahead
+          between two great contenders.///On\none side, the aspirant who's captured
+          all the attention with his beautiful play: <i>The smoooth sliderrr</i>!///And\n
+          on the other side, with 8 championships won in a row, the champion of all
+          champions: <i>Ruuude the Duuude!</i>\""
+        LeftText: '[Let''s make myself a name!]'
+        RightText: '[Will they have run out of those special cards?]'
+        card: {fileID: 11400000, guid: 477e41d9e4017394ba4650ffd6abe293, type: 2}
+    - rid: 3580240077017055232
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7811c273-592e-49bb-b7b1-8041e81d5608
+        position:
+          serializedVersion: 2
+          x: 6549
+          y: -1599
+          width: 257
+          height: 364
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 2
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 0
+          Increment: 0
+          TagState: Nickname
+          NewState: Smooth
+    - rid: 3580240077017055233
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7378e44b-e4e8-4b88-8ae0-539760b68e9d
+        position:
+          serializedVersion: 2
+          x: 6569
+          y: -1146
+          width: 257
+          height: 364
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 2
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 0
+          Increment: 0
+          TagState: Nickname
+          NewState: Foreigner
+    - rid: 3580240077017055234
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: dcfd3c36-5477-4189-8b2f-f7e9f8b4e135
+        position:
+          serializedVersion: 2
+          x: 6569
+          y: -683
+          width: 257
+          height: 364
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 2
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 0
+          Increment: 0
+          TagState: Nickname
+          NewState: Drawer
+    - rid: 3580240077017055235
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 98736196-6615-4842-b2e9-382afd9e65fb
+        position:
+          serializedVersion: 2
+          x: 6569
+          y: -258
+          width: 257
+          height: 364
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 2
+          BoolTag: 0
+          NewValue: 0
+          NumericTag: 0
+          Increment: 0
+          TagState: Nickname
+          NewState: Mary
     - rid: 4541241877312307200
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -739,9 +1065,9 @@ MonoBehaviour:
         guid: 1120f35b-837e-4341-85e6-afe94f683dbd
         position:
           serializedVersion: 2
-          x: 12610
-          y: 302
-          width: 1158
+          x: 14124
+          y: 311
+          width: 979
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -781,8 +1107,8 @@ MonoBehaviour:
         guid: 275c6c7f-7feb-4e31-a045-58c4b592b423
         position:
           serializedVersion: 2
-          x: 14017
-          y: 302
+          x: 15531
+          y: 311
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -985,8 +1311,8 @@ MonoBehaviour:
         guid: d54874fe-0b96-4681-99b8-9eaa0361bdda
         position:
           serializedVersion: 2
-          x: 12166
-          y: 302
+          x: 13680
+          y: 311
           width: 340
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

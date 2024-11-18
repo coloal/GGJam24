@@ -47,7 +47,8 @@ public static class StateInfo
             //El primer estado es el valor por defecto
             new Tuple<string, List<string>>("MasterSword", new List<string> { "Oculto", "Recogido", "Roto"}),
             new Tuple<string, List<string>>("Jhon", new List<string> {"Vivo", "Herido", "Muerto", "Atrapado"}),
-            new Tuple<string, List<string>>("Zapato", new List<string> {"Suela", "Cordones", "Converse", "Nike", "Adidas"})
+            new Tuple<string, List<string>>("Zapato", new List<string> {"Suela", "Cordones", "Converse", "Nike", "Adidas"}),
+            new Tuple<string, List<string>>("Nickname", new List<string> {"Smooth", "Mary", "Drawer", "Foreigner"}),
         };
 }
 
