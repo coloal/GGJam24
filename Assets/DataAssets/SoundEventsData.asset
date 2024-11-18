@@ -69,3 +69,5 @@ MonoBehaviour:
     EventName: LetsFight
   - FoldersName: 4
     EventName: LetsFight 2
+  - FoldersName: 0
+    EventName: ShowCardsOnDeck
