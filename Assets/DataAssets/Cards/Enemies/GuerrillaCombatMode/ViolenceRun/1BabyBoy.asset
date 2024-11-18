@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   OnStartConversation:
-  - "Let\xB4s dance"
+  - I dismissed everyone's advice,<br>Now I play with a single type in mind.
   OnWinConversation:
-  - You were good there, here, take one.
+  - You saw my cards and said no word,<br>I got defeated, for a pawn is my role.
   OnLoseConversation:
-  - '%Dads, I won!!%'
+  - I won? Was this possible?<br>AHHH!<br>What do I do now with this freedom's exposure?
   ShowHintsTimeInSeconds: 2

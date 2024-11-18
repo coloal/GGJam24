@@ -19,7 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d8e54a6bd69c4f40998cc734e3bcb58, type: 2}
   - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
   OnStartConversation:
-  - "I\xB4m going to crush you, dear classmate."
+  - Play with all your hand and weigh your chances,<br>If you want your wins to be
+    granted.
   OnWinConversation:
   - "Please don\xB4t take my ring. It\xB4s for her."
   OnLoseConversation:

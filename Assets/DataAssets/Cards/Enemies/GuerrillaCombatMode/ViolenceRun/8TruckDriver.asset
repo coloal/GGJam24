@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   OnStartConversation:
-  - Come on, kids.
+  - The decider it is,<br>Only one of us can stand still.
   OnWinConversation:
   - You have won fair and square, take one.
   OnLoseConversation:
