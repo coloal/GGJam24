@@ -33,23 +33,11 @@ MonoBehaviour:
       nodeId: d4fdfd3a-1ab8-4cd8-a3e6-c4e89ae9d790
       portIndex: 1
   - outputPort:
-      nodeId: cfb45b94-ac36-4b61-891a-f4ec139a85e1
-      portIndex: 1
-    inputPort:
-      nodeId: 2d16b80a-aac0-4dff-85d1-7f2df7cd7e86
-      portIndex: 1
-  - outputPort:
       nodeId: d4fdfd3a-1ab8-4cd8-a3e6-c4e89ae9d790
       portIndex: 0
     inputPort:
       nodeId: c06d0bfa-dc6e-4de1-b6b4-d39857bcf5b3
       portIndex: 2
-  - outputPort:
-      nodeId: c06d0bfa-dc6e-4de1-b6b4-d39857bcf5b3
-      portIndex: 0
-    inputPort:
-      nodeId: 2b44cc00-f906-4c78-a754-de5659cf453b
-      portIndex: 3
   - outputPort:
       nodeId: 2d16b80a-aac0-4dff-85d1-7f2df7cd7e86
       portIndex: 0
@@ -96,8 +84,8 @@ MonoBehaviour:
       nodeId: 9429be69-676e-479f-a709-81c19c5507ae
       portIndex: 0
     inputPort:
-      nodeId: cfb45b94-ac36-4b61-891a-f4ec139a85e1
-      portIndex: 2
+      nodeId: 2d16b80a-aac0-4dff-85d1-7f2df7cd7e86
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -107,8 +95,8 @@ MonoBehaviour:
         guid: 9429be69-676e-479f-a709-81c19c5507ae
         position:
           serializedVersion: 2
-          x: -32
-          y: 207
+          x: 435
+          y: 345
           width: 81
           height: 77
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -121,9 +109,9 @@ MonoBehaviour:
         guid: cfb45b94-ac36-4b61-891a-f4ec139a85e1
         position:
           serializedVersion: 2
-          x: 135
-          y: 205
-          width: 321
+          x: 141
+          y: -636
+          width: 374
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -142,8 +130,8 @@ MonoBehaviour:
         guid: d4fdfd3a-1ab8-4cd8-a3e6-c4e89ae9d790
         position:
           serializedVersion: 2
-          x: 603
-          y: 178
+          x: 606
+          y: -298
           width: 127
           height: 97
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
@@ -164,10 +152,10 @@ MonoBehaviour:
         guid: 2d16b80a-aac0-4dff-85d1-7f2df7cd7e86
         position:
           serializedVersion: 2
-          x: 601
-          y: 276
-          width: 127
-          height: 97
+          x: 556
+          y: 343
+          width: 257
+          height: 364
         typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
@@ -186,9 +174,9 @@ MonoBehaviour:
         guid: c06d0bfa-dc6e-4de1-b6b4-d39857bcf5b3
         position:
           serializedVersion: 2
-          x: 771
-          y: 92
-          width: 300
+          x: 703
+          y: -571
+          width: 396
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -204,8 +192,8 @@ MonoBehaviour:
         guid: 2b44cc00-f906-4c78-a754-de5659cf453b
         position:
           serializedVersion: 2
-          x: 1187
-          y: 283
+          x: 728
+          y: 347
           width: 161
           height: 125
         typeName: CodeGraph.MultipleRandomNode, Assembly-CSharp, Version=0.0.0.0,
@@ -220,8 +208,8 @@ MonoBehaviour:
         guid: 9c6dc65a-f641-4347-bea4-a00e08ad1e38
         position:
           serializedVersion: 2
-          x: 1884
-          y: 179
+          x: 1425
+          y: 243
           width: 349
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
@@ -235,8 +223,8 @@ MonoBehaviour:
         guid: 7eb053d4-4694-49f5-a95d-7474bc1d16d2
         position:
           serializedVersion: 2
-          x: 1880
-          y: 298
+          x: 1421
+          y: 362
           width: 417
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
@@ -250,8 +238,8 @@ MonoBehaviour:
         guid: 75d51eb9-0e32-4993-bff4-ed3af4d70884
         position:
           serializedVersion: 2
-          x: 1886
-          y: 417
+          x: 1427
+          y: 481
           width: 402
           height: 116
         typeName: CodeGraph.EndAndChangeStoryNode, Assembly-CSharp, Version=0.0.0.0,
@@ -265,8 +253,8 @@ MonoBehaviour:
         guid: f4eeff11-11aa-40f0-a61f-07357612fede
         position:
           serializedVersion: 2
-          x: 1403
-          y: 196
+          x: 944
+          y: 260
           width: 396
           height: 98
         typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -280,8 +268,8 @@ MonoBehaviour:
         guid: a175c7ea-70b0-4e40-b062-1e9deeb99c59
         position:
           serializedVersion: 2
-          x: 1402
-          y: 294
+          x: 943
+          y: 358
           width: 406
           height: 98
         typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -295,8 +283,8 @@ MonoBehaviour:
         guid: bf0c73ed-1dc2-47dd-9532-2ba940a49a2a
         position:
           serializedVersion: 2
-          x: 1404
-          y: 391
+          x: 945
+          y: 455
           width: 409
           height: 98
         typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
