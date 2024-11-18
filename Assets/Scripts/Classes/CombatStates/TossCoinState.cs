@@ -151,7 +151,7 @@ public class TossCoinState : CombatState
         }
     }
 
-    virtual protected async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
+    virtual protected async Task ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -186,8 +186,13 @@ public class TossCoinState : CombatState
                         return;
                     }
 
+                    // Returns the card to the player deck, including its transform
                     playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
                     playerCombatCard.gameObject.SetActive(false);
+                    playerCombatCard.gameObject.transform.SetParent(
+                        combatContext.playerDeck.transform.parent,
+                        worldPositionStays: true
+                    );
                 }
             });
         }
@@ -195,18 +200,16 @@ public class TossCoinState : CombatState
         await KillEnemyCardsInTieZone(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            return null;
+            return;
         }
         await ReturnPlayerCardsInTieZoneToDeck(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            return null;
+            return;
         }
-        
-        return new PresentPlayerCardsState();
     }
 
-    virtual protected async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
+    virtual protected async Task ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = GetEnemyDeck();
@@ -243,8 +246,14 @@ public class TossCoinState : CombatState
                     {
                         return;
                     }
+
+                    // Returns the card to the enemy deck, including its transform
                     enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
                     enemyCombatCard.gameObject.SetActive(false);
+                    enemyCombatCard.gameObject.transform.SetParent(
+                        combatContext.enemyDeck.transform.parent,
+                        worldPositionStays: true
+                    );
                 }
             });
         }
@@ -252,15 +261,13 @@ public class TossCoinState : CombatState
         await KillPlayerCardsInTieZone(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            return null;
+            return;
         }
         await ReturnEnemyCardsInTieZoneToDeck(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            return null;
+            return;
         }
-        
-        return new PresentPlayerCardsState();
     }
 
 

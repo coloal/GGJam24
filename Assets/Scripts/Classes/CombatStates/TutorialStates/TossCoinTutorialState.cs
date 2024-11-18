@@ -154,7 +154,7 @@ public class TossCoinTutorialState : TossCoinState
         }
     }
 
-    protected override async Task<CombatState>  ProcessPlayerWonState(CombatManager.CombatContext combatContext)
+    protected override async Task ProcessPlayerWonState(CombatManager.CombatContext combatContext)
     {
         EnemyDeckManager enemyDeckManager = GetEnemyDeck();
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
@@ -187,8 +187,14 @@ public class TossCoinTutorialState : TossCoinState
                     {
                         return;
                     }
+
+                    // Returns the card to the player deck, including its transform
                     playerDeckManager.ReturnCardFromTieZoneToDeck(playerCombatCard);
                     playerCombatCard.gameObject.SetActive(false);
+                    playerCombatCard.gameObject.transform.SetParent(
+                        combatContext.playerDeck.transform.parent,
+                        worldPositionStays: true
+                    );
                 }
             });
         }
@@ -196,20 +202,16 @@ public class TossCoinTutorialState : TossCoinState
         await KillEnemyCardsInTieZone(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            return null;
+            return;
         }
         await ReturnPlayerCardsInTieZoneToDeck(combatContext);
         if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
         {
-            return null;
+            return;
         }
-
-        return new PresentPlayerCardsTutorialState();
-
-
     }
 
-    protected override async Task<CombatState> ProcessEnemyWonState(CombatManager.CombatContext combatContext)
+    protected override async Task ProcessEnemyWonState(CombatManager.CombatContext combatContext)
     {
         PlayerDeckManager playerDeckManager = CombatSceneManager.Instance.ProvidePlayerDeckManager();
         EnemyDeckManager enemyDeckManager = GetEnemyDeck();
@@ -235,17 +237,32 @@ public class TossCoinTutorialState : TossCoinState
                 {
                     await CombatSceneManager.Instance.ProvideCombatFeedbacksManager()
                         .PlayReturnCardToDeck(enemyCombatCard, combatContext.enemyOnCombatCardOriginalPosition);
+                    if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+                    {
+                        return;
+                    }
 
+                    // Returns the card to the enemy deck, including its transform
                     enemyDeckManager.ReturnCardFromTieZoneToDeck(enemyCombatCard);
                     enemyCombatCard.gameObject.SetActive(false);
+                    enemyCombatCard.gameObject.transform.SetParent(
+                        combatContext.enemyDeck.transform.parent,
+                        worldPositionStays: true
+                    );
                 }
             });
         }
 
         await KillPlayerCardsInTieZone(combatContext);
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
         await ReturnEnemyCardsInTieZoneToDeck(combatContext);
-        
-        return new PresentPlayerCardsState();
+        if (CombatSceneManager.Instance == null || CombatSceneManager.Instance.ProvideCombatManager().IsTaskCancellationRequested)
+        {
+            return;
+        }
     }
 
     protected override CoinFlipResult GetCoinFlipResult(CoinFlipResult playerCoinChoice)
