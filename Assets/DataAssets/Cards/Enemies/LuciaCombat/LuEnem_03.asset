@@ -23,5 +23,5 @@ MonoBehaviour:
   OnWinConversation:
   - That was hard
   OnLoseConversation:
-  - "I\xB4ve  hit you hard with my wrench"
+  - I've  hit you hard with my wrench
   ShowHintsTimeInSeconds: 1

@@ -19,7 +19,7 @@ MonoBehaviour:
   OnStartConversation:
   - Go easy on me
   OnWinConversation:
-  - "I don\xB4t hate you, you deserve it!"
+  - I don't hate you, you deserve it!
   OnLoseConversation:
-  - "Oh I can\xB4t believe it!"
+  - Oh I can't believe it!
   ShowHintsTimeInSeconds: 3

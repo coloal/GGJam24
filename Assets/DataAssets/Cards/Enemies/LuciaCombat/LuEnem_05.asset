@@ -23,7 +23,7 @@ MonoBehaviour:
   OnStartConversation:
   - It is me again!! You missed me?? (I did)
   OnWinConversation:
-  - I gues you dont like me...
+  - I gues you don't like me...
   OnLoseConversation:
   - Marry me
   ShowHintsTimeInSeconds: 1

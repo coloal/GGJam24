@@ -57,6 +57,8 @@ MonoBehaviour:
   - rid: 1101123777763999744
   - rid: 1101123777763999745
   - rid: 1101123777763999746
+  - rid: 599946742793764867
+  - rid: 599946742793764868
   connections:
   - outputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
@@ -125,12 +127,6 @@ MonoBehaviour:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
       portIndex: 1
   - outputPort:
-      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
-      portIndex: 1
-    inputPort:
-      nodeId: 13dcc35a-8063-43b9-b0af-e815fb30bbc0
-      portIndex: 1
-  - outputPort:
       nodeId: 865e37bb-5f23-476c-8da2-1b4882577154
       portIndex: 0
     inputPort:
@@ -154,12 +150,6 @@ MonoBehaviour:
     inputPort:
       nodeId: db686866-1328-4fb5-8364-a1ebb6ba9705
       portIndex: 2
-  - outputPort:
-      nodeId: 13dcc35a-8063-43b9-b0af-e815fb30bbc0
-      portIndex: 0
-    inputPort:
-      nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
-      portIndex: 1
   - outputPort:
       nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
       portIndex: 0
@@ -299,12 +289,6 @@ MonoBehaviour:
       nodeId: 4b614fb0-8672-4de0-995a-b394c48c6a3b
       portIndex: 2
   - outputPort:
-      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
-      portIndex: 0
-    inputPort:
-      nodeId: 13dcc35a-8063-43b9-b0af-e815fb30bbc0
-      portIndex: 1
-  - outputPort:
       nodeId: 4b614fb0-8672-4de0-995a-b394c48c6a3b
       portIndex: 0
     inputPort:
@@ -370,9 +354,73 @@ MonoBehaviour:
     inputPort:
       nodeId: 007db587-6f0d-44c8-8315-f02ff2d94155
       portIndex: 1
+  - outputPort:
+      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
+      portIndex: 1
+    inputPort:
+      nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
+      portIndex: 1
+  - outputPort:
+      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
+      portIndex: 0
+    inputPort:
+      nodeId: 4d111a3f-97fa-45c7-a3f2-163923cc6088
+      portIndex: 1
+  - outputPort:
+      nodeId: 4d111a3f-97fa-45c7-a3f2-163923cc6088
+      portIndex: 0
+    inputPort:
+      nodeId: 12783bfd-6a1c-40e4-949b-1e5fbac3f730
+      portIndex: 2
+  - outputPort:
+      nodeId: 12783bfd-6a1c-40e4-949b-1e5fbac3f730
+      portIndex: 0
+    inputPort:
+      nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
+      portIndex: 1
   references:
     version: 2
     RefIds:
+    - rid: 599946742793764867
+      type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 4d111a3f-97fa-45c7-a3f2-163923cc6088
+        position:
+          serializedVersion: 2
+          x: -408
+          y: 33
+          width: 127
+          height: 97
+        typeName: CodeGraph.BooleanActionNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        Action:
+          TagType: 0
+          BoolTag: 13
+          NewValue: 1
+          NumericTag: 0
+          Increment: 0
+          TagState: 
+          NewState: 
+    - rid: 599946742793764868
+      type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 12783bfd-6a1c-40e4-949b-1e5fbac3f730
+        position:
+          serializedVersion: 2
+          x: -273
+          y: 32
+          width: 396
+          height: 160
+        typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Win Capture
+        - Game Over
+        enemy: {fileID: 11400000, guid: e5e38af2ece62474097fb13e693038c1, type: 2}
+        IsBossFight: 0
+        music: 0
     - rid: 1101123777763999744
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -675,18 +723,18 @@ MonoBehaviour:
         guid: aa147df4-7064-493d-90c7-ea2e6d72f205
         position:
           serializedVersion: 2
-          x: -448
-          y: -72
-          width: 321
+          x: -793
+          y: 237
+          width: 361
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: dale al que quieras, da lo mismo
-        LeftText: Rama A
-        RightText: Rama B
+        CardText: tutorial?
+        LeftText: yes
+        RightText: no
         card: {fileID: 11400000, guid: f5f141cc664b51f4c9975b08f0d8b442, type: 2}
     - rid: 4179187880975925251
       type: {class: ChangeZoneNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -709,9 +757,9 @@ MonoBehaviour:
         guid: 13dcc35a-8063-43b9-b0af-e815fb30bbc0
         position:
           serializedVersion: 2
-          x: -249
-          y: 265
-          width: 292
+          x: -924
+          y: -238
+          width: 347
           height: 98
         typeName: CodeGraph.ChangeZoneNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -735,7 +783,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 5ae37cb489158f2468a3d81cd6c14f64, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 0
     - rid: 4179187880975925254
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -788,8 +836,8 @@ MonoBehaviour:
         - Win Capture
         - Game Over
         enemy: {fileID: 11400000, guid: 660e97c751a44b7458a6e9e288bfb105, type: 2}
-        IsBossFight: 1
-        music: 1
+        IsBossFight: 0
+        music: 3
     - rid: 4179187880975925257
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1104,7 +1152,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 85edbf2355c0bc347a34a5f490874c1b, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 2
     - rid: 7082970813654106118
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1122,7 +1170,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: ac032304f902db6459a7aff912476ac5, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 3
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
