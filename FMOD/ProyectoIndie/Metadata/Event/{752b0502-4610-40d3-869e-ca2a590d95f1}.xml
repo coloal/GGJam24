@@ -261,9 +261,6 @@
 		<property name="timelockedOffset">
 			<value>1.8909511506254273</value>
 		</property>
-		<property name="volume">
-			<value>1</value>
-		</property>
 		<property name="pitch">
 			<value>1.20000005</value>
 		</property>
@@ -788,7 +785,7 @@
 			<value>4.9099640766146511</value>
 		</property>
 		<property name="value">
-			<value>-2</value>
+			<value>-4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{309b6bd6-6cd6-4a32-8dc7-5ef29cdc461c}">
@@ -796,7 +793,7 @@
 			<value>4.5261186371100166</value>
 		</property>
 		<property name="value">
-			<value>-2.71072006</value>
+			<value>-5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{43719d09-5342-4f28-a058-ac6bffa148ac}">

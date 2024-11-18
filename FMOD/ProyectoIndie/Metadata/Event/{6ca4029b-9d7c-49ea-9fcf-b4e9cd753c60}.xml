@@ -4795,6 +4795,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{95045e53-9916-4759-8d94-405de8ebe678}">
+		<property name="volume">
+			<value>-1</value>
+		</property>
 		<property name="name">
 			<value>Cavaq</value>
 		</property>
@@ -9728,7 +9731,7 @@
 	<object class="SilenceSound" id="{d66a2224-0f8d-4cd1-bda8-24bf3898a597}" />
 	<object class="PlayPercentage" id="{ce2ae53f-ea0c-4810-89d2-bfbaca86dc33}">
 		<property name="percentage">
-			<value>18</value>
+			<value>15</value>
 		</property>
 		<relationship name="sound">
 			<destination>{b55bf98b-7862-4f1d-9041-c83e4994e28c}</destination>
@@ -9736,7 +9739,7 @@
 	</object>
 	<object class="PlayPercentage" id="{b05f4a06-9a86-4268-b065-8cb16dd23ce4}">
 		<property name="percentage">
-			<value>17</value>
+			<value>15</value>
 		</property>
 		<relationship name="sound">
 			<destination>{4b868a17-93f6-43e3-ba64-1f5e95ec7a23}</destination>
