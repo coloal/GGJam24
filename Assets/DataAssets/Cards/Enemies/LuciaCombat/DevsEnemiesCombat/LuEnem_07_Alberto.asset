@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   OnStartConversation:
-  - Its time to battle a me!
+  - I'ts time to battle a me!
   OnWinConversation:
   - You did it
   OnLoseConversation:

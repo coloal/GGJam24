@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   OnStartConversation:
-  - Lets go
+  - Let's go
   OnWinConversation:
   - ....
   OnLoseConversation:

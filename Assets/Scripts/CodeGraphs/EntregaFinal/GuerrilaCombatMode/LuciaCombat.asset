@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - rid: 8580623337150218298
-  - rid: 4179187880975925250
   - rid: 4179187880975925253
   - rid: 4179187880975925254
   - rid: 4179187880975925255
@@ -194,6 +193,15 @@ MonoBehaviour:
   - rid: 7048188727276601384
   - rid: 7048188727276601385
   - rid: 7048188727276601386
+  - rid: 7048188814557970432
+  - rid: 7048188814557970433
+  - rid: 7048188814557970434
+  - rid: 7048188814557970435
+  - rid: 7048188814557970436
+  - rid: 7048188814557970437
+  - rid: 7048188814557970438
+  - rid: 7048188814557970439
+  - rid: 7048188814557970440
   connections:
   - outputPort:
       nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
@@ -370,12 +378,6 @@ MonoBehaviour:
       nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
       portIndex: 0
   - outputPort:
-      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
-      portIndex: 0
-    inputPort:
-      nodeId: be7c94dc-7310-46c0-80fa-06431e473c0c
-      portIndex: 1
-  - outputPort:
       nodeId: be7c94dc-7310-46c0-80fa-06431e473c0c
       portIndex: 0
     inputPort:
@@ -388,12 +390,6 @@ MonoBehaviour:
       nodeId: be5f538a-d964-4669-ada5-b4453761a8e9
       portIndex: 0
   - outputPort:
-      nodeId: b94a77db-688e-4834-9d6d-0d5e6129a82c
-      portIndex: 0
-    inputPort:
-      nodeId: 0cdb7fa6-ef3a-4380-8a45-3093f56b8b44
-      portIndex: 2
-  - outputPort:
       nodeId: 0cdb7fa6-ef3a-4380-8a45-3093f56b8b44
       portIndex: 0
     inputPort:
@@ -430,1325 +426,1385 @@ MonoBehaviour:
       nodeId: 402c8e1a-57ea-474f-b877-887a36c25202
       portIndex: 2
   - outputPort:
-      nodeId: ddd6e8c7-9e60-4883-95f1-bb208beaa643
-      portIndex: 0
-    inputPort:
-      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
-      portIndex: 2
-  - outputPort:
-      nodeId: ddd6e8c7-9e60-4883-95f1-bb208beaa643
-      portIndex: 1
-    inputPort:
       nodeId: f6215827-8828-4f62-96c6-16a0c2a8a667
-      portIndex: 2
-  - outputPort:
-      nodeId: 849faa00-3f4b-4ca9-ba77-406be84974a2
       portIndex: 0
     inputPort:
+      nodeId: 9951583d-d9b2-4187-9cea-d609af3ddf88
+      portIndex: 1
+  - outputPort:
+      nodeId: 9951583d-d9b2-4187-9cea-d609af3ddf88
+      portIndex: 0
+    inputPort:
+      nodeId: eb51b59e-49da-4329-b5ed-d22dc6966dda
+      portIndex: 2
+  - outputPort:
+      nodeId: e9bef5d1-1459-4e53-8d08-d3209cbbcfd3
+      portIndex: 0
+    inputPort:
+      nodeId: f0cab40b-9c3b-4eac-9110-14b6f61f6cf5
+      portIndex: 2
+  - outputPort:
+      nodeId: 26a36d62-63fd-4318-9a7d-bcbbdcb3c040
+      portIndex: 0
+    inputPort:
+      nodeId: f49de646-2d9d-404c-8de3-7126a6d0054b
+      portIndex: 2
+  - outputPort:
+      nodeId: fc034db8-1c0f-448b-b95d-022148a48e13
+      portIndex: 0
+    inputPort:
+      nodeId: c0893772-d6a9-4439-a375-45332ab1075c
+      portIndex: 2
+  - outputPort:
+      nodeId: beb433c2-29d1-489d-a82a-d93a393bcb28
+      portIndex: 0
+    inputPort:
+      nodeId: cf674c74-c96a-4410-8368-36bdc429e25d
+      portIndex: 2
+  - outputPort:
+      nodeId: e619049a-efb7-4f72-bfe7-bf74fcff275b
+      portIndex: 0
+    inputPort:
+      nodeId: c878d7eb-4de3-4ed5-a6c0-01016639e80a
+      portIndex: 2
+  - outputPort:
+      nodeId: 251c5541-8980-46b4-bc89-7a71561cc3f5
+      portIndex: 0
+    inputPort:
+      nodeId: 9fbae9ce-ccb0-4843-b78c-757d44b9629f
+      portIndex: 2
+  - outputPort:
       nodeId: 2649c890-03f1-422a-b87f-96a4cd16e3fe
-      portIndex: 2
-  - outputPort:
-      nodeId: 849faa00-3f4b-4ca9-ba77-406be84974a2
-      portIndex: 1
+      portIndex: 0
     inputPort:
+      nodeId: 251c5541-8980-46b4-bc89-7a71561cc3f5
+      portIndex: 1
+  - outputPort:
       nodeId: 2d6a88df-b412-4409-84c7-a3168e95ab99
-      portIndex: 2
-  - outputPort:
-      nodeId: 36d932c1-c922-48eb-809b-332f2ccd215b
       portIndex: 0
     inputPort:
+      nodeId: e619049a-efb7-4f72-bfe7-bf74fcff275b
+      portIndex: 1
+  - outputPort:
       nodeId: c3f54b97-d7ac-47b7-865c-e58f9ae1ba24
-      portIndex: 2
-  - outputPort:
-      nodeId: 36d932c1-c922-48eb-809b-332f2ccd215b
-      portIndex: 1
-    inputPort:
-      nodeId: 2172629c-4538-43f4-be36-a55dd0b85897
-      portIndex: 2
-  - outputPort:
-      nodeId: 402c8e1a-57ea-474f-b877-887a36c25202
       portIndex: 0
     inputPort:
-      nodeId: 14baa23b-7f14-41d2-b8d7-0c390c198126
-      portIndex: 2
+      nodeId: beb433c2-29d1-489d-a82a-d93a393bcb28
+      portIndex: 1
   - outputPort:
-      nodeId: 402c8e1a-57ea-474f-b877-887a36c25202
+      nodeId: 2172629c-4538-43f4-be36-a55dd0b85897
+      portIndex: 0
+    inputPort:
+      nodeId: fc034db8-1c0f-448b-b95d-022148a48e13
+      portIndex: 1
+  - outputPort:
+      nodeId: 14baa23b-7f14-41d2-b8d7-0c390c198126
+      portIndex: 0
+    inputPort:
+      nodeId: 26a36d62-63fd-4318-9a7d-bcbbdcb3c040
+      portIndex: 1
+  - outputPort:
+      nodeId: 5d2036f7-fafe-408e-ab26-e26f99664970
+      portIndex: 0
+    inputPort:
+      nodeId: e9bef5d1-1459-4e53-8d08-d3209cbbcfd3
+      portIndex: 1
+  - outputPort:
+      nodeId: 2649c890-03f1-422a-b87f-96a4cd16e3fe
       portIndex: 1
     inputPort:
+      nodeId: 39858e90-0c0b-44df-b807-86f8511edbe8
+      portIndex: 1
+  - outputPort:
+      nodeId: 2d6a88df-b412-4409-84c7-a3168e95ab99
+      portIndex: 1
+    inputPort:
+      nodeId: b8c8d92c-65f7-4f2b-a31c-31dc060ecd12
+      portIndex: 1
+  - outputPort:
+      nodeId: c3f54b97-d7ac-47b7-865c-e58f9ae1ba24
+      portIndex: 1
+    inputPort:
+      nodeId: f5dfa45b-175e-4a20-9cce-960ec60f0355
+      portIndex: 1
+  - outputPort:
+      nodeId: 2172629c-4538-43f4-be36-a55dd0b85897
+      portIndex: 1
+    inputPort:
+      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
+      portIndex: 1
+  - outputPort:
+      nodeId: 14baa23b-7f14-41d2-b8d7-0c390c198126
+      portIndex: 1
+    inputPort:
+      nodeId: 531231fd-313d-4c74-a74f-f59b71f71ce6
+      portIndex: 1
+  - outputPort:
       nodeId: 5d2036f7-fafe-408e-ab26-e26f99664970
+      portIndex: 1
+    inputPort:
+      nodeId: c9da4de6-b762-4758-ad4f-bb1fe364a808
+      portIndex: 1
+  - outputPort:
+      nodeId: 39858e90-0c0b-44df-b807-86f8511edbe8
+      portIndex: 0
+    inputPort:
+      nodeId: 6860ed3d-8f12-4972-8603-97ee5527b443
       portIndex: 2
   - outputPort:
-      nodeId: aa147df4-7064-493d-90c7-ea2e6d72f205
+      nodeId: b8c8d92c-65f7-4f2b-a31c-31dc060ecd12
+      portIndex: 0
+    inputPort:
+      nodeId: bcffd5ad-e4ac-401b-a03e-67f25bf9ff4a
+      portIndex: 2
+  - outputPort:
+      nodeId: f5dfa45b-175e-4a20-9cce-960ec60f0355
+      portIndex: 0
+    inputPort:
+      nodeId: a3e94035-a1b4-4dd0-9072-a55173b408f8
+      portIndex: 2
+  - outputPort:
+      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
+      portIndex: 0
+    inputPort:
+      nodeId: 6ff39a72-4665-45ab-8ff6-f4fa344ef038
+      portIndex: 2
+  - outputPort:
+      nodeId: 531231fd-313d-4c74-a74f-f59b71f71ce6
+      portIndex: 0
+    inputPort:
+      nodeId: 38445861-5ba1-4d22-9651-68ccc9d0051b
+      portIndex: 2
+  - outputPort:
+      nodeId: c9da4de6-b762-4758-ad4f-bb1fe364a808
+      portIndex: 0
+    inputPort:
+      nodeId: ad6083d3-7735-44ae-a735-0ef27c59246b
+      portIndex: 2
+  - outputPort:
+      nodeId: 6860ed3d-8f12-4972-8603-97ee5527b443
+      portIndex: 0
+    inputPort:
+      nodeId: fc46db7a-1bbe-4d65-9547-4d77bfd0df7f
+      portIndex: 1
+  - outputPort:
+      nodeId: bcffd5ad-e4ac-401b-a03e-67f25bf9ff4a
+      portIndex: 0
+    inputPort:
+      nodeId: c77ee869-88ea-45ff-983e-8596f6763c9d
+      portIndex: 1
+  - outputPort:
+      nodeId: a3e94035-a1b4-4dd0-9072-a55173b408f8
+      portIndex: 0
+    inputPort:
+      nodeId: 34c5588a-9264-44b4-87d8-9faeb59e992a
+      portIndex: 1
+  - outputPort:
+      nodeId: 6ff39a72-4665-45ab-8ff6-f4fa344ef038
+      portIndex: 0
+    inputPort:
+      nodeId: 99115e9b-d500-4227-b01c-546478462ff6
+      portIndex: 1
+  - outputPort:
+      nodeId: 38445861-5ba1-4d22-9651-68ccc9d0051b
+      portIndex: 0
+    inputPort:
+      nodeId: da71dd83-e699-47fe-8141-f0bfed3a9bd4
+      portIndex: 1
+  - outputPort:
+      nodeId: ad6083d3-7735-44ae-a735-0ef27c59246b
+      portIndex: 0
+    inputPort:
+      nodeId: c9b3668b-a800-4625-93da-9083463595d7
+      portIndex: 1
+  - outputPort:
+      nodeId: fc46db7a-1bbe-4d65-9547-4d77bfd0df7f
+      portIndex: 0
+    inputPort:
+      nodeId: 5c9c6de2-cc8b-41ad-9e64-7c673a668629
+      portIndex: 2
+  - outputPort:
+      nodeId: c77ee869-88ea-45ff-983e-8596f6763c9d
+      portIndex: 0
+    inputPort:
+      nodeId: e4d8179a-0d0a-4967-8911-d33820d8daeb
+      portIndex: 2
+  - outputPort:
+      nodeId: 34c5588a-9264-44b4-87d8-9faeb59e992a
+      portIndex: 0
+    inputPort:
+      nodeId: 5646c622-f343-4ddb-96d9-188c7292af53
+      portIndex: 2
+  - outputPort:
+      nodeId: 99115e9b-d500-4227-b01c-546478462ff6
+      portIndex: 0
+    inputPort:
+      nodeId: c4cb2f9b-46a5-4858-b2a8-8f96eda5eaa3
+      portIndex: 2
+  - outputPort:
+      nodeId: da71dd83-e699-47fe-8141-f0bfed3a9bd4
+      portIndex: 0
+    inputPort:
+      nodeId: 342e4e9c-a24d-445b-b5b1-5e240a4f37ac
+      portIndex: 2
+  - outputPort:
+      nodeId: c9b3668b-a800-4625-93da-9083463595d7
+      portIndex: 0
+    inputPort:
+      nodeId: 9ab5663e-cb1c-4a68-8696-e908addefed6
+      portIndex: 2
+  - outputPort:
+      nodeId: 5c9c6de2-cc8b-41ad-9e64-7c673a668629
+      portIndex: 0
+    inputPort:
+      nodeId: 527b622b-10e3-47d7-ac8d-8ce00723a893
+      portIndex: 1
+  - outputPort:
+      nodeId: e4d8179a-0d0a-4967-8911-d33820d8daeb
+      portIndex: 0
+    inputPort:
+      nodeId: e4720fc2-5bcc-42fc-9dab-db1cfaa19b72
+      portIndex: 1
+  - outputPort:
+      nodeId: 5646c622-f343-4ddb-96d9-188c7292af53
+      portIndex: 0
+    inputPort:
+      nodeId: ad75029f-a677-422c-81ad-9c0a8e860d12
+      portIndex: 1
+  - outputPort:
+      nodeId: c4cb2f9b-46a5-4858-b2a8-8f96eda5eaa3
+      portIndex: 0
+    inputPort:
+      nodeId: 9c55c9d4-e7cc-451f-b106-a2462bcacd00
+      portIndex: 1
+  - outputPort:
+      nodeId: 342e4e9c-a24d-445b-b5b1-5e240a4f37ac
+      portIndex: 0
+    inputPort:
+      nodeId: 6f15821d-b819-42f5-857f-9e3adf4c17ae
+      portIndex: 1
+  - outputPort:
+      nodeId: 9ab5663e-cb1c-4a68-8696-e908addefed6
+      portIndex: 0
+    inputPort:
+      nodeId: 9c1cf8a1-1eee-4667-a407-dc4c26494576
+      portIndex: 1
+  - outputPort:
+      nodeId: 527b622b-10e3-47d7-ac8d-8ce00723a893
+      portIndex: 0
+    inputPort:
+      nodeId: 9ffa3628-ed08-4fc0-a6be-b4e87cbeaa5f
+      portIndex: 2
+  - outputPort:
+      nodeId: e4720fc2-5bcc-42fc-9dab-db1cfaa19b72
+      portIndex: 0
+    inputPort:
+      nodeId: a2b122c1-7c1b-4fe4-a9d3-3e7e67a23c65
+      portIndex: 2
+  - outputPort:
+      nodeId: ad75029f-a677-422c-81ad-9c0a8e860d12
+      portIndex: 0
+    inputPort:
+      nodeId: 7cec77c3-d2bf-4e32-beb7-b4044831c595
+      portIndex: 2
+  - outputPort:
+      nodeId: 9c55c9d4-e7cc-451f-b106-a2462bcacd00
+      portIndex: 0
+    inputPort:
+      nodeId: 9bc6e234-ad80-4171-8fc8-3bf1d84d701a
+      portIndex: 2
+  - outputPort:
+      nodeId: 6f15821d-b819-42f5-857f-9e3adf4c17ae
+      portIndex: 0
+    inputPort:
+      nodeId: b39dd91a-0bd4-4594-89d7-af15ffdd3c8a
+      portIndex: 2
+  - outputPort:
+      nodeId: 9c1cf8a1-1eee-4667-a407-dc4c26494576
+      portIndex: 0
+    inputPort:
+      nodeId: 476c5b3a-2cad-4c38-9e81-5d27fe9a065e
+      portIndex: 2
+  - outputPort:
+      nodeId: 9ffa3628-ed08-4fc0-a6be-b4e87cbeaa5f
+      portIndex: 0
+    inputPort:
+      nodeId: 460dd7d8-05de-4d8d-9043-5d567b10246a
+      portIndex: 1
+  - outputPort:
+      nodeId: a2b122c1-7c1b-4fe4-a9d3-3e7e67a23c65
+      portIndex: 0
+    inputPort:
+      nodeId: 49375e60-9c0d-4799-b5d7-23ee1c4d689d
+      portIndex: 1
+  - outputPort:
+      nodeId: 7cec77c3-d2bf-4e32-beb7-b4044831c595
+      portIndex: 0
+    inputPort:
+      nodeId: 1be68a6f-79c3-4dc2-8ecd-354c207512c4
+      portIndex: 1
+  - outputPort:
+      nodeId: 9bc6e234-ad80-4171-8fc8-3bf1d84d701a
+      portIndex: 0
+    inputPort:
+      nodeId: 3e0fe34e-ee8a-4887-aae4-c772b4f74841
+      portIndex: 1
+  - outputPort:
+      nodeId: b39dd91a-0bd4-4594-89d7-af15ffdd3c8a
+      portIndex: 0
+    inputPort:
+      nodeId: e67b10f5-9356-469e-aca9-172a2268aa0c
+      portIndex: 1
+  - outputPort:
+      nodeId: 476c5b3a-2cad-4c38-9e81-5d27fe9a065e
+      portIndex: 0
+    inputPort:
+      nodeId: e674e6f5-9700-413b-b58e-1eaec3f9679f
+      portIndex: 1
+  - outputPort:
+      nodeId: 460dd7d8-05de-4d8d-9043-5d567b10246a
+      portIndex: 0
+    inputPort:
+      nodeId: 04e74867-da68-4f6b-81f8-2e57265caa30
+      portIndex: 2
+  - outputPort:
+      nodeId: 49375e60-9c0d-4799-b5d7-23ee1c4d689d
+      portIndex: 0
+    inputPort:
+      nodeId: 6a2cabac-009f-45fb-8a82-011468c9ff19
+      portIndex: 2
+  - outputPort:
+      nodeId: 1be68a6f-79c3-4dc2-8ecd-354c207512c4
+      portIndex: 0
+    inputPort:
+      nodeId: aa64169f-9b96-44c6-bb37-3f6748e6015d
+      portIndex: 2
+  - outputPort:
+      nodeId: 3e0fe34e-ee8a-4887-aae4-c772b4f74841
+      portIndex: 0
+    inputPort:
+      nodeId: 626a6db6-b948-4ac7-a4bc-f6353016f493
+      portIndex: 2
+  - outputPort:
+      nodeId: e67b10f5-9356-469e-aca9-172a2268aa0c
+      portIndex: 0
+    inputPort:
+      nodeId: 7b7c430e-8515-44a3-84aa-9a90c04c2acd
+      portIndex: 2
+  - outputPort:
+      nodeId: e674e6f5-9700-413b-b58e-1eaec3f9679f
+      portIndex: 0
+    inputPort:
+      nodeId: 4946509c-5625-485b-8e69-e7edda8964af
+      portIndex: 2
+  - outputPort:
+      nodeId: 04e74867-da68-4f6b-81f8-2e57265caa30
+      portIndex: 0
+    inputPort:
+      nodeId: 88da53ec-541a-4d6b-91b7-2e61f7900787
+      portIndex: 1
+  - outputPort:
+      nodeId: 6a2cabac-009f-45fb-8a82-011468c9ff19
+      portIndex: 0
+    inputPort:
+      nodeId: 8b5ba929-d207-4855-8b5d-349e8da83055
+      portIndex: 1
+  - outputPort:
+      nodeId: aa64169f-9b96-44c6-bb37-3f6748e6015d
+      portIndex: 0
+    inputPort:
+      nodeId: 8eb6e357-2ebd-48ae-982c-2ddc66af6862
+      portIndex: 1
+  - outputPort:
+      nodeId: 626a6db6-b948-4ac7-a4bc-f6353016f493
+      portIndex: 0
+    inputPort:
+      nodeId: 97b852f9-d486-4bfd-880f-1412b3e04cda
+      portIndex: 1
+  - outputPort:
+      nodeId: 7b7c430e-8515-44a3-84aa-9a90c04c2acd
+      portIndex: 0
+    inputPort:
+      nodeId: 48532c2a-53f8-425f-bdec-d527e93ffa63
+      portIndex: 1
+  - outputPort:
+      nodeId: 4946509c-5625-485b-8e69-e7edda8964af
+      portIndex: 0
+    inputPort:
+      nodeId: c6797987-2187-4b1c-8715-e3d55d8fbc10
+      portIndex: 1
+  - outputPort:
+      nodeId: 88da53ec-541a-4d6b-91b7-2e61f7900787
+      portIndex: 0
+    inputPort:
+      nodeId: ff714ecb-a8a6-4536-9f50-a9f77f8bdfb5
+      portIndex: 2
+  - outputPort:
+      nodeId: 8b5ba929-d207-4855-8b5d-349e8da83055
+      portIndex: 0
+    inputPort:
+      nodeId: 2bddd848-1652-4b4b-95fa-24a81d94c53a
+      portIndex: 2
+  - outputPort:
+      nodeId: 8eb6e357-2ebd-48ae-982c-2ddc66af6862
+      portIndex: 0
+    inputPort:
+      nodeId: 51b0790f-06fd-443c-8ae8-cdc0275443ff
+      portIndex: 2
+  - outputPort:
+      nodeId: 97b852f9-d486-4bfd-880f-1412b3e04cda
+      portIndex: 0
+    inputPort:
+      nodeId: 6d7baebd-d54b-4f4e-985f-438ad852ffb1
+      portIndex: 2
+  - outputPort:
+      nodeId: 48532c2a-53f8-425f-bdec-d527e93ffa63
+      portIndex: 0
+    inputPort:
+      nodeId: e5d8dd66-334c-4219-a04d-ac65ab98e127
+      portIndex: 2
+  - outputPort:
+      nodeId: c6797987-2187-4b1c-8715-e3d55d8fbc10
+      portIndex: 0
+    inputPort:
+      nodeId: 6a27f723-d46c-4224-b3f8-d92bf053f99f
+      portIndex: 2
+  - outputPort:
+      nodeId: ff714ecb-a8a6-4536-9f50-a9f77f8bdfb5
+      portIndex: 0
+    inputPort:
+      nodeId: f202ada1-900b-4762-a6c9-9a455ec16f1a
+      portIndex: 1
+  - outputPort:
+      nodeId: 2bddd848-1652-4b4b-95fa-24a81d94c53a
+      portIndex: 0
+    inputPort:
+      nodeId: fca1aaa8-71ae-4743-93c6-adb545b24072
+      portIndex: 1
+  - outputPort:
+      nodeId: 51b0790f-06fd-443c-8ae8-cdc0275443ff
+      portIndex: 0
+    inputPort:
+      nodeId: 263f7b93-eb82-4e55-967b-5eff9e006257
+      portIndex: 1
+  - outputPort:
+      nodeId: 6d7baebd-d54b-4f4e-985f-438ad852ffb1
+      portIndex: 0
+    inputPort:
+      nodeId: e2c7e209-657b-47aa-85e8-78f902a1aa25
+      portIndex: 1
+  - outputPort:
+      nodeId: e5d8dd66-334c-4219-a04d-ac65ab98e127
+      portIndex: 0
+    inputPort:
+      nodeId: f26fadca-3da6-4806-81e8-bccea0ae758e
+      portIndex: 1
+  - outputPort:
+      nodeId: 6a27f723-d46c-4224-b3f8-d92bf053f99f
+      portIndex: 0
+    inputPort:
+      nodeId: 990983ff-42c2-4292-9fc7-3813c79e15de
+      portIndex: 1
+  - outputPort:
+      nodeId: f202ada1-900b-4762-a6c9-9a455ec16f1a
+      portIndex: 0
+    inputPort:
+      nodeId: 38e07f8d-ecd9-4867-9a75-b8c2ea9535db
+      portIndex: 2
+  - outputPort:
+      nodeId: fca1aaa8-71ae-4743-93c6-adb545b24072
+      portIndex: 0
+    inputPort:
+      nodeId: 32f11d0c-0359-4be7-8cde-34490222ce40
+      portIndex: 2
+  - outputPort:
+      nodeId: 263f7b93-eb82-4e55-967b-5eff9e006257
+      portIndex: 0
+    inputPort:
+      nodeId: 33af1ae5-f122-42eb-ad8a-7b59828a9cdd
+      portIndex: 2
+  - outputPort:
+      nodeId: e2c7e209-657b-47aa-85e8-78f902a1aa25
+      portIndex: 0
+    inputPort:
+      nodeId: ddeeb853-a710-41a8-ac69-d9d29281e5fc
+      portIndex: 2
+  - outputPort:
+      nodeId: f26fadca-3da6-4806-81e8-bccea0ae758e
+      portIndex: 0
+    inputPort:
+      nodeId: 47e7f773-e36a-44aa-9b25-2e7cbdcbf886
+      portIndex: 2
+  - outputPort:
+      nodeId: 990983ff-42c2-4292-9fc7-3813c79e15de
+      portIndex: 0
+    inputPort:
+      nodeId: ae9e60c7-bc3f-44be-bd4b-7de75cb367fc
+      portIndex: 2
+  - outputPort:
+      nodeId: 38e07f8d-ecd9-4867-9a75-b8c2ea9535db
+      portIndex: 0
+    inputPort:
+      nodeId: dff69c9e-1b6c-417c-91ae-b0b057647e2e
+      portIndex: 1
+  - outputPort:
+      nodeId: 32f11d0c-0359-4be7-8cde-34490222ce40
+      portIndex: 0
+    inputPort:
+      nodeId: dc98075e-4979-4d30-8528-6e9cd3434c01
+      portIndex: 1
+  - outputPort:
+      nodeId: 33af1ae5-f122-42eb-ad8a-7b59828a9cdd
+      portIndex: 0
+    inputPort:
+      nodeId: e9997035-bead-4ef6-bd55-3efa2ac4d23a
+      portIndex: 1
+  - outputPort:
+      nodeId: ddeeb853-a710-41a8-ac69-d9d29281e5fc
+      portIndex: 0
+    inputPort:
+      nodeId: 80f7fe55-fc92-4f2e-9a40-5775bca784d6
+      portIndex: 1
+  - outputPort:
+      nodeId: 47e7f773-e36a-44aa-9b25-2e7cbdcbf886
+      portIndex: 0
+    inputPort:
+      nodeId: 282ebd12-9e39-4806-bda5-0af2212defc2
+      portIndex: 1
+  - outputPort:
+      nodeId: ae9e60c7-bc3f-44be-bd4b-7de75cb367fc
+      portIndex: 0
+    inputPort:
+      nodeId: 67631f96-9703-4ef8-9135-e3718d941e89
+      portIndex: 1
+  - outputPort:
+      nodeId: dff69c9e-1b6c-417c-91ae-b0b057647e2e
+      portIndex: 0
+    inputPort:
+      nodeId: e638381b-0937-4836-838d-9063d70bca3f
+      portIndex: 2
+  - outputPort:
+      nodeId: dc98075e-4979-4d30-8528-6e9cd3434c01
+      portIndex: 0
+    inputPort:
+      nodeId: 11470138-e5bf-4d0d-8afa-d9a85cca7b59
+      portIndex: 2
+  - outputPort:
+      nodeId: e9997035-bead-4ef6-bd55-3efa2ac4d23a
+      portIndex: 0
+    inputPort:
+      nodeId: c6736367-eab3-4942-954b-9c0c3314ed8c
+      portIndex: 2
+  - outputPort:
+      nodeId: 80f7fe55-fc92-4f2e-9a40-5775bca784d6
+      portIndex: 0
+    inputPort:
+      nodeId: a96a0ed9-ade0-4329-bce6-69319eb50f60
+      portIndex: 2
+  - outputPort:
+      nodeId: 282ebd12-9e39-4806-bda5-0af2212defc2
+      portIndex: 0
+    inputPort:
+      nodeId: 15163f21-1070-4075-ab22-c61b96876fb8
+      portIndex: 2
+  - outputPort:
+      nodeId: 67631f96-9703-4ef8-9135-e3718d941e89
+      portIndex: 0
+    inputPort:
+      nodeId: 647089a1-2061-479d-86f1-332c0ca9824f
+      portIndex: 2
+  - outputPort:
+      nodeId: e638381b-0937-4836-838d-9063d70bca3f
+      portIndex: 0
+    inputPort:
+      nodeId: da97e186-5377-41b4-9e1b-cac62365b73a
+      portIndex: 1
+  - outputPort:
+      nodeId: 11470138-e5bf-4d0d-8afa-d9a85cca7b59
+      portIndex: 0
+    inputPort:
+      nodeId: 6fd3edd5-a7d7-4b92-a030-87aed4e17298
+      portIndex: 1
+  - outputPort:
+      nodeId: c6736367-eab3-4942-954b-9c0c3314ed8c
+      portIndex: 0
+    inputPort:
+      nodeId: 54437dc3-5b97-453b-be93-76e13c09f640
+      portIndex: 1
+  - outputPort:
+      nodeId: a96a0ed9-ade0-4329-bce6-69319eb50f60
+      portIndex: 0
+    inputPort:
+      nodeId: 7d1579c9-b726-4151-944c-661b390e2e3e
+      portIndex: 1
+  - outputPort:
+      nodeId: 15163f21-1070-4075-ab22-c61b96876fb8
+      portIndex: 0
+    inputPort:
+      nodeId: e2707ed1-99c0-40cb-91cf-529502d9d971
+      portIndex: 1
+  - outputPort:
+      nodeId: 647089a1-2061-479d-86f1-332c0ca9824f
+      portIndex: 0
+    inputPort:
+      nodeId: 6b578d68-9fe8-4a7a-9fc9-b77fae00d5e0
+      portIndex: 1
+  - outputPort:
+      nodeId: da97e186-5377-41b4-9e1b-cac62365b73a
+      portIndex: 0
+    inputPort:
+      nodeId: 797dc8f1-1938-4b1a-aace-992ddefdf293
+      portIndex: 2
+  - outputPort:
+      nodeId: 6fd3edd5-a7d7-4b92-a030-87aed4e17298
+      portIndex: 0
+    inputPort:
+      nodeId: 44675328-1647-47b3-b4ee-04094e7a5911
+      portIndex: 2
+  - outputPort:
+      nodeId: 54437dc3-5b97-453b-be93-76e13c09f640
+      portIndex: 0
+    inputPort:
+      nodeId: d5b54c89-8ce8-423b-a3e1-20cf37e4e316
+      portIndex: 2
+  - outputPort:
+      nodeId: 7d1579c9-b726-4151-944c-661b390e2e3e
+      portIndex: 0
+    inputPort:
+      nodeId: 87475f72-05a6-4428-9764-d273cb184305
+      portIndex: 2
+  - outputPort:
+      nodeId: e2707ed1-99c0-40cb-91cf-529502d9d971
+      portIndex: 0
+    inputPort:
+      nodeId: d9f458fd-50f6-4175-8a4a-e63acf231e7b
+      portIndex: 2
+  - outputPort:
+      nodeId: 6b578d68-9fe8-4a7a-9fc9-b77fae00d5e0
+      portIndex: 0
+    inputPort:
+      nodeId: d27d4d51-3c1f-4ad1-8a5b-441a0e59c158
+      portIndex: 2
+  - outputPort:
+      nodeId: eb51b59e-49da-4329-b5ed-d22dc6966dda
+      portIndex: 0
+    inputPort:
+      nodeId: a84406e7-712f-4847-a963-101a2d8d95f9
+      portIndex: 1
+  - outputPort:
+      nodeId: f6215827-8828-4f62-96c6-16a0c2a8a667
+      portIndex: 1
+    inputPort:
+      nodeId: a84406e7-712f-4847-a963-101a2d8d95f9
+      portIndex: 1
+  - outputPort:
+      nodeId: a84406e7-712f-4847-a963-101a2d8d95f9
+      portIndex: 0
+    inputPort:
+      nodeId: 632c4c89-c45a-4715-a1d9-49d576636ef4
+      portIndex: 2
+  - outputPort:
+      nodeId: 632c4c89-c45a-4715-a1d9-49d576636ef4
+      portIndex: 0
+    inputPort:
+      nodeId: 5736675b-686f-4552-a031-09a2f01496ef
+      portIndex: 1
+  - outputPort:
+      nodeId: 5736675b-686f-4552-a031-09a2f01496ef
+      portIndex: 0
+    inputPort:
+      nodeId: 695c3de9-04c6-4279-9fd1-bc6b074ea596
+      portIndex: 2
+  - outputPort:
+      nodeId: 695c3de9-04c6-4279-9fd1-bc6b074ea596
+      portIndex: 0
+    inputPort:
+      nodeId: bdbfe923-305f-40cd-bd32-85adff3855a8
+      portIndex: 1
+  - outputPort:
+      nodeId: bdbfe923-305f-40cd-bd32-85adff3855a8
+      portIndex: 0
+    inputPort:
+      nodeId: 60bf702d-8893-4232-bc0b-56cd89599a2c
+      portIndex: 2
+  - outputPort:
+      nodeId: 60bf702d-8893-4232-bc0b-56cd89599a2c
+      portIndex: 0
+    inputPort:
+      nodeId: 0df4350c-7456-4b49-8756-c4eb7a051ce6
+      portIndex: 1
+  - outputPort:
+      nodeId: 0df4350c-7456-4b49-8756-c4eb7a051ce6
+      portIndex: 0
+    inputPort:
+      nodeId: 88b45dad-b34d-4d4f-a0fe-9c3a1713b534
+      portIndex: 2
+  - outputPort:
+      nodeId: 88b45dad-b34d-4d4f-a0fe-9c3a1713b534
+      portIndex: 0
+    inputPort:
+      nodeId: b7d1e8b4-47b3-4e39-9670-4ef1a3e63c2d
+      portIndex: 1
+  - outputPort:
+      nodeId: b7d1e8b4-47b3-4e39-9670-4ef1a3e63c2d
+      portIndex: 0
+    inputPort:
+      nodeId: 23a7944c-0f7f-482e-850d-e125c73e5cd4
+      portIndex: 2
+  - outputPort:
+      nodeId: 23a7944c-0f7f-482e-850d-e125c73e5cd4
+      portIndex: 0
+    inputPort:
+      nodeId: 8e7def47-1a1f-4286-8657-7f4bed2b5589
+      portIndex: 1
+  - outputPort:
+      nodeId: 8e7def47-1a1f-4286-8657-7f4bed2b5589
+      portIndex: 0
+    inputPort:
+      nodeId: dbc3f919-90e0-49d7-b815-ec44eb39efc6
+      portIndex: 2
+  - outputPort:
+      nodeId: dbc3f919-90e0-49d7-b815-ec44eb39efc6
+      portIndex: 0
+    inputPort:
+      nodeId: d62a6e93-ee16-466b-94b1-56930919a9f1
+      portIndex: 1
+  - outputPort:
+      nodeId: d62a6e93-ee16-466b-94b1-56930919a9f1
+      portIndex: 0
+    inputPort:
+      nodeId: a96814d7-61df-4fe1-bbba-4ed4db27b726
+      portIndex: 2
+  - outputPort:
+      nodeId: a96814d7-61df-4fe1-bbba-4ed4db27b726
+      portIndex: 0
+    inputPort:
+      nodeId: 1e6f9a83-75ee-433d-830d-ab3808763620
+      portIndex: 1
+  - outputPort:
+      nodeId: 1e6f9a83-75ee-433d-830d-ab3808763620
+      portIndex: 0
+    inputPort:
+      nodeId: 72389f34-3e51-412b-b54d-c62313677572
+      portIndex: 2
+  - outputPort:
+      nodeId: 72389f34-3e51-412b-b54d-c62313677572
+      portIndex: 0
+    inputPort:
+      nodeId: 2bf45785-2d99-425b-9dce-e5a79e473fd6
+      portIndex: 1
+  - outputPort:
+      nodeId: 2bf45785-2d99-425b-9dce-e5a79e473fd6
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 72389f34-3e51-412b-b54d-c62313677572
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: a96814d7-61df-4fe1-bbba-4ed4db27b726
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: dbc3f919-90e0-49d7-b815-ec44eb39efc6
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: 23a7944c-0f7f-482e-850d-e125c73e5cd4
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: 88b45dad-b34d-4d4f-a0fe-9c3a1713b534
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: 60bf702d-8893-4232-bc0b-56cd89599a2c
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: 695c3de9-04c6-4279-9fd1-bc6b074ea596
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: 632c4c89-c45a-4715-a1d9-49d576636ef4
+      portIndex: 1
+    inputPort:
+      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
+      portIndex: 1
+  - outputPort:
+      nodeId: 797dc8f1-1938-4b1a-aace-992ddefdf293
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: 797dc8f1-1938-4b1a-aace-992ddefdf293
+      portIndex: 0
+    inputPort:
+      nodeId: fa9748e1-dcd3-483e-9e09-2ad6d55b26ca
+      portIndex: 1
+  - outputPort:
+      nodeId: 44675328-1647-47b3-b4ee-04094e7a5911
+      portIndex: 0
+    inputPort:
+      nodeId: 06a09ed3-1326-41af-9f28-95f7b61caff0
+      portIndex: 1
+  - outputPort:
+      nodeId: 44675328-1647-47b3-b4ee-04094e7a5911
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: d27d4d51-3c1f-4ad1-8a5b-441a0e59c158
+      portIndex: 0
+    inputPort:
+      nodeId: bb35c5a3-0d0d-4392-bf76-e64d2924dfca
+      portIndex: 1
+  - outputPort:
+      nodeId: d9f458fd-50f6-4175-8a4a-e63acf231e7b
+      portIndex: 0
+    inputPort:
+      nodeId: c6197bbc-e810-42a1-a141-e626e2997612
+      portIndex: 1
+  - outputPort:
+      nodeId: 87475f72-05a6-4428-9764-d273cb184305
+      portIndex: 0
+    inputPort:
+      nodeId: acbee603-a7f9-4e51-9b26-9126eaaaf3c7
+      portIndex: 1
+  - outputPort:
+      nodeId: d5b54c89-8ce8-423b-a3e1-20cf37e4e316
+      portIndex: 0
+    inputPort:
+      nodeId: 18d4f4c1-f5bc-4868-91b3-313c254918eb
+      portIndex: 1
+  - outputPort:
+      nodeId: fa9748e1-dcd3-483e-9e09-2ad6d55b26ca
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 06a09ed3-1326-41af-9f28-95f7b61caff0
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 18d4f4c1-f5bc-4868-91b3-313c254918eb
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: acbee603-a7f9-4e51-9b26-9126eaaaf3c7
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: c6197bbc-e810-42a1-a141-e626e2997612
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: bb35c5a3-0d0d-4392-bf76-e64d2924dfca
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: e638381b-0937-4836-838d-9063d70bca3f
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: 38e07f8d-ecd9-4867-9a75-b8c2ea9535db
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: ff714ecb-a8a6-4536-9f50-a9f77f8bdfb5
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: 04e74867-da68-4f6b-81f8-2e57265caa30
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: 9ffa3628-ed08-4fc0-a6be-b4e87cbeaa5f
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: 5c9c6de2-cc8b-41ad-9e64-7c673a668629
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: 6860ed3d-8f12-4972-8603-97ee5527b443
+      portIndex: 1
+    inputPort:
+      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
+      portIndex: 1
+  - outputPort:
+      nodeId: bcffd5ad-e4ac-401b-a03e-67f25bf9ff4a
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: e4d8179a-0d0a-4967-8911-d33820d8daeb
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: a2b122c1-7c1b-4fe4-a9d3-3e7e67a23c65
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: 6a2cabac-009f-45fb-8a82-011468c9ff19
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: 2bddd848-1652-4b4b-95fa-24a81d94c53a
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: 32f11d0c-0359-4be7-8cde-34490222ce40
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: 11470138-e5bf-4d0d-8afa-d9a85cca7b59
+      portIndex: 1
+    inputPort:
+      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
+      portIndex: 1
+  - outputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: d5b54c89-8ce8-423b-a3e1-20cf37e4e316
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: c6736367-eab3-4942-954b-9c0c3314ed8c
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: 33af1ae5-f122-42eb-ad8a-7b59828a9cdd
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: 51b0790f-06fd-443c-8ae8-cdc0275443ff
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: aa64169f-9b96-44c6-bb37-3f6748e6015d
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: 7cec77c3-d2bf-4e32-beb7-b4044831c595
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: 5646c622-f343-4ddb-96d9-188c7292af53
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: a3e94035-a1b4-4dd0-9072-a55173b408f8
+      portIndex: 1
+    inputPort:
+      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
+      portIndex: 1
+  - outputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: 87475f72-05a6-4428-9764-d273cb184305
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: a96a0ed9-ade0-4329-bce6-69319eb50f60
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: ddeeb853-a710-41a8-ac69-d9d29281e5fc
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: 6d7baebd-d54b-4f4e-985f-438ad852ffb1
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: 626a6db6-b948-4ac7-a4bc-f6353016f493
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: 9bc6e234-ad80-4171-8fc8-3bf1d84d701a
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: c4cb2f9b-46a5-4858-b2a8-8f96eda5eaa3
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: 6ff39a72-4665-45ab-8ff6-f4fa344ef038
+      portIndex: 1
+    inputPort:
+      nodeId: 22326526-ee9c-47f9-be48-217178d19964
+      portIndex: 1
+  - outputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: d9f458fd-50f6-4175-8a4a-e63acf231e7b
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: 15163f21-1070-4075-ab22-c61b96876fb8
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: 47e7f773-e36a-44aa-9b25-2e7cbdcbf886
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: e5d8dd66-334c-4219-a04d-ac65ab98e127
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: 7b7c430e-8515-44a3-84aa-9a90c04c2acd
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: b39dd91a-0bd4-4594-89d7-af15ffdd3c8a
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: 342e4e9c-a24d-445b-b5b1-5e240a4f37ac
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: 38445861-5ba1-4d22-9651-68ccc9d0051b
+      portIndex: 1
+    inputPort:
+      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
+      portIndex: 1
+  - outputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 0
+    inputPort:
+      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
+      portIndex: 0
+  - outputPort:
+      nodeId: d27d4d51-3c1f-4ad1-8a5b-441a0e59c158
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: 647089a1-2061-479d-86f1-332c0ca9824f
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: ae9e60c7-bc3f-44be-bd4b-7de75cb367fc
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: 6a27f723-d46c-4224-b3f8-d92bf053f99f
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: 4946509c-5625-485b-8e69-e7edda8964af
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: 476c5b3a-2cad-4c38-9e81-5d27fe9a065e
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: 9ab5663e-cb1c-4a68-8696-e908addefed6
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: ad6083d3-7735-44ae-a735-0ef27c59246b
+      portIndex: 1
+    inputPort:
+      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
+      portIndex: 1
+  - outputPort:
+      nodeId: f0cab40b-9c3b-4eac-9110-14b6f61f6cf5
+      portIndex: 0
+    inputPort:
+      nodeId: c9da4de6-b762-4758-ad4f-bb1fe364a808
+      portIndex: 1
+  - outputPort:
+      nodeId: f49de646-2d9d-404c-8de3-7126a6d0054b
+      portIndex: 0
+    inputPort:
+      nodeId: 531231fd-313d-4c74-a74f-f59b71f71ce6
+      portIndex: 1
+  - outputPort:
+      nodeId: c0893772-d6a9-4439-a375-45332ab1075c
+      portIndex: 0
+    inputPort:
+      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
+      portIndex: 1
+  - outputPort:
+      nodeId: c0893772-d6a9-4439-a375-45332ab1075c
+      portIndex: 1
+    inputPort:
+      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
+      portIndex: 1
+  - outputPort:
+      nodeId: cf674c74-c96a-4410-8368-36bdc429e25d
+      portIndex: 0
+    inputPort:
+      nodeId: f5dfa45b-175e-4a20-9cce-960ec60f0355
+      portIndex: 1
+  - outputPort:
+      nodeId: c878d7eb-4de3-4ed5-a6c0-01016639e80a
+      portIndex: 0
+    inputPort:
+      nodeId: b8c8d92c-65f7-4f2b-a31c-31dc060ecd12
+      portIndex: 1
+  - outputPort:
+      nodeId: 9fbae9ce-ccb0-4843-b78c-757d44b9629f
+      portIndex: 0
+    inputPort:
+      nodeId: 39858e90-0c0b-44df-b807-86f8511edbe8
+      portIndex: 1
+  - outputPort:
+      nodeId: 0fce4d9a-0ce1-4551-a362-d3da47492cbf
+      portIndex: 0
+    inputPort:
+      nodeId: be7c94dc-7310-46c0-80fa-06431e473c0c
+      portIndex: 1
+  - outputPort:
+      nodeId: 0fce4d9a-0ce1-4551-a362-d3da47492cbf
       portIndex: 1
     inputPort:
       nodeId: 2816cbda-8790-40e0-a58a-7ad2826a7b77
       portIndex: 1
   - outputPort:
+      nodeId: ab6c69d7-323e-47ad-8823-4ba17c1fa14a
+      portIndex: 0
+    inputPort:
+      nodeId: 0fce4d9a-0ce1-4551-a362-d3da47492cbf
+      portIndex: 2
+  - outputPort:
+      nodeId: ddd6e8c7-9e60-4883-95f1-bb208beaa643
+      portIndex: 0
+    inputPort:
+      nodeId: ab6c69d7-323e-47ad-8823-4ba17c1fa14a
+      portIndex: 1
+  - outputPort:
+      nodeId: ddd6e8c7-9e60-4883-95f1-bb208beaa643
+      portIndex: 1
+    inputPort:
+      nodeId: d5bfe237-0293-4ac9-8900-79bc31b9e38a
+      portIndex: 1
+  - outputPort:
+      nodeId: d5bfe237-0293-4ac9-8900-79bc31b9e38a
+      portIndex: 0
+    inputPort:
       nodeId: f6215827-8828-4f62-96c6-16a0c2a8a667
-      portIndex: 0
-    inputPort:
-      nodeId: 9951583d-d9b2-4187-9cea-d609af3ddf88
-      portIndex: 1
-  - outputPort:
-      nodeId: 9951583d-d9b2-4187-9cea-d609af3ddf88
-      portIndex: 0
-    inputPort:
-      nodeId: eb51b59e-49da-4329-b5ed-d22dc6966dda
       portIndex: 2
   - outputPort:
-      nodeId: e9bef5d1-1459-4e53-8d08-d3209cbbcfd3
+      nodeId: c8ce24b6-cc66-4e4f-8937-0c13a7b626cc
       portIndex: 0
     inputPort:
-      nodeId: f0cab40b-9c3b-4eac-9110-14b6f61f6cf5
-      portIndex: 2
-  - outputPort:
-      nodeId: 26a36d62-63fd-4318-9a7d-bcbbdcb3c040
-      portIndex: 0
-    inputPort:
-      nodeId: f49de646-2d9d-404c-8de3-7126a6d0054b
-      portIndex: 2
-  - outputPort:
-      nodeId: fc034db8-1c0f-448b-b95d-022148a48e13
-      portIndex: 0
-    inputPort:
-      nodeId: c0893772-d6a9-4439-a375-45332ab1075c
-      portIndex: 2
-  - outputPort:
-      nodeId: beb433c2-29d1-489d-a82a-d93a393bcb28
-      portIndex: 0
-    inputPort:
-      nodeId: cf674c74-c96a-4410-8368-36bdc429e25d
-      portIndex: 2
-  - outputPort:
-      nodeId: e619049a-efb7-4f72-bfe7-bf74fcff275b
-      portIndex: 0
-    inputPort:
-      nodeId: c878d7eb-4de3-4ed5-a6c0-01016639e80a
-      portIndex: 2
-  - outputPort:
-      nodeId: 251c5541-8980-46b4-bc89-7a71561cc3f5
-      portIndex: 0
-    inputPort:
-      nodeId: 9fbae9ce-ccb0-4843-b78c-757d44b9629f
-      portIndex: 2
-  - outputPort:
       nodeId: 2649c890-03f1-422a-b87f-96a4cd16e3fe
+      portIndex: 2
+  - outputPort:
+      nodeId: 849faa00-3f4b-4ca9-ba77-406be84974a2
       portIndex: 0
     inputPort:
-      nodeId: 251c5541-8980-46b4-bc89-7a71561cc3f5
+      nodeId: c8ce24b6-cc66-4e4f-8937-0c13a7b626cc
       portIndex: 1
   - outputPort:
+      nodeId: 7a7ca317-b0f3-4e0a-a328-8d1f81983b81
+      portIndex: 0
+    inputPort:
       nodeId: 2d6a88df-b412-4409-84c7-a3168e95ab99
-      portIndex: 0
+      portIndex: 2
+  - outputPort:
+      nodeId: 849faa00-3f4b-4ca9-ba77-406be84974a2
+      portIndex: 1
     inputPort:
-      nodeId: e619049a-efb7-4f72-bfe7-bf74fcff275b
+      nodeId: 7a7ca317-b0f3-4e0a-a328-8d1f81983b81
       portIndex: 1
   - outputPort:
-      nodeId: c3f54b97-d7ac-47b7-865c-e58f9ae1ba24
-      portIndex: 0
+      nodeId: 402c8e1a-57ea-474f-b877-887a36c25202
+      portIndex: 1
     inputPort:
-      nodeId: beb433c2-29d1-489d-a82a-d93a393bcb28
+      nodeId: d601d2da-efec-4957-b8a1-640c50e72fcf
       portIndex: 1
   - outputPort:
+      nodeId: 402c8e1a-57ea-474f-b877-887a36c25202
+      portIndex: 0
+    inputPort:
+      nodeId: e3637dd8-5ea6-43c9-802b-9801a2cd91d2
+      portIndex: 1
+  - outputPort:
+      nodeId: 36d932c1-c922-48eb-809b-332f2ccd215b
+      portIndex: 1
+    inputPort:
+      nodeId: 558c350d-6a42-479b-9590-724f9db2aedd
+      portIndex: 1
+  - outputPort:
+      nodeId: 36d932c1-c922-48eb-809b-332f2ccd215b
+      portIndex: 0
+    inputPort:
+      nodeId: 33827647-a462-44c4-8a8c-2699aaa79740
+      portIndex: 1
+  - outputPort:
+      nodeId: 558c350d-6a42-479b-9590-724f9db2aedd
+      portIndex: 0
+    inputPort:
       nodeId: 2172629c-4538-43f4-be36-a55dd0b85897
+      portIndex: 2
+  - outputPort:
+      nodeId: 33827647-a462-44c4-8a8c-2699aaa79740
       portIndex: 0
     inputPort:
-      nodeId: fc034db8-1c0f-448b-b95d-022148a48e13
-      portIndex: 1
-  - outputPort:
-      nodeId: 14baa23b-7f14-41d2-b8d7-0c390c198126
-      portIndex: 0
-    inputPort:
-      nodeId: 26a36d62-63fd-4318-9a7d-bcbbdcb3c040
-      portIndex: 1
-  - outputPort:
-      nodeId: 5d2036f7-fafe-408e-ab26-e26f99664970
-      portIndex: 0
-    inputPort:
-      nodeId: e9bef5d1-1459-4e53-8d08-d3209cbbcfd3
-      portIndex: 1
-  - outputPort:
-      nodeId: 2649c890-03f1-422a-b87f-96a4cd16e3fe
-      portIndex: 1
-    inputPort:
-      nodeId: 39858e90-0c0b-44df-b807-86f8511edbe8
-      portIndex: 1
-  - outputPort:
-      nodeId: 2d6a88df-b412-4409-84c7-a3168e95ab99
-      portIndex: 1
-    inputPort:
-      nodeId: b8c8d92c-65f7-4f2b-a31c-31dc060ecd12
-      portIndex: 1
-  - outputPort:
       nodeId: c3f54b97-d7ac-47b7-865c-e58f9ae1ba24
-      portIndex: 1
-    inputPort:
-      nodeId: f5dfa45b-175e-4a20-9cce-960ec60f0355
-      portIndex: 1
+      portIndex: 2
   - outputPort:
-      nodeId: 2172629c-4538-43f4-be36-a55dd0b85897
-      portIndex: 1
+      nodeId: d601d2da-efec-4957-b8a1-640c50e72fcf
+      portIndex: 0
     inputPort:
-      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
-      portIndex: 1
-  - outputPort:
-      nodeId: 14baa23b-7f14-41d2-b8d7-0c390c198126
-      portIndex: 1
-    inputPort:
-      nodeId: 531231fd-313d-4c74-a74f-f59b71f71ce6
-      portIndex: 1
-  - outputPort:
       nodeId: 5d2036f7-fafe-408e-ab26-e26f99664970
-      portIndex: 1
-    inputPort:
-      nodeId: c9da4de6-b762-4758-ad4f-bb1fe364a808
-      portIndex: 1
-  - outputPort:
-      nodeId: 39858e90-0c0b-44df-b807-86f8511edbe8
-      portIndex: 0
-    inputPort:
-      nodeId: 6860ed3d-8f12-4972-8603-97ee5527b443
       portIndex: 2
   - outputPort:
-      nodeId: b8c8d92c-65f7-4f2b-a31c-31dc060ecd12
+      nodeId: e3637dd8-5ea6-43c9-802b-9801a2cd91d2
       portIndex: 0
     inputPort:
-      nodeId: bcffd5ad-e4ac-401b-a03e-67f25bf9ff4a
+      nodeId: 14baa23b-7f14-41d2-b8d7-0c390c198126
       portIndex: 2
   - outputPort:
-      nodeId: f5dfa45b-175e-4a20-9cce-960ec60f0355
+      nodeId: b94a77db-688e-4834-9d6d-0d5e6129a82c
       portIndex: 0
     inputPort:
-      nodeId: a3e94035-a1b4-4dd0-9072-a55173b408f8
+      nodeId: 0cdb7fa6-ef3a-4380-8a45-3093f56b8b44
       portIndex: 2
-  - outputPort:
-      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
-      portIndex: 0
-    inputPort:
-      nodeId: 6ff39a72-4665-45ab-8ff6-f4fa344ef038
-      portIndex: 2
-  - outputPort:
-      nodeId: 531231fd-313d-4c74-a74f-f59b71f71ce6
-      portIndex: 0
-    inputPort:
-      nodeId: 38445861-5ba1-4d22-9651-68ccc9d0051b
-      portIndex: 2
-  - outputPort:
-      nodeId: c9da4de6-b762-4758-ad4f-bb1fe364a808
-      portIndex: 0
-    inputPort:
-      nodeId: ad6083d3-7735-44ae-a735-0ef27c59246b
-      portIndex: 2
-  - outputPort:
-      nodeId: 6860ed3d-8f12-4972-8603-97ee5527b443
-      portIndex: 0
-    inputPort:
-      nodeId: fc46db7a-1bbe-4d65-9547-4d77bfd0df7f
-      portIndex: 1
-  - outputPort:
-      nodeId: bcffd5ad-e4ac-401b-a03e-67f25bf9ff4a
-      portIndex: 0
-    inputPort:
-      nodeId: c77ee869-88ea-45ff-983e-8596f6763c9d
-      portIndex: 1
-  - outputPort:
-      nodeId: a3e94035-a1b4-4dd0-9072-a55173b408f8
-      portIndex: 0
-    inputPort:
-      nodeId: 34c5588a-9264-44b4-87d8-9faeb59e992a
-      portIndex: 1
-  - outputPort:
-      nodeId: 6ff39a72-4665-45ab-8ff6-f4fa344ef038
-      portIndex: 0
-    inputPort:
-      nodeId: 99115e9b-d500-4227-b01c-546478462ff6
-      portIndex: 1
-  - outputPort:
-      nodeId: 38445861-5ba1-4d22-9651-68ccc9d0051b
-      portIndex: 0
-    inputPort:
-      nodeId: da71dd83-e699-47fe-8141-f0bfed3a9bd4
-      portIndex: 1
-  - outputPort:
-      nodeId: ad6083d3-7735-44ae-a735-0ef27c59246b
-      portIndex: 0
-    inputPort:
-      nodeId: c9b3668b-a800-4625-93da-9083463595d7
-      portIndex: 1
-  - outputPort:
-      nodeId: fc46db7a-1bbe-4d65-9547-4d77bfd0df7f
-      portIndex: 0
-    inputPort:
-      nodeId: 5c9c6de2-cc8b-41ad-9e64-7c673a668629
-      portIndex: 2
-  - outputPort:
-      nodeId: c77ee869-88ea-45ff-983e-8596f6763c9d
-      portIndex: 0
-    inputPort:
-      nodeId: e4d8179a-0d0a-4967-8911-d33820d8daeb
-      portIndex: 2
-  - outputPort:
-      nodeId: 34c5588a-9264-44b4-87d8-9faeb59e992a
-      portIndex: 0
-    inputPort:
-      nodeId: 5646c622-f343-4ddb-96d9-188c7292af53
-      portIndex: 2
-  - outputPort:
-      nodeId: 99115e9b-d500-4227-b01c-546478462ff6
-      portIndex: 0
-    inputPort:
-      nodeId: c4cb2f9b-46a5-4858-b2a8-8f96eda5eaa3
-      portIndex: 2
-  - outputPort:
-      nodeId: da71dd83-e699-47fe-8141-f0bfed3a9bd4
-      portIndex: 0
-    inputPort:
-      nodeId: 342e4e9c-a24d-445b-b5b1-5e240a4f37ac
-      portIndex: 2
-  - outputPort:
-      nodeId: c9b3668b-a800-4625-93da-9083463595d7
-      portIndex: 0
-    inputPort:
-      nodeId: 9ab5663e-cb1c-4a68-8696-e908addefed6
-      portIndex: 2
-  - outputPort:
-      nodeId: 5c9c6de2-cc8b-41ad-9e64-7c673a668629
-      portIndex: 0
-    inputPort:
-      nodeId: 527b622b-10e3-47d7-ac8d-8ce00723a893
-      portIndex: 1
-  - outputPort:
-      nodeId: e4d8179a-0d0a-4967-8911-d33820d8daeb
-      portIndex: 0
-    inputPort:
-      nodeId: e4720fc2-5bcc-42fc-9dab-db1cfaa19b72
-      portIndex: 1
-  - outputPort:
-      nodeId: 5646c622-f343-4ddb-96d9-188c7292af53
-      portIndex: 0
-    inputPort:
-      nodeId: ad75029f-a677-422c-81ad-9c0a8e860d12
-      portIndex: 1
-  - outputPort:
-      nodeId: c4cb2f9b-46a5-4858-b2a8-8f96eda5eaa3
-      portIndex: 0
-    inputPort:
-      nodeId: 9c55c9d4-e7cc-451f-b106-a2462bcacd00
-      portIndex: 1
-  - outputPort:
-      nodeId: 342e4e9c-a24d-445b-b5b1-5e240a4f37ac
-      portIndex: 0
-    inputPort:
-      nodeId: 6f15821d-b819-42f5-857f-9e3adf4c17ae
-      portIndex: 1
-  - outputPort:
-      nodeId: 9ab5663e-cb1c-4a68-8696-e908addefed6
-      portIndex: 0
-    inputPort:
-      nodeId: 9c1cf8a1-1eee-4667-a407-dc4c26494576
-      portIndex: 1
-  - outputPort:
-      nodeId: 527b622b-10e3-47d7-ac8d-8ce00723a893
-      portIndex: 0
-    inputPort:
-      nodeId: 9ffa3628-ed08-4fc0-a6be-b4e87cbeaa5f
-      portIndex: 2
-  - outputPort:
-      nodeId: e4720fc2-5bcc-42fc-9dab-db1cfaa19b72
-      portIndex: 0
-    inputPort:
-      nodeId: a2b122c1-7c1b-4fe4-a9d3-3e7e67a23c65
-      portIndex: 2
-  - outputPort:
-      nodeId: ad75029f-a677-422c-81ad-9c0a8e860d12
-      portIndex: 0
-    inputPort:
-      nodeId: 7cec77c3-d2bf-4e32-beb7-b4044831c595
-      portIndex: 2
-  - outputPort:
-      nodeId: 9c55c9d4-e7cc-451f-b106-a2462bcacd00
-      portIndex: 0
-    inputPort:
-      nodeId: 9bc6e234-ad80-4171-8fc8-3bf1d84d701a
-      portIndex: 2
-  - outputPort:
-      nodeId: 6f15821d-b819-42f5-857f-9e3adf4c17ae
-      portIndex: 0
-    inputPort:
-      nodeId: b39dd91a-0bd4-4594-89d7-af15ffdd3c8a
-      portIndex: 2
-  - outputPort:
-      nodeId: 9c1cf8a1-1eee-4667-a407-dc4c26494576
-      portIndex: 0
-    inputPort:
-      nodeId: 476c5b3a-2cad-4c38-9e81-5d27fe9a065e
-      portIndex: 2
-  - outputPort:
-      nodeId: 9ffa3628-ed08-4fc0-a6be-b4e87cbeaa5f
-      portIndex: 0
-    inputPort:
-      nodeId: 460dd7d8-05de-4d8d-9043-5d567b10246a
-      portIndex: 1
-  - outputPort:
-      nodeId: a2b122c1-7c1b-4fe4-a9d3-3e7e67a23c65
-      portIndex: 0
-    inputPort:
-      nodeId: 49375e60-9c0d-4799-b5d7-23ee1c4d689d
-      portIndex: 1
-  - outputPort:
-      nodeId: 7cec77c3-d2bf-4e32-beb7-b4044831c595
-      portIndex: 0
-    inputPort:
-      nodeId: 1be68a6f-79c3-4dc2-8ecd-354c207512c4
-      portIndex: 1
-  - outputPort:
-      nodeId: 9bc6e234-ad80-4171-8fc8-3bf1d84d701a
-      portIndex: 0
-    inputPort:
-      nodeId: 3e0fe34e-ee8a-4887-aae4-c772b4f74841
-      portIndex: 1
-  - outputPort:
-      nodeId: b39dd91a-0bd4-4594-89d7-af15ffdd3c8a
-      portIndex: 0
-    inputPort:
-      nodeId: e67b10f5-9356-469e-aca9-172a2268aa0c
-      portIndex: 1
-  - outputPort:
-      nodeId: 476c5b3a-2cad-4c38-9e81-5d27fe9a065e
-      portIndex: 0
-    inputPort:
-      nodeId: e674e6f5-9700-413b-b58e-1eaec3f9679f
-      portIndex: 1
-  - outputPort:
-      nodeId: 460dd7d8-05de-4d8d-9043-5d567b10246a
-      portIndex: 0
-    inputPort:
-      nodeId: 04e74867-da68-4f6b-81f8-2e57265caa30
-      portIndex: 2
-  - outputPort:
-      nodeId: 49375e60-9c0d-4799-b5d7-23ee1c4d689d
-      portIndex: 0
-    inputPort:
-      nodeId: 6a2cabac-009f-45fb-8a82-011468c9ff19
-      portIndex: 2
-  - outputPort:
-      nodeId: 1be68a6f-79c3-4dc2-8ecd-354c207512c4
-      portIndex: 0
-    inputPort:
-      nodeId: aa64169f-9b96-44c6-bb37-3f6748e6015d
-      portIndex: 2
-  - outputPort:
-      nodeId: 3e0fe34e-ee8a-4887-aae4-c772b4f74841
-      portIndex: 0
-    inputPort:
-      nodeId: 626a6db6-b948-4ac7-a4bc-f6353016f493
-      portIndex: 2
-  - outputPort:
-      nodeId: e67b10f5-9356-469e-aca9-172a2268aa0c
-      portIndex: 0
-    inputPort:
-      nodeId: 7b7c430e-8515-44a3-84aa-9a90c04c2acd
-      portIndex: 2
-  - outputPort:
-      nodeId: e674e6f5-9700-413b-b58e-1eaec3f9679f
-      portIndex: 0
-    inputPort:
-      nodeId: 4946509c-5625-485b-8e69-e7edda8964af
-      portIndex: 2
-  - outputPort:
-      nodeId: 04e74867-da68-4f6b-81f8-2e57265caa30
-      portIndex: 0
-    inputPort:
-      nodeId: 88da53ec-541a-4d6b-91b7-2e61f7900787
-      portIndex: 1
-  - outputPort:
-      nodeId: 6a2cabac-009f-45fb-8a82-011468c9ff19
-      portIndex: 0
-    inputPort:
-      nodeId: 8b5ba929-d207-4855-8b5d-349e8da83055
-      portIndex: 1
-  - outputPort:
-      nodeId: aa64169f-9b96-44c6-bb37-3f6748e6015d
-      portIndex: 0
-    inputPort:
-      nodeId: 8eb6e357-2ebd-48ae-982c-2ddc66af6862
-      portIndex: 1
-  - outputPort:
-      nodeId: 626a6db6-b948-4ac7-a4bc-f6353016f493
-      portIndex: 0
-    inputPort:
-      nodeId: 97b852f9-d486-4bfd-880f-1412b3e04cda
-      portIndex: 1
-  - outputPort:
-      nodeId: 7b7c430e-8515-44a3-84aa-9a90c04c2acd
-      portIndex: 0
-    inputPort:
-      nodeId: 48532c2a-53f8-425f-bdec-d527e93ffa63
-      portIndex: 1
-  - outputPort:
-      nodeId: 4946509c-5625-485b-8e69-e7edda8964af
-      portIndex: 0
-    inputPort:
-      nodeId: c6797987-2187-4b1c-8715-e3d55d8fbc10
-      portIndex: 1
-  - outputPort:
-      nodeId: 88da53ec-541a-4d6b-91b7-2e61f7900787
-      portIndex: 0
-    inputPort:
-      nodeId: ff714ecb-a8a6-4536-9f50-a9f77f8bdfb5
-      portIndex: 2
-  - outputPort:
-      nodeId: 8b5ba929-d207-4855-8b5d-349e8da83055
-      portIndex: 0
-    inputPort:
-      nodeId: 2bddd848-1652-4b4b-95fa-24a81d94c53a
-      portIndex: 2
-  - outputPort:
-      nodeId: 8eb6e357-2ebd-48ae-982c-2ddc66af6862
-      portIndex: 0
-    inputPort:
-      nodeId: 51b0790f-06fd-443c-8ae8-cdc0275443ff
-      portIndex: 2
-  - outputPort:
-      nodeId: 97b852f9-d486-4bfd-880f-1412b3e04cda
-      portIndex: 0
-    inputPort:
-      nodeId: 6d7baebd-d54b-4f4e-985f-438ad852ffb1
-      portIndex: 2
-  - outputPort:
-      nodeId: 48532c2a-53f8-425f-bdec-d527e93ffa63
-      portIndex: 0
-    inputPort:
-      nodeId: e5d8dd66-334c-4219-a04d-ac65ab98e127
-      portIndex: 2
-  - outputPort:
-      nodeId: c6797987-2187-4b1c-8715-e3d55d8fbc10
-      portIndex: 0
-    inputPort:
-      nodeId: 6a27f723-d46c-4224-b3f8-d92bf053f99f
-      portIndex: 2
-  - outputPort:
-      nodeId: ff714ecb-a8a6-4536-9f50-a9f77f8bdfb5
-      portIndex: 0
-    inputPort:
-      nodeId: f202ada1-900b-4762-a6c9-9a455ec16f1a
-      portIndex: 1
-  - outputPort:
-      nodeId: 2bddd848-1652-4b4b-95fa-24a81d94c53a
-      portIndex: 0
-    inputPort:
-      nodeId: fca1aaa8-71ae-4743-93c6-adb545b24072
-      portIndex: 1
-  - outputPort:
-      nodeId: 51b0790f-06fd-443c-8ae8-cdc0275443ff
-      portIndex: 0
-    inputPort:
-      nodeId: 263f7b93-eb82-4e55-967b-5eff9e006257
-      portIndex: 1
-  - outputPort:
-      nodeId: 6d7baebd-d54b-4f4e-985f-438ad852ffb1
-      portIndex: 0
-    inputPort:
-      nodeId: e2c7e209-657b-47aa-85e8-78f902a1aa25
-      portIndex: 1
-  - outputPort:
-      nodeId: e5d8dd66-334c-4219-a04d-ac65ab98e127
-      portIndex: 0
-    inputPort:
-      nodeId: f26fadca-3da6-4806-81e8-bccea0ae758e
-      portIndex: 1
-  - outputPort:
-      nodeId: 6a27f723-d46c-4224-b3f8-d92bf053f99f
-      portIndex: 0
-    inputPort:
-      nodeId: 990983ff-42c2-4292-9fc7-3813c79e15de
-      portIndex: 1
-  - outputPort:
-      nodeId: f202ada1-900b-4762-a6c9-9a455ec16f1a
-      portIndex: 0
-    inputPort:
-      nodeId: 38e07f8d-ecd9-4867-9a75-b8c2ea9535db
-      portIndex: 2
-  - outputPort:
-      nodeId: fca1aaa8-71ae-4743-93c6-adb545b24072
-      portIndex: 0
-    inputPort:
-      nodeId: 32f11d0c-0359-4be7-8cde-34490222ce40
-      portIndex: 2
-  - outputPort:
-      nodeId: 263f7b93-eb82-4e55-967b-5eff9e006257
-      portIndex: 0
-    inputPort:
-      nodeId: 33af1ae5-f122-42eb-ad8a-7b59828a9cdd
-      portIndex: 2
-  - outputPort:
-      nodeId: e2c7e209-657b-47aa-85e8-78f902a1aa25
-      portIndex: 0
-    inputPort:
-      nodeId: ddeeb853-a710-41a8-ac69-d9d29281e5fc
-      portIndex: 2
-  - outputPort:
-      nodeId: f26fadca-3da6-4806-81e8-bccea0ae758e
-      portIndex: 0
-    inputPort:
-      nodeId: 47e7f773-e36a-44aa-9b25-2e7cbdcbf886
-      portIndex: 2
-  - outputPort:
-      nodeId: 990983ff-42c2-4292-9fc7-3813c79e15de
-      portIndex: 0
-    inputPort:
-      nodeId: ae9e60c7-bc3f-44be-bd4b-7de75cb367fc
-      portIndex: 2
-  - outputPort:
-      nodeId: 38e07f8d-ecd9-4867-9a75-b8c2ea9535db
-      portIndex: 0
-    inputPort:
-      nodeId: dff69c9e-1b6c-417c-91ae-b0b057647e2e
-      portIndex: 1
-  - outputPort:
-      nodeId: 32f11d0c-0359-4be7-8cde-34490222ce40
-      portIndex: 0
-    inputPort:
-      nodeId: dc98075e-4979-4d30-8528-6e9cd3434c01
-      portIndex: 1
-  - outputPort:
-      nodeId: 33af1ae5-f122-42eb-ad8a-7b59828a9cdd
-      portIndex: 0
-    inputPort:
-      nodeId: e9997035-bead-4ef6-bd55-3efa2ac4d23a
-      portIndex: 1
-  - outputPort:
-      nodeId: ddeeb853-a710-41a8-ac69-d9d29281e5fc
-      portIndex: 0
-    inputPort:
-      nodeId: 80f7fe55-fc92-4f2e-9a40-5775bca784d6
-      portIndex: 1
-  - outputPort:
-      nodeId: 47e7f773-e36a-44aa-9b25-2e7cbdcbf886
-      portIndex: 0
-    inputPort:
-      nodeId: 282ebd12-9e39-4806-bda5-0af2212defc2
-      portIndex: 1
-  - outputPort:
-      nodeId: ae9e60c7-bc3f-44be-bd4b-7de75cb367fc
-      portIndex: 0
-    inputPort:
-      nodeId: 67631f96-9703-4ef8-9135-e3718d941e89
-      portIndex: 1
-  - outputPort:
-      nodeId: dff69c9e-1b6c-417c-91ae-b0b057647e2e
-      portIndex: 0
-    inputPort:
-      nodeId: e638381b-0937-4836-838d-9063d70bca3f
-      portIndex: 2
-  - outputPort:
-      nodeId: dc98075e-4979-4d30-8528-6e9cd3434c01
-      portIndex: 0
-    inputPort:
-      nodeId: 11470138-e5bf-4d0d-8afa-d9a85cca7b59
-      portIndex: 2
-  - outputPort:
-      nodeId: e9997035-bead-4ef6-bd55-3efa2ac4d23a
-      portIndex: 0
-    inputPort:
-      nodeId: c6736367-eab3-4942-954b-9c0c3314ed8c
-      portIndex: 2
-  - outputPort:
-      nodeId: 80f7fe55-fc92-4f2e-9a40-5775bca784d6
-      portIndex: 0
-    inputPort:
-      nodeId: a96a0ed9-ade0-4329-bce6-69319eb50f60
-      portIndex: 2
-  - outputPort:
-      nodeId: 282ebd12-9e39-4806-bda5-0af2212defc2
-      portIndex: 0
-    inputPort:
-      nodeId: 15163f21-1070-4075-ab22-c61b96876fb8
-      portIndex: 2
-  - outputPort:
-      nodeId: 67631f96-9703-4ef8-9135-e3718d941e89
-      portIndex: 0
-    inputPort:
-      nodeId: 647089a1-2061-479d-86f1-332c0ca9824f
-      portIndex: 2
-  - outputPort:
-      nodeId: e638381b-0937-4836-838d-9063d70bca3f
-      portIndex: 0
-    inputPort:
-      nodeId: da97e186-5377-41b4-9e1b-cac62365b73a
-      portIndex: 1
-  - outputPort:
-      nodeId: 11470138-e5bf-4d0d-8afa-d9a85cca7b59
-      portIndex: 0
-    inputPort:
-      nodeId: 6fd3edd5-a7d7-4b92-a030-87aed4e17298
-      portIndex: 1
-  - outputPort:
-      nodeId: c6736367-eab3-4942-954b-9c0c3314ed8c
-      portIndex: 0
-    inputPort:
-      nodeId: 54437dc3-5b97-453b-be93-76e13c09f640
-      portIndex: 1
-  - outputPort:
-      nodeId: a96a0ed9-ade0-4329-bce6-69319eb50f60
-      portIndex: 0
-    inputPort:
-      nodeId: 7d1579c9-b726-4151-944c-661b390e2e3e
-      portIndex: 1
-  - outputPort:
-      nodeId: 15163f21-1070-4075-ab22-c61b96876fb8
-      portIndex: 0
-    inputPort:
-      nodeId: e2707ed1-99c0-40cb-91cf-529502d9d971
-      portIndex: 1
-  - outputPort:
-      nodeId: 647089a1-2061-479d-86f1-332c0ca9824f
-      portIndex: 0
-    inputPort:
-      nodeId: 6b578d68-9fe8-4a7a-9fc9-b77fae00d5e0
-      portIndex: 1
-  - outputPort:
-      nodeId: da97e186-5377-41b4-9e1b-cac62365b73a
-      portIndex: 0
-    inputPort:
-      nodeId: 797dc8f1-1938-4b1a-aace-992ddefdf293
-      portIndex: 2
-  - outputPort:
-      nodeId: 6fd3edd5-a7d7-4b92-a030-87aed4e17298
-      portIndex: 0
-    inputPort:
-      nodeId: 44675328-1647-47b3-b4ee-04094e7a5911
-      portIndex: 2
-  - outputPort:
-      nodeId: 54437dc3-5b97-453b-be93-76e13c09f640
-      portIndex: 0
-    inputPort:
-      nodeId: d5b54c89-8ce8-423b-a3e1-20cf37e4e316
-      portIndex: 2
-  - outputPort:
-      nodeId: 7d1579c9-b726-4151-944c-661b390e2e3e
-      portIndex: 0
-    inputPort:
-      nodeId: 87475f72-05a6-4428-9764-d273cb184305
-      portIndex: 2
-  - outputPort:
-      nodeId: e2707ed1-99c0-40cb-91cf-529502d9d971
-      portIndex: 0
-    inputPort:
-      nodeId: d9f458fd-50f6-4175-8a4a-e63acf231e7b
-      portIndex: 2
-  - outputPort:
-      nodeId: 6b578d68-9fe8-4a7a-9fc9-b77fae00d5e0
-      portIndex: 0
-    inputPort:
-      nodeId: d27d4d51-3c1f-4ad1-8a5b-441a0e59c158
-      portIndex: 2
-  - outputPort:
-      nodeId: eb51b59e-49da-4329-b5ed-d22dc6966dda
-      portIndex: 0
-    inputPort:
-      nodeId: a84406e7-712f-4847-a963-101a2d8d95f9
-      portIndex: 1
-  - outputPort:
-      nodeId: f6215827-8828-4f62-96c6-16a0c2a8a667
-      portIndex: 1
-    inputPort:
-      nodeId: a84406e7-712f-4847-a963-101a2d8d95f9
-      portIndex: 1
-  - outputPort:
-      nodeId: a84406e7-712f-4847-a963-101a2d8d95f9
-      portIndex: 0
-    inputPort:
-      nodeId: 632c4c89-c45a-4715-a1d9-49d576636ef4
-      portIndex: 2
-  - outputPort:
-      nodeId: 632c4c89-c45a-4715-a1d9-49d576636ef4
-      portIndex: 0
-    inputPort:
-      nodeId: 5736675b-686f-4552-a031-09a2f01496ef
-      portIndex: 1
-  - outputPort:
-      nodeId: 5736675b-686f-4552-a031-09a2f01496ef
-      portIndex: 0
-    inputPort:
-      nodeId: 695c3de9-04c6-4279-9fd1-bc6b074ea596
-      portIndex: 2
-  - outputPort:
-      nodeId: 695c3de9-04c6-4279-9fd1-bc6b074ea596
-      portIndex: 0
-    inputPort:
-      nodeId: bdbfe923-305f-40cd-bd32-85adff3855a8
-      portIndex: 1
-  - outputPort:
-      nodeId: bdbfe923-305f-40cd-bd32-85adff3855a8
-      portIndex: 0
-    inputPort:
-      nodeId: 60bf702d-8893-4232-bc0b-56cd89599a2c
-      portIndex: 2
-  - outputPort:
-      nodeId: 60bf702d-8893-4232-bc0b-56cd89599a2c
-      portIndex: 0
-    inputPort:
-      nodeId: 0df4350c-7456-4b49-8756-c4eb7a051ce6
-      portIndex: 1
-  - outputPort:
-      nodeId: 0df4350c-7456-4b49-8756-c4eb7a051ce6
-      portIndex: 0
-    inputPort:
-      nodeId: 88b45dad-b34d-4d4f-a0fe-9c3a1713b534
-      portIndex: 2
-  - outputPort:
-      nodeId: 88b45dad-b34d-4d4f-a0fe-9c3a1713b534
-      portIndex: 0
-    inputPort:
-      nodeId: b7d1e8b4-47b3-4e39-9670-4ef1a3e63c2d
-      portIndex: 1
-  - outputPort:
-      nodeId: b7d1e8b4-47b3-4e39-9670-4ef1a3e63c2d
-      portIndex: 0
-    inputPort:
-      nodeId: 23a7944c-0f7f-482e-850d-e125c73e5cd4
-      portIndex: 2
-  - outputPort:
-      nodeId: 23a7944c-0f7f-482e-850d-e125c73e5cd4
-      portIndex: 0
-    inputPort:
-      nodeId: 8e7def47-1a1f-4286-8657-7f4bed2b5589
-      portIndex: 1
-  - outputPort:
-      nodeId: 8e7def47-1a1f-4286-8657-7f4bed2b5589
-      portIndex: 0
-    inputPort:
-      nodeId: dbc3f919-90e0-49d7-b815-ec44eb39efc6
-      portIndex: 2
-  - outputPort:
-      nodeId: dbc3f919-90e0-49d7-b815-ec44eb39efc6
-      portIndex: 0
-    inputPort:
-      nodeId: d62a6e93-ee16-466b-94b1-56930919a9f1
-      portIndex: 1
-  - outputPort:
-      nodeId: d62a6e93-ee16-466b-94b1-56930919a9f1
-      portIndex: 0
-    inputPort:
-      nodeId: a96814d7-61df-4fe1-bbba-4ed4db27b726
-      portIndex: 2
-  - outputPort:
-      nodeId: a96814d7-61df-4fe1-bbba-4ed4db27b726
-      portIndex: 0
-    inputPort:
-      nodeId: 1e6f9a83-75ee-433d-830d-ab3808763620
-      portIndex: 1
-  - outputPort:
-      nodeId: 1e6f9a83-75ee-433d-830d-ab3808763620
-      portIndex: 0
-    inputPort:
-      nodeId: 72389f34-3e51-412b-b54d-c62313677572
-      portIndex: 2
-  - outputPort:
-      nodeId: 72389f34-3e51-412b-b54d-c62313677572
-      portIndex: 0
-    inputPort:
-      nodeId: 2bf45785-2d99-425b-9dce-e5a79e473fd6
-      portIndex: 1
-  - outputPort:
-      nodeId: 2bf45785-2d99-425b-9dce-e5a79e473fd6
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 72389f34-3e51-412b-b54d-c62313677572
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: a96814d7-61df-4fe1-bbba-4ed4db27b726
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: dbc3f919-90e0-49d7-b815-ec44eb39efc6
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: 23a7944c-0f7f-482e-850d-e125c73e5cd4
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: 88b45dad-b34d-4d4f-a0fe-9c3a1713b534
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: 60bf702d-8893-4232-bc0b-56cd89599a2c
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: 695c3de9-04c6-4279-9fd1-bc6b074ea596
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: 632c4c89-c45a-4715-a1d9-49d576636ef4
-      portIndex: 1
-    inputPort:
-      nodeId: 66e106c2-8af9-4215-a3e7-7644ad37f4db
-      portIndex: 1
-  - outputPort:
-      nodeId: 797dc8f1-1938-4b1a-aace-992ddefdf293
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: 797dc8f1-1938-4b1a-aace-992ddefdf293
-      portIndex: 0
-    inputPort:
-      nodeId: fa9748e1-dcd3-483e-9e09-2ad6d55b26ca
-      portIndex: 1
-  - outputPort:
-      nodeId: 44675328-1647-47b3-b4ee-04094e7a5911
-      portIndex: 0
-    inputPort:
-      nodeId: 06a09ed3-1326-41af-9f28-95f7b61caff0
-      portIndex: 1
-  - outputPort:
-      nodeId: 44675328-1647-47b3-b4ee-04094e7a5911
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: d27d4d51-3c1f-4ad1-8a5b-441a0e59c158
-      portIndex: 0
-    inputPort:
-      nodeId: bb35c5a3-0d0d-4392-bf76-e64d2924dfca
-      portIndex: 1
-  - outputPort:
-      nodeId: d9f458fd-50f6-4175-8a4a-e63acf231e7b
-      portIndex: 0
-    inputPort:
-      nodeId: c6197bbc-e810-42a1-a141-e626e2997612
-      portIndex: 1
-  - outputPort:
-      nodeId: 87475f72-05a6-4428-9764-d273cb184305
-      portIndex: 0
-    inputPort:
-      nodeId: acbee603-a7f9-4e51-9b26-9126eaaaf3c7
-      portIndex: 1
-  - outputPort:
-      nodeId: d5b54c89-8ce8-423b-a3e1-20cf37e4e316
-      portIndex: 0
-    inputPort:
-      nodeId: 18d4f4c1-f5bc-4868-91b3-313c254918eb
-      portIndex: 1
-  - outputPort:
-      nodeId: fa9748e1-dcd3-483e-9e09-2ad6d55b26ca
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 06a09ed3-1326-41af-9f28-95f7b61caff0
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 18d4f4c1-f5bc-4868-91b3-313c254918eb
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: acbee603-a7f9-4e51-9b26-9126eaaaf3c7
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: c6197bbc-e810-42a1-a141-e626e2997612
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: bb35c5a3-0d0d-4392-bf76-e64d2924dfca
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: e638381b-0937-4836-838d-9063d70bca3f
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: 38e07f8d-ecd9-4867-9a75-b8c2ea9535db
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: ff714ecb-a8a6-4536-9f50-a9f77f8bdfb5
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: 04e74867-da68-4f6b-81f8-2e57265caa30
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: 9ffa3628-ed08-4fc0-a6be-b4e87cbeaa5f
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: 5c9c6de2-cc8b-41ad-9e64-7c673a668629
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: 6860ed3d-8f12-4972-8603-97ee5527b443
-      portIndex: 1
-    inputPort:
-      nodeId: 0b489bbf-25ce-4b1a-aa6b-e4134d4f455b
-      portIndex: 1
-  - outputPort:
-      nodeId: bcffd5ad-e4ac-401b-a03e-67f25bf9ff4a
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: e4d8179a-0d0a-4967-8911-d33820d8daeb
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: a2b122c1-7c1b-4fe4-a9d3-3e7e67a23c65
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: 6a2cabac-009f-45fb-8a82-011468c9ff19
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: 2bddd848-1652-4b4b-95fa-24a81d94c53a
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: 32f11d0c-0359-4be7-8cde-34490222ce40
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: 11470138-e5bf-4d0d-8afa-d9a85cca7b59
-      portIndex: 1
-    inputPort:
-      nodeId: 60edfa2a-3c61-47a4-8a7e-8ed395f60a5d
-      portIndex: 1
-  - outputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: d5b54c89-8ce8-423b-a3e1-20cf37e4e316
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: c6736367-eab3-4942-954b-9c0c3314ed8c
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: 33af1ae5-f122-42eb-ad8a-7b59828a9cdd
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: 51b0790f-06fd-443c-8ae8-cdc0275443ff
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: aa64169f-9b96-44c6-bb37-3f6748e6015d
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: 7cec77c3-d2bf-4e32-beb7-b4044831c595
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: 5646c622-f343-4ddb-96d9-188c7292af53
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: a3e94035-a1b4-4dd0-9072-a55173b408f8
-      portIndex: 1
-    inputPort:
-      nodeId: 8dd9c609-ab6c-4bc4-8205-9a4ebc9e175d
-      portIndex: 1
-  - outputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: 87475f72-05a6-4428-9764-d273cb184305
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: a96a0ed9-ade0-4329-bce6-69319eb50f60
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: ddeeb853-a710-41a8-ac69-d9d29281e5fc
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: 6d7baebd-d54b-4f4e-985f-438ad852ffb1
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: 626a6db6-b948-4ac7-a4bc-f6353016f493
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: 9bc6e234-ad80-4171-8fc8-3bf1d84d701a
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: c4cb2f9b-46a5-4858-b2a8-8f96eda5eaa3
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: 6ff39a72-4665-45ab-8ff6-f4fa344ef038
-      portIndex: 1
-    inputPort:
-      nodeId: 22326526-ee9c-47f9-be48-217178d19964
-      portIndex: 1
-  - outputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: d9f458fd-50f6-4175-8a4a-e63acf231e7b
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: 15163f21-1070-4075-ab22-c61b96876fb8
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: 47e7f773-e36a-44aa-9b25-2e7cbdcbf886
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: e5d8dd66-334c-4219-a04d-ac65ab98e127
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: 7b7c430e-8515-44a3-84aa-9a90c04c2acd
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: b39dd91a-0bd4-4594-89d7-af15ffdd3c8a
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: 342e4e9c-a24d-445b-b5b1-5e240a4f37ac
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: 38445861-5ba1-4d22-9651-68ccc9d0051b
-      portIndex: 1
-    inputPort:
-      nodeId: 3ef76ddc-2b91-470d-872d-b9262c5fcf00
-      portIndex: 1
-  - outputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 0
-    inputPort:
-      nodeId: d49fba46-4f2d-4f12-8414-68427ac961ac
-      portIndex: 0
-  - outputPort:
-      nodeId: d27d4d51-3c1f-4ad1-8a5b-441a0e59c158
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: 647089a1-2061-479d-86f1-332c0ca9824f
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: ae9e60c7-bc3f-44be-bd4b-7de75cb367fc
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: 6a27f723-d46c-4224-b3f8-d92bf053f99f
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: 4946509c-5625-485b-8e69-e7edda8964af
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: 476c5b3a-2cad-4c38-9e81-5d27fe9a065e
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: 9ab5663e-cb1c-4a68-8696-e908addefed6
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: ad6083d3-7735-44ae-a735-0ef27c59246b
-      portIndex: 1
-    inputPort:
-      nodeId: 1fb2b8ca-6c0a-4543-972b-3535dc6dae81
-      portIndex: 1
-  - outputPort:
-      nodeId: f0cab40b-9c3b-4eac-9110-14b6f61f6cf5
-      portIndex: 0
-    inputPort:
-      nodeId: c9da4de6-b762-4758-ad4f-bb1fe364a808
-      portIndex: 1
-  - outputPort:
-      nodeId: f49de646-2d9d-404c-8de3-7126a6d0054b
-      portIndex: 0
-    inputPort:
-      nodeId: 531231fd-313d-4c74-a74f-f59b71f71ce6
-      portIndex: 1
-  - outputPort:
-      nodeId: c0893772-d6a9-4439-a375-45332ab1075c
-      portIndex: 0
-    inputPort:
-      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
-      portIndex: 1
-  - outputPort:
-      nodeId: c0893772-d6a9-4439-a375-45332ab1075c
-      portIndex: 1
-    inputPort:
-      nodeId: ec1ba361-12ad-4ec4-ad73-cb907a42c1ff
-      portIndex: 1
-  - outputPort:
-      nodeId: cf674c74-c96a-4410-8368-36bdc429e25d
-      portIndex: 0
-    inputPort:
-      nodeId: f5dfa45b-175e-4a20-9cce-960ec60f0355
-      portIndex: 1
-  - outputPort:
-      nodeId: c878d7eb-4de3-4ed5-a6c0-01016639e80a
-      portIndex: 0
-    inputPort:
-      nodeId: b8c8d92c-65f7-4f2b-a31c-31dc060ecd12
-      portIndex: 1
-  - outputPort:
-      nodeId: 9fbae9ce-ccb0-4843-b78c-757d44b9629f
-      portIndex: 0
-    inputPort:
-      nodeId: 39858e90-0c0b-44df-b807-86f8511edbe8
-      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -1876,10 +1932,10 @@ MonoBehaviour:
         guid: 86729678-b4c6-419e-b198-14d2f3a795a9
         position:
           serializedVersion: 2
-          x: -1637.6001
-          y: -66.4
-          width: 444.80005
-          height: 97.600006
+          x: -2092
+          y: -52.8
+          width: 444.79993
+          height: 97.6
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1891,10 +1947,10 @@ MonoBehaviour:
         guid: 3d5e6599-d3b4-4c38-9f96-1a544e55a941
         position:
           serializedVersion: 2
-          x: -1174.4
-          y: -66.4
+          x: -1628.8
+          y: -52.8
           width: 435.19995
-          height: 97.600006
+          height: 97.6
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1906,10 +1962,10 @@ MonoBehaviour:
         guid: b94a77db-688e-4834-9d6d-0d5e6129a82c
         position:
           serializedVersion: 2
-          x: -720
-          y: -66.4
-          width: 452.80002
-          height: 97.600006
+          x: -1174.4
+          y: -52.8
+          width: 452.8
+          height: 97.6
         typeName: GiveCombatCardNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -1954,34 +2010,6 @@ MonoBehaviour:
           in the real world. Look for US.'
         LeftText: Where are you?
         RightText: Where are you?
-        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
-    - rid: 4179187880975925250
-      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: aa147df4-7064-493d-90c7-ea2e6d72f205
-        position:
-          serializedVersion: 2
-          x: 595.2
-          y: -1132.7999
-          width: 843.19995
-          height: 264
-        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-          PublicKeyToken=null
-        outputs:
-        - Left
-        - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
-        LeftText: Yes please, I am new
-        RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925253
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2071,7 +2099,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925260
@@ -2081,15 +2109,15 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: 2948
-          y: -1022.4
-          width: 381.59985
+          y: -1023.2
+          width: 378.3999
           height: 240
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
@@ -2128,11 +2156,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925263
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2171,7 +2199,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925267
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2188,7 +2216,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 4179187880975925268
@@ -2209,7 +2237,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
     - rid: 7048188634624425984
       type: {class: EndNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -2243,9 +2271,9 @@ MonoBehaviour:
         guid: 0cdb7fa6-ef3a-4380-8a45-3093f56b8b44
         position:
           serializedVersion: 2
-          x: -212.8
-          y: -66.4
-          width: 214.4
+          x: -667.2
+          y: -52.8
+          width: 214.40002
           height: 123.2
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -2259,10 +2287,10 @@ MonoBehaviour:
         guid: 568502f9-a774-4eac-816c-017bef86eacd
         position:
           serializedVersion: 2
-          x: 82.399994
-          y: -176.8
-          width: 214.40001
-          height: 123.200005
+          x: -520.8
+          y: -238.4
+          width: 214.4
+          height: 123.2
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -2275,9 +2303,9 @@ MonoBehaviour:
         guid: f6a3f54d-22f3-4458-9d40-4627218ec3d2
         position:
           serializedVersion: 2
-          x: 82.399994
-          y: 1103.2001
-          width: 214.40001
+          x: -591.2
+          y: 1160.8
+          width: 214.40002
           height: 123.19995
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -2291,9 +2319,9 @@ MonoBehaviour:
         guid: ddd6e8c7-9e60-4883-95f1-bb208beaa643
         position:
           serializedVersion: 2
-          x: 348
-          y: -300
-          width: 214.40002
+          x: -413.59998
+          y: -409.6
+          width: 214.4
           height: 123.19998
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -2307,10 +2335,10 @@ MonoBehaviour:
         guid: 849faa00-3f4b-4ca9-ba77-406be84974a2
         position:
           serializedVersion: 2
-          x: 348
-          y: 68.8
-          width: 213.60004
-          height: 123.2
+          x: -413.59998
+          y: 136.8
+          width: 214.4
+          height: 123.20001
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
@@ -2323,9 +2351,9 @@ MonoBehaviour:
         guid: 36d932c1-c922-48eb-809b-332f2ccd215b
         position:
           serializedVersion: 2
-          x: 353.6
-          y: 752.8
-          width: 213.6
+          x: -413.59998
+          y: 800.8
+          width: 214.4
           height: 123.20001
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -2339,9 +2367,9 @@ MonoBehaviour:
         guid: 402c8e1a-57ea-474f-b877-887a36c25202
         position:
           serializedVersion: 2
-          x: 311.2
-          y: 1449.6001
-          width: 213.59998
+          x: -413.59998
+          y: 1417.6001
+          width: 214.4
           height: 123.19995
         typeName: CodeGraph.RandomNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
@@ -2355,25 +2383,18 @@ MonoBehaviour:
         guid: f6215827-8828-4f62-96c6-16a0c2a8a667
         position:
           serializedVersion: 2
-          x: 595.2
-          y: -713.60004
-          width: 843.19995
-          height: 264.00003
+          x: 848.8
+          y: -772.8
+          width: 464
+          height: 263.99997
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
@@ -2383,25 +2404,18 @@ MonoBehaviour:
         guid: 2649c890-03f1-422a-b87f-96a4cd16e3fe
         position:
           serializedVersion: 2
-          x: 595.2
-          y: -300
-          width: 843.19995
+          x: 848.8
+          y: -348
+          width: 464
           height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
@@ -2411,25 +2425,18 @@ MonoBehaviour:
         guid: 2d6a88df-b412-4409-84c7-a3168e95ab99
         position:
           serializedVersion: 2
-          x: 595
-          y: 99
-          width: 841.5
-          height: 266
+          x: 848.8
+          y: 66.399994
+          width: 464
+          height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
@@ -2439,25 +2446,18 @@ MonoBehaviour:
         guid: c3f54b97-d7ac-47b7-865c-e58f9ae1ba24
         position:
           serializedVersion: 2
-          x: 595.2
-          y: 487.19998
-          width: 843.19995
-          height: 264.00003
+          x: 827.2
+          y: 500
+          width: 464
+          height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
@@ -2467,25 +2467,18 @@ MonoBehaviour:
         guid: 2172629c-4538-43f4-be36-a55dd0b85897
         position:
           serializedVersion: 2
-          x: 595.2
+          x: 827.2
           y: 839.2
-          width: 843.19995
+          width: 464
           height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
@@ -2495,25 +2488,18 @@ MonoBehaviour:
         guid: 14baa23b-7f14-41d2-b8d7-0c390c198126
         position:
           serializedVersion: 2
-          x: 595
-          y: 1209
-          width: 841.5
-          height: 266
+          x: 804.8
+          y: 1208.8
+          width: 464
+          height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
@@ -2523,28 +2509,21 @@ MonoBehaviour:
         guid: 5d2036f7-fafe-408e-ab26-e26f99664970
         position:
           serializedVersion: 2
-          x: 595.2
+          x: 804.8
           y: 1572.8
-          width: 843.19995
+          width: 464
           height: 264
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
-          This must be a bug. Oh well, now that we are here you have
-
-          entered
-          a special torunamet. Welcome to Admired Town torunament! It is a special
-          date, not everyone can see this. So if you are not familiar with the combat,
-
-          you
-          should do the tutorial. Swipe this cad to the left to go to the tutorial,
-          or swipe right to BEGIN THE BATTLES'
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
         LeftText: Yes please, I am new
         RightText: No! I'm ready for the fight!
-        card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
+        card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 7048188725976891449
       type: {class: BooleanActionNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2841,7 +2820,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
     - rid: 7048188725976891464
@@ -2860,7 +2839,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
     - rid: 7048188725976891465
@@ -2879,7 +2858,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
     - rid: 7048188725976891466
@@ -2898,7 +2877,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
     - rid: 7048188725976891467
@@ -2917,7 +2896,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891468
@@ -2936,7 +2915,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 7048188725976891469
@@ -3061,8 +3040,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
@@ -3080,8 +3059,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
@@ -3099,8 +3078,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
@@ -3118,8 +3097,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
@@ -3137,8 +3116,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
@@ -3156,8 +3135,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
@@ -3517,11 +3496,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
     - rid: 7048188725976891502
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3537,11 +3516,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
     - rid: 7048188725976891503
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3557,11 +3536,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
     - rid: 7048188725976891504
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3577,11 +3556,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
     - rid: 7048188725976891505
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3597,11 +3576,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891506
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3617,11 +3596,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 7048188725976891507
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3746,7 +3725,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
     - rid: 7048188725976891515
@@ -3764,7 +3743,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
     - rid: 7048188725976891516
@@ -3782,7 +3761,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
     - rid: 7048188725976891517
@@ -3800,7 +3779,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
     - rid: 7048188725976891518
@@ -3818,7 +3797,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891519
@@ -3836,7 +3815,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 7048188725976891520
@@ -3965,7 +3944,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
     - rid: 7048188725976891528
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -3985,7 +3964,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
     - rid: 7048188725976891529
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4005,7 +3984,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
     - rid: 7048188725976891530
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4025,7 +4004,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
     - rid: 7048188725976891531
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4045,7 +4024,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891532
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4065,7 +4044,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 7048188725976891533
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4194,7 +4173,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
     - rid: 7048188725976891540
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4215,7 +4194,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
     - rid: 7048188725976891541
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4236,7 +4215,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
     - rid: 7048188725976891542
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4257,7 +4236,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
     - rid: 7048188725976891543
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4278,7 +4257,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
     - rid: 7048188725976891544
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4299,7 +4278,7 @@ MonoBehaviour:
 
           partner. But this has only begun. Break a leg.'
         LeftText: I am nervouss...
-        RightText: Lets go!
+        RightText: Let's go!
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 7048188725976891545
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4677,7 +4656,7 @@ MonoBehaviour:
         - Next
         CardText: So first round partner. Easy peasy. (I hope so, we made it that
           way)
-        LeftText: Lets go
+        LeftText: Let's go
         RightText: I am awesome
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
     - rid: 7048188727276601357
@@ -4820,8 +4799,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Yay you did it! Your deck is bigger now. But don\xB4t get cocky,
-          there is \na long way yet."
+        CardText: "Yay you did it! Your deck is bigger now. But don't get cocky,
+          there's \nstill a long way"
         LeftText: Okay...
         RightText: I am cock
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
@@ -4860,11 +4839,11 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "You are getting used to this aren\xB4t you? Not bad, not bad.
-          I hope you like \nthe charaters in this town. They were pretty difficult
-          to produce. (Not really, \nbecause we are the best). "
+        CardText: "You are getting used to this aren't you? Not bad, not bad. I hope
+          you like \nthe charaters in this town. They were pretty difficult to produce.
+          (Not really, \nbecause we are the best). "
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
     - rid: 7048188727276601367
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4881,7 +4860,7 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: You are being observed. Watch your back.
-        LeftText: "I don\xB4t like being watched"
+        LeftText: I don't like being watched
         RightText: Watch me destroy this game!
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
     - rid: 7048188727276601368
@@ -4902,7 +4881,7 @@ MonoBehaviour:
           again and \nget other stories. You may not see me again though. But you
           may see me in\nreal life!"
         LeftText: Next one please
-        RightText: "Let\xB4s fight"
+        RightText: Let's fight
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
     - rid: 7048188727276601369
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -4922,8 +4901,8 @@ MonoBehaviour:
           Congratulations
 
           partner. But this has only begun. Break a leg.'
-        LeftText: 
-        RightText: 
+        LeftText: I am nervouss...
+        RightText: Let's go!
         card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
     - rid: 7048188727276601370
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -5247,15 +5226,220 @@ MonoBehaviour:
         LeftText: Auch
         RightText: Auch
         card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
+    - rid: 7048188814557970432
+      type: {class: ForkCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 0fce4d9a-0ce1-4551-a362-d3da47492cbf
+        position:
+          serializedVersion: 2
+          x: 848.8
+          y: -1270.3999
+          width: 464
+          height: 263.99994
+        typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+        outputs:
+        - Left
+        - Right
+        CardText: "So if you are not familiar with the combat, you should do the
+          tutorial. \nSwipe this card to the left to go to the tutorial, or swipe
+          right to BEGIN THE BATTLES"
+        LeftText: Yes please, I am new
+        RightText: No! I'm ready for the fight
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
+    - rid: 7048188814557970433
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: ab6c69d7-323e-47ad-8823-4ba17c1fa14a
+        position:
+          serializedVersion: 2
+          x: 108
+          y: -1270.3999
+          width: 680
+          height: 239.99994
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: aac8947d8084d7e499110027d5acf773, type: 2}
+    - rid: 7048188814557970434
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d5bfe237-0293-4ac9-8900-79bc31b9e38a
+        position:
+          serializedVersion: 2
+          x: 108
+          y: -748.8
+          width: 680
+          height: 239.99997
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: b0c061783290f8247a53fc453bf324ee, type: 2}
+    - rid: 7048188814557970435
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: c8ce24b6-cc66-4e4f-8937-0c13a7b626cc
+        position:
+          serializedVersion: 2
+          x: 108
+          y: -348
+          width: 680
+          height: 239.99998
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: 08acf7192ce73a9468b42046bf38bd17, type: 2}
+    - rid: 7048188814557970436
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 7a7ca317-b0f3-4e0a-a328-8d1f81983b81
+        position:
+          serializedVersion: 2
+          x: 108
+          y: 66.399994
+          width: 680
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: 26dc4671371ec8645b34fb5906673c51, type: 2}
+    - rid: 7048188814557970437
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 33827647-a462-44c4-8a8c-2699aaa79740
+        position:
+          serializedVersion: 2
+          x: 96
+          y: 500
+          width: 680
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: b641ba9884c8c404eb1cfcca098c9b54, type: 2}
+    - rid: 7048188814557970438
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 558c350d-6a42-479b-9590-724f9db2aedd
+        position:
+          serializedVersion: 2
+          x: 83.2
+          y: 839.2
+          width: 322.4
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: 1fcb79c3145adc1409131eee8f9ba45c, type: 2}
+    - rid: 7048188814557970439
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: e3637dd8-5ea6-43c9-802b-9801a2cd91d2
+        position:
+          serializedVersion: 2
+          x: 83.2
+          y: 1208.8
+          width: 322.4
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: 8f8de83618f67da458988cf9635a5c0a, type: 2}
+    - rid: 7048188814557970440
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d601d2da-efec-4957-b8a1-640c50e72fcf
+        position:
+          serializedVersion: 2
+          x: 83.2
+          y: 1596.8
+          width: 322.4
+          height: 240
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: 'Oh you found one of the developers. I''m not supposed to be here.
+          This must be a bug. Oh well, now that we are here you have
+
+          entered
+          a special tournament. Welcome to Admired Town tournament! It is a special
+          date, not everyone can see this. '
+        LeftText: Hiii
+        RightText: Hello
+        card: {fileID: 11400000, guid: 91fe4d57df0d46c4486c4fb4dc5b2966, type: 2}
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 7a377d3e-c7c2-4b2b-8a6e-61254ef188f8
         position:
           serializedVersion: 2
-          x: -1815.2001
-          y: -66.4
-          width: 82.400024
+          x: -2269.6
+          y: -52.8
+          width: 82.40015
           height: 76.8
         typeName: CodeGraph.StartNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
