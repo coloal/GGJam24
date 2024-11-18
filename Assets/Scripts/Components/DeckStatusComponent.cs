@@ -128,4 +128,27 @@ public class DeckStatusComponent : MonoBehaviour
             }
         }
     }
+
+    public void ToggleInteractions()
+    {
+        if (clickableCardComponent != null)
+        {
+            if (clickableCardComponent.enabled)
+            {
+                DisableInteractions();
+            }
+            else 
+            {
+                EnableInteractions();
+            }
+        }
+    }
+
+    public void HideCardsLeftIfVisible()
+    {
+        if (areCardsCurrentlyVisible)
+        {
+            HideCardsLeft();
+        }
+    }
 }
