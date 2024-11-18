@@ -295,7 +295,7 @@
 			<value>0.39901477098464966</value>
 		</property>
 		<property name="length">
-			<value>0.043448283202542543</value>
+			<value>0.20098522901535035</value>
 		</property>
 		<property name="pitch">
 			<value>1.80000007</value>
@@ -430,7 +430,7 @@
 	<object class="MixerBusFader" id="{a12de742-98d0-4741-8773-4f2e79c4ae43}" />
 	<object class="AutomationPoint" id="{69e8180c-13b1-4753-9a77-35cca81ad6e0}">
 		<property name="position">
-			<value>0.40446305418719219</value>
+			<value>0.56199999999999994</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -441,7 +441,7 @@
 	</object>
 	<object class="AutomationPoint" id="{c5874aa6-2e51-41b2-a23e-b0709da45231}">
 		<property name="position">
-			<value>0.44246305418719223</value>
+			<value>0.59999999999999998</value>
 		</property>
 		<property name="value">
 			<value>0</value>

@@ -92,14 +92,24 @@
 		<property name="length">
 			<value>0.11501133786848072</value>
 		</property>
+		<property name="playlistMode">
+			<value>3</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{65001b1f-1e30-4442-a803-47650bd76ec0}</destination>
 		</relationship>
 		<relationship name="sounds">
+			<destination>{8502dfb1-f7b5-4029-b3eb-4440c6bb7f38}</destination>
 			<destination>{97b40569-c7d3-45bb-8282-1d5fc0384ec4}</destination>
+		</relationship>
+		<relationship name="playPercentages">
+			<destination>{c8618cdb-4ca2-4161-a5ff-21c745e7d472}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{7bcbc51b-563b-4218-85a7-eb3e2be119d7}">
+		<property name="volume">
+			<value>-0.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -128,12 +138,34 @@
 			<value>2</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{97b40569-c7d3-45bb-8282-1d5fc0384ec4}">
+	<object class="SingleSound" id="{8502dfb1-f7b5-4029-b3eb-4440c6bb7f38}">
+		<property name="volume">
+			<value>-1.5</value>
+		</property>
 		<property name="pitch">
 			<value>-16.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{668f4f75-53ce-4e6c-b354-2423b2d4e48c}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{97b40569-c7d3-45bb-8282-1d5fc0384ec4}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
+		<property name="pitch">
+			<value>-18.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{668f4f75-53ce-4e6c-b354-2423b2d4e48c}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{c8618cdb-4ca2-4161-a5ff-21c745e7d472}">
+		<property name="percentage">
+			<value>90</value>
+		</property>
+		<relationship name="sound">
+			<destination>{8502dfb1-f7b5-4029-b3eb-4440c6bb7f38}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{355b3f59-f6ea-4619-8a2c-4d3d03640fb0}">
