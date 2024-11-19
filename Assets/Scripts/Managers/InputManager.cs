@@ -17,6 +17,9 @@ public class InputManager : MonoBehaviour
     public delegate void OnReleaseEvent();
     public event OnReleaseEvent onReleaseEvent;
 
+    public delegate void OnPauseEvent();
+    public event OnPauseEvent onPauseEvent;
+
     private Vector2 clickedPosition = Vector2.zero;
     public Vector2 ClickedPosition => clickedPosition;
 
@@ -60,6 +63,11 @@ public class InputManager : MonoBehaviour
     void OnRelease()
     {
         onReleaseEvent?.Invoke();
+    }
+
+    void OnPause()
+    {
+        onPauseEvent?.Invoke();
     }
 
     public void ClearEvents()

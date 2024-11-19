@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5edce3b5e237254d82a608357a88791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugMode: 1
+  LazyLoad: 1
   StoryEventPath: event:/Level1
   CampfireEventPath: event:/Ambient/Settlement
   CombatEventPath: 
@@ -239,6 +241,7 @@ MonoBehaviour:
   SoundEvents: {fileID: 11400000, guid: 3a38acdc2bf149d42b65801318c41ef8, type: 2}
   MusicZoneData: {fileID: 11400000, guid: 6f3f3b45200a8d447a55f7cbc6ac02c1, type: 2}
   SpeedFadeIn: 0.2
+  MenuMusicEvent: 
 --- !u!4 &179863778
 Transform:
   m_ObjectHideFlags: 0
@@ -969,6 +972,64 @@ MonoBehaviour:
   canvas: {fileID: 1089200395}
   secondsForSceneTransition: 0.5
   secondsForCombatTransition: 1
+  IsMainGame: 0
+--- !u!1001 &1262594865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 795105967652630093, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_Name
+      value: PauseMenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817114256016856999, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d10097f677b5942f5bd75eb8f713b535, type: 3}
 --- !u!1 &1327554468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1416,7 @@ MonoBehaviour:
   cardsManager: {fileID: 1958423316}
   zoneTemplate: {fileID: 11400000, guid: e841a2bd1802bf642850a6535bed84e7, type: 2}
   defaultGraph: {fileID: 11400000, guid: b73c75238d7416f4cb69a482facad9b6, type: 2}
+  IsMainGame: 1
 --- !u!4 &2026473451
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,6 +1509,7 @@ SceneRoots:
   - {fileID: 527357312}
   - {fileID: 221680344}
   - {fileID: 163239570}
+  - {fileID: 1262594865}
   - {fileID: 583164619}
   - {fileID: 2026473451}
   - {fileID: 1029993837}
