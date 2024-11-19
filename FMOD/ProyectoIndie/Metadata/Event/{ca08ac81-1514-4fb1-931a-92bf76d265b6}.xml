@@ -145,6 +145,10 @@
 		<property name="pitch">
 			<value>-16.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{f978fb90-339f-438d-83f8-314bedca7363}</destination>
+			<destination>{807d2fb3-fb4d-44e1-85bb-f4026ecab02f}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{668f4f75-53ce-4e6c-b354-2423b2d4e48c}</destination>
 		</relationship>
@@ -156,6 +160,10 @@
 		<property name="pitch">
 			<value>-18.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{60749108-abfc-4c8c-849f-ab896b176b8e}</destination>
+			<destination>{72f85c07-e3d9-4a4c-9a9e-127e3d2c81f0}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{668f4f75-53ce-4e6c-b354-2423b2d4e48c}</destination>
 		</relationship>
@@ -175,5 +183,37 @@
 	</object>
 	<object class="MixerBusPanner" id="{84522da9-1007-4da1-b712-11e647d31b70}" />
 	<object class="MixerBusFader" id="{308e4443-24e9-41a5-a7cb-980ea7b78a5e}" />
+	<object class="RandomizerModulator" id="{f978fb90-339f-438d-83f8-314bedca7363}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{807d2fb3-fb4d-44e1-85bb-f4026ecab02f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>0.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{60749108-abfc-4c8c-849f-ab896b176b8e}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{72f85c07-e3d9-4a4c-9a9e-127e3d2c81f0}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>0.5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1c5a4a73-4341-47ae-9c60-1933746d9965}" />
 </objects>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{4da8e565-601e-4e58-933b-67e9f6739326}">
 		<property name="assetPath">
-			<value>Ronquidos.wav</value>
+			<value>MrTimeAndClock/Ronquidos.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

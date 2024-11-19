@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e6a86cf9-83c6-4398-bb6a-c46dd4131577}">
 		<property name="assetPath">
-			<value>Coin.wav</value>
+			<value>SFX/Combate/Coin.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

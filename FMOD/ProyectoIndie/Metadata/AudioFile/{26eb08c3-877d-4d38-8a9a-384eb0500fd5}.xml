@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{26eb08c3-877d-4d38-8a9a-384eb0500fd5}">
 		<property name="assetPath">
-			<value>Whoosh3.wav</value>
+			<value>SFX/Combate/Whoosh3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

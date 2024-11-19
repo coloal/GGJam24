@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{54e25e9d-825c-4c74-8336-e1b824a12026}">
 		<property name="assetPath">
-			<value>CavaquinReverse.wav</value>
+			<value>MrTimeAndClock/CavaquinReverse.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

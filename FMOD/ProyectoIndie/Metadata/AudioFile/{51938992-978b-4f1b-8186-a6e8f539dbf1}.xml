@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{51938992-978b-4f1b-8186-a6e8f539dbf1}">
 		<property name="assetPath">
-			<value>HeyShort.mp3</value>
+			<value>SFX/HeyShort.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

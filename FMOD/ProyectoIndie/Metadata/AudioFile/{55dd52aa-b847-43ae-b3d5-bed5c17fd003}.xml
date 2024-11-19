@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{55dd52aa-b847-43ae-b3d5-bed5c17fd003}">
 		<property name="assetPath">
-			<value>DialogueBig2.wav</value>
+			<value>DialogueSFX/DialogueBig2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{08061cd4-b1d8-4713-a1f1-5b2f164c7d41}">
 		<property name="assetPath">
-			<value>Silueta nocturnaReversed.wav</value>
+			<value>MrTimeAndClock/Silueta nocturnaReversed.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

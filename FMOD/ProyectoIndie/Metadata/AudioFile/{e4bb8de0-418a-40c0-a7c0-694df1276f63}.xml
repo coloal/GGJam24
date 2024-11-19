@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e4bb8de0-418a-40c0-a7c0-694df1276f63}">
 		<property name="assetPath">
-			<value>Reactions5_Mmmm.wav</value>
+			<value>SFX/Combate/Reactions5_Mmmm.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

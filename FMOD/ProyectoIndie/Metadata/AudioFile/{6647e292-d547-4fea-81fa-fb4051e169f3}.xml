@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{6647e292-d547-4fea-81fa-fb4051e169f3}">
 		<property name="assetPath">
-			<value>Intro/ClickClock.wav</value>
+			<value>MrTimeAndClock/ClickClock.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

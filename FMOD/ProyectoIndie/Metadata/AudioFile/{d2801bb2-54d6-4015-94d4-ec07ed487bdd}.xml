@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d2801bb2-54d6-4015-94d4-ec07ed487bdd}">
 		<property name="assetPath">
-			<value>BreakGlass1.wav</value>
+			<value>SFX/Combate/BreakGlass1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{e8f456b0-d1a2-40a1-834d-7f2c04813db5}">
 		<property name="assetPath">
-			<value>Barajea2.wav</value>
+			<value>SFX/Combate/Barajea2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

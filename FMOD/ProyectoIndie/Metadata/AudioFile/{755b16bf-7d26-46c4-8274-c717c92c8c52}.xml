@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{755b16bf-7d26-46c4-8274-c717c92c8c52}">
 		<property name="assetPath">
-			<value>LittleIntonation.wav</value>
+			<value>DialogueSFX/LittleIntonation.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
