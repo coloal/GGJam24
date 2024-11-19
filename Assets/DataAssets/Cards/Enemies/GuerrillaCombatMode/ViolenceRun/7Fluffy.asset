@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 1696578606, guid: fa16e83c0e2817d4eaf3dd57b07a2579, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 5166aac3d68584466be64b304b7542a4, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   OnStartConversation:
-  - Restric yourselves it's Christmas time,<br>Our brothers in law ex cathreda arrive
+  - Restric yourselves it's Christmas time,<br>Our brothers in law ex cathreda arrive.
   OnWinConversation:
-  - You have won fair and square, take one.
+  - A game of illusory chances captivates cards lovers,<br>Illusory, as your deck
+    grows and perpetuate power.
   OnLoseConversation:
-  - Sorry kids, your trip is over.
+  - 'I won the match! I feel the joy!<br>A moment of hope in my written plot. '
   ShowHintsTimeInSeconds: 1

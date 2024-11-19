@@ -16,14 +16,16 @@ MonoBehaviour:
   CombatCards:
   - {fileID: 11400000, guid: 905318304a7ed44d0ae56a39e1d91407, type: 2}
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
+  - {fileID: 11400000, guid: 40cff48d91faa414b9c5d4b859ad8083, type: 2}
   - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
-  - {fileID: 11400000, guid: c847bc848d68c4a25ad3468595f78cb4, type: 2}
-  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   OnStartConversation:
-  - The Finals await their guests,<br>No time to doubt or expect
+  - The Finals await their guests,<br>No time to doubt or expect.
   OnWinConversation:
-  - Choose one, youngster.
+  - 'A loss I got, it was not in the stars,<br>My destiny changed when you came from
+    afar. '
   OnLoseConversation:
-  - That was easy. Heh.
+  - I reached the Finals, but none will watch,<br>An end fitting the puppet I am,
+    caught.
   ShowHintsTimeInSeconds: 1

@@ -20,7 +20,7 @@ MonoBehaviour:
   OnStartConversation:
   - I came not for glory or prizes,<br>But to savor the purest game mechanics.
   OnWinConversation:
-  - My memo has never been the brightest,<br>Although now I feel it's fading completely.
+  - My memo has never been the brightest,<br>But now I feel it's faded to the slightest.
   OnLoseConversation:
   - Vibrant and vivid, this game makes me feel,<br>As memory and friends are what
     it gives me.

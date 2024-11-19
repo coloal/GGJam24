@@ -17,10 +17,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f469b4940de654de1a21d976221e02e8, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   OnStartConversation:
-  - Game professionals we are,<br>But <b><color=#438c1d>money</color></b> lies only
-    in our cards.
+  - 'Play with all your hand and weigh your chances,<br>If you want your wins to
+    be granted. '
   OnWinConversation:
-  - Got fired up by your cards and game,<br>Now I'm poor and can't enjoy myslef
+  - <b><color=#438c1d>Wealth</color>, <color=#bc3047>Violence</color>, <color=#2c7aab>Influence</color></b>!<br>What
+    a simple way to describe the world!
   OnLoseConversation:
-  - A win it is,<br>For my game, not me.
+  - '<b><color=#438c1d>Wealth</color>, <color=#bc3047>Violence</color>, <color=#2c7aab>Influence</color></b>!<br>Never
+    before has it brought me such interest. '
   ShowHintsTimeInSeconds: 2

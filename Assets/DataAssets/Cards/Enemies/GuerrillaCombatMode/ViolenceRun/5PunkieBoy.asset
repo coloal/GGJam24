@@ -22,7 +22,8 @@ MonoBehaviour:
   OnStartConversation:
   - A special toy just sits on the table,<br>A broken one will leave after my labor.
   OnWinConversation:
-  - Just choose a card already.
+  - "I finally got to stand up and explore the world,<br>Ha-ha, you're obliged to
+    stay\u2014what an unexciting fate!"
   OnLoseConversation:
-  - Hahaha, just give me your money, you monkeys.
+  - 'No! I''m tired of play,<br>I want to stand up and walk away! '
   ShowHintsTimeInSeconds: 1.5

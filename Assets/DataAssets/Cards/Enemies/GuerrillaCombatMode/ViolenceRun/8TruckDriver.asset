@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: -745873571, guid: bb2b04146d0ec034f8bd145537e30be7, type: 3}
   CombatCards:
-  - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
-  - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
+  - {fileID: 11400000, guid: bd205507e942b459c83f36796bfe3b9f, type: 2}
+  - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
@@ -24,7 +24,8 @@ MonoBehaviour:
   OnStartConversation:
   - The decider it is,<br>Only one of us can stand still.
   OnWinConversation:
-  - You have won fair and square, take one.
+  - My hegemony has come to an end,<br>I guess it's time to retreat to my den.
   OnLoseConversation:
-  - Sorry kids, your trip is over.
+  - Another year, another championship,<br>Keep trying, and one day, you'll find
+    me slip.
   ShowHintsTimeInSeconds: 0.5
