@@ -738,8 +738,8 @@ MonoBehaviour:
           so defined...///It's hard to be sure, but I have a feeling that the best
           thing to do is to attack him with <b><color=#2c7aab>Influence</color></b>
           or <b><color=#438c1d>Wealth</color></b> cards.
-        LeftText: Thanks, man. Without you I wouldn't be making it.
-        RightText: Wait, who told you I'm going to share MY award?
+        LeftText: What a strange being...
+        RightText: No matter what he looks like, I will crush him with my cards!
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
     - rid: 1101123982049148940
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
