@@ -833,8 +833,8 @@ MonoBehaviour:
           confrontation... Well, I've seen some weird stuff, but this one takes the
           cake.///I can only say that I recommend using Wealth cards, but be careful
           when it gets violent!
-        LeftText: YES, MAN! WE MADE IT!
-        RightText: "What do you say, man? I won\u2019t give you a thing."
+        LeftText: Ugh, I'll try...
+        RightText: But who am I playing against?
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
     - rid: 1306970353074176000
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
