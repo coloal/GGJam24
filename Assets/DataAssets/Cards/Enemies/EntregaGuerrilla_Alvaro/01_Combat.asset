@@ -23,4 +23,4 @@ MonoBehaviour:
   - I will tell my parents to work harder to buy more cards!
   OnLoseConversation:
   - I told you that you had nothing to do against my (economic) power!
-  ShowHintsTimeInSeconds: 3
+  ShowHintsTimeInSeconds: 2

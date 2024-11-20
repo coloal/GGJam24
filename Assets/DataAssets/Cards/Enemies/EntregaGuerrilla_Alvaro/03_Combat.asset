@@ -18,9 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d8fe124c8da342919bb23e907db8e72, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   OnStartConversation:
-  - Woof, woof, you've messed with the wrong humanoid dog, buddy. Grrrrrrrrr!
+  - WOOF! I mean... WOOF!
   OnWinConversation:
-  - Humiliated by a mere human, what will we come to?
+  - '*BARK* WOOF WOOF! ARF WOOF!'
   OnLoseConversation:
-  - If that was your surprised face you will see when I take you to be castrated....
-  ShowHintsTimeInSeconds: 3
+  - WOOF WOOF! WOOF WOOF WOOF!
+  ShowHintsTimeInSeconds: 2

@@ -19,11 +19,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   OnStartConversation:
-  - Beating a bunch of nincompoops should be illegal... But luckily for me I don't
-    follow the rules.
+  - I intend to beat you and give my girlfriend your tears, loser.
   OnWinConversation:
-  - Tsssk, it was just a stroke of luck. You'll see when my mothe- I mean... girlfriend!
-    She'll give you a good thrashing.
+  - ...Oh, wipe that smile off your face. Everyone knows it was a fluke, stupid.
   OnLoseConversation:
-  - What a bunch of wing nuts you are. You're letting go of my wallet, suckers!
-  ShowHintsTimeInSeconds: 2
+  - HAHAHAHAHA! Besides being handsome, I'm a winner! Everyone has seen it!
+  ShowHintsTimeInSeconds: 1.5

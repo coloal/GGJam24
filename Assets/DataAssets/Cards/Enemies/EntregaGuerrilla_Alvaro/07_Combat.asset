@@ -21,11 +21,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: 0477ea35519274785b7e38f3c9d78b09, type: 2}
   OnStartConversation:
-  - I will erase you from existence as I have already done with so many other hindrances
-    that I disliked in class....
+  - RIIIING!!! It's time for the blows!
   OnWinConversation:
-  - How?! What kind of cheating have you done?!
+  - How ironic. Looks like I was the one who fell asleep today.
   OnLoseConversation:
-  - I'm sure you're no match for my sweetie either. He is so sweet... And he buys
-    me everything I ask for! <3
-  ShowHintsTimeInSeconds: 1.5
+  - In addition to being late, you're a loser. Snap out of it, kid.
+  ShowHintsTimeInSeconds: 1

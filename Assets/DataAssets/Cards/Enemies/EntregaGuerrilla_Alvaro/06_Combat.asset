@@ -20,9 +20,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   OnStartConversation:
-  - I lost some cards a long time ago... Life takes many turns.
+  - Prepare to enter the world of nightmares.
   OnWinConversation:
-  - You have done well. I hope to see you again...
+  - Everything seems to have been a bad dream...
   OnLoseConversation:
-  - Wow, you need to practice a little more. Next time it won't be so easy...
-  ShowHintsTimeInSeconds: 2
+  - It's over. You're mine now...
+  ShowHintsTimeInSeconds: 1

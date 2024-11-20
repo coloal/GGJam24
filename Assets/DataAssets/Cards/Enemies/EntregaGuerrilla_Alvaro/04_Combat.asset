@@ -19,10 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42d66bc49410d4dfcaa2746e0765fa31, type: 2}
   - {fileID: 11400000, guid: e6ac5de554c924628b3b0849e4087284, type: 2}
   OnStartConversation:
-  - In this world everything is settled with a battle of <b>Wealth, Violence and
-    Influence</b>, you should know that.
+  - Get ready. I'm not going to make it easy for you.
   OnWinConversation:
-  - The mechanic's word is debt. Let's take a look at that caravan!
+  - Congrats, you've won! You deserve it.
   OnLoseConversation:
-  - Come on, kiddo, you have to train some more if you want to survive in this world!
-  ShowHintsTimeInSeconds: 1.5
+  - Wow, I expected more from you. You'll have to train more if you want to have
+    any chance in the rest of the tournament.
+  ShowHintsTimeInSeconds: 1

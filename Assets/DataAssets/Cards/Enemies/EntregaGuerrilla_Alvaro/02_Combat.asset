@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: 02_Combat
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 243997701, guid: 62dd98ed12963974694582a64f0061a9, type: 3}
+  characterSprite: {fileID: 605515098, guid: a0ad3a4d74bfa2a4ba2ea0f83508fc03, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 3e45ca6595693469e95341b04dbb9c92, type: 2}
   - {fileID: 11400000, guid: b2f3d0b25cf1a4be4984a7375b6ca836, type: 2}
   OnStartConversation:
-  - My style may be a little outdated but don't underestimate me, kid!
+  - Hey kid, be careful with my wrench!
   OnWinConversation:
-  - It was good but I certainly need to train a bit more!
+  - I got distracted wiping the grease off, let me try again!
   OnLoseConversation:
-  - Even an old glory can come back from time to time....
-  ShowHintsTimeInSeconds: 3
+  - Hehe, I've tightened the screws a bit.
+  ShowHintsTimeInSeconds: 2
