@@ -585,8 +585,8 @@ MonoBehaviour:
         CardText: Well, you're all set! I'll try to do some research between rounds
           to help you as much as possible. Now you've been lucky and you're up against
           Billy.///He's a newbie and thinks that because he has his parents' money
-          he's already won, remember that against Wealth cards, Violence cards win!
-          Good luck!
+          he's already won, remember that against <b><color=#438c1d>Wealth</color></b>
+          cards, <b><color=#bc3047>Violence</color></b> cards win! Good luck!
         LeftText: I think I can take him.
         RightText: F*ck capitalism.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
