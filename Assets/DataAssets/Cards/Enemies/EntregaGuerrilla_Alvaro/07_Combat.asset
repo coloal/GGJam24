@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b267cb6bc43b21b438c81e3ec442c085, type: 3}
   m_Name: 07_Combat
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: -1734718243, guid: f21432b611ef8ad43ac1c467b5773b19, type: 3}
+  characterSprite: {fileID: 21300000, guid: f0dcb801434c58546a4d0933cf044a63, type: 3}
   CombatCards:
   - {fileID: 11400000, guid: 93088705fbf834abb94af3ced88adf29, type: 2}
   - {fileID: 11400000, guid: ee3113b0e26384e8e95055fd9b7577ab, type: 2}
