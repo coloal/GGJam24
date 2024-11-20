@@ -339,12 +339,6 @@ MonoBehaviour:
       nodeId: 4a347351-6782-4d7b-8e7d-f3d350bbe20b
       portIndex: 2
   - outputPort:
-      nodeId: d14ae3b1-9b95-456f-9539-960c009f7e6d
-      portIndex: 0
-    inputPort:
-      nodeId: 9c13f0f3-4c98-40b8-9289-a00883618a42
-      portIndex: 1
-  - outputPort:
       nodeId: 4b614fb0-8672-4de0-995a-b394c48c6a3b
       portIndex: 0
     inputPort:
@@ -423,18 +417,6 @@ MonoBehaviour:
       nodeId: 9c976866-98f1-4236-80f2-4b4838a36379
       portIndex: 1
   - outputPort:
-      nodeId: 9c976866-98f1-4236-80f2-4b4838a36379
-      portIndex: 0
-    inputPort:
-      nodeId: d14ae3b1-9b95-456f-9539-960c009f7e6d
-      portIndex: 1
-  - outputPort:
-      nodeId: 9c13f0f3-4c98-40b8-9289-a00883618a42
-      portIndex: 0
-    inputPort:
-      nodeId: 4b614fb0-8672-4de0-995a-b394c48c6a3b
-      portIndex: 2
-  - outputPort:
       nodeId: 94be76b2-4df1-4cfe-aac4-8c839da4467d
       portIndex: 0
     inputPort:
@@ -446,6 +428,24 @@ MonoBehaviour:
     inputPort:
       nodeId: 6a3d2b16-19e7-4f11-80a0-0a700182272c
       portIndex: 0
+  - outputPort:
+      nodeId: 9c976866-98f1-4236-80f2-4b4838a36379
+      portIndex: 0
+    inputPort:
+      nodeId: 9c13f0f3-4c98-40b8-9289-a00883618a42
+      portIndex: 1
+  - outputPort:
+      nodeId: 9c13f0f3-4c98-40b8-9289-a00883618a42
+      portIndex: 0
+    inputPort:
+      nodeId: d14ae3b1-9b95-456f-9539-960c009f7e6d
+      portIndex: 1
+  - outputPort:
+      nodeId: d14ae3b1-9b95-456f-9539-960c009f7e6d
+      portIndex: 0
+    inputPort:
+      nodeId: 4b614fb0-8672-4de0-995a-b394c48c6a3b
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -495,8 +495,8 @@ MonoBehaviour:
         guid: 6a3d2b16-19e7-4f11-80a0-0a700182272c
         position:
           serializedVersion: 2
-          x: 12757
-          y: 1380
+          x: -2901
+          y: 8823
           width: 74
           height: 77
         typeName: CodeGraph.EndNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -508,8 +508,8 @@ MonoBehaviour:
         guid: 007db587-6f0d-44c8-8315-f02ff2d94155
         position:
           serializedVersion: 2
-          x: 11935
-          y: 1801
+          x: 2822
+          y: 4493
           width: 504
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -535,10 +535,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'Hey! I''m here! Come closer!///
-
-          Thanks for coming,
-          buddy! I knew you wouldn''t let me down!'
+        CardText: Hey! I'm here! Come closer!///Thanks for coming, buddy! I knew
+          you wouldn't let me down!
         LeftText: Hey Jim, what's this all about?
         RightText: What's up man, where are we?
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -548,19 +546,19 @@ MonoBehaviour:
         guid: 978feb04-9eda-4aba-b79d-a7d0a0f5d047
         position:
           serializedVersion: 2
-          x: 617
-          y: 1267
+          x: -2901
+          y: 2500
           width: 749
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Well done! That kid had nothing to do against you! You may have
-          seen that at the end of the battle you get a card from your opponent. \r\nYou'll
+        CardText: Well done! That kid had nothing to do against you! You may have
+          seen that at the end of the battle you get a card from your opponent.///You'll
           need it, because as you progress through the tournament, things will get
-          harder and harder and your opponents will have more cards. \r\nJust try
-          to have the most balanced deck possible and good luck with the next one!"
+          harder and harder and your opponents will have more cards.///Just try to
+          have the most balanced deck possible and good luck with the next one!
         LeftText: I hope not to lose now...
         RightText: Got it. Let's go for the next one.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -570,19 +568,19 @@ MonoBehaviour:
         guid: 58b7b228-7c5f-496b-965e-b789ec942501
         position:
           serializedVersion: 2
-          x: -628
-          y: 1267
+          x: -2901
+          y: 1860
           width: 814
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Well, you're all set! I'll try to do some research between rounds
+        CardText: Well, you're all set! I'll try to do some research between rounds
           to help you as much as possible. Now you've been lucky and you're up against
-          Billy. \r\nHe's a newbie and thinks that because he has his parents' money
+          Billy.///He's a newbie and thinks that because he has his parents' money
           he's already won, remember that against Wealth cards, Violence cards win!
-          Good luck!"
+          Good luck!
         LeftText: I think I can take him.
         RightText: F*ck capitalism.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -592,8 +590,8 @@ MonoBehaviour:
         guid: 59a39034-5c5c-4fc7-b2dd-76140fa0ad5a
         position:
           serializedVersion: 2
-          x: 2727
-          y: 1267
+          x: -2901
+          y: 3747
           width: 329
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
@@ -610,18 +608,17 @@ MonoBehaviour:
         guid: e750193b-a03c-4ab3-8e29-723f836a4d2e
         position:
           serializedVersion: 2
-          x: 3117
-          y: 1267
+          x: -2901
+          y: 4017
           width: 421
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "I think I understood him. He said it was an honor to lose to someone
-          like you. \nHe sees a lot of potential in you and is looking forward to
-          seeing you in the \nnext rounds? Weird. Good thing I got my B2 level in
-          dog language."
+        CardText: I think I understood him. He said it was an honor to lose to someone
+          like you. He sees a lot of potential in you and is looking forward to seeing
+          you in the next rounds? Weird. Good thing I got my B2 level in dog language.
         LeftText: Well, it does help to learn languages.
         RightText: Let's see where you have learned these things...
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -631,19 +628,19 @@ MonoBehaviour:
         guid: 5a10423f-c508-4472-adeb-9a74fc26c4f1
         position:
           serializedVersion: 2
-          x: 3594
-          y: 1267
+          x: -2901
+          y: 4288
           width: 409
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "In fact, he was not the only one to be surprised by your performance.\nIt
-          seems that you have caught the attention of one of the organizers \nand
-          he wants to put you personally to the test. No idea what cards he \nwill
+        CardText: In fact, he was not the only one to be surprised by your performance.
+          It seems that you have caught the attention of one of the organizers and
+          he wants to put you personally to the test. No idea what cards he will
           play and he looks like a tough nut to crack.... I can only wish you the
-          \nbest of luck, buddy!"
+          best of luck, buddy!
         LeftText: What? But an organizer wants to fight me?
         RightText: Perfect, that's because I'm already becoming skilled.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -653,21 +650,21 @@ MonoBehaviour:
         guid: baf3ee07-9b9e-45b2-8c08-a28a4222c825
         position:
           serializedVersion: 2
-          x: 4445
-          y: 1267
-          width: 710
+          x: -2901
+          y: 4818
+          width: 2710
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Wow, that was a hell of a fight! You've shown a lot, kid, and
-          as a proof of good faith \nI'll give you some hints about the <b><color=#2c7aab>Influence</color>,
-          <color=#bc3047>Violence</color>, \n<color=#438c1d>Wealth</color></b> Christmas
+        CardText: Wow, that was a hell of a fight! You've shown a lot, kid, and as
+          a proof of good faith I'll give you some hints about the <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> Christmas
           Tournament. You just made it through the 4th round of the 8-round tournament,
-          \nand should you be victorious, which is no easy task, you'll get a physical
-          card in real life. Sounds good, huh? But for the record, \nthis is when
-          things start to get tricky, I wish you the best of luck!"
+          and should you be victorious, which is no easy task, you'll get a physical
+          card in real life. Sounds good, huh? But for the record, this is when things
+          start to get tricky, I wish you the best of luck!
         LeftText: Wow... Thanks, haha, I hope I'm up to the task!
         RightText: That award is already mine.
         card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
@@ -677,22 +674,22 @@ MonoBehaviour:
         guid: 429e5f96-2ef8-4dff-b132-d2beaec89897
         position:
           serializedVersion: 2
-          x: -2494
-          y: 1243
-          width: 756
+          x: -2901
+          y: 1485
+          width: 2604
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: "What? Don't you remember why I told you to come? It's the <b><color=#2c7aab>Influence</color>,
+        CardText: What? Don't you remember why I told you to come? It's the <b><color=#2c7aab>Influence</color>,
           <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> Christmas
-          Tournament! \r\nIt's always been my dream to participate in it, but recently
+          Tournament!///It's always been my dream to participate in it, but recently
           I injured my wrist and I can't lay my cards on the table properly. That's
-          why I told you to come! To participate for me! \r\nHere, you can borrow
-          my cards.\\\\\\Do you need me to remind you how to play or did you watch
-          the tutorial I gave you?"
+          why I told you to come! To participate for me!///Here, you can borrow my
+          cards.///Do you need me to remind you how to play or did you watch the
+          tutorial I gave you?
         LeftText: I don't have much idea, remind me the tutorial.
         RightText: Don't worry, I remember everything. I'm ready!
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -702,37 +699,38 @@ MonoBehaviour:
         guid: 51d04a18-eacd-44cf-9b47-d489f37b2f22
         position:
           serializedVersion: 2
-          x: 6158
-          y: 1544
-          width: 515
+          x: -2900
+          y: 5666
+          width: 422
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "What a beating you gave him! Hahaha, well done! You're in the
-          quarter finals, \nI can already taste that prize..... The fame... The girls...
-          Heh heh heh... \nWell, let's see who you're up against!"
+        CardText: What a beating you gave him! Hahaha, well done! You're in the quarter
+          finals, I can already taste that prize..... The fame... The girls... Heh
+          heh heh...///Well, let's see who you're up against!
         LeftText: Thanks, man. Without you I wouldn't be making it.
         RightText: Wait, who told you I'm going to share MY award?
-        card: {fileID: 0}
+        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
     - rid: 1101123982049148939
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 27aaf006-144f-4fd3-a3ba-2459704c37c3
         position:
           serializedVersion: 2
-          x: 6942
-          y: 1364
-          width: 615
+          x: -2900
+          y: 6022
+          width: 785
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "What a beating you gave him! Hahaha, well done! You're in the
-          quarter finals, I can already taste that prize..... The fame... The girls...
-          Heh heh heh... \r\nWell, let's see who you're up against!"
+        CardText: What?! But who the hell is this guy? What a weird guy, he looks
+          like he came out of a painting... Buf, because of those facial features
+          so defined...///It's hard to be sure, but I have a feeling that the best
+          thing to do is to attack him with Influence or Wealth cards.
         LeftText: Thanks, man. Without you I wouldn't be making it.
         RightText: Wait, who told you I'm going to share MY award?
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -742,18 +740,19 @@ MonoBehaviour:
         guid: c46fa931-6703-4137-a66b-3d6628ee1046
         position:
           serializedVersion: 2
-          x: 7967
-          y: 1563
-          width: 885
+          x: -2900
+          y: 6552
+          width: 1635
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "What?! But who the hell is this guy? What a weird guy, he looks
-          like he came out of a painting... Buf, because of those facial features
-          so defined... \r\nIt's hard to be sure, but I have a feeling that the best
-          thing to do is to attack him with Influence or Wealth cards."
+        CardText: Congrats, partner! You're the best, you've left that guy in a heap!
+          And so in a flash you're already in the semifinals.///Let's see who is
+          the other person who has passed by on your side of the board- Really?!!!
+          A f*cking alarm clock?! BUT CAN YOU KNOW WHO LETS YOU SIGN UP FOR INANIMATED
+          OBJECTS?!!!!!
         LeftText: What a strange being...
         RightText: No matter what he looks like, I will crush him with my cards!
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -763,32 +762,31 @@ MonoBehaviour:
         guid: d14ae3b1-9b95-456f-9539-960c009f7e6d
         position:
           serializedVersion: 2
-          x: 9522
-          y: 1364
-          width: 321
+          x: -2900
+          y: 7615
+          width: 885
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Congrats, partner! You're the best, you've left that guy in a
-          heap! And so in a flash you're already in the semifinals.\r\nLet's see
-          who is the other person who has passed by on your side of the board- Really?!!!
-          A f*cking alarm clock?! BUT CAN YOU KNOW WHO LETS YOU SIGN UP FOR \r\nINANIMATED
-          OBJECTS?!!!!!"
-        LeftText: That's a bit discriminatory, isn't it?
-        RightText: Man, I think you should start respecting everyone, animate or
-          not.
-        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+        CardText: What? Really? But is he really willing? Well, there has been a
+          change of plans, yes.///Kid, there's been a change of plans. You've caught
+          the attention of the powers that be and they want to put you to the test.
+          You're up against none other than the king of The Wells, the country we're
+          in. Take heart and show what you're made of!
+        LeftText: If I've made it this far... I can't lose!
+        RightText: Let's dance.
+        card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
     - rid: 1101123982049148942
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
         guid: 9c13f0f3-4c98-40b8-9289-a00883618a42
         position:
           serializedVersion: 2
-          x: 9796
-          y: 1709
-          width: 321
+          x: -2900
+          y: 7313
+          width: 361
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -804,31 +802,9 @@ MonoBehaviour:
         guid: 94be76b2-4df1-4cfe-aac4-8c839da4467d
         position:
           serializedVersion: 2
-          x: 11020
-          y: 1364
-          width: 671
-          height: 242
-        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        outputs:
-        - Next
-        CardText: "What? Really? But is he really willing? Well, there has been a
-          change of plans, yes.\r\nKid, there's been a change of plans. You've caught
-          the attention of the powers that be and they want to put you to the test.
-          \r\nYou're up against none other than the king of The Wells, the country
-          we're in. Take heart and show what you're made of!"
-        LeftText: If I've made it this far... I can't lose!
-        RightText: Let's dance.
-        card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
-    - rid: 1101123982049148946
-      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
-      data:
-        guid: 6b38fd8f-481d-4051-a297-d7d9cbee7242
-        position:
-          serializedVersion: 2
-          x: 1825
-          y: 1267
-          width: 444
+          x: -2901
+          y: 8190
+          width: 664
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
@@ -836,6 +812,27 @@ MonoBehaviour:
         - Next
         CardText: YESSSS!!! I knew I could count on you, man!!! You're the best!!!
           Now let's enjoy that coveted prize! Wealth... Fame... Power...
+        LeftText: YES, MAN! WE MADE IT!
+        RightText: "What do you say, man? I won\u2019t give you a thing."
+        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+    - rid: 1101123982049148946
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: 6b38fd8f-481d-4051-a297-d7d9cbee7242
+        position:
+          serializedVersion: 2
+          x: -2901
+          y: 3153
+          width: 666
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: You're getting the hang of it. I'm glad, my buddy! About your next
+          confrontation... Well, I've seen some weird stuff, but this one takes the
+          cake.///I can only say that I recommend using Wealth cards, but be careful
+          when it gets violent!
         LeftText: YES, MAN! WE MADE IT!
         RightText: "What do you say, man? I won\u2019t give you a thing."
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -1007,20 +1004,20 @@ MonoBehaviour:
         guid: 9c976866-98f1-4236-80f2-4b4838a36379
         position:
           serializedVersion: 2
-          x: 9190
-          y: 1103
-          width: 349
+          x: -2900
+          y: 7038
+          width: 971
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Way to go, kiddo! And welcome to the final of the Tournament of
-          Tournaments: The Admired Town Christmas Championship!\r\nWe have a thrilling
+        CardText: 'Way to go, kiddo! And welcome to the final of the Tournament of
+          Tournaments: The Admired Town Christmas Championship!///We have a thrilling
           game of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
-          <color=#438c1d>Wealth</color></b> ahead between two great contenders. \r\nOn
+          <color=#438c1d>Wealth</color></b> ahead between two great contenders.///On
           one side, the newbie who has been the most talked-about in recent years,
-          and on the other..."
+          and on the other...'
         LeftText: Ugh?
         RightText: What?
         card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
@@ -1151,8 +1148,8 @@ MonoBehaviour:
         guid: 838b2ea5-c98d-4b7f-a6b5-7045f09f047f
         position:
           serializedVersion: 2
-          x: 231
-          y: 1267
+          x: -2901
+          y: 2193
           width: 331
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1169,8 +1166,8 @@ MonoBehaviour:
         guid: fc5880ca-3207-411d-8c95-adb260654c3b
         position:
           serializedVersion: 2
-          x: 1428
-          y: 1267
+          x: -2901
+          y: 2848
           width: 332
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1187,8 +1184,8 @@ MonoBehaviour:
         guid: 7c584960-ea2d-423b-9fe5-8ad560e64b14
         position:
           serializedVersion: 2
-          x: 2328
-          y: 1267
+          x: -2901
+          y: 3507
           width: 333
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1205,8 +1202,8 @@ MonoBehaviour:
         guid: db25a7ac-738e-4ef6-b0a1-4db250ec3f03
         position:
           serializedVersion: 2
-          x: 4054
-          y: 1267
+          x: -2901
+          y: 4575
           width: 333
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1331,8 +1328,8 @@ MonoBehaviour:
         guid: c4acf234-79fd-4f03-8bc4-cefea2b80ef6
         position:
           serializedVersion: 2
-          x: 5253
-          y: 1243
+          x: -2900
+          y: 5429
           width: 332
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1349,8 +1346,8 @@ MonoBehaviour:
         guid: d2322b58-777d-4562-bea9-ea75b043a8b3
         position:
           serializedVersion: 2
-          x: 7734
-          y: 1155
+          x: -2900
+          y: 6332
           width: 333
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1484,20 +1481,20 @@ MonoBehaviour:
         guid: 4d01885b-c6df-4857-94d1-4f3b31b9f2c7
         position:
           serializedVersion: 2
-          x: 11752
-          y: 1364
+          x: -2900
+          y: 8530
           width: 839
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Congrats, kiddo! You are the undisputed champion. I've never seen
+        CardText: Congrats, kiddo! You are the undisputed champion. I've never seen
           anyone play with your mastery. I guess you have a brilliant future ahead
-          as \r\na <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+          as a <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
           <color=#438c1d>Wealth</color></b> player. Now, without passing this card,
-          \r\ncome and let us know one of the organizers in real life. We have a
-          VERY SPECIAL prize for you :)"
+          come and let us know one of the organizers in real life. We have a VERY
+          SPECIAL prize for you :)
         LeftText: Where is my card?!!
         RightText: Here I come!
         card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
@@ -1507,19 +1504,19 @@ MonoBehaviour:
         guid: 4c697280-4fa0-4355-a614-ffebdbf8f85c
         position:
           serializedVersion: 2
-          x: 5222
-          y: 1588
-          width: 348
+          x: -2901
+          y: 5139
+          width: 853
           height: 242
         typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: "Real life? What was that guy talking about? Well, whatever! You've
-          beaten one of the organizers, I can't believe it!\r\nAs for your next opponent,
+        CardText: Real life? What was that guy talking about? Well, whatever! You've
+          beaten one of the organizers, I can't believe it!///As for your next opponent,
           he's a dummy who went to school with us. He can't stop drooling over his
-          girlfriend, so he must be full of Wealth and Influence cards \r\nto give
-          her. Finish him, man!"
+          girlfriend, so he must be full of Wealth and Influence cards to give her.
+          Finish him, man!
         LeftText: Is it really him? Ugh, he intimidates me.
         RightText: I'm going to hit him so hard that not even his girlfriend will
           recognize him.
@@ -1530,8 +1527,8 @@ MonoBehaviour:
         guid: 4a347351-6782-4d7b-8e7d-f3d350bbe20b
         position:
           serializedVersion: 2
-          x: 8881
-          y: 1364
+          x: -2900
+          y: 6836
           width: 332
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -1548,8 +1545,8 @@ MonoBehaviour:
         guid: 4b614fb0-8672-4de0-995a-b394c48c6a3b
         position:
           serializedVersion: 2
-          x: 10631
-          y: 1364
+          x: -2901
+          y: 7934
           width: 333
           height: 160
         typeName: CodeGraph.BattleNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
