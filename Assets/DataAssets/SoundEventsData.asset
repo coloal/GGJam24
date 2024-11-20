@@ -71,3 +71,5 @@ MonoBehaviour:
     EventName: LetsFight 2
   - FoldersName: 0
     EventName: ShowCardsOnDeck
+  - FoldersName: 4
+    EventName: CombatModeMusic

@@ -526,7 +526,7 @@ public class SoundManager : MonoBehaviour
             SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
             SetStorySound(BrainSoundTag.LetsFight, 1);
         }
-        else if(musicTrack == MusicTracks.Tutorial)
+        else if (musicTrack == MusicTracks.Tutorial)
         {
             SetStorySound(BrainSoundTag.FinBatalla, 0.0f);
             SetStorySound(BrainSoundTag.LetsFight, 3);
@@ -547,6 +547,142 @@ public class SoundManager : MonoBehaviour
             }
             if (EventMap.ContainsKey(eventName))
             {
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+
+        /*** Capas ****/
+        else if (musicTrack == MusicTracks.Capa0) 
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 0);
+
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+
+        else if (musicTrack == MusicTracks.Capa1)
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 0);
+
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+        else if (musicTrack == MusicTracks.Capa2)
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 1);
+
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+        else if (musicTrack == MusicTracks.Capa3)
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 2);
+
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+        else if (musicTrack == MusicTracks.Capa4)
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 3);
+
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+        else if (musicTrack == MusicTracks.Capa5)
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 4);
+
+                EventMap[eventName].setParameterByName("EndCombat", 0);
+                EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].start();
+            }
+        }
+        else if (musicTrack == MusicTracks.Capa6)
+        {
+            string eventName = "CombatModeMusic";
+
+            StoryEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("Capa", 5);
+
                 EventMap[eventName].setParameterByName("EndCombat", 0);
                 EventMap[eventName].setParameterByName("StopTalking", 0);
                 EventMap[eventName].start();
@@ -577,36 +713,125 @@ public class SoundManager : MonoBehaviour
             }
             if (EventMap.ContainsKey(eventName))
             {
-                //EventMap[eventName].setParameterByName("ExitMenu", 0);
                 EventMap[eventName].setParameterByName("StopTalking", 0);
-                //EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+        else
+        {
+            string eventName = "CombatModeMusic";
+            if (!EventMap.ContainsKey(eventName))
+            {
+                CreateEventFMOD(eventName);
+            }
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("StopTalking", 0);
             }
         }
 
-        
+
     }
 
     public void SetStopTalking() 
     {
-        string eventName = "LetsFight";
-
-        if (EventMap.ContainsKey(eventName))
+        if (lastMusicTrack == MusicTracks.Generative) 
         {
-            EventMap[eventName].setParameterByName("StopTalking", 1);
-            //EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
+            string eventName = "LetsFight";
 
+            if (EventMap.ContainsKey(eventName))
+            {
+                EventMap[eventName].setParameterByName("StopTalking", 1);
+                //EventMap[eventName].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
+        else if (lastMusicTrack >= MusicTracks.Capa0)
+        {
+            string eventName = "CombatModeMusic";
+
+            if (lastMusicTrack == MusicTracks.Capa0) 
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+            else if (lastMusicTrack == MusicTracks.Capa1)
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("Capa", 1);
+
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+            else if (lastMusicTrack == MusicTracks.Capa2)
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("Capa", 2);
+
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+            else if (lastMusicTrack == MusicTracks.Capa3)
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("Capa", 3);
+
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+            else if (lastMusicTrack == MusicTracks.Capa4)
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("Capa", 4);
+
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+            else if (lastMusicTrack == MusicTracks.Capa5)
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("Capa", 5);
+
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+            else if (lastMusicTrack == MusicTracks.Capa6)
+            {
+                if (EventMap.ContainsKey(eventName))
+                {
+                    EventMap[eventName].setParameterByName("Capa", 6);
+
+                    EventMap[eventName].setParameterByName("StopTalking", 1);
+                }
+            }
+        }
     }
 
     public void RestartMusicFromCombat()
     {
-        if (lastMusicTrack != MusicTracks.Generative)
+        if (lastMusicTrack == MusicTracks.Tutorial || lastMusicTrack == MusicTracks.Normal
+            || lastMusicTrack == MusicTracks.Boss)
         {
             SetStorySound(BrainSoundTag.LetsFight, 0.0f);
         }
         else
         {
-            EventMap["LetsFight"].setParameterByName("EndCombat", 1);
+            if (lastMusicTrack == MusicTracks.Generative) 
+            {
+                EventMap["LetsFight"].setParameterByName("EndCombat", 1);
+                EventMap["LetsFight"].setParameterByName("StopTalking", 0);
+            }
+            else
+            {
+                EventMap["CombatModeMusic"].setParameterByName("EndCombat", 1);
+                EventMap["CombatModeMusic"].setParameterByName("StopTalking", 0);    
+            }
+            
             StoryEventInstance.start();
         }
     }
