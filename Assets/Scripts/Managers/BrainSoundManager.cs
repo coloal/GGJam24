@@ -726,6 +726,7 @@ public class SoundManager : MonoBehaviour
             if (EventMap.ContainsKey(eventName))
             {
                 EventMap[eventName].setParameterByName("StopTalking", 0);
+                EventMap[eventName].setParameterByName("EndCombat", 1);
             }
         }
 
@@ -828,8 +829,12 @@ public class SoundManager : MonoBehaviour
             }
             else
             {
+                EventMap["CombatModeMusic"].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+                /*
                 EventMap["CombatModeMusic"].setParameterByName("EndCombat", 1);
-                EventMap["CombatModeMusic"].setParameterByName("StopTalking", 0);    
+                EventMap["CombatModeMusic"].setParameterByName("StopTalking", 0);
+                */
             }
             
             StoryEventInstance.start();
