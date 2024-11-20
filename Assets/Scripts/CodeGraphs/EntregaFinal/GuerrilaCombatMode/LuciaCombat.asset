@@ -1889,7 +1889,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 3266203106832023554
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1907,7 +1907,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 3266203106832023555
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1925,7 +1925,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: a7ca7b4318340a84a9bc8eaf209af3de, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 3266203106832023556
       type: {class: GiveCombatCardNode, ns: , asm: Assembly-CSharp}
       data:
@@ -2028,7 +2028,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 4179187880975925254
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2046,7 +2046,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 4179187880975925255
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2064,7 +2064,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 4179187880975925256
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2082,7 +2082,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 4179187880975925259
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2179,7 +2179,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 4179187880975925266
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2935,7 +2935,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188725976891470
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2953,7 +2953,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188725976891471
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2971,7 +2971,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188725976891472
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -2989,7 +2989,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188725976891473
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3007,7 +3007,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188725976891474
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3025,7 +3025,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188725976891475
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3157,7 +3157,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188725976891482
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3175,7 +3175,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188725976891483
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3193,7 +3193,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188725976891484
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3211,7 +3211,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188725976891485
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3229,7 +3229,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188725976891486
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3247,7 +3247,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188725976891487
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3391,7 +3391,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188725976891495
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3409,7 +3409,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188725976891497
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3427,7 +3427,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188725976891498
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3445,7 +3445,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188725976891499
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3463,7 +3463,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188725976891500
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3481,7 +3481,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188725976891501
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3619,7 +3619,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188725976891509
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3637,7 +3637,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188725976891510
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3655,7 +3655,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188725976891511
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3673,7 +3673,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188725976891512
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3691,7 +3691,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188725976891513
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3709,7 +3709,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188725976891514
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3835,7 +3835,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188725976891521
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3853,7 +3853,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188725976891522
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3871,7 +3871,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188725976891523
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3889,7 +3889,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188725976891525
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3907,7 +3907,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188725976891526
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -3925,7 +3925,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188725976891527
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4063,7 +4063,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188725976891534
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4081,7 +4081,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188725976891535
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4099,7 +4099,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188725976891536
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4117,7 +4117,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188725976891537
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4135,7 +4135,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188725976891538
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4153,7 +4153,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188725976891539
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4297,7 +4297,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188725976891546
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4315,7 +4315,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188725976891548
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4333,7 +4333,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188725976891549
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4351,7 +4351,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188725976891550
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4369,7 +4369,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188725976891552
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4387,7 +4387,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188727276601344
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4549,7 +4549,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: fccd6c378c675bc4490f94c571f93b30, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601351
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4567,7 +4567,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 1d0fdd5696bc44948acb4ba054127f21, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601352
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4585,7 +4585,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: f53589eb488932f428142ffe6f66b223, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601353
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4603,7 +4603,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 748eb1c75bd0c6f47b966c0a51b9f4d2, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601354
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4621,7 +4621,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 590fd112284f66b428b715964e2d3951, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601355
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4639,7 +4639,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 104410199225f9e449ba5a4567f5d0a1, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601356
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4676,7 +4676,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: c486df7c3a211384188aa83fb7504574, type: 2}
         IsBossFight: 0
-        music: 0
+        music: 4
     - rid: 7048188727276601358
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4694,7 +4694,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 7774192206a2c924dbad839cdd0a99b3, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 5
     - rid: 7048188727276601359
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4712,7 +4712,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 291aa78440b907f4398f6fcd11195144, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 6
     - rid: 7048188727276601360
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4730,7 +4730,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 3ce0d69ed43a8b54b8dc152dfc654d61, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 7
     - rid: 7048188727276601361
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4748,7 +4748,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 8ebc44ebd3836304a914d6de82ecb200, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 8
     - rid: 7048188727276601362
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4766,7 +4766,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 338b82c6eb9e70f4c8164f87e34b1012, type: 2}
         IsBossFight: 0
-        music: 1
+        music: 9
     - rid: 7048188727276601363
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4784,7 +4784,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 90149fe0b46feae43b138700b6fd0979, type: 2}
         IsBossFight: 0
-        music: 2
+        music: 9
     - rid: 7048188727276601364
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -4945,7 +4945,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: b360740e01128ce4c853dfe922505d96, type: 2}
         IsBossFight: 0
-        music: 3
+        music: 10
     - rid: 7048188727276601372
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
