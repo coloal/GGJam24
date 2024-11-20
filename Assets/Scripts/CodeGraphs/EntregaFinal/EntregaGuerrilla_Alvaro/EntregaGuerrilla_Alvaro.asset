@@ -446,6 +446,12 @@ MonoBehaviour:
     inputPort:
       nodeId: 4b614fb0-8672-4de0-995a-b394c48c6a3b
       portIndex: 2
+  - outputPort:
+      nodeId: 12783bfd-6a1c-40e4-949b-1e5fbac3f730
+      portIndex: 1
+    inputPort:
+      nodeId: 007db587-6f0d-44c8-8315-f02ff2d94155
+      portIndex: 1
   references:
     version: 2
     RefIds:
@@ -637,8 +643,8 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: In fact, he was not the only one to be surprised by your performance.
-          It seems that you have caught the attention of one of the organizers and
-          he wants to put you personally to the test. No idea what cards he will
+          It seems that you have caught the attention of <b>one of the organizers</b>
+          and he wants to put you personally to the test. No idea what cards he will
           play and he looks like a tough nut to crack.... I can only wish you the
           best of luck, buddy!
         LeftText: What? But an organizer wants to fight me?
@@ -662,9 +668,9 @@ MonoBehaviour:
           a proof of good faith I'll give you some hints about the <b><color=#2c7aab>Influence</color>,
           <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> Christmas
           Tournament. You just made it through the 4th round of the 8-round tournament,
-          and should you be victorious, which is no easy task, you'll get a physical
-          card in real life. Sounds good, huh? But for the record, this is when things
-          start to get tricky, I wish you the best of luck!
+          and should you be victorious, which is no easy task, you'll get <b>a physical
+          card in real life</b>. Sounds good, huh? But for the record, this is when
+          things start to get tricky, I wish you the best of luck!
         LeftText: Wow... Thanks, haha, I hope I'm up to the task!
         RightText: That award is already mine.
         card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
@@ -730,7 +736,8 @@ MonoBehaviour:
         CardText: What?! But who the hell is this guy? What a weird guy, he looks
           like he came out of a painting... Buf, because of those facial features
           so defined...///It's hard to be sure, but I have a feeling that the best
-          thing to do is to attack him with Influence or Wealth cards.
+          thing to do is to attack him with <b><color=#2c7aab>Influence</color></b>
+          or <b><color=#438c1d>Wealth</color></b> cards.
         LeftText: Thanks, man. Without you I wouldn't be making it.
         RightText: Wait, who told you I'm going to share MY award?
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -751,10 +758,11 @@ MonoBehaviour:
         CardText: Congrats, partner! You're the best, you've left that guy in a heap!
           And so in a flash you're already in the semifinals.///Let's see who is
           the other person who has passed by on your side of the board- Really?!!!
-          A f*cking alarm clock?! BUT CAN YOU KNOW WHO LETS YOU SIGN UP FOR INANIMATED
-          OBJECTS?!!!!!
-        LeftText: What a strange being...
-        RightText: No matter what he looks like, I will crush him with my cards!
+          A f*cking alarm clock?! <b>BUT CAN YOU KNOW WHO LETS YOU SIGN UP FOR INANIMATED
+          OBJECTS?!!!!!</b>
+        LeftText: That's a bit discriminatory, isn't it?
+        RightText: Man, I think you should start respecting everyone, animate or
+          not.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
     - rid: 1101123982049148941
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -773,8 +781,8 @@ MonoBehaviour:
         CardText: What? Really? But is he really willing? Well, there has been a
           change of plans, yes.///Kid, there's been a change of plans. You've caught
           the attention of the powers that be and they want to put you to the test.
-          You're up against none other than the king of The Wells, the country we're
-          in. Take heart and show what you're made of!
+          You're up against none other than the <b>king of The Wells</b>, the country
+          we're in. Take heart and show what you're made of!
         LeftText: If I've made it this far... I can't lose!
         RightText: Let's dance.
         card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
@@ -831,8 +839,8 @@ MonoBehaviour:
         - Next
         CardText: You're getting the hang of it. I'm glad, my buddy! About your next
           confrontation... Well, I've seen some weird stuff, but this one takes the
-          cake.///I can only say that I recommend using Wealth cards, but be careful
-          when it gets violent!
+          cake.///I can only say that I recommend using <b><color=#438c1d>Wealth</color></b>
+          cards, but be careful when it gets violent!
         LeftText: Ugh, I'll try...
         RightText: But who am I playing against?
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -1012,9 +1020,9 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         outputs:
         - Next
-        CardText: 'Way to go, kiddo! And welcome to the final of the Tournament of
-          Tournaments: The Admired Town Christmas Championship!///We have a thrilling
-          game of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
+        CardText: 'Way to go, kiddo! And welcome to the final of the <b>Tournament
+          of Tournaments: The Admired Town Christmas Championship!</b>///We have
+          a thrilling game of <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
           <color=#438c1d>Wealth</color></b> ahead between two great contenders.///On
           one side, the newbie who has been the most talked-about in recent years,
           and on the other...'
@@ -1493,8 +1501,8 @@ MonoBehaviour:
           anyone play with your mastery. I guess you have a brilliant future ahead
           as a <b><color=#2c7aab>Influence</color>, <color=#bc3047>Violence</color>,
           <color=#438c1d>Wealth</color></b> player. Now, without passing this card,
-          come and let us know one of the organizers in real life. We have a VERY
-          SPECIAL prize for you :)
+          come and let us know one of the organizers in real life. <b>We have a VERY
+          SPECIAL prize for you :)</b>
         LeftText: Where is my card?!!
         RightText: Here I come!
         card: {fileID: 11400000, guid: aeea3a46c98b96046b248ea9bcbc7d07, type: 2}
@@ -1513,10 +1521,10 @@ MonoBehaviour:
         outputs:
         - Next
         CardText: Real life? What was that guy talking about? Well, whatever! You've
-          beaten one of the organizers, I can't believe it!///As for your next opponent,
-          he's a dummy who went to school with us. He can't stop drooling over his
-          girlfriend, so he must be full of Wealth and Influence cards to give her.
-          Finish him, man!
+          beaten <b>one of the organizers</b>, I can't believe it!///As for your
+          next opponent, he's a dummy who went to school with us. He can't stop drooling
+          over his girlfriend, so he must be full of Wealth and Influence cards to
+          give her. Finish him, man!
         LeftText: Is it really him? Ugh, he intimidates me.
         RightText: I'm going to hit him so hard that not even his girlfriend will
           recognize him.
