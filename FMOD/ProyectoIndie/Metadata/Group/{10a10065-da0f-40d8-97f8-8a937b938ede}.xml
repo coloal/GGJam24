@@ -43,7 +43,7 @@
 	<object class="MixerBusFader" id="{2df8e604-c747-4c54-9a34-2d66c24a8593}" />
 	<object class="CompressorEffect" id="{3ec141b0-8221-493d-8989-570062619a17}">
 		<property name="threshold">
-			<value>-41</value>
+			<value>-31.5</value>
 		</property>
 		<property name="ratio">
 			<value>1.95000005</value>
@@ -53,6 +53,9 @@
 		</property>
 		<property name="releaseTime">
 			<value>40</value>
+		</property>
+		<property name="gain">
+			<value>0.5</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{49cec34f-cc5e-48a3-92f6-f3e1996e3934}</destination>
