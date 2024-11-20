@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{10a10065-da0f-40d8-97f8-8a937b938ede}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="overridingInputFormat">
 			<value>1</value>
 		</property>
