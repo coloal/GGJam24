@@ -247,6 +247,9 @@
 		<property name="timelockedOffset">
 			<value>23.9983028686827</value>
 		</property>
+		<property name="volume">
+			<value>-1</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{4ed93f5a-5bf0-4afe-be9f-13f6c96ecdeb}</destination>
 		</relationship>
@@ -435,7 +438,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>35</value>
+			<value>34.5</value>
 		</property>
 		<property name="start">
 			<value>5.9966142626231527</value>
@@ -526,7 +529,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>49.5</value>
+			<value>33.5</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{bebbd9dd-57ed-4c25-9650-93c98f5ed547}</destination>
