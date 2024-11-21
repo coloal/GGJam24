@@ -113,6 +113,7 @@ public class ResultWinTutorialState : ResultWinState
             if (interactiveCombatCardComponent != null && enemyCombatCard != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(() => {
+                    DisableAllCardsInteractions(combatCards);
                     TutorialManager.SceneTutorial.UnBlockScreen(() => {
                         PickAEnemyCard(combatContext, enemyCombatCard);
                     });
@@ -164,6 +165,19 @@ public class ResultWinTutorialState : ResultWinState
                     combatContext.enemyCardsRow1.transform,
                     worldPositionStays: false
                 );
+            }
+        }
+    }
+
+    void DisableAllCardsInteractions(List<GameObject> cardsToDisableInteractions)
+    {
+        foreach (GameObject cardToDisableInteraction in cardsToDisableInteractions)
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardToDisableInteraction.GetComponent<InteractiveCombatCardComponent>();
+            if (interactiveCombatCardComponent != null)
+            {
+                interactiveCombatCardComponent.DisableInteractiveComponent();
             }
         }
     }
