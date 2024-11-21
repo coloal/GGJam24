@@ -26,6 +26,7 @@ public class ResultWinState : CombatState
 
     public override void ProcessImplementation(CombatManager.CombatContext combatContext)
     {
+        Preprocess(combatContext);
         if(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation.Any())
         {
             DialogManager.SceneDialog.CreateDialog(CombatSceneManager.Instance.ProvideEnemyData().OnWinConversation, async () =>
@@ -182,6 +183,7 @@ public class ResultWinState : CombatState
             if (interactiveCombatCardComponent != null && enemyCombatCard != null)
             {
                 interactiveCombatCardComponent.SetOnClickAction(() => {
+                    DisableAllCardsInteractions(combatCards);
                     PickAEnemyCard(combatContext, enemyCombatCard);
                 });
                 interactiveCombatCardComponent.EnableInteractiveComponent();
@@ -231,6 +233,19 @@ public class ResultWinState : CombatState
                     combatContext.enemyCardsRow1.transform,
                     worldPositionStays: false
                 );
+            }
+        }
+    }
+
+    void DisableAllCardsInteractions(List<GameObject> cardsToDisableInteractions)
+    {
+        foreach (GameObject cardToDisableInteraction in cardsToDisableInteractions)
+        {
+            InteractiveCombatCardComponent interactiveCombatCardComponent =
+                cardToDisableInteraction.GetComponent<InteractiveCombatCardComponent>();
+            if (interactiveCombatCardComponent != null)
+            {
+                interactiveCombatCardComponent.DisableInteractiveComponent();
             }
         }
     }
