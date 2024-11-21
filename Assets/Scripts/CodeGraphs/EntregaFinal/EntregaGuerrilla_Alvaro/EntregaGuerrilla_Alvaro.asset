@@ -73,6 +73,7 @@ MonoBehaviour:
   - rid: 1101123982049148942
   - rid: 1101123982049148944
   - rid: 1101123982049148946
+  - rid: 1101124006051840000
   connections:
   - outputPort:
       nodeId: 8f408ff5-9919-4f03-81d8-b2bf698cbbab
@@ -267,12 +268,6 @@ MonoBehaviour:
       nodeId: 12783bfd-6a1c-40e4-949b-1e5fbac3f730
       portIndex: 2
   - outputPort:
-      nodeId: dba0d428-8b8f-4820-b6ad-7a9d1bbb84bb
-      portIndex: 0
-    inputPort:
-      nodeId: 429e5f96-2ef8-4dff-b132-d2beaec89897
-      portIndex: 2
-  - outputPort:
       nodeId: 429e5f96-2ef8-4dff-b132-d2beaec89897
       portIndex: 0
     inputPort:
@@ -452,6 +447,18 @@ MonoBehaviour:
     inputPort:
       nodeId: 007db587-6f0d-44c8-8315-f02ff2d94155
       portIndex: 1
+  - outputPort:
+      nodeId: dba0d428-8b8f-4820-b6ad-7a9d1bbb84bb
+      portIndex: 0
+    inputPort:
+      nodeId: d5e08f3a-7aee-49b6-9dec-4ccaa24f0fd8
+      portIndex: 1
+  - outputPort:
+      nodeId: d5e08f3a-7aee-49b6-9dec-4ccaa24f0fd8
+      portIndex: 0
+    inputPort:
+      nodeId: 429e5f96-2ef8-4dff-b132-d2beaec89897
+      portIndex: 2
   references:
     version: 2
     RefIds:
@@ -584,9 +591,9 @@ MonoBehaviour:
         - Next
         CardText: Well, you're all set! I'll try to do some research between rounds
           to help you as much as possible. Now you've been lucky and you're up against
-          Billy.///He's a newbie and thinks that because he has his parents' money
-          he's already won, remember that against Wealth cards, Violence cards win!
-          Good luck!
+          <b>Billy</b>.///He's a newbie and thinks that because he has his parents'
+          money he's already won, remember that against <b><color=#438c1d>Wealth</color></b>
+          cards, <b><color=#bc3047>Violence</color></b> cards win! Good luck!
         LeftText: I think I can take him.
         RightText: F*ck capitalism.
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -681,21 +688,17 @@ MonoBehaviour:
         position:
           serializedVersion: 2
           x: -2901
-          y: 1485
-          width: 2604
+          y: 1538
+          width: 868
           height: 266
         typeName: CodeGraph.ForkCardTextNode, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
           PublicKeyToken=null
         outputs:
         - Left
         - Right
-        CardText: What? Don't you remember why I told you to come? It's the <b><color=#2c7aab>Influence</color>,
-          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> Christmas
-          Tournament!///It's always been my dream to participate in it, but recently
-          I injured my wrist and I can't lay my cards on the table properly. That's
-          why I told you to come! To participate for me!///Here, you can borrow my
-          cards.///Do you need me to remind you how to play or did you watch the
-          tutorial I gave you?
+        CardText: But first of all, do you need a <b>TUTORIAL</b> to know how to
+          play? It is <b>important</b> to learn the rules of the game, otherwise
+          you will lose at the first try.///<b>Swipe to the LEFT</b> to see it.
         LeftText: I don't have much idea, remind me the tutorial.
         RightText: Don't worry, I remember everything. I'm ready!
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
@@ -843,6 +846,29 @@ MonoBehaviour:
           cards, but be careful when it gets violent!
         LeftText: Ugh, I'll try...
         RightText: But who am I playing against?
+        card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
+    - rid: 1101124006051840000
+      type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
+      data:
+        guid: d5e08f3a-7aee-49b6-9dec-4ccaa24f0fd8
+        position:
+          serializedVersion: 2
+          x: -2259
+          y: 1243
+          width: 321
+          height: 242
+        typeName: CodeGraph.StraightCardTextNode, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        outputs:
+        - Next
+        CardText: What? Don't you remember why I told you to come? It's the <b><color=#2c7aab>Influence</color>,
+          <color=#bc3047>Violence</color>, <color=#438c1d>Wealth</color></b> Christmas
+          Tournament!///It's always been my dream to participate in it, but recently
+          I injured my wrist and I can't lay my cards on the table properly. That's
+          why I told you to come! To participate for me!///Here, you can borrow my
+          cards.
+        LeftText: But what's this all about?
+        RightText: Count me in, man!
         card: {fileID: 11400000, guid: 08d7c8a6c4084a549aea537b8b6be049, type: 2}
     - rid: 1306970353074176000
       type: {class: StraightCardTextNode, ns: CodeGraph, asm: Assembly-CSharp}
@@ -1523,8 +1549,9 @@ MonoBehaviour:
         CardText: Real life? What was that guy talking about? Well, whatever! You've
           beaten <b>one of the organizers</b>, I can't believe it!///As for your
           next opponent, he's a dummy who went to school with us. He can't stop drooling
-          over his girlfriend, so he must be full of Wealth and Influence cards to
-          give her. Finish him, man!
+          over his girlfriend, so he must be full of <b><color=#438c1d>Wealth</color></b>
+          and <b><color=#2c7aab>Influence</color></b> cards to give her. Finish him,
+          man!
         LeftText: Is it really him? Ugh, he intimidates me.
         RightText: I'm going to hit him so hard that not even his girlfriend will
           recognize him.
@@ -1546,7 +1573,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: 85edbf2355c0bc347a34a5f490874c1b, type: 2}
         IsBossFight: 0
-        music: 9
+        music: 10
     - rid: 7082970813654106118
       type: {class: BattleNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
@@ -1564,7 +1591,7 @@ MonoBehaviour:
         - Game Over
         enemy: {fileID: 11400000, guid: ac032304f902db6459a7aff912476ac5, type: 2}
         IsBossFight: 0
-        music: 10
+        music: 3
     - rid: 8580623337150218298
       type: {class: StartNode, ns: CodeGraph, asm: Assembly-CSharp}
       data:
